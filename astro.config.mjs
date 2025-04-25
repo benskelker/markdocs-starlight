@@ -8,7 +8,7 @@ export default defineConfig({
 	integrations: [
 		markdoc(),
 		starlight({
-			title: 'My Docs',
+			title: 'CyberArk',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{
