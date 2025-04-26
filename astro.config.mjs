@@ -31,8 +31,8 @@ export default defineConfig({
       }),
 	],
 
-  site: 'https://benskelker.github.io/markdocs-starlight',
-  base: 'markdocs-starlight',
+  site: 'https://benskelker.github.io',
+  base: '/markdocs-starlight',
   output: 'static',
 
 });
