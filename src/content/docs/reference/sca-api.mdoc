@@ -3,9 +3,22 @@ title: Example API
 description: My SCA API
 ---
 
-# Heading
+# {% $frontmatter.title %}
 
 Lots of stuff.
+
+{% aside type="caution" %}
+Other content is also supported in asides.
+
+```json
+{
+  "name": "Ben",
+  "age": 50
+}
+```
+{% /aside %}
+
+## Heading 2
 
 {% card title="Stars" icon="star" %}
 Sirius, Vega, Betelgeuse
@@ -40,6 +53,8 @@ Bellatrix, Rigel, Betelgeuse
 Pollux, Castor A, Castor B
 {% /tabitem %}
 {% /tabs %}
+
+
 
 _Some exoplanets:_
 
