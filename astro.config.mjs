@@ -13,10 +13,7 @@ export default defineConfig({
       starlight({
           plugins: [starlightNextjsTheme()],
           title: 'CyberArk',
-		  customCss: [
-			// Path to your Tailwind base styles:
-			'./src/styles/global.css',
-		  ],
+
           social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
           sidebar: [
               {
@@ -34,15 +31,8 @@ export default defineConfig({
       }),
 	],
 
-  site: 'https://benskelker.github.io',
-  base: '/markdocs-starlight',
+  site: 'https://benskelker.github.io/markdocs-starlight',
+//   base: '/markdocs-starlight',
   output: 'static',
 
-  vite: {
-    plugins: [tailwindcss()]
-  },
-
-  build: {
-	assets: 'styles'
-  }
 });
