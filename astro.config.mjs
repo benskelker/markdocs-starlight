@@ -35,6 +35,7 @@ export default defineConfig({
 	],
 
   site: 'https://benskelker.github.io',
+  base: '/markdocs-starlight',
 
   vite: {
     plugins: [tailwindcss()]
