@@ -32,7 +32,7 @@ export default defineConfig({
 	],
 
   site: 'https://benskelker.github.io/markdocs-starlight',
-//   base: '/markdocs-starlight',
+  base: '/markdocs-starlight',
   output: 'static',
 
 });
