@@ -6,7 +6,8 @@ export default defineMarkdocConfig({
 	extends: [starlightMarkdoc()],
 	variables: {
 		product: {
-			name: 'SCA'
+			name: 'SCA',
+			company: 'CA'
 		}
 	}
 });
