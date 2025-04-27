@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "build:schema": "node scripts/build-markdoc-schema.mjs",
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "dev": "npm run build:schema && astro dev",
+    "start": "npm run build:schema && astro dev",
+    "build": "npm run build:schema && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

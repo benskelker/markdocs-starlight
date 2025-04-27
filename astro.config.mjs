@@ -34,5 +34,4 @@ export default defineConfig({
   site: 'https://benskelker.github.io',
   base: '/markdocs-starlight',
   output: 'static',
-
 });
