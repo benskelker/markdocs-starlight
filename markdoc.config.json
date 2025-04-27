@@ -3,8 +3,8 @@
       "id": "SCA",
       "path": "src/content/docs",
       "schema": {
-        "path": "markdoc.config.mjs",
-        "type": "esm",
+        "path": "compiledSchema/markdoc.schema.js",
+        "type": "node",
         "property": "default",
         "watch": true
       }

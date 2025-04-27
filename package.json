@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "build:schema": "node scripts/build-markdoc-schema.mjs",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
