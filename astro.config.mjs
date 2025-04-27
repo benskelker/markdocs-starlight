@@ -3,8 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import markdoc from '@astrojs/markdoc';
 import starlightNextjsTheme from 'starlight-nextjs-theme'
-
-import tailwindcss from '@tailwindcss/vite';
+import { toc } from './data/toc.mjs'
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,22 +14,9 @@ export default defineConfig({
           title: 'CyberArk',
 
           social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-          sidebar: [
-              {
-                  label: 'Guides',
-                  items: [
-                      // Each item here is one entry in the navigation menu.
-                      { label: 'Example Guide', slug: 'guides/example' },
-                  ],
-              },
-              {
-                  label: 'Reference',
-                  autogenerate: { directory: 'reference' },
-              },
-          ],
+          sidebar: toc,
       }),
 	],
-
   site: 'https://benskelker.github.io',
   base: '/markdocs-starlight',
   output: 'static',

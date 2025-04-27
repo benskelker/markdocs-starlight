@@ -1,9 +1,10 @@
 // AUTO-GENERATED — do not edit.
 export default {
   "variables": {
+    "company": "CyberArk",
+    "football-team": "Liverpool",
     "product": {
-      "name": "SCA",
-      "company": "CA"
+      "name": "SCA"
     }
   },
   "nodes": {
