@@ -14,7 +14,7 @@ export default defineConfig({
           title: 'CyberArk',
 
           social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-          sidebar: toc,
+          sidebar: toc
       }),
 	],
   site: 'https://benskelker.github.io',

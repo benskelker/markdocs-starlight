@@ -1,0 +1,80 @@
+# Update service account keys
+
+This topic describes how to update the keys for the and service accounts
+in .
+
+## Overview
+
+When you onboard a organization, two service accounts are created in :
+one for and one for . The keys for these accounts don\'t expire and are
+not automatically rotated.
+
+To maximize security, prevent unauthorized access, and maintain
+compliance with security policies, we strongly recommend periodically
+updating these keys manually.
+
+## Update the keys
+
+This section describes how to create new service account keys in and
+then update the new values in the workspace details in .
+
+### Create new service account keys in {#create-new-service-account-keys-in .stepReset madcap:autonum="Step 1: "}
+
+In this step, you create a new key for each of the and service accounts.
+
+::: important
+- Service account key creation must be enabled in your console.
+
+- Keys must be created on the organization level.
+:::
+
+In the console, on the organization level:
+
+1.  Go to [IAM & Admin \> Service Accounts]{.Emphasis}.
+
+2.  Select the service account ([cem-service-account]{.Emphasis}).
+
+3.  Copy the current secret key for identification purposes later.
+
+4.  In the [Keys]{.Emphasis} tab, click [ Add Key]{.Emphasis} and
+    select [Create new key]{.Emphasis}.
+
+5.  For the file type, select [JSON]{.Emphasis} and click the
+    [Create]{.Emphasis}. A JSON file is downloaded to your computer.
+
+6.  Repeat for the service account ([sca-service-account]{.Emphasis}).
+
+### Update the key in {#update-the-key-in .step madcap:autonum="Step 2: "}
+
+In the previous step a JSON file for each service account was downloaded
+to your computer. In this step, you copy the content of these files to .
+
+In the platform:
+
+1.  Navigate to .
+
+2.  Under [Settings \> Platform management]{.Emphasis}, select
+    [GCP]{.Emphasis}.
+
+3.  Select the GCP organization whose service account keys you want to
+    update. At the end of the row, click [More actions]{.Emphasis}
+    (![](../images/icon_ellipsis-v.png){.icon}) \> [Update
+    keys]{.Emphasis}.
+
+4.  Copy the content from the downloaded JSON files into the relevant
+    field:
+
+    ::: important
+    Make sure to copy the entire content of each file and paste the
+    copied content to the respective service account.
+    :::
+
+    1.  Open the JSON file for the service account in a text editor, and
+        copy the entire content. Paste the copied content into the field
+        in .
+
+    2.  Open the JSON file for the service account in a text editor, and
+        copy the entire content. Paste the copied content into the field
+        in .
+
+5.  Click [Update]{.Emphasis} to submit the new keys.

@@ -1,0 +1,60 @@
+# Google Cloud permissions
+
+This topic describes the Google Cloud permissions that are needed to
+connect to Google Cloud resources. These permissions are granted by the
+onboarding scripts.
+
+## Google Cloud organization {#google-cloud-organization madcap:conditions="cc_product_conds.CV"}
+
+The scripts for onboarding a
+{% $sca-project-variables.GoogleCloud %}
+organization to
+{% $cc_product_vars.CV-full %}
+create a role for the
+{% $cc_product_vars.CV-full %}
+service account and another role for the
+{% $cc_product_vars.SCA-short %}
+service account. The relevant role is then bound to the respective
+service account.
+
+## {% $cc_product_vars.CV-full %} role {#role madcap:conditions="cc_product_conds.SCA"}
+
+#### {% $cc_product_vars.CV-full %} role {#role-1 madcap:conditions="cc_product_conds.CV"}
+
+The
+{% $cc_product_vars.CV-full %}
+role includes the following permissions:
+
+`<snippetblock src="CloudAdminSnippets/gcp-organization-permissions-list.flsnp" madcap:conditiontagexpression="include[snip-conditions.CV-only], exclude[snip-conditions.SCA-only]">`{=html}`</snippetblock>`{=html}
+
+## {% $cc_product_vars.SCA-short %} role {#role-2 madcap:conditions="cc_product_conds.SCA"}
+
+#### {% $cc_product_vars.SCA-short %} role {#role-3 madcap:conditions="cc_product_conds.CV"}
+
+The
+{% $cc_product_vars.SCA-short %}
+role includes the following permissions:
+
+`<snippetblock src="CloudAdminSnippets/gcp-organization-permissions-list.flsnp" madcap:conditiontagexpression="include[snip-conditions.SCA-only], exclude[snip-conditions.CV-only]">`{=html}`</snippetblock>`{=html}
+
+::: {madcap:conditions="cc_product_conds.CV"}
+## Standalone Google Cloud project
+
+NOTE FOR TW: This section is for CV only
+
+The following permissions are granted to the service user via a custom
+role for a Google Cloud project when it is onboarded.
+
+  Permission                                                           Description
+  -------------------------------------------------------------------- -------------------------------------------------------------------------------------------------
+  cloudasset.assets.searchAllIamPolicies                               Search all IAM policies within the specified scope, such as a project, folder, or organization.
+  iam.roles.get                                                        Retrieve the role definitions.
+  iam.roles.list                                                       List the predefined and custom roles for an organization or project.
+  iam.serviceAccounts.getIamPolicy                                     Retrieve the IAM policy for a service account.
+  iam.serviceAccounts.list                                             List all of a project\'s service accounts.
+  iam.serviceAccountKeys.list                                          List the service account keys for a service account.
+  managedidentities.domains.getIamPolicy                               Retrieve the access control policy for a managed identity.
+  policyanalyzer.serviceAccountKeyLastAuthenticationActivities.query   Needed to query policy activities on Google Cloud resources.
+  policyanalyzer.serviceAccountLastAuthenticationActivities.query      Needed to query policy activities on Google Cloud resources.
+  resourcemanager.projects.getIamPolicy                                Retrieve the IAM access control policy for the specified project.
+:::

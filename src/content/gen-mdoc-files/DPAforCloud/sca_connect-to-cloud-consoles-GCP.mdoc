@@ -1,0 +1,114 @@
+# Connect to Google Cloud
+
+This topic describes how to connect to Google Cloud console securely via
+{% $cc_product_vars.SCA-short %}.
+
+::: {.important madcap:conditions="SCA-conditions.not-free-trial"}
+`<snippetblock src="SCA-snippets/intro-secure-access-space.flsnp">`{=html}`</snippetblock>`{=html}
+:::
+
+## Connect to your console
+
+You can connect to your console from the
+{% $cc_product_vars.Identity-full %}
+user portal or through the CLI.
+
+::::::::::: tabs
+- [Google Cloud console]{cc-tab=".tab-1"}
+- [Google Cloud CLI]{cc-tab=".tab-2"}
+
+:::::::::: tabs-stage
+::::: tab-1
+Tab 1 Content - \<console\>
+
+::: important
+`<snippetblock src="SCA-snippets/popup-blocker.flsnp">`{=html}`</snippetblock>`{=html}
+:::
+
+::: note
+If you want to use the Google Cloud console with your current
+permissions, click the link in the instructions to connect directly to
+the console instead of via the options available in the table.
+:::
+
+To connect to the Google Cloud console:
+
+1.  Sign in to
+    {% $cc_product_vars.ISP-full %}.
+
+2.  In the [User portal]{.Emphasis} \> [Applications]{.Emphasis} page,
+    click the relevant Google Cloud web app tile.
+
+3.  In the Google Cloud resources page, find the resource that you want
+    to access. Click the button at the end of the row to connect to the
+    console.
+:::::
+
+:::::: tab-2
+Tab 2 Content - \<CLI\>
+
+When you sign in using the Google Cloud CLI, you sign in to Google Cloud
+and then authenticate to
+{% $cc_product_vars.IdentityAdmin-full %}
+via the web console. After the authorization process is complete, you
+can select your resource from the resource list and begin working.
+
+Before you begin, make sure you have the following installed on the
+machine you use to connect to the Google Cloud console:
+
+- Python 3.9 or higher. For more information, see the [Python download
+  docs](https://www.python.org/downloads/){target="_blank"}.
+
+- Google Cloud CLI. For more information, see the [Google Cloud
+  docs](https://cloud.google.com/sdk/docs/install-sdk){target="_blank"}.
+
+- {% $cc_product_vars.SCA-short %}
+  policy defined for your user.
+
+::: note
+You need reasonable working knowledge of Python and the Google Cloud SDK
+to prepare your machine.
+:::
+
+::: ProcedureHeading
+To sign in using the Google Cloud CLI
+:::
+
+1.  Open a command prompt.
+
+2.  Type the following command:
+
+    ::: code
+        gcloud auth login
+    :::
+
+    ::: note
+    On macOS and Windows machines, authentication begins automatically
+    in your web browser. If you\'re using a Linux machine, you may have
+    to manually open a web browser and copy-paste the cloud key from the
+    CLI to continue with the authorization process.
+    :::
+
+3.  Select the Google account you\'re using to sign in.
+
+4.  Sign in to
+    {% $cc_product_vars.Identity-full %}.
+
+5.  Click [Allow]{.Emphasis} in the Google page.
+
+6.  After you are authenticated, you can select the required resource
+    from the list in the CLI and begin working.
+
+::: note
+- The resources that are available depend on the access permissions
+  granted to your user by the
+  {% $cc_product_vars.SCA-short %}
+  policy.
+
+- If you want to work with your cloud resources via the CLI, you have to
+  complete this procedure even if you initially authenticated in the web
+  console.
+:::
+::::::
+::::::::::
+:::::::::::

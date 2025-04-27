@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet>
+  <Variable
+    Name="4FLT-Access-Identity-Management"
+    Comment="Main Menu section title"
+    EvaluatedDefinition="Access and Identity Management">Access and Identity Management</Variable>
+  <Variable
+    Name="4FLT-Identity"
+    Comment=""
+    EvaluatedDefinition="Identity">Identity</Variable>
+  <Variable
+    Name="4FLT-SWS"
+    Comment=""
+    EvaluatedDefinition="Secure Web Sessions">Secure Web Sessions</Variable>
+  <Variable
+    Name="4FLT-Compliance"
+    Comment=""
+    EvaluatedDefinition="Identity Compliance">Identity Compliance</Variable>
+  <Variable
+    Name="4FLT-Flows"
+    Comment=""
+    EvaluatedDefinition="Identity Flows">Identity Flows</Variable>
+  <Variable
+    Name="4FLT-Privileged-Access-Management"
+    Comment="Main Menu section title"
+    EvaluatedDefinition="Privileged Access Management">Privileged Access Management</Variable>
+  <Variable
+    Comment=""
+    Name="4FLT-PAM"
+    EvaluatedDefinition="PAM - Self-Hosted">PAM - Self-Hosted</Variable>
+  <Variable
+    Name="4FLT-PCloud"
+    EvaluatedDefinition="Privilege Cloud">Privilege Cloud</Variable>
+  <Variable
+    Name="4FLT-EPM"
+    EvaluatedDefinition="Endpoint Privilege Manager">Endpoint Privilege Manager</Variable>
+  <Variable
+    Name="4FLT-RemoteAccess"
+    Comment="(was Alero)"
+    EvaluatedDefinition="Remote Access">Remote Access</Variable>
+  <Variable
+    Name="4FLT-DPA"
+    EvaluatedDefinition="Secure Infrastructure Access">Secure Infrastructure Access</Variable>
+  <Variable
+    Name="4FLT-Secrets-Management"
+    Comment="Main Menu section title"
+    EvaluatedDefinition="Secrets Management">Secrets Management</Variable>
+  <Variable
+    Name="4FLT-CP"
+    EvaluatedDefinition="Credential Providers">Credential Providers</Variable>
+  <Variable
+    Name="4FLT-ConjEnt"
+    Comment="(was Dynamic Access Provider)"
+    EvaluatedDefinition="Conjur Enterprise">Conjur Enterprise</Variable>
+  <Variable
+    Name="4FLT-ConjCloud"
+    EvaluatedDefinition="Conjur Cloud">Conjur Cloud</Variable>
+  <Variable
+    Name="4FLT-SecretsHub"
+    Comment=""
+    EvaluatedDefinition="Secrets Hub">Secrets Hub</Variable>
+  <Variable
+    Name="4FLT-Cloud-Privilege-Security"
+    Comment="Main Menu section title"
+    EvaluatedDefinition="Cloud Security">Cloud Security</Variable>
+  <Variable
+    Name="4FLT-SCA"
+    EvaluatedDefinition="Secure Cloud Access">Secure Cloud Access</Variable>
+  <Variable
+    Name="4FLT-CEM"
+    EvaluatedDefinition="Cloud Entitlements Manager">Cloud Entitlements Manager</Variable>
+  <Variable
+    Name="4FLT-Shared-Services"
+    EvaluatedDefinition="Shared Services"
+    Comment="Main Menu section title">Shared Services</Variable>
+  <Variable
+    Name="4FLT-IdentityAdmin"
+    EvaluatedDefinition="Identity Administration">Identity Administration</Variable>
+  <Variable
+    Name="4FLT-ISI"
+    EvaluatedDefinition="Identity Security Intelligence">Identity Security Intelligence</Variable>
+  <Variable
+    Name="4FLT-Audit"
+    EvaluatedDefinition="Audit">Audit</Variable>
+  <Variable
+    Name="4FLT-Connector-Management"
+    Comment=""
+    EvaluatedDefinition="Connector Management">Connector Management</Variable>
+  <Variable
+    Name="4FLT-ISPSS-long"
+    Comment=""
+    EvaluatedDefinition="ISPSS">Identity Security Platform Shared Services</Variable>
+  <Variable
+    Name="4FLT-ISPSS-short"
+    Comment=""
+    EvaluatedDefinition="ISPSS">ISPSS</Variable>
+  <Variable
+    Name="4FLT-Endpoint-Privilege"
+    Comment="Main Menu section title"
+    EvaluatedDefinition="Endpoint Privilege Security">Endpoint Privilege Security</Variable>
+  <Variable
+    Name="4FLT-WPM"
+    Comment=""
+    EvaluatedDefinition="Workforce Password Management">Workforce Password Management</Variable>
+  <Variable
+    Name="4FLT-Secure-Browser"
+    Comment=""
+    EvaluatedDefinition="Secure Browser">Secure Browser</Variable>
+  <Variable
+    Name="4FLT-Access-To-Targets"
+    Comment=""
+    EvaluatedDefinition="Access to targets (Preview)">Access to targets (Preview)</Variable>
+  <Variable
+    Name="4FLT-Administration"
+    Comment=""
+    EvaluatedDefinition="Administration (Preview)">Administration (Preview)</Variable>
+  <Variable
+    Name="4FLT-DigitalBlueprint"
+    Comment=""
+    EvaluatedDefinition="CyberArk Blueprint">CyberArk Blueprint</Variable>
+  <Variable
+    Name="4FLT-CV"
+    Comment=""
+    EvaluatedDefinition="Cloud Visibility">Cloud Visibility</Variable>
+</CatapultVariableSet>

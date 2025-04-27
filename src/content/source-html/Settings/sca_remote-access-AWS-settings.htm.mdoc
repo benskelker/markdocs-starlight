@@ -1,0 +1,84 @@
+# Integrate Remote Access for AWS environments
+
+This topic describes how to integrate and , so that policies can be
+applied to vendors that need to access AWS cloud environments.
+
+## Overview
+
+Organizations that use to give vendors access to web apps in the user
+portal space can integrate and , and then create applicable policies to
+enforce zero standing access for these vendors.
+
+When policies are created for vendors, they can authenticate to as
+usual, and select the required AWS web app from the user portal space.
+
+To integrate the services, complete the following steps:
+
+1.  Configure the Identity SSO settings in
+    \[%=cc_product_vars.RemoteAccess-short%\]
+
+2.  Create a dedicated role in the \[%=cc_product_vars.SCA-short%\]
+    tenant
+
+3.  Invite the vendors in \[%=cc_product_vars.RemoteAccess-short%\]
+
+4.  Configure the \[%=cc_product_vars.SCA-short%\] policy
+
+## Before you begin
+
+The AWS web app in the user portal space (in the tenant) must be
+configured to use provisioning.
+
+## []{#Configur}Configure the Identity SSO settings in {#configure-the-identity-sso-settings-in .step madcap:autonum="Step 1: "}
+
+You must configure to communicate with when a vendor accesses a web app
+from the user portal space. This configuration is done in the SSO
+functionality.
+
+For information about how to configure the SSO settings, see the
+[docs](/remote-access-standard/latest/en/content/admin/settings-idaptive.htm){alt="Link to [%=cc_product_vars.RemoteAccess-short%] topic about configuring [%=cc_product_vars.IdentityAdmin-full% SSO settings]"}.
+
+## []{#Set}Create a dedicated role in the tenant {#create-a-dedicated-role-in-the-tenant .step madcap:autonum="Step 2: "}
+
+You must create a dedicated role in the instance of the tenant that can
+use to identify your vendors and apply the relevant policies.
+
+After this role is created, use it when inviting any vendor that should
+be included in an policy.
+
+For information about how to create a role, see the
+[docs](/identity-administration/latest/en/content/coreservices/getstarted/userrolesassign.htm?tocpath=Add%20system%20users%20and%20roles%7CAssign%20users%20to%20roles%20and%20manage%20roles%7C_____0#Createanewrole){target="_blank"
+alt="Link to heading on how to create a new role in [%=cc_product_vars.IdentityAdmin-full%] docs"}.
+
+## []{#Invite}Invite the vendors in {#invite-the-vendors-in .step madcap:autonum="Step 3: "}
+
+When you invite vendors in , you have to configure several parameters to
+enable to identify the vendor and apply the relevant policy.
+
+1.  In the [Allowed applications ]{.Emphasis}area, select the [Allow
+    access to Identity web applications ]{.Emphasis}option.
+
+2.  in the [User provisioning ]{.Emphasis}area, do the following:
+
+    1.  Select the [ will create and manage the user]{.Emphasis} option.
+
+    2.  In the [Role ]{.Emphasis}field, specify the dedicated role that
+        you created for this purpose.
+
+For more information about inviting vendors, see the
+[\[%=cc_product_vars.RemoteAccess-short%\]
+docs](/remote-access-standard/latest/en/content/admin/invitevendors.htm "Link to topic in [%=cc_product_vars.RemoteAccess-short%] on how to invite vendors"){target="_blank"
+alt="Link to topic in [%=cc_product_vars.RemoteAccess-short%] on how to invite vendors"}.
+
+## []{#Configur2}Configure the policy {#configure-the-policy .step madcap:autonum="Step 4: "}
+
+When you configure an policy to include vendors, ensure that you select
+the dedicated role that you created in when you add identities to the
+policy. uses this role to identify the vendor so it can apply the
+policy.
+
+For more information about creating policies, see Create an AWS policy.
+
+::: note
+You can only create policies for vendors that have been invited to .
+:::

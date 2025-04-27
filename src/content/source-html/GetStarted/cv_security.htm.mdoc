@@ -1,0 +1,182 @@
+# Security Q&A
+
+This topic answers common security questions about .
+
+## Authentication and authorization
+
+Authentication and authorization is managed by . For more information,
+see [Identity
+Administration](/identity-administration/latest/en/content/coreservices/core-overview.htm){target="_blank"}.
+
+## Logging
+
+[What logs does provide? ]{.Emphasis}
+
+saves generates logs in our hosted AWS environment.
+
+generates logs of internal activity . Each log contains a tenant id and
+a user id to associate it to a specific a tenant.
+
+The audit types and messages stored in these logs are exposed in the
+app.
+
+The User Audit contains a record of admin and user activities.
+
+## Input validation
+
+[How does validate input and protect against malicious
+input?]{.Emphasis}
+
+performs input validation at different layers including API GW, WAF
+services, and internal APIs. uses synthetic and semantic rules.
+
+## Session management
+
+[How does manage user sessions between their web browser and the back
+end?]{.Emphasis}
+
+does not save session data from our client/server. The client and server
+connect using API calls with cookies and JWT.
+
+To authorize a request, uses an API gateway. Each user authenticates and
+is authorized to their tenant only.
+
+## Data
+
+[How does avoid reading sensitive data on your cloud
+platform?]{.Emphasis}
+
+has access only to services and data required to provide the service to
+which the customer has given permission for to access. In addition, when
+relevant, uses a filter to retrieve only the required fields.
+
+[What information does store?]{.Emphasis}
+
+stores the IAM identities, their entitlements, and the usage history of
+identities (after filtering unnecessary fields).
+
+[What is \'s data retention policy?]{.Emphasis}
+
+In keeping with \'s data retention policy and procedures, if you have a
+tenant with an expired license, is required to delete all data relating
+to that tenant within 60 days of expiry. Once your data has been
+deleted, it cannot be recovered.
+
+[How can I remove all my data from ?]{.Emphasis}
+
+To remove data from , contact Support.
+
+[Is data encrypted at rest in the SaaS instance?]{.Emphasis}
+
+Yes.
+
+[What algorithm does use to encrypt data at rest? How does manage
+keys?]{.Emphasis}
+
+uses encryption at rest using the services\' `builtin` option.
+
+AWS manages the encryption.
+
+[Does encrypt data in transit on API calls? Does also encrypt data
+entered into the app? What version of TLS does use?]{.Emphasis}
+
+Yes, all data in transit in encrypted. The connection to the app is
+handled by REST APIs calls over https TLS 1.2.
+
+[What input validation techniques does use?]{.Emphasis}
+
+uses Syntactic and Semantic rules.
+
+[How is your data segregated from other customers?]{.Emphasis}
+
+takes a comprehensive approach to separation and privacy of customer
+data, involving a combination of secure communication protocols,
+encryption, authentication, access control (RBAC and TBAC), key
+management, segregation, and robust backup and recovery mechanisms.
+
+These measures work together to protect customer data throughout its
+lifecycle, both during transit and at rest.
+
+## Connection to Cloud infrastructure
+
+::: Toggler
+[How does connect to my AWS account?]{.Emphasis}
+
+assumes a role using AWS APIs. During on-boarding, a role is created to
+enable to connect to the environment. This role has the least privileges
+required to perform what needs to extract the audit logs.
+
+To learn more, see Connect Amazon AWS accounts
+
+For details on specific privileges granted to the role to connect to
+your AWS account, contact your CyberArk team.
+
+[How does connect to my Azure subscription?]{.Emphasis}
+
+uses the username and password for an Azure application which is
+configured during the on-boarding phase.
+
+To learn more, see Connect Azure subscriptions.
+
+For details on specific privileges granted to to connect to the Azure
+subscription, contact your CyberArk team.
+
+[How does connect to my Google Cloud project?]{.Emphasis}
+
+uses the username and password for a Google Cloud project
+
+which is configured during the on-boarding phase.
+
+To learn more, see Google Cloud organization
+
+For details on specific privileges granted to to connect to your Google
+Cloud project, contact your CyberArk team.
+:::
+
+## Secure development life cycle
+
+development life cycle includes security controls according to industry
+best practices, CyberArk SDLC methodologies including:
+
+- Restrictions on accessing production environment based on location,
+  authorized personnel, and strong authentication.
+
+- Continuous static and dynamic code analysis
+
+- Vulnerability assessment of third-party code and components
+
+- Secure code reviews
+
+- Repository restrictions
+
+- Regular penetration tests (internal and external Compliance with AWS
+  CIS Benchmark)
+
+- Compliance with OWASP Serverless Top 10
+
+[Who has access to my data?]{.Emphasis}
+
+Selected CyberArk engineers have secured access to customer data where
+required to access the data for advanced troubleshooting purposes. A
+policy and technical controls are in place to ensure that other CyberArk
+employees do not have such access.
+
+[Which security benchmark\'s does follow?]{.Emphasis
+style="color: #000000;"}
+
+uses the following benchmarks: AWS CIS benchmark, OWASP Severless Top 10
+
+[What tools do you use to prevent exploits on your back-end, code and
+customer front-end?]{.Emphasis style="color: #000000;"}
+
+- Static and dynamic code analysis tools.
+
+- Vulnerability assessment tools for third-party code and components.
+
+- Input validation techniques.
+
+The specific tools in use may change based on need and capabilities:
+
+[Is certified as SOC II compliant?]{.Emphasis}
+
+Yes.

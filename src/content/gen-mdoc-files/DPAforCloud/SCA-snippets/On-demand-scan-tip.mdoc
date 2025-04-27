@@ -1,0 +1,34 @@
+::: tip
+If the details you see in the Create policy wizard aren\'t up to date,
+you can trigger an on-demand scan for
+`<conditionaltext madcap:conditions="snip-conditions.Azure">`{=html}resources
+and
+`</conditionaltext>`{=html}`<conditionaltext madcap:conditions="snip-conditions.AWS-IAM,snip-conditions.AWS-IAM-ORG,snip-conditions.Google,snip-conditions.Azure">`{=html}roles`</conditionaltext>`{=html}`<conditionaltext madcap:conditions="snip-conditions.AWS-IAM-IDC">`{=html}permission
+sets`</conditionaltext>`{=html} by clicking the [Scan again]{.Emphasis}
+button, or using the [Rescan
+API](../../Automation/sca-API-policies.htm).
+
+If you don\'t see the workspace on the left, this means that the
+workspace hasn't yet been discovered in
+{% $cc_product_vars.SCA-short %}.
+You can either wait for the next scheduled discovery, or you can trigger
+a full discovery and scan using the [Discovery API
+(`/policies/discovery`).](../../Automation/sca-API-policies.htm)
+
+When the scan is complete (depending on the size of your onboarded
+workspaces, this may take some time), refresh your view to see the most
+up-to-date resources.
+
+For more information about availability of the resources, see our [SCA
+Common FAQs
+page](https://community.cyberark.com/s/article/SCA-Common-FAQs) in the
+CyberArk Technical Community:
+
+- [How soon after onboarding workspaces to Cloud Visibility can I see
+  them in \[%=cc_product_vars.SCA-short%\] and start setting up cloud
+  access
+  policies?](https://community.cyberark.com/s/article/SCA-Common-FAQs#Onboarding)
+
+- [Is there a way to manually discover and scan onboarded
+  workspaces?](https://community.cyberark.com/s/article/SCA-Common-FAQs#Discovery)
+:::

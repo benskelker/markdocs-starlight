@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <filter id="hienyji80a">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.011765 0 0 0 0 0.333333 0 0 0 0 0.607843 0 0 0 1.000000 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g>
+            <g filter="url(#hienyji80a)" transform="translate(-883 -335) translate(201 129)">
+                <g>
+                    <g stroke="#666" stroke-width="1.5">
+                        <g stroke-linejoin="round">
+                            <g>
+                                <path d="M3.822 3.822L3.822 0 0 0M0 3.822L3.822 0" transform="translate(682 206) translate(1) translate(6 12) rotate(-45 4.127 1.478)"/>
+                            </g>
+                        </g>
+                        <g stroke-linejoin="round">
+                            <g>
+                                <path d="M3.822 3.822L3.822 0 0 0M0 3.822L3.822 0" transform="translate(682 206) translate(1) rotate(-180 6 3.5) rotate(-45 4.127 1.478)"/>
+                            </g>
+                        </g>
+                        <path d="M0 9.5L18 9.5" transform="translate(682 206) translate(1)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

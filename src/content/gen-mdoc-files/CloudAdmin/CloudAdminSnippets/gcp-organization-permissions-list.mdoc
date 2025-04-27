@@ -1,0 +1,105 @@
++---+-------------------------------+-------------------------------+
+|   | Permission                    | Description                   |
++===+===============================+===============================+
+|   | cloudasse                     | Search all IAM policies       |
+|   | t.assets.searchAllIamPolicies | within the specified scope,   |
+|   |                               | such as a project, folder, or |
+|   |                               | organization.                 |
++---+-------------------------------+-------------------------------+
+|   | iam.roles.get                 | Retrieve the role             |
+|   |                               | definitions.                  |
+|   |                               |                               |
++---+-------------------------------+-------------------------------+
+|   | iam.roles.list                | List the predefined and       |
+|   |                               | custom roles for an           |
+|   |                               | organization or project.      |
++---+-------------------------------+-------------------------------+
+|   | iam.serviceAccountKeys.list   | List the service account keys |
+|   |                               | for a service account.        |
++---+-------------------------------+-------------------------------+
+|   | iam.serviceAccounts.get       | Retrieve all of a project\'s  |
+|   |                               | service accounts.             |
++---+-------------------------------+-------------------------------+
+|   | iam                           | Retrieve the IAM policy for a |
+|   | .serviceAccounts.getIamPolicy | service account.              |
++---+-------------------------------+-------------------------------+
+|   | iam.serviceAccounts.list      | List all of a project\'s      |
+|   |                               | service accounts.             |
++---+-------------------------------+-------------------------------+
+|   | managedid                     | Retrieve the access control   |
+|   | entities.domains.getIamPolicy | policy for a managed          |
+|   |                               | identity.                     |
++---+-------------------------------+-------------------------------+
+|   | policyan                      | Needed to query policy        |
+|   | alyzer.serviceAccountKeyLastA | activities on Google Cloud    |
+|   | uthenticationActivities.query | resources.                    |
++---+-------------------------------+-------------------------------+
+|   | polic                         | Needed to query policy        |
+|   | yanalyzer.serviceAccountLastA | activities on Google Cloud    |
+|   | uthenticationActivities.query | resources.                    |
++---+-------------------------------+-------------------------------+
+|   | resourcemanager.folders.get   | Retrieve a folder identified  |
+|   |                               | by the supplied resource      |
+|   |                               | name.                         |
++---+-------------------------------+-------------------------------+
+|   | resourc                       | Retrieve the access control   |
+|   | emanager.folders.getIamPolicy | policy for a folder.          |
++---+-------------------------------+-------------------------------+
+|   | resourcemanager.folders.list  | List the folders that are     |
+|   |                               | direct descendants of the     |
+|   |                               | parent resource, sorted based |
+|   |                               | upon the (ascending) lexical  |
+|   |                               | ordering of their             |
+|   |                               | displayName.                  |
++---+-------------------------------+-------------------------------+
+|   | resourc                       | Sets the access control       |
+|   | emanager.folders.setIamPolicy | policy on a folder, replacing |
+|   |                               | any existing policy.          |
++---+-------------------------------+-------------------------------+
+|   | resourcemanager.h             | Lists the tags attached to a  |
+|   | ierarchyNodes.listTagBindings | resource according to the     |
+|   |                               | hierarchy (organization,      |
+|   |                               | folder, project).             |
++---+-------------------------------+-------------------------------+
+|   | reso                          | Retrieve an organization      |
+|   | urcemanager.organizations.get | resource, identified by the   |
+|   |                               | specified resource name.      |
++---+-------------------------------+-------------------------------+
+|   | resourcemanag                 | Retrieve the access control   |
+|   | er.organizations.getIamPolicy | policy for an organization    |
+|   |                               | resource.                     |
++---+-------------------------------+-------------------------------+
+|   | resourcemanag                 | Sets the access control       |
+|   | er.organizations.setIamPolicy | policy on an organization,    |
+|   |                               | replacing any existing        |
+|   |                               | policy.                       |
++---+-------------------------------+-------------------------------+
+|   | resourcemanager.projects.get  | Retrieve the project          |
+|   |                               | identified by the specified   |
+|   |                               | name.                         |
++---+-------------------------------+-------------------------------+
+|   | resource                      | Retrieve the IAM access       |
+|   | manager.projects.getIamPolicy | control policy for the        |
+|   |                               | specified project.            |
++---+-------------------------------+-------------------------------+
+|   | resourcemanager.projects.list | List the projects for which   |
+|   |                               | the user has                  |
+|   |                               | [resourcemanager.projects.get |
+|   |                               | ]{.Emphasis}permissions.      |
++---+-------------------------------+-------------------------------+
+|   | resource                      | Sets the IAM access control   |
+|   | manager.projects.setIamPolicy | policy for the specified      |
+|   |                               | project.                      |
++---+-------------------------------+-------------------------------+
+|   | resourcemanager.tagKeys.get   | Retrieves a TagKey.           |
+|   |                               | Permission is denied if the   |
+|   |                               | key doesn\'t exist or the     |
+|   |                               | user doesn\'t have permission |
+|   |                               | to view it.                   |
++---+-------------------------------+-------------------------------+
+|   | resourcemanager.tagKeys.list  | Lists all TagKeys for a       |
+|   |                               | parent resource.              |
++---+-------------------------------+-------------------------------+
+|   | r                             | Lists all TagValues for a     |
+|   | esourcemanager.tagValues.list | specific TagKey.              |
++---+-------------------------------+-------------------------------+

@@ -1,0 +1,101 @@
+# Integrate  with
+
+This topic describes how to integrate with , onboarding unsecured cloud
+identities to , so they can be protected by .
+
+## Overview
+
+is a solution that allows the protection of privileged accounts by
+credential provisioning, rotation, and enforcement according to the
+organization's policies. Managing an identity's password with adds an
+important layer of security. For more information, see [Privilege
+Cloud](/privilege-cloud-shared-services/latest/en/content/resources/_topnav/cc_home.htm){target="_blank"}.
+
+discovers different types of identity types, but only the following are
+applicable to be managed by :
+
+• AWS users -- which have access to the AWS console
+
+• Azure users -- which are not synced from another directory
+
+This integration allows a customer to easily detect and manage the
+relevant cloud identities.
+
+Since both and are services provided on top of \'s platform, the trust
+between both services is automatically generated, allowing to
+communicate without a dedicated setup process.
+
+## Before you begin
+
+To benefit from this integration, your organization should already have
+deployed \'s solution.
+
+::: note
+On-premises solutions do not currently support this integration.
+:::
+
+## Set up the integration
+
+<div>
+
+### Specify the name of the instance {#specify-the-name-of-the-instance .step madcap:autonum="Step 1: "}
+
+For trackability, provide the name of the instance that you want to
+integrate with .
+
+### Define how should handle unsecured cloud identities {#define-how-should-handle-unsecured-cloud-identities .step madcap:autonum="Step 2: "}
+
+Select one of the options described in the following table.
+
+  Option                                                  Description
+  ------------------------------------------------------- -----------------------------------------------------------------------------------------------------------------------
+  [Automatically upload to pending accounts]{.Emphasis}   Detected identities with the potential to be managed are automatically uploaded to Pending Accounts in your instance.
+  [Manually upload to pending accounts]{.Emphasis}        enables the option to upload identities to pending accounts manually, one at a time.
+  [Don\'t upload to pending accounts]{.Emphasis}          does not enable the option to upload identities to pending accounts.
+
+  : Options for handling unsecured identities
+
+## Managing identities with
+
+This section includes information about:
+
+- Data acquisition
+
+- User actions
+
+### []{#Data}Data acquisition
+
+Once the integration is set up, starts to collect the [
+status]{.Emphasis} of the relevant identities. This data acquisition
+activity is part of the scanning process, which happens on a recurring
+basis, meaning that the status is not updated in real-time.
+
+[ status]{.Emphasis} is terminology that shows for each identity if it
+is:
+
+1.  [Already managed by ]{.Emphasis} -- in such cases no action is
+    required.
+
+2.  [Pending accounts]{.Emphasis} -- the identity was uploaded to
+    pending accounts , but the admin did not yet take any action.
+
+3.  [Not managed]{.Emphasis} -- in such cases there is an action
+    required: either upload to pending accounts or, if this identity is
+    critical, ask your admin to upload directly to the vault .
+
+### []{#User}User actions
+
+The following user actions are available:
+
+• [Uploading to from the identity page]{.Emphasis} -- if enabled on
+integration setup, exposes a button which users can click to upload the
+identity to , provided it is a relevant identity and its status is [Not
+managed]{.Emphasis}.
+
+• [Handling the corresponding findings]{.Emphasis} -- one of the
+out-of-the-box findings is provided for admin & shadow admin identities
+that are not managed in . The user can react to these findings by
+uploading the identities to pending accounts, though the finding remains
+until the identity is managed.
+
+</div>

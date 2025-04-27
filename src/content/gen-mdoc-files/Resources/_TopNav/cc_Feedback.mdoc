@@ -1,0 +1,30 @@
+<script>
+    $(document).ready(function(){
+    $("#feedback-form span").click(function(){
+        // Hide all .feedback-q elements
+        $("#feedback-form .feedback-q").hide();
+        // Show the corresponding .feedback-a element
+        $(this).closest(".feedback-q").next(".feedback-a").show();
+    });
+    });
+    </script>
+
+::: {#feedback-button madcap:conditions="TopNav.English"}
+[\[%=TopNav.FeedbackTitle%\]]{onclick="document.location.href='mailto:Documentation@CyberArk.com?subject=Topic Title: '+document.title+' &body=We%20appreciate%20your%20feedback.%20Please%20type%20your%20comments%20here...%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A________________________________________________________________________________%0D%0ADocumentation%20team%20internal%20use%3A%0D%0AURL: '+encodeURIComponent(location.href);"}
+:::
+
+::: {#feedback-button madcap:conditions="TopNav.Japanese"}
+[フィードバックの送信]{onclick="document.location.href='mailto:Documentation@CyberArk.com?subject=Topic Title: '+document.title+' &body=We%20appreciate%20your%20feedback.%20Please%20type%20your%20comments%20here...%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A________________________________________________________________________________%0D%0ADocumentation%20team%20internal%20use%3A%0D%0AURL: '+encodeURIComponent(location.href);"}
+:::
+
+::::: {#feedback-form}
+::: feedback-q
+Was this topic helpful?
+
+[]{#thumb-yes} []{#thumb-no}
+:::
+
+::: feedback-a
+Thank you! Your feedback helps
+:::
+:::::

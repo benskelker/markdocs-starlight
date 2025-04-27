@@ -1,0 +1,256 @@
+# Create policies for cloud access
+
+This section describes how to create an policy to grant users access to
+your cloud environments.
+
+When policies are implemented, users are assigned specific permissions
+to access cloud workspaces during specific time frames, and for a
+defined session length.
+
+## Create policy wizard / Create Policy API
+
+To create policy, you can use the:
+
+- Create policy wizard in the UI
+
+- Create policy API
+
+### Before you begin
+
+Before you create policies make sure that your cloud structure is up to
+date in .
+
++------+------------------------------+------------------------------+
+| Step |                              | Description                  |
++======+==============================+==============================+
+| 1    | Onboard and discover cloud   | Before you create a policy   |
+|      | workspaces in                | make sure that the           |
+|      |                              | workspaces you want to set   |
+|      |                              | up policies for have been    |
+|      |                              | onboarded in .               |
+|      |                              |                              |
+|      |                              | Once a day, runs a scheduled |
+|      |                              | discovery to detect any      |
+|      |                              | changes to the structure of  |
+|      |                              | your cloud environments, for |
+|      |                              | example, new or deleted      |
+|      |                              | accounts in an onboarded AWS |
+|      |                              | organization.                |
+|      |                              |                              |
+|      |                              | If you have recently made    |
+|      |                              | changes to the cloud         |
+|      |                              | structure and want to create |
+|      |                              | policies based on this       |
+|      |                              | change but don\'t want to    |
+|      |                              | wait for the scheduled daily |
+|      |                              | discovery, you can manually  |
+|      |                              | run an on-demand discovery   |
+|      |                              | using \'s Discovery API      |
+|      |                              | (`/policies/discovery/`).    |
+|      |                              |                              |
+|      |                              | For more information about   |
+|      |                              | onboarding workspaces, see:  |
+|      |                              |                              |
+|      |                              | - Add AWS                    |
+|      |                              |                              |
+|      |                              | - Add Azure -                |
+|      |                              |   \[%=cv-share               |
+|      |                              | d-variables.entra-id-long%\] |
+|      |                              |                              |
+|      |                              | - Add Google Cloud           |
++------+------------------------------+------------------------------+
+| 2    | Scan workspaces from         | For cloud workspaces that    |
+|      |                              | are onboarded to , runs      |
+|      |                              | scheduled scans twice a day  |
+|      |                              | directly on your cloud       |
+|      |                              | environments for roles and   |
+|      |                              | permissions, and in the case |
+|      |                              | of ), for Azure resources    |
+|      |                              | (resource groups, and        |
+|      |                              | resources).                  |
+|      |                              |                              |
+|      |                              | If you don\'t want to wait   |
+|      |                              | for the scheduled scans, you |
+|      |                              | can manually run on-demand   |
+|      |                              | scans directly from the      |
+|      |                              | Create policy wizard         |
+|      |                              | interface or using the       |
+|      |                              | [Rescan API                  |
+|      |                              | (`/cloud/rescan`).](../A     |
+|      |                              | utomation/sca-API-cloud.htm) |
+|      |                              |                              |
+|      |                              | ::: tip                      |
+|      |                              | When you use the API, you    |
+|      |                              | can select which workspaces  |
+|      |                              | to scan.                     |
+|      |                              | :::                          |
++------+------------------------------+------------------------------+
+
+For more information about creating access policies for each of your
+cloud environments, see:
+
+- Create policies for \[%=sca-project-variables.AWS-IAM%\] and
+  \[%=sca-project-variables.AWS-AD%\] access
+
+- Create policies for Azure resources and
+  \[%=cv-shared-variables.entra-id-long%\] directories
+
+- Create policies for \[%=sca-project-variables.GoogleCloud%\] access
+
+## View access policies
+
+The Access policies page contains a table where you can view all the
+policies that exist for your cloud environment. You can filter the table
+according to cloud provider, policy type (pre-defined or on-demand), and
+the current status of the policy. You can also search for a specific
+policy using free text.
+
+The access policy table includes the following information:
+
++------------------------------+--------------------------------------+
+| Column                       | Description                          |
++==============================+======================================+
+| [Policy]{.Emphasis}          | Name of the policy, along with an    |
+|                              | icon that indicates the type (you    |
+|                              | can filter the table on policy       |
+|                              | type):                               |
+|                              |                                      |
+|                              | - [Pre-defined policy ]{.Emphasis}-  |
+|                              |   created manually by a user to      |
+|                              |   address specific use cases         |
+|                              |                                      |
+|                              | - [On-demand policy]{.Emphasis}-     |
+|                              |   created automatically by upon      |
+|                              |   approval of an access request, and |
+|                              |   is deleted when the access window  |
+|                              |   of the requested session expires   |
++------------------------------+--------------------------------------+
+| [Status]{.Emphasis}          | Current status of the access policy: |
+|                              |                                      |
+|                              | [Active ]{.Emphasis}- currently      |
+|                              | active and providing the defined     |
+|                              | permissions for identities that      |
+|                              | match                                |
+|                              |                                      |
+|                              | [Suspended ]{.Emphasis}- already     |
+|                              | started but isn\'t currently active  |
+|                              | because it was paused by an admin    |
+|                              | (removed for DOC-15964)              |
+|                              |                                      |
+|                              | [Expired ]{.Emphasis}- isn\'t        |
+|                              | currently active because the end     |
+|                              | date has passed                      |
+|                              |                                      |
+|                              | [Validating ]{.Emphasis}- has been   |
+|                              | defined and is being verified by ,   |
+|                              | so isn\'t yet available              |
+|                              |                                      |
+|                              | [Error]{.Emphasis} - was defined but |
+|                              | failed the validation process        |
++------------------------------+--------------------------------------+
+| [Cloud provider]{.Emphasis}  | Cloud provider and workspace type    |
++------------------------------+--------------------------------------+
+| [Entitlements]{.Emphasis}    | Number of cloud roles or permission  |
+|                              | sets that match the policy           |
+|                              | definition                           |
++------------------------------+--------------------------------------+
+| [Last updated on]{.Emphasis} | Date and time that the policy was    |
+|                              | last modified                        |
++------------------------------+--------------------------------------+
+| [Created by]{.Emphasis}      | Username of the identity that        |
+|                              | created the policy or approved the   |
+|                              | access request.                      |
+|                              |                                      |
+|                              | ::: note                             |
+|                              | If the policy type is                |
+|                              | [On-demand]{.Emphasis}, this table   |
+|                              | cell is empty.                       |
+|                              | :::                                  |
++------------------------------+--------------------------------------+
+| [Description]{.Emphasis}     | For pre-defined policies, if the     |
+|                              | user added a description it appears  |
+|                              | here.                                |
+|                              |                                      |
+|                              | For on-demand policies, the request  |
+|                              | details appear in the format         |
+|                              | \"[\<username\> requested access to  |
+|                              | \<cloud provider\> on \<dd Month     |
+|                              | yyyy\>]{.Emphasis}\"; for example,   |
+|                              | [john.doe@somecompany.com requested  |
+|                              | on-demand elevated access to Google  |
+|                              | Cloud on ]{.Emphasis}.               |
++------------------------------+--------------------------------------+
+
+: Access policy view
+
+## Export policy details
+
+You can export the details of a policy in JSON format. In the Access
+policies page, click the [More options ]{.Emphasis}menu for the policy
+you want to export, and select [Download policy details]{.Emphasis}. The
+JSON file is downloaded to your default Downloads folder.
+
+## Validate a policy
+
+If you make changes to your cloud environment, you can run a validation
+process per policy to see if it was affected by those changes. In the
+Access policies page, click the [More options ]{.Emphasis}menu for the
+policy you want to validate, and select [Validate policy]{.Emphasis}.
+The validation process runs in the background, and if problems are
+discovered then the policy status changes to [Error]{.Emphasis}.
+
+The validation process checks the workspace and roles associated with
+the policy, the web app configuration, and the trust configuration
+between the IdP and the cloud provider.
+
+If you make further changes to your cloud environment in order to fix
+errors, validate the policy again.
+
+<div>
+
+## []{#Delegate}Delegated workspaces
+
+The cloud services administrator has full administrator privileges for
+all policies in the organization, meaning they can create, update, and
+delete policies as necessary.
+
+When a workspace is delegated, the delegate is automatically assigned an
+administrator role in that enables them to view and update policies for
+the workspaces they are assigned.
+
+Workspace delegation is configured in . For more information about how
+to delegate workspaces, see [Manage workspace
+delegation](/cs-cem/latest/en/content/cloudadmin/cv-delegation.htm){target="_blank"
+alt="[%=cc_product_vars.CEM-short%] topic on how to configure workspace delegation"}.
+
+For more information about service roles in , see
+[\[%=cc_product_vars.ISP-short%\] user
+roles](/identity-administration/latest/en/content/coreservices/getstarted/ispss-user-roles.htm){target="_blank"}.
+
+If your organization uses workspace delegation to assign administrator
+permissions to workspaces, there may be identities that don\'t have
+permissions under some policies, or that have permissions for only some
+of the workspaces that match a policy. Additionally, identities may have
+varying levels of permissions (view or edit) under some policies, or in
+different workspaces that match a policy.
+
+If you are a delegate, the Access policies page displays only those
+policies that you can view or edit. By default, you can see only
+policies that you can edit. To see all policies that give you at least
+partial or view permissions to workspaces, disable the [Policies I can
+edit]{.Emphasis} option above the table.
+
+::: note
+Delegates can only see the cloud roles that are attached to the
+workspaces they have permissions to view or edit.
+:::
+
+</div>
+
+To trigger a discovery, see:
+
+- Add AWS
+
+- Add Azure - \[%=cv-shared-variables.entra-id-long%\]
+
+- Add Google Cloud

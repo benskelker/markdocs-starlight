@@ -1,0 +1,793 @@
+### Create a new app registration for `<variable name="cc_product_vars.CV-full" madcap:conditions="snip-conditions.OnboardCEM-AD">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.CV-full" madcap:conditions="snip-conditions.OnboardCEM-RBAC">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-AD">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-RBAC">`{=html}`</variable>`{=html} {#create-a-new-app-registration-for .stepReset madcap:autonum="Step 1: "}
+
+When you onboard a Microsoft Entra ID directory, the first step is to
+create an app registration in the Microsoft Azure portal that
+{% $cc_product_vars.CV-full %}
+can use for connecting and monitoring subscriptions.
+
+When you onboard a management group or subscription, the first step is
+to create an app registration in the Microsoft Azure portal that
+{% $cc_product_vars.CV-full %}
+can use for connecting and monitoring subscriptions.
+
+After you onboard the Microsoft Entra ID directory to
+{% $cc_product_vars.CV-full %},
+you have to create an app registration in the Microsoft Azure portal
+that
+{% $cc_product_vars.SCA-short %}
+can use for managing access to Microsoft Entra ID roles.
+
+After you onboard the management group or directory to
+{% $cc_product_vars.CV-full %},
+you have to create an app registration in the Microsoft Azure portal
+that
+{% $cc_product_vars.SCA-short %}
+can use for managing access to resources.
+
+To create a new app registration for
+`<conditionaltext madcap:conditions="snip-conditions.OnboardCEM-AD">`{=html}{% $cc_product_vars.CV-full %}`</conditionaltext>`{=html}`<variable name="cc_product_vars.CV-full" madcap:conditions="snip-conditions.OnboardCEM-RBAC">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-AD">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-RBAC">`{=html}`</variable>`{=html}
+
+1.  Sign in to the Microsoft Azure portal.
+
+2.  Go to [Microsoft Entra ID]{.Emphasis} \> [App
+    Registrations]{.Emphasis} and select [New Registration]{.Emphasis}
+    from the page menu.
+
+3.  Provide the following information:
+
+    +----------------------+----------------------+----------------------+
+    | Parameter            | Description          | Value                |
+    +======================+======================+======================+
+    | [Name ]{.Emphasis}   | The name of the app  | [cyb                 |
+    |                      | registration you\'re | -cem-app]{.Emphasis} |
+    |                      | creating for         | (recommended)        |
+    |                      | `<                   |                      |
+    |                      | conditionaltext madc | [cyb                 |
+    |                      | ap:conditions="snip- | -cem-app]{.Emphasis} |
+    |                      | conditions.OnboardCE | (recommended)        |
+    |                      | M-AD">`{=html}`<vari |                      |
+    |                      | able name="cc_produc | [cyb-sca             |
+    |                      | t_vars.CV-full">`{=h | -aad-app]{.Emphasis} |
+    |                      | tml}`</variable>`{=h | (recommended)        |
+    |                      | tml}`</conditionalte |                      |
+    |                      | xt>`{=html}`<variabl | [cyb-sca-reso        |
+    |                      | e name="cc_product_v | urce-app]{.Emphasis} |
+    |                      | ars.CV-full" madcap: | (recommended)        |
+    |                      | conditions="snip-con |                      |
+    |                      | ditions.OnboardCEM-R |                      |
+    |                      | BAC">`{=html}`</vari |                      |
+    |                      | able>`{=html}`<varia |                      |
+    |                      | ble name="cc_product |                      |
+    |                      | _vars.SCA-short" mad |                      |
+    |                      | cap:conditions="snip |                      |
+    |                      | -conditions.OnboardS |                      |
+    |                      | CA-AD">`{=html}`</va |                      |
+    |                      | riable>`{=html}`<var |                      |
+    |                      | iable name="cc_produ |                      |
+    |                      | ct_vars.SCA-short" m |                      |
+    |                      | adcap:conditions="sn |                      |
+    |                      | ip-conditions.Onboar |                      |
+    |                      | dSCA-RBAC">`{=html}` |                      |
+    |                      | </variable>`{=html}. |                      |
+    +----------------------+----------------------+----------------------+
+    | [Supported account   | Select an option to  | [Accounts in this    |
+    | types ]{.Emphasis}   | define who can use   | organizational       |
+    |                      | the app              | directory only (...  |
+    |                      | registration.        | Single               |
+    |                      |                      | tenant)]{.Emphasis}  |
+    +----------------------+----------------------+----------------------+
+    | [Redirect            | The address for      | Select a platform:   |
+    | URI]{.Emphasis}      | redirecting after    | [Web]{.Emphasis}     |
+    |                      | granting admin       |                      |
+    |                      | consent for the      | A                    |
+    |                      | `<variable n         | ddress: [https://cem |
+    |                      | ame="cc_product_vars | -fe-modules.cps.cybe |
+    |                      | .SCA-short">`{=html} | rark.com/azure-admin |
+    |                      | `</variable>`{=html} | -consent]{.Emphasis} |
+    |                      | app registration.    |                      |
+    |                      |                      |                      |
+    |                      |                      |                      |
+    +----------------------+----------------------+----------------------+
+
+4.  At the bottom of the page, click [Register]{.Emphasis}.
+
+### Generate a client secret for `<conditionaltext madcap:conditions="snip-conditions.OnboardCEM-AD">`{=html}{% $cc_product_vars.CV-full %}`</conditionaltext>`{=html}`<variable name="cc_product_vars.CV-full" madcap:conditions="snip-conditions.OnboardCEM-RBAC">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-AD">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-RBAC">`{=html}`</variable>`{=html} {#generate-a-client-secret-for .step madcap:autonum="Step 2: "}
+
+After you create the Azure app,
+`<conditionaltext madcap:conditions="snip-conditions.OnboardCEM-AD">`{=html}{% $cc_product_vars.CV-full %}`</conditionaltext>`{=html}`<variable name="cc_product_vars.CV-full" madcap:conditions="snip-conditions.OnboardCEM-RBAC">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-AD">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-RBAC">`{=html}`</variable>`{=html}
+needs a secret so it can authenticate to the Microsoft Entra ID
+directory when it connects.
+
+To generate a secret for
+`<conditionaltext madcap:conditions="snip-conditions.OnboardCEM-AD">`{=html}{% $cc_product_vars.CV-full %}`</conditionaltext>`{=html}`<variable name="cc_product_vars.CV-full" madcap:conditions="snip-conditions.OnboardCEM-RBAC">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-AD">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-RBAC">`{=html}`</variable>`{=html}
+
+1.  Go to [App registrations \> Overview]{.Emphasis}, copy the
+    [Application (client) ID]{.Emphasis} and [Directory (tenant)
+    ID]{.Emphasis}, and save them for use in step 5.
+
+2.  Go to [App registrations \> Overview]{.Emphasis}, copy the
+    [Application (client) ID]{.Emphasis} and [Directory (tenant)
+    ID]{.Emphasis}, and save them for use in step 5.
+
+3.  Go to [App registrations \> Overview]{.Emphasis}, copy the following
+    values, and save them for later
+    use`<conditionaltext madcap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">`{=html}
+    in step 5`</conditionaltext>`{=html}:
+
+    - [Application (client) ID]{.Emphasis}
+
+    - [Directory (tenant) ID]{.Emphasis}
+
+    - [Object ID]{.Emphasis}
+
+4.  Go to [App registrations \> Overview]{.Emphasis}, copy the following
+    values, and save them for use in step 5:
+
+    - [Application (client) ID]{.Emphasis}
+
+    - [Directory (tenant) ID]{.Emphasis}
+
+    - [Object ID]{.Emphasis}
+
+5.  Go to [Certificates & secrets ]{.Emphasis}and do the following:
+
+    1.  In the [Client Secrets]{.Emphasis} tab, select [New client
+        secret]{.Emphasis}.
+
+    2.  In the [Description]{.Emphasis} field type a meaningful
+        description, for example
+        [{% $cc_product_vars.CV-full %}
+        secret]{.Emphasis
+        madcap:conditions="snip-conditions.OnboardCEM-AD"}[{% $cc_product_vars.CV-full %}
+        secret]{.Emphasis
+        madcap:conditions="snip-conditions.OnboardCEM-RBAC"}[{% $cc_product_vars.SCA-short %}
+        secret]{.Emphasis
+        madcap:conditions="snip-conditions.OnboardSCA-AD"}[{% $cc_product_vars.SCA-short %}
+        secret]{.Emphasis
+        madcap:conditions="snip-conditions.OnboardSCA-RBAC"}.
+
+    3.  From the [Expires]{.Emphasis} list, select the length of time
+        that the secret remains valid
+        ({% $cc_C_CyberArk.CompanyName %}
+        recommends [24 months]{.Emphasis}).
+
+    4.  From the [Expires]{.Emphasis} list, select the length of time
+        that the secret remains valid
+        ({% $cc_C_CyberArk.CompanyName %}
+        recommends [24 months]{.Emphasis}).
+
+    5.  From the [Expires]{.Emphasis} list, select the length of time
+        that the secret remains valid.
+        {% $cc_product_vars.SCA-short %}
+        rotates the secret every 30 days.
+
+        ::: note
+        {% $cc_C_CyberArk.CompanyName %}
+        recommends defining that the initial secret be valid for 60
+        days.
+        :::
+
+    6.  From the [Expires]{.Emphasis} list, select the length of time
+        that the secret remains valid.
+        {% $cc_product_vars.SCA-short %}
+        rotates the secret every 30 days.
+
+        ::: note
+        {% $cc_C_CyberArk.CompanyName %}
+        recommends defining that the initial secret be valid for 60
+        days.
+        :::
+
+6.  At the bottom of the page, click [Add]{.Emphasis}.
+
+7.  Copy the secret from the [Value]{.Emphasis} field and save it for
+    use in step 5.
+
+8.  Copy the secret from the [Value]{.Emphasis} field and save it for
+    use in step 5.
+
+9.  Copy the secret from the [Value]{.Emphasis} field and the [Key
+    ID]{.Emphasis} (which you can take from the secret ID), and save
+    them for later
+    use`<conditionaltext madcap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">`{=html}
+    in step 5`</conditionaltext>`{=html}.
+
+10. Copy the secret from the [Value]{.Emphasis} field and the [Key
+    ID]{.Emphasis} (which you can take from the secret ID), and save
+    them for use in step 5.
+
+### Set the required permissions {#set-the-required-permissions .step madcap:autonum="Step 3: "}
+
+In this step, you define the permissions that
+{% $cc_product_vars.CV-full %}
+needs in order to monitor the subscriptions in the directory.
+
+In this step, you define the permissions that
+{% $cc_product_vars.CV-full %}
+needs in order to monitor the subscriptions in the directory.
+
+In this step, you define the permissions that
+{% $cc_product_vars.SCA-short %}
+needs in order to manage the subscriptions in the directory.
+
+In this step, you define the permissions that
+{% $cc_product_vars.SCA-short %}
+needs in order to manage the root management group you\'re onboarding.
+
+To set the
+`<conditionaltext madcap:conditions="snip-conditions.OnboardCEM-AD">`{=html}{% $cc_product_vars.CV-full %}`</conditionaltext>`{=html}`<variable name="cc_product_vars.CV-full" madcap:conditions="snip-conditions.OnboardCEM-RBAC">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-AD">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-RBAC">`{=html}`</variable>`{=html}
+permissions to Microsoft Azure
+
+1.  Go to [API permissions]{.Emphasis}, and select [Add a
+    permission]{.Emphasis}.
+
+2.  In the [Select an API]{.Emphasis} area, select [Microsoft
+    APIs]{.Emphasis} \> [Microsoft Graph]{.Emphasis}.
+
+3.  Select [Application permissions]{.Emphasis}, then set the required
+    permissions:
+
+    1.  In the [Select permissions]{.Emphasis} field, search for each
+        permission listed in the table below.
+
+    2.  From the [Permission]{.Emphasis} list, expand each permission in
+        the following list and select it.
+
+          Permission                      Enables the {% $cc_product_vars.CV-full %} app registration to\...
+          ------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------
+          Directory.Read.All              Read data in the directory, such as users, groups, and apps.
+          RoleManagement.Read.Directory   Read the Role-Based Access Control (RBAC) settings for the directory. This includes directory role templates, directory roles, and memberships.
+
+          : Required permissions for
+          {% $cc_product_vars.CV-full %}
+
+    3.  From the [Permission]{.Emphasis} list, expand each permission in
+        the following list and select it.
+
+          Permission                      Enables the {% $cc_product_vars.CV-full %} app registration to\...
+          ------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------
+          Directory.Read.All              Read data in the directory, such as users, groups, and apps.
+          RoleManagement.Read.Directory   Read the Role-Based Access Control (RBAC) settings for the directory. This includes directory role templates, directory roles, and memberships.
+
+          : Required permissions for
+          {% $cc_product_vars.CV-full %}
+
+    4.  From the [Permission]{.Emphasis} list, expand each permission in
+        the following list and select it.
+
+        `<snippetblock src="AzureAppPermissionsSCA.flsnp" madcap:conditiontagexpression="exclude[snip-conditions.OnboardSCA-RBAC]">`{=html}`</snippetblock>`{=html}
+
+    5.  From the [Permission]{.Emphasis} list, expand each permission in
+        the following list and select it.
+
+        `<snippetblock src="AzureAppPermissionsSCA.flsnp" madcap:conditiontagexpression="exclude[snip-conditions.OnboardSCA-AD]">`{=html}`</snippetblock>`{=html}
+
+4.  After you select all the required permissions, click [Add
+    permissions]{.Emphasis}. You should now see the added permissions in
+    the [API permissions]{.Emphasis} area.
+
+::: {madcap:conditions="snip-conditions.NotSCA-AD"}
+### Enable {% $cc_product_vars.CV-full %} to monitor the full directory {#enable-to-monitor-the-full-directory .step madcap:conditions="snip-conditions.OnboardCEM-AD" madcap:autonum="Step 4: "}
+
+### Enable {% $cc_product_vars.CV-full %} to monitor a specific scope {#enable-to-monitor-a-specific-scope .step madcap:conditions="snip-conditions.OnboardCEM-RBAC" madcap:autonum="Step 5: "}
+
+### Enable {% $cc_product_vars.SCA-short %} to manage access to the full directory {#enable-to-manage-access-to-the-full-directory .step madcap:conditions="snip-conditions.OnboardSCA-AD" madcap:autonum="Step 6: "}
+
+### Enable {% $cc_product_vars.SCA-short %} to manage access to the root management group {#enable-to-manage-access-to-the-root-management-group .step madcap:conditions="snip-conditions.OnboardSCA-RBACforAD" madcap:autonum="Step 7: "}
+
+### Enable {% $cc_product_vars.SCA-short %} to manage access to the management group or subscription {#enable-to-manage-access-to-the-management-group-or-subscription .step madcap:conditions="snip-conditions.OnboardSCA-RBAConly" madcap:autonum="Step 8: "}
+
+You only need to perform this step if you want
+{% $cc_product_vars.CV-full %}
+to monitor all the subscriptions in the directory.
+
+To monitor the whole directory
+
+To monitor a scope
+
+To manage access to the entire directory
+
+To manage access to the root management group
+
+To manage access to the management group or subscription
+
+1.  Go to [Management groups]{.Emphasis}.
+
+2.  In the subscriptions table, select [Tenant Root Group]{.Emphasis}.
+
+3.  In the subscriptions table, select the required scope.
+
+4.  In the subscriptions table, select [Root Management
+    Group]{.Emphasis}.
+
+5.  In the subscriptions table, select [Root Management
+    Group]{.Emphasis}.
+
+6.  In the subscriptions table, select the required scope.
+
+7.  From the Overview tab, copy the tenant root group ID and save it
+    locally for use in the next steps.
+
+8.  From the Overview tab, copy the root management group ID and save it
+    locally for use in the next steps.
+
+9.  From the Overview tab, copy the management group or subscription ID
+    and save it locally for use in the next steps.
+
+10. Copy the following script to your local machine (save as a JSON
+    file):
+
+    ::: code
+        {
+          "Name": "sca-aad-role",
+          "IsCustom": true,
+          "Description": "SCA Custom role for Azure AAD",
+          "Actions": [],
+          "NotActions": [],
+          "DataActions": [],
+          "NotDataActions": [],
+          "AssignableScopes": [
+            "/providers/Microsoft.Management/managementGroups/#PUT YOUR TENANT GROUP ID HERE"]
+        }
+    :::
+
+11. Copy the following script to your local machine (save as a JSON
+    file):
+
+    ::: code
+        {
+          "Name": "sca-resource-role",
+          "IsCustom": true,
+          "Description": "SCA Custom role for Azure Resources",
+          "Actions": [
+            "Microsoft.Authorization/roleAssignments/read",
+            "Microsoft.Authorization/roleAssignments/write",
+            "Microsoft.Authorization/roleAssignments/delete",
+            "Microsoft.Authorization/roleDefinitions/read",
+            "Microsoft.Authorization/roleManagementPolicies/read",
+            "Microsoft.Authorization/permissions/read",
+            "Microsoft.ResourceGraph/operations/read",
+            "Microsoft.ResourceGraph/resources/read",
+            "Microsoft.Resources/subscriptions/read",
+            "Microsoft.Resources/subscriptions/resourceGroups/read",
+            "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+            "Microsoft.Resources/subscriptions/providers/read",
+            "Microsoft.Resources/subscriptions/resources/read",
+            "Microsoft.Resources/subscriptions/operationresults/read",
+            "Microsoft.Resources/resources/read",
+            "Microsoft.Management/managementGroups/read",
+            "Microsoft.Management/managementGroups/subscriptions/read"  
+          ],
+          "NotActions": [],
+          "DataActions": [],
+          "NotDataActions": [],
+          "AssignableScopes": [
+            "#PUT YOUR MANAGEMENT GROUPS AND SUBSCRIPTION IDs HERE /providers/Microsoft.Management/managementGroups/{management group id} or /subscriptions/{subscription id} "
+          ]
+        }
+    :::
+
+    :::: {madcap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH"}
+    You can onboard multiple management groups or subscriptions at the
+    same time. The following JSON file is an example of onboarding an
+    array of multiple subscriptions.
+
+    ::: example
+        {
+          "Name": "sca-resource-role",
+          "IsCustom": true,
+          "Description": "SCA Custom role for Azure Resources",
+          "Actions": [
+            "Microsoft.Authorization/roleAssignments/read",
+            "Microsoft.Authorization/roleAssignments/write",
+            "Microsoft.Authorization/roleAssignments/delete",
+            "Microsoft.Authorization/roleDefinitions/read",
+            "Microsoft.Authorization/roleManagementPolicies/read",
+            "Microsoft.Authorization/permissions/read",
+            "Microsoft.ResourceGraph/operations/read",
+            "Microsoft.ResourceGraph/resources/read",
+            "Microsoft.Resources/subscriptions/read",
+            "Microsoft.Resources/subscriptions/resourceGroups/read",
+            "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+            "Microsoft.Resources/subscriptions/providers/read",
+            "Microsoft.Resources/subscriptions/resources/read",
+            "Microsoft.Resources/subscriptions/operationresults/read",
+            "Microsoft.Resources/resources/read",
+            "Microsoft.Management/managementGroups/read",
+            "Microsoft.Management/managementGroups/subscriptions/read"  
+          ],
+          "NotActions": [],
+          "DataActions": [],
+          "NotDataActions": [],
+          "AssignableScopes": [
+          
+         
+             "/subscriptions/{subscription id}","/subscriptions/{subscription id}","/subscriptions/{subscription id}"
+          ]
+        }
+    :::
+    ::::
+
+12. Apply the tenant root group ID where indicated in the script.
+
+13. Apply the management group or subscription ID where indicated in the
+    script.
+
+14. Apply the root management group ID where indicated in the script.
+
+15. Open the Azure CLI, switch to PowerShell, and do the following:
+
+    1.  In the menu bar, click [Manage files]{.Emphasis} \>
+        [Upload]{.Emphasis}.
+
+    2.  Navigate to the JSON file that you saved locally, and upload it
+        to the Azure environment.
+
+16. Run the following PowerShell command with the path to the JSON file
+    that contains the tenant root group ID:
+
+    ::: code
+        az role definition create --role-definition {path to JSON file on your local machine}
+    :::
+
+17. Open the Azure CLI, switch to PowerShell, and do the following:
+
+    1.  In the menu bar, click [Manage files ]{.Emphasis}\>
+        [Upload]{.Emphasis}.
+
+    2.  Navigate to the JSON file that you saved locally, and upload it
+        to the Azure environment.
+
+18. Run the following PowerShell command with the path to the JSON file
+    that contains the root management group ID:
+
+    ::: code
+        az role definition create --role-definition {path to JSON file on your local machine}
+    :::
+
+19. Run the following PowerShell command with the path to the JSON file
+    that contains the management group or subscription ID:
+
+    ::: code
+        az role definition create --role-definition {path to JSON file on your local machine}
+    :::
+
+20. From the navigation
+    pane`<conditionaltext madcap:conditions="snip-conditions.OnboardSCA-AD">`{=html}
+    in the Tenant Root
+    Group`</conditionaltext>`{=html}`<conditionaltext madcap:conditions="snip-conditions.OnboardSCA-RBAC">`{=html}
+    in the management group or subscription`</conditionaltext>`{=html},
+    select [ Access control (IAM)]{.Emphasis}.
+
+21. Click [Add ]{.Emphasis}\> [Add role assignment]{.Emphasis} to show
+    the role assignment wizard.
+
+22. In the Role page, search for the [Reader]{.Emphasis} role and select
+    it in the role table, then click [Next]{.Emphasis}.
+
+23. In the Role page, search for the [Reader]{.Emphasis} role and select
+    it in the role table, then click [Next]{.Emphasis}.
+
+24. In the Role page, search for the custom role, for example
+    [sca-aad-role]{.Emphasis}, select it in the role table, then click
+    [Next]{.Emphasis}.
+
+25. In the Role page, select [Privileged administrator
+    roles]{.Emphasis}, search for the custom role, for example
+    [sca-resource-role]{.Emphasis}, select it in the role table, then
+    click [Next]{.Emphasis}.
+
+26. In the Members page, assign the
+    `<conditionaltext madcap:conditions="snip-conditions.OnboardCEM-AD">`{=html}{% $cc_product_vars.CV-full %}`</conditionaltext>`{=html}`<variable name="cc_product_vars.CV-full" madcap:conditions="snip-conditions.OnboardCEM-RBAC">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-AD">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-RBAC">`{=html}`</variable>`{=html}
+    app registration to the role as follows:
+
+    1.  [Assign access to]{.Emphasis} - select [User, group or service
+        principal]{.Emphasis}.
+
+    2.  [Members]{.Emphasis} - click [Select members]{.Emphasis}, and in
+        the [Select]{.Emphasis} search box on the right side of the
+        console, start typing the name of the app registration you
+        created (for example, [cyb-cem-app]{.Emphasis
+        madcap:conditions="snip-conditions.OnboardCEM-AD"}[cyb-cem-app]{.Emphasis
+        madcap:conditions="snip-conditions.OnboardCEM-RBAC"}[cyb-sca-aad-app]{.Emphasis
+        madcap:conditions="snip-conditions.OnboardSCA-AD"}[cyb-sca-resource-app]{.Emphasis
+        madcap:conditions="snip-conditions.OnboardSCA-RBAC"}) until it
+        appears and you can select it.
+
+    3.  [Conditions]{.Emphasis} - Select [Allow user to assign all
+        roles]{.Emphasis}.
+
+27. Click [Select]{.Emphasis} at the bottom of the page, and then click
+    [Review + Assign]{.Emphasis}.
+
+28. In the Review + Assign page, click [Review + assign]{.Emphasis}.
+
+29. Repeat the procedure for each scope you want
+    {% $cc_product_vars.CV-full %}
+    to monitor.
+
+The upper right-hand corner of the Access control (IAM) page shows the
+status of the role assignment.
+
+The upper right-hand corner of the Access control (IAM) page shows the
+status of the role assignment.
+:::
+
+:::::::: {madcap:conditions="snip-conditions.NotSCA-AD"}
+<div>
+
+### Onboard the directory to `<conditionaltext madcap:conditions="snip-conditions.OnboardCEM-AD">`{=html}{% $cc_product_vars.CV-full %}`</conditionaltext>`{=html}`<variable name="cc_product_vars.CV-full" madcap:conditions="snip-conditions.OnboardCEM-RBAC">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-RBAC">`{=html}`</variable>`{=html} {#onboard-the-directory-to .step madcap:autonum="Step 9: "}
+
+Do this step in the
+{% $cc_product_vars.CV-full %}
+onboarding (New Azure directory) page after you finish configuring the
+new
+`<conditionaltext madcap:conditions="snip-conditions.OnboardCEM-AD">`{=html}{% $cc_product_vars.CV-full %}`</conditionaltext>`{=html}`<variable name="cc_product_vars.CV-full" madcap:conditions="snip-conditions.OnboardCEM-RBAC">`{=html}`</variable>`{=html}`<variable name="cc_product_vars.SCA-short" madcap:conditions="snip-conditions.OnboardSCA-RBAC">`{=html}`</variable>`{=html}
+app registration in the Microsoft Azure console.
+
+</div>
+
+::: {.important madcap:conditions="snip-conditions.OnboardCEM-ADforSCA"}
+Keep the
+{% $cc_product_vars.CV-full %}
+onboarding page open until you complete the entire work flow and start
+the discovery process.
+:::
+
+1.  In
+    {% $cc_product_vars.CV-full %},
+    go to [Settings ]{.Emphasis}\> [Platform management ]{.Emphasis}and
+    click the Azure tile.
+
+2.  In the Azure page, click [Add workspace]{.Emphasis}.
+
+3.  Select [Add new directory ]{.Emphasis}and click [Add]{.Emphasis}.
+
+4.  In the New Azure directory page, provide the directory ID.
+
+5.  In the [Specify the scope of the connection]{.Emphasis} area, select
+    [Connect the entire directory]{.Emphasis}.
+
+6.  Copy and paste the following JSON into an editor, and add the
+    directory ID, application ID, and application secret that you saved
+    in step 2 above.
+
+    ::: code
+        {"directory_id": "<PASTE-DIRECTORY-ID-HERE>","application_id": "<PASTE-APPLICATION-ID-HERE>","secret": "<PASTE-APPLICATION-SECRET-HERE>"}
+    :::
+
+<!-- -->
+
+1.  In
+    {% $cc_product_vars.CV-full %},
+    go to [Settings ]{.Emphasis}\> [Platform management ]{.Emphasis}and
+    click the Azure tile.
+
+2.  In the Azure page, click [Add workspace]{.Emphasis}.
+
+3.  Select [Add new directory ]{.Emphasis}and click [Add]{.Emphasis}.
+
+4.  In the New Azure directory page, provide the directory ID.
+
+5.  In the [Specify the scope of the connection]{.Emphasis} area, select
+    [Connection specific management groups ]{.Emphasis}or [Connect
+    specific subscriptions ]{.Emphasis}and provide the relevant ID.
+
+6.  Copy and paste the following JSON into an editor, and add the
+    directory ID, application ID, and application secret that you saved
+    in step 2 above.
+
+    ::: code
+        {"directory_id": "<PASTE-DIRECTORY-ID-HERE>","application_id": "<PASTE-APPLICATION-ID-HERE>","secret": "<PASTE-APPLICATION-SECRET-HERE>"}
+    :::
+
+::: {.note madcap:conditions="snip-conditions.OnboardCEM-ADforSCA"}
+If you close the
+{% $cc_product_vars.CV-full %}
+onboarding page in the interim, when you re-open it you\'ll have to
+input the
+{% $cc_product_vars.CV-full %}
+[finalValue ]{.Emphasis}again.
+:::
+
+1.  Copy and paste the following JSON into an editor, and add the
+    following information that you saved in step 2 above:
+
+    - [azure_resources ]{.Emphasis}
+
+      - Directory ID, application ID, and application secret that you
+        onboarded with the root management group in
+        [](/sca/latest/en/content/cloudadmin/cv-azure-manual.htm#OnboardanAzuremanagementgrouporsubscriptiontoSCA){target="_self"}
+
+        Onboard a management group or subscription to
+        \[%=cc_product_vars.SCA-short\]
+
+        `</a>`{=html}
+
+        </p>
+
+      - Key ID
+
+      - Object ID
+
+    - [azure_aad ]{.Emphasis}
+
+      - Directory ID, application ID, and application secret
+
+      - Key ID
+
+      - Object ID
+
+    ::: code
+        {
+          "azure_resources": {
+            "directory_id": "{directory_id}",
+            "application_id": "{cyb-sca-resource-app} id",
+            "secret": "{cyb-sca-resource-app} secret",
+            "key_id": "{cyb-sca-resource-app} key id",
+            "object_id": "{cyb-sca-resource-app} object_id"
+          },
+          "azure_aad": {
+            "directory_id": "{directory_id}",
+            "application_id": "{cyb-sca-aad-app} id",
+            "secret": "{cyb-sca-aad-app} secret",
+            "key_id": "{cyb-sca-aad-app} key id",
+            "object_id": "{cyb-sca-aad-app} object id"
+          }}
+    :::
+
+<!-- -->
+
+1.  In the
+    {% $cc_product_vars.CV-full %}
+    onboarding page, provide the directory ID.
+
+2.  In the [Specify the scope of the connection area]{.Emphasis}, select
+    [Connection specific management groups ]{.Emphasis}or [Connect
+    specific subscriptions ]{.Emphasis}and provide the relevant ID.
+
+3.  Copy and paste the following JSON file into an editor and add the
+    following parameters that you saved in step 2 above:
+
+    - Directory ID, application ID, and application secret
+
+    - Key ID
+
+    - Object ID
+
+    ::: code
+        {
+          "azure_resources": {
+            "directory_id": "{directory_id}",
+            "application_id": "{cyb-sca-resource-app} id",
+            "secret": "{cyb-sca-resource-app} secret",
+            "key_id": "{cyb-sca-resource-app} key id",
+            "object_id": "{cyb-sca-resource-app} object_id"
+          }}
+    :::
+
+<!-- -->
+
+1.  In the
+    {% $cc_product_vars.CV-full %}
+    onboarding page, provide the directory ID.
+
+2.  In the [Specify the scope of the connection area]{.Emphasis}, select
+    [Connect the entire directory]{.Emphasis}.
+
+3.  Copy and paste the following JSON file into an editor and add the
+    following parameters that you saved for each app registration (for
+    the resource root management group, and for the
+    {% $cc_product_vars.SCA-short %}
+    Entra ID directory):
+
+    - Directory ID, application ID, and application secret
+
+    - Key ID
+
+    - Object ID
+
+    ::: code
+        {
+          "azure_resources": {
+            "directory_id": "{directory_id}",
+            "application_id": "{cyb-sca-resource-app} id",
+            "secret": "{cyb-sca-resource-app} secret",
+            "key_id": "{cyb-sca-resource-app} key id",
+            "object_id": "{cyb-sca-resource-app} object_id"
+          },
+          "azure_aad": {
+            "directory_id": "{directory_id}",
+            "application_id": "{cyb-sca-aad-app} id",
+            "secret": "{cyb-sca-aad-app} secret",
+            "key_id": "{cyb-sca-aad-app} key id",
+            "object_id": "{cyb-sca-aad-app} object id"
+          }}
+    :::
+
+<!-- -->
+
+1.  Encode in Base64.
+
+2.  Encode the updated JSON file in Base64 and paste it into the
+    {% $cc_product_vars.SCA-short %}
+    [ finalValue ]{.Emphasis}area.
+
+3.  In the
+    {% $cc_product_vars.CV-full %}
+    [ FinalValue]{.Emphasis} area, paste the updated JSON.
+
+    ::: {.note madcap:conditions="snip-conditions.OnboardCEM-ADforSCA"}
+    The
+    {% $cc_product_vars.SCA-short %}
+    finalValue will be applied at a later step of the onboarding
+    process.
+    :::
+
+4.  In the
+    {% $cc_product_vars.CV-full %}
+    [FinalValue]{.Emphasis} area, paste the updated JSON.
+
+    ::: {.note madcap:conditions="snip-conditions.OnboardCEM-RBACforSCA"}
+    The
+    {% $cc_product_vars.SCA-short %}
+    finalValue will be applied at a later step of the onboarding
+    process.
+    :::
+
+5.  In the
+    {% $cc_product_vars.SCA-short %}
+    [ finalValue ]{.Emphasis}area, paste the updated JSON.
+
+6.  In the [Grant admin permissions to
+    {% $cc_product_vars.CV-full %} -
+    Azure resources app]{.Emphasis} area, click the [Microsoft\'s
+    request]{.Emphasis} link. When the Azure portal opens, follow the
+    instructions to complete this step in Azure.
+
+7.  In the [Grant admin permissions to
+    {% $cc_product_vars.CV-full %} -
+    Azure resources app]{.Emphasis} area, click the [Microsoft\'s
+    request]{.Emphasis} link. When the Azure portal opens, follow the
+    instructions to complete this step in Azure.
+
+8.  In the[ Grant admin permissions to SCA - Azure Active Directory
+    app]{.Emphasis} area, click the Microsoft\'s request link. When the
+    Azure portal opens, follow the instructions to complete this step in
+    Azure.
+
+9.  In the[ Grant admin permissions to SCA - Azure resources
+    app]{.Emphasis} area, click the Microsoft\'s request link. When the
+    Azure portal opens, follow the instructions to complete this step in
+    Azure.
+
+10. In the[ Grant admin permissions to SCA - Azure resources
+    app]{.Emphasis} area, click the Microsoft\'s request link. When the
+    Azure portal opens, follow the instructions to complete this step in
+    Azure.
+
+::: {.note madcap:conditions="snip-conditions.OnboardCEM-ADforSCA"}
+Leave the
+{% $cc_product_vars.CV-full %}
+onboarding page open until you complete all the procedures in your
+manual onboarding process.
+:::
+
+1.  Close the
+    {% $cc_product_vars.CV-full %}
+    confirmation page.
+
+2.  In the
+    {% $cc_product_vars.CV-full %}
+    onboarding page, click [Start discovery]{.Emphasis}.
+
+3.  In the
+    {% $cc_product_vars.CV-full %}
+    onboarding page, click [Start discovery]{.Emphasis}.
+
+::: {.important madcap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH"}
+If you\'re onboarding a Microsoft Entra ID directory, skip the [Start
+discovery]{.Emphasis} step for now. You should only start discovery at
+the end of the complete onboarding process.
+:::
+::::::::

@@ -1,0 +1,105 @@
+openapi: 3.0.0
+info:
+  title: Create AWS account
+  version: 1.0.0
+  description: >-
+    This method enables you to validate account configuration and if successful, onboards your accounts.
+  contact:
+    name: Cloud Visibility
+servers:
+  - url: https://<tenant-subdomain>-cem.cyberark.cloud/api
+    description: >-
+      cloud_visibility_base_url
+components:
+  securitySchemes:
+    bearerOAuth:
+      type: http
+      scheme: bearer
+      description: ''
+  schemas: 
+    AccountInputData:
+      type: object
+      properties:
+        accountId:
+          type: string
+          description: The 12-digit AWS account ID
+        iamRoleArn:
+          type: string
+          description: ARN of the role used to read IAM data.
+        deploymentRegion:
+          type: string
+          description: The region that you want to deploy the CloudFormation on.
+        Description:
+          type: string
+          description: Workspace description.
+        displayName:
+          type: string
+          description: Workspace display name.
+          
+    AccountCreateErrorResponse: 
+      type: object
+      properties: 
+        statusCode: 
+          type: integer
+          description: Error status code
+        contextId:
+          type: string
+          description: Request context id
+        message:
+          type: string
+          description: Error message
+        internalCode: 
+          type: integer
+          description: Internal error code
+
+paths:
+  /new_account/platforms/aws/workspaces:
+    post:
+      tags:
+        - Operations
+      summary: >-
+        Create an account
+      security:
+        - bearerOAuth: []
+      requestBody:
+        description: Account data for creation
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountInputData'
+            examples:
+              SingleRoleName:
+                description: >-
+                  Request with the role name for IAM access
+                value:
+                  accountId: 123456789012
+                  iamRoleArn: arn:aws:iam::123456789012:role/CyberArkRoleForCEM223673983569
+                  deploymentRegion: us-west-2
+      responses:
+        '200':
+          description: Account successfully created
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountCreateErrorResponse'
+              examples:
+                ErrorWithResources:
+                  description: >-
+                    Error with resources
+                  value:
+                    statusCode: 400   
+                    contextId: 77a5e431-bde7-46fc-bb44-87de0d231196  
+                    message: Validation Error:arn:aws:iam::123456789012:role/CyberArkRoleForCEM622382967619 unableToAssumeRole
+                    internalCode: 656
+                ErrorWithMissingInputField:
+                  description: >-
+                    Missing input field
+                  value:
+                    statusCode: 400   
+                    contextId: 77a5e431-bde7-46fc-bb44-87de0d231196  
+                    message: Failed to onboard account. Validation error, field required iamRoleArn.  
+                    internalCode: 302
+      operationId: createAccount

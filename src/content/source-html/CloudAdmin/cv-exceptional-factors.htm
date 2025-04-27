@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Admin permissions</h1>
+        <p>Admin permissions refers to the admin level of permissions assigned to an identity. This topic describes how <MadCap:variable name="cc_product_vars.CV-full" /> determines if an identity has admin permissions.</p>
+        <h2>What is an  admin?</h2>
+        <p MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">In general, <MadCap:variable name="cc_product_vars.CV-full" /> describes an identity as an admin if that identity is <span class="Emphasis">directly</span> granted all permissions over all resources in the workspace. Each cloud provider defines admins differently.</p>
+        <p>An identity is an admin if it has <span class="Emphasis">all permissions (*.*) granted directly at the workspace level</span> for all resources of:</p>
+        <ul>
+            <li>
+                <p>An <span class="Emphasis">account </span>in AWS. </p>
+            </li>
+            <li>
+                <p>A <span class="Emphasis">subscription </span>or <span class="Emphasis">management group scope</span> in Azure. </p>
+            </li>
+            <li>
+                <p>A <span class="Emphasis">project </span>or <span class="Emphasis">folder </span>or <span class="Emphasis">organization  scope</span> in Google Cloud.</p>
+            </li>
+        </ul>
+        <p>In addition, there must only be one source for the granting of the permissions.</p>
+        <div class="example">
+            <p>For example  <MadCap:variable name="cc_product_vars.CV-full" /> would not classify the following as having admin permissions:</p>
+            <ul>
+                <li>
+                    <p>An identity with indirect permissions for all resources of an account in AWS.</p>
+                </li>
+                <li>
+                    <p>An identity granted all permissions by two policies.</p>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

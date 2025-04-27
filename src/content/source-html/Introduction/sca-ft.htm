@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="cc_product_vars.SCA-full" /> free trial</h1>
+        <p>Welcome to the <MadCap:variable name="cc_product_vars.SCA-full" /> (<MadCap:variable name="cc_product_vars.SCA-short" />) free trial.<br /></p>
+        <p>The free trial offers a guided experience to help you onboard workspaces in your cloud environment to <MadCap:variable name="cc_C_CyberArk.CompanyName" />. </p>
+        <p>During the trial, you can explore key features, such as defining secure cloud access policies for current and new users. Users can explore connecting to your cloud environments based on their assigned roles. After completing the onboarding process, you’ll have access to additional features, including configuring session recording, connecting to a third-party IdP, and setting up request approval channels.</p>
+        <h2>Supported cloud workspaces</h2>
+        <p><MadCap:variable name="cc_product_vars.SCA-short" /> supports:</p>
+        <ul>
+            <li>
+                <p><MadCap:variable name="sca-project-variables.AWS-IAM" /> and <MadCap:variable name="sca-project-variables.AWS-AD" /></p>
+            </li>
+            <li>
+                <p><MadCap:variable name="cv-shared-variables.entra-id-long" /> and <MadCap:variable name="sca-project-variables.Azure" /> resources</p>
+            </li>
+            <li>
+                <p><MadCap:variable name="sca-project-variables.GCP" /> organizations and projects</p>
+            </li>
+        </ul>
+        <h2>Before you begin</h2>
+        <p>Here are some notes before you start with the free trial.</p>
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>
+                <p><span class="Emphasis"><MadCap:variable name="cc_product_vars.Identity-full" /> user roles</span> -  In your CyberArk SCA free trial  tenant, you are given the necessary administrative roles and access to the <MadCap:variable name="cc_product_vars.Administration-full" /> space and services that you will be working with during your free trial period.</p>
+                <p>The following roles are provided:</p>
+                <table style="width: 100%;caption-side: top;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Role</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Description</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">System Administrator</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Gives full admin rights on all <MadCap:variable name="cc_C_CyberArk.CompanyName" /> platform services</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">CEMAdmin</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Gives full admin access to <MadCap:variable name="cc_product_vars.CV-full" /></p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">CS Admin</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Gives full admin access to <MadCap:variable name="cc_product_vars.SCA-full" /> functionality</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">SWS Admin</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Gives full admin access to <MadCap:variable name="cc_product_vars.SWS-full" />, where you configure and view recordings of user sessions in your cloud environments</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Global Auditor</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>Gives global auditing access to the <a href="/audit/latest/en/content/resources/_topnav/cc_home.htm" alt="Link to the Audit documentation in the docs portal">Audit service</a> for monitoring system activity by event</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p><span class="Emphasis">Web browser pop-up blocker</span> - Allow the <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant URL (*.id.cyberark.cloud) in your browser's pop-up blocker settings.</p>
+            </li>
+            <li>
+                <p><span class="Emphasis">External links</span> - Links from the <MadCap:variable name="cc_C_CyberArk.CompanyName" /> platform UI to external URLs may behave unexpectedly, usually due to a URL&#160;protection or pop-up blocker software that you are working with. If you experience this during the trial, add the relevant URLs to the allowed or trusted sites in your URL&#160;protection or pop-up blocker software.</p>
+            </li>
+            <li>
+                <p><span class="Emphasis">Prerequisites per cloud provider:</span>
+                </p>
+                <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Cloud provider</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Prerequisites</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">AWS</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <ul>
+                                    <li>
+                                        <p>You need an AWS account or organization including at least two assumable IAM roles (or permission sets, in the case of <MadCap:variable name="sca-project-variables.AWS-AD" />). For more information about creating AWS IAM roles, see the <a target="_blank" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html">AWS documentation</a>.</p>
+                                        <div class="note">
+                                            <p>Make sure these roles are not allocated in AWS to any of the users you'll be working with in the free trial.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>You need to be an administrative user in AWS with the roles and permissions described in <MadCap:xref href="../CloudAdmin/cv-AWS-permissions.htm#Admin">Admin required permissions</MadCap:xref>.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis"><MadCap:variable name="sca-project-variables.Azure"></MadCap:variable> </span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <ul>
+                                    <li>
+                                        <p>You need a <MadCap:variable name="cv-shared-variables.entra-id-long" /> directory with at least one subscription.</p>
+                                    </li>
+                                    <li>
+                                        <p>You must be a global administrator of your <MadCap:variable name="cv-shared-variables.entra-id-long" /> directory.</p>
+                                    </li>
+                                    <li>
+                                        <p>If you are onboarding a subscription, you must be the owner of the root management group in the directory.</p>
+                                    </li>
+                                    <li>
+                                        <p>Log in to Microsoft Entra ID, go to <span class="Emphasis">Manage &gt; Properties</span>, and make sure that <span class="Emphasis">Can manage access to all Azure subscriptions and management groups in this tenant</span> is selected. Save your changes.</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">GCP</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <ul>
+                                    <li>
+                                        <p>You need a Google Cloud organization with at least one project.</p>
+                                    </li>
+                                    <li>
+                                        <p>You need the following permissions on the organization:</p>
+                                        <ul>
+                                            <li>
+                                                <p><span class="Emphasis">roles/resourcemanager.organizationAdmin</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p><span class="Emphasis">roles/owner</span>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p><span class="Emphasis">roles/logging.admin</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+        <h3>Get familiar with the user interface</h3>
+        <p>After you signed up for the <MadCap:variable name="cc_product_vars.SCA-short" /> free trial, you received an email with all the information you need for signing in to your <MadCap:variable name="project_variables.CompanyName" /> tenant. Sign in and let's get started!</p>
+        <p>Here's a brief tour of the <MadCap:variable name="cc_product_vars.Administration-full" /> space user interface to get you going:</p>
+        <p>
+            <img src="Images/sca-ft-tour.png" class="Enlarge" />
+        </p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>CyberArk <MadCap:variable name="cc_product_vars.Navigator" /></p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Enable you to navigate the <MadCap:variable name="cc_C_CyberArk.CompanyName" /> platform's services</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>
+                            <img src="Images/sca-ft-get-started.png" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Opens an in-app guided flow, "Onboard to SCA," which walks you through the initial onboarding process.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>
+                            <img src="Images/sca-ft-open-guide.png" class="icon" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Reopens the in-app guided flow at the last flow you were working on.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><span class="Emphasis">Guided flows pane</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>After you complete the initial onboarding, explore the guided flows under <span class="Emphasis">Explore</span>, <span class="Emphasis">Expand</span>, and <span class="Emphasis">Optimize </span>to gain deeper insights into managing zero-standing privilege access for your cloud environments.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Get"></a>Get started - Onboard to SCA</h2>
+        <p>After you log in to the <MadCap:variable name="cc_C_CyberArk.CompanyName" /> <MadCap:variable name="cc_product_vars.Administration-full" /> home page, click <span class="Emphasis">Get started</span>. Follow the in-app guided flow, which walks you through the onboarding process.</p>
+        <p>
+            <img src="Images/sca-ft-get-started-123.png" />
+        </p>
+        <h3 class="step" MadCap:autonum="Step 1: "><a name="Add"></a><a name="ft-add-workspace"></a>Add your cloud environment</h3>
+        <p>Let <MadCap:variable name="cc_C_CyberArk.CompanyName" /><MadCap:variable name="cc_product_vars.CV-full" /> discover your cloud environment's structure.</p>
+        <ul>
+            <li>
+                <p>
+                    <MadCap:xref href="../CloudAdmin/cv-aws-discovery.htm">Add AWS</MadCap:xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="../CloudAdmin/cv-onboard-azure.htm">Add Azure - [%=cv-shared-variables.entra-id-long%]</MadCap:xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="../CloudAdmin/cv-gcp-discovery.htm">Add Google Cloud</MadCap:xref>
+                </p>
+            </li>
+        </ul>
+        <h3 class="step" MadCap:autonum="Step 2: "><a name="Configur"></a><a name="ft-create-webapp"></a>Configure one-click user access</h3>
+        <p>Create a cloud provider app tile, which serves as an entry point from <MadCap:variable name="cc_C_CyberArk.CompanyName" /> to your cloud environment. This tile will appear in your <span class="Emphasis">Applications</span> page in the <MadCap:variable name="cc_product_vars.SecureAccessSpace" /> space.</p>
+        <ul>
+            <li>
+                <p>
+                    <MadCap:xref href="../DPAforCloud/sca_create-aws-web-app.htm">Create a web app for AWS</MadCap:xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="../DPAforCloud/sca_create-azure-web-app.htm">Create a web app for [%=cv-shared-variables.entra-id-long%]</MadCap:xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="../DPAforCloud/sca_create-gcp-web-app.htm">Create a web app for Google Cloud</MadCap:xref>
+                </p>
+            </li>
+        </ul>
+        <h3 class="step" MadCap:autonum="Step 3: "><a name="map-user"></a>Map your user</h3>
+        <p>Map your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user to your user in your cloud environment. </p>
+        <div class="tabs">
+            <ul class="tabs-nav">
+                <li class="tab-active"><a data-cc-tab=".tab-1"><MadCap:variable name="sca-project-variables.AWS-AD" /></a>
+                </li>
+                <li><a data-cc-tab=".tab-2">Azure</a>
+                </li>
+                <li><a data-cc-tab=".tab-3">GCP</a>
+                </li>
+            </ul>
+            <div class="tabs-stage">
+                <div class="tab-1">
+                    <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 1 Content - AWS</p>
+                    <div class="ProcedureHeading">
+                        <p>Map your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user to your <MadCap:variable name="sca-project-variables.AWS-AD" /> user:</p>
+                    </div>
+                    <div class="note">
+                        <p>For standalone AWS accounts or AWS organizations <span class="Emphasis">without </span>IAM Identity Center, you can skip this step as no mapping is required.</p>
+                    </div>
+                    <div class="important">
+                        <p>This section assumes you are using <MadCap:variable name="cc_product_vars.Identity-full" /> as your IdP, and that this option was selected when the <MadCap:variable name="sca-project-variables.AWS-AD" /> cloud provider app was created in <MadCap:xref href="#Configur">Configure one-click user access</MadCap:xref>.</p>
+                    </div>
+                    <ol>
+                        <li>
+                            <p>Define trust with <MadCap:variable name="sca-project-variables.AWS-AD" />: Follow the instructions in <MadCap:xref href="../DPAforCloud/sca_create-aws-web-app.htm#Configur">Create a web app for an AWS workspace</MadCap:xref>, under the <span class="Emphasis"><MadCap:variable name="sca-project-variables.AWS-AD" /></span> tab &gt;&#160;<span class="Emphasis">Configure the IdP - required only if you are using CyberArk Identity as your external IdP</span>.</p>
+                        </li>
+                        <li>
+                            <p>Create a user in <MadCap:variable name="sca-project-variables.AWS-AD" /> with the same name as your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user. For example, if your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> users is <span class="Emphasis">demo-user@11111.cyberark.cloud</span>, create an <MadCap:variable name="sca-project-variables.AWS-AD" /> user with the same name, <span class="Emphasis">demo-user@11111.cyberark.cloud</span>.</p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="tab-2">
+                    <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 2 Content - AZURE</p>
+                    <p><span class="Emphasis">Prerequisite:</span> Make sure you have an Azure user whose prefix is identical to your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user.</p>
+                    <p> If you don't have such a user in Azure, create one now using the same prefix as your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user, as follows: <span class="Emphasis">&lt;user prefix in identity&gt;@azuredomain</span>.</p>
+                    <p>For example, if your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user is <span class="Emphasis">demo-user</span>@11111.cyberark.cloud, and then create a Azure user as follows:&#160;<span class="Emphasis">demo-user</span>@acme.com, where <span class="Emphasis">acme.com</span> is your Azure domain.</p>
+                    <div class="ProcedureHeading">
+                        <p><span class="Emphasis">Map your CyberArk tenant user to your Azure user:</span>
+                        </p>
+                    </div>
+                    <ol>
+                        <li>
+                            <p>From the Administration spacel navigator, select <MadCap:variable name="cc_product_vars.IdentityAdmin-full"></MadCap:variable>.</p>
+                        </li>
+                        <li>
+                            <p>In the left navigation, under <span class="Emphasis">Apps &amp; Widgets</span>, select <span class="Emphasis">Web Apps</span>.</p>
+                        </li>
+                        <li>
+                            <p>Open the Azure web app that you created in <MadCap:xref href="#Configur">Configure one-click user access</MadCap:xref>.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="Emphasis">Account mapping</span> tab, select <span class="Emphasis">Account Mapping Script</span> and enter the script (<span class="Emphasis">case-sensitive</span>) as follows, replacing <span class="Emphasis">azuredomain</span> with your organization's Azure domain:</p>
+                            <div class="code"><pre><code>LoginUser.Username= LoginUser.Shortname + "@<span class="Italics"><span class="Emphasis">azuredomain</span></span>";</code></pre>
+                            </div>
+                            <p>For example, if your Azure user name is <span class="Emphasis">eva@acme.com</span>, then your Azure domain is <span class="Emphasis">acme.com</span>. In the script, replace <code>azuredomain</code> with <span class="Emphasis">acme.com</span>:</p>
+                            <div class="example"><pre><code>LoginUser.Username= LoginUser.Shortname + "@<span class="Emphasis">acme.com</span>";</code></pre>
+                            </div>
+                            <p>
+                                <div class="tip">
+                                    <p>This mapping script will also map users that you add later on in this free trial.</p>
+                                </div>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Save your changes.</p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="tab-3">
+                    <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 3 Content - GCP</p>
+                    <p><span class="Emphasis">Prerequisite:</span> Make sure you have a GCP user whose prefix is identical to your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user.</p>
+                    <p> If you don't have such a user in GCP, create one now using the same prefix as your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user, as follows: <span class="Emphasis">&lt;user prefix in identity&gt;@googledomain</span>.</p>
+                    <p>For example, if your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user is <span class="Emphasis">demo-user</span>@11111.cyberark.cloud, and then create a GCP&#160;user as follows:&#160;<span class="Emphasis">demo-user</span>@acme.com, where <span class="Emphasis">acme.com</span> is your Google domain.</p>
+                    <div class="ProcedureHeading">
+                        <p><span class="Emphasis">Map your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user to your GCP user:</span>
+                        </p>
+                    </div>
+                    <div class="important">
+                        <p>This process assumes you are using <MadCap:variable name="cc_product_vars.Identity-full" /> as your IdP, and that this option was selected when the GCP cloud provider app was created in <MadCap:xref href="#Configur">Configure one-click user access</MadCap:xref>.</p>
+                    </div>
+                    <ol>
+                        <li>
+                            <p>From the <MadCap:variable name="cc_product_vars.Administration-full" /> space navigator, select <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />.</p>
+                        </li>
+                        <li>
+                            <p>In the left navigation, under <span class="Emphasis">Apps &amp; Widgets</span>, select <span class="Emphasis">Web Apps</span>.</p>
+                        </li>
+                        <li>
+                            <p>Open the GCP application that you created in <MadCap:xref href="#Configur">Configure one-click user access</MadCap:xref>.</p>
+                        </li>
+                        <li>
+                            <p>Under <span class="Emphasis">Secure Cloud Access</span>, make sure that both <span class="Emphasis">Enable <MadCap:variable name="cc_product_vars.SCA-full" /></span> and <span class="Emphasis">CyberArk as the IdP</span> are selected.</p>
+                        </li>
+                        <li>
+                            <p>Define trust with GCP. For details, go to <MadCap:xref href="../DPAforCloud/sca_create-gcp-web-app.htm">Create a web app for Google Cloud</MadCap:xref> and follow <MadCap:xref href="../DPAforCloud/sca_create-gcp-web-app.htm#Configur2">Configure authentication</MadCap:xref>.</p>
+                        </li>
+                        <li>
+                            <p>Map your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> tenant user to your GCP user:</p>
+                            <ol>
+                                <li>
+                                    <p>In the <span class="Emphasis">Account mapping</span> tab, select <span class="Emphasis">Account Mapping Script</span> and enter the script (<span class="Emphasis">case-sensitive</span>) as follows:</p>
+                                    <div class="code"><pre><code>LoginUser.Username=LoginUser.Shortname + '@'+ Application.Get('CorpIdentifier');</code></pre>
+                                    </div>
+                                    <div class="tip">
+                                        <p>This mapping script will also map users that you add later on in this free trial.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p> Save your changes.</p>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <h3 class="step" MadCap:autonum="Step 4: ">Validate your onboarding</h3>
+        <p>On the <MadCap:variable name="cc_product_vars.Administration-full" /> space home page, click <span class="Emphasis">Done? Validate now</span>. </p>
+        <p>The validation window opens and displays the validation results. If there are any issues, follow the instructions in the validation error messages. When you are done, click <span class="Emphasis">Revalidate</span>.</p>
+        <h2>Connect to your cloud environment with zero standing privileges (ZSP)</h2>
+        <p>Once you have onboarded your workspace to <MadCap:variable name="cc_product_vars.SCA-short" />, you grant users ZSP to the workspace. </p>
+        <p>To achieve this, you create access policies that specify the roles a user can have in your cloud environment, along with when and for how long they can access these roles. This approach enforces zero-standing access to your organization's cloud resources while ensuring users get the access they need, only when they need it.</p>
+        <h3 class="stepReset" MadCap:autonum="Step 1: ">Grant zero standing privileges (ZSP)</h3>
+        <div class="ProcedureHeading">
+            <p>To create a policy:</p>
+        </div>
+        <p>On the <MadCap:variable name="cc_product_vars.Administration-full" /> space home page, under the <span class="Emphasis">Guided flows</span> area, go to <span class="Emphasis">Explore</span> &gt;&#160;<span class="Emphasis">Grant zero standing privileges</span> and follow the guided steps.</p>
+        <p><span class="Emphasis">See also: </span>
+            <MadCap:xref href="../DPAforCloud/sca_create-policy.htm">Create [%=cc_product_vars.SCA-short%] policies for cloud access</MadCap:xref>
+        </p>
+        <h3 class="step" MadCap:autonum="Step 2: ">Experience zero standing privileges</h3>
+        <p>Experience firsthand how your end users will connect to the cloud environment.</p>
+        <div class="ProcedureHeading">
+            <p>To connect to the cloud environment:</p>
+        </div>
+        <p>On the <MadCap:variable name="cc_product_vars.Administration-full" /> space home page, in the <span class="Emphasis">Guided flows</span> area, under <span class="Emphasis">Explore</span>, click <span class="Emphasis">Experience zero standing privileges</span> and follow the guided steps.</p>
+        <p>As long as there is a policy set up giving you access at the current time, you will be able to connect.</p>
+        <p><span class="Emphasis">See also:</span> <a href="/secure-access-space/latest/en/content/cloud-consoles/sas-cloudconsoles-lp.htm">Connect to your cloud environment</a></p>
+        <div class="ProcedureHeading">
+            <p>To request access to the cloud environment:</p>
+        </div>
+        <p>If you aren't able to connect, you can send an access request.</p>
+        <p>On the <MadCap:variable name="cc_product_vars.Administration-full" /> space home page, in the <span class="Emphasis">Guided flows</span> area, under <span class="Emphasis">Explore</span>, click <span class="Emphasis">Request on-demand access</span> and follow the guided steps.</p>
+        <p><span class="Emphasis">See also:</span> <a href="/secure-access-space/latest/en/content/cloud-consoles/sca_request-temporary-access.htm">Request temporary access</a></p>
+        <h2>Explore more guided flows</h2>
+        <p>Now that you are onboarded to <MadCap:variable name="cc_product_vars.SCA-short" /> and have run through the initial guided flows, explore the extended flows, and then go ahead and optimize your <MadCap:variable name="cc_product_vars.SCA-short" /> experience.</p>
+        <h3>Extend</h3>
+        <table style="width: 100%;caption-side: top;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Guided flow</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Enforce session recording</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Set up enforced recordings of active <MadCap:variable name="project_variables.CompanyName" /> sessions on your workspaces.</p>
+                        <p>For more information, see the <a target="_blank" href="/sws/latest/en/content/resources/_topnav/cc_home.htm"><MadCap:variable name="cc_product_vars.SWS-full" /> docs</a>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><a name="add-more-users"></a><span class="Emphasis">Add more users</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Add more users to <MadCap:variable name="cc_C_CyberArk.CompanyName" /> so that they too can get secure access to the onboarded workspace. Follow the instructions per the onboarded workspace:</p>
+                        <div class="tabs">
+                            <ul class="tabs-nav">
+                                <li class="tab-active"><a data-cc-tab=".tab-1">AWS</a>
+                                </li>
+                                <li><a data-cc-tab=".tab-2">Azure</a>
+                                </li>
+                                <li><a data-cc-tab=".tab-3">GCP</a>
+                                </li>
+                            </ul>
+                            <div class="tabs-stage">
+                                <div class="tab-1">
+                                    <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 1 Content - AWS</p>
+                                    <div class="ProcedureHeading">
+                                        <p>To add a <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> user:</p>
+                                    </div>
+                                    <ol>
+                                        <li>
+                                            <p>Add a <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> user. Follow the instructions in <a target="_blank" href="/identity-administration/latest/en/content/coreservices/getstarted/usersadd.htm">Add CyberArk Cloud Directory Users</a>, keeping the following in mind:</p>
+                                            <ul>
+                                                <li>
+                                                    <p>When you define the <span class="Emphasis">Login name</span>, this value must be identical to the user's cloud user prefix. For example if their cloud user is <span class="Emphasis">demo-user1@acme.com</span>, define <span class="Emphasis">Login name</span> as <span class="Emphasis">demo-user1</span>.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Select the option to invite the user to sign in to CyberArk!</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>Give the user the following roles (see <a target="_blank" href="/identity-administration/latest/en/content/coreservices/getstarted/userrolesassign.htm">Assign users to roles and manage roles</a>):</p>
+                                            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                                                <col class="TableStyle-Standard-Column-Column1" />
+                                                <col class="TableStyle-Standard-Column-Column1" />
+                                                <thead>
+                                                    <tr class="TableStyle-Standard-Head-Header1">
+                                                        <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                                            <p>Role</p>
+                                                        </th>
+                                                        <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                                            <p>Description</p>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="TableStyle-Standard-Body-Body1">
+                                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                                            <p><span class="Emphasis">System Administrator</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                                            <p>Allows the user to access <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /> and SCA</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="TableStyle-Standard-Body-Body1">
+                                                        <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                                            <p><span class="Emphasis">CEMAdmin</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                                            <p>Allows the user to access <MadCap:variable name="cc_product_vars.CV-full" /></p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <p><span class="Emphasis"><MadCap:variable name="sca-project-variables.AWS-AD"></MadCap:variable></span> - Map the user:</p>
+                                            <div class="important">
+                                                <p>This section assumes you are using <MadCap:variable name="cc_product_vars.Identity-full"></MadCap:variable> as your IdP, and that this option was selected when you created the <MadCap:variable name="sca-project-variables.AWS-AD"></MadCap:variable> web app in <MadCap:xref href="#Configur">Configure one-click user access</MadCap:xref>.</p>
+                                            </div>
+                                            <ol>
+                                                <li>
+                                                    <p>Define trust with <MadCap:variable name="sca-project-variables.AWS-AD"></MadCap:variable>: Follow the instructions in <MadCap:xref href="../DPAforCloud/sca_create-aws-web-app.htm#Configur">Create a web app for an AWS workspace</MadCap:xref>, under the <span class="Emphasis"><MadCap:variable name="sca-project-variables.AWS-AD"></MadCap:variable></span> tab &gt;&#160;<span class="Emphasis">Configure the IdP - required only if you are using CyberArk Identity as your external IdP</span>.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Create a user in <MadCap:variable name="sca-project-variables.AWS-AD"></MadCap:variable> with the same name as the <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> tenant user you created for the new user. For example, if their <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> user is <span class="Emphasis">demo-user1@11111.cyberark.cloud</span>, create an <MadCap:variable name="sca-project-variables.AWS-AD"></MadCap:variable> user with the same name, <span class="Emphasis">demo-user1@11111.cyberark.cloud</span>.</p>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <p>Let the user try to connect to the environment from the AWS app tile on their <span class="Emphasis">Applications</span> page in the <MadCap:variable name="cc_product_vars.SecureAccessSpace" /> space.</p>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="tab-2">
+                                    <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 2 Content -Azure</p>
+                                    <p><span class="Emphasis">Prerequisite:</span>&#160;Make sure the user you're inviting has a user in Azure. If not, create one for them now.</p>
+                                    <div class="ProcedureHeading">
+                                        <p>To add a <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> user:</p>
+                                    </div>
+                                    <ol>
+                                        <li>
+                                            <p>Add a <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> user. Follow the instructions in <a target="_blank" href="/identity-administration/latest/en/content/coreservices/getstarted/usersadd.htm">Add CyberArk Cloud Directory Users</a>, keeping the following in mind:</p>
+                                            <ul>
+                                                <li>
+                                                    <p>When you define the <span class="Emphasis">Login name</span>, this value must be identical to the user's cloud user prefix. For example if their cloud user is <span class="Emphasis">demo-user1@acme.com</span>, define <span class="Emphasis">Login name</span> as <span class="Emphasis">demo-user1</span>.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Select the option to invite the user to sign in to CyberArk!</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>Give the user the following roles (see <a target="_blank" href="/identity-administration/latest/en/content/coreservices/getstarted/userrolesassign.htm">Assign users to roles and manage roles</a>):</p>
+                                            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                                                <col class="TableStyle-Standard-Column-Column1" />
+                                                <col class="TableStyle-Standard-Column-Column1" />
+                                                <thead>
+                                                    <tr class="TableStyle-Standard-Head-Header1">
+                                                        <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                                            <p>Role</p>
+                                                        </th>
+                                                        <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                                            <p>Description</p>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="TableStyle-Standard-Body-Body1">
+                                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                                            <p><span class="Emphasis">System Administrator</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                                            <p>Allows the user to access <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /> and <MadCap:variable name="cc_product_vars.SCA-short" /></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="TableStyle-Standard-Body-Body1">
+                                                        <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                                            <p><span class="Emphasis">CEMAdmin</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                                            <p>Allows the user to access <MadCap:variable name="cc_product_vars.CV-full" /></p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <p>Let the user try to connect to the environment from the Azure app tile on their <span class="Emphasis">Applications</span> page in the <MadCap:variable name="cc_product_vars.SecureAccessSpace" /> space.</p>
+                                        </li>
+                                    </ol>
+                                    <div class="note">
+                                        <p>The user mapping that you defined in the initial onboarding maps any additional users, so no additional mapping is needed.</p>
+                                    </div>
+                                </div>
+                                <div class="tab-3">
+                                    <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 3 Content - GCP</p>
+                                    <p><span class="Emphasis">Prerequisite:</span>&#160;Make sure the user you're inviting has a user in GCP. If not, create one for them now.</p>
+                                    <div class="ProcedureHeading">
+                                        <p>To add a <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> user:</p>
+                                    </div>
+                                    <ol>
+                                        <li>
+                                            <p>Add a <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> user. Follow the instructions in <a target="_blank" href="/identity-administration/latest/en/content/coreservices/getstarted/usersadd.htm">Add CyberArk Cloud Directory Users</a>, keeping the following in mind:</p>
+                                            <ul>
+                                                <li>
+                                                    <p>When you define the <span class="Emphasis">Login name</span>, this value must be identical to the user's cloud user prefix. For example if their cloud user is <span class="Emphasis">demo-user1@acme.com</span>, define <span class="Emphasis">Login name</span> as <span class="Emphasis">demo-user1</span>.</p>
+                                                </li>
+                                                <li>
+                                                    <p>Select the option to invite the user to sign in to CyberArk.</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>Give the user the following roles (see <a target="_blank" href="/identity-administration/latest/en/content/coreservices/getstarted/userrolesassign.htm">Assign users to roles and manage roles</a>):</p>
+                                            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                                                <col class="TableStyle-Standard-Column-Column1" />
+                                                <col class="TableStyle-Standard-Column-Column1" />
+                                                <thead>
+                                                    <tr class="TableStyle-Standard-Head-Header1">
+                                                        <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                                            <p>Role</p>
+                                                        </th>
+                                                        <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                                            <p>Description</p>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="TableStyle-Standard-Body-Body1">
+                                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                                            <p><span class="Emphasis">System Administrator</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                                            <p>Allows the user to access <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /> and <MadCap:variable name="cc_product_vars.SCA-short" /></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="TableStyle-Standard-Body-Body1">
+                                                        <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                                            <p><span class="Emphasis">CEMAdmin</span>
+                                                            </p>
+                                                        </td>
+                                                        <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                                            <p>Allows the user to access <MadCap:variable name="cc_product_vars.CV-full" /></p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <p>Let the user try to connect to the environment from the Google Cloud app tile on  their <span class="Emphasis">Applications</span> page in the <MadCap:variable name="cc_product_vars.SecureAccessSpace" /> space.</p>
+                                        </li>
+                                    </ol>
+                                    <div class="note">
+                                        <p>The user mapping that you defined in the initial onboarding maps any additional users, so no additional mapping is needed.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><span class="Emphasis">Add more workspaces</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Onboard more workspaces to <MadCap:variable name="cc_product_vars.SCA-short" />:</p>
+                        <ol>
+                            <li>
+                                <p>Onboard more workspaces as described in <MadCap:xref href="#Add">Add your cloud environment</MadCap:xref>.</p>
+                            </li>
+                            <li>
+                                <p>Create cloud provider apps for the workspaces as described in <MadCap:xref href="#Configur">Configure one-click user access</MadCap:xref>.</p>
+                            </li>
+                            <li>
+                                <p>Map your <MadCap:variable name="cc_C_CyberArk.CompanyName" /> users and cloud users as you did earlier:</p>
+                                <div class="note">
+                                    <p>If you onboarded a workspace from the same cloud provider as you did in the initial onboarding, you'll already have done this mapping, so you can skip this.</p>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <p>One user: <MadCap:xref href="#map-user">Map your user</MadCap:xref></p>
+                                    </li>
+                                    <li>
+                                        <p>More than one user: See the step about mapping users in <MadCap:xref href="#add-more-users">Add more users</MadCap:xref></p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Optimize</h3>
+        <table style="width: 100%;caption-side: top;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Guided flow</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Automate SCA&#160;operations</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Automate <MadCap:variable name="cc_product_vars.SCA-short" /> operations such as onboarding and policy creation using our APIs and Terraform capabilities.</p>
+                        <p>For more information, see <MadCap:xref href="../HomeTilesLPs/LP-Tile3.htm">Automate [%=cc_product_vars.SCA-short%] operations</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Delegate ownership</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Delegate workspace owners to:</p>
+                        <ul>
+                            <li>
+                                <p> Perform admin tasks on their delegated workspaces</p>
+                            </li>
+                            <li>
+                                <p>Handle requests for access to their delegated workspaces</p>
+                            </li>
+                        </ul>
+                        <p>For more information, see <MadCap:xref href="../CloudAdmin/cv-delegation.htm">Manage workspace delegation</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><span class="Emphasis"><a name="sca-ft-connect-idp"></a>Connect your IdP</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>If your organization is working with a third-party IdP, connect it to CyberArk so that you don't have to add users manually.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>
+            <br />Video gallery</h2>
+        <p>Explore our "How-to" video gallery. See <MadCap:xref href="../videos/video-gallery.htm">Video gallery</MadCap:xref>.</p>
+        <h2>Troubleshoot</h2>
+        <p>This section describes issues that may arise when you are working with the <MadCap:variable name="cc_product_vars.SCA-short" /> free trial, and suggests resolutions.</p>
+        <h3>Onboarding to <MadCap:variable name="cc_product_vars.SCA-short" /></h3>
+        <MadCap:snippetBlock src="../Troubleshooting/ts-snippets/ts-onboarding.flsnp" />
+        <h3>Policy</h3>
+        <MadCap:snippetBlock src="../Troubleshooting/ts-snippets/ts-policy.flsnp" />
+    </body>
+</html>

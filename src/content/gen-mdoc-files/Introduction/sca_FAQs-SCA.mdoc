@@ -1,0 +1,258 @@
+# {% $cc_product_vars.SCA-full %} FAQs
+
+This topic provides some frequently asked questions about
+{% $cc_product_vars.SCA-short %}.
+
+`<dropdown>`{=html} `<dropdownhead>`{=html}
+`<dropdownhotspot>`{=html}How soon after onboarding workspaces to
+{% $cc_product_vars.CV-full %}
+can I see them in
+{% $cc_product_vars.SCA-short %}
+and start setting up cloud access
+policies?[]{#How}`</dropdownhotspot>`{=html} `</dropdownhead>`{=html}
+`<dropdownbody>`{=html}
+
+This depends on whether you are onboarding new workspaces to
+{% $cc_product_vars.CEM-short %},
+or whether the workspaces are part of a previously onboarded cloud
+organization/directory; for example, if you add new accounts to a
+previously onboarded AWS organization.
+
++----------------------------------+----------------------------------+
+| Workspace                        | Workspace discovery and resource |
+|                                  | scan                             |
++==================================+==================================+
+| [New]{.Emphasis}                 | When you onboard new workspaces, |
+|                                  | whether a standalone workspace   |
+|                                  | or a full cloud organization or  |
+|                                  | directory, we immediately run a  |
+|                                  | full discovery of the workspaces |
+|                                  | that you\'re onboarding.         |
+|                                  |                                  |
+|                                  | Depending on the size and        |
+|                                  | structure of the workspaces, it  |
+|                                  | can typically take a few minutes |
+|                                  | to a couple of hours before you  |
+|                                  | can start working with them in   |
+|                                  | `<variabl                        |
+|                                  | e name="cc_product_vars.SCA-shor |
+|                                  | t">`{=html}`</variable>`{=html}. |
++----------------------------------+----------------------------------+
+| [Previously                      | If structural changes are made   |
+| onboarded]{.Emphasis}            | in the cloud, for example        |
+|                                  | accounts are added to an AWS     |
+|                                  | organization that has been       |
+|                                  | onboarded, these are picked up   |
+|                                  | in                               |
+|                                  | `<variab                         |
+|                                  | le name="cc_product_vars.SCA-sho |
+|                                  | rt">`{=html}`</variable>`{=html} |
+|                                  | after our scheduled discovery    |
+|                                  | and scan as follows:             |
+|                                  |                                  |
+|                                  | - [Discovery]{.Emphasis} - Once  |
+|                                  |   a day (every 24 hours) we run  |
+|                                  |   a discovery of all the         |
+|                                  |   onboarded workspaces in        |
+|                                  |   `<varia                        |
+|                                  | ble name="cc_product_vars.CV-ful |
+|                                  | l">`{=html}`</variable>`{=html}. |
+|                                  |                                  |
+|                                  |   This process detects           |
+|                                  |   structural updates in the      |
+|                                  |   corresponding cloud            |
+|                                  |   environments and updates       |
+|                                  |   `<vari                         |
+|                                  | able name="cc_product_vars.CV-fu |
+|                                  | ll">`{=html}`</variable>`{=html} |
+|                                  |   and                            |
+|                                  |   `<variab                       |
+|                                  | le name="cc_product_vars.SCA-sho |
+|                                  | rt">`{=html}`</variable>`{=html} |
+|                                  |   accordingly.                   |
+|                                  |                                  |
+|                                  |   For example, if structural     |
+|                                  |   changes                        |
+|                                  |   (add/delete/rename/move        |
+|                                  |   accounts) are made to an       |
+|                                  |   onboarded AWS organization,    |
+|                                  |   these changes are reflected in |
+|                                  |   `<variab                       |
+|                                  | le name="cc_product_vars.SCA-sho |
+|                                  | rt">`{=html}`</variable>`{=html} |
+|                                  |   after the scheduled daily      |
+|                                  |   discovery.                     |
+|                                  |                                  |
+|                                  | <!-- -->                         |
+|                                  |                                  |
+|                                  | - [Scan]{.Emphasis} - In         |
+|                                  |   parallel, for all onboarded    |
+|                                  |   workspaces,                    |
+|                                  |   `<variab                       |
+|                                  | le name="cc_product_vars.SCA-sho |
+|                                  | rt">`{=html}`</variable>`{=html} |
+|                                  |   directly scans the cloud       |
+|                                  |   environment twice a day (every |
+|                                  |   12 hours) for roles and        |
+|                                  |   permissions, and in the case   |
+|                                  |   of                             |
+|                                  |   `<variable name="              |
+|                                  | cv-shared-variables.entra-id-lon |
+|                                  | g">`{=html}`</variable>`{=html}, |
+|                                  |   it also scans for resources    |
+|                                  |   (resource groups and           |
+|                                  |   resources).                    |
++----------------------------------+----------------------------------+
+
+If you don\'t want to wait for the scheduled discovery and scans, you
+can manually trigger an
+{% $cc_product_vars.SCA-short %}
+discovery, which combines both the discovery and scan, using
+{% $cc_product_vars.SCA-short %}\'s
+Discovery API (`/policies/discovery`) . For more information, see
+`<xref href="#Is">`{=html}Is there a way to manually discover and scan
+onboarded workspaces?`</xref>`{=html}
+
+::: note
+`<snippettext src="discovery-scan-snippet.flsnp">`{=html}`</snippettext>`{=html}
+:::
+
+`</dropdownbody>`{=html} `</dropdown>`{=html} `<dropdown>`{=html}
+`<dropdownhead>`{=html} `<dropdownhotspot>`{=html}Is there a way to
+manually discover and scan onboarded
+workspaces?[]{#Is}`</dropdownhotspot>`{=html} `</dropdownhead>`{=html}
+`<dropdownbody>`{=html}
+
+Yes. You can manually trigger an
+{% $cc_product_vars.SCA-short %}
+discovery using [Terraform](../Automation/sca_terraform-integration.htm)
+or
+{% $cc_product_vars.SCA-short %}\'s
+Discovery API (`/policies/discovery`).
+
+By default, this API:
+
+- Discovers of all the workspaces that are already onboarded to
+  {% $cc_product_vars.CEM-short %},
+
+- Scans for roles and permissions, and in the case of
+  {% $cv-shared-variables.entra-id-long %},
+  it also scans for resources (resource groups and resources).
+
+For details, see
+`<xref href="../Automation/sca-API-policies.htm">`{=html}\[%=cc_product_vars.SCA-short%\]
+policy APIs`</xref>`{=html}.
+
+Alternatively, if you only want to scan for roles and resources, and you
+are not concerned with structural changes in your cloud environment, you
+can run a scan either from the
+{% $cc_product_vars.SCA-short %}
+UI, or using the SCA API:
+
+- {% $cc_product_vars.SCA-short %}
+  UI: When creating a policy in the Create policy wizard, in the Select
+  roles dialog box, click [Scan again]{.Emphasis}
+
+- {% $cc_product_vars.SCA-short %}
+  API: Send a `/cloud/rescan` API request - see
+  `<xref href="../Automation/sca-API-cloud.htm">`{=html}\[%=cc_product_vars.SCA-short%\]
+  general cloud activity APIs`</xref>`{=html}
+
+::: note
+[Scan again]{.Emphasis} and `/cloud/rescan` scan the cloud environment
+directly.
+:::
+
+`</dropdownbody>`{=html} `</dropdown>`{=html} `<dropdown>`{=html}
+`<dropdownhead>`{=html} `<dropdownhotspot>`{=html}What is the difference
+between pre-defined and on-demand
+{% $cc_product_vars.SCA-short %}
+policies?`</dropdownhotspot>`{=html} `</dropdownhead>`{=html}
+`<dropdownbody>`{=html}
+
+Pre-defined policies are created manually by an administrator to address
+specific use cases in the organization.
+
+On-demand policies are created automatically
+by {% $cc_product_vars.SCA-short %}
+when an on-demand access request is approved. These policies are deleted
+when the access window of the on-demand session closes.
+
+`</dropdownbody>`{=html} `</dropdown>`{=html} `<dropdown>`{=html}
+`<dropdownhead>`{=html} `<dropdownhotspot>`{=html}How long does it take
+to revoke permissions from an identity after the access window closes,
+for example when a session with a configured length of 2 hours
+expires?`</dropdownhotspot>`{=html} `</dropdownhead>`{=html}
+`<dropdownbody>`{=html}
+
+{% $cc_product_vars.SCA-short %}
+revokes permissions immediately after the session expires (\~1 minute).
+However, each cloud provider has its own method for calculating and
+re-evaluating the active permissions for an identity, so the new
+(reduced) permissions may take anywhere from a few seconds to several
+(up to 15) minutes to become effective.
+
+::: note
+Changing or deleting a policy does not affect active sessions. Once a
+session has started, it continues to follow the policy that was in place
+at the time of initiation. Any modifications only affect future
+sessions.
+:::
+
+::: note
+AWS IAM Identity Center has a known issue where it lets the identity
+stay connected to the management console even after permissions are
+revoked. The new permissions only take effect when the identity
+disconnects (and therefore can\'t connect again).
+{% $cc_C_CyberArk.CompanyName %}
+is working with AWS to resolve this issue.
+:::
+
+`</dropdownbody>`{=html} `</dropdown>`{=html} `<dropdown>`{=html}
+`<dropdownhead>`{=html} `<dropdownhotspot>`{=html}What is the difference
+between standing access and zero standing
+permissions?`</dropdownhotspot>`{=html} `</dropdownhead>`{=html}
+`<dropdownbody>`{=html}
+
+Standing access means that a user has permanent access to a resource, at
+all times.
+
+With zero standing permissions, a user has no permanent access to a
+resource. Instead, they request just-in-time privileged access for a
+particular time-bound session. Permissions are then automatically
+revoked when the session expires.
+
+`</dropdownbody>`{=html} `</dropdown>`{=html} `<dropdown>`{=html}
+`<dropdownhead>`{=html} `<dropdownhotspot>`{=html}[]{#awsreservedsso}Why
+doesn\'t
+{% $cc_product_vars.SCA-short %}
+show AWSReservedSSO\* roles?`</dropdownhotspot>`{=html}
+`</dropdownhead>`{=html} `<dropdownbody>`{=html}
+
+When you create or modify policies in
+{% $cc_product_vars.SCA-short %},
+AWSReservedSSO\* roles are excluded from the list of available roles.
+
+AWSReservedSSO\* roles appear in an AWS account that is part of an AWS
+organization with AWS IAM Identity Center, and are created by AWS to
+reflect permission sets. These roles are controlled by the top level of
+the organization in AWS, and are only for use by the AWS IAM Identity
+Center mechanism, via AWS SSO -- this is why
+{% $cc_product_vars.SCA-short %}
+does not include them.
+
+In cases where an AWS account was onboarded to
+{% $cc_product_vars.SCA-short %}
+as a standalone account, while being part of an AWS organization, there
+may be confusion as to which AWS roles should appear in
+{% $cc_product_vars.SCA-short %}.
+Due to the above reasons, AWSReservedSSO\* roles are not considered
+standard AWS predefined roles, and do not appear in
+{% $cc_product_vars.SCA-short %}.
+
+`</dropdownbody>`{=html} `</dropdown>`{=html}
+
+::: SeeAlso
+[SCA Common FAQs in the CyberArk Technical
+Community](https://community.cyberark.com/s/article/SCA-Common-FAQs)
+:::

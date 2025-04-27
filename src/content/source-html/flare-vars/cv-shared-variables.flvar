@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="TheShell.import-from-cem">
+  <Variable
+    Name="entra-id-short"
+    Comment=""
+    EvaluatedDefinition="Entra ID">Entra ID</Variable>
+  <Variable
+    Name="entra-id-long"
+    Comment=""
+    EvaluatedDefinition="Microsoft Entra ID">Microsoft Entra ID</Variable>
+</CatapultVariableSet>

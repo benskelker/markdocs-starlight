@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Error messages</h1>
+        <p>This topic describes the errors (listed according to error code) that are displayed in the user interface error messages and the <MadCap:variable name="cc_product_vars.Audit-short" /> service, so that admins can resolve issues that users encounter in <MadCap:variable name="cc_product_vars.SCA-short" />.</p>
+        <h2><a name="sca-cloud-access-errors"></a>Cloud access</h2>
+        <p>These error messages appear when the end user has trouble connecting to their cloud console. </p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0" summary="These error codes represent specific cloud access issues">
+            <caption>Cloud access error codes</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Error code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Cloud provider</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Scenario</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Details</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>CA1001</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="sca-project-variables.AWS-AD" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't connect the user to the cloud console due to a configuration issue</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> policies only apply to users that exist in both your user directory and the cloud provider.</p>
+                        <p>Verify that you added this user to the cloud provider.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>CA1002</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="sca-project-variables.AWS-AD" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't connect the user to the cloud console because it's not authorized to grant access</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>The onboarding for this AWS IAM&#160;Identity Center workspace wasn't completed correctly, and trust wasn't established. </p>
+                        <ol>
+                            <li>
+                                <p>Sign in to the AWS management console.</p>
+                            </li>
+                            <li>
+                                <p>Go to <span class="Emphasis">IAM </span>&gt; <span class="Emphasis">Roles </span>and locate the following role:&#160;<span class="Emphasis">CyberArkRoleSCA_{UUID}</span></p>
+                            </li>
+                            <li>
+                                <p>Verify that the trust information that references the <MadCap:variable name="cc_product_vars.SCA-short" /> role is correct.</p>
+                            </li>
+                        </ol>
+                        <p>After you apply the required information, the user will be able to connect to the cloud console.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>CA1003</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="sca-project-variables.Azure" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't connect the user to the cloud console due to a configuration issue</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> policies only apply to users that exist in both your user directory and the cloud provider. Verify that you added this user to the cloud provider.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>CA1005</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="sca-project-variables.GoogleCloud" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't connect the user to the cloud console because of a problem with the user configuration</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Make sure that your provisioned identity user matches the mapped account in the Google Cloud web app. For details, see <a href="/identity/latest/en/content/applications/certified-apps/googlecloudplatform.htm?tocpath=Administrator%7CIntegrate%20apps%7CDeploy%20applications%20for%20SSO%7CCertified%20applications%7C_____122#GoogleCloudPlatformprovisioning">Google Cloud Platform provisioning</a>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>CA1040</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>All</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>General error from the cloud provider</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Something happened when trying to connect to the cloud provider. If your organization continues to receive this error, contact <MadCap:variable name="cc_C_CyberArk.CompanyName" /> support.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Cloud connection</h2>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');margin-left: 0;margin-right: auto;caption-side: top;" class="TableStyle-Standard" cellspacing="0">
+            <caption>Cloud connection error codes</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Error code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Cloud provider</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Scenario</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Details</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>CC1001</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>AWS IAM</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>You attempted to onboard a workspace to <MadCap:variable name="cc_C_CyberArk.CompanyName" />, and you got an error that the workspace already exists in <MadCap:variable name="cc_C_CyberArk.CompanyName" />.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>This account must have been onboarded previously to CyberArk, either in the current tenant or in a different one. So a stack already exists for this in AWS.</p>
+                        <p>To onboard the account again, you must first delete the AWS stack and other CyberArk resources that were created by the CloudFormation Template (CFT) during the initial onboarding.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>CC1022</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">All</td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">On-demand scan failed:</span>
+                        </p>
+                        <p> You attempted to run a scan for roles and resources but the scan failed.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Configuration issues or missing account data can cause the cloud scan to fail because <MadCap:variable name="cc_product_vars.SCA-short" /> can't retrieve the workspace. Make sure the credentials used to access the workspace have the correct permissions.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>CC1025</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>All</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">On-demand scan only partially succeeded:</span>
+                        </p>
+                        <p> You attempted to run a scan for roles, but roles were retrieved from only some of the workspaces,  while no roles were retrieved from others.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Configuration or connectivity issues can cause a partial scan - the scan stops before it has completed.</p>
+                        <p>Make sure any infrastructure or account configuration changes have been synced to <MadCap:variable name="cc_C_CyberArk.CompanyName" />.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>CC1026</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Azure</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">On-demand scan for roles only partially succeeded:</span> </p>
+                        <p>You attempted to run scan for roles in the full Entra ID directory, but the resource groups and resources weren't scanned.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Access to some directory objects might be restricted due to configuration or connectivity issues. </p>
+                        <p>Make sure all infrastructure or object configuration changes have been synced to <MadCap:variable name="cc_C_CyberArk.CompanyName" />.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>CC1027</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>All</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><span class="Emphasis">On-demand scan for roles and resources failed</span>:</p>
+                        <p> You attempted to run a scan  - no roles were retrieved from any of the scanned workspaces.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Configuration issues or missing account data can cause the scan to fail because <MadCap:variable name="cc_product_vars.SCA-short" /> can't retrieve any roles from any of the workspaces. </p>
+                        <p>Make sure the credentials being used for accessing the workspaces have the correct permissions.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="sca-ondemand-access"></a>On-demand access</h2>
+        <table style="width: 100%;caption-side: top;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Error code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Cloud provider</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Scenario</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Details</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>OD1000</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>All</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>When you navigate to the On-demand access page in <MadCap:variable name="cc_product_vars.SCA-short" />, you get an error that Identity Flows is not enabled for your tenant. This prevents you from accessing the requested functionality, as this service is required in order to proceed.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>To configure on-demand access, you need to use the <MadCap:variable name="cc_product_vars.Flows-short" /> service to define the request and approval flows.</p>
+                        <p> If this service isn't enabled in your tenant, <MadCap:snippetText src="../Resources/Snippets/cc_ContactSupport.flsnp" /> to enable it.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="sca-policy-errors"></a><MadCap:variable name="cc_product_vars.SCA-short" /> policy errors</h2>
+        <p>These error messages appear in a tooltip when a user hovers over an error status icon in the policy table. </p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0" summary="These error codes explain why the policy is in error status">
+            <caption>Policy error codes</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Error code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Environment</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Scenario</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Details</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>P1003</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>All</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Policy not found when attempting to:</p>
+                        <ul>
+                            <li>
+                                <p>Get a policy's status</p>
+                            </li>
+                            <li>
+                                <p>Get a policy's details</p>
+                            </li>
+                            <li>
+                                <p>Delete a policy</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Make sure you have provided the correct policy ID. You can get the policy ID&#160;from the audit activity event from when the policy was created.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>P1021</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="sca-project-variables.AWS-IAM" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't apply the policy to the cloud console </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Verify that the principal reference  (for example, ARN) you used for the cloud console is correct and try again.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>P1023</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.Identity-full" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't update the web app</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>In <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />, verify the following:</p>
+                        <ol>
+                            <li>
+                                <p>You created a web app that suits your use case (AWS IAM, AWS IAM&#160;Identity Center, Google Cloud, or Azure).</p>
+                            </li>
+                            <li>
+                                <p>In the <span class="Emphasis">Application Settings</span> tab of the web app, you provided the following:</p>
+                                <ul>
+                                    <li>
+                                        <p>AWS IAM - the IAM account number </p>
+                                    </li>
+                                    <li>
+                                        <p>AWS IAM Identity Center - the management account number </p>
+                                    </li>
+                                    <li>
+                                        <p>Google Cloud -  the domain (i.e. gcpdomain.com) </p>
+                                    </li>
+                                    <li>
+                                        <p>Azure - a valid token </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>In the <span class="Emphasis">Secure Cloud Access </span>tab, the <span class="Emphasis">Enable Secure Cloud Access </span>option is checked.</p>
+                            </li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>P1025</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>All cloud providers</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> was unable to update the cloud configuration.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't apply the policy to the cloud console. This may be due to a network timeout, connectivity issues, or a permissions issue. </p>
+                        <p>To resolve permissions issues, verify the following:</p>
+                        <ul>
+                            <li>
+                                <p>AWS - the policies for <span class="Emphasis">CyberArkRoleSCA_{UUID} </span>haven't been modified, and that the role has a trust relationship with the <MadCap:variable name="cc_C_CyberArk.CompanyName" /> account.</p>
+                            </li>
+                            <li>
+                                <p>Azure and Google Cloud - the service user has not expired and is configured properly.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>P1026</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="sca-project-variables.GoogleCloud" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>The <MadCap:variable name="cc_product_vars.SCA-short" /> policy reached the maximum number of role bindings for your <MadCap:variable name="sca-project-variables.GoogleCloud" /> allow policy.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>For group-based assignment - <MadCap:variable name="sca-project-variables.GoogleCloud" /> enforces a limit of role bindings to groups. Verify that the number of roles in your SCA policy doesn't exceed the maximum role binding limit defined in <MadCap:variable name="sca-project-variables.GoogleCloud" />. </p>
+                                <p>For more information about Google Cloud limits, see the <a href="https://cloud.google.com/iam/quotas" target="_blank"><MadCap:variable name="sca-project-variables.GoogleCloud" /> docs</a>.</p>
+                            </li>
+                            <li>
+                                <p>For direct user assignments - not relevant.</p>
+                            </li>
+                        </ul>
+                        <p>To resolve the issue, delete old and unused polices to free up space.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>P1028</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>AWS</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't add this identity to the policy because there's no custom role associated with the relevant web app.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Create a custom role for the relevant web app in the format <span class="Emphasis">AWS_SCA_&lt;management account ID&gt;</span>, then add the identity again.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>P1032</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>AWS</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't update the cloud configuration for a standalone AWS account / AWS organization.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't validate the policy to the cloud console. </p>
+                        <p>One of the cloud roles in the policy is missing the required trust relationship with the correct IdP, which is necessary for <MadCap:variable name="cc_product_vars.SCA-short" /> to process JIT Connect.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>P1034</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>All cloud providers</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't complete the validation process because of an error related to cloud roles.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>In the cloud provider, verify the cloud roles that are assigned to the policy. Update the policy accordingly and validate it again.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>P1035</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>All cloud providers</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't complete the validation process because it couldn't find some of the identities.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>In your IdP, verify the identities that are relevant for the policy. Update the policy accordingly and validate it again.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>P1036</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>AWS</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't validate the policy because a required AWS permission is blocked at the organizational level&#160;by&#160;an AWS service control policy.</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Unblock the permission and try to validate the policy again. For a list of required permissions, see the&#160;<MadCap:xref href="../CloudAdmin/cv-AWS-permissions.htm">AWS required permissions</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>P1038</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><MadCap:variable name="sca-project-variables.GoogleCloud" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> couldn't create the <MadCap:variable name="sca-project-variables.GoogleCloud" /> policy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>The Google Cloud policy creation failed because permissions couldn't be propagated to the workspace.</p>
+                    </td>
+                </tr> </tbody>
+        </table>
+    </body>
+</html>

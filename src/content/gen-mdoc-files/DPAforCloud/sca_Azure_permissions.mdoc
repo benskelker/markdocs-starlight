@@ -1,0 +1,255 @@
+# Azure required permissions
+
+This topic describes the Microsoft Azure permissions that
+{% $cc_product_vars.SCA-short %}
+uses to onboard Azure workspaces, and to create and manage
+{% $cc_product_vars.SCA-short %}
+policies.
+
+## Azure app registration during onboarding
+
+Permissions granted to the Azure app upon onboarding are only applicable
+for the scope where the app is registered.
+
+### Azure directories
+
+The following permissions are granted to the Azure app that is created
+for
+{% $cc_product_vars.SCA-short %}
+when a directory is onboarded.
+
++-----------------------+-----------------------+--------------------+
+| Permission            | Description           | Scope              |
++=======================+=======================+====================+
+| Appl                  | Allows the app to     | Directory/Resource |
+| ication.ReadWrite.All | create, and manage    |                    |
+|                       | (read, update, update |                    |
+|                       | application secrets   |                    |
+|                       | and delete)           |                    |
+|                       | applications and      |                    |
+|                       | service principals    |                    |
+|                       | without a signed-in   |                    |
+|                       | user. Does not allow  |                    |
+|                       | management of consent |                    |
+|                       | grants or application |                    |
+|                       | assignments to users  |                    |
+|                       | or groups.            |                    |
+|                       |                       |                    |
+|                       | ::: note              |                    |
+|                       | If you apply the      |                    |
+|                       | `--sca-l              |                    |
+|                       | east-privileged-mode` |                    |
+|                       | command when you run  |                    |
+|                       | the                   |                    |
+|                       | `<variabl             |                    |
+|                       | e name="cc_product_va |                    |
+|                       | rs.CEM-short">`{=html |                    |
+|                       | }`</variable>`{=html} |                    |
+|                       | onboarding script,    |                    |
+|                       | this permission       |                    |
+|                       | isn\'t granted at the |                    |
+|                       | resource level.       |                    |
+|                       | :::                   |                    |
++-----------------------+-----------------------+--------------------+
+| Di                    | Allows the app to     | Directory          |
+| rectory.ReadWrite.All | read and write data   |                    |
+|                       | in your               |                    |
+|                       | organization's        |                    |
+|                       | directory, such as    |                    |
+|                       | users, and groups,    |                    |
+|                       | without a signed-in   |                    |
+|                       | user. Doesn\'t allow  |                    |
+|                       | the app to delete     |                    |
+|                       | users or groups, or   |                    |
+|                       | to reset user         |                    |
+|                       | passwords.            |                    |
++-----------------------+-----------------------+--------------------+
+| Applicat              | Allows the app to     | Directory          |
+| ion.ReadWrite.OwnedBy | create and fully      |                    |
+|                       | manage other          |                    |
+|                       | applications (read,   |                    |
+|                       | update, update        |                    |
+|                       | application secrets   |                    |
+|                       | and delete), without  |                    |
+|                       | a signed-in user. It  |                    |
+|                       | can\'t update any     |                    |
+|                       | applications for      |                    |
+|                       | which it isn\'t an    |                    |
+|                       | owner.                |                    |
++-----------------------+-----------------------+--------------------+
+| DeviceMa              | Allows the app to     | Directory          |
+| nagementRBAC.Read.All | read the properties   |                    |
+|                       | relating to the       |                    |
+|                       | Microsoft Intune RBAC |                    |
+|                       | settings without a    |                    |
+|                       | signed-in user.       |                    |
++-----------------------+-----------------------+--------------------+
+| DeviceManagem         | Allows the app to     | Directory          |
+| entRBAC.ReadWrite.All | read and write the    |                    |
+|                       | properties relating   |                    |
+|                       | to the Microsoft      |                    |
+|                       | Intune RBAC settings  |                    |
+|                       | without a signed-in   |                    |
+|                       | user.                 |                    |
++-----------------------+-----------------------+--------------------+
+| Directory.Read.All    | Allows the app to     | Directory          |
+|                       | read data in your     |                    |
+|                       | organization\'s       |                    |
+|                       | directory, such as    |                    |
+|                       | users, groups and     |                    |
+|                       | apps, without a       |                    |
+|                       | signed-in user.       |                    |
++-----------------------+-----------------------+--------------------+
+| Group.Create          | Allows the app to     | Resource           |
+|                       | create groups without |                    |
+|                       | a signed-in user.     |                    |
++-----------------------+-----------------------+--------------------+
+| Group.ReadWrite.All   | Allows the app to     | Resource           |
+|                       | create groups, read   |                    |
+|                       | all group properties  |                    |
+|                       | and memberships,      |                    |
+|                       | update group          |                    |
+|                       | properties, and read  |                    |
+|                       | and write group       |                    |
+|                       | calendars and         |                    |
+|                       | conversations without |                    |
+|                       | a signed-in user.     |                    |
++-----------------------+-----------------------+--------------------+
+| Grou                  | Allows the app to     | Resource           |
+| pMember.ReadWrite.All | list groups, read     |                    |
+|                       | basic properties, and |                    |
+|                       | read and update the   |                    |
+|                       | membership of the     |                    |
+|                       | groups the app has    |                    |
+|                       | access to without a   |                    |
+|                       | signed-in user. Group |                    |
+|                       | properties and owners |                    |
+|                       | can\'t be updated,    |                    |
+|                       | and groups can\'t be  |                    |
+|                       | deleted.              |                    |
++-----------------------+-----------------------+--------------------+
+| RoleManagemen         | Allows the app to     | Directory          |
+| t.ReadWrite.Directory | read and manage the   |                    |
+|                       | role-based access     |                    |
+|                       | control (RBAC)        |                    |
+|                       | settings for your     |                    |
+|                       | company\'s directory, |                    |
+|                       | without a signed-in   |                    |
+|                       | user. This includes   |                    |
+|                       | instantiating         |                    |
+|                       | directory roles and   |                    |
+|                       | managing directory    |                    |
+|                       | role membership, and  |                    |
+|                       | reading directory     |                    |
+|                       | role templates,       |                    |
+|                       | directory roles and   |                    |
+|                       | memberships.          |                    |
++-----------------------+-----------------------+--------------------+
+| User.Read.All         | Allows the app to     | Resource           |
+|                       | read a basic set of   |                    |
+|                       | profile properties of |                    |
+|                       | other users in your   |                    |
+|                       | organization without  |                    |
+|                       | a signed-in user.     |                    |
++-----------------------+-----------------------+--------------------+
+
+: Azure app permissions
+
+### Azure RBAC workspaces
+
+The following permissions are granted to the Azure app that is created
+for
+{% $cc_product_vars.SCA-short %}
+when a workspace (such as a management group or subscription) is
+onboarded.
+
+As mentioned above, permissions granted to the Azure app upon onboarding
+are only applicable for the scope where the app is registered.
+
++----------------------------+----------------------------+----------+
+| Permission                 | Description                | Scope    |
++============================+============================+==========+
+| Application.ReadWrite.All  | Allows the app to create,  | Resource |
+|                            | and manage (read, update,  |          |
+|                            | update application secrets |          |
+|                            | and delete) applications   |          |
+|                            | and service principals     |          |
+|                            | without a signed-in user.  |          |
+|                            | Does not allow management  |          |
+|                            | of consent grants or       |          |
+|                            | application assignments to |          |
+|                            | users or groups.           |          |
+|                            |                            |          |
+|                            | ::: note                   |          |
+|                            | If you apply the           |          |
+|                            | `--                        |          |
+|                            | sca-least-privileged-mode` |          |
+|                            | command when you run the   |          |
+|                            | `<variable name="cc_       |          |
+|                            | product_vars.CEM-short">`{ |          |
+|                            | =html}`</variable>`{=html} |          |
+|                            | onboarding script, this    |          |
+|                            | permission isn\'t granted. |          |
+|                            | :::                        |          |
++----------------------------+----------------------------+----------+
+| App                        | Allows the app to create   | Resource |
+| lication.ReadWrite.OwnedBy | and fully manage other     |          |
+|                            | applications (read,        |          |
+|                            | update, update application |          |
+|                            | secrets and delete),       |          |
+|                            | without a signed-in user.  |          |
+|                            | It can\'t update any       |          |
+|                            | applications for which it  |          |
+|                            | isn\'t an owner.           |          |
++----------------------------+----------------------------+----------+
+| Dev                        | Allows the app to read the | Resource |
+| iceManagementRBAC.Read.All | properties relating to the |          |
+|                            | Microsoft Intune RBAC      |          |
+|                            | settings without a         |          |
+|                            | signed-in user.            |          |
++----------------------------+----------------------------+----------+
+| DeviceMa                   | Allows the app to read and | Resource |
+| nagementRBAC.ReadWrite.All | write the properties       |          |
+|                            | relating to the Microsoft  |          |
+|                            | Intune RBAC settings       |          |
+|                            | without a signed-in user.  |          |
++----------------------------+----------------------------+----------+
+| Directory.Read.All         | Allows the app to read     | Resource |
+|                            | data in your               |          |
+|                            | organization\'s directory, |          |
+|                            | such as users, groups and  |          |
+|                            | apps, without a signed-in  |          |
+|                            | user.                      |          |
++----------------------------+----------------------------+----------+
+| Group.Create               | Allows the app to create   | Resource |
+|                            | groups without a signed-in |          |
+|                            | user.                      |          |
++----------------------------+----------------------------+----------+
+| Group.ReadWrite.All        | Allows the app to create   | Resource |
+|                            | groups, read all group     |          |
+|                            | properties and             |          |
+|                            | memberships, update group  |          |
+|                            | properties, and read and   |          |
+|                            | write group calendars and  |          |
+|                            | conversations without a    |          |
+|                            | signed-in user.            |          |
++----------------------------+----------------------------+----------+
+| GroupMember.ReadWrite.All  | Allows the app to list     | Resource |
+|                            | groups, read basic         |          |
+|                            | properties, and read and   |          |
+|                            | update the membership of   |          |
+|                            | the groups the app has     |          |
+|                            | access to without a        |          |
+|                            | signed-in user. Group      |          |
+|                            | properties and owners      |          |
+|                            | can\'t be updated, and     |          |
+|                            | groups can\'t be deleted.  |          |
++----------------------------+----------------------------+----------+
+| User.Read.All              | Allows the app to read a   | Resource |
+|                            | basic set of profile       |          |
+|                            | properties of other users  |          |
+|                            | in your organization       |          |
+|                            | without a signed-in user.  |          |
++----------------------------+----------------------------+----------+
+
+: Azure RBAC app permissions

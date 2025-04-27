@@ -1,0 +1,27 @@
+# Troubleshoot the Wiz-{% $cc_product_vars.SCA-short %} integration
+
++----------------------------------+----------------------------------+
+| Error                            | Resolution                       |
++==================================+==================================+
+| When running the remediation in  | Make sure the authentication     |
+| Wiz, it fails with a 401 error.  | settings for the flow are saved, |
+|                                  | and the authentication is        |
+|                                  | configured correctly in the Wiz  |
+|                                  | Integration.                     |
++----------------------------------+----------------------------------+
+| Unauthorized in flows for        | - Verify the service user        |
+| `<variab                         |   credentials.                   |
+| le name="cc_product_vars.SCA-sho |                                  |
+| rt">`{=html}`</variable>`{=html} | - Verify that the web app ID in  |
+| OAuth2.0 Authentication in       |   the token URL matches your web |
+| Identity Flows.                  |   app.                           |
++----------------------------------+----------------------------------+
+| The integration is executed and  | - Verify that the service user   |
+| the Identity flow is triggered,  |   has permissions on the web     |
+| but                              |   app.                           |
+| `<variab                         |                                  |
+| le name="cc_product_vars.SCA-sho | <!-- -->                         |
+| rt">`{=html}`</variable>`{=html} |                                  |
+| Policy creation fails with a 401 | - Verify that the web app has    |
+| error.                           |   the correct scope configured.  |
++----------------------------------+----------------------------------+

@@ -1,0 +1,746 @@
+# What\'s new
+
+New () versions are released and announced on a varying cadence.
+Occasionally, new versions that include only performance, stability and
+bug fixes, and do not require customer actions, are released without an
+announcement.
+
+::: {madcap:conditions="cc_C_CyberArk.Future"}
+## March 30, 2025 {#march-30-2025 .new-item}
+
+### Elevate multiple permission sets simultaneously for
+
+now allows users to access the user portal with multiple permission sets
+simultaneously, elevating their permissions as needed. This enhancement
+improves operational efficiency when accessing multiple permission sets
+in multiple accounts, while maintaining adherence to the principle of
+least privilege.
+
+To configure this capability, see the
+[settings](../Settings/sca_service-config-settings.htm#tabset-1-tab-3).
+:::
+
+## March 16, 2025 {#march-16-2025 .new-item}
+
+### Enhanced audit event details
+
+[Session connections]{.Emphasis} - Login activity now displays
+information about the policies that provide the access. For more
+information, see [SCA audit
+events](/audit/latest/en/content/audit/product-audits/isp-sca-audit.htm).
+
+### Enhanced security for Google Cloud service account keys
+
+<div>
+
+## March 2, 2025
+
+### Enhancement in the end-user connect page
+
+#### Connect with multiple roles simultaneously {#connect-with-multiple-roles-simultaneously .itt}
+
+now allows users to connect directly to their Azure and GCP consoles
+with multiple roles simultaneously.
+
+This enhancement improves operational efficiency when accessing
+workspaces with multiple roles while maintaining adherence to the
+principle of least privilege.
+
+To configure this functionality, see Configure general
+\[%=cc_product_vars.SCA-short%\] settings.
+
+#### Better role granularity for end-user access to GCP {#better-role-granularity-for-end-user-access-to-gcp .itt}
+
+When users access their GCP workspaces, can now directly assign
+permissions based on specific roles to ensure just enough access per
+user.
+
+### Enhanced audit event details
+
+We\'ve expanded audit event coverage of the following activity:
+
+- Policy validation failure
+
+- Policy management and scan errors
+
+For more information, see SCA0050, SCA0060, SCA0070, and SCA0800 in [SCA
+audit
+events](/audit/latest/en/content/audit/product-audits/isp-sca-audit.htm).
+
+</div>
+
+## February 2, 2025
+
+### Expanded API Access
+
+We\'ve extended API support to delegated workspaces. Now service users
+can manage workspaces that are assigned to them, using the public APIs.
+For details about adding the service user as a workspace delegate, see
+Add delegates to a workspace.
+
+## January 2, 2025
+
+### Support for Azure Entra B2B
+
+We now support mapping Azure Entra B2B user accounts---internal or
+external---to the CyberArk Cloud Directory using the accounts\' existing
+email addresses, enabling identity federation and ensuring smooth access
+without domain restrictions. The integration must be enabled from the
+[General Settings page](../Settings/sca_service-config-settings.htm) in
+. For details, see Integrate Azure Entra B2B.
+
+## December 5, 2024
+
+### Wiz-CyberArk Integration
+
+The new integration between Wiz and CyberArk enhances cloud security by
+identifying identities with excessive access and automatically migrating
+them to a Zero Standing Privileges setup. This strengthens security
+while maintaining compliance in dynamic cloud environments.
+
+Wiz detects identities with excessive access, and CyberArk enforces
+privilege controls---either automatically or via Wiz Rules.
+
+You can find the Wiz- integration in the [CyberArk
+Marketplace](https://community.cyberark.com/marketplace/s/#a35Ht0000018sACIAY-a39Ht000004GLSJIA4%5D)
+
+For more information, see Wiz integration.
+
+## November 24, 2024
+
+### Exact match for cloud role searches in SCA policy
+
+We've enhanced policy creation and management by introducing exact match
+functionality for cloud role searches. To improve search accuracy,
+enclose your search term in double quotes (\" \").
+
+For example, if there are two roles named [Contributor]{.Emphasis} and
+[Automation Contributor]{.Emphasis}, searching for
+[\"Contributor\"]{.Emphasis} (with quotes around Contributor) will
+return only the exact match, [Contributor]{.Emphasis}.
+
+### Video gallery
+
+We\'ve added a video gallery to the documentation where you can watch
+how to:
+
+- Onboard workspaces to CyberArk
+
+- Delegate workspace ownership
+
+- Create web-app tiles for one-click access to cloud consoles
+
+- Create policies to grant zero standing privileges
+
+- Connect to workspaces
+
+- Request on-demand access to a workspace
+
+See Video gallery.
+
+## November 12, 2024
+
+Updates have been made accordingly in both in the platform UI and in the
+documentation.
+
+As part of a strategic initiative, \'s Cloud Entitlements Management
+(CEM) component has been renamed []{#cc_product_vars.CV-full .Emphasis}.
+This change aims to better represent \'s capabilities and the various
+ways we deliver its functionality.
+
+Updates have been made accordingly in both in the platform UI and in the
+documentation.
+
+## October 16, 2024
+
+### Enhanced support for SCA policy names length
+
+SCA policy names can now be up to 200 characters long.
+
+### New fields for creating an SCA policy using Terraform
+
+The following optional fields are now supported for creating an SCA
+policy using Terraform:
+
+- [name]{.Emphasis}
+
+- [description]{.Emphasis}
+
+- [start_date]{.Emphasis}
+
+- [end_date]{.Emphasis}
+
+- [access_rules]{.Emphasis}, including [days]{.Emphasis},
+  [from_time]{.Emphasis}, [to_time]{.Emphasis},
+  [maxSession_duration]{.Emphasis}, and [time_zone]{.Emphasis}.
+
+For more information, see Automate onboarding and policy creation with
+Terraform.
+
+## Aug 11, 2024
+
+### Manage access per Azure scope level
+
+Enhance performance and precisely manage access to Azure workspaces by
+defining the Azure scope levels you wish to work with in . You have the
+option to work with all scope levels or you can select a specific subset
+of scope levels. For more information, see Workspace scope.
+
+## August 6, 2024
+
+### Simplified web app creation
+
+As part of the improvements of the onboarding process, we are excited to
+introduce a new simplified way to create a web app from , thereby
+streamlining and enhancing the user experience. The new simplified
+onboarding process is time saving, simple and easy, and reduces the need
+to jump between different pages and services to configure.
+
+The new web app creation process:
+
+- Reduces the steps needed to create the web app
+
+- Provides the option of configuring trust automatically for accounts
+  and organizations
+
+- Tracks web app creation events in the [Audit
+  service](/audit/latest/en/content/audit/product-audits/isp-sca-audit.htm "Link to the Audit documentation in the docs portal"){alt="Link to the Audit documentation in the docs portal"}
+
+For more information, see:
+
+- AWS: Create a web app for an AWS workspace
+
+- : Create a web app for \[%=cv-shared-variables.entra-id-long%\]
+
+- : Create a web app for a Google Cloud organization
+
+## June 30, 2024
+
+### Status page
+
+Check out the new status page for (<https://sca-status.cyberark.com/#>)
+where you can see the service\'s availability status, planned
+maintenance windows, and other service-related information. Subscribe to
+this page to get realtime updates in case of service interruptions or
+outages.
+
+### Rescan invoked automatically after onboarding done on
+
+now triggers \"Scan again\" automatically after a cloud workspace has
+been onboarded in successfully. This feature reduces onboarding time
+because users can now configure SCA policies immediately after the
+workspace has successfully been onboarded and scanned, and web apps have
+been created.
+
+## May 12, 2024
+
+<div>
+
+### Enhanced support for third-party IdPs
+
+Previously, organizations that implemented to secure access to their
+AWS IAM Identity Center or Google Cloud consoles, but wanted their users
+to authenticate via a third-party IdP, had to open Salesforce requests
+to enable this use case.
+
+As of this release, continuing to use your third-party IdP of choice
+with AWS IAM Identity Center and Google Cloud is the default behavior in
+. Additionally, organizations can opt to add as a third-party IdP by
+enabling a new parameter in the web app configuration.
+
+For more information, see Create a web app for AWS and Create a web app
+for Google Cloud.
+
+:::::: {madcap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH"}
+### Enhancement for Slack approval channel in on-demand access
+
+Organizations that use the Slack approval channel for on-demand access
+can now see the name of the cloud workspace in the emails that are
+generated as part of the request (submit) and notification
+(Approve/Reject) process.
+
+::::: important
+If you already configured Slack as your approval channel, follow these
+instructions to update the flows in .
+
+::: ProcedureHeading
+Make the following changes to the Slack Ondemand flow
+:::
+
+1.  Select the [Chat update ]{.Emphasis}Slack attribute, then select the
+    [Map ]{.Emphasis}tab.
+
+2.  In [Parameters ]{.Emphasis}\> [Collected ]{.Emphasis}\> [Webhook
+    ]{.Emphasis}\> [Example]{.Emphasis}, click [Edit ]{.Emphasis}and add
+    the following, then save:
+
+    [\"entity_source_name\":\"account_name\"]{.Emphasis}
+
+3.  Search for the [entity_source_name ]{.Emphasis}parameter in
+    [Collected ]{.Emphasis}\> [Account/Resource]{.Emphasis}.
+
+4.  Change the parameter value of [Account/Resource ]{.Emphasis}to
+    [entity_source_name]{.Emphasis}.
+
+5.  Save the changes to the Slack Ondemand flow.
+
+::: ProcedureHeading
+Make the following changes to the Ondemand Slack flow
+:::
+
+1.  Select the [Chat update ]{.Emphasis}Slack attribute, then select the
+    [Map ]{.Emphasis}tab.
+
+2.  In [Parameters ]{.Emphasis}\> [Collected ]{.Emphasis}\>
+    [Datastore]{.Emphasis}\> [Example]{.Emphasis}, click [Edit
+    ]{.Emphasis}and add the following to the [Policy ]{.Emphasis}key,
+    then save:
+
+    [\"entity_source_name\":\"account_name\"]{.Emphasis}
+
+3.  Search for the [entity_source_name ]{.Emphasis}parameter in
+    [Collected ]{.Emphasis}\> [Account/Resource]{.Emphasis}.
+
+4.  Change the parameter value of [Account/Resource ]{.Emphasis}to
+    [entity_source_name]{.Emphasis}.
+
+5.  Repeat steps 1-3 for any additional Slack attributes.
+
+6.  Save the changes to the Ondemand Slack flow.
+:::::
+::::::
+
+</div>
+
+## May 8, 2024
+
+<div>
+
+### Direct assignment of permissions for Azure scopes
+
+Previously, used group-based assignment to give users permissions to
+access subscription, resource group, and resource Azure scopes. By
+default, now uses direct assignment for subscription, resource group,
+and resource Azure scopes. This method of assigning permissions improves
+performance when creates or applies policies for users to connect to
+their Azure workspaces.
+
+Users can configure the method of assigning permissions in the Service
+configuration page. recommends that organizations with large-scale
+environments use group-based permissions instead of the default direct
+assignment.
+
+For more information, see Azure in the Configure general
+\[%=cc_product_vars.SCA-short%\] settings topic.
+
+### Better role granularity for end-user access to Azure
+
+Until now, when end users connected to their Azure workspaces, access
+privileges were determined by aggregating all the roles in the
+subscription workspace. When users access their Azure workspaces, now
+directly assigns permissions based on specific roles to ensure just
+enough access per user.
+
+For more information, see Connect to Microsoft Azure.
+
+### Direct scanning for AWS IAM roles
+
+can now scan AWS IAM roles directly, instead of via . This enables
+faster syncing during onboarding, and supports on-demand syncing of
+cloud roles when you make post-onboarding changes to your
+AWS IAM environment.
+
+This feature will become the default behavior starting June 1, 2024.
+
+::: important
+Organizations that onboarded their AWS IAM environments before August
+18, 2023 have to update the permissions as instructed in AWS IAM
+permission updates.
+:::
+
+::: {madcap:conditions="cc_C_CyberArk.Future"}
+### Regular validation of policies
+
+Recently, introduced on-demand policy validation to enable organizations
+to detect policies that were affected by changes made to the cloud
+environment.
+
+now provides regularly scheduled policy validation to verify the status
+of the workspace and roles associated with policies, along with web app
+and cloud provider trust configuration.
+
+For more information, see xxx.
+:::
+
+</div>
+
+## April 8, 2024
+
+<div>
+
+### On-demand policy validation
+
+From time to time, changes are implemented in the cloud environment. now
+enables customers to validate their policies on demand to see whether
+they have been affected by changes that were made to the cloud
+environment.
+
+The validation process checks the status of the policy workspace and
+roles, along with the web app configuration and cloud provider trust
+configuration.
+
+For more information, go to Create \[%=cc_product_vars.SCA-short%\]
+policies for cloud access.
+
+### Enhanced error handling for APIs
+
+When developers encounter errors while using APIs, it can be challenging
+to achieve transparency and locate information about the problems so
+they can be debugged. now provides a debugging parameter so that users
+can run APIs in debug mode to collect information about the error and
+easily perform troubleshooting for API calls.
+
+For more information, go to Troubleshoot with debug mode.
+
+### New self-service settings page
+
+now has a Service configuration page where users can configure
+parameters to suit the specific requirements of your organization. This
+page is designed for self service, which reduces the need to contact
+support and increases productivity.
+
+In the current release, the Service configuration page will enable
+organizations to choose the method for assigning permissions for access
+to Google Cloud workspaces. More functionality is planned to be released
+during the next few quarters.
+
+For more information, go to Configure general
+\[%=cc_product_vars.SCA-short%\] settings.
+
+</div>
+
+## April 3, 2024
+
+### data center in Mumbai
+
+We\'ve added a new data center to meet the market demand in the Asia
+Pacific region.
+
+## March 28, 2024
+
+### Enhancement for Google Cloud integration with external IdP
+
+Customers no longer have to define a Google Cloud profile for to enable
+to work.
+
+assigns permissions to users and redirects them to the Google Cloud
+console. If a Google Cloud session doesn\'t open for an end user, they
+are prompted to authenticate via the external IdP.
+
+::: note
+- supports integration with an external IdP for all cloud providers.
+:::
+
+### Reduced required permissions in Azure
+
+Following the principle of least privilege, Azure can now be onboarded
+to with reduced permissions. Customers that onboarded Azure workspaces
+prior to March 13, 2024 can also reduce the required permissions.
+
+Additionally, customers that have Entra ID P1 and P2 licenses can reduce
+the required permissions even more by applying a new
+`--sca-least-privileged-mode` command during onboarding. which creates a
+custom Entra ID role for .
+
+For more information, go to Add Azure -
+\[%=cv-shared-variables.entra-id-long%\].
+
+## March 3, 2024
+
+### Integration with ServiceNow
+
+now offers an out-of-the-box integration with ServiceNow for on-demand
+access. This feature helps organizations streamline their access request
+workflows and enables users to approve access requests inside the
+ServiceNow interface.
+
+For more information, see Set up on-demand access.
+
+### Automation enhancement - Validate policy API
+
+A new API is available that enables users to validate specific policies.
+This helps to verify that can still connect associated users to the
+cloud environment after changes are made that may affect policies.
+
+For more information, see \[%=cc_product_vars.SCA-short%\] policy APIs.
+
+## January 31, 2024
+
+### data center in Sydney
+
+We\'ve added a new data center to meet the market demand in the APAC
+region.
+
+### Automation enhancements
+
+#### Export policies in JSON format
+
+Users can now download policies in JSON format. This provides an easy
+starting point for using our APIs or automating the policy creation
+process.
+
+#### APIs
+
+New version V 2.0 of the following APIs is available with improved
+usability, and to support feature enhancements:
+
+- Create Policy
+
+- Edit Policy
+
+- Get Policy
+
+#### Terraform
+
+Additional cloud workspace scopes are now supported, so that Terraform
+can be used to manage policies to the following levels:
+
+- Google Cloud: Organization, folder, and project
+
+- Azure: Directory, management group, subscription, resource group, and
+  resource
+
+- AWS: New organization, account, and standalone account (AWS IAM)
+
+#### Auditing
+
+Organizations can use the [Audit
+service](/audit/latest/en/content/audit/product-audits/isp-sca-audit.htm "Link to the Audit documentation in the docs portal"){alt="Link to the Audit documentation in the docs portal"}
+to monitor automated events that are managed using APIs.
+
+## December 6, 2023
+
+### data center in Singapore
+
+We\'ve added a new data center to meet the market demand in the APAC
+region.
+
+## November 20, 2023
+
+### Enhancement for on-demand access request flow
+
+The success email for an approved on-demand access request will now be
+sent only if the policy was created successfully.
+
+To benefit from this feature enhancement, download the updated
+\_ondemand Slack flow and configure it again.
+
+### Policy ID added to available policy information
+
+As part of our ongoing improvements, the policy ID was added to the
+create policy wizard and policy table. The policy ID is also displayed
+in a custom data field in the service, in the service data tab. You can
+use the policy ID to track events for a specific policy, such as
+updates.
+
+## November 7, 2023
+
+### Automated cloud onboarding and policy creation with Terraform
+
+The integration with Terraform enables customers to automate the process
+of onboarding new cloud accounts and creating policies, to ensure that
+all access to cloud accounts is always managed by .
+
+This following cloud environments are supported:
+
+- AWS IAM Identity Center
+
+- Microsoft Azure
+
+- Google Cloud
+
+For details, see Automate onboarding and policy creation with Terraform.
+
+### Enhanced support for groups
+
+The ability to assign and grant permissions to users via groups has been
+improved.
+
+### Feature enhancements for on-demand scan of cloud workspaces and roles
+
+SCA has the following enhancements for the on-demand workspace scan
+functionality, which is used to sync IAM roles and cloud workspaces in
+the user interface:
+
+- The audit trail now contains an event job ID for easier tracking of
+  system activities.
+
+- The user interface provides clearer messaging for when an on-demand
+  scan is running, for a better user experience.
+
+### Improved error visibility for APIs
+
+The SCA APIs have additional internal validations, and provide improved
+visibility with enhanced error messages and auditing.
+
+## October 3, 2023
+
+### data center in Frankfurt
+
+We\'ve added a new data center to meet the market demand in the mainland
+Europe region.
+
+## September 21, 2023
+
+### data center in Canada
+
+We\'ve added a new data center to meet the market demand in the Canada
+region. The new data center is in addition to our existing data centers
+in Virginia, USA and UK-Ireland.
+
+### Improved usability
+
+Error codes have been added to enable administrators to investigate and
+fix user connection issues.
+
+For more information, see Error messages.
+
+## September 10, 2023
+
+### Workspace delegation
+
+Many organizations aim to enforce segregation of duties, allowing cloud
+application owners to control access for security reasons and to reduce
+operational overhead.
+
+Customers can now delegate administration of by defining owners for
+cloud workspaces, at both the organization level and the specific
+workspace level. These owners, or delegates, can grant and approve
+access to their cloud services for other developers, vendors and admins.
+
+### Account mapping
+
+users can now configure and use the account mapping capability to define
+the mapping between their federated identities and identities they have
+configured in their cloud providers.
+
+### Updated permissions list
+
+The following permission was added to the AWS onboarding process:
+
+- [iam:ListRoles]{.Emphasis}
+
+::: note
+If you have cloud workspaces that are already onboarded, you have to add
+this permission manually.
+:::
+
+## August 28, 2023
+
+### data center in UK - Ireland
+
+We\'ve added a new data center to meet the market demand in the UK&I
+region. The new data center is in addition to our existing data center
+in Virginia, USA.
+
+### Integration with
+
+Third-party vendors often need access to cloud services so they can
+perform maintenance and support activities. This type of privileged
+access can now be protected by . Using the new integration between and ,
+organizations can manage vendor access to their cloud services and apply
+zero standing privileges.
+
+Currently, the integration with is available for AWS only.
+
+### Sync cloud workspaces and permissions on demand
+
+triggers an automatic sync of your cloud workspaces and cloud IAM roles
+to every 12 hours. Cloud workspaces are synced against while cloud IAM
+roles are synced against the relevant cloud provider.
+
+To support the dynamic nature of the cloud environment, you can now
+trigger an on-demand sync to ensure that you have the most up-to-date
+information about roles and workspaces when creating access policies.
+
+## August 7, 2023
+
+### Integration with third-party IdPs for all cloud providers
+
+can be integrated with third-party IdPs for AWS, Google Cloud, and
+Microsoft Azure. Customers can continue using their existing IdP and
+leverage \'s ability to enforce zero standing privileges to the cloud
+management console.
+
+### On-demand access enhancements
+
+#### Allowed identities
+
+Cloud management is a sensitive resource because it allows access to all
+of your cloud services. As such, user access should be limited to those
+identities that are authorized administrators of the workspaces they
+want to access. With the new allowed identities feature, organizations
+can allow only certain identities to request access or elevated
+permissions to cloud management consoles.
+
+#### Context-aware automatic approval
+
+Additionally, as part of the on-demand access workflow organizations can
+now define the default approval method, either automatic or manual.
+Along with the default approval method, exceptions can be defined for
+identities that meet certain conditions.
+
+For example, an organization can define the default approval method as
+manual, meaning all on-demand access requests must be handled by an
+administrator. However, if an identity submits a request to access a
+workspace tagged as \"staging\", this poses little to no risk so the
+request can be approved automatically.
+
+Using this new capability, organizations can enforce security guidelines
+while reducing the workload for approvers, enabling them to handle only
+higher-risk access requests.
+
+#### Approval channel enhancements
+
+In addition to an out-of-the-box approval flow for Slack, organizations
+can now create custom approval flows in and apply them in . This allows
+tailoring the approval channel work flow to better suit organizational
+needs.
+
+## May 7, 2023
+
+### On-demand access for end-users
+
+Organizations have assorted personas with different access needs. For
+example, developers require daily access to perform development and
+maintenance tasks, while SRE users may occasionally need access to a
+production environment to troubleshoot a production issue.
+
+now provides a solution for both needs. Organizations can benefit from
+regular policy-based access for daily users, and on-demand access for
+unplanned or infrequent situations that require immediate attention for
+a critical issue. On-demand access enables users to request access to
+specific workspaces at specific times. With this new capability,
+organizations can further reduce exposure due to excessive privileges
+and grant elevated permissions only when actually required.
+
+On-demand access comes with an out-of-the-box integration with Slack,
+and can be customized for other ChatOps channels or ticketing systems.
+
+### Support for Azure AD
+
+Azure AD includes highly privileged roles such as Global Administrator.
+To keep cloud environments secure, organizations need a way to assign
+these roles on a Just-In-Time basis for sessions that are limited in
+length.
+
+introduces Just-In-Time access and privilege elevation for Microsoft
+Azure AD roles. This capability helps organizations improve their
+security posture and reduce risk by granting least-privilege, on-demand
+access to Azure AD roles for daily operations using policies. Using ,
+cloud security administrators can grant Just-In-Time access to Azure AD
+roles at the tenant level. Users can access their Azure cloud
+environment from either the Azure management portal or the Azure CLI.
+
+With this new enhancement, now fully supports Microsoft Azure, with both
+Azure AD and Azure RBAC functionality.

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html>
+    <head>
+    </head>
+    <body>
+        <div MadCap:conditions="cc_C_CyberArk.InternalOnly" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+            <h4>Notes for TW</h4>
+            <p>As of FLT 8.3.0, your product's home page workflow image and corresponding image map reside in a customizable snippet (Resources\Snippets\_TopNavCustom\cc_C_HomePageWorkflow.flsnp), which is called by the home page (cc_home.htm).</p>
+            <p>Due to a limitation with Flare snippet files, you can't update the image map directly in the snippet. As a workaround, use this .htm file as a source for the "image + image map" pair, so that you can make updates to the image map when necessary. After you update the image, copy the updated content over to the snippet.</p>
+            <p>This file contains the following elements:</p>
+            <ul>
+                <li>
+                    <p>The map element - Contains the image map for your workflow, including an <code>id</code></p>
+                </li>
+                <li>
+                    <p>The workflow container - Calls the workflow image (.svg), and points to the map's <code>id</code></p>
+                </li>
+            </ul>
+            <div class="ProcedureHeading">
+                <p>To set up the image and the map:</p>
+            </div>
+            <ol>
+                <li>
+                    <p>Rename this file appropriately for your project, eg myproduct-workflow-source.htm.</p>
+                </li>
+                <li>
+                    <p>Switch to the Text Editor, and in the workflow container <code>div</code>, update the image with your product's workflow image.</p>
+                    <p>
+                        <img src="../../Images/flt-internal/flt-wf-container.png" />
+                    </p>
+                </li>
+                <li>
+                    <p>Switch back to the XML&#160;Editor, right-click the image, and select <span class="Emphasis">Image map</span>. Edit the image map.</p>
+                </li>
+                <li>
+                    <p>Switch back to the Text Editor. In the opening <code>map</code> tag, replace the map ID with an appropriate ID for your product:</p>
+                    <p>
+                        <img src="../../Images/flt-internal/flt-map-id.png" />
+                    </p>
+                </li>
+                <li>
+                    <p>In the <code>workflow container</code>, update the <code>usemap</code> value with the same value as the map ID:</p>
+                    <p>
+                        <img src="../../Images/flt-internal/flt-wf_usemap-tag.png" />
+                    </p>
+                </li>
+                <li>
+                    <p>Save your changes.</p>
+                </li>
+                <li>
+                    <p>Copy the <code>map</code> and workflow container <code>div</code> elements to cc_C_HomePageWorkflow.flsnp, just above the closing <code>body</code>tag.</p>
+                    <p>
+                        <img src="../../Images/flt-internal/flt-wf-copy2snippet.png" />
+                    </p>
+                </li>
+            </ol>
+        </div>
+        <p MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">Example for Audit</p>
+        <map id="map-audit">
+            <area shape="rectangle" coords="196,136,416,202" dragDirection="0" href="../../../HomeTilesLPs/LP-Tile2.htm" />
+            <area shape="rectangle" coords="462,140,806,202" dragDirection="0" href="../../../HomeTilesLPs/LP-Tile5.htm" />
+        </map>
+        <div class="workflow-container">
+            <p id="panzoom-element">
+                <img src="../../Images/Prod-LP-Flows/LP-Workflow-Audit.svg" usemap="#map-audit" />
+            </p>
+        </div>
+    </body>
+</html>

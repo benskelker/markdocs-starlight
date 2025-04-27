@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Local-Not-For-SFFS.DoNoBuild">
+    <head>
+        <link href="cc_topnav_content.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p class="FooterHeading">Learn</p>
+        <p class="FooterBody" MadCap:conditions="TopNav.ThemeDefault"><a href="https://www.cyberark.com/resource" target="_blank">Resources</a>
+        </p>
+        <MadCap:snippetBlock src="../Snippets/_TopNav_Custom/cc_C_Learn.flsnp" />
+    </body>
+</html>

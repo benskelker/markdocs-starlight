@@ -1,0 +1,37 @@
+`<dropdown>`{=html} `<dropdownhead>`{=html}
+`<dropdownhotspot>`{=html}Role not listed in policy
+wizard`</dropdownhotspot>`{=html} `</dropdownhead>`{=html}
+`<dropdownbody>`{=html}
+
+[Issue: ]{.Emphasis}The role / permission set / resource that I want to
+select for the access policy isn\'t listed in the [Create policy \>
+Cloud roles]{.Emphasis} list.
+
+[Possible resolutions:]{.Emphasis}
+
+- Check that the role / permission set / resource you are looking for
+  exists in the relevant workspace.
+
+- In [Create policy \> Cloud roles]{.Emphasis}, make sure you selected
+  the correct workspace on the left.
+
+- Click [Scan again]{.Emphasis} above the Cloud roles list to scan the
+  workspace for updates to roles / permission sets / resources in the
+  onboarded workspaces.
+
+`</dropdownbody>`{=html} `</dropdown>`{=html} `<dropdown>`{=html}
+`<dropdownhead>`{=html} `<dropdownhotspot>`{=html}User still has
+standing access to role defined in policy`</dropdownhotspot>`{=html}
+`</dropdownhead>`{=html} `<dropdownbody>`{=html}
+
+[Issue:]{.Emphasis} I defined a policy using a specific AWS IAM role,
+but users are still able to access the role in AWS.
+
+[Possible cause:]{.Emphasis} The role might be assigned to the user in
+AWS, giving the user standing access with this role. AWS role allocation
+overrides SCA access policy.
+
+[Resolution:]{.Emphasis} Make sure the role isn\'t allocation to the
+relevant users in AWS.
+
+`</dropdownbody>`{=html} `</dropdown>`{=html}

@@ -1,0 +1,50 @@
++------------------------+----------------------------+----------+
+| Parameter              | Description                | Required |
++========================+============================+==========+
+| accountId              | The 12-digit AWS account   | Required |
+|                        | ID.                        |          |
++------------------------+----------------------------+----------+
+| iamRoleArn             | ARN of the role used to    | Required |
+|                        | read IAM data.             |          |
++------------------------+----------------------------+----------+
+| athenaRoleArn          | ARN of the role used to    | Required |
+|                        | access Athena. Note that   |          |
+|                        | you can use the same role  |          |
+|                        | for both Athena and IAM    |          |
+|                        | access.                    |          |
++------------------------+----------------------------+----------+
+| cloudTrailLogLocation  | The trail log location     | Required |
+|                        | that contains the          |          |
+|                        | cloudtrail logs.           |          |
+|                        |                            |          |
+|                        | To find your trail log     |          |
+|                        | location, do the           |          |
+|                        | following:                 |          |
+|                        |                            |          |
+|                        | 1.  Sign in to your AWS    |          |
+|                        |     console.               |          |
+|                        |                            |          |
+|                        | 2.  Navigate to[           |          |
+|                        |     CloudTrail \>          |          |
+|                        |     Trails]{.Emphasis}.    |          |
+|                        |                            |          |
+|                        | 3.  Select the trail that  |          |
+|                        |     contains your logs.    |          |
+|                        |                            |          |
+|                        | 4.  Copy the path found    |          |
+|                        |     under [Trail log       |          |
+|                        |     location]{.Emphasis}.  |          |
++------------------------+----------------------------+----------+
+| athenaResultBucketName | Athena writes results to   | Required |
+|                        | this bucket.               |          |
++------------------------+----------------------------+----------+
+| cloudTrailRegion       | The region where the cloud | Required |
+|                        | trail log bucket is        |          |
+|                        | located.                   |          |
++------------------------+----------------------------+----------+
+| Description            | Workspace description.     | Optional |
++------------------------+----------------------------+----------+
+| displayName            | Workspace display name.    | Optional |
++------------------------+----------------------------+----------+
+
+: Stack resources

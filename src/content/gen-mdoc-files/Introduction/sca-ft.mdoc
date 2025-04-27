@@ -1,0 +1,996 @@
+# {% $cc_product_vars.SCA-full %} free trial
+
+Welcome to the
+{% $cc_product_vars.SCA-full %}
+({% $cc_product_vars.SCA-short %})
+free trial.\
+
+The free trial offers a guided experience to help you onboard workspaces
+in your cloud environment to
+{% $cc_C_CyberArk.CompanyName %}.
+
+During the trial, you can explore key features, such as defining secure
+cloud access policies for current and new users. Users can explore
+connecting to your cloud environments based on their assigned roles.
+After completing the onboarding process, you'll have access to
+additional features, including configuring session recording, connecting
+to a third-party IdP, and setting up request approval channels.
+
+## Supported cloud workspaces
+
+{% $cc_product_vars.SCA-short %}
+supports:
+
+- {% $sca-project-variables.AWS-IAM %}
+  and
+  {% $sca-project-variables.AWS-AD %}
+
+- {% $cv-shared-variables.entra-id-long %}
+  and
+  {% $sca-project-variables.Azure %}
+  resources
+
+- {% $sca-project-variables.GCP %}
+  organizations and projects
+
+## Before you begin
+
+Here are some notes before you start with the free trial.
+
+### Prerequisites
+
+- [{% $cc_product_vars.Identity-full %}
+  user roles]{.Emphasis} - In your CyberArk SCA free trial tenant, you
+  are given the necessary administrative roles and access to the
+  {% $cc_product_vars.Administration-full %}
+  space and services that you will be working with during your free
+  trial period.
+
+  The following roles are provided:
+
+    Role                                Description
+    ----------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    [System Administrator]{.Emphasis}   Gives full admin rights on all {% $cc_C_CyberArk.CompanyName %} platform services
+    [CEMAdmin]{.Emphasis}               Gives full admin access to {% $cc_product_vars.CV-full %}
+    [CS Admin]{.Emphasis}               Gives full admin access to {% $cc_product_vars.SCA-full %} functionality
+    [SWS Admin]{.Emphasis}              Gives full admin access to {% $cc_product_vars.SWS-full %}, where you configure and view recordings of user sessions in your cloud environments
+    [Global Auditor]{.Emphasis}         Gives global auditing access to the [Audit service](/audit/latest/en/content/resources/_topnav/cc_home.htm){alt="Link to the Audit documentation in the docs portal"} for monitoring system activity by event
+
+- [Web browser pop-up blocker]{.Emphasis} - Allow the
+  {% $cc_C_CyberArk.CompanyName %}
+  tenant URL (\*.id.cyberark.cloud) in your browser\'s pop-up blocker
+  settings.
+
+- [External links]{.Emphasis} - Links from the
+  {% $cc_C_CyberArk.CompanyName %}
+  platform UI to external URLs may behave unexpectedly, usually due to a
+  URL protection or pop-up blocker software that you are working with.
+  If you experience this during the trial, add the relevant URLs to the
+  allowed or trusted sites in your URL protection or pop-up blocker
+  software.
+
+- [Prerequisites per cloud provider:]{.Emphasis}
+
+  +----------------------------------+----------------------------------+
+  | Cloud provider                   | Prerequisites                    |
+  +==================================+==================================+
+  | [AWS]{.Emphasis}                 | - You need an AWS account or     |
+  |                                  |   organization including at      |
+  |                                  |   least two assumable IAM roles  |
+  |                                  |   (or permission sets, in the    |
+  |                                  |   case of                        |
+  |                                  |   `<variable na                  |
+  |                                  | me="sca-project-variables.AWS-AD |
+  |                                  | ">`{=html}`</variable>`{=html}). |
+  |                                  |   For more information about     |
+  |                                  |   creating AWS IAM roles, see    |
+  |                                  |   the [AWS                       |
+  |                                  |   documen                        |
+  |                                  | tation](https://docs.aws.amazon. |
+  |                                  | com/IAM/latest/UserGuide/id_role |
+  |                                  | s_create.html){target="_blank"}. |
+  |                                  |                                  |
+  |                                  |   ::: note                       |
+  |                                  |   Make sure these roles are not  |
+  |                                  |   allocated in AWS to any of the |
+  |                                  |   users you\'ll be working with  |
+  |                                  |   in the free trial.             |
+  |                                  |   :::                            |
+  |                                  |                                  |
+  |                                  | - You need to be an              |
+  |                                  |   administrative user in AWS     |
+  |                                  |   with the roles and permissions |
+  |                                  |   described in                   |
+  |                                  |   `<xref                         |
+  |                                  |  href="../CloudAdmin/cv-AWS-perm |
+  |                                  | issions.htm#Admin">`{=html}Admin |
+  |                                  |   required                       |
+  |                                  |   permissions`</xref>`{=html}.   |
+  +----------------------------------+----------------------------------+
+  | [`<variable                      | - You need a                     |
+  |  name="sca-project-variables.Azu |   `<variable name=               |
+  | re">`{=html}`</variable>`{=html} | "cv-shared-variables.entra-id-lo |
+  | ]{.Emphasis}                     | ng">`{=html}`</variable>`{=html} |
+  |                                  |   directory with at least one    |
+  |                                  |   subscription.                  |
+  |                                  |                                  |
+  |                                  | - You must be a global           |
+  |                                  |   administrator of your          |
+  |                                  |   `<variable name=               |
+  |                                  | "cv-shared-variables.entra-id-lo |
+  |                                  | ng">`{=html}`</variable>`{=html} |
+  |                                  |   directory.                     |
+  |                                  |                                  |
+  |                                  | - If you are onboarding a        |
+  |                                  |   subscription, you must be the  |
+  |                                  |   owner of the root management   |
+  |                                  |   group in the directory.        |
+  |                                  |                                  |
+  |                                  | - Log in to Microsoft Entra ID,  |
+  |                                  |   go to [Manage \>               |
+  |                                  |   Properties]{.Emphasis}, and    |
+  |                                  |   make sure that [Can manage     |
+  |                                  |   access to all Azure            |
+  |                                  |   subscriptions and management   |
+  |                                  |   groups in this                 |
+  |                                  |   tenant]{.Emphasis} is          |
+  |                                  |   selected. Save your changes.   |
+  +----------------------------------+----------------------------------+
+  | [GCP]{.Emphasis}                 | - You need a Google Cloud        |
+  |                                  |   organization with at least one |
+  |                                  |   project.                       |
+  |                                  |                                  |
+  |                                  | - You need the following         |
+  |                                  |   permissions on the             |
+  |                                  |   organization:                  |
+  |                                  |                                  |
+  |                                  |   - [roles/resourcemanag         |
+  |                                  | er.organizationAdmin]{.Emphasis} |
+  |                                  |                                  |
+  |                                  |   - [roles/owner]{.Emphasis}     |
+  |                                  |                                  |
+  |                                  |   -                              |
+  |                                  | [roles/logging.admin]{.Emphasis} |
+  +----------------------------------+----------------------------------+
+
+### Get familiar with the user interface
+
+After you signed up for the
+{% $cc_product_vars.SCA-short %}
+free trial, you received an email with all the information you need for
+signing in to your
+{% $project_variables.CompanyName %}
+tenant. Sign in and let\'s get started!
+
+Here\'s a brief tour of the
+{% $cc_product_vars.Administration-full %}
+space user interface to get you going:
+
+![](Images/sca-ft-tour.png){.Enlarge}
+
+  ----------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  CyberArk {% $cc_product_vars.Navigator %}   Enable you to navigate the {% cc_C_CyberArk.CompanyName %} platform\'s services
+  ![](Images/sca-ft-get-started.png)                                                  Opens an in-app guided flow, \"Onboard to SCA,\" which walks you through the initial onboarding process.
+  ![](Images/sca-ft-open-guide.png){.icon}                                            Reopens the in-app guided flow at the last flow you were working on.
+  [Guided flows pane]{.Emphasis}                                                      After you complete the initial onboarding, explore the guided flows under [Explore]{.Emphasis}, [Expand]{.Emphasis}, and [Optimize ]{.Emphasis}to gain deeper insights into managing zero-standing privilege access for your cloud environments.
+  ----------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## []{#Get}Get started - Onboard to SCA
+
+After you log in to the
+{% $cc_C_CyberArk.CompanyName %}
+{% $cc_product_vars.Administration-full %}
+home page, click [Get started]{.Emphasis}. Follow the in-app guided
+flow, which walks you through the onboarding process.
+
+![](Images/sca-ft-get-started-123.png)
+
+### []{#Add}[]{#ft-add-workspace}Add your cloud environment {#add-your-cloud-environment .step madcap:autonum="Step 1: "}
+
+Let
+{% $cc_C_CyberArk.CompanyName %}{% cc_product_vars.CV-full %}
+discover your cloud environment\'s structure.
+
+- `<xref href="../CloudAdmin/cv-aws-discovery.htm">`{=html}Add
+  AWS`</xref>`{=html}
+
+- `<xref href="../CloudAdmin/cv-onboard-azure.htm">`{=html}Add Azure -
+  \[%=cv-shared-variables.entra-id-long%\]`</xref>`{=html}
+
+- `<xref href="../CloudAdmin/cv-gcp-discovery.htm">`{=html}Add Google
+  Cloud`</xref>`{=html}
+
+### []{#Configur}[]{#ft-create-webapp}Configure one-click user access {#configure-one-click-user-access .step madcap:autonum="Step 2: "}
+
+Create a cloud provider app tile, which serves as an entry point from
+{% $cc_C_CyberArk.CompanyName %}
+to your cloud environment. This tile will appear in your
+[Applications]{.Emphasis} page in the
+{% $cc_product_vars.SecureAccessSpace %}
+space.
+
+- `<xref href="../DPAforCloud/sca_create-aws-web-app.htm">`{=html}Create
+  a web app for AWS`</xref>`{=html}
+
+- `<xref href="../DPAforCloud/sca_create-azure-web-app.htm">`{=html}Create
+  a web app for \[%=cv-shared-variables.entra-id-long%\]`</xref>`{=html}
+
+- `<xref href="../DPAforCloud/sca_create-gcp-web-app.htm">`{=html}Create
+  a web app for Google Cloud`</xref>`{=html}
+
+### []{#map-user}Map your user {#map-your-user .step madcap:autonum="Step 3: "}
+
+Map your
+{% $cc_C_CyberArk.CompanyName %}
+tenant user to your user in your cloud environment.
+
+::::::::::::: tabs
+- [{% $sca-project-variables.AWS-AD %}]{cc-tab=".tab-1"}
+- [Azure]{cc-tab=".tab-2"}
+- [GCP]{cc-tab=".tab-3"}
+
+:::::::::::: tabs-stage
+:::::: tab-1
+Tab 1 Content - AWS
+
+::: ProcedureHeading
+Map your
+{% $cc_C_CyberArk.CompanyName %}
+tenant user to your
+{% $sca-project-variables.AWS-AD %}
+user:
+:::
+
+::: note
+For standalone AWS accounts or AWS organizations [without
+]{.Emphasis}IAM Identity Center, you can skip this step as no mapping is
+required.
+:::
+
+::: important
+This section assumes you are using
+{% $cc_product_vars.Identity-full %}
+as your IdP, and that this option was selected when the
+{% $sca-project-variables.AWS-AD %}
+cloud provider app was created in
+`<xref href="#Configur">`{=html}Configure one-click user
+access`</xref>`{=html}.
+:::
+
+1.  Define trust with
+    {% $sca-project-variables.AWS-AD %}:
+    Follow the instructions in
+    `<xref href="../DPAforCloud/sca_create-aws-web-app.htm#Configur">`{=html}Create
+    a web app for an AWS workspace`</xref>`{=html}, under the
+    [{% $sca-project-variables.AWS-AD %}]{.Emphasis}
+    tab \> [Configure the IdP - required only if you are using CyberArk
+    Identity as your external IdP]{.Emphasis}.
+
+2.  Create a user in
+    {% $sca-project-variables.AWS-AD %}
+    with the same name as your
+    {% $cc_C_CyberArk.CompanyName %}
+    tenant user. For example, if your
+    {% $cc_C_CyberArk.CompanyName %}
+    users is [demo-user@11111.cyberark.cloud]{.Emphasis}, create an
+    {% $sca-project-variables.AWS-AD %}
+    user with the same name,
+    [demo-user@11111.cyberark.cloud]{.Emphasis}.
+::::::
+
+:::: tab-2
+Tab 2 Content - AZURE
+
+[Prerequisite:]{.Emphasis} Make sure you have an Azure user whose prefix
+is identical to your
+{% $cc_C_CyberArk.CompanyName %}
+tenant user.
+
+If you don\'t have such a user in Azure, create one now using the same
+prefix as your
+{% $cc_C_CyberArk.CompanyName %}
+tenant user, as follows: [\<user prefix in
+identity\>@azuredomain]{.Emphasis}.
+
+For example, if your
+{% $cc_C_CyberArk.CompanyName %}
+tenant user is [demo-user]{.Emphasis}\@11111.cyberark.cloud, and then
+create a Azure user as follows: [demo-user]{.Emphasis}\@acme.com, where
+[acme.com]{.Emphasis} is your Azure domain.
+
+::: ProcedureHeading
+[Map your CyberArk tenant user to your Azure user:]{.Emphasis}
+:::
+
+1.  From the Administration spacel navigator, select
+    {% $cc_product_vars.IdentityAdmin-full %}.
+
+2.  In the left navigation, under [Apps & Widgets]{.Emphasis}, select
+    [Web Apps]{.Emphasis}.
+
+3.  Open the Azure web app that you created in
+    `<xref href="#Configur">`{=html}Configure one-click user
+    access`</xref>`{=html}.
+
+4.  In the [Account mapping]{.Emphasis} tab, select [Account Mapping
+    Script]{.Emphasis} and enter the script
+    ([case-sensitive]{.Emphasis}) as follows, replacing
+    [azuredomain]{.Emphasis} with your organization\'s Azure domain:
+
+    ::: code
+        LoginUser.Username= LoginUser.Shortname + "@azuredomain";
+    :::
+
+    For example, if your Azure user name is [eva@acme.com]{.Emphasis},
+    then your Azure domain is [acme.com]{.Emphasis}. In the script,
+    replace `azuredomain` with [acme.com]{.Emphasis}:
+
+    ::: example
+        LoginUser.Username= LoginUser.Shortname + "@acme.com";
+    :::
+
+    ::: tip
+    This mapping script will also map users that you add later on in
+    this free trial.
+    :::
+
+    </p>
+
+5.  Save your changes.
+::::
+
+::::: tab-3
+Tab 3 Content - GCP
+
+[Prerequisite:]{.Emphasis} Make sure you have a GCP user whose prefix is
+identical to your
+{% $cc_C_CyberArk.CompanyName %}
+tenant user.
+
+If you don\'t have such a user in GCP, create one now using the same
+prefix as your
+{% $cc_C_CyberArk.CompanyName %}
+tenant user, as follows: [\<user prefix in
+identity\>@googledomain]{.Emphasis}.
+
+For example, if your
+{% $cc_C_CyberArk.CompanyName %}
+tenant user is [demo-user]{.Emphasis}\@11111.cyberark.cloud, and then
+create a GCP user as follows: [demo-user]{.Emphasis}\@acme.com, where
+[acme.com]{.Emphasis} is your Google domain.
+
+::: ProcedureHeading
+[Map your
+{% $cc_C_CyberArk.CompanyName %}
+tenant user to your GCP user:]{.Emphasis}
+:::
+
+::: important
+This process assumes you are using
+{% $cc_product_vars.Identity-full %}
+as your IdP, and that this option was selected when the GCP cloud
+provider app was created in `<xref href="#Configur">`{=html}Configure
+one-click user access`</xref>`{=html}.
+:::
+
+1.  From the
+    {% $cc_product_vars.Administration-full %}
+    space navigator, select
+    {% $cc_product_vars.IdentityAdmin-full %}.
+
+2.  In the left navigation, under [Apps & Widgets]{.Emphasis}, select
+    [Web Apps]{.Emphasis}.
+
+3.  Open the GCP application that you created in
+    `<xref href="#Configur">`{=html}Configure one-click user
+    access`</xref>`{=html}.
+
+4.  Under [Secure Cloud Access]{.Emphasis}, make sure that both [Enable
+    {% $cc_product_vars.SCA-full %}]{.Emphasis}
+    and [CyberArk as the IdP]{.Emphasis} are selected.
+
+5.  Define trust with GCP. For details, go to
+    `<xref href="../DPAforCloud/sca_create-gcp-web-app.htm">`{=html}Create
+    a web app for Google Cloud`</xref>`{=html} and follow
+    `<xref href="../DPAforCloud/sca_create-gcp-web-app.htm#Configur2">`{=html}Configure
+    authentication`</xref>`{=html}.
+
+6.  Map your
+    {% $cc_C_CyberArk.CompanyName %}
+    tenant user to your GCP user:
+
+    1.  In the [Account mapping]{.Emphasis} tab, select [Account Mapping
+        Script]{.Emphasis} and enter the script
+        ([case-sensitive]{.Emphasis}) as follows:
+
+        ::: code
+            LoginUser.Username=LoginUser.Shortname + '@'+ Application.Get('CorpIdentifier');
+        :::
+
+        ::: tip
+        This mapping script will also map users that you add later on in
+        this free trial.
+        :::
+
+    2.  Save your changes.
+:::::
+::::::::::::
+:::::::::::::
+
+### Validate your onboarding {#validate-your-onboarding .step madcap:autonum="Step 4: "}
+
+On the
+{% $cc_product_vars.Administration-full %}
+space home page, click [Done? Validate now]{.Emphasis}.
+
+The validation window opens and displays the validation results. If
+there are any issues, follow the instructions in the validation error
+messages. When you are done, click [Revalidate]{.Emphasis}.
+
+## Connect to your cloud environment with zero standing privileges (ZSP)
+
+Once you have onboarded your workspace to
+{% $cc_product_vars.SCA-short %},
+you grant users ZSP to the workspace.
+
+To achieve this, you create access policies that specify the roles a
+user can have in your cloud environment, along with when and for how
+long they can access these roles. This approach enforces zero-standing
+access to your organization\'s cloud resources while ensuring users get
+the access they need, only when they need it.
+
+### Grant zero standing privileges (ZSP) {#grant-zero-standing-privileges-zsp .stepReset madcap:autonum="Step 1: "}
+
+::: ProcedureHeading
+To create a policy:
+:::
+
+On the
+{% $cc_product_vars.Administration-full %}
+space home page, under the [Guided flows]{.Emphasis} area, go to
+[Explore]{.Emphasis} \> [Grant zero standing privileges]{.Emphasis} and
+follow the guided steps.
+
+[See also: ]{.Emphasis}
+`<xref href="../DPAforCloud/sca_create-policy.htm">`{=html}Create
+\[%=cc_product_vars.SCA-short%\] policies for cloud
+access`</xref>`{=html}
+
+### Experience zero standing privileges {#experience-zero-standing-privileges .step madcap:autonum="Step 2: "}
+
+Experience firsthand how your end users will connect to the cloud
+environment.
+
+::: ProcedureHeading
+To connect to the cloud environment:
+:::
+
+On the
+{% $cc_product_vars.Administration-full %}
+space home page, in the [Guided flows]{.Emphasis} area, under
+[Explore]{.Emphasis}, click [Experience zero standing
+privileges]{.Emphasis} and follow the guided steps.
+
+As long as there is a policy set up giving you access at the current
+time, you will be able to connect.
+
+[See also:]{.Emphasis} [Connect to your cloud
+environment](/secure-access-space/latest/en/content/cloud-consoles/sas-cloudconsoles-lp.htm)
+
+::: ProcedureHeading
+To request access to the cloud environment:
+:::
+
+If you aren\'t able to connect, you can send an access request.
+
+On the
+{% $cc_product_vars.Administration-full %}
+space home page, in the [Guided flows]{.Emphasis} area, under
+[Explore]{.Emphasis}, click [Request on-demand access]{.Emphasis} and
+follow the guided steps.
+
+[See also:]{.Emphasis} [Request temporary
+access](/secure-access-space/latest/en/content/cloud-consoles/sca_request-temporary-access.htm)
+
+## Explore more guided flows
+
+Now that you are onboarded to
+{% $cc_product_vars.SCA-short %}
+and have run through the initial guided flows, explore the extended
+flows, and then go ahead and optimize your
+{% $cc_product_vars.SCA-short %}
+experience.
+
+### Extend
+
++----------------------------------+----------------------------------+
+| Guided flow                      | Description                      |
++==================================+==================================+
+| [Enforce session                 | Set up enforced recordings of    |
+| recording]{.Emphasis}            | active                           |
+|                                  | `<variable n                     |
+|                                  | ame="project_variables.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  | sessions on your workspaces.     |
+|                                  |                                  |
+|                                  | For more information, see the    |
+|                                  | [`<varia                         |
+|                                  | ble name="cc_product_vars.SWS-fu |
+|                                  | ll">`{=html}`</variable>`{=html} |
+|                                  | docs](/sws/la                    |
+|                                  | test/en/content/resources/_topna |
+|                                  | v/cc_home.htm){target="_blank"}. |
++----------------------------------+----------------------------------+
+| []{#add-more-users}[Add more     | Add more users to                |
+| users]{.Emphasis}                | `<variab                         |
+|                                  | le name="cc_C_CyberArk.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  | so that they too can get secure  |
+|                                  | access to the onboarded          |
+|                                  | workspace. Follow the            |
+|                                  | instructions per the onboarded   |
+|                                  | workspace:                       |
+|                                  |                                  |
+|                                  | :::::::::::: tabs                |
+|                                  | - [AWS]{cc-tab=".tab-1"}         |
+|                                  | - [Azure]{cc-tab=".tab-2"}       |
+|                                  | - [GCP]{cc-tab=".tab-3"}         |
+|                                  |                                  |
+|                                  | ::::::::::: tabs-stage           |
+|                                  | :::: tab-1                       |
+|                                  | Tab 1 Content - AWS              |
+|                                  |                                  |
+|                                  | ::: ProcedureHeading             |
+|                                  | To add a                         |
+|                                  | `<variab                         |
+|                                  | le name="cc_C_CyberArk.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  | user:                            |
+|                                  | :::                              |
+|                                  |                                  |
+|                                  | 1.  Add a                        |
+|                                  |     `<variab                     |
+|                                  | le name="cc_C_CyberArk.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  |     user. Follow the             |
+|                                  |     instructions in [Add         |
+|                                  |     CyberArk Cloud Directory     |
+|                                  |     Users](/i                    |
+|                                  | dentity-administration/latest/en |
+|                                  | /content/coreservices/getstarted |
+|                                  | /usersadd.htm){target="_blank"}, |
+|                                  |     keeping the following in     |
+|                                  |     mind:                        |
+|                                  |                                  |
+|                                  |     - When you define the [Login |
+|                                  |       name]{.Emphasis}, this     |
+|                                  |       value must be identical to |
+|                                  |       the user\'s cloud user     |
+|                                  |       prefix. For example if     |
+|                                  |       their cloud user is        |
+|                                  |       [                          |
+|                                  | demo-user1@acme.com]{.Emphasis}, |
+|                                  |       define [Login              |
+|                                  |       name]{.Emphasis} as        |
+|                                  |       [demo-user1]{.Emphasis}.   |
+|                                  |                                  |
+|                                  |     - Select the option to       |
+|                                  |       invite the user to sign in |
+|                                  |       to CyberArk!               |
+|                                  |                                  |
+|                                  | 2.  Give the user the following  |
+|                                  |     roles (see [Assign users to  |
+|                                  |     roles and manage             |
+|                                  |     roles](/identity-            |
+|                                  | administration/latest/en/content |
+|                                  | /coreservices/getstarted/userrol |
+|                                  | esassign.htm){target="_blank"}): |
+|                                  |                                  |
+|                                  |       Role                       |
+|                                  |                      Description |
+|                                  |       -------------------------  |
+|                                  | ---------- --------------------- |
+|                                  | -------------------------------- |
+|                                  | -------------------------------- |
+|                                  | -------------------------------- |
+|                                  |       [System Administrator]{    |
+|                                  | .Emphasis}   Allows the user to  |
+|                                  | access `<variable name="cc_produ |
+|                                  | ct_vars.IdentityAdmin-full">`{=h |
+|                                  | tml}`</variable>`{=html} and SCA |
+|                                  |       [CEM                       |
+|                                  | Admin]{.Emphasis}                |
+|                                  | Allows the user to access `<vari |
+|                                  | able name="cc_product_vars.CV-fu |
+|                                  | ll">`{=html}`</variable>`{=html} |
+|                                  |                                  |
+|                                  | 3.  [`<variable name="sca-proj   |
+|                                  | ect-variables.AWS-AD">`{=html}`< |
+|                                  | /variable>`{=html}]{.Emphasis} - |
+|                                  |     Map the user:                |
+|                                  |                                  |
+|                                  |     ::: important                |
+|                                  |     This section assumes you are |
+|                                  |     using                        |
+|                                  |     `<variable n                 |
+|                                  | ame="cc_product_vars.Identity-fu |
+|                                  | ll">`{=html}`</variable>`{=html} |
+|                                  |     as your IdP, and that this   |
+|                                  |     option was selected when you |
+|                                  |     created the                  |
+|                                  |     `<variable                   |
+|                                  | name="sca-project-variables.AWS- |
+|                                  | AD">`{=html}`</variable>`{=html} |
+|                                  |     web app in                   |
+|                                  |     `<xref hr                    |
+|                                  | ef="#Configur">`{=html}Configure |
+|                                  |     one-click user               |
+|                                  |     access`</xref>`{=html}.      |
+|                                  |     :::                          |
+|                                  |                                  |
+|                                  |     1.  Define trust with        |
+|                                  |         `<variable n             |
+|                                  | ame="sca-project-variables.AWS-A |
+|                                  | D">`{=html}`</variable>`{=html}: |
+|                                  |         Follow the instructions  |
+|                                  |         in                       |
+|                                  |         `<xref href="..          |
+|                                  | /DPAforCloud/sca_create-aws-web- |
+|                                  | app.htm#Configur">`{=html}Create |
+|                                  |         a web app for an AWS     |
+|                                  |                                  |
+|                                  |       workspace`</xref>`{=html}, |
+|                                  |         under the                |
+|                                  |         [`<variable name="sca-pr |
+|                                  | oject-variables.AWS-AD">`{=html} |
+|                                  | `</variable>`{=html}]{.Emphasis} |
+|                                  |         tab \> [Configure the    |
+|                                  |         IdP - required only if   |
+|                                  |         you are using CyberArk   |
+|                                  |         Identity as your         |
+|                                  |         external                 |
+|                                  |         IdP]{.Emphasis}.         |
+|                                  |                                  |
+|                                  |     2.  Create a user in         |
+|                                  |         `<variable               |
+|                                  | name="sca-project-variables.AWS- |
+|                                  | AD">`{=html}`</variable>`{=html} |
+|                                  |         with the same name as    |
+|                                  |         the                      |
+|                                  |         `<variab                 |
+|                                  | le name="cc_C_CyberArk.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  |         tenant user you created  |
+|                                  |         for the new user. For    |
+|                                  |         example, if their        |
+|                                  |         `<variab                 |
+|                                  | le name="cc_C_CyberArk.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  |         user is                  |
+|                                  |         [demo-user1@1            |
+|                                  | 1111.cyberark.cloud]{.Emphasis}, |
+|                                  |         create an                |
+|                                  |         `<variable               |
+|                                  | name="sca-project-variables.AWS- |
+|                                  | AD">`{=html}`</variable>`{=html} |
+|                                  |         user with the same name, |
+|                                  |         [demo-user1@1            |
+|                                  | 1111.cyberark.cloud]{.Emphasis}. |
+|                                  |                                  |
+|                                  | 4.  Let the user try to connect  |
+|                                  |     to the environment from the  |
+|                                  |     AWS app tile on their        |
+|                                  |     [Applications]{.Emphasis}    |
+|                                  |     page in the                  |
+|                                  |     `<variable name=             |
+|                                  | "cc_product_vars.SecureAccessSpa |
+|                                  | ce">`{=html}`</variable>`{=html} |
+|                                  |     space.                       |
+|                                  | ::::                             |
+|                                  |                                  |
+|                                  | ::::: tab-2                      |
+|                                  | Tab 2 Content -Azure             |
+|                                  |                                  |
+|                                  | [Prerequisite:]{.Emphasis} Make  |
+|                                  | sure the user you\'re inviting   |
+|                                  | has a user in Azure. If not,     |
+|                                  | create one for them now.         |
+|                                  |                                  |
+|                                  | ::: ProcedureHeading             |
+|                                  | To add a                         |
+|                                  | `<variab                         |
+|                                  | le name="cc_C_CyberArk.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  | user:                            |
+|                                  | :::                              |
+|                                  |                                  |
+|                                  | 1.  Add a                        |
+|                                  |     `<variab                     |
+|                                  | le name="cc_C_CyberArk.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  |     user. Follow the             |
+|                                  |     instructions in [Add         |
+|                                  |     CyberArk Cloud Directory     |
+|                                  |     Users](/i                    |
+|                                  | dentity-administration/latest/en |
+|                                  | /content/coreservices/getstarted |
+|                                  | /usersadd.htm){target="_blank"}, |
+|                                  |     keeping the following in     |
+|                                  |     mind:                        |
+|                                  |                                  |
+|                                  |     - When you define the [Login |
+|                                  |       name]{.Emphasis}, this     |
+|                                  |       value must be identical to |
+|                                  |       the user\'s cloud user     |
+|                                  |       prefix. For example if     |
+|                                  |       their cloud user is        |
+|                                  |       [                          |
+|                                  | demo-user1@acme.com]{.Emphasis}, |
+|                                  |       define [Login              |
+|                                  |       name]{.Emphasis} as        |
+|                                  |       [demo-user1]{.Emphasis}.   |
+|                                  |                                  |
+|                                  |     - Select the option to       |
+|                                  |       invite the user to sign in |
+|                                  |       to CyberArk!               |
+|                                  |                                  |
+|                                  | 2.  Give the user the following  |
+|                                  |     roles (see [Assign users to  |
+|                                  |     roles and manage             |
+|                                  |     roles](/identity-            |
+|                                  | administration/latest/en/content |
+|                                  | /coreservices/getstarted/userrol |
+|                                  | esassign.htm){target="_blank"}): |
+|                                  |                                  |
+|                                  |       Role                       |
+|                                  |                      Description |
+|                                  |                                  |
+|                                  |   ------------------------------ |
+|                                  | ----- -------------------------- |
+|                                  | -------------------------------- |
+|                                  | -------------------------------- |
+|                                  | -------------------------------- |
+|                                  | -------------------------------- |
+|                                  | -------------------------------- |
+|                                  |                                  |
+|                                  |     [System Administrator]{.Emph |
+|                                  | asis}   Allows the user to acces |
+|                                  | s `<variable name="cc_product_va |
+|                                  | rs.IdentityAdmin-full">`{=html}` |
+|                                  | </variable>`{=html} and `<variab |
+|                                  | le name="cc_product_vars.SCA-sho |
+|                                  | rt">`{=html}`</variable>`{=html} |
+|                                  |       [CEM                       |
+|                                  | Admin]{.Emphasis}                |
+|                                  | Allows the user to access `<vari |
+|                                  | able name="cc_product_vars.CV-fu |
+|                                  | ll">`{=html}`</variable>`{=html} |
+|                                  |                                  |
+|                                  | 3.  Let the user try to connect  |
+|                                  |     to the environment from the  |
+|                                  |     Azure app tile on their      |
+|                                  |     [Applications]{.Emphasis}    |
+|                                  |     page in the                  |
+|                                  |     `<variable name=             |
+|                                  | "cc_product_vars.SecureAccessSpa |
+|                                  | ce">`{=html}`</variable>`{=html} |
+|                                  |     space.                       |
+|                                  |                                  |
+|                                  | ::: note                         |
+|                                  | The user mapping that you        |
+|                                  | defined in the initial           |
+|                                  | onboarding maps any additional   |
+|                                  | users, so no additional mapping  |
+|                                  | is needed.                       |
+|                                  | :::                              |
+|                                  | :::::                            |
+|                                  |                                  |
+|                                  | ::::: tab-3                      |
+|                                  | Tab 3 Content - GCP              |
+|                                  |                                  |
+|                                  | [Prerequisite:]{.Emphasis} Make  |
+|                                  | sure the user you\'re inviting   |
+|                                  | has a user in GCP. If not,       |
+|                                  | create one for them now.         |
+|                                  |                                  |
+|                                  | ::: ProcedureHeading             |
+|                                  | To add a                         |
+|                                  | `<variab                         |
+|                                  | le name="cc_C_CyberArk.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  | user:                            |
+|                                  | :::                              |
+|                                  |                                  |
+|                                  | 1.  Add a                        |
+|                                  |     `<variab                     |
+|                                  | le name="cc_C_CyberArk.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  |     user. Follow the             |
+|                                  |     instructions in [Add         |
+|                                  |     CyberArk Cloud Directory     |
+|                                  |     Users](/i                    |
+|                                  | dentity-administration/latest/en |
+|                                  | /content/coreservices/getstarted |
+|                                  | /usersadd.htm){target="_blank"}, |
+|                                  |     keeping the following in     |
+|                                  |     mind:                        |
+|                                  |                                  |
+|                                  |     - When you define the [Login |
+|                                  |       name]{.Emphasis}, this     |
+|                                  |       value must be identical to |
+|                                  |       the user\'s cloud user     |
+|                                  |       prefix. For example if     |
+|                                  |       their cloud user is        |
+|                                  |       [                          |
+|                                  | demo-user1@acme.com]{.Emphasis}, |
+|                                  |       define [Login              |
+|                                  |       name]{.Emphasis} as        |
+|                                  |       [demo-user1]{.Emphasis}.   |
+|                                  |                                  |
+|                                  |     - Select the option to       |
+|                                  |       invite the user to sign in |
+|                                  |       to CyberArk.               |
+|                                  |                                  |
+|                                  | 2.  Give the user the following  |
+|                                  |     roles (see [Assign users to  |
+|                                  |     roles and manage             |
+|                                  |     roles](/identity-            |
+|                                  | administration/latest/en/content |
+|                                  | /coreservices/getstarted/userrol |
+|                                  | esassign.htm){target="_blank"}): |
+|                                  |                                  |
+|                                  |       Role                       |
+|                                  |                      Description |
+|                                  |                                  |
+|                                  |   ------------------------------ |
+|                                  | ----- -------------------------- |
+|                                  | -------------------------------- |
+|                                  | -------------------------------- |
+|                                  | -------------------------------- |
+|                                  | -------------------------------- |
+|                                  | -------------------------------- |
+|                                  |                                  |
+|                                  |     [System Administrator]{.Emph |
+|                                  | asis}   Allows the user to acces |
+|                                  | s `<variable name="cc_product_va |
+|                                  | rs.IdentityAdmin-full">`{=html}` |
+|                                  | </variable>`{=html} and `<variab |
+|                                  | le name="cc_product_vars.SCA-sho |
+|                                  | rt">`{=html}`</variable>`{=html} |
+|                                  |       [CEM                       |
+|                                  | Admin]{.Emphasis}                |
+|                                  | Allows the user to access `<vari |
+|                                  | able name="cc_product_vars.CV-fu |
+|                                  | ll">`{=html}`</variable>`{=html} |
+|                                  |                                  |
+|                                  | 3.  Let the user try to connect  |
+|                                  |     to the environment from the  |
+|                                  |     Google Cloud app tile on     |
+|                                  |     their                        |
+|                                  |     [Applications]{.Emphasis}    |
+|                                  |     page in the                  |
+|                                  |     `<variable name=             |
+|                                  | "cc_product_vars.SecureAccessSpa |
+|                                  | ce">`{=html}`</variable>`{=html} |
+|                                  |     space.                       |
+|                                  |                                  |
+|                                  | ::: note                         |
+|                                  | The user mapping that you        |
+|                                  | defined in the initial           |
+|                                  | onboarding maps any additional   |
+|                                  | users, so no additional mapping  |
+|                                  | is needed.                       |
+|                                  | :::                              |
+|                                  | :::::                            |
+|                                  | :::::::::::                      |
+|                                  | ::::::::::::                     |
++----------------------------------+----------------------------------+
+| [Add more workspaces]{.Emphasis} | Onboard more workspaces to       |
+|                                  | `<variabl                        |
+|                                  | e name="cc_product_vars.SCA-shor |
+|                                  | t">`{=html}`</variable>`{=html}: |
+|                                  |                                  |
+|                                  | 1.  Onboard more workspaces as   |
+|                                  |     described in                 |
+|                                  |                                  |
+|                                  |   `<xref href="#Add">`{=html}Add |
+|                                  |     your cloud                   |
+|                                  |     environment`</xref>`{=html}. |
+|                                  |                                  |
+|                                  | 2.  Create cloud provider apps   |
+|                                  |     for the workspaces as        |
+|                                  |     described in                 |
+|                                  |     `<xref hr                    |
+|                                  | ef="#Configur">`{=html}Configure |
+|                                  |     one-click user               |
+|                                  |     access`</xref>`{=html}.      |
+|                                  |                                  |
+|                                  | 3.  Map your                     |
+|                                  |     `<variab                     |
+|                                  | le name="cc_C_CyberArk.CompanyNa |
+|                                  | me">`{=html}`</variable>`{=html} |
+|                                  |     users and cloud users as you |
+|                                  |     did earlier:                 |
+|                                  |                                  |
+|                                  |     ::: note                     |
+|                                  |     If you onboarded a workspace |
+|                                  |     from the same cloud provider |
+|                                  |     as you did in the initial    |
+|                                  |     onboarding, you\'ll already  |
+|                                  |     have done this mapping, so   |
+|                                  |     you can skip this.           |
+|                                  |     :::                          |
+|                                  |                                  |
+|                                  |     - One user:                  |
+|                                  |       `<x                        |
+|                                  | ref href="#map-user">`{=html}Map |
+|                                  |       your user`</xref>`{=html}  |
+|                                  |                                  |
+|                                  |     - More than one user: See    |
+|                                  |       the step about mapping     |
+|                                  |       users in                   |
+|                                  |       `<xref hr                  |
+|                                  | ef="#add-more-users">`{=html}Add |
+|                                  |       more users`</xref>`{=html} |
++----------------------------------+----------------------------------+
+
+### Optimize
+
++----------------------------------+----------------------------------+
+| Guided flow                      | Description                      |
++==================================+==================================+
+| [Automate                        | Automate                         |
+| SCA operations]{.Emphasis}       | `<variab                         |
+|                                  | le name="cc_product_vars.SCA-sho |
+|                                  | rt">`{=html}`</variable>`{=html} |
+|                                  | operations such as onboarding    |
+|                                  | and policy creation using our    |
+|                                  | APIs and Terraform capabilities. |
+|                                  |                                  |
+|                                  | For more information, see        |
+|                                  | `<xref href="../HomeTilesLP      |
+|                                  | s/LP-Tile3.htm">`{=html}Automate |
+|                                  | \[%=cc_product_vars.SCA-short%\] |
+|                                  | operations`</xref>`{=html}.      |
++----------------------------------+----------------------------------+
+| [Delegate ownership]{.Emphasis}  | Delegate workspace owners to:    |
+|                                  |                                  |
+|                                  | - Perform admin tasks on their   |
+|                                  |   delegated workspaces           |
+|                                  |                                  |
+|                                  | - Handle requests for access to  |
+|                                  |   their delegated workspaces     |
+|                                  |                                  |
+|                                  | For more information, see        |
+|                                  | `<xref href="../CloudAdmin/c     |
+|                                  | v-delegation.htm">`{=html}Manage |
+|                                  | workspace                        |
+|                                  | delegation`</xref>`{=html}.      |
++----------------------------------+----------------------------------+
+| [[]{#sca-ft-connect-idp}Connect  | If your organization is working  |
+| your IdP]{.Emphasis}             | with a third-party IdP, connect  |
+|                                  | it to CyberArk so that you       |
+|                                  | don\'t have to add users         |
+|                                  | manually.                        |
++----------------------------------+----------------------------------+
+
+##  Video gallery
+
+Explore our \"How-to\" video gallery. See
+`<xref href="../videos/video-gallery.htm">`{=html}Video
+gallery`</xref>`{=html}.
+
+## Troubleshoot
+
+This section describes issues that may arise when you are working with
+the
+{% $cc_product_vars.SCA-short %}
+free trial, and suggests resolutions.
+
+### Onboarding to {% $cc_product_vars.SCA-short %}
+
+`<snippetblock src="../Troubleshooting/ts-snippets/ts-onboarding.flsnp">`{=html}`</snippetblock>`{=html}
+
+### Policy
+
+`<snippetblock src="../Troubleshooting/ts-snippets/ts-policy.flsnp">`{=html}`</snippetblock>`{=html}

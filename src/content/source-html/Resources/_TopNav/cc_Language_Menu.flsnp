@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <div class="cc-main-menu language" MadCap:conditions="TopNav.LanguageMenu">
+            <ul>
+                <li class="has-sub-menu"><a href="#" onclick="return false;" target="_blank"><img src="Images/Icons/ic-language.svg" /></a>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">/*      <![CDATA[*/
+          $(function() {
+            $('.cc-main-menu.language')
+              .appendTo($('.off-canvas-content .title-bar-layout'));
+          });
+        /*]]>*/</script>
+    </body>
+</html>

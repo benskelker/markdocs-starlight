@@ -1,0 +1,363 @@
+
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "SCA Infrastructure API",
+    "version": "1.0.0",
+    "description": "This API enables you to perform SCA infrastructure operations.",
+    "contact": {
+      "name": "SCA Group"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://{tenant_name}.sca.cyberark.cloud/api",
+      "description": "sca_base_url"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerOAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": ""
+      }
+    },
+    "schemas": {},
+    "responses": {
+      "JobStatus": {
+        "description": "Job Status",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "x-examples": {
+                "example-1": {
+                  "job_id": "e369baf0-1b24-11ee-be56-0242ac120002",
+                  "operation": "RESCAN",
+                  "status": "Success",
+                  "last_updated": "2011-10-05T14:48:00.000Z",
+                  "already_running": false,
+                  "total_executed": {
+                    "current": 100,
+                    "total": 100
+                  },
+                  "additional_info": {
+                    "policy_id": "aws_0657546c-0d9f-4112-862f-49570afea282"
+                  }
+                }
+              },
+              "properties": {
+                "job_id": {
+                  "type": "string",
+                  "description": "The unique ID of the job"
+                },
+                "operation": {
+                  "type": "string",
+                  "description": "The job type"
+                },
+                "status": {
+                  "type": "string",
+                  "description": "The status of the job.\n  \nSupported values:\n\nInProgress,Success,Failure"
+                },
+                "last_updated": {
+                  "type": "string",
+                  "description": "The date and time when the job was last changed, in ISO format."
+                },
+                "already_running": {
+                  "type": "boolean",
+                  "description": "Flag that represents if the job is running"
+                },
+                "total_executed": {
+                  "type": "object",
+                  "description": "(Optional) Stats for the jobs",
+                  "properties": {
+                    "total": {
+                      "type": "integer",
+                      "description": "Total count"
+                    },
+                    "current": {
+                      "type": "integer",
+                      "description": "Current count"
+                    }
+                  }
+                },
+                "additional_info": {
+                  "type": "object",
+                  "description": "(Optional) Information that is added to the job according to the specific operation",
+                  "properties": {
+                    "policy_id": {
+                      "type": "string",
+                      "description": "Policy ID that was created for the CREATE_POLICY_V2 job when it completed successfully"
+                    }
+                  }
+                },
+                "debug_info": {
+                  "type": "array",
+                  "description": "(Optional) Debug information for failed jobs",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "error_code": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "reason": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "examples": {
+              "Rescan": {
+                "value": {
+                  "job_id": "e369baf0-1b24-11ee-be56-0242ac120002",
+                  "operation": "RESCAN",
+                  "status": "Success",
+                  "last_updated": "2011-10-05T14:48:00.000Z",
+                  "already_running": false,
+                  "total_executed": {
+                    "current": 100,
+                    "total": 100
+                  }
+                }
+              },
+              "Create policy": {
+                "value": {
+                  "job_id": "e369baf0-1b24-11ee-be56-0242ac120002",
+                  "operation": "CREATE_POLICY_V2",
+                  "status": "Success",
+                  "last_updated": "2011-10-05T14:48:00.000Z",
+                  "already_running": false,
+                  "total_executed": {
+                    "current": 100,
+                    "total": 100
+                  },
+                  "additional_info": {
+                    "policy_id": "aws_0657546c-0d9f-4112-862f-49570afea282"
+                  }
+                }
+              },
+              "Edit policy": {
+                "value": {
+                  "job_id": "e369baf0-1b24-11ee-be56-0242ac120002",
+                  "operation": "EDIT_POLICY_V2",
+                  "status": "Success",
+                  "last_updated": "2011-10-05T14:48:00.000Z",
+                  "already_running": false,
+                  "total_executed": {
+                    "current": 100,
+                    "total": 100
+                  },
+                  "additional_info": {
+                    "policy_id": "aws_0657546c-0d9f-4112-862f-49570afea282"
+                  }
+                }
+              },
+              "Cloud discovery": {
+                "value": {
+                  "job_id": "e369baf0-1b24-11ee-be56-0242ac120002",
+                  "operation": "Discovery",
+                  "status": "Success",
+                  "last_updated": "2011-10-05T14:48:00.000Z",
+                  "already_running": false,
+                  "total_executed": {
+                    "current": 100,
+                    "total": 100
+                  }
+                }
+              },
+              "Rescan job failed and debug param is true": {
+                "value": {
+                  "job_id": "ab4e1176-b1b3-45ce-bb97-4eda2127743c",
+                  "operation": "RESCAN_REQUEST_ORCHESTRATOR",
+                  "status": "Failure",
+                  "last_updated": "2025-01-05T13:27:14Z",
+                  "already_running": false,
+                  "debug_info": [
+                    {
+                      "name": "RESCAN_REQUEST_ORCHESTRATOR",
+                      "status": "Failure",
+                      "error_code": null,
+                      "reason": null
+                    },
+                    {
+                      "name": "RESCAN_ROLES",
+                      "status": "Failure",
+                      "error_code": null,
+                      "reason": null
+                    }
+                  ]
+                }
+              },
+              "Rescan job failed and debug param is false": {
+                "value": {
+                  "job_id": "ab4e1176-b1b3-45ce-bb97-4eda2127743c",
+                  "operation": "RESCAN_REQUEST_ORCHESTRATOR",
+                  "status": "Failure",
+                  "last_updated": "2025-01-05T13:27:14Z",
+                  "already_running": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "status": {
+        "name": "status",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "number",
+          "enum": [
+            1,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "description": "Filter on policies that have a specific status. Supported values: Active = 1, Expired = 3, Error = 4, Warning = 5, Validating = 6"
+      },
+      "free_text": {
+        "name": "free_text",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Search for free text in the supported policy fields:  Name, description, entity name, Organization ID,  cloud provider, status, account name"
+      },
+      "cloud_provider": {
+        "name": "cloud_provider",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "number",
+          "enum": [
+            1,
+            2,
+            3,
+            0
+          ]
+        },
+        "description": "Filter by the cloud provider that the policy applies to. Supported values: AWS IAM = 0, Google Cloud = 1, Azure RBAC = 2, AWS IAM Identity Center = 3, Azure AD = 4"
+      },
+      "entity_ids": {
+        "name": "entityIds",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "org_id": {
+              "type": "string"
+            },
+            "account_id": {
+              "type": "string"
+            }
+          }
+        },
+        "description": "Cloud account id"
+      },
+      "identities": {
+        "name": "identities",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "user_principal_name": {
+              "type": "string"
+            },
+            "directory_source_id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "description": "Cloud account id"
+      },
+      "roles": {
+        "name": "roles",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "properties": {
+            "role_id": {
+              "type": "string"
+            }
+          }
+        },
+        "description": "Cloud account id"
+      }
+    },
+    "requestBodies": {
+    }
+  },
+  "paths": {
+    "/integrations/status": {
+      "get": {
+        "tags": [
+          "Integration"
+        ],
+        "summary": "Get Job Status",
+        "security": [
+          {
+            "bearerOAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "$ref": "#/components/responses/JobStatus"
+          },
+          "400": {
+            "description": "Missing jobId parameter"
+          },
+          "404": {
+            "description": "Job Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "operationId": "getJobStatus",
+        "description": "This method returns the status of a job that was created by an \"async\" API call (e.g. /cloud/rescan).",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "jobId",
+            "description": "The ID of the requested job"
+          },
+          {
+            "schema": {
+              "type": "boolean"
+            },
+            "name": "debug",
+            "in": "query",
+            "required": false,
+            "description": "(Optional) Enable debug mode for additional troubleshooting information. \n\n**Default** : false"
+          }
+        ]
+      }
+    }
+  }
+}

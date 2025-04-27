@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1><a name="top"></a>Set up on-demand access</h1>
+        <p>This topic describes how to configure the <MadCap:variable name="cc_product_vars.SCA-short" /> approval mechanism so that end users can request temporary access to web apps.</p>
+        <h2>Overview</h2>
+        <p>End users can request temporary access to web apps that they don't have in their <MadCap:conditionalText MadCap:conditions="SCA-conditions.not-free-trial"><MadCap:variable name="cc_C_CyberArk.CompanyName" /> user portal</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="SCA-conditions.free-trial"><MadCap:variable name="cc_product_vars.SecureAccessSpace" /> space</MadCap:conditionalText>, or temporarily elevated permissions to web apps that they have access to but with limited permissions.</p>
+        <p>To enable this functionality, complete the following steps:</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:xref href="#Configur">Configure on-demand access in [%=cc_product_vars.IdentityAdmin-full%]</MadCap:xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="#Configur4">Configure the allowed identities</MadCap:xref>, all users or only specific users</p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="#Configur3">Configure the approval method</MadCap:xref>, manual or automatic</p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="#Configur2">Configure the approval channel</MadCap:xref>, Slack, ServiceNow, or custom flow</p>
+            </li>
+        </ol>
+        <div class="note">
+            <p>All audit trail data related to submitting and handling on-demand requests can be viewed in the <MadCap:variable name="cc_product_vars.Audit-short" /> service. For details, see the <a href="/audit/latest/en/content/audit/product-audits/isp-sca-audit.htm" target="_blank" title="link to the ISPSS [%=cc_product_vars.Audit-short%] docs" alt="link to the ISPSS [%=cc_product_vars.Audit-short%] docs">[%=cc_product_vars.Audit-short%] docs</a>.</p>
+        </div>
+        <h2 class="stepReset" MadCap:autonum="Step 1: "><a name="Configur"></a>Configure on-demand access in <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /></h2>
+        <p>In <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />, enable <MadCap:variable name="cc_product_vars.SCA-short" /> in the integration settings and make sure that you have a custom OAuth2 server so that <MadCap:variable name="cc_C_CyberArk.CompanyName" /> can authenticate to the third-party approval channel.</p>
+        <ol>
+            <li>
+                <p><span class="Emphasis">Enable <MadCap:variable name="cc_product_vars.SCA-short" /> in <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /></span>
+                </p>
+                <p>In <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />, go to <span class="Emphasis">Settings </span>&gt; <span class="Emphasis">Integration </span>&gt; <span class="Emphasis">Secure Cloud Access</span>, and make sure that <span class="Emphasis">Users can request permission to add SCA-enabled applications</span> is selected.</p>
+            </li>
+            <li>
+                <p class="step"><a name="Create-CA-oauth2serverapp"></a><span class="Emphasis">Create an OAuth2 server</span>
+                </p>
+                <p>If you don't already have an OAuth2 server set up for <MadCap:variable name="cc_product_vars.SCA-short" />, create one now. <MadCap:variable name="cc_C_CyberArk.CompanyName" /> will use this OAuth2 server to authenticate to your approval channel.</p>
+                <MadCap:snippetBlock src="../DPAforCloud/SCA-snippets/sca-oauth2-server-app.flsnp" MadCap:conditionTagExpression="include[snippet-conditions-sca.oauth2-for-appr-chnl], exclude[snippet-conditions-sca.oauth2-for-api]" />
+            </li>
+            <li>
+                <p class="step"><span class="Emphasis">Create a service user</span>
+                </p>
+                <p>If you don't already have a service user set up for <MadCap:variable name="cc_product_vars.SCA-short" />, set one up now. You need this user to configure <MadCap:variable name="cc_product_vars.SCA-short" /> authorization later in <MadCap:variable name="cc_product_vars.Flows-short" />.</p>
+                <MadCap:snippetBlock src="../DPAforCloud/SCA-snippets/sca-oauth2-server-app-user.flsnp" MadCap:conditionTagExpression="include[snippet-conditions-sca.oauth2-for-appr-chnl], exclude[snippet-conditions-sca.oauth2-for-api]" />
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 2: "><a name="Configur4"></a><a name="allowed-ids"></a>Configure the allowed identities</h2>
+        <p>You can allow anyone in your directory to make an access request, or you can restrict this ability to specific identities only.</p>
+        <div class="note">
+            <p>The default setting is <span class="Emphasis">Specific</span>. <span class="Emphasis">Group</span> identity is not supported.</p>
+        </div>
+        <ol>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.SCA-short" />, select <span class="Emphasis">Settings</span> &gt; <span class="Emphasis">On-demand access</span> to open the On-demand access configuration page.</p>
+            </li>
+            <li>
+                <p>Click the <span class="Emphasis">Allowed Identities</span> tab.</p>
+            </li>
+            <li>
+                <p>Select how you want to select identities that can request access:</p>
+                <ul>
+                    <li>
+                        <p><span class="Emphasis">All</span> allows all the identities in your directory to initiate access requests</p>
+                    </li>
+                    <li>
+                        <p><span class="Emphasis">Specific</span> restricts the identities that are allowed.</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>If you selected <span class="Emphasis">Specific</span>, define the allowed identities as follows:</p>
+                <ol>
+                    <li>
+                        <p>Click <span class="Emphasis">Add identities</span>.</p>
+                    </li>
+                    <li>
+                        <p>In the Add identities window, use the filters and search to find the identities you want to add. </p>
+                    </li>
+                    <li>
+                        <p>Select one or more identities from the list and click <span class="Emphasis">Add</span>.</p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <div class="note">
+            <p>If you switch from <span class="Emphasis">Specific</span> to <span class="Emphasis">All</span> mode at any point, the list of specific identities is deleted permanently.</p>
+            <p>If you switch from <span class="Emphasis">All</span> to <span class="Emphasis">Specific</span>, you must configure a list of identities in order to enable on-demand access requests.</p>
+        </div>
+        <h2 class="step" MadCap:autonum="Step 3: "><a name="Configur3"></a>Configure the approval method</h2>
+        <p>In this step, you define how access requests are handled by <MadCap:variable name="cc_product_vars.SCA-short" />. You can also configure exceptions to the approval method you specify. For example, if you opt for manual, then all access requests must be handled by the administrator. If an access request is made by an identity that matches an exception, it is routed for automatic approval and doesn't need any handling by the administrator.</p>
+        <div class="note">
+            <p>The default setting is <span class="Emphasis">Automatic</span>.</p>
+        </div>
+        <ol>
+            <li>
+                <p class="stepReset"><span class="Emphasis">Define the approval method</span>
+                </p>
+                <ol>
+                    <li>
+                        <p>In <span class="Emphasis">Settings </span>&gt; <span class="Emphasis">On-demand access</span>, select the <span class="Emphasis">Approval method</span> tab.</p>
+                    </li>
+                    <li>
+                        <p>In the <span class="Emphasis">Approval method</span> area:</p>
+                        <ul>
+                            <li>
+                                <p><span class="Emphasis">Manual</span> routes all access requests to the administrator for handling</p>
+                                <div class="note">
+                                    <p>Before you can switch to Manual approval, you need to set up a manual approval channel:&#160;Slack or ServiceNow. For details, see <MadCap:xref href="#Configur2">Configure the approval channel</MadCap:xref>.</p>
+                                    <p>Then come back and select <span class="Emphasis">Manual</span>.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <p><span class="Emphasis">Automatic</span> approves all access requests without needing manual intervention</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p class="step"><span class="Emphasis">Define exceptions to the approval method</span>
+                </p>
+                <p>You can create exceptions to address specific use cases that should be handled differently from the approval method you set. Any identity that meets the criteria for at least one of the exceptions that are defined is handled according to the other approval method.</p>
+                <div class="tip">
+                    <p>When an exception has multiple conditions, the logic between the conditions is "AND".</p>
+                    <p>When multiple exceptions are configured for an approval method, the logic between the exceptions is "OR". </p>
+                </div>
+                <div class="tabs">
+                    <ul class="tabs-nav">
+                        <li class="tab-active"><a data-cc-tab=".tab-1">Manual</a>
+                        </li>
+                        <li><a data-cc-tab=".tab-2">Automatic</a>
+                        </li>
+                    </ul>
+                    <div class="tabs-stage">
+                        <div class="tab-1">
+                            <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 1 Content - &lt;manual&gt;</p>
+                            <p>As mentioned above, when the approval method is set to manual, all access requests are routed to the administrator for handling. The administrator must then approve or reject each request individually. <MadCap:variable name="cc_product_vars.SCA-short" /> allows you to provide alternate handling for specific identities based on exceptions that you configure.</p>
+                            <p>For example, you may want to reduce the workload for your administrator and allow automatic approval for access requests that are made by non-privileged identities that have minimal permissions, and are therefore low risk.</p>
+                            <MadCap:snippetBlock src="../DPAforCloud/SCA-snippets/exceptions_steps.flsnp" />
+                            <ol MadCap:continue="true">
+                                <li>
+                                    <p>In the <span class="Emphasis">Conditions </span>area, click <span class="Emphasis">Add condition </span>and select from the following:</p>
+                                    <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0" summary="list of conditions that can be added to an exception">
+                                        <caption>Exception conditions</caption>
+                                        <col class="TableStyle-Standard-Column-Column1" />
+                                        <col class="TableStyle-Standard-Column-Column1" />
+                                        <thead>
+                                            <tr class="TableStyle-Standard-Head-Header1">
+                                                <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                                    <p>Option</p>
+                                                </th>
+                                                <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                                    <p>Description</p>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="TableStyle-Standard-Body-Body1">
+                                                <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                                    <p>Tag</p>
+                                                </td>
+                                                <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                                    <p><MadCap:variable name="cc_product_vars.SCA-short" /> scans relevant cloud workspaces to find a match for the key/value pairs that you define.</p>
+                                                    <div class="note">
+                                                        <p>Don't use tags that have been applied to roles or policies, because <MadCap:variable name="cc_product_vars.SCA-short" /> doesn't scan these assets.</p>
+                                                    </div>
+                                                    <p>You can apply one tag per exception.</p>
+                                                </td>
+                                            </tr>
+                                            <tr class="TableStyle-Standard-Body-Body1">
+                                                <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                                    <p>Identities</p>
+                                                </td>
+                                                <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                                    <p>Use the wizard to find and select specific identities that don't have to be handled by the administrator.</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                            </ol>
+                            <p>If an identity matches all of the conditions you defined in the exception, it gets approved automatically.</p>
+                            <div class="note">
+                                <p>If you switch from <span class="Emphasis">Manual</span> to <span class="Emphasis">Automatic</span> mode at any point, any exceptions you configured will be permanently deleted.</p>
+                            </div>
+                        </div>
+                        <div class="tab-2">
+                            <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 2 Content - &lt;automatic&gt;</p>
+                            <p>When the approval method is set to automatic, all access requests are approved automatically. If there are identities that shouldn't gain automatic access to some or all workspaces, for example, because they present an unacceptably high level of risk, you can create exceptions so that these requests get routed for manual handling and the administrator can determine whether to approve or reject them.</p>
+                            <MadCap:snippetBlock src="../DPAforCloud/SCA-snippets/exceptions_steps.flsnp" />
+                            <ol MadCap:continue="false">
+                                <li>
+                                    <p>In the <span class="Emphasis">Conditions </span>area, click <span class="Emphasis">Add condition </span>and select from the following:</p>
+                                    <table style="caption-side: top;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0" summary="list of conditions that can be added to an exception">
+                                        <caption>Exception conditions</caption>
+                                        <col class="TableStyle-Standard-Column-Column1" />
+                                        <col class="TableStyle-Standard-Column-Column1" />
+                                        <thead>
+                                            <tr class="TableStyle-Standard-Head-Header1">
+                                                <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                                    <p>Option</p>
+                                                </th>
+                                                <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                                    <p>Description</p>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="TableStyle-Standard-Body-Body1">
+                                                <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                                    <p>Tag</p>
+                                                </td>
+                                                <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                                    <p><MadCap:variable name="cc_product_vars.SCA-short" /> scans relevant cloud workspaces to find a match for the key/value pairs that you define.</p>
+                                                    <div class="note">
+                                                        <p>Don't use tags that have been applied to roles or policies, because <MadCap:variable name="cc_product_vars.SCA-short" /> doesn't scan these assets.</p>
+                                                    </div>
+                                                    <div class="important" MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                                                        <p>Don't use tags that have been applied to roles or policies, because <MadCap:variable name="cc_product_vars.SCA-short" /> doesn't scan these assets.</p>
+                                                    </div>
+                                                    <p>You can apply one tag per exception.</p>
+                                                </td>
+                                            </tr>
+                                            <tr class="TableStyle-Standard-Body-Body1">
+                                                <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                                    <p>Identities</p>
+                                                </td>
+                                                <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                                    <p>Use the wizard to find and select specific identities that should be  approved by the administrator.</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                            </ol>
+                            <p>If an identity matches all of the conditions you defined in the exception, it gets routed to the administrator for manual handling.</p>
+                            <div class="note">
+                                <p>If you switch from <span class="Emphasis">Automatic</span> to <span class="Emphasis">Manual</span> mode at any point, any exceptions you configured will be permanently deleted.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+        <p>Click the <span class="Emphasis">More actions</span> menu in the upper right corner of an exception to edit or delete it.</p>
+        <h2 class="step" MadCap:autonum="Step 4: "><a name="Configur2"></a>Configure the approval channel</h2>
+        <p>Configure an approval channel where on-demand requests are handled. </p>
+        <p>Access requests can be approved automatically for identities in the Allowed identities list (see <MadCap:xref href="#allowed-ids">Configure the allowed identities</MadCap:xref>).</p>
+        <p>Alternatively. if you want to use a manual approval flow, <MadCap:variable name="cc_product_vars.SCA-short" /> supports using Slack, ServiceNow, or custom <MadCap:variable name="cc_product_vars.Identity-full" /> flows.</p>
+        <p>If you use an external approval channel, you must also set up authentication so that <MadCap:variable name="cc_C_CyberArk.CompanyName" /> and the channel can connect and send information and messages back and forth.</p>
+        <div class="important">
+            <p><MadCap:variable name="cc_product_vars.SCA-short" /> can't relay on-demand user requests until the approval channel is completely configured. </p>
+        </div>
+        <p>In the <span class="Emphasis">Approval channel</span> tab, select </p>
+        <ul>
+            <li>
+                <p><span class="Emphasis">Automatic</span> for automatic approvals</p>
+            </li>
+            <li>
+                <p>One of the available manual approval channels. Follow the configuration instructions:</p>
+                <ul>
+                    <li>
+                        <p>
+                            <MadCap:xref href="sca_oda-snow.htm">Configure approval channel - ServiceNow</MadCap:xref>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <MadCap:xref href="sca_oda-slack.htm">Configure approval channel - Slack</MadCap:xref>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <MadCap:xref href="sca_oda-custom.htm">Configure custom approval channel</MadCap:xref>
+                        </p>
+                    </li>
+                </ul>
+                <MadCap:snippetBlock src="../CloudAdmin/CloudAdminSnippets/Automatic-Manual-Approval.flsnp" />
+            </li>
+        </ul>
+    </body>
+</html>

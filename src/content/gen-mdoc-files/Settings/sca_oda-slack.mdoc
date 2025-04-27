@@ -1,0 +1,337 @@
+# Configure approval channel - Slack
+
+This topic describes how to configure Slack as your
+{% $cc_product_vars.SCA-short %}
+approval channel.
+
+## Before you begin
+
+Before you set up the integration between
+{% $cc_product_vars.SCA-short %}
+and Slack, complete the steps described in
+`<xref href="sca_on-demand-access-settings.htm">`{=html}Set up on-demand
+access`</xref>`{=html}, the last of which brings you back to this topic
+to complete the approval channel configuration.
+
+To support communication with Slack,
+{% $cc_product_vars.Flows-short %}
+must be enabled in your
+{% $cc_C_CyberArk.CompanyName %}
+tenant. A [Flows Executor]{.Emphasis} role is sufficient for granting
+on-demand access.
+
+## []{#Set}[]{#slack-setup}Set up Slack {#set-up-slack .stepReset madcap:autonum="Step 1: "}
+
+In this step, you set up Slack to be able to work with
+{% $cc_product_vars.SCA-short %}.
+
+### Create the Slack app {#create-the-slack-app .step madcap:autonum="Step 1: "}
+
+You have to create a new app in Slack to enable communication between
+{% $cc_C_CyberArk.CompanyName %}
+and Slack.
+
+1.  Go to [api.slack.com](https://api.slack.com/) and in the Your Apps
+    page, click [Create New App]{.Emphasis}.
+
+2.  In the Create an app window, select [From scratch]{.Emphasis},
+    provide the [App Name]{.Emphasis}, and select the [CyberArk SCA
+    ]{.Emphasis}workspace. Click [Create App]{.Emphasis}.
+
+### Apply the redirect URL {#apply-the-redirect-url .step madcap:autonum="Step 2: "}
+
+1.  In the Basic Information page, scroll down and click [OAuth &
+    Permissions]{.Emphasis}.
+
+2.  Scroll down to the [Redirect URLs ]{.Emphasis}area, and click [Add
+    New Redirect URL]{.Emphasis}.
+
+3.  Open
+    {% $cc_product_vars.Flows-short %}
+    and copy the application URL into the [Redirect URLs
+    ]{.Emphasis}field using the format [https://\<identity flows
+    url\>/gateway/callback]{.Emphasis}. Click [Add]{.Emphasis}, then
+    click [Save URLs]{.Emphasis}.
+
+### Set the permission scope {#set-the-permission-scope .step madcap:autonum="Step 3: "}
+
+1.  In the navigation pane, under [Settings]{.Emphasis} select [Basic
+    Information]{.Emphasis}.
+
+2.  In the [Building Apps for Slack ]{.Emphasis}area, click to expand
+    the [Add features and functionality ]{.Emphasis}section. Scroll down
+    and expand the [Install your app ]{.Emphasis}area, and click
+    [permission scope ]{.Emphasis}in the note.
+
+3.  In the OAuth & Permissions page, scroll down to the [Scopes
+    ]{.Emphasis}area and in the [Bot Token Scopes]{.Emphasis} section,
+    click [Add an OAuth Scope]{.Emphasis}, then select [chat:write
+    ]{.Emphasis}from the list.
+
+### Finish setting up the app {#finish-setting-up-the-app .step madcap:autonum="Step 4: "}
+
+1.  Go back to the [Settings ]{.Emphasis}\> [Basic Information
+    ]{.Emphasis}page, and in the [Install your app ]{.Emphasis}area,
+    click [Install to Workspace]{.Emphasis}.
+
+2.  In the confirmation page, click [Allow]{.Emphasis}.
+
+::: note
+You\'ll need the Slack app credentials when you configure the [SCA
+ondemand Slack]{.Emphasis} flow in
+{% $cc_product_vars.Flows-short %}.
+This information is available at the bottom of the Basic Information
+page.
+:::
+
+### []{#Create}Create a Slack channel {#create-a-slack-channel .step madcap:autonum="Step 5: "}
+
+You need a dedicated Slack channel that will receive and send messages
+via
+{% $cc_product_vars.Flows-short %}.
+Set one up as described in the [Slack
+docs](https://slack.com/intl/en-au/help/articles/201402297-Create-a-channel#:~:text=From%20your%20sidebar%2C%20click%20on,click%20on%20Skip%20for%20now.){alt="link to instructions for setting up a channel in Slack"},
+and save the channel ID to apply when you configure the [SCA ondemand
+Slack]{.Emphasis} flow in
+{% $cc_product_vars.Flows-short %}.
+Note the channel ID---you will need it later on in this procedure.
+
+<div>
+
+## []{#Download}[]{#slack-flows}Download the {% $cc_product_vars.SCA-short %} pre-defined flows {#download-the-pre-defined-flows .step madcap:autonum="Step 2: "}
+
+From the
+{% $cc_product_vars.SCA-short %}
+on demand settings page, download the [Flows]{.Emphasis} zip file and
+unzip it in a local directory. This zip file contains the following
+pre-defined flows in JSON format, which you have to import into
+{% $cc_product_vars.Flows-short %}
+and configure with your channel and
+{% $cc_product_vars.SCA-short %}
+information:
+
+- [SCA Ondemand ]{.Emphasis}- configure with your Slack app credentials
+  to enable communication between
+  {% $cc_C_CyberArk.CompanyName %}
+  and Slack.
+
+- [SCA Ondemand Slack]{.Emphasis} - configure your OAuth2 server
+  information to enable triggering
+  {% $cc_product_vars.SCA-short %}
+  to create an ad-hoc policy when the access request is approved.
+
+::: important
+Don\'t change the names of the JSON files when you unzip them. If you
+change a file name, this will break the flow and the feature won\'t work
+as expected.
+:::
+
+::: note
+{% $cc_product_vars.SCA-short %}
+uses the following APIs as part of on-demand access flows:
+
+- [Notification API]{.Emphasis} - sends request and approval messages by
+  email during on-demand access flows.
+
+- [SCA Policy API - Create Policy V2]{.Emphasis} - creates policies in
+  {% $cc_product_vars.SCA-short %}
+  as needed.
+
+- [SCA Infrastructure API - Get Job Status]{.Emphasis} - gets the status
+  of a job created by an asynchronous API call.
+:::
+
+## []{#Import}Import and configure the flows in {% $cc_product_vars.Flows-short %} {#import-and-configure-the-flows-in .step madcap:autonum="Step 3: "}
+
+### Import the flow and configure trust {#import-the-flow-and-configure-trust .stepReset madcap:autonum="Step 1: "}
+
+In
+{% $cc_product_vars.Flows-short %},
+configure the authentication and authorization details for communication
+between
+{% $cc_C_CyberArk.CompanyName %}
+and the approval channel.
+
+1.  Click [Import ]{.Emphasis}and upload the [SCA Ondemand
+    ]{.Emphasis}JSON file.
+
+2.  Click [Save]{.Emphasis}.
+
+3.  Click the [Chat Post Message ]{.Emphasis}component in the flow.
+
+4.  In [Settings ]{.Emphasis}\> [Authorizations]{.Emphasis}, click [ADD
+    NEW]{.Emphasis}.
+
+5.  In the [Manage Authorizations ]{.Emphasis}window, configure the
+    following to create an authorization for Slack:
+
+    a.  Fill in the following fields:
+
+        +--------------------------------+------------------------------------+
+        | Item                           | Description                        |
+        +================================+====================================+
+        | [Name]{.Emphasis}              | Provide a name for the server      |
+        +--------------------------------+------------------------------------+
+        | [Type]{.Emphasis}              | Select [OAuth2]{.Emphasis}         |
+        +--------------------------------+------------------------------------+
+        | [Flow]{.Emphasis}              | Select [Authorization              |
+        |                                | Code]{.Emphasis}                   |
+        +--------------------------------+------------------------------------+
+        | [Content Type]{.Emphasis}      | Select                             |
+        |                                | [application                       |
+        |                                | /x-www-form-urlencoded]{.Emphasis} |
+        +--------------------------------+------------------------------------+
+        | [Client ID]{.Emphasis}         | Copy this information from the     |
+        |                                | Slack app credentials              |
+        +--------------------------------+------------------------------------+
+        | [Client Secret]{.Emphasis}     | Copy this information from the     |
+        |                                | Slack app credentials              |
+        +--------------------------------+------------------------------------+
+        | [Authorization URL]{.Emphasis} | [https://sla                       |
+        |                                | ck.com/oauth/authorize]{.Emphasis} |
+        +--------------------------------+------------------------------------+
+        | [Token URL]{.Emphasis}         | [https://slac                      |
+        |                                | k.com/api/oauth.access]{.Emphasis} |
+        +--------------------------------+------------------------------------+
+        | [Redirect URL]{.Emphasis}      | The redirect URL you used when     |
+        |                                | configuring the Slack app (in the  |
+        |                                | format  [https://\<identity flows  |
+        |                                | u                                  |
+        |                                | rl\>/gateway/callback]{.Emphasis}) |
+        +--------------------------------+------------------------------------+
+        | [Scopes]{.Emphasis}            | Select [Scopes]{.Emphasis}, then   |
+        |                                | select the following options:      |
+        |                                |                                    |
+        |                                | - [channels:history]{.Emphasis}    |
+        |                                |                                    |
+        |                                | - [chat:write:bot]{.Emphasis}      |
+        |                                |                                    |
+        |                                | - [chat:write:user]{.Emphasis}     |
+        +--------------------------------+------------------------------------+
+
+        : Slack authorization details
+
+    b.  Click [Authorize]{.Emphasis}.
+
+    c.  If the authentication flow is successful, click [Save &
+        Use]{.Emphasis}.
+
+6.  In the [Notifications]{.Emphasis} component, in [Settings
+    ]{.Emphasis}\> [Authorizations]{.Emphasis}, click [ADD
+    NEW]{.Emphasis}.
+
+7.  In the [Manage Authorizations ]{.Emphasis}window, configure the
+    following to create an authorization for the
+    {% $cc_product_vars.SCA-short %}
+    APIs:
+
+    a.  Fill in the following fields:
+
+          Item                         Description
+          ---------------------------- --------------------------------------------------------------------------------------------------------------------
+          [Name]{.Emphasis}            Provide a name for the server
+          [Type]{.Emphasis}            Select [OAuth2]{.Emphasis}
+          [Flow]{.Emphasis}            Select [Client Credentials]{.Emphasis}
+          [Content Type]{.Emphasis}    Select [application/x-www-form-urlencoded]{.Emphasis}
+          [Client ID]{.Emphasis}       Provide the username of your {% $cc_product_vars.SCA-short %} service user
+          [Client Secret]{.Emphasis}   Provide the password of your {% $cc_product_vars.SCA-short %} service user
+          [Token URL]{.Emphasis}       https://\<Identity url\>/oauth2/token/\<authorization application name\>
+          [Scopes]{.Emphasis}          Select [Scopes]{.Emphasis}, then select [sca]{.Emphasis}
+
+          : SCA API authorization details
+
+    b.  Click [Authorize]{.Emphasis}.
+
+    c.  If the authentication flow is successful, click [Save &
+        Use]{.Emphasis}.
+
+8.  In the [Map ]{.Emphasis}tab, scroll down to [channel ]{.Emphasis}and
+    paste the channel ID that you got when you created the dedicated
+    Slack channel.
+
+9.  Click [Save]{.Emphasis}.
+
+### Test the authorization channel connection {#test-the-authorization-channel-connection .step madcap:autonum="Step 2: "}
+
+[]{#verify-flow}When you finish configuring the flow, you can verify it
+in
+{% $cc_product_vars.Flows-short %}.
+
+1.  Click the Slack [Chat Post Message]{.Emphasis} step in the flow, and
+    in the menu bar, click [Run]{.Emphasis}.
+
+2.  In the window that appears, type the parameter {\"message\":
+    \"\<value\>\"} with any value, and click [Submit]{.Emphasis}.
+
+3.  When the flow finishes running, click the notification icon next to
+    your user name in the upper right corner of the window, and select
+    the most recent results of running the flow.
+
+4.  Expand the step, then expand the API content of the step to view the
+    message and verify that the value was passed.
+
+### Set up the {% $cc_product_vars.SCA-short %} policy flow {#set-up-the-policy-flow .step madcap:autonum="Step 3: "}
+
+In
+{% $cc_product_vars.Flows-short %},
+configure the components that trigger
+{% $cc_product_vars.SCA-short %}
+to create a temporary policy with the requested details.
+
+1.  Click [Import ]{.Emphasis}and upload the [SCA Ondemand
+    Slack]{.Emphasis} JSON file.
+
+2.  Click [Save]{.Emphasis}.
+
+3.  Configure the leftpath flow (where approval_status = true, which
+    occurs when the access request is approved) as follows:
+
+    1.  In the [Chat Update ]{.Emphasis}component, in [Settings
+        ]{.Emphasis}\> [Authorizations]{.Emphasis}, select the Slack
+        authorization you configured in the SCA Ondemand flow. In the
+        [Map]{.Emphasis} tab, scroll down to [channel]{.Emphasis} and
+        paste the channel ID that you got when you created the dedicated
+        Slack channel (see`<xref href="#Create">`{=html}Create a Slack
+        channel`</xref>`{=html} above).
+
+    2.  In the [Create Policy ]{.Emphasis}component, in [Settings
+        ]{.Emphasis}\> [Authorizations]{.Emphasis}, select the SCA
+        API authorization you configured.
+
+    3.  In the [Get Status ]{.Emphasis}component, in [Settings
+        ]{.Emphasis}\> [Authorizations]{.Emphasis}, select the SCA
+        API authorization you configured.
+
+    4.  In the [Notifications ]{.Emphasis}component, in [Settings
+        ]{.Emphasis}\> [Authorizations, ]{.Emphasis}select the SCA API
+        authorization you configured.
+
+4.  Configure the rightpath flow (where approval_status = false, which
+    occurs when the access request is rejected) as follows:
+
+    1.  In the [Chat Update ]{.Emphasis}component, in [Settings
+        ]{.Emphasis}\> [Authorizations]{.Emphasis}, select the
+        authorization you configured in the SCA Ondemand flow, and in
+        the [Map ]{.Emphasis}tab, scroll down to [channel
+        ]{.Emphasis}and paste the channel ID that you got when you
+        created the dedicated Slack channel.
+
+    2.  In the [Notifications ]{.Emphasis}component, in [Settings
+        ]{.Emphasis}\> [Authorizations]{.Emphasis}, select the SCA API
+        authorization you configured.
+
+### Test the channel connection {#test-the-channel-connection .step madcap:autonum="Step 4: "}
+
+When you finish configuring the flow, verify it in
+{% $cc_product_vars.Flows-short %}[as
+described above](#verify-flow).
+
+### Verify the configuration {#verify-the-configuration .step madcap:autonum="Step 5: "}
+
+`<snippetblock src="../CloudAdmin/CloudAdminSnippets/VerifyConfiguration.flsnp">`{=html}`</snippetblock>`{=html}
+
+### Select Manual or Automatic approval {#select-manual-or-automatic-approval .step madcap:autonum="Step 6: "}
+
+`<snippetblock src="../CloudAdmin/CloudAdminSnippets/Automatic-Manual-Approval.flsnp">`{=html}`</snippetblock>`{=html}
+
+</div>

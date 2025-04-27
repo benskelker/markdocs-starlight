@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p>This triggers an asynchronous discovery of your onboarded workspaces to identify changes in your cloud structure. This may take some time. We recommend that you wait for this process to complete before creating policies in <MadCap:variable name="cc_product_vars.SCA-short" />.</p>
+    </body>
+</html>

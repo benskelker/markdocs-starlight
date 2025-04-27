@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Security Q&amp;A</h1>
+        <p>This topic answers common security questions about <MadCap:variable name="cc_product_vars.CV-full" />. </p>
+        <h2>Authentication and authorization</h2>
+        <p>Authentication and authorization is managed by <MadCap:variable name="cc_product_vars.Identity-full" />. For more information, see <a href="/identity-administration/latest/en/content/coreservices/core-overview.htm" target="_blank">Identity Administration</a>.</p>
+        <h2>Logging</h2>
+        <p><span class="Emphasis">What logs does <MadCap:variable name="cc_product_vars.CV-full" /> provide? </span>
+        </p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> saves generates logs  in our hosted AWS environment. </p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> generates logs of internal <MadCap:variable name="cc_product_vars.CV-full" /> activity . Each log contains a tenant id and a user id to associate it to a specific a tenant.</p>
+        <p>The audit types and messages stored in these logs are exposed in the app.</p>
+        <p>The User Audit contains a record of admin and user activities.</p>
+        <h2>Input validation</h2>
+        <p><span class="Emphasis">How does <MadCap:variable name="cc_product_vars.CV-full" /> validate input and protect against malicious input?</span>
+        </p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> performs input validation at different layers including API GW, WAF services, and internal APIs. <MadCap:variable name="cc_product_vars.CV-full" /> uses synthetic and semantic rules.</p>
+        <h2>Session management</h2>
+        <p><span class="Emphasis">How does <MadCap:variable name="cc_product_vars.CV-full" /> manage  user sessions between their web browser and the <MadCap:variable name="cc_product_vars.CV-full" /> back end?</span>
+        </p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> does not save session data from our client/server. The client and server connect using API calls with cookies and JWT.</p>
+        <p>To authorize a request, <MadCap:variable name="cc_product_vars.CV-full" /> uses an API gateway. Each user authenticates and is authorized to their tenant only.</p>
+        <h2>Data</h2>
+        <p><span class="Emphasis">How does <MadCap:variable name="cc_product_vars.CV-full" /> avoid reading sensitive data on your cloud platform?</span>
+        </p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> has access only to services and data required to provide the service to which the customer has given permission for <MadCap:variable name="cc_product_vars.CV-full" /> to access. In addition, when relevant, <MadCap:variable name="cc_product_vars.CV-full" /> uses a filter to retrieve only the required fields.</p>
+        <p><span class="Emphasis">What information does <MadCap:variable name="cc_product_vars.CV-full" /> store?</span>
+        </p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> stores the IAM identities, their entitlements, and the usage history of identities  (after filtering unnecessary fields).</p>
+        <p><span class="Emphasis">What is <MadCap:variable name="cc_product_vars.CV-full" />'s data retention policy?</span>
+        </p>
+        <p>
+In keeping with <MadCap:variable name="cc_C_CyberArk.CompanyName" />'s data retention policy and procedures, if you  have a <MadCap:variable name="cc_product_vars.CV-full" /> tenant with an expired license, <MadCap:variable name="cc_C_CyberArk.CompanyName" />is required to delete all data relating to that tenant within 60 days of expiry. Once your data has been deleted, it cannot be recovered.
+</p>
+        <p><span class="Emphasis">How can I remove all my data from <MadCap:variable name="cc_product_vars.CV-full" />?</span>
+        </p>
+        <p>To remove data from <MadCap:variable name="cc_product_vars.CV-full" />, contact Support. </p>
+        <p><span class="Emphasis">Is data encrypted at rest in the <MadCap:variable name="cc_product_vars.CV-full" /> SaaS instance?</span>
+        </p>
+        <p>Yes. </p>
+        <p><span class="Emphasis">What algorithm does <MadCap:variable name="cc_product_vars.CV-full" /> use to encrypt data at rest? How does <MadCap:variable name="cc_product_vars.CV-full" /> manage keys?</span>
+        </p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> uses encryption at rest using the services' <code>builtin</code> option.</p>
+        <p>AWS manages the encryption.</p>
+        <p><span class="Emphasis">Does <MadCap:variable name="cc_product_vars.CV-full" /> encrypt data in transit on API calls? Does <MadCap:variable name="cc_product_vars.CV-full" /> also encrypt data entered into the app? What version of TLS does <MadCap:variable name="cc_product_vars.CV-full" /> use?</span>
+        </p>
+        <p>Yes, all data in transit in encrypted.  The connection to the <MadCap:variable name="cc_product_vars.CV-full" /> app is handled by REST APIs calls over https TLS 1.2.</p>
+        <p><span class="Emphasis">What input validation techniques does <MadCap:variable name="cc_product_vars.CV-full"></MadCap:variable>use?</span>
+        </p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> uses Syntactic and Semantic rules.</p>
+        <p><span class="Emphasis">How is your data segregated from other customers?</span>
+        </p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> takes a comprehensive approach to separation and privacy of customer data, involving a combination of secure communication protocols, encryption, authentication, access control (RBAC and TBAC), key management, segregation, and robust backup and recovery mechanisms.</p>
+        <p>These measures work together to protect customer data throughout its lifecycle, both during transit and at rest.</p>
+        <h2>Connection to Cloud infrastructure</h2>
+        <div class="Toggler">
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot><span class="Emphasis">How does <MadCap:variable name="cc_product_vars.CV-full" /> connect to my AWS account?</span>
+                    </MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p><MadCap:variable name="cc_product_vars.CV-full" /> assumes a role using AWS APIs. During on-boarding, a <MadCap:variable name="cc_product_vars.CV-full" /> role is created to enable <MadCap:variable name="cc_product_vars.CV-full" /> to connect to the environment. This role has the least privileges required to perform  what <MadCap:variable name="cc_product_vars.CV-full" /> needs to extract the audit logs. </p>
+                    <p>To learn more, see <MadCap:xref href="../CloudAdmin/cv-aws-discovery.htm#Connect3">Connect Amazon AWS accounts</MadCap:xref></p>
+                    <p>For details on specific privileges granted to the <MadCap:variable name="cc_product_vars.CV-full" /> role to connect to your AWS account, contact your CyberArk team.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot><span class="Emphasis">How does <MadCap:variable name="cc_product_vars.CV-full" /> connect to my Azure subscription?</span>
+                    </MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p><MadCap:variable name="cc_product_vars.CV-full" /> uses the username and password for an Azure application which  is configured during the  on-boarding phase. </p>
+                    <p>To learn more, see <MadCap:xref href="../CloudAdmin/cv-onboard-azure.htm">Connect Azure subscriptions.</MadCap:xref></p>
+                    <p>For details on specific privileges granted to <MadCap:variable name="cc_product_vars.CV-full" /> to connect to the Azure subscription, contact your CyberArk team.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot><span class="Emphasis">How does <MadCap:variable name="cc_product_vars.CV-full" /> connect to my Google Cloud project?</span>
+                    </MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p><MadCap:variable name="cc_product_vars.CV-full" /> uses the username and password for a Google Cloud project </p>
+                    <p>which  is configured during the  on-boarding phase. </p>
+                    <p>To learn more, see <MadCap:xref href="../CloudAdmin/cv-gcp-discovery.htm#Connect"> Google Cloud organization</MadCap:xref></p>
+                    <p>For details on specific privileges granted to <MadCap:variable name="cc_product_vars.CV-full" /> to connect to your Google Cloud project, contact your CyberArk team.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+        </div>
+        <h2>Secure development life cycle</h2>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> development life cycle includes security controls according to industry best practices, CyberArk SDLC methodologies including:</p>
+        <ul>
+            <li>
+                <p>Restrictions on accessing production environment based on location, authorized personnel, and strong authentication.</p>
+            </li>
+            <li>
+                <p>	Continuous static and dynamic code analysis</p>
+            </li>
+            <li>
+                <p>Vulnerability assessment of third-party code and components</p>
+            </li>
+            <li>
+                <p>	Secure code reviews</p>
+            </li>
+            <li>
+                <p>Repository restrictions</p>
+            </li>
+            <li>
+                <p>Regular penetration tests (internal and external	Compliance with AWS CIS Benchmark)</p>
+            </li>
+            <li>
+                <p>	Compliance with OWASP Serverless Top 10</p>
+            </li>
+        </ul>
+        <p><span class="Emphasis">Who has access to my data?</span>
+        </p>
+        <p>Selected CyberArk engineers have secured access to customer data where required to access the data for advanced troubleshooting purposes. A policy and technical controls are in place to ensure that other CyberArk employees do not have such access.</p>
+        <p><span class="Emphasis" style="color: #000000;">Which security benchmark's does <MadCap:variable name="cc_product_vars.CV-full" /> follow?</span>
+        </p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> uses the following benchmarks: AWS CIS benchmark, OWASP Severless Top 10</p>
+        <p><span class="Emphasis" style="color: #000000;">What tools do you use to prevent exploits on your back-end, code and customer front-end?</span>
+        </p>
+        <ul>
+            <li>
+                <p>Static and dynamic code analysis tools.</p>
+            </li>
+            <li>
+                <p>Vulnerability assessment tools for third-party code and components.</p>
+            </li>
+            <li>
+                <p>Input validation techniques.</p>
+            </li>
+        </ul>
+        <p>The specific tools in use may change based on need and capabilities:</p>
+        <p><span class="Emphasis">Is <MadCap:variable name="cc_product_vars.CV-full" /> certified as SOC II compliant?</span>
+        </p>
+        <p>Yes.</p>
+    </body>
+</html>

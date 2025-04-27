@@ -1,0 +1,183 @@
+# Add Azure -
+
+This topic describes how to onboard your Azure directory - (). You can
+onboard an entire  directory or you can onboard management groups or
+subscriptions.
+
+## Before you begin
+
+- You must have a directory (tenant) with at least one subscription
+
+- You must be the global administrator of your directory
+
+- If you are onboarding one subscription only, you must be the owner of
+  the root management group in the directory
+
+- Log in to , go to [Manage \> Properties]{.Emphasis}, and make sure
+  that [Can manage access to all Azure subscriptions and management
+  groups in this tenant]{.Emphasis} is selected. Save your changes.
+
+::: note
+We assume you are familiar with navigating the Microsoft Azure Portal
+and your resources.
+:::
+
+## Onboard Microsoft Azure
+
+Click the relevant option to learn more about how to onboard a new
+ directory to CyberArk or how to add a subscription to an already
+onboarded directory.
+
+![](Images/onboard-azure.png){usemap="#map2"}
+
+## []{#Discover}Onboard a new directory
+
+This section describes how to onboard an entire Entra ID directory to
+CyberArk, or just subsections (management groups or subscriptions) of a
+directory that hasn\'t yet been onboarded.
+
+You will need:
+
+- Your directory\'s tenant ID
+
+- Azure Cloud Shell in Bash mode
+
+::: ProcedureHeading
+To onboard the new directory (or parts thereof):
+:::
+
+1.  In the [same browser]{.Emphasis}, in separate tabs:
+
+    1.  Log in to your CyberArk tenant.
+
+    2.  Log in to your Microsoft Azure Console - keep this open and stay
+        logged in throughout the onboarding process.
+
+2.  In your CyberArk tenant, use the service to go to .
+
+3.  In , go to [Settings \> Platform management]{.Emphasis} and click
+    [Azure]{.Emphasis}.
+
+4.  In the top right corner of the Azure workspace page, click [Add
+    workspace]{.Emphasis}.
+
+5.  Select [Onboard new directory]{.Emphasis}, and click
+    [Add]{.Emphasis}.
+
+6.  Enter the following directory details:
+
+      Item                                     Description
+      ---------------------------------------- ---------------------------------------------
+      [Directory (tenant) ID]{.Emphasis}       ID assigned to the directory.
+      [Directory name]{.Emphasis} (optional)   Optional name that describes the directory.
+
+7.  Select the scope that you want to onboard:
+
+    +-----------------------------------+-----------------------------------+
+    | Option                            | Details                           |
+    +===================================+===================================+
+    | [Onboard the entire               | Onboard the entire directory,     |
+    | directory]{.Emphasis}             | including all of its child        |
+    |                                   | management groups and             |
+    |                                   | subscriptions.                    |
+    +-----------------------------------+-----------------------------------+
+    | [Onboard specific management      | Enter the IDs of the groups you   |
+    | groups]{.Emphasis}                | want to onboard, pressing [Enter  |
+    |                                   | ]{.Emphasis}after each ID.        |
+    +-----------------------------------+-----------------------------------+
+    | [Onboard specific                 | Enter the subscription IDs of the |
+    | subscriptions]{.Emphasis}         | subscriptions you want to         |
+    |                                   | onboard, pressing [Enter          |
+    |                                   | ]{.Emphasis}after each ID.        |
+    +-----------------------------------+-----------------------------------+
+
+8.  []{#Connect3}Connect the required Microsoft Azure subscriptions
+
+    Do the following in to connect the subscriptions you want scanned:
+
+    1.  Go to the [Setup \> Platform management \> Azure]{.Emphasis}
+        page.
+
+    2.  Select the subscriptions to connect.
+
+    For details, see View and manage workspace connections.
+
+## []{#Connect}Add a new workspace to an existing directory
+
+You can add new or existing management groups and subscriptions to a
+discovered directory at any time after onboarding the parent directory.
+
+1.  In , go to [Settings \> Platform management]{.Emphasis} and click
+    [Azure]{.Emphasis}.
+
+2.  In the top right corner of the Azure workspace page, click [Add
+    workspace]{.Emphasis}.
+
+3.  Select [Onboard additional subscriptions]{.Emphasis}, and click
+    [Add]{.Emphasis}.
+
+4.  Select the scope and provide the requested details:
+
+    +-----------------------------------+-----------------------------------+
+    | Option                            | Details                           |
+    +===================================+===================================+
+    | [Onboard the entire               | Onboard all the resources in the  |
+    | directory]{.Emphasis}             | directory that are not yet        |
+    |                                   | onboarded, including all of its   |
+    |                                   | child management groups and       |
+    |                                   | subscriptions.                    |
+    +-----------------------------------+-----------------------------------+
+    | [Onboard specific                 | Enter the subscription IDs of the |
+    | subscriptions]{.Emphasis}         | subscriptions you want to         |
+    |                                   | onboard, pressing [Enter          |
+    |                                   | ]{.Emphasis}after each ID.        |
+    +-----------------------------------+-----------------------------------+
+
+## Reduce permissions in onboarded Azure workspaces
+
+If you have Azure workspaces that were onboarded for prior to March 13,
+2024 you may want to reduce exposure by removing unnecessary permissions
+from the Azure app that was created during the onboarding process. To do
+this, onboard the workspaces again. When you copy the onboarding script
+from to your Azure console, add the flags described below.
+
+::: ProcedureHeading
+To remove excessive permissions
+:::
+
+1.  Follow the instructions provided earlier in this topic to onboard a
+    directory or selected scope levels.
+
+2.  In the step where you configure Azure to give access to your
+    resources, add the following general flag to the script after you
+    copy it from to your Bash command line:
+
+    ::: code
+        --idempotent-mode
+    :::
+
+3.  
+
+::: note
+Admin consent is granted to the following Graph API permissions of the
+and and app registrations that are created for :
+
+- [[Group.Create]{.Emphasis}]{.Emphasis}
+- [Group.ReadWrite.All ]{.Emphasis}
+- [[GroupMember.ReadWrite.All ]{.Emphasis}]{.Emphasis}
+- [User.Read.All]{.Emphasis}
+
+For more information about permissions, see [Azure
+permissions](/sca/latest/en/content/dpaforcloud/sca_azure_permissions.htm){alt="Link to SCA page that describes the used Azure permissions"}.
+:::
+
+::: {.SeeAlso madcap:conditions="cc_product_conds.CEM"}
+- Connect and manage workspaces
+
+- \[%=cc_product_vars.CV-full%\] scanning process
+:::
+
+::: {.NextStep madcap:conditions="cc_product_conds.SCA"}
+[Create a web app for the Azure
+console](/sca/latest/en/content/dpaforcloud/sca_create-azure-web-app.htm "Create a web app for the Azure console"){alt="Create a web app for the Azure console"}
+:::

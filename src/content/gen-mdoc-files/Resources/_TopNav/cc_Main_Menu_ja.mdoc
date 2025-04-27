@@ -1,0 +1,41 @@
+:::: {madcap:conditions="TopNav.ThemeDefault"}
+[バージョン
+{% $cc_C_CyberArk.Version %}]{.version-label}
+
+::: {.cc-main-menu .product madcap:conditions="TopNav.MainMenu"}
+- `<snippetblock src="../Snippets/_TopNav_Custom/cc_C_MainMenu_WNLink.flsnp" madcap:conditions="TopNav.WhatsNewNotification">`{=html}`</snippetblock>`{=html}
+- [製品紹介](#){onclick="return false;" target="_blank"}
+
+<!-- -->
+
+- `<snippetblock src="../Snippets/_TopNav_Custom/cc_C_MainMenu_WNLink.flsnp" madcap:conditions="TopNav.WhatsNewNotification">`{=html}`</snippetblock>`{=html}
+- [製品紹介](#){onclick="return false;" target="_blank"}
+  - [\[%=cc_FLT_products.4FLT-PAM%\]](%5B%=TopNav.PortalPrefixPath%%5D/PAS/Latest/en/Content/Resources/_TopNav/cc_Home.htm){target="_blank"}
+  - [\[%=cc_FLT_products.4FLT-CP%\]](%5B%=TopNav.PortalPrefixPath%%5D/credential-providers/latest/en/Content/Resources/_TopNav/cc_Home.htm){target="_blank"}
+:::
+::::
+
+::: {.cc-main-menu .product madcap:conditions="TopNav.ThemeConjur"}
+編集者への注釈：この部分がconjur.org (Conjur OSSウェブサイト)
+のメニューと一致していることを確認してください。以下は、リスト @
+September 2019 です。これは、現在のConjur
+OSSのバージョンに対して検証する必要があります。
+
+`<snippetblock src="../Snippets/_TopNav_Custom/cc_C_main-menu-conjur-oss.flsnp">`{=html}`</snippetblock>`{=html}
+:::
+
+<script type="text/javascript">/*      <![CDATA[*/
+            $(function() {
+            var title = TopNav.utils.getVar('#var-header-title');
+            $('.cc-main-menu .product-menu a')
+            .each(function() {
+            var $this = $(this);
+            if ($this.text() == title)
+            $this.parent()
+            .addClass('selected')
+            });
+
+            $('.cc-main-menu')
+            .appendTo($('.off-canvas-content .title-bar-layout'));
+            });
+        /*]]>*/</script>

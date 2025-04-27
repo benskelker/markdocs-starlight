@@ -1,0 +1,71 @@
+<li>
+
+Configure Microsoft Azure to give
+{% $cc_C_CyberArk.CompanyName %}
+access to your resources:
+
+1.  In your Azure Portal, open the Microsoft Azure Shell in Bash mode.
+
+2.  In
+    {% $cc_product_vars.CV-full %},
+    on the Azure onboarding page:
+
+    - The first script downloads the Microsoft Azure Deployment Manager
+      repository
+
+    - The second script deploys the
+      {% $cc_product_vars.CV-full %}
+      and
+      {% $cc_product_vars.SCA-short %}
+      app registrations
+
+    Copy each script and run it in the Azure Cloud Shell, one at a time.
+
+    ::: note
+    `<snippetblock src="LeastPrivilegeCommand.flsnp">`{=html}`</snippetblock>`{=html}
+    :::
+
+    ::: {.note madcap:conditions="snip-conditions.OnboardNewDirectory"}
+    The following app registrations are created in Azure:
+
+    - {% $cc_product_vars.CV-full %}
+      app registration: [cyb-cem-app]{.Emphasis}
+
+    - {% $cc_product_vars.SCA-short %}-Entra
+      ID app registration: [cyb-sca-aad-app]{.Emphasis}
+
+    - {% $cc_product_vars.SCA-short %}-Azure
+      resources app registration: [cyb-sca-resource-app]{.Emphasis}
+    :::
+
+3.  From the Azure Cloud Shell output, copy the
+    {% $cc_product_vars.CV-full %}
+    app registration\'s final value (labeled [Cloud Visibility Final
+    Value]{.Emphasis}) and
+    {% $cc_product_vars.SCA-short %}
+    app registration\'s final value (labeled [SCA Final
+    Value]{.Emphasis}) to the respective field in the Azure onboarding
+    page
+    {% $cc_product_vars.CV-full %}.
+
+4.  On the Azure onboarding page, accept each of Microsoft\'s requests
+    to grant admin consent to Graph API permissions of each of the app
+    registrations.
+
+</li>
+<li>
+
+Start discovering the directory:
+
+In
+{% $cc_product_vars.CV-full %},
+at the bottom of the Azure onboarding page, click [Start
+discovery]{.Emphasis}.
+
+{% $cc_product_vars.CV-full %}
+starts discovering the relevant resources. Refresh the Azure workspaces
+page in
+{% $cc_product_vars.CV-full %}
+to see the parent directory with the relevant child resources.
+
+</li>

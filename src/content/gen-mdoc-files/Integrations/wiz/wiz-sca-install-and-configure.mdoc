@@ -1,0 +1,322 @@
+<map id="map1">
+<area shape="rectangle" coords="358,76,629,260" dragdirection="0" href="#Download" alt="Download the integration">
+</area>
+<area shape="rectangle" coords="611,350,887,537" dragdirection="0" alt="Configure the OAuth2.0 authentication in Identity Administration" href="#Configur">
+</area>
+<area shape="rectangle" coords="611,619,880,803" dragdirection="0" alt="Import flows and configure SCA Authentication in Identity Flows" href="#Import">
+</area>
+<area shape="rectangle" coords="942,620,1205,1081" dragdirection="0" alt="Configure CyberArk integration in Wiz" href="#Configur2">
+</area>
+<area shape="rectangle" coords="1268,618,1537,801" dragdirection="0" alt="Configure the Wiz Authentication for SCA in Identity Flows" href="#Configur3">
+</area>
+<area shape="rectangle" coords="1601,621,1867,804" dragdirection="0" alt="Configure the flows" href="#Configur4">
+</area>
+<area shape="rectangle" coords="1597,1164,1871,1356" dragdirection="0" alt="Trigger remediation manually or with automation rules" href="wiz-sca-use-the-integration.htm">
+</area>
+<area shape="rectangle" coords="1931,1167,2200,1356" dragdirection="0" alt="Connect to your cloud environment" href="../../HomeTilesLPs/LP-Tile6.htm">
+</area>
+</map>
+
+# Download and configure the Wiz-{% $cc_product_vars.SCA-short %} integration
+
+:::: wistia_thumb_wrapper
+z45iwqn89c
+
+::: wistia_embed
+:::
+::::
+
+The following diagram illustrates the high-level configuration flow.
+
+![Wiz-SCA configuration
+diagram](../../Resources/Images/integrations/config-diagram.png){usemap="#map1"}
+
+## Before you begin
+
+::: Note
+You must be signed in with a Wiz account to view the Wiz documentation.
+:::
+
+- In CyberArk
+  {% $cc_product_vars.SCA-full %},
+  CyberArk Identity Administration must be integrated with your identity
+  provider.
+
+- When you use Microsoft Azure, make sure of the following:
+
+  - Wiz is connected to your Azure tenant. For details, see the section
+    about connecting to
+    {% $sca-project-variables.Azure %}
+    in the [Wiz documentation](http://docs.wiz.io/).
+
+  - Azure Cloud Events is configured to detect excessive access
+    findings. For details on connecting and enabling Azure Cloud events,
+    see the [Wiz documentation](http://docs.wiz.io/).
+
+  - The option [Enable Stream Azure Microsoft Entra ID (AAD) logs to
+    Wiz]{.Emphasis} is enabled in Wiz. Although in Wiz this option is
+    marked as optional, it is required for the integration.
+
+  - Understand the specifics of excessive access privileges. For
+    details, see the section about excessive access privileges in the
+    [Wiz documentation](http://docs.wiz.io/).
+
+  - {% $cc_product_vars.SCA-short %}
+    is configured with CyberArk Identity or any other IdP to enable the
+    integration to leverage information from the IdP to validate the
+    identity for Azure.
+
+- When you use
+  {% $sca-project-variables.AWS-AD %}:
+
+  - Reach out to [bizdevtech@cyberark.com]{.Emphasis} to make sure that
+    the [AWS Identity Center Excessive Access Findings]{.Emphasis}
+    control is enabled in Wiz. The issues within Wiz will become
+    available 24 hours after the feature flag is enabled.
+
+  - Make sure that Wiz is connected to your AWS tenant. For details, see
+    the section about connecting to AWS in the [Wiz
+    documentation](http://docs.wiz.io/).
+
+  - Make sure that AWS Identity Center graph control is enabled. In the
+    Wiz Portal, go to [Policies \> Graph Controls]{.Emphasis} and search
+    for [AWS Identity Center Group with excessive
+    privileges]{.Emphasis}. Click [More options]{.Emphasis} ( \... ) and
+    select [Enable]{.Emphasis}.
+
+## []{#Download}Download the integration
+
+1.  Go to the CyberArk Marketplace.
+
+2.  Search for [Onboard to
+    {% $cc_product_vars.SCA-full %}
+    with Wiz integration]{.Emphasis} on the marketplace and download the
+    integration. A file named [Wiz
+    OnboardToSecureCloudAccessVx.x.zip]{.Emphasis} is downloaded.
+
+3.  Unzip the downloaded file, and note the location of the unzipped
+    directory for later use.
+
+## Configure the integration
+
+### []{#Configur}Configure OAuth2.0 authentication in Identity Administration {#configure-oauth2.0-authentication-in-identity-administration .step madcap:autonum="Step 1: "}
+
+This integration requires an OAuth2 server authentication to
+{% $cc_product_vars.SCA-short %}.
+Following the instructions in
+`<xref href="../../Automation/sca_API-prerequisite.htm">`{=html}\[%=cc_product_vars.ISP-short%\]
+authentication prerequisites`</xref>`{=html}. One of the steps in this
+configuration requires giving the appropriate role to the service user:
+ensure the user is given the [SCAApiFullAccess]{.Emphasis} role.
+
+### Configure additional permission for the service user {#configure-additional-permission-for-the-service-user .step madcap:autonum="Step 2: "}
+
+1.  Go to [Core Services \> Roles]{.Emphasis}, click [Add
+    Role]{.Emphasis}, and create a role for the new service user. Give
+    it a name, such as [Reporting]{.Emphasis}, and an optional
+    description.
+
+2.  In the [Administrative Rights]{.Emphasis} tab, assign the [Report
+    Management]{.Emphasis} and [Read Only User Management]{.Emphasis}
+    rights to the new role.
+
+3.  In the [Members]{.Emphasis} tab, add the new service user that you
+    created to the role.
+
+### []{#Import}Import flows and configure SCA Authentication in Identity Flows {#import-flows-and-configure-sca-authentication-in-identity-flows .step madcap:autonum="Step 3: "}
+
+1.  Import the flows into CyberArk Identity Flows:
+
+    1.  Log in to the CyberArk Identity Security Platform with a user
+        that has permissions to access Identity Flows.
+
+    2.  Go to Identity Administration.
+
+    3.  Within Identity Administration, open [Flows]{.Emphasis}.
+
+    4.  In your file explorer, go to the integration directory [Wiz
+        OnboardToSecureCloudAccessVx.x]{.Emphasis} and locate the
+        downloaded JSON files.
+
+    5.  For each of the JSON files that you downloaded, in the following
+        order, click [Import \>Upload From Computer]{.Emphasis}, and
+        select the JSON file. When the import completes, click
+        [Save]{.Emphasis}.
+
+        - [Wiz-SCA-Main.json]{.Emphasis}
+
+        - [Wiz-SCA-Azure.json]{.Emphasis}
+
+        - [Wiz-SCA-AWS-IDC.json ]{.Emphasis}
+
+2.  Configure the entry point runtime settings nodes.
+
+    <div>
+
+    a.  On the Wiz-SCA-Main flow, select the top-level node.
+
+    b.  Open [Settings]{.Emphasis}.
+
+    c.  Select [API Access]{.Emphasis}.
+
+    d.  Select [Basic Authentication]{.Emphasis}, add a username and
+        password, and click [Save]{.Emphasis}. Note the username and
+        password, and the flow URL.
+
+    </div>
+
+    For each of the three other flows, Wiz-SCA-Azure, Wiz-SCA-AWS-IDC,
+    and UserAccount, repeat these steps using the same username and
+    password.
+
+3.  Configure the authorization and hostname to enable the different
+    flows to communicate securely. For each flow:
+
+    a.  Open [Settings]{.Emphasis} at the lower-left corner.
+
+    b.  Click [Authorization]{.Emphasis} and then click [New
+        Authorizations]{.Emphasis}.
+
+    c.  Configure the following parameters:
+
+          Parameter                          Description
+          ---------------------------------- ----------------------------------------------------------------------
+          [Name]{.Emphasis}                  A name for the authorization, such as [wiz-sca-connector]{.Emphasis}
+          [Type]{.Emphasis}                  Basic
+          [UserID and Password]{.Emphasis}   The same username and password you created
+
+    d.  Click [Save]{.Emphasis}.
+
+    e.  For all play nodes, click the node, click the
+        [Authorizations]{.Emphasis} drop-down list, and select this
+        authorization. Update three play nodes: Two in the Wiz-SCA-Main
+        flow and one in the Wiz-SCA-Azure flow. Copy the flow host URL
+        to the [Hostname]{.Emphasis} field of each play node.
+
+    This authentication enables you to call the API that triggers this
+    flow.
+
+4.  Configure the Authorization for
+    {% $cc_product_vars.SCA-full %}:
+
+    1.  Click [Settings \> Authorization]{.Emphasis} at the lower-left
+        corner.
+
+    2.  Click [New Authorizations]{.Emphasis}.
+
+    3.  Configure the fields:
+
+          Field                         Description
+          ----------------------------- ---------------------------------------------------------------
+          [Name]{.Emphasis}             A name, such as Wiz SCA OAuth2
+          [Type]{.Emphasis}             OAuth2
+          [Flow]{.Emphasis}             Client Credentials
+          [Content Type]{.Emphasis}     application/x-www-urlencoded
+          [ClientID]{.Emphasis}         The same username you created previously
+          [Client Secrets]{.Emphasis}   The same password you created previously
+          [Token URL]{.Emphasis}        https://\<tenant-url\>.id.cyberark.cloud/oauth2/platformtoken
+
+    4.  Click [Authorize]{.Emphasis}, and a confirmation message should
+        appear. Click [Save]{.Emphasis}.
+
+5.  Repeat the following steps for all nodes with the CyberArk logo, in
+    all imported flows.
+
+    1.  Select the node.
+    2.  Navigate to [Settings \> Authorization]{.Emphasis}.
+    3.  Select the Authorization that you previously created for SCA,
+        such as Wiz SCA OAuth2.
+
+### []{#Configur2}Configure CyberArk integration in Wiz {#configure-cyberark-integration-in-wiz .step madcap:autonum="Step 4: "}
+
+1.  Log in to the Wiz portal.
+
+    ::: Tip
+    Keep the browser window with Identity Flows open.
+    :::
+
+2.  Navigate to [Settings \> Integrations]{.Emphasis}.
+
+3.  Click [Add Integration]{.Emphasis} and select [CyberArk]{.Emphasis}.
+
+    ::: Tip
+    Enter [CyberArk]{.Emphasis} in the search field.
+    :::
+
+4.  Enter a name for the new CyberArk integration, such as [Wiz SCA
+    integration]{.Emphasis}.
+
+5.  Under [Service Account]{.Emphasis}, select [Create New]{.Emphasis},
+    so the integration creates a new service account with the
+    permissions required to execute the integration.
+
+6.  Enter the flow URL that you created earlier in CyberArk Identity
+    Flows.
+
+7.  Select [Basic Authentication]{.Emphasis} and paste the username and
+    password that you created earlier within Identity Flows.
+
+8.  Click [Add Integration]{.Emphasis}.
+
+9.  After a confirmation message appears and the [New Service Account
+    Credentials]{.Emphasis} screen opens, note the details of the new
+    service. Save the client ID, client secret, and authentication API.
+
+### []{#Configur3}Configure the Wiz Authentication for SCA in Identity Flows {#configure-the-wiz-authentication-for-sca-in-identity-flows .step madcap:autonum="Step 5: "}
+
+1.  Click [Settings \> Authorizations]{.Emphasis} at the lower-left
+    corner.
+
+2.  Click [New Authorizations]{.Emphasis}.
+
+3.  Configure the following parameters:
+
+      Parameter                     Description
+      ----------------------------- ----------------------------------------------------------------------------------------
+      [Name]{.Emphasis}             A unique name, such as Wiz REST API
+      [Type]{.Emphasis}             OAuth2[Type]{.Emphasis}: OAuth2
+      [Flow]{.Emphasis}             Client Credentials
+      [Content Type]{.Emphasis}     application/x-www-urlencoded
+      [ClientID]{.Emphasis}         The client ID from the New Service Account Credentials in the Wiz integration
+      [Client Secrets]{.Emphasis}   The client secret from the New Service Account Credentials in the Wiz integration
+      [Token URL]{.Emphasis}        The Authentication API from the New Service Account Credentials in the Wiz integration
+      [Audience]{.Emphasis}         wiz-api
+
+4.  Click [Authorize]{.Emphasis}. A confirmation message should appear,
+    verifying that the service account is configured successfully.
+
+5.  Click [Save]{.Emphasis}.
+
+### []{#Configur4}Configure the flows {#configure-the-flows .step madcap:autonum="Step 6: "}
+
+For all play nodes in the new flows, follow these steps:
+
+1.  Open the flow.
+
+2.  Click the play node.
+
+3.  Go to the [Map]{.Emphasis} tab.
+
+4.  Under [Parameters \> body]{.Emphasis}, click within any field, click
+    the [Others]{.Emphasis} tab, and click [Custom Values]{.Emphasis}.
+
+5.  Edit the three custom values as follows:
+
+      Value                                 Description
+      ------------------------------------- -----------------------------------------------------------------
+      [identitytenantid]{.Emphasis}         The tenant ID in your Identity app URL
+      [scatenantid]{.Emphasis}              The sub-domain of your SCA app URL
+      [Identity tenant ID]{.Emphasis}       The sub-domain of your Identity app URL
+      [wizapiendpointhostname]{.Emphasis}   The API endpoint URL from the Wiz Service Account creation page
+      [idpsuffix]{.Emphasis}                The target IdP directory source suffix
+
+6.  Follow these steps for each of the following flows: Wiz-SCA-Azure,
+    Wiz-SCA-AWS-IDC, and Wiz-SCA-Identity:
+
+    1.  Click each node with the Wiz logo.
+
+    2.  Open [Settings]{.Emphasis}.
+
+    3.  Under [Authorizations]{.Emphasis}, select the authorization that
+        you created for Wiz in the section [Configure CyberArk
+        integration in Wiz]{.Emphasis}.

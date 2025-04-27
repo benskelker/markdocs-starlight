@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Local-Not-For-SFFS.DoNoBuild">
+    <head>
+        <link href="cc_topnav_content.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p class="FooterHeading">Explore</p>
+        <p class="FooterBody"><a href="http://www.cyberark.com/" target="_blank">CyberArk</a>
+        </p>
+        <p class="FooterBody" MadCap:conditions="TopNav.ThemeDefault"><a href="[%=TopNav.PortalPageURL_en%]" target="_blank">CyberArk Docs</a>
+        </p>
+        <MadCap:snippetBlock src="../Snippets/_TopNav_Custom/cc_C_Explore.flsnp" />
+        <p class="FooterBody"><a href="https://www.cyberark.com/resources/product-datasheets/cyberark-technical-support-guide" target="_blank">Support and Technical Resources</a>
+        </p>
+    </body>
+</html>

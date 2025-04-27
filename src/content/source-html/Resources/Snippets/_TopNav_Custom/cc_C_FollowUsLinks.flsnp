@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <p class="FooterBody" MadCap:conditions="TopNav.ThemeDefault">
+            <a class="follow-link" href="https://twitter.com/CyberArk" target="_blank"><img src="../../_TopNav/Images/Icons/ic-twitter.svg"></img></a>
+            <a class="follow-link" href="https://www.facebook.com/CyberArk" target="_blank"><img src="../../_TopNav/Images/Icons/ic-facebook.svg"></img></a>
+            <a class="follow-link" href="https://www.linkedin.com/company/cyber-ark-software" target="_blank"><img src="../../_TopNav/Images/Icons/ic-linkedin.svg"></img></a>
+            <a class="follow-link" href="https://www.cyberark.com/blog/" target="_blank"><img src="../../_TopNav/Images/Icons/ic-rss.svg"></img></a>
+            <a class="follow-link" href="https://www.youtube.com/user/cyberarksoftware" target="_blank"><img src="../../_TopNav/Images/Icons/ic-youtube.svg"></img></a>
+        </p>
+        <p class="FooterBody" MadCap:conditions="TopNav.ThemeConjur"><a class="follow-link" href="https://twitter.com/conjurinc" target="_blank"><img src="../../_TopNav/Images/Icons/ic-twitter.svg"></img></a><a class="follow-link" href="https://github.com/cyberark/" target="_blank"><img src="../../_TopNav/Images/Icons/ic-rss.svg"></img></a><a class="follow-link" href="https://blog.conjur.org/" target="_blank"><img src="../../_TopNav/Images/Icons/ic-rss.svg"></img></a>
+        </p>
+    </body>
+</html>

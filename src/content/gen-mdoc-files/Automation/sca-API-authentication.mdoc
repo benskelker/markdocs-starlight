@@ -1,0 +1,31 @@
+# {% $cc_product_vars.SCA-short %} authentication API
+
+This topic describes the API operation that you have to perform in order
+to authenticate to ISPSS and receive a working token required by other
+APIs.
+
+:::: swagger-container
+[mapped to sca_auth.json](../YAML/sca_auth.json)
+
+::: {#swagger-ui}
+Do not edit this text or remove the below script. Only use this snippet
+ONCE in a topic. Remember to apply the Swagger master page to the topic.
+:::
+
+<script>
+                window.onload = function() {
+                if (!window.jQuery) { return }
+                var swaggerLink = $('.swagger-link a');
+                var swaggerLink = swaggerLink.attr('href');
+                const ui = SwaggerUIBundle({
+                url: swaggerLink,
+                dom_id: '#swagger-ui',
+                presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+                ]
+                })
+                window.ui = ui
+                }
+            </script>
+::::

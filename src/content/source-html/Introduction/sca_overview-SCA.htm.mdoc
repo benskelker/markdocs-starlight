@@ -1,0 +1,63 @@
+# Overview
+
+This topic describes how enables end users, such as those in DevOps and
+Cloud Engineering, to natively and securely access the cloud management
+layer.
+
+## The solution
+
+provisions just-in-time privileged access for administrative operations
+in multi-cloud environments, using the principle of least-privilege
+access. enables operational efficiencies for IAM and Security teams
+implementing Zero Trust. This improves security posture by removing
+unnecessary standing access.
+
+Additionally, all sessions are simultaneously protected and monitored
+for audit and compliance.
+
+## How does it work?
+
+1.  End users that need access to the cloud management layer connect to
+    their cloud environments via web console or CLI.
+
+2.  The end users natively authenticate using either or another
+    third-party IdP.
+
+3.  In the background, validates approved entitlements for an end user's
+    session. The end users then select the scope of their current task,
+    ensuring least privilege access.
+
+4.  Access for cloud management operations is elevated just-in-time to
+    reduce the risk of compromised credentials. Sessions are time-bound
+    and permissions are revoked automatically at the end of a session.
+
+5.  Web-based sessions to the cloud console are recorded for audit and
+    compliance. Additional session protection helps reduce the risk of
+    browser hijacking.
+
+6.  Cloud security and administrators can trigger an on-demand sync from
+    within . This supports the dynamic nature of the cloud environment
+    and ensures the most up-to-date information about roles and
+    workspaces is available when managing access policies for end users.
+
+## architecture
+
+The solution utilizes several business and shared services in the . The
+provide basic functions like user management, SSO and MFA, and system
+auditing. Other business services work together with to provide a
+complete solution for managing access to your organizational cloud
+services with zero standing permissions.
+
+Image
+source: https://lucid.app/lucidchart/bbaf422f-2773-4775-829d-c20308965d47/edit?invitationId=inv_5e1443ef-812b-488b-b4b0-35ca4fca067b&page=BrSn0EybLmGC#
+
+![](Images/sca-architecture.png){.Enlarge usemap="#map2"}
+
+## workflow
+
+The following diagram provides a high-level workflow for the various
+users of . Click a tile to learn more.
+
+![Workflow for various personas that use the
+\[%=cc_product_vars.SCA-short%\]
+service](Images/sca-workflow.png "Image map over [%=cc_product_vars.SCA-short%] workflow"){usemap="#map1"}

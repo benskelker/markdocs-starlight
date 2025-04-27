@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="1721" MadCap:lastWidth="449">
+    <head>
+        <link href="../TableStyles/Admons/AdmonCaution.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../TableStyles/Admons/AdmonCode.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../TableStyles/Admons/AdmonExample.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../TableStyles/Admons/AdmonNote.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../TableStyles/Admons/AdmonTip.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../TableStyles/Rows.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../TableStyles/RowsBorders.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../TableStyles/StandardTiny.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <script src="../../../../cc_menuData.js?v=[%=TopNav.FLTVersion%]">
+        </script>
+        <link href="cc_topnav.css?v=[%=TopNav.FLTVersion%]" rel="stylesheet" type="text/css" />
+        <script src="cc_topnav.js?v=[%=TopNav.FLTVersion%]">
+        </script>
+    </head>
+    <body class="cc-home cc-weve-moved">
+        <div class="content">
+            <div id="contentBody">
+                <div class="row collapse">
+                    <div class="contentRow">
+                        <div>
+                            <MadCap:bodyProxy />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display:none;">
+            <div class="rg-version">&#160;</div><MadCap:variable id="var-header-title" name="TopNav.HeaderTitle" /><MadCap:variable id="var-version" name="cc_C_CyberArk.Version" /><a href="cc_Search.htm">Search Page</a>
+        </div>
+    </body>
+</html>

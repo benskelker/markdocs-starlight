@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html>
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </head>
+    <body>
+        <map id="map1">
+            <area shape="rectangle" coords="58,90,466,302" dragDirection="0" href="#h2-new-org" />
+            <area shape="rectangle" coords="1244,92,1660,314" dragDirection="0" href="#Add" />
+        </map>
+        <h1>Add Google Cloud</h1>
+        <p>This topic describes how to onboard a Google Cloud Platform (GCP)&#160;organization<MadCap:conditionalText MadCap:conditions="cc_product_conds.CV" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"> or project, along with the root discovery process and roles and permissions used by <MadCap:variable name="cc_C_CyberArk.CompanyName" /> to connect</MadCap:conditionalText>.</p>
+        <h2>Before you begin</h2>
+        <p>Make sure you have the following:</p>
+        <ul>
+            <li>
+                <p>A Google Cloud organization with at least one project. </p>
+            </li>
+            <li>
+                <p>Google Cloud admin user that has been assigned the following permissions :&#160;</p>
+                <ul>
+                    <li>
+                        <p><span class="Emphasis">roles/resourcemanager.organizationAdmin</span>
+                        </p>
+                    </li>
+                    <li><span class="Emphasis"><span class="Emphasis">roles/owner</span></span>
+                    </li>
+                    <li><span class="Emphasis">roles/logging.admin</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="note">
+            <p>We assume you are familiar with navigating your organization and projects in the Google Cloud console.</p>
+        </div>
+        <h2><a name="Add2"></a>Add Google Cloud to <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /></h2>
+        <div MadCap:conditions="cc_product_conds.CV" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+            <p>Click the relevant option to learn m adding Google Cloud to <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+            <div class="note">
+                <p>For <MadCap:variable name="cc_product_vars.SCA-short" />: Currently, <MadCap:variable name="cc_product_vars.SCA-short" /> supports onboarding entire GCP organizations only. The entire organization’s folders and projects are onboarded. Access can be managed from organization-level through project-level resources.</p>
+            </div>
+            <p>
+                <img src="Images/onboard-gcp.png" usemap="#map1" />
+            </p>
+        </div>
+        <p MadCap:conditions="cc_product_conds.SCA" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">Currently, <MadCap:variable name="cc_product_vars.SCA-short" /> supports onboarding whole GCP organizations only, and not standalone projects.  The entire organization’s folders and projects are onboarded. Access can be managed from organization-level through project-level resources.</p>
+        <h2><a name="Discover"></a><a name="h2-new-org"></a>Onboard a new GCP organization</h2>
+        <p><a name="new-org"></a>To onboard a new GCP organization to <MadCap:variable name="cc_C_CyberArk.CompanyName" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />, <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /> has to discover the related resources and their hierarchies.</p>
+        <ol>
+            <li>
+                <p>In the <span class="Emphasis">same browser</span>, in separate tabs:</p>
+                <ol>
+                    <li>
+                        <p>Log in to your CyberArk tenant.</p>
+                    </li>
+                    <li>
+                        <p>Log in to your GCP&#160;organization in the Google Cloud console -  - keep this open and stay logged in throughout the onboarding process.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>In a separate browser window, log in to your CyberArk tenant and from the <MadCap:variable name="cc_product_vars.Navigator" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />, go to<MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />.</p>
+            </li>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />, go to <span class="Emphasis">Settings &gt; Platform management</span> and click <span class="Emphasis">GCP</span>.</p>
+            </li>
+            <li>
+                <p>If this is the first time you are onboarding a GCP workspace, select <span class="Emphasis">Onboard new organization</span>, and click <span class="Emphasis">Add</span>.</p>
+                <p>If you already have onboarded GCP workspaces, the GCP&#160;workspace page is displayed. In the top right corner click <span class="Emphasis">Add workspace</span>, then  select <span class="Emphasis">Onboard new organization</span>, and click <span class="Emphasis">Add</span>.</p>
+            </li>
+            <li>
+                <p>In the New GCP&#160;organization page, enter the following information about your GCP organization:</p>
+                <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <col class="TableStyle-Standard-Column-Column1">
+                    </col>
+                    <col class="TableStyle-Standard-Column-Column1">
+                    </col>
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Item</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Description</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Organization ID</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>ID assigned to the organization</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Project ID</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>ID&#160;of the project where your current log collection dataset is located, or where a new log collection dataset and the  service accounts should be created by <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p class="step">Create <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /> and <MadCap:variable name="cc_product_vars.SCA-short" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /> service accounts in your GCP organization and configure them in <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />:</p>
+                <ol>
+                    <li>
+                        <p>In a new browser window, open the Google Cloud Shell. </p>
+                        <div class="important">
+                            <p> If you are prompted to authorize the Cloud Shell, authorize it.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <p>In <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />, on the New GCP&#160;organization page there are two scripts:</p>
+                        <ul>
+                            <li>
+                                <p>The first script downloads Cloud Visibility's GCP organization deployment folder</p>
+                            </li>
+                            <li>
+                                <p>The second script deploys the <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /> and <MadCap:variable name="cc_product_vars.SCA-short" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /> service accounts in your project</p>
+                            </li>
+                        </ul>
+                        <p>Copy each script and run it in the Google Cloud Shell, one at a time.</p>
+                    </li>
+                    <li>
+                        <p>In the Google Cloud console, open <span class="Emphasis">Deployment Manager &gt; Deployments</span>. You should see the <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /> and <MadCap:variable name="cc_product_vars.SCA-short" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /> services accounts listed in your project's deployments:</p>
+                        <ul>
+                            <li>
+                                <p><span class="Emphasis">cem-service-account</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p><span class="Emphasis">sca-service-account</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Click the <span class="Emphasis">cem-service-account</span>  service account, and under the <span class="Emphasis">Deployment properties</span>, next to <span class="Emphasis">Layout</span>, click <span class="Emphasis">View</span> and copy the <span class="Emphasis">finalValue</span> value.</p>
+                        <p>Then, on the New GCP organization page in <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />, paste the copied value into the  <span class="Emphasis"><MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /> finalValue</span> field.</p>
+                        <p>Repeat this step for the <span class="Emphasis">sca-service-account</span>, paste the copied value into the  <span class="Emphasis"><MadCap:variable name="cc_product_vars.SCA-short" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /> finalValue</span> field.</p>
+                        <div class="important" MadCap:conditions="cc_C_CyberArk.Future" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+                            <p>These values contain the service account key.&#160;For maximum security, prevention of unauthorized access, and compliance with security policies, we strongly recommend updating this key periodically. For details, see <MadCap:xref href="cv-gcp-update-keys.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">Update [%=sca-project-variables.GoogleCloud%] service account keys</MadCap:xref>.</p>
+                        </div>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p class="step">Start discovery:</p>
+                <p class="step">In <MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />, at the bottom of the New GCP organization page, click <span class="Emphasis">Start discovery</span>.</p>
+                <p><MadCap:variable name="cc_product_vars.CV-full" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" /> starts discovering the organization and displays it on the GCP page. If you don't see the organization on the GCP page, refresh the page.</p>
+            </li>
+            <li MadCap:conditions="cc_product_conds.CV" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+                <p>Start scanning your Google Cloud organization for insights</p>
+                <p>After the discovery process is finished, you can begin to scan your workspace and get insights from <MadCap:variable name="cc_product_vars.CV-full" /> on how to reduce your risk exposure.</p>
+                <p class="ProcedureHeading">To start scanning for insights</p>
+                <ol>
+                    <li>
+                        <p>In <MadCap:variable name="cc_product_vars.CV-full" />, go to the <span class="Emphasis">Setup &gt; Platform management &gt; Google Cloud</span> page.</p>
+                    </li>
+                    <li>
+                        <p>For each resource you want to scan, open the options menu and click <span class="Emphasis">Connect</span>. </p>
+                    </li>
+                </ol>
+                <p>For details, see <MadCap:xref href="cv-connect-workspaces.htm#View">View and manage workspace connections</MadCap:xref>.</p>
+            </li>
+        </ol>
+        <MadCap:snippetBlock src="CloudAdminSnippets/EnableAPIs.flsnp" MadCap:conditions="cc_product_conds.CV" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+        <div MadCap:conditions="cc_product_conds.CV" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+            <h2><a name="Add"></a>Add a new Google Cloud project</h2>
+            <div class="note">
+                <p>When working with <MadCap:variable name="cc_product_vars.SCA-short" /> this option is currently not supported. The full organization must be onboarded. For details, see <MadCap:xref href="#Discover">Onboard a new GCP organization</MadCap:xref>.</p>
+            </div>
+            <p>Do the following steps to onboard a Google Cloud project to <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+            <ol>
+                <li>
+                    <p class="step">Log in to your GCP&#160;organization in the Google Cloud console.</p>
+                </li>
+                <li>
+                    <p>In a separate browser window, open the CyberArk Admin portal and in the <MadCap:variable name="cc_product_vars.Navigator"></MadCap:variable>, click <MadCap:variable name="cc_product_vars.CV-full"></MadCap:variable>.</p>
+                </li>
+                <li>
+                    <p>In <MadCap:variable name="cc_product_vars.CV-full" />, go to <span class="Emphasis">Settings &gt; Platform management</span> and click <span class="Emphasis">GCP</span>.</p>
+                </li>
+                <li>
+                    <p>If this is the first time you are onboarding a GCP workspace, select <span class="Emphasis">Onboard new project</span>, and click <span class="Emphasis">Add</span>.</p>
+                    <p>If you already have onboarded GCP workspaces, the GCP&#160;workspace page is displayed. In the top right corner click <span class="Emphasis">Add workspace</span>, then  select <span class="Emphasis">Onboard new project</span>, and click <span class="Emphasis">Add</span>.</p>
+                </li>
+                <li>
+                    <p class="stepReset">Provide the Google Cloud project details to <MadCap:variable name="cc_product_vars.CV-full" /></p>
+                    <p><MadCap:variable name="cc_product_vars.CV-full" /> needs the following information about your Google Cloud project:</p>
+                    <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                        <col class="TableStyle-Standard-Column-Column1" />
+                        <col class="TableStyle-Standard-Column-Column1" />
+                        <thead>
+                            <tr class="TableStyle-Standard-Head-Header1">
+                                <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                    <p>Item</p>
+                                </th>
+                                <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                    <p>Description</p>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-Standard-Body-Body1">
+                                <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                    <p><span class="Emphasis">Project ID</span>
+                                    </p>
+                                </td>
+                                <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                    <p>The assigned project ID</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Standard-Body-Body1">
+                                <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                    <p><span class="Emphasis">Project name</span>
+                                    </p>
+                                </td>
+                                <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                    <p>Optional name that describes the project</p>
+                                </td>
+                            </tr>
+                            <tr class="TableStyle-Standard-Body-Body1">
+                                <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                    <p><span class="Emphasis">Project description</span>
+                                    </p>
+                                </td>
+                                <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                    <p>Optional project description</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    <p class="step">Create a <MadCap:variable name="cc_product_vars.CV-full" /> service account in your Google Cloud project:</p>
+                    <p>In this step, you run a <MadCap:variable name="cc_product_vars.CV-full" /> deploy script on your project using the Google Cloud Shell to create the <MadCap:variable name="cc_product_vars.CV-full" /> service account (<span class="Emphasis">cem-service-account</span>), which includes the resources that <MadCap:variable name="cc_product_vars.CV-full" /> needs to connect to your project and scan its project resources.</p>
+                    <ol>
+                        <li>
+                            <p>Open the Google Cloud Shell in a new browser tab.</p>
+                        </li>
+                        <li>
+                            <p>In <MadCap:variable name="cc_product_vars.CV-full" />, on the Add a GCP&#160;project page there are two scripts:</p>
+                            <ul>
+                                <li>
+                                    <p>The first script downloads Cloud Visibility's GCP organization deployment folder</p>
+                                </li>
+                                <li>
+                                    <p>The second script deploys the <MadCap:variable name="cc_product_vars.CV-full" /> service account (<span class="Emphasis">cem-service-account</span>) in your project</p>
+                                </li>
+                            </ul>
+                            <p>Copy each script and run it in the Google Cloud Shell, one at a time.</p>
+                        </li>
+                        <li>
+                            <p>In the Google Cloud console, open <span class="Emphasis">Deployment Manager &gt; Deployments</span>. You should see the <MadCap:variable name="cc_product_vars.CV-full" />  services account (<span class="Emphasis">cem-service-account</span>) listed in your project's deployments.</p>
+                        </li>
+                        <li>
+                            <p>Click the  service account  and, under the <span class="Emphasis">Deployment properties</span>, next to <span class="Emphasis">Layout</span>, click <span class="Emphasis">View</span> and copy the <span class="Emphasis">finalValue</span> value.</p>
+                            <p>Then, on the Add a GCP&#160;project page in <MadCap:variable name="cc_product_vars.CV-full" />, paste the copied value into the <span class="Emphasis"><MadCap:variable name="cc_product_vars.CV-full" /> finalValue</span> field.</p>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <p>At the bottom of the Add a GCP&#160;project page, click <span class="Emphasis">Connect Project</span>. </p>
+                    <p><MadCap:variable name="cc_product_vars.CV-full" />. automatically begins to discover your Google Cloud project. and displays it on the GCP page. If you don't see it displayed, refresh the page.</p>
+                </li>
+            </ol>
+            <MadCap:snippetBlock src="CloudAdminSnippets/EnableAPIs.flsnp" />
+        </div>
+        <div MadCap:conditions="cc_product_conds.CV" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+            <h2><a name="Enable"></a>Enable APIs</h2>
+            <p>This section describes how <MadCap:variable name="cc_product_vars.CV-full" /> uses Cloud APIs to gain access to a required resource.</p>
+            <p><MadCap:variable name="cc_product_vars.CV-full" /> enables the following APIs:</p>
+            <ul>
+                <li>
+                    <p>deploymentmanger.googleapis.com</p>
+                </li>
+                <li>
+                    <p>cloudresourcemanager.googleapis.com</p>
+                </li>
+                <li>
+                    <p>iam.googleapis.com</p>
+                </li>
+            </ul>
+            <h3 class="stepReset" MadCap:autonum="Step 1: ">Create a custom role</h3>
+            <p>The deploy script creates a custom role  with the minimum permissions required for the <MadCap:variable name="cc_product_vars.CV-full" /> service account to work. </p>
+            <p>For a list of permissions granted to the <MadCap:variable name="cc_product_vars.CV-full" /> service account, see <MadCap:xref href="cv-gcp-permissions.htm">Google Cloud permissions</MadCap:xref>.</p>
+            <h3 class="step" MadCap:autonum="Step 2: ">Create a service account</h3>
+            <p>The deploy script enables <MadCap:variable name="cc_product_vars.CV-full" /> to specify all the resources needed for <MadCap:variable name="cc_product_vars.CV-full" />'s  application, including a service account used by <MadCap:variable name="cc_product_vars.CV-full" />. </p>
+            <p>When the service account is created, the script binds the custom role described in the first step to this service account.</p>
+            <h3 class="step" MadCap:autonum="Step 3: ">Add the service account to the organization IAM</h3>
+            <p>Service accounts can be created only at the project level. However, to gain access to the entire organization, the service   account must sit 
+above  the organization IAM.</p>
+            <div class="SeeAlso">
+                <ul>
+                    <li>
+                        <p>
+                            <MadCap:xref href="cv-connect-workspaces.htm">Manage a workspace connection</MadCap:xref>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <MadCap:xref href="../HomeTilesLPs/LP-Tile3.htm">[%=project_variables.ProductName_full%] scanning process</MadCap:xref>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="NextStep" MadCap:conditions="cc_product_conds.SCA" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+            <p><a href="/sca/latest/en/content/dpaforcloud/sca_create-gcp-web-app.htm" alt="Add a web app for the Google Cloud console" title="Add a web app for the Google console">Add a web app for the Google Cloud console</a>
+            </p>
+        </div>
+    </body>
+</html>

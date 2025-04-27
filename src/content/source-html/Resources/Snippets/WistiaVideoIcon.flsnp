@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async="">
+        </script>
+        <div class="wistia-icon-container">
+            <div class="wistia-wrapper">
+                <p style="visibility: hidden;" class="wistia_id">5yko2ms9ml</p>
+                <div class="wistia_embed video-icon popoverContent=link" style="display:inline;position:relative">Watch video</div>
+                <script>
+                    $('.wistia-icon-container .wistia-wrapper').each(function(){
+                    var wistVid= $(this).children('.wistia_id').text();
+                    var wistEmbed = $(this).children('.wistia_embed');
+                    $(wistEmbed).addClass('wistia_async_' + wistVid + ' popover=true popoverSize=620x340');
+                    });
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

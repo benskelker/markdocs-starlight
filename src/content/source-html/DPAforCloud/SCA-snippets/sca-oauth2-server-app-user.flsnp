@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <ol>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />, select <span class="Emphasis">Core Services</span> &gt; <span class="Emphasis">Users</span>, and click <span class="Emphasis">Add User</span>.</p>
+            </li>
+            <li>
+                <p>Enter a <span class="Emphasis">Login name</span>, <span class="Emphasis">Display name</span>, and <span class="Emphasis">Password</span> for the new user.</p>
+            </li>
+            <li>
+                <p>Under <span class="Emphasis">Status</span>, select <span class="Emphasis">Is OAuth confidential client</span>. The following options are enabled automatically and can't be disabled unless you clear the <span class="Emphasis">Is OAuth confidential client</span> option:</p>
+                <ul>
+                    <li>
+                        <p><span class="Emphasis">Password never expires</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span class="Emphasis">Is service user</span>
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Click <span class="Emphasis">Create User</span>.</p>
+                <div class="note">
+                    <ul>
+                        <li>
+                            <p>To view service users, in <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />, click <span class="Emphasis">All Users</span> or <span class="Emphasis">All Service Users</span>. </p>
+                        </li>
+                        <li>
+                            <p>Service users aren't displayed in the list of active users because they don't access the <MadCap:conditionalText MadCap:conditions="SCA-conditions.not-free-trial"><MadCap:variable name="cc_C_CyberArk.CompanyName" /> user portal</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="SCA-conditions.free-trial"><MadCap:variable name="cc_product_vars.SecureAccessSpace" /> space</MadCap:conditionalText>. </p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ol>
+    </body>
+</html>

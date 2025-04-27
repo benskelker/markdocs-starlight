@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="cc_product_vars.SCA-short" /> audit events</h1>
+        <p>This topic describes the <MadCap:variable name="cc_product_vars.SCA-short" /> audit events and codes.</p>
+        <h2>Overview</h2>
+        <p>Audits events and codes are available for the components and activities listed below.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard" cellspacing="0" summary="Lists the audit components for which audit events and related codes are available">
+            <caption>Audit events per component</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Component</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Activity</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><a href="#Policy"><MadCap:variable name="cc_product_vars.SCA-short" /> policies</a>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>Create</p>
+                            </li>
+                            <li>
+                                <p>Edit</p>
+                            </li>
+                            <li>
+                                <p>Delete</p>
+                            </li>
+                            <li>
+                                <p>Execute</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><a href="#Connect"><MadCap:variable name="cc_product_vars.SCA-short" /> connect</a>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>Login</p>
+                            </li>
+                            <li>
+                                <p>Logout</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><a href="#Auto">Auto web app creation</a>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>Create</p>
+                            </li>
+                            <li>
+                                <p>Start</p>
+                            </li>
+                            <li>
+                                <p>End</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><a href="#On-deman">On-demand access</a>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>Submit</p>
+                            </li>
+                            <li>
+                                <p>Approve</p>
+                            </li>
+                            <li>
+                                <p>Deny</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><a href="#On-deman2">On-demand scan</a>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>Start</p>
+                            </li>
+                            <li>
+                                <p>End</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><a href="#Get">APIs</a>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>Execute</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><a href="#Update"><MadCap:variable name="cc_product_vars.SCA-short" /> service configuration</a>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>Submit</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Audit"></a>Audit codes</h2>
+        <p>The following sections describe the <MadCap:variable name="cc_product_vars.SCA-short" /> audit codes according to functionality. </p>
+        <h3><a name="Policy"></a>Policy</h3>
+        <table class="TableStyle-Standard" style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');margin-left: 0;margin-right: auto;" cellspacing="0" summary="Audit codes that are available for events related to SCA policies">
+            <caption>Policy audit codes</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit type</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0020</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Query to retrieve information about <MadCap:variable name="cc_product_vars.SCA-short" /> policies.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0040</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieve the status of a policy.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0050</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieve the details of the specified policy.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0070</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>One of the following actions was performed for a policy:</p>
+                        <ul>
+                            <li>
+                                <p><span class="Emphasis">Create </span>- via the web interface</p>
+                            </li>
+                            <li>
+                                <p><span class="Emphasis">Edit </span>- via the web interface</p>
+                            </li>
+                            <li>
+                                <p><span class="Emphasis">Delete </span>- via the web interface</p>
+                            </li>
+                            <li>
+                                <p><span class="Emphasis">Execute </span>- one of the above actions was performed via an API&#160;call</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>SCA0130</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Verify that a policy is still valid. </p>
+                        <p>For example, if an account was removed from an organization but contained a role that was assigned to some users via this policy, then after validation the policy will have an Error status (because affected users can't connect to the cloud console).</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><a name="Connect"></a>Connect (user)</h3>
+        <table class="TableStyle-Standard" style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');margin-left: 0;margin-right: auto;" cellspacing="0" summary="Audit codes for events related to user connection to the cloud console">
+            <caption>Connection event audit codes</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit type</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>SCA0080</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>A user signed in to or signed out of a cloud console. Indicated by the following events:</p>
+                        <ul>
+                            <li>
+                                <p><span class="Emphasis">Login </span>- User signed in to the cloud console</p>
+                            </li>
+                            <li>
+                                <p><span class="Emphasis">Logout </span>- User signed out of the cloud console</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><a name="Auto"></a>Auto web app creation</h3>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <caption>Auto web app creation event audit codes</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit type</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0140</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Success</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user initiated the automatic web app creation for a single AWS account and it was successfully created.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0140</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Failure</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user initiated the automatic web app creation for a single AWS account, but the process failed. Check the custom message section of the audit event for the failure reason and recommended fix.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0141</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Success</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user initiated the automatic web app creation for the AWS IAM Identity Center organization and it was successfully created.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0141</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Failure</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user initiated the automatic web app creation for a single AWS IAM Identity Center, but the process failed. Check the custom message section of the audit event for the failure reason.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0142</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Success</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user initiated the automatic web app creation for an AWS IAM organization and the job started successfully.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0142</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Failure</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user initiated the automatic web app creation for an AWS IAM organization, but the job could not start. Check the custom message section of the audit event for the failure reason.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0143</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Success</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>The job of creating web apps for accounts within the AWS IAM organization was successfully completed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0144</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Success</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>The web app creation for a specific account within an AWS IAM organization was successfully completed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0144</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Failure</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>The web app creation failed for a specific account within an AWS IAM organization. Check the custom message section of the audit event for the failure reason.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0145</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Success</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user initiated the automatic web app creation for a Google Cloud organization and it was successfully created</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0145</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Failure</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user initiated the automatic web app creation for a Google Cloud organization, but the process failed. Check the custom message section of the audit event for the failure reason and recommended fix.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0146</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Success</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user initiated the automatic web app creation for the Azure directory and it was successfully created.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>SCA0146</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>Failure</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>A user initiated the automatic web app creation for the Azure directory, but the process failed. Check the custom message section of the audit event for the failure reason and recommended fix.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><a name="On-deman"></a>On-demand access</h3>
+        <table class="TableStyle-Standard" style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');margin-left: 0;margin-right: auto;" cellspacing="0" summary="Codes related to on-demand audit events">
+            <caption>On-demand access audit codes</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit type</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0090</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user sent an access request that ended with one of the following results:</p>
+                        <ul>
+                            <li>
+                                <p><span class="Emphasis">Approve access request</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p><span class="Emphasis">Deny access request</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0090</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Failure</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user sent an access request, but the system didn't create an on-demand policy. As a result, the user couldn't access the cloud console.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>SCA0010</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">A user tried to send an access request but was rejected because they don't have the necessary permissions.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><a name="On-deman2"></a>On-demand scan </h3>
+        <table class="TableStyle-Standard" style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');margin-left: 0;margin-right: auto;" cellspacing="0" summary="Codes available for on-demand scan events">
+            <caption>Scan audit codes</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit type</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>SCA0060</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A user initiated an ad-hoc (unscheduled) scan of a cloud workspace. This resulted in the following events:</p>
+                        <ul>
+                            <li>
+                                <p><span class="Emphasis">Scan again start</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p><span class="Emphasis">Scan again end</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>SCA0060</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>Failure</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>A user initiated an ad-hoc (unscheduled) scan of a cloud workspace, but the scan failed. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><a name="Get"></a>Get job status</h3>
+        <table class="TableStyle-Standard" style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');margin-left: 0;margin-right: auto;" cellspacing="0" summary="Audit code for get job status event">
+            <caption>Job status audit code</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit type</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>SCA0120</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>Info</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Used by some <MadCap:variable name="cc_product_vars.SCA-short" /> APIs to retrieve the status of a job that was triggered by another <MadCap:variable name="cc_product_vars.SCA-short" /> API.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><a name="Update"></a>Update service configuration</h3>
+        <table class="TableStyle-Standard" style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');margin-left: 0;margin-right: auto;" cellspacing="0" summary="Audit code for get job status event">
+            <caption>Update service configuration audit codes</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit code</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Audit type</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">SCA0150</td>
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">Info</td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">An admin user submitted an update to the <MadCap:variable name="cc_product_vars.SCA-short" /> service configuration.</td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>SCA0150</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>Failure</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>An admin user tried to submit an update to the <MadCap:variable name="cc_product_vars.SCA-short" /> service configuration, but the update failed.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="SeeAlso" MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+            <p>
+                <MadCap:xref href="../Audit/isp_Audit.htm">Audit</MadCap:xref>
+            </p>
+        </div>
+    </body>
+</html>

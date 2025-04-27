@@ -1,0 +1,43 @@
+:::: {madcap:conditions="TopNav.ThemeDefault"}
+[Version
+{% $cc_C_CyberArk.Version %}]{.version-label}
+
+::: {.cc-main-menu .product madcap:conditions="TopNav.MainMenu"}
+- `<snippetblock src="../Snippets/_TopNav_Custom/cc_C_MainMenu_WNLink.flsnp" madcap:conditions="TopNav.WhatsNewNotification">`{=html}`</snippetblock>`{=html}
+- [Our Products](#){onclick="return false;" target="_blank"}
+
+<!-- -->
+
+- `<snippetblock src="../Snippets/_TopNav_Custom/cc_C_MainMenu_WNLink.flsnp" madcap:conditions="TopNav.WhatsNewNotification">`{=html}`</snippetblock>`{=html}
+- [Our Products](#){onclick="return false;" target="_blank"}
+  - [\[%=cc_FLT_products.4FLT-PAM%\]](%5B%=TopNav.PortalPrefixPath%%5D/PAS/Latest/en/Content/Resources/_TopNav/cc_Home.htm){target="_blank"}
+  - [\[%=cc_FLT_products.4FLT-CP%\]](%5B%=TopNav.PortalPrefixPath%%5D/credential-providers/latest/en/Content/Resources/_TopNav/cc_Home.htm){target="_blank"}
+:::
+::::
+
+::: {.cc-main-menu .product madcap:conditions="TopNav.ThemeConjur"}
+Note to Editor: Make sure this section matches the menu in conjur.org
+(Conjur OSS website). The following is the list @ September 2019. This
+should be verified against the current Conjur OSS version.
+
+`<snippetblock src="../Snippets/_TopNav_Custom/cc_C_main-menu-conjur-oss.flsnp">`{=html}`</snippetblock>`{=html}
+:::
+
+<script type="text/javascript">/*      <![CDATA[*/
+          $(function() {
+            var title = TopNav.utils.getVar('#var-header-title');
+            var subtitle = TopNav.utils.getVar('#var-header-subtitle')
+            $('.cc-main-menu .product-menu a')
+              .each(function() {
+                var $this = $(this);
+                if ($this.text() == subtitle) {
+                    $this.parent()
+                        .addClass('selected')}
+                else if ($this.text() == title) {
+                    $this.parent()
+                        .addClass('selected')}
+              });
+            $('.cc-main-menu')
+              .appendTo($('.off-canvas-content .title-bar-layout'));
+          });
+        /*]]>*/</script>

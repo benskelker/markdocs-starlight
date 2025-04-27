@@ -1,0 +1,100 @@
+# Behind the scenes for AWS
+
+This topic describes the root discovery process and roles and
+permissions used by to connect.
+
+When you connect an AWS organization to , provides a CloudFormation
+template to create the necessary resources.
+
+Each of the following sections describes the details behind each
+operation in the CloudFormation template.
+
+## Discover a new organization
+
+This section describes how discovers a new organization.
+
+To enable you to connect to any point in the root hierarchy, discovers
+the entire resource hierarchy in the region you specified.
+
+### Create a role {#create-a-role .step xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:autonum="Step 1: "}
+
+The CloudFormation template creates an AWS role to discover the resource
+hierarchy. The name of the role is `CyberArkOrgRoleForCEM.`
+
+### Grant access {#grant-access .step xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:autonum="Step 2: "}
+
+The `CyberArkOrgRoleForCEM `role includes a manage policy named
+`AWSOrganizationsReadOnlyAccess` to grant read only access to the AWS
+organization\'s service.
+
+### Discover the organization {#discover-the-organization .step xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:autonum="Step 3: "}
+
+Finally, uses the following AWS APIs to discover the hierarchy
+resources:
+
+- list_accounts_for_parent
+
+- list_organizational_units_for_parent
+
+- describe_organization
+
+- list_roots
+
+## []{#Enable}Enable the scan
+
+This section describes how the scan is enabled.
+
+### Create permissions {#create-permissions .stepReset xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:autonum="Step 1: "}
+
+DPACloud/Connect-AWS-Account
+
+To enable to scan your organization, the CloudFormation template creates
+a role with the following prefix: `CyberArkOrgMemberRoleForCEM`.
+
+The method to create the role depends on the account type:
+
+  Role                  Method
+  --------------------- ------------------------------------------------------------------------------------------------------------
+  Member accounts       This role is created using a StackSet that deploys instances for each member account in your organization.
+  Management accounts   This role is created in the main stack.
+
+  : Role creation method
+
+Attached to this role is the `CyberArkOrgPolicyForCEM` policy that
+grants permissions to scan.
+
+These permissions include the following:
+
+  Permission                       Description                                                                                                                                            Type
+  -------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------ ------
+  GetLoginProfile                  Retrieves the user name and password-creation date for the specified IAM user                                                                           
+  ListMFADevices                   Lists the MFA devices for an IAM user                                                                                                                   
+  GetAccountAuthorizationDetails   Generates a report that includes details about when an IAM resource (user, group, role, or policy) was last used in an attempt to access AWS service    
+
+  : Included permissions
+
+### Scan selected accounts {#scan-selected-accounts .step xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:autonum="Step 2: "}
+
+AWS provides an API whose name matches the name of the permissions list
+above, to enable to scan the your selected accounts.
+
+## Manage the CloudFormation process
+
+This section describes the permission required to manage the
+CloudFormation process.
+
+To determine if the stack was successfully installed on the member
+accounts, needs the following permission to be granted to the
+`CyberArkOrgRoleForCEM` role described in the Enable the scan section.
+
+The following permissions are granted to the role, specifically for the
+stack, to manage the process.
+
+  Permission              Description                                                                                         Type
+  ----------------------- --------------------------------------------------------------------------------------------------- ----------------
+  ListStackInstances      Returns summary information about stack instances that are associated with the specified StackSet   CloudFormation
+  DetectStackSetDrift     Detects drift on a StackSet                                                                         CloudFormation
+  DescribeStackSet        Returns the description of the specified StackSet                                                   CloudFormation
+  DescribeStackInstance   Returns the stack instance that\'s associated with the specified StackSet                           CloudFormation
+
+  : Permissions granted

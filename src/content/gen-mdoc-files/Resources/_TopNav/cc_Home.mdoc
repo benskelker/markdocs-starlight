@@ -1,0 +1,74 @@
+---
+title: CyberArk Docs
+---
+
+`<!-- <p class="home-page-message"><MadCap:variable id="var-home-page-message" name="TopNav.HomePageMessage" />
+        </p> -->`{=html}
+
+:::::: {.home-page-product madcap:conditions="TopNav.ThemeDefault"}
+`<snippettext src="../Snippets/_TopNav_Custom/cc_C_HomePageIcon.flsnp">`{=html}`</snippettext>`{=html}{% $TopNav.HomePageProduct %}
+
+:::: {.rg-toggle madcap:conditions="TopNav.HomeToggle"}
+::: {.rg-toggle-wrapper madcap:conditions="TopNav.HomeToggle"}
+`<snippetblock src="../Snippets/_TopNav_custom/cc_C_HomeToggle.flsnp">`{=html}`</snippetblock>`{=html}
+:::
+::::
+
+::: {.home-page-product-desc madcap:conditions="TopNav.ThemeDefault"}
+{% $TopNav.HomePageProductDescription %}
+:::
+
+`<snippetblock src="../Snippets/_TopNav_Custom/cc_C_HomeComponentSelector.flsnp" madcap:conditions="cc_C_CyberArk.Future">`{=html}`</snippetblock>`{=html}
+::::::
+
+::: {.rg-search madcap:conditions="TopNav.FlareSearch"}
+`<searchbarproxy data-mc-skin="/Project/Skins/cc_TopNavHomeSearchBar.flskn">`{=html}`</searchbarproxy>`{=html}
+:::
+
+::: rg-highlights
+`<snippetblock src="cc_Highlights.flsnp">`{=html}`</snippetblock>`{=html}
+:::
+
+:::::: {.rg-workflow madcap:conditions="TopNav.HomeWorkflow"}
+::: home-section-title
+Explore the
+{% $TopNav.HomePageProduct %}
+end-to-end workflow
+:::
+
+:::: workflow-header
+Click a user or task to learn more
+
+::: workflow-buttons
+<button id="zoom-in">
+Zoom In
+</button>
+\|
+<button id="zoom-out">
+Zoom Out
+</button>
+:::
+::::
+
+`<snippetblock src="../Snippets/_TopNav_Custom/cc_C_HomePageWorkflow.flsnp">`{=html}`</snippetblock>`{=html}
+::::::
+
+<p style="display:none;">
+<script>
+            const elem = document.getElementById('panzoom-element');
+            const zoomInButton = document.getElementById('zoom-in');
+            const zoomOutButton = document.getElementById('zoom-out');
+            const panzoom = Panzoom(elem, {panOnlyWhenZoomed:true, contain:"outside"});
+            zoomInButton.addEventListener('click', panzoom.zoomIn)
+            zoomOutButton.addEventListener('click', panzoom.zoomOut)
+        </script>
+</p>
+
+:::: rg-tiles
+::: {.home-section-title madcap:conditions="TopNav.HomeWorkflow"}
+Learn more about
+{% $TopNav.HomePageProduct %}
+:::
+
+`<snippetblock src="../Snippets/_TopNav_custom/cc_C_HomeTiles.flsnp">`{=html}`</snippetblock>`{=html}
+::::

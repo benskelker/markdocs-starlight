@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <map id="map1">
+            <area shape="rectangle" coords="187,22,326,116" dragDirection="0" href="/identity-administration/latest/en/content/ispss/ispss-provision-users.htm" />
+            <area shape="rectangle" coords="359,24,491,123" dragDirection="0" href="/identity-administration/latest/en/content/ispss/ispss-add-system-users-and-roles.htm" />
+            <area shape="rectangle" coords="525,16,670,124" dragDirection="0" href="../Settings/sca_remote-access-AWS-settings.htm" />
+            <area shape="rectangle" coords="183,162,325,261" dragDirection="0" href="sca_onboard-workspaces.htm" />
+            <area shape="rectangle" coords="355,161,491,260" dragDirection="0" href="../CloudAdmin/cv-delegation.htm" />
+            <area shape="rectangle" coords="526,167,669,258" dragDirection="0" href="sca_onboard-workspaces.htm" />
+            <area shape="rectangle" coords="699,161,843,262" dragDirection="0" href="../Settings/sca_on-demand-access-settings.htm" />
+            <area shape="rectangle" coords="867,161,1009,259" dragDirection="0" href="../DPAforCloud/sca_create-policy.htm" />
+            <area shape="rectangle" coords="701,310,843,412" dragDirection="0" href="../Settings/sca_on-demand-access-settings.htm" />
+            <area shape="rectangle" coords="867,315,1010,409" dragDirection="0" href="../DPAforCloud/sca_create-policy.htm#Delegate" />
+            <area shape="rectangle" coords="701,461,835,555" dragDirection="0" href="../HomeTilesLPs/LP-Tile3.htm" />
+            <area shape="rectangle" coords="1682,1167,1959,1356" dragDirection="0" href="../HomeTilesLPs/LP-Tile6.htm" />
+            <area shape="rectangle" coords="860,598,1018,700" dragDirection="0" href="../HomeTilesLPs/LP-Tile6.htm" />
+        </map>
+        <map id="map2">
+            <area shape="rectangle" coords="183,418,359,574" dragDirection="0" alt="Link to workspace management in [%=cc_product_vars.CEM-short%]" href="/cs-cem/latest/en/content/cloudadmin/cv-platform-management.htm" title="Link to workspace management in CEM" />
+            <area shape="rectangle" coords="445,407,655,577" dragDirection="0" alt="Link to administrator tasks in Ide[%=cc_product_vars.Flows-short%]" href="/identity-flows/latest/en/content/administrator/admin_land_page.htm" />
+            <area shape="rectangle" coords="746,406,938,577" dragDirection="0" alt="Lin to monitoring sessions with [%=cc_product_vars.SWS-short%]" href="/sws/latest/en/content/admin/sws-access-recordings.htm" />
+            <area shape="rectangle" coords="367,1034,810,1207" dragDirection="0" alt="link to home page of [%=cc_product_vars.IdentityAdmin-full%]" href="/identity-administration/latest/en/content/resources/_topnav/cc_home.htm" />
+            <area shape="rectangle" coords="1129,1038,1423,1205" dragDirection="0" alt="Link to home page for [%=cc_product_vars.Audit-short%]" href="/audit/latest/en/content/resources/_topnav/cc_home.htm" title="Link to home page for " />
+        </map>
+        <h1>Overview</h1>
+        <p>This topic describes how <MadCap:variable name="cc_product_vars.SCA-full" /> enables end users, such as those in DevOps and Cloud Engineering, to natively and securely access the cloud management layer.</p>
+        <h2>The <MadCap:variable name="cc_product_vars.SCA-full" /> solution</h2>
+        <p><MadCap:variable name="cc_product_vars.SCA-full" /> provisions just-in-time privileged access for administrative operations in multi-cloud environments, using the principle of least-privilege access. <MadCap:variable name="cc_product_vars.SCA-short" /> enables operational efficiencies for IAM and Security teams implementing Zero Trust. This improves security posture by removing unnecessary standing access.</p>
+        <p>  Additionally, all sessions are simultaneously protected and monitored for audit and compliance.</p>
+        <h2>How does it work?</h2>
+        <ol>
+            <li>
+                <p>End users that need access to the cloud management layer connect to their cloud environments via web console or CLI.</p>
+            </li>
+            <li>
+                <p>The end users natively authenticate using either <MadCap:variable name="cc_product_vars.Identity-full" /> or another third-party IdP.</p>
+            </li>
+            <li>
+                <p>In the background, <MadCap:variable name="cc_product_vars.SCA-short" /> validates approved entitlements for an end user’s session. The end users then select the scope of their current task, ensuring least privilege access.</p>
+            </li>
+            <li>
+                <p>Access for cloud management operations is elevated just-in-time to reduce the risk of compromised credentials. Sessions are time-bound and permissions are revoked automatically at the end of a session.</p>
+            </li>
+            <li>
+                <p>Web-based sessions to the cloud console are recorded for audit and compliance. Additional session protection helps reduce the risk of browser hijacking.</p>
+            </li>
+            <li>
+                <p>Cloud security and <MadCap:variable name="cc_product_vars.SCA-short" /> administrators can trigger an on-demand sync from within <MadCap:variable name="cc_product_vars.SCA-short" />. This supports the dynamic nature of the cloud environment and ensures the most up-to-date information about roles and workspaces is available when managing access policies for end users.</p>
+            </li>
+        </ol>
+        <h2><MadCap:variable name="cc_product_vars.SCA-short" /> architecture</h2>
+        <p>The <MadCap:variable name="cc_product_vars.SCA-short" /> solution utilizes several business and shared services in the <MadCap:variable name="cc_product_vars.ISP-short" />. The <MadCap:variable name="cc_product_vars.shared-services-full" /> provide basic functions like user management, SSO&#160;and MFA, and system auditing. Other business services work together with <MadCap:variable name="cc_product_vars.SCA-short" /> to provide a complete solution for managing access to your organizational cloud services with zero standing permissions.</p>
+        <p MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">Image source:&#160;https://lucid.app/lucidchart/bbaf422f-2773-4775-829d-c20308965d47/edit?invitationId=inv_5e1443ef-812b-488b-b4b0-35ca4fca067b&amp;page=BrSn0EybLmGC#</p>
+        <p>
+            <img src="Images/sca-architecture.png" usemap="#map2" class="Enlarge" />
+        </p>
+        <h2><MadCap:variable name="cc_product_vars.SCA-short" /> workflow</h2>
+        <p>The following diagram provides a high-level workflow for the various users of <MadCap:variable name="cc_product_vars.SCA-short" />. Click a tile to learn more.</p>
+        <p>
+            <img src="Images/sca-workflow.png" usemap="#map1" title="Image map over [%=cc_product_vars.SCA-short%] workflow" alt="Workflow for various personas that use the [%=cc_product_vars.SCA-short%] service" />
+        </p>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+:::: swagger-container
+[Edit this hyperlink to point it to the desired swagger yaml
+file.](../../YAML/conjur-openapi-spec-v5.1.1028f35d96199fd4ea325d7440fe6d95a3ee427aec766f77764add0512d5f9b60.yml)
+
+::: {#swagger-ui}
+Do not edit this text or remove the below script. Only use this snippet
+ONCE in a topic. Remember to apply the Swagger master page to the topic.
+:::
+
+<script>
+                window.onload = function() {
+                if (!window.jQuery) { return }
+                var swaggerLink = $('.swagger-link a');
+                var swaggerLink = swaggerLink.attr('href');
+                const ui = SwaggerUIBundle({
+                url: swaggerLink,
+                dom_id: '#swagger-ui',
+                presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+                ]
+                })
+                window.ui = ui
+                }
+            </script>
+::::

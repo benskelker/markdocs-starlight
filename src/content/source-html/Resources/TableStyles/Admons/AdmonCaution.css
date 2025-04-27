@@ -1,0 +1,837 @@
+/* MadCap Table Style: */
+
+/*<meta Version="9" />*/
+
+mcTableStyle
+{
+	name: AdmonCaution;
+	border-collapse: collapse;
+	max-id: 4;
+	margin-top: 10pt;
+	margin-bottom: 10pt;
+	cell-padding-left: 16px;
+	cell-padding-right: 16px;
+	cell-padding-top: 16px;
+	cell-padding-bottom: 16px;
+	border-left-style: solid;
+	border-left-width: 12px;
+	border-left-color: #da1e28;
+}
+
+mcTableColumnStyle
+{
+	span: 1;
+	name: Icon;
+	id: 0;
+	cell-content-style-class: AdmonCaution;
+	cell-padding-left: 0px;
+	size: 54px;
+	cell-padding-right: 0px;
+	cell-padding-top: 0px;
+	cell-padding-bottom: 0px;
+	type: Header;
+	background-color: #ffdfe0;
+}
+
+mcTableColumnStyle
+{
+	span: 1;
+	id: 4;
+	name: Text;
+	background-color: #ffdfe0;
+	cell-content-style-tag: p;
+}
+
+mcTableBodyStyle
+{
+	span: 1;
+	name: Body1;
+	id: 1;
+}
+
+
+/* Cell Styles: */
+ 
+.TableStyle-AdmonCaution
+{
+	border-collapse: collapse;
+	border-left-style: solid;
+	border-left-color: #da1e28;
+	border-left-width: 12px;
+	margin-top: 10pt;
+	margin-bottom: 10pt;
+	border-spacing: 0px 0px;
+}
+
+.TableStyle-AdmonCaution-Column-Icon
+{
+	width: 54px;
+}
+
+.TableStyle-AdmonCaution-Column-Text
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadI-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-HeadI-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadE-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-HeadE-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadF-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-HeadF-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadH-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-HeadH-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadD-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-HeadD-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadC-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-HeadC-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadB-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-HeadB-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadA-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-HeadA-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadG-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-HeadG-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadI-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-HeadI-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadE-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-HeadE-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadF-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-HeadF-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadH-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-HeadH-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadD-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-HeadD-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadC-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-HeadC-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadB-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-HeadB-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadA-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-HeadA-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-HeadG-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-HeadG-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootI-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-FootI-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootE-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-FootE-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootF-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-FootF-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootH-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-FootH-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootD-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-FootD-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootC-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-FootC-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootB-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-FootB-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootA-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-FootA-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootG-Icon-
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-FootG-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootI-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-FootI-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootE-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-FootE-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootF-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-FootF-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootH-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-FootH-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootD-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-FootD-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootC-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-FootC-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootB-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-FootB-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootA-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-FootA-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-FootG-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-FootG-Text- p
+{
+	
+}
+
+.TableStyle-AdmonCaution-Body-Body1
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyI-Icon-Body1
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-BodyI-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyE-Icon-Body1
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-BodyE-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyF-Icon-Body1
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-BodyF-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyH-Icon-Body1
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-BodyH-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyD-Icon-Body1
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-BodyD-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyC-Icon-Body1
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-BodyC-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyB-Icon-Body1
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-BodyB-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyA-Icon-Body1
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-BodyA-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyG-Icon-Body1
+{
+	background-color: #ffdfe0;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonCaution-BodyG-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyI-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-BodyI-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyE-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-BodyE-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyF-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-BodyF-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyH-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-BodyH-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyD-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-BodyD-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyC-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-BodyC-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyB-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-BodyB-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyA-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-BodyA-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonCaution-BodyG-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #ffdfe0;
+}
+
+.TableStyle-AdmonCaution-BodyG-Text-Body1 p
+{
+	
+}
+
+

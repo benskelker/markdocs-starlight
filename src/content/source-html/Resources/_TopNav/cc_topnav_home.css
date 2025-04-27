@@ -1,0 +1,330 @@
+/*<meta />*/
+
+/* Version 4.0.2 */
+
+/* Component selector */
+
+.component-selector-container {
+	color: #333333;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	padding-bottom: 1px;
+	padding-right: 8px;
+	padding-left: 52px;
+	margin-top: 26px;
+}
+
+.component-selector-container p {
+	margin: 0;
+	line-height: 1.6rem;
+}
+
+.component-selector-container p.bold {
+	font-weight: bold;
+}
+
+.component-selector {
+    margin-top: 6px;
+}
+
+.component-selector span:nth-child(1) {
+	border-radius: 12px 0px 0px 12px;
+	border: 1px solid #1362CB;
+	border-right: none;
+}
+
+.component-selector span:nth-child(2) {
+	border-radius: 0px 12px 12px 0px;
+	border: 1px solid #1362CB;
+	border-left: none;
+}
+
+.component-selector span.selected {
+	background-color: #1362CB;
+}
+
+.component-selector span a {
+	padding: 2px 16px;
+	text-decoration: none !important;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.component-selector span.selected a {
+	color: white;
+}
+
+/* Workflow images for home page and panzoom for svgs */
+
+.rg-workflow {
+	max-width: 95%;
+	margin: auto;
+	position: relative;
+	border-top: solid 1px #D0D0D0;
+	border-bottom: solid 1px #E0E7F5;
+	width: calc(1400px - 4%);
+	padding-left: 52px;
+	margin-top: -8px;
+}
+
+.rg-workflow p,
+.rg-workflow img {
+	margin: 0;
+	text-align: center;
+}
+
+.home-section-title {
+	padding-top: 12px;
+}
+
+.home-section-title p {
+	color: #2F3564;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 24px;
+	text-align: left;
+	margin-bottom: 26px;
+	margin-top: 10px;
+}
+
+.workflow-header p,
+.panzoom-header p {
+	color: #2F3564;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	text-align: left;
+	font-weight: bold;
+	font-family: 'Open Sans';
+	color: #2F3564;
+}
+
+.workflow-header,
+.panzoom-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.rg-workflow img {
+	height: auto;
+	margin-top: -18px;
+}
+
+#panzoom-element {
+	text-align: left;
+}
+
+.panzoom-buttons {
+	margin: 20px 0 20px auto;
+	line-height: 1.8rem;
+}
+
+.workflow-buttons button,
+.panzoom-buttons button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: 'Open Sans';
+	color: #2F3564;
+	font-size: 14px;
+}
+
+/* Home page tiles */
+
+.rg-tiles {
+
+	width: calc(1400px - 4%);
+
+	margin: auto;
+
+	padding-left: 52px;
+
+	max-width: 95%;
+}
+
+.rg-tiles .navigation {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 0px auto;
+	padding: 0px;
+	max-width: 1400px !important;
+}
+
+.rg-tiles .navigation li {
+	background: none;
+	flex: 0 0 31.3%;
+	height: 120px;
+	margin: 0 2% 1.5rem 0;
+	padding: 0;
+	position: relative;
+	border: 1px solid #DEDFE4;
+	border-radius: 2px;
+}
+
+.rg-tiles .navigation li::after {
+	display: inline-block;
+	position: absolute;
+	content: url('Images/Icons/ic-tile-arrow.svg');
+	right: 24px;
+	top: 44px;
+}
+
+.rg-tiles .navigation li:hover {
+	border-color: #C9D3E6;
+}
+
+.rg-tiles .navigation li:hover::after {
+	content: url('Images/Icons/ic-tile-arrow-hover.svg');
+}
+
+.rg-tiles .navigation li:hover a {
+	background-color: #FAFBFF;
+}
+
+.rg-tiles .navigation .accent {
+	position: absolute;
+	height: 4px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background-color: transparent;
+}
+
+.rg-tiles .navigation li:hover .accent {
+	background-color: #729AF8;
+}
+
+.rg-tiles .navigation .tile-header {
+	display: table;
+	position: absolute;
+	top: 0;
+}
+
+.rg-tiles .navigation li a span.title {
+	padding-top: 0;
+	white-space: normal;
+	font-size: 26px;
+	transition: none;
+	padding-left: 30px;
+	font-weight: 500;
+	line-height: 1.15;
+	height: 100px;
+	color: #0f2233;
+	display: table-cell;
+	padding-right: 30px;
+	vertical-align: middle;
+}
+
+.rg-tiles .navigation li .teaser {
+	color: #333333;
+	letter-spacing: -0.08px;
+	font-size: 16px;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 300;
+	overflow: hidden;
+	max-height: 70px;
+	padding-top: 8px;
+	white-space: normal;
+	padding-right: 24px;
+}
+
+.rg-tiles .navigation li .teaser p {
+	margin: 0;
+	line-height: 22px;
+}
+
+/* Empty tile for layout */
+
+.rg-tiles .navigation li.empty {
+	visibility: hidden;
+	height: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+/* Default tiles */
+
+.rg-tiles .navigation li a,
+.rg-tiles .navigation li a:active,
+.rg-tiles .navigation li a:focus,
+.rg-tiles .navigation li a:link,
+.rg-tiles .navigation li a:visited {
+	color: #2f3564;
+	font-family: 'Rubik', sans-serif;
+	font-size: 20px;
+	/* font-size: 26px; */
+	line-height: normal;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	padding: 16px;
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 1300px) {
+	/* Default tiles for smaller screens */
+
+	.cc-home .rg-tiles .navigation {
+		max-height: 1200px !important;
+	}
+
+	.rg-tiles .navigation li {
+		flex: 0 0 46%;
+		max-width: 400px;
+	}
+}
+
+@media tablet {
+
+	/* Workflow for tablet */
+
+	.rg-workflow {
+		border-top: none;
+	}
+
+	.rg-tiles .navigation li {
+		margin: 0 0 11px 0;
+	}
+
+	.rg-tiles .navigation li::after {
+		top: 18px;
+	}
+
+	.rg-tiles .navigation .accent,
+	.rg-tiles .navigation li .teaser {
+		display: none;
+	}
+
+	.rg-tiles .navigation li a,
+	.rg-tiles .navigation li a:active,
+	.rg-tiles .navigation li a:focus,
+	.rg-tiles .navigation li a:link,
+	.rg-tiles .navigation li a:visited {
+		text-align: center;
+		font-family: 'Rubik';
+		font-size: 16px;
+		line-height: normal;
+		padding: 21px 30px;
+	}
+
+	.rg-tiles .navigation li {
+		flex-basis: 328px;
+		height: 64px;
+	}
+
+	.rg-tiles .navigation {
+		max-width: 400px !important;
+		justify-content: center;
+	}
+}
+
+@media mobile {
+	/* Workflow for mobile */
+
+	.rg-workflow,
+	.home-section-title {
+		display: none;
+	}
+}

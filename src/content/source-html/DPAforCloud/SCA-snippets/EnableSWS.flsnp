@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <ol>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />, go to <span class="Emphasis">Apps &amp; Widgets </span>&gt; <span class="Emphasis">Web Apps </span>and click the web app you want to modify.</p>
+            </li>
+            <li>
+                <p>Click the <span class="Emphasis"> <MadCap:variable name="cc_product_vars.SWS-full" /></span> tab, select <span class="Emphasis"> Enable <MadCap:variable name="cc_product_vars.SWS-full" /></span>, and save your changes.</p>
+            </li>
+        </ol>
+    </body>
+</html>

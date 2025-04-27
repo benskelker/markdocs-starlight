@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <div MadCap:conditions="TopNav.ThemeDefault"><span class="version-label">Version <MadCap:variable name="cc_C_CyberArk.Version" /></span>
+            <div class="cc-main-menu product" MadCap:conditions="TopNav.MainMenu">
+                <ul MadCap:conditions="cc_C_CyberArk.HelpOnAzure">
+                    <MadCap:snippetBlock src="../Snippets/_TopNav_Custom/cc_C_MainMenu_WNLink.flsnp" MadCap:conditions="TopNav.WhatsNewNotification" />
+                    <li class="product-menu" MadCap:conditions="TopNav.ProductMenu"><a href="#" onclick="return false;" target="_blank">Our Products</a>
+                        <ul id="all-prod" MadCap:conditions="cc_C_CyberArk.HelpOnAzure">
+                        </ul>
+                    </li>
+                </ul>
+                <ul MadCap:conditions="cc_C_CyberArk.HelpInProduct">
+                    <MadCap:snippetBlock src="../Snippets/_TopNav_Custom/cc_C_MainMenu_WNLink.flsnp" MadCap:conditions="TopNav.WhatsNewNotification" />
+                    <li class="product-menu" MadCap:conditions="TopNav.ProductMenu"><a href="#" onclick="return false;" target="_blank">Our Products</a>
+                        <ul>
+                            <li><a href="[%=TopNav.PortalPrefixPath%]/PAS/Latest/en/Content/Resources/_TopNav/cc_Home.htm" target="_blank">[%=cc_FLT_products.4FLT-PAM%]</a>
+                            </li>
+                            <li><a href="[%=TopNav.PortalPrefixPath%]/credential-providers/latest/en/Content/Resources/_TopNav/cc_Home.htm" target="_blank">[%=cc_FLT_products.4FLT-CP%]</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="cc-main-menu product" MadCap:conditions="TopNav.ThemeConjur">
+            <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Note to Editor: Make sure this section matches the menu in conjur.org (Conjur OSS website). The following is the list @ September 2019. This should be verified against the current Conjur OSS version.</p>
+            <MadCap:snippetBlock src="../Snippets/_TopNav_Custom/cc_C_main-menu-conjur-oss.flsnp" />
+        </div>
+        <script type="text/javascript">/*      <![CDATA[*/
+          $(function() {
+            var title = TopNav.utils.getVar('#var-header-title');
+            var subtitle = TopNav.utils.getVar('#var-header-subtitle')
+            $('.cc-main-menu .product-menu a')
+              .each(function() {
+                var $this = $(this);
+                if ($this.text() == subtitle) {
+                    $this.parent()
+                        .addClass('selected')}
+                else if ($this.text() == title) {
+                    $this.parent()
+                        .addClass('selected')}
+              });
+            $('.cc-main-menu')
+              .appendTo($('.off-canvas-content .title-bar-layout'));
+          });
+        /*]]>*/</script>
+    </body>
+</html>

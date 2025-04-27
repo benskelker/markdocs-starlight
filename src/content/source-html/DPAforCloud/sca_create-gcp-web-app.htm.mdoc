@@ -1,0 +1,158 @@
+# Create a web app for Google Cloud
+
+This topic describes how to add a web app for a organization. to enable
+access from .
+
+## Before you begin
+
+The sections below assume that your organization has already been
+onboarded to . If you have not yet onboarded the organization, do so
+before you add the web app. For details, see Add Google Cloud.
+
+## []{#Configur}[]{#CreateawebappforaGoogleCloudorganization}Create a web app for a Google Cloud organization
+
+You can create web apps for your organization in one of the following
+ways:
+
++------------------+--------------------------------------------------+
+| Option           | Description                                      |
++==================+==================================================+
+| SCA (simplified) | In , you provide a few details about the         |
+|                  | organization, and automatically creates and      |
+|                  | configures the web app for you.                  |
+|                  |                                                  |
+|                  | ::: note                                         |
+|                  | Depending on your selections during this         |
+|                  | process, you may need to configure a few more    |
+|                  | things.                                          |
+|                  | :::                                              |
++------------------+--------------------------------------------------+
+|                  | In , you create and configure the web app from   |
+|                  | scratch.                                         |
++------------------+--------------------------------------------------+
+
+:::::::::: tabs
+- [SCA (simplified)]{cc-tab=".tab-1"}
+- []{cc-tab=".tab-2"}
+
+::::::::: tabs-stage
+:::::: tab-1
+Tab 1 Content - SCA
+
+This section describes how to use to create a web app in for your
+organization.
+
+::::: {madcap:conditions="SCA-conditions.not-free-trial"}
+:::: wistia_wrapper
+b1mtxai04w
+
+::: wistia_embed
+:::
+::::
+:::::
+
+1.  [Create the web app]{.Emphasis}
+
+    In this step you create the web app for .
+
+    1.  In , go to the Introduction page.
+
+        In the Admin portal, select [Cloud connectivity \> Configure
+        cloud provider apps]{.Emphasis}.
+
+    2.  In the second tile, click [+ Create a web app]{.Emphasis}.
+
+    3.  In the dialog box that opens click , and click
+        [Next]{.Emphasis}.
+
+    4.  Select the organization, and click [Continue]{.Emphasis}.
+
+        ::: note
+        - It may take some time for the organizations to display.
+
+        - If your organization doesn\'t appear, this means that it
+          hasn\'t been onboarded to . For details about onboarding the
+          organization, see Add a new Google Cloud organization.
+        :::
+
+    5.  If you are working with as your external IdP, select [Use as an
+        external IdP]{.Emphasis}
+
+    6.  Click [Create]{.Emphasis}.
+
+    ::: note
+    :::
+
+2.  []{#Configur2}[Configure authentication]{.Emphasis}
+
+    ::: note
+    This step is required only if you are using as your external IdP.
+    :::
+
+3.  [Enable (Optional)]{.Emphasis}
+::::::
+
+:::: tab-2
+Tab 2 Content -Identity Admin
+
+This section describes how to use to create a web app in for your GCP
+project.
+
+::: tip
+You can also create web apps in where you provide only the minimum
+details and provides all the rest of the details. See Add a Google Cloud
+web app.
+:::
+
+1.  [Add a web app for the Google Cloud console]{.Emphasis}
+
+    1.  Sign in to .
+
+    2.  Go to [Apps & Widgets]{.Emphasis} \> [Web Apps]{.Emphasis} and
+        click [Add Web Apps]{.Emphasis} above the grid.
+
+    3.  In the [Search]{.Emphasis} tab, type [Google]{.Emphasis} and add
+        the [Google Cloud Platform]{.Emphasis} application.
+
+    4.  Click [Yes]{.Emphasis} to confirm you want to add the
+        application and then close the [Add Web Apps]{.Emphasis} wizard.
+        The app settings page opens.
+
+2.  [Specify your Google Cloud settings]{.Emphasis}
+
+    In this step you configure the web app with your settings.
+
+    1.  In the [Web Apps ]{.Emphasis}page, select the web app you want
+        to configure.
+
+    2.  Select the Settings tab and in the [Your Primary Domain in
+        Google Cloud Platform]{.Emphasis} field, apply your primary
+        domain from the Google Cloud console.
+
+3.  [Enable Secure Cloud Access]{.Emphasis}
+
+    In this step you enable secure access to the application with zero
+    standing permissions.
+
+    1.  In , go to [Apps & Widgets ]{.Emphasis}\> [Web Apps
+        ]{.Emphasis}and click the web app you want to modify.
+
+    2.  Click the []{.Emphasis} tab and select [ Enable ]{.Emphasis}.
+
+    3.  If you want to use as a third-party IdP, select [ is the
+        IDP]{.Emphasis}.
+
+    ::: note
+    :::
+
+4.  [Configure an identity provider (IdP)]{.Emphasis}
+
+5.  [Enable (Optional)]{.Emphasis}
+::::
+:::::::::
+::::::::::
+
+::: NextStep
+[Create a Google Cloud
+policy](sca_create-policies-GCP.htm){alt="the next step is to create a Google Cloud policy"}
+:::

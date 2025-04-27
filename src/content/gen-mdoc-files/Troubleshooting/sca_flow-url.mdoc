@@ -1,0 +1,179 @@
+# {% $cc_product_vars.SCA-short %} URL in On-demand access flows
+
+On-demand access flows for Service Now and Slack, as well as any custom
+flows that include
+{% $cc_product_vars.SCA-short %}
+components, need to be updated due to internal infrastructure changes.
+
+## When did this change take place?
+
+July 7, 2024
+
+## What changed?
+
+The
+{% $cc_product_vars.SCA-short %}
+URL changed from
+
+::: code
+    {tenant_name}-sca.cyberark.cloud
+:::
+
+to
+
+::: code
+    {tenant_name}.sca.cyberark.cloud
+:::
+
+## What you need to do
+
+{% $cc_product_vars.Flows-short %}
+flows for
+{% $cc_product_vars.SCA-short %}
+that were downloaded and configured before July 7, 2024 need to be
+updated. This includes flows for ServiceNow or Slack integrations, as
+well as any custom flows you have built.
+
+::: important
+[To prevent degradation in
+{% $cc_product_vars.SCA-short %}
+functionality, you must update the
+{% $cc_product_vars.SCA-short %}
+URL by August 31, 2024.]{.Emphasis}
+
+After this date, if your
+{% $cc_product_vars.Flows-short %}
+flows still have the original configuration:
+
+- {% $cc_product_vars.SCA-short %}
+  will no longer send email notifications when users request access
+
+<!-- -->
+
+- {% $cc_product_vars.SCA-short %}
+  will no longer create policy for approved requests
+
+- {% $cc_product_vars.SCA-short %}
+  will no longer send email notification for approved or denied requests
+:::
+
+:::::::::: tabs
+- [ServiceNow]{cc-tab=".tab-1"}
+- [Slack]{cc-tab=".tab-2"}
+- [Custom]{cc-tab=".tab-3"}
+
+::::::::: tabs-stage
+:::: tab-1
+Tab 1 Content - \<SNOW\>
+
+::: ProcedureHeading
+To update the SCA URL:
+:::
+
+1.  Open each flow (see table below) in
+    {% $cc_product_vars.Flows-short %}
+    or open the JSON file itself.
+
+2.  In the relevant component, update the [Hostname URL]{.Emphasis}
+    value from
+
+    ::: code
+        {tenant_name}-sca.cyberark.cloud
+    :::
+
+    to
+
+    ::: code
+        {tenant_name}.sca.cyberark.cloud
+    :::
+
++----------------------+----------------------+----------------------+
+| Flow                 | JSON file            | Components           |
++======================+======================+======================+
+| [SCA Ondemand        | SCAOndemand          | - Notifications (x2) |
+| Se                   | ServiceNow.json      |                      |
+| rviceNow]{.Emphasis} |                      | - Notification       |
+|                      |                      |                      |
+|                      |                      | - Create Policy      |
+|                      |                      |                      |
+|                      |                      | - Integrations       |
+|                      |                      |   Status             |
++----------------------+----------------------+----------------------+
+| [SCA Ondemand -      | SCA Ondemand -       | - Notification       |
+| ServiceNow           | ServiceNow           |                      |
+| Request]{.Emphasis}  | Request.json         |                      |
++----------------------+----------------------+----------------------+
+::::
+
+:::: tab-2
+Tab 2 Content - Slack
+
+::: ProcedureHeading
+To update the SCA URL:
+:::
+
+1.  Open each flow (see table below) in
+    {% $cc_product_vars.Flows-short %}
+    or open the JSON file itself.
+
+2.  In the relevant component, update the [Hostname URL]{.Emphasis}
+    value from
+
+    ::: code
+        {tenant_name}-sca.cyberark.cloud
+    :::
+
+    to
+
+    ::: code
+        {tenant_name}.sca.cyberark.cloud
+    :::
+
++----------------------+----------------------+----------------------+
+| Flow                 | JSON file            | Components           |
++======================+======================+======================+
+| [SCA Ondemand        | SCA Ondemand         | - Get Status         |
+| Slack]{.Emphasis}    | Slack.json           |                      |
+|                      |                      | - Notifications (x2) |
+|                      |                      |                      |
+|                      |                      | - Notification       |
+|                      |                      |                      |
+|                      |                      | - Create Policy      |
++----------------------+----------------------+----------------------+
+| [SCA                 | SCA Ondemand.json    | - Notification       |
+| Ondemand]{.Emphasis} |                      |                      |
++----------------------+----------------------+----------------------+
+::::
+
+:::: tab-3
+Tab 3 Content - Custom
+
+::: ProcedureHeading
+To update the SCA URL:
+:::
+
+1.  Open the custom flow in
+    {% $cc_product_vars.Flows-short %}.
+
+2.  In each
+    {% $cc_product_vars.SCA-short %}
+    component that contains the SCA URL in the [Hostname URL]{.Emphasis}
+    field, update the value from
+
+    ::: code
+        {tenant_name}-sca.cyberark.cloud
+    :::
+
+    to
+
+    ::: code
+        {tenant_name}.sca.cyberark.cloud
+    :::
+::::
+:::::::::
+::::::::::
+
+For more details about configuring on-demand access flows, see the
+relevant section for your integration in
+`<xref href="../Settings/sca_on-demand-access-settings.htm#Configur2">`{=html}Configure
+the approval channel`</xref>`{=html}.

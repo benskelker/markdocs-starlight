@@ -1,0 +1,209 @@
+1.  In
+    {% $cc_product_vars.IdentityAdmin-full %},
+    select [Apps & Widgets \> Web Apps]{.Emphasis}, then click [Add Web
+    Apps]{.Emphasis}.
+
+2.  In the [Custom]{.Emphasis} tab, find [OAuth2 Server]{.Emphasis}, and
+    click [Add]{.Emphasis}.
+
+    ![](../../Automation/Images/add-oauth2-webapp.png)
+
+3.  In the Add Web App screen, click [Yes]{.Emphasis}, then click
+    [Close]{.Emphasis}. The Widgets page for the OAuth2 web app opens,
+    displaying the [Settings]{.Emphasis} tab.
+
+4.  Enter the following details:
+
+    +----------------------------------+----------------------------------+
+    | Field                            | Description                      |
+    +==================================+==================================+
+    | [Application ID]{.Emphasis}      | A unique key used to build the   |
+    |                                  | OAuth2 endpoint URL              |
+    |                                  |                                  |
+    |                                  | [For ServiceNow                  |
+    |                                  | integration]{.Emphasis} use      |
+    |                                  | [SCASNOWAUTH]{.Emphasis}.        |
+    +----------------------------------+----------------------------------+
+    | [Description \> Name]{.Emphasis} | A name for the web app, which    |
+    |                                  | will appear in the Web Apps page |
+    +----------------------------------+----------------------------------+
+
+5.  In the [General Usage]{.Emphasis} tab, leave the default settings
+    ([Confidential]{.Emphasis} and [Must be OAuth Client]{.Emphasis}).
+
+    ::: note
+    You can leave the default value that appears in the
+    [Issuer]{.Emphasis} field.
+    :::
+
+6.  In the [Tokens]{.Emphasis} tab, configure the following:
+
+    +----------------------------------+----------------------------------+
+    | []{#Field}Field                  | Description                      |
+    +==================================+==================================+
+    | [Token Type]{.Emphasis}          | JwtRS256 (a JSON Web Token (JWT) |
+    |                                  | composed of Base64-encoded user  |
+    |                                  | and claim information).          |
+    +----------------------------------+----------------------------------+
+    | [Auth Methods]{.Emphasis}        | - Leave the first two options    |
+    |                                  |   ([Auth Code]{.Emphasis},       |
+    |                                  |   [Implicit]{.Emphasis})         |
+    |                                  |   selected (default setting)     |
+    |                                  |                                  |
+    |                                  | - Select [Client                 |
+    |                                  |   Creds]{.Emphasis}              |
+    |                                  |                                  |
+    |                                  | - Leave the [Resource            |
+    |                                  |   Owner]{.Emphasis} check box    |
+    |                                  |   cleared (default setting)      |
+    +----------------------------------+----------------------------------+
+    | [Access token                    | You can configure this value     |
+    | lifetime]{.Emphasis}             | according to the security        |
+    |                                  | requirements of your             |
+    |                                  | organization.                    |
+    |                                  |                                  |
+    |                                  | ::: tip                          |
+    |                                  | Set this value to more than 10   |
+    |                                  | minutes. Setting it to 10        |
+    |                                  | minutes or less may result in    |
+    |                                  | unexpected API behavior.         |
+    |                                  | :::                              |
+    +----------------------------------+----------------------------------+
+    | [Issue refresh                   | Leave this check box cleared, or |
+    | tokens]{.Emphasis}               | select according to your         |
+    |                                  | organization\'s policy.          |
+    +----------------------------------+----------------------------------+
+
+7.  In the [Scope]{.Emphasis} tab, click [Add ]{.Emphasis}and add
+    `<conditionaltext madcap:conditions="snippet-conditions-sca.oauth2-for-api">`{=html}one
+    of the following scope
+    definitions`</conditionaltext>`{=html}`<conditionaltext madcap:conditions="snippet-conditions-sca.oauth2-for-appr-chnl">`{=html}the
+    following scope definition`</conditionaltext>`{=html} (this field is
+    case sensitive):
+
+      Item                Description
+      ------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      [full]{.Emphasis}   [/\*]{.Emphasis} (gives access to all APIs)
+      [sca]{.Emphasis}    [/\*]{.Emphasis} `<conditionaltext madcap:conditions="snippet-conditions-sca.oauth2-for-api">`{=html}(gives access to SCA APIs only)`</conditionaltext>`{=html}`<conditionaltext madcap:conditions="snippet-conditions-sca.oauth2-for-appr-chnl">`{=html}- limits the authentication to {% $cc_product_vars.SCA-short %} only`</conditionaltext>`{=html}
+
+      : Scope authorization
+
+8.  Give the application access to
+    `<conditionaltext madcap:conditions="snippet-conditions-sca.oauth2-for-api">`{=html}the
+    {% $cc_product_vars.SCA-short %}
+    API`</conditionaltext>`{=html}`<conditionaltext madcap:conditions="snippet-conditions-sca.oauth2-for-appr-chnl">`{=html}{% $cc_product_vars.SCA-short %}`</conditionaltext>`{=html}:
+
+    1.  In the [Permissions]{.Emphasis} tab, click [Add]{.Emphasis}.
+
+    2.  []{#Find}Find the relevant role to give to the application. The
+        following roles are supported:
+
+        +-------------------------------+-------------------------------------+
+        | []{#Role}Role                 | Description                         |
+        +===============================+=====================================+
+        | [CS Admin]{.Emphasis}         | Static role. Users with this role   |
+        |                               | have:                               |
+        |                               |                                     |
+        |                               | - Full access permissions to the    |
+        |                               |   public                            |
+        |                               |   `<                                |
+        |                               | variable name="cc_product_vars.SCA- |
+        |                               | short">`{=html}`</variable>`{=html} |
+        |                               |   APIs.                             |
+        |                               |                                     |
+        |                               | - Full access permissions to the    |
+        |                               |   `<                                |
+        |                               | variable name="cc_product_vars.SCA- |
+        |                               | short">`{=html}`</variable>`{=html} |
+        |                               |   service to manage all             |
+        |                               |   functionality, policies, access   |
+        |                               |   request settings, and             |
+        |                               |   integrations.                     |
+        +-------------------------------+-------------------------------------+
+        | [SCA Admin]{.Emphasis}        | Static role. Assigned automatically |
+        |                               | when a user is assigned as a        |
+        |                               | delegate to a workspace.            |
+        |                               |                                     |
+        |                               | Users with this role have:          |
+        |                               |                                     |
+        |                               | - Access permissions to the public  |
+        |                               |   `<                                |
+        |                               | variable name="cc_product_vars.SCA- |
+        |                               | short">`{=html}`</variable>`{=html} |
+        |                               |   APIs for their delegated          |
+        |                               |   workspaces                        |
+        |                               |                                     |
+        |                               | - Access permissions to the         |
+        |                               |   `<                                |
+        |                               | variable name="cc_product_vars.SCA- |
+        |                               | short">`{=html}`</variable>`{=html} |
+        |                               |   service to manage policies and    |
+        |                               |   integrations for their delegated  |
+        |                               |   workspaces.                       |
+        +-------------------------------+-------------------------------------+
+        | [SCAApiFullAccess]{.Emphasis} | Static role. Users with this role   |
+        |                               | have:                               |
+        |                               |                                     |
+        |                               | Full access permissions to the      |
+        |                               | public                              |
+        |                               | `<                                  |
+        |                               | variable name="cc_product_vars.SCA- |
+        |                               | short">`{=html}`</variable>`{=html} |
+        |                               | APIs.                               |
+        +-------------------------------+-------------------------------------+
+        | [SCAApiReadOnly]{.Emphasis}   | Static role. Users have read-only   |
+        |                               | permissions to                      |
+        |                               | `<                                  |
+        |                               | variable name="cc_product_vars.SCA- |
+        |                               | short">`{=html}`</variable>`{=html} |
+        |                               | APIs.                               |
+        +-------------------------------+-------------------------------------+
+
+        : {% $cc_product_vars.SCA-short %}
+        built-in roles that support public
+        {% $cc_product_vars.SCA-short %}
+        APIs
+
+        ::: note
+        If you are having technical issues assigning roles directly to
+        the application, create a custom role that includes the roles
+        you want to assign, then assign that custom role to the
+        application instead.
+
+        For example:
+
+        1.  In
+            {% $cc_product_vars.IdentityAdmin-full %},
+            go to [Core Services \> Roles \> Add Role]{.Emphasis}, and
+            create a custom role called
+            [SCAPublicApiWrapper]{.Emphasis}.
+
+        2.  In the [SCAPublicApiWrapper]{.Emphasis} role\'s
+            [Members]{.Emphasis} tab, assign the
+            [SCAApiFullAccess]{.Emphasis} role, as well any other
+            relevant roles, as outlined in
+            `<xref href="#Role">`{=html}Role`</xref>`{=html}.
+
+        3.  In the OAuth2 web app\'s [Permissions]{.Emphasis} tab,
+            assign your custom [SCAPublicApiWrapper]{.Emphasis} role.
+
+        For more details, see [how to create a custom
+        role](/identity-administration/latest/en/content/coreservices/getstarted/userrolesassign.htm).
+        :::
+
+    3.  Find the [SCAApiFullAccess]{.Emphasis} role and add it to the
+        application.
+
+9.  In the [Advanced ]{.Emphasis}tab, copy and paste the following
+    script, which returns the `tenant_id` and `user_roles` values in the
+    {% $cc_product_vars.Identity-full %}
+    token.
+
+    ::: code
+        // Create the claim for tenant_id and user_roles
+        setClaim('tenant_id', TenantData.Get('CybrTenantID'));
+        setClaimArray('user_roles', LoginUser.RoleNames);
+        setClaim('user_uuid', LoginUser.Uuid);
+    :::
+
+10. Click [Save]{.Emphasis}.

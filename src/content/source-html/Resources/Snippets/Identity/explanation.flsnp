@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p>In <MadCap:variable name="cc_product_vars.CV-full" />, an <span class="Emphasis">identity</span> is any object that has permission to interact with a cloud resource or an object that contains a collection of identities. For example, this includes users (human or non-human), group members, and applications.</p>
+    </body>
+</html>

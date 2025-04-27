@@ -1,0 +1,1191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>AWS required permissions</h1>
+        <p>This topic describes the roles and permissions needed for the <MadCap:variable name="cc_product_vars.CV-full" /> admin user that onboards and maintains an AWS organization or account.</p>
+        <p>In order to deploy a <MadCap:variable name="cc_C_CyberArk.CompanyName" /> stack, the user that onboards the cloud environment must have the permissions that enable deploying and maintaining stacks in the AWS&#160;organization.<MadCap:conditionalText MadCap:conditions="project-conditions.Exclude"> Two sets of required roles and permissions are described below, one for onboarding <MadCap:variable name="cc_product_vars.CV-full" /> and <MadCap:variable name="cc_product_vars.SCA-short" /> using the relevant CloudFormation template, and another for rolling back or deleting a <MadCap:variable name="cc_C_CyberArk.CompanyName" /> stack.</MadCap:conditionalText></p>
+        <p>This topic includes the following:</p>
+        <ul>
+            <li>
+                <p>
+                    <MadCap:xref href="#Admin">Admin required permissions</MadCap:xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="#Permissi">Permissions required to onboard a standalone account</MadCap:xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="#Required2">Permissions required to onboard an organization</MadCap:xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="#AWS3">AWS IAM&#160;Identity Center</MadCap:xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="#Policy">Policy permissions</MadCap:xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="#permiss">[%=cc_product_vars.SCA-short%] permissions</MadCap:xref>
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            <MadCap:xref href="#AWS">AWS organizations and accounts</MadCap:xref>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <MadCap:xref href="#AWS2">AWS IAM&#160;Identity Center</MadCap:xref>
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    <MadCap:xref href="#Maintena">Maintenance</MadCap:xref>
+                </p>
+            </li>
+        </ul>
+        <h2><a name="Admin"></a>Admin required permissions</h2>
+        <p>The admin who onboards the AWS organizations and accounts must have the following permissions.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <caption>Onboarding - admin required AWS permissions</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Permission</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:CreateStack</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Create a stack as specified in the template. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:CreateStackInstances</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Create stack instances for the specified accounts, within the specified AWS Regions. A stack instance refers to a stack in a specific account and Region. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:DescribeStackEvents</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> View all stack-related events for a specified stack. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:DescribeStacks</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> View the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.
+
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:DescribeStackSetOperation</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> View the description of the specified stack set operation.
+
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:GetTemplateSummary</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> View information about a new or existing template. 
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:ListStacks</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> View the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).
+
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:TagResource</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> You can use the Resource Tags property to apply tags to resources, which can help you identify and categorize those resources. You can tag only resources for which AWS CloudFormation supports tagging. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>events:DescribeRule</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Describe the specified rule.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>events:PutRule</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Create or update the specified rule. Rules are enabled by default, or based on value of the state.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>events:PutTargets</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Add the specified targets to the specified rule, or update the targets if they are already associated with the rule.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:AttachRolePolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Attach the specified managed policy to the specified IAM role. When you attach a managed policy to a role, the managed policy becomes part of the role's permission (access) policy.
+
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:CreateRole</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Create a new role for your AWS account. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetRole</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> View information about the specified role, including the role's path, GUID, ARN, and the role's trust policy that grants permission to assume the role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetRolePolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> View the specified inline policy document that is embedded with the specified IAM role.
+
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:PassRole</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>To pass a role (and its permissions) to an AWS service, a user must have permissions to pass the role to the service. This helps administrators ensure that only approved users can configure a service with a role that grants permissions. To allow a user to pass a role to an AWS service, you must grant the PassRole permission to the user's IAM user, role, or group.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:PutRolePolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Add or update an inline policy document that is embedded in the specified IAM role.
+
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:BypassGovernanceRetention</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Perform operations on object versions that are locked in governance mode as if they were unprotected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:CreateBucket</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Create a new S3 bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:DeleteObjectTagging</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Remove the entire tag set from the specified object.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:DeleteObjectVersion</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Delete a specific version of an object from a bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:DeleteObjectVersionTagging</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Delete tags of a specific object version.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">s3:GetBucketPolicy</td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>View the policy of a specified bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:GetObject</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Access objects from Amazon S3. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:GetObjectLegalHold</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Get an object's current legal hold status.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:GetObjectVersion</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Needed when retrieving objects from Amazon S3. Permission for this action is granted on all objects to allow Amazon S3 to get a specific object version associated with the objects.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:GetObjectVersionAcl</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Permission for this action is granted on all objects to allow Amazon S3 to get a specific object version and access control list (ACL) associated with the object.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:GetObjectVersionForReplication</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Permission for this action is granted on all objects to allow Amazon S3 to get a specific object version associated with the object.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:GetObjectVersionTagging</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Permissions for this action on objects in the  source bucket allow Amazon S3 to read object tags for replication.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:GetObjectVersionTorrent</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Get torrent files from a bucket. BitTorrent can save you bandwidth when you're distributing large files.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:ListBuckets</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> View a list of all buckets owned by the user.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:ListBucketVersions</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>List metadata about all of the versions of objects in a bucket. This permission is required for the s3:ListObjectVersions permission.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:ListMultipartUploadParts</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> List the parts that have been uploaded for a specific multipart upload.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:ObjectOwnerOverrideToBucketOwner</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Disable ACLs (with the bucket owner enforced setting for Object Ownership) to change replica ownership to the AWS account that owns the destination bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:PutBucketPolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Apply an Amazon S3 bucket policy to an Amazon S3 bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:PutBucketPublicAccessBlock</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Create or modify the PublicAccessBlock configuration for an Amazon S3 bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:PutEncryptionConfiguration</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Configure default encryption and Amazon S3 Bucket Key for an existing bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:PutLifecycleConfiguration</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Create a new lifecycle configuration for the bucket or replace an existing lifecycle configuration.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:PutObjectLegalHold</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Apply a legal hold configuration to the specified object.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:PutObjectRetention</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Place an Object Retention configuration on an object.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:PutObjectVersionAcl</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Set the access control list (ACL) permissions for an object that already exists in a bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:PutObjectVersionTagging</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Set the supplied tag-set of a specific version to an object that already exists in a bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:ReplicateDelete</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Permission for this action on all objects in the  destination bucket allow Amazon S3 to replicate objects or delete markers to the destination bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:ReplicateObject</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Permission for this action on all objects in the  destination bucket allow Amazon S3 to replicate objects or delete markers to the destination bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:ReplicateTags</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> If the source bucket owner grants permission for the s3:ReplicateTags action to replicate object tags (through the IAM role), Amazon S3 replicates the tags along with the objects.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>sns:Publish</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p> Send a message to an Amazon SNS topic, a text message (SMS message) directly to a phone number, or a message to a mobile platform endpoint (when you specify the TargetArn).</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Permissi"></a>Permissions required to onboard a standalone account</h2>
+        <p>The following roles and permissions are needed to onboard a standalone account to <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <caption>Onboard standalone account - required AWS permissions</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">Permission</th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>	iam:GenerateCredentialReport	</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Generates a credential report for the AWS account.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetAccountAuthorizationDetails</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieves the user’s name and password-creation date for the specified IAM user.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetCredentialReport</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieves a credential report for the AWS account.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetPolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieves information about the specified managed policy.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetPolicyVersion</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieves information about the specified version of the specified managed policy.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetRole</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieves information about the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetRolePolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieves the specified inline policy document that is embedded within the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:ListAttachedRolePolicies</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists all managed policies that are associated with the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:ListMFADevices</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">Lists the MFA devices for an IAM user.</td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:ListRolePolicies</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>
+Lists the names of the inline policies that are embedded within the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:ListRoles</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists the IAM roles that have the specified path prefix.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>iam:ListVirtualMFADevices
+</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Lists the virtual MFA devices defined in the AWS account by assignment status.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Required2"></a>Permissions required to onboard an organization</h2>
+        <p>In addition to the roles and permissions described in <MadCap:xref href="#Permissi">Permissions required to onboard a standalone account</MadCap:xref>, the following roles and permissions are needed to onboard an AWS&#160;organization to <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <caption>Onboard an organization - required AWS permissions</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Permission</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:ListStackInstances</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Returns summary information about stack instances that are associated with the specified StackSet.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:DetectStackSetDrift</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Detects drift on a StackSet.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:DescribeStackSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Returns the description of the specified StackSet.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>cloudformation:DescribeStackInstance</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Returns the stack instance that's associated with the specified StackSet.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="AWS3"></a>AWS IAM&#160;Identity Center</h2>
+        <p>The following permissions are granted to <MadCap:variable name="cc_product_vars.CV-short" /> for AWS&#160;IAM Identity Center workspaces that are onboarded.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <caption>AWS IAM Identity Center permissions</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Permission</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListInstances</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists the details of the organization and account instances of IAM Identity Center that were created in or visible to the account calling this API.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListPermissionSets</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists the PermissionSets in an IAM Identity Center instance.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:DescribePermissionSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Gets the details of the permission set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso: ListAccountsForProvisionedPermissionSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists all the AWS accounts where the specified permission set is provisioned.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListManagedPoliciesInPermissionSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists the AWS managed policy that is attached to a specified permission set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:GetInlinePolicyForPermissionSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Obtains the inline policy assigned to the permission set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListCustomerManagedPolicyReferencesInPermissionSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists all customer managed policies attached to a specified PermissionSet.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListAccountAssignments</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists the assignee of the specified AWS account with the specified permission set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListUsers</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists all users in the identity store.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListGroups</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists all groups in the identity store.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>sso:ListGroupMemberships</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>For the specified group in the specified identity store, returns the list of all GroupMembership objects.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Policy"></a>Policy permissions</h2>
+        <p>To onboard organizations and standalone accounts, <MadCap:variable name="cc_product_vars.CV-full" /> has access to and may use the permissions in the AWS managed policy <span class="Emphasis">AWSOrganizationsReadOnlyAccess</span>.</p>
+        <div>
+            <h2><a name="permiss"></a><MadCap:variable name="cc_product_vars.SCA-short" /> permissions</h2>
+            <div class="note" MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                <p>The following sections are only relevant for the <MadCap:variable name="cc_product_vars.SCA-short" /> users.</p>
+            </div>
+            <h3><a name="AWS"></a>AWS organizations and accounts</h3>
+            <p>The following permissions are granted to <MadCap:variable name="cc_product_vars.SCA-short" /> for AWS&#160;organizations and accounts that are onboarded.</p>
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                <caption>Permissions granted to <MadCap:variable name="cc_product_vars.SCA-short" /> for AWS</caption>
+                <col class="TableStyle-Standard-Column-Column1" />
+                <col class="TableStyle-Standard-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-Standard-Head-Header1">
+                        <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                            <p>Permission</p>
+                        </th>
+                        <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                            <p>Description</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam:CreateSAMLProvider	</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>Create an IAM resource that describes an identity provider (IdP) that supports SAML 2.0.</p>
+                            <p><MadCap:variable name="cc_product_vars.SCA-short" /> requires this permission so that it can set up trust between <MadCap:variable name="cc_product_vars.SCA-short" /> and AWS automatically.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam:GetPolicy</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>View information about the specified managed policy, including the policy's default version and the total number of IAM users, groups, and roles to which the policy is attached.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam:GetPolicyVersion</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>View information about the specified version of the specified managed policy, including the policy document.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam:GetSAMLProvider</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>View the SAML provider metadocument that was uploaded when the IAM SAML provider resource object was created or updated.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam:ListAttachedRolePolicies</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>List all managed policies that are attached to the specified IAM role.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam:ListRolePolicies</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>List the names of the inline policies that are embedded in the specified IAM role.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam:ListRoles</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>List the IAM roles that have the specified path prefix.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam:ListRoleTags</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>List the tags that are attached to the specified IAM role.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam:ListSAMLProviders</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>List the SAML provider resource objects defined in IAM in the account. IAM resource-listing operations return a subset of the available attributes for the resource.
+</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam:UpdateAssumeRolePolicy</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>Update the policy that grants an IAM entity permission to assume a role. This is typically referred to as the "role trust policy".
+</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                            <p>organizations:ListTagsForResource</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                            <p>(Management accounts) List tags that are attached to the specified resource.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3><a name="AWS2"></a>AWS IAM&#160;Identity Center</h3>
+        <p>The following permissions are granted to <MadCap:variable name="cc_product_vars.SCA-short" /> for AWS&#160;IAM Identity Center workspaces that are onboarded.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <caption>Permissions granted to  <MadCap:variable name="cc_product_vars.SCA-short" /> for AWS IAM Identity Center workspaces</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Permission</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:AttachRolePolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> Attach the specified managed policy to the specified IAM role. When you attach a managed policy to a role, the managed policy becomes part of the role's permission (access) policy.
+
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:CreateRole</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Create a new role for your AWS account. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:CreateSAMLProvider</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Create an IAM resource that describes an identity provider (IdP) that supports SAML 2.0.</p>
+                        <p><MadCap:variable name="cc_product_vars.SCA-short" /> requires this permission so that it can set up trust between <MadCap:variable name="cc_product_vars.SCA-short" /> and AWS automatically.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetRole</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p> View information about the specified role, including the role's path, GUID, ARN, and the role's trust policy that grants permission to assume the role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetSAMLProvider</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>View the SAML provider metadocument that was uploaded when the IAM SAML provider resource object was created or updated.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:ListAttachedRolePolicies</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists all managed policies that are associated with the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:ListRolePolicies</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists the names of the inline policies that are embedded within the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:ListRoleTags</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>List the tags that are attached to the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:PutRolePolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Add or update an inline policy document that is embedded in the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:UpdateSAMLProvider</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Update the metadocument for an existing SAML provider resource object.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>identitystore:CreateGroup</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Create a group in the identity store.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>identitystore:ListGroups</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>List all groups in the identity store.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>identitystore:ListUsers</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>List all users in the identity store.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>organizations:ListParents</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists the root or organizational units  that serve as the immediate parent of the specified child organizational unit or account.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>organizations:ListTagsForResource</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>(Management accounts) List tags that are attached to the specified resource.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:CreateAccountAssignment</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Assign access to a principal for a specified AWS account using a specified permission set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:DeleteAccountAssignment </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Delete a principal's access from a specified AWS account using a specified permission set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:DescribeAccountAssignmentCreationStatus</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Describe the status of the assignment creation request.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:DescribePermissionSet </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>View the details of the permission set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:GetInlinePolicyForPermissionSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>View the inline policy assigned to the permission set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListAccountAssignments</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>List all account assignments.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListCustomerManagedPolicyReferencesInPermissionSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>List all customer-managed policies attached to a specified PermissionSet.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListInstances</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists the details of the organization and account instances of IAM Identity Center that were created in or visible to the account calling this API.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListManagedPoliciesInPermissionSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists the AWS managed policy that is attached to a specified permission set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>sso:ListPermissionSets</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists the PermissionSets in an IAM Identity Center instance.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>sso:ListTagsForResource</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Lists the tags that are attached to a specified resource.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Maintena"></a>Maintenance</h2>
+        <p>The <MadCap:variable name="cc_product_vars.CV-full" /> admin user needs the roles and permissions described below in order to roll back or delete a stack instance after it has been installed.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <caption>Maintenance permissions</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Permission</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:DeleteStack</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Delete a specified stack.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:DeleteStackInstances</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Delete stack instances for the specified accounts, in the specified AWS Regions.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:DeleteStackSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Delete a stack set (before you can delete a stack set, all its member stack instances must be deleted).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>cloudformation:DescribeStackSet</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>View the description of the specified stack set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>events:RemoveTargets</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Remove the specified targets from the specified rule. When the rule is triggered, those targets will no longer be invoked.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:DeleteRole</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Delete the specified role. The role must not have any policies attached.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:DeleteRolePolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Delete the specified inline policy that is embedded in the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:DetachRolePolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Remove the specified managed policy from the specified role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:DeleteBucket</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Delete the S3 bucket. All objects (including all object versions and delete markers) in the bucket must be deleted before the bucket itself can be deleted.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:DeleteBucketPolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Delete the policy of a specified bucket.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>s3:DeleteObject</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Remove the null version (if there is one) of an object and insert a delete marker, which becomes the latest version of the object.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>s3:ListAllMyBuckets</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>View buckets and the contents of any of those buckets.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

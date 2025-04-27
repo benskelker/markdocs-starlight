@@ -1,0 +1,79 @@
+# Integrate Microsoft Entra B2B
+
+Organizations using Microsoft Entra B2B collaboration can seamlessly
+integrate external user accounts into the
+{% $cc_C_CyberArk.CompanyName %}{% project_variables.IdentitySecurityPlatform_long %}.
+This integration enables external users to retain their existing email
+addresses, regardless of the domain they belong to, making collaboration
+simpler and more secure.
+
+## Prerequisites
+
+This integration relies on the following initial administrative setup,
+which needs to be done once only:
+
+- The SCA - Microsoft Entra B2B integration must be enabled in your
+  tenant. For details, see
+  `<xref href="sca_service-config-settings.htm">`{=html}Configure
+  general \[%=cc_product_vars.SCA-short%\] settings`</xref>`{=html}.
+
+- Microsoft Entra B2B user accounts have been:
+
+  1.  Provisioned to the
+      {% $cc_C_CyberArk.CompanyName %}
+      Cloud Directory, as described in [Provision Microsoft Entra ID
+      users to the CyberArk Cloud Directory with
+      SCIM](/identity-administration/latest/en/content/coreservices/usersroles/scim-aad.htm).
+
+  2.  Authenticated to
+      {% $cc_C_CyberArk.CompanyName %},
+      as described in [Federate with Microsoft Entra ID using
+      SAML](/identity-administration/latest/en/content/coreservices/usersroles/partnerazure.htm).
+
+## Set up account mapping
+
+To enable Microsoft Entra B2B users to access the
+{% $sca-project-variables.Azure %}
+console from the
+{% $cc_C_CyberArk.CompanyName %}
+platform, they need an access point from
+{% $cc_C_CyberArk.CompanyName %},
+also called a web app. Create the web app with the following account
+mapping settings:
+
+1.  Create the web app as described in
+    `<xref href="../DPAforCloud/sca_create-azure-web-app.htm">`{=html}Create
+    a web app for
+    \[%=cv-shared-variables.entra-id-long%\]`</xref>`{=html}.
+
+2.  From the
+    {% $cc_product_vars.Navigator %},
+    select
+    {% $cc_product_vars.IdentityAdmin-full %}.
+
+3.  Go to [Apps & Widgets \> Web Apps]{.Emphasis} and select the web app
+    you just created.
+
+4.  In the [Account Mapping]{.Emphasis} settings:
+
+    1.  Select [Directory Service Field]{.Emphasis}.
+
+    2.  In the [Directory Service field name]{.Emphasis} field, enter
+        [mail]{.Emphasis}.
+
+## Example use case scenario
+
+Partner 1 (jond@partner1.com) is federated into Microsoft Entra ID
+through B2B collaboration. Partner 1\'s email address remains unchanged
+in Entra ID, ensuring consistency and familiarity for the user. When
+provisioning this user account into
+{% $cc_C_CyberArk.CompanyName %}
+using SCIM, Partner 1 is represented by the same email address
+(jond@partner1.com). This streamlined process allows CyberArk to map and
+manage Entra B2B user accounts efficiently.
+
+The integration uses SCIM provisioning for user and group
+synchronization and SAML authentication for secure access, enabling a
+cohesive experience for external partners.
+
+![](images/entra-b2b-mapping.png)

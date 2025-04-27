@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../../_TopNav/cc_topnav_content.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <!-- Highlight2 for SCA-->
+        <a class="hl-cell" href="https://community.cyberark.com/s/article/SCA-Common-FAQs" MadCap:conditions="cc_product_conds.SCA"> <div class="hl-img"><!-- Highlight image theme default--><!-- For Conjur,  replace MadCap:conditions="TopNav.ThemeDefault" with MadCap:conditions="TopNav.ThemeConjur" --><img src="../../Images/Icons/ic-register.svg" alt="" MadCap:conditions="TopNav.ThemeDefault" /><!-- Highlight text --><span>FAQs</span><!-- Highlight arrow snippet - DO NOT REMOVE --><MadCap:snippetText src="../../_TopNav/cc_HighlightArrowSVG.flsnp" /></div></a>
+        
+        <!-- Highlight2 for Cloud Visibility-->
+        <a class="hl-cell" href="../../../HomeTilesLPs/LP-Tile1.htm" MadCap:conditions="cc_product_conds.CV"><div class="hl-img"><!-- Highlight image theme default--><!-- For Conjur,  replace MadCap:conditions="TopNav.ThemeDefault" with MadCap:conditions="TopNav.ThemeConjur" --><img src="../../Images/Icons/ic-setup.svg" alt="" MadCap:conditions="TopNav.ThemeDefault" /><!-- Highlight text --><span>Get started</span><!-- Highlight arrow snippet - DO NOT REMOVE --><MadCap:snippetText src="../../_TopNav/cc_HighlightArrowSVG.flsnp" /></div></a>
+       
+    </body>
+</html>

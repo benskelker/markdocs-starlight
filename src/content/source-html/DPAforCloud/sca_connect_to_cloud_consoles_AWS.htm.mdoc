@@ -1,0 +1,153 @@
+# Connect to AWS
+
+This topic describes how to connect to AWS securely via . You have two
+options for connecting, based on whether you want to elevate your
+privileges for this work session or use your current permissions.
+
+::: {.important madcap:conditions="SCA-conditions.not-free-trial"}
+:::
+
+:::::::: tabs
+- [AWS console]{cc-tab=".tab-1"}
+- [AWS CLI]{cc-tab=".tab-2"}
+
+::::::: tabs-stage
+::::: tab-1
+Tab 1 Content - connect through Console
+
+::: note
+If you want to connect to the AWS console directly using your current
+permissions instead of one of the roles in roles list, click [Go
+directly to the cloud console]{.Emphasis} at the top of the page.
+:::
+
+::: important
+:::
+
+To connect to the AWS console:
+
+1.  Sign in to .
+
+2.  In the [ User portal]{.Emphasis} \> [Applications]{.Emphasis} page,
+    click the relevant AWS web app tile.
+
+3.  Connect to your account:
+
+    :::::: tabs
+    - [AWS IAM]{cc-tab=".tab-1"}
+    - []{cc-tab=".tab-2"}
+
+    ::::: tabs-stage
+    ::: tab-1
+    Tab 1 Content - Console- AWS IAM
+
+    A list of AWS accounts that you have access to is displayed,
+    together with the roles you can connect with.
+
+    Find the account you want to connect to, select the role you want to
+    connect with, and click [Connect]{.Emphasis}.
+
+    The AWS console opens with all the privileges that the cloud role
+    you selected entitles you to.
+    :::
+
+    ::: tab-2
+    Tab 2 Content - Console- IAM IDC
+
+    1.  In the AWS permission set page for your account, find the
+        permission set that you want to use to connect to your
+        AWS console and click [Connect]{.Emphasis}.
+
+    2.  When you are redirected to AWS, click the AWS account card to
+        view the account name with the permission set you selected.
+
+    3.  Click [Management console]{.Emphasis} to open the AWS console
+        with the privileges available based on the permission set you
+        selected.
+    :::
+    :::::
+    ::::::
+:::::
+
+::: tab-2
+Tab 2 Content - connect with CLI
+
+1.  Prerequisite: Make sure that the AWS CLI is installed.
+
+    ::: note
+    For AWS IAM Identity Center this must be at least AWS CLI v2.
+    :::
+
+2.  The following use cases are supported:
+
+    :::::::: tabs
+    - [AWS IAM]{cc-tab=".tab-1"}
+    - [AWS IAM Identity Center]{cc-tab=".tab-2"}
+
+    ::::::: tabs-stage
+    ::: tab-1
+    Tab 1 Content - CLI - AWS IAM
+    :::
+
+    :::: tab-1
+    1.  In the CyberArk User portal, click the AWS account you want to
+        access via CLI.
+
+    2.  Select the AWS role you want to connect with and, at the end of
+        the row, click [Get CLI token]{.Emphasis}.
+
+    3.  In the windows that opens, copy the token, and paste it into
+        your AWS credentials file.
+
+    You can now work in the AWS CLI with the account and permission set
+    that you chose.
+
+    ::: note
+    Role chaining limits your AWS CLI role session to a maximum of one
+    hour, regardless of what is defined in the access policy.
+    :::
+    ::::
+
+    ::: tab-2
+    Tab 2 Content - CLI -IAM IDC
+
+    In this step, you provide the AWS IAM Identity Center details in the
+    AWS CLI, and complete the authentication and authorization flow
+    through the and AWS web interfaces. After the sign-in process is
+    complete, you can perform your tasks in the CLI.
+
+    1.  Authenticate to the AWS CLI:
+
+        1.  Open the AWS CLI command line and do the following at each
+            prompt:
+
+        2.  Type [aws configure sso]{.Emphasis}.
+
+        3.  Enter the URL for the AWS IAM Identity Center workspace you
+            want to access.
+
+            For example: [https://d-xxxxx.awsapps.com/start/]{.Emphasis}
+
+        4.  Select the region.
+
+        5.  In the AWS authorization window, confirm your request.
+
+            AWS redirects you to .
+
+    2.  Sign in to the CyberArk user portal.
+
+    3.  Find the account you want to connect to, and select the
+        permission set you want to connect with. At the end of the row,
+        click [Connect]{.Emphasis}.
+
+    4.  In the AWS prompt that opens, click [Allow]{.Emphasis} to allow
+        access to your AWS data.
+
+    You can now work in the AWS CLI with the account and permission set
+    that you chose.
+    :::
+    :::::::
+    ::::::::
+:::
+:::::::
+::::::::

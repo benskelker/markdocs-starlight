@@ -1,0 +1,45 @@
+1.  Set up trust between
+    {% $cc_product_vars.Identity-full %}
+    and
+    {% $sca-project-variables.AWS-AD %}
+
+    In this step you provide
+    {% $sca-project-variables.AWS-AD %}
+    with
+    {% $cc_product_vars.Identity-full %}
+    details, and you provide
+    {% $cc_product_vars.Identity-full %}
+    with
+    {% $sca-project-variables.AWS-AD %}
+    details:
+
+    1.  Go to
+        {% $cc_product_vars.IdentityAdmin-full %},
+        \> [Apps & Widgets]{.Emphasis} \> [Web Apps]{.Emphasis} and
+        select the web app that you created for the
+        {% $sca-project-variables.AWS-AD %}.
+
+    2.  Go to [Configure AWS for SSO: Step
+        2](/identity/latest/en/content/applications/certified-apps/aws_saml_sso.htm#Step2SelecttheTrustpageintheIdentityAdministrationportaltoconfigureIdentityProviderandServiceProviderinformation)
+        in the
+        {% $cc_product_vars.Identity-full %}
+        docs and follow the instructions.
+
+2.  If your organization uses
+    {% $cc_product_vars.Identity-full %}
+    provisioning:
+
+    1.  In
+        {% $cc_product_vars.IdentityAdmin-full %},
+        select the web app.
+
+    2.  Under [Provisioning]{.Emphasis} go to the [Role
+        Mappings]{.Emphasis} area.
+
+    3.  Map the custom role you created above for the web app.
+
+        For details about provisioning, see the [Provision accounts with
+        SCIM](/identity/latest/en/content/applications/appsovw/scim-provisioning.htm "instructions on how to implement CyberArk Identity provisioning, including role mapping"){alt="instructions on how to implement CyberArk Identity provisioning, including role mapping"}
+        in the
+        {% $cc_product_vars.Identity-full %}
+        docs.

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../../_TopNav/cc_topnav_content.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <!-- Highlight#3 for SCA prod--><a class="hl-cell" href="/third-party-notices/latest/en/content/azure-mfa-is-mandatory.htm" MadCap:conditions="SCA-conditions.not-free-trial"><div class="hl-img"><!-- Highlight image theme default--><!-- For Conjur,  replace MadCap:conditions="TopNav.ThemeDefault" with MadCap:conditions="TopNav.ThemeConjur" --><img src="../../Images/Icons/ic-authn.svg" alt="" MadCap:conditions="TopNav.ThemeDefault" /><!-- Highlight text --><span>MFA on Azure</span><!-- Highlight arrow snippet - DO NOT REMOVE --><MadCap:snippetText src="../../_TopNav/cc_HighlightArrowSVG.flsnp" /></div></a>
+       
+        <!-- Highlight#3 for SCA Free trial--><a class="hl-cell" href="../../Introduction/sca-ft.htm" MadCap:conditions="SCA-conditions.free-trial"><div class="hl-img"><!-- Highlight image theme default--><!-- For Conjur,  replace MadCap:conditions="TopNav.ThemeDefault" with MadCap:conditions="TopNav.ThemeConjur" --><img src="../../Images/Icons/ic-get-started.svg" alt="" MadCap:conditions="TopNav.ThemeDefault" /><!-- Highlight text --><span>SCA Free Trial</span><!-- Highlight arrow snippet - DO NOT REMOVE --><MadCap:snippetText src="../../_TopNav/cc_HighlightArrowSVG.flsnp" /></div></a>
+       
+        <!-- Highlight3 for Cloud Visibility--><a class="hl-cell" href="../../FrontMatter/cc_DataProtectionFAQs.htm" MadCap:conditions="cc_product_conds.CV"><div class="hl-img"><!-- Highlight image theme default--><!-- For Conjur,  replace MadCap:conditions="TopNav.ThemeDefault" with MadCap:conditions="TopNav.ThemeConjur" --><img src="../../Images/Icons/ic-analytics.svg" alt="" MadCap:conditions="TopNav.ThemeDefault" /><!-- Highlight text --><span>Data protection FAQs</span><!-- Highlight arrow snippet - DO NOT REMOVE --><MadCap:snippetText src="../../_TopNav/cc_HighlightArrowSVG.flsnp" /></div></a>
+       
+    </body>
+</html>

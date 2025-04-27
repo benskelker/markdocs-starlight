@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <p>By default, <MadCap:variable name="cc_product_vars.SCA-short" /> supports using a third-party IdP with Google Cloud. If you are adding <MadCap:variable name="cc_product_vars.Identity-full" /> as a new third-party IdP, you need to set up trust between <MadCap:variable name="cc_product_vars.Identity-full" /> and <MadCap:variable name="sca-project-variables.GoogleCloud" />.</p>
+        <div class="note">
+            <p>You can set up SSO profiles for multiple third-party IdPs in Google Cloud, as described in the <a href="https://cloud.google.com/architecture/identity/single-sign-on#configuration" target="_blank" alt="link to instructions on setting up SSO profiles for external IdPs in Google Cloud docs">Google Cloud docs</a>. </p>
+            <p>For each SSO&#160;profile that you configure in the Google Admin console, you need provide the web app's <span class="Emphasis">Sign-in page URL</span> and <span class="Emphasis">Signing certificate</span> details (from <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />).</p>
+        </div>
+        <ol>
+            <li>
+                <p><span class="Emphasis">In the Google Admin console, create a SAML profile</span>
+                </p>
+                <p>In this step you create a SAML profile in the Google Admin console.</p>
+                <ol>
+                    <li>
+                        <p> Sign in to <a href="https://admin.google.com/">Google Admin console</a> with your Google Cloud admin credentials.</p>
+                    </li>
+                    <li>
+                        <p>Go to <span class="Emphasis">Security</span> &gt; <span class="Emphasis">Authentication</span> &gt; <span class="Emphasis">SSO&#160;with third party IdP</span>.</p>
+                    </li>
+                    <li>
+                        <p>Under <span class="Emphasis">Third-party SSO profile</span>, click <span class="Emphasis">ADD SAML PROFILE</span>, and give the profile a name.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p><span class="Emphasis">From <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />, collect details for the profile</span>
+                </p>
+                <p>In this step you copy details from the web app's <span class="Emphasis">Trust</span> settings, and paste then into the SAML&#160;profile that you are creating in the Google Admin console.</p>
+                <ol>
+                    <li>
+                        <p>In <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /> &gt;&#160;<span class="Emphasis">Apps &amp; Widgets &gt;&#160;Web Apps</span>, select the <MadCap:variable name="sca-project-variables.GoogleCloud" /> web app you just created, and go to the <span class="Emphasis">Trust</span> settings.</p>
+                    </li>
+                    <li>
+                        <p>Under <span class="Emphasis">Identity Provider Configuration</span>, select <span class="Emphasis">Manual configuration</span>, copy the values listed below and paste them into the SAML profile follows:</p>
+                        <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                            <col class="TableStyle-Standard-Column-Column1" />
+                            <col class="TableStyle-Standard-Column-Column1" />
+                            <thead>
+                                <tr class="TableStyle-Standard-Head-Header1">
+                                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                        <p>Source in <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /></p>
+                                    </th>
+                                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                        <p>Destination in Google Admin console</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                        <p><span class="Emphasis">IdP Entity ID / IdP Issuer</span>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                        <p><span class="Emphasis">IDP entity ID</span> field</p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                        <p><span class="Emphasis">Sign-in page URL</span>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                        <p><span class="Emphasis">Sign-in page URL</span> field</p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                        <p><span class="Emphasis">Sign-out page URL</span>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                        <p><span class="Emphasis">Sign-out page URL</span> field</p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                        <p>Expand <span class="Emphasis">Signing Certificate</span>, and download the certificate file</p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                        <p> Upload the certificate file to the <span class="Emphasis">Verification certificate</span> field</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <p>Save the profile.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p><span class="Emphasis">Assign users to the SAML profile</span>
+                </p>
+                <p>In this step you copy the <span class="Emphasis">Entity ID</span> and <span class="Emphasis">ACS URL</span> values from <MadCap:variable name="sca-project-variables.GoogleCloud" /> to CyberArk:</p>
+                <ol>
+                    <li>
+                        <p>In the Google Admin console, return to <span class="Emphasis">Security</span> &gt; <span class="Emphasis">Authentication</span> &gt; <span class="Emphasis">SSO&#160;with third party IdP</span>.</p>
+                    </li>
+                    <li>
+                        <p>Under <span class="Emphasis">Manage SSO Profile assignments</span>, click <span class="Emphasis">Manage</span>.</p>
+                    </li>
+                    <li>
+                        <p>Under <span class="Emphasis">SAML SSO&#160;profile &gt; SP&#160;details</span>, copy the values listed below and paste them into your <MadCap:variable name="sca-project-variables.GoogleCloud" /> web app's <span class="Emphasis">Trust</span> settings:</p>
+                        <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                            <col class="TableStyle-Standard-Column-Column1" />
+                            <col class="TableStyle-Standard-Column-Column1" />
+                            <thead>
+                                <tr class="TableStyle-Standard-Head-Header1">
+                                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                        <p>Source in <MadCap:variable name="sca-project-variables.GoogleCloud" /></p>
+                                    </th>
+                                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                        <p>Destination in <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /></p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                        <p><span class="Emphasis">Entity ID</span>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                        <p><span class="Emphasis">Trust</span> &gt; <span class="Emphasis">Manual Configuration</span> &gt; <span class="Emphasis">SP Entity ID / SP Issuer / Audience</span></p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                        <p><span class="Emphasis">ACS URL</span>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyA-Column1-Body1"><span class="Emphasis">Trust</span> &gt;<span class="Emphasis">Manual Configuration</span> &gt; <span class="Emphasis">Assertion Consumer Service (ACS)&#160;URL</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <p>Save your changes.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p><span class="Emphasis">In the Google Admin console, select an SSO profile</span>
+                </p>
+                <ol>
+                    <li>
+                        <p>Go to <span class="Emphasis">Security</span> &gt; <span class="Emphasis">Authentication</span> &gt; <span class="Emphasis">SSO&#160;with third party IdP</span>.</p>
+                    </li>
+                    <li>
+                        <p>Under <span class="Emphasis">Manage SSO Profile assignments</span>, click <span class="Emphasis">Manage</span>.</p>
+                    </li>
+                    <li>
+                        <p>Under <span class="Emphasis">Select SSO profile</span>, select your created profile from the  drop-down list.</p>
+                    </li>
+                    <li>
+                        <p>Save your changes.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /> in the <MadCap:variable name="sca-project-variables.GoogleCloud" /> web app:</p>
+                <ol>
+                    <li>
+                        <p>Go to the <span class="Emphasis">SAML Response</span> settings.</p>
+                    </li>
+                    <li>
+                        <p>Under <span class="Emphasis">Custom logic</span>, comment out the following lines of the SAML script:</p>
+                        <div class="code"><pre><code>//var Audience = 'https://www.google.com/a/' + CorpIdentifier;
+//setAudience(Audience);
+//ServiceUrl = Audience + '/acs';
+//setRecipient(ServiceUrl);
+//setSignatureType('Response');</code></pre>
+                        </div>
+                    </li>
+                    <li>
+                        <p>Save your changes.</p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </body>
+</html>

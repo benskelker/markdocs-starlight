@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>AWS permissions for <MadCap:variable name="cc_product_vars.SCA-short" /></h1>
+        <p>This topic describes the AWS permissions that <MadCap:variable name="cc_product_vars.SCA-short" /> needs to connect to AWS organizations and accounts. </p>
+        <h2>AWS accounts</h2>
+        <p>The following permissions are granted to the <MadCap:variable name="cc_product_vars.SCA-short" /> service user for an AWS&#160;account when it is onboarded to <MadCap:variable name="cc_product_vars.SCA-short" />.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Permission</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">iam:UpdateAssumeRolePolicy</td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">Updates the policy that grants an IAM entity permission to assume a role. This is typically referred to as the "role trust policy".
+</td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">iam:ListSAMLProviders</td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">Lists the SAML provider resource objects defined in IAM in the account. IAM resource-listing operations return a subset of the available attributes for the resource.
+</td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">iam:DeleteRolePolicy</td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">Deletes the specified inline policy that is embedded in the specified IAM role.
+</td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">iam:PutRolePolicy</td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">Adds or updates an inline policy document that is embedded in the specified IAM role.
+</td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetRolePolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieves the specified inline policy document that is embedded with the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetSAMLProvider</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Returns the SAML provider metadocument that was uploaded when the IAM SAML provider resource object was created or updated.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetRole</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieves information about the specified role, including the role's path, GUID, ARN, and the role's trust policy that grants permission to assume the role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:ListAttachedRolePolicies</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Lists all managed policies that are attached to the specified IAM role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetPolicy</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieves information about the specified managed policy, including the policy's default version and the total number of IAM users, groups, and roles to which the policy is attached.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetPolicyVersion</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Retrieves information about the specified version of the specified managed policy, including the policy document.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>iam:ListRolePolicies</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Lists the names of the inline policies that are embedded in the specified IAM role.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>AWS organizations</h2>
+        <p>In addition to the permissions per account that are described above, the following permissions are granted to the <MadCap:variable name="cc_product_vars.SCA-short" /> service user for all the accounts in an AWS&#160;organization when it is onboarded to <MadCap:variable name="cc_product_vars.SCA-short" />.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Permission</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:CreateGroup</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Creates a new group.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:DeleteGroup</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Deletes the specified IAM group. The group must not contain any users or have any attached policies.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>iam:GetGroup</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Returns a list of IAM users that are in the specified IAM group.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>sso:PatchGroup</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Existing groups can be updated by calling upon the PATCH operation to replace specific attribute values.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

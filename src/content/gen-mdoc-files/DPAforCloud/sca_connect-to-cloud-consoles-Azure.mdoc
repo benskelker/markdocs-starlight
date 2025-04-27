@@ -1,0 +1,133 @@
+# Connect to Microsoft Azure
+
+This topic describes how to connect to Azure securely via
+{% $cc_product_vars.SCA-short %}.
+You have two options for connecting, based on whether you want to
+elevate your privileges for this work session or use your current
+permissions.
+
+::: {.important madcap:conditions="SCA-conditions.not-free-trial"}
+`<snippetblock src="SCA-snippets/intro-secure-access-space.flsnp">`{=html}`</snippetblock>`{=html}
+:::
+
+## Connect to your console
+
+You can connect to your console from the
+{% $cc_product_vars.Identity-full %}
+user portal or through the CLI.
+
+:::::::::::: tabs
+- [Azure console]{cc-tab=".tab-1"}
+- [Azure CLI]{cc-tab=".tab-2"}
+
+::::::::::: tabs-stage
+:::::: tab-1
+Tab 1 Content - \<console\>
+
+::: note
+If you want to access the Azure console with your current permissions,
+click the link in the instructions to connect directly to the console
+instead of via the options available in the table.
+:::
+
+::: important
+`<snippetblock src="SCA-snippets/popup-blocker.flsnp">`{=html}`</snippetblock>`{=html}
+:::
+
+To connect to the Azure console
+
+1.  Sign in to
+    {% $cc_product_vars.ISP-full %}.
+
+2.  In the [User portal]{.Emphasis} \> [Applications]{.Emphasis} page,
+    click the relevant Azure web app.
+
+3.  In the Azure resources page, find the scope that you want to access
+    (directory, management group, subscription, resource group, or
+    resource) that you want to access. Click the button at the end of
+    the row to connect to the console.
+
+The Azure console opens with all the privileges you are entitled to, and
+access is available for the duration of the maximum session length of
+seach role. If you are connecting with multiple roles, privileges are
+determined by each role's maximum session length, after which each
+role's privileges are revoked independently and the session for that
+role closes.
+
+::: note
+If the subscriptions show [Connect ]{.Emphasis}instead of
+[Select]{.Emphasis} in the table, when you connect to a subscription
+scope, you have the privileges of all the roles that are associated with
+the subscription and its child scopes.
+:::
+::::::
+
+:::::: tab-2
+Tab 2 Content - \<CLI\>
+
+When you sign in using the Azure CLI, you sign in to Microsoft and then
+authenticate to
+{% $cc_product_vars.IdentityAdmin-full %}
+via the web console. After the authorization process is complete, you
+can select your resource from the resource list and begin working.
+
+Before you begin, make sure you have the following installed on the
+machine you use to connect to the Azure console:
+
+- Python 3.10 or higher. For more information, see the [Python download
+  docs](https://www.python.org/downloads/){target="_blank"}.
+
+- Azure CLI. For more information, see the [Microsoft Azure
+  docs](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli){target="_blank"}.
+
+- {% $cc_product_vars.SCA-short %}
+  policy defined for your user.
+
+::: note
+You need reasonable working knowledge of Python and the Azure CLI to
+prepare your machine.
+:::
+
+::: ProcedureHeading
+To sign in with the Azure CLI
+:::
+
+1.  Sign in to the
+    {% $cc_product_vars.shared-services-full %}
+    platform.
+
+2.  In
+    {% $cc_product_vars.SCA-short %},
+    select the Azure resource you need.
+
+3.  Open a command prompt.
+
+4.  Type the following command:
+
+    ::: code
+        az login
+    :::
+
+    ::: {.note madcap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH"}
+    On macOS and Windows machines, authentication begins automatically
+    in your web browser. If you\'re using a Linux machine, you may have
+    to manually open a web browser and copy-paste the cloud key from the
+    CLI to continue with the authorization process.
+    :::
+
+5.  Select the account you\'re using to sign in, and sign in to the
+    Azure portal.
+
+::: note
+- The resources that are available depend on the access permissions
+  granted to your user by the
+  {% $cc_product_vars.SCA-short %}
+  policy.
+
+- If you want to work with your cloud resources via the CLI, you have to
+  complete this procedure even if you initially authenticated in the web
+  console.
+:::
+::::::
+:::::::::::
+::::::::::::

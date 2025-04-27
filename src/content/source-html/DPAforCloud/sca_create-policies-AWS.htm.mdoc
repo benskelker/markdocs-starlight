@@ -1,0 +1,113 @@
+# Create policies for and access
+
+This topic describes how to create and manage policies that provide
+users with just-in-time access to and cloud assets.
+
+## Before you start
+
+When you create a policies, you give users access to accounts using
+selected IAM roles that they can assume. Before you start creating
+policies, make sure that at least one IAM assumable role exists your AWS
+IAM.
+
+## Configure a policy {#configure-a-policy .stepReset madcap:autonum="Step 1: "}
+
+Go to the [Access policies]{.Emphasis} page, click [Create new
+policy]{.Emphasis} and select a policy type.
+
+supports both AWS accounts, and , so you can create a policy for either
+type of cloud workspace.
+
+## Define the general details {#define-the-general-details .step madcap:autonum="Step 2: "}
+
+::: note
+When you create an policy for an account, it will only work if you
+create an IAM policy with the same name and path in each AWS account
+affected by the policy (where assigns the permission set created by the
+policy).
+:::
+
+1.  
+
+## Select the cloud roles/permissions {#select-the-cloud-rolespermissions .step madcap:autonum="Step 3: "}
+
+:::::: tabs
+- [AWS account]{cc-tab=".tab-1"}
+- [AWS IAM Identity Center]{cc-tab=".tab-2"}
+
+::::: tabs-stage
+::: tab-1
+Tab 1 Content - \<AWS accounts\>
+
+In this step, you choose the cloud roles you want to include in the
+policy. You can add tags you created in AWS to further define the scope
+of the policy.
+
+1.  From the list on the left, select an AWS account.
+
+2.  In the list of roles, do the following:
+
+    ::: note
+    The table only shows standard AWS predefined cloud roles and your
+    organization\'s custom roles. This does not include AWSReservedSSO\*
+    roles. For more information, see Why doesn\'t
+    \[%=cc_product_vars.SCA-short%\] show AWSReservedSSO\* roles?
+    :::
+
+    - To inspect the permissions for the cloud roles, from [More
+      actions]{.Emphasis} (![](../images/icon_ellipsis-v.png){.icon}),
+      select [Role details]{.Emphasis}. You can review the access map
+      and permissions for this cloud role in the window that is
+      displayed, and return to the main window when you are done.
+
+    - Mark the check boxes for the cloud roles you want to include in
+      this policy and click [Select]{.Emphasis}.
+:::
+
+::: tab-2
+Tab 2 Content - \<AWS IDC\>
+
+In this step, you choose the permission sets you want to include in the
+policy. You can add tags you created in AWS to further define the scope
+of the policy.
+
+1.  From the list on the left, select an AWS account.
+
+2.  In the list of permission sets, do the following:
+
+    - To inspect a permission set, from [More actions]{.Emphasis}
+      (![](../images/icon_ellipsis-v.png){.icon}), select [View
+      permissions]{.Emphasis}. You can review the permission set details
+      in the window that is displayed, and return to the main window
+      when you are done.
+
+    - Mark the check boxes for the permission sets you want to include
+      in this policy and click [Select]{.Emphasis}.
+:::
+:::::
+::::::
+
+## Define the access rules {#define-the-access-rules .step madcap:autonum="Step 4: "}
+
+Select members for the policy, and specify the access rules to be
+applied to the policy.
+
+When you define the [maximum session duration]{.Emphasis} keep the
+following in mind:
+
+- Each IAM role has its own session duration. If the policy\'s session
+  duration is longer than the role\'s session duration, the resulting
+  session will be limited by the role\'s session duration. Coordinate
+  with your AWS administrator to ensure alignment.
+
+- If multiple SCA policies apply to the same role, the session duration
+  is determined by the longer of the two---yet the IAM role's session
+  duration always determines the limit.
+
+## Activate the policy {#activate-the-policy .step madcap:autonum="Step 5: "}
+
+At the bottom of the page, click [Activate Policy]{.Emphasis}. The
+policy is listed in the Access policies page with a [Validating
+]{.Emphasis} (![](images/policy-status-validating.png){.icon}) status.
+When the validation completes successfully, the status changes to
+[Active ]{.Emphasis}(![](images/policy-status-active.png){.icon}).

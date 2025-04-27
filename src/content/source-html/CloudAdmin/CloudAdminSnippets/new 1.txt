@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h2>CyberArk cloud platform terminology</h2>
+        <p>This topics explains CyberArk cloud platform terminology related to connecting to your cloud environments:</p>
+        <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Term</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Platform</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Any cloud provider. The following providers are supported:</p>
+                        <ul>
+                            <li>
+                                <p>AWS</p>
+                            </li>
+                            <li>
+                                <p>Microsoft Azure</p>
+                            </li>
+                            <li>
+                                <p>Google Cloud</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Workspace</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A workspace is a generic term to represent a subdivision of a cloud platform. A workspace is where cloud entities operate on cloud resources by using granted permissions. Each cloud platform uses a separate term to define a workspace: </p>
+                        <ul>
+                            <li>
+                                <p><span class="Emphasis">AWS</span>: Account</p>
+                                <p>AWS&#160;accounts can be standalone accounts, or they can be part of an AWS organization.</p>
+                            </li>
+                            <li>
+                                <p><span class="Emphasis">Microsoft Azure</span>: Subscription</p>
+                                <p>Azure subscriptions are part of a <MadCap:variable name="cv-shared-variables.entra-id-long" /> directory or tenant.</p>
+                            </li>
+                            <li>
+                                <p><span class="Emphasis">Google Cloud</span>: Project</p>
+                                <p>Google Cloud projects are part of a GCP&#160;organization.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Tenant</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>While <MadCap:variable name="cc_product_vars.CV-full" /> application resources are shared, your organization data is stored and isolated from other <MadCap:variable name="cc_product_vars.CV-full" /> customers in a tenant.<MadCap:conditionalText MadCap:conditions="cc_product_conds.CV">  To learn about tenant security, refer to <MadCap:xref href="../../GetStarted/cv_security.htm">Security Q&amp;A.</MadCap:xref></MadCap:conditionalText></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">onboard vs connect</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>To monitor and secure your cloud environment using from the CyberArk platform, you need to first <span class="Emphasis">onboard </span>the cloud environment to CyberArk.</p>
+                        <p>To use <MadCap:variable name="cc_product_vars.CV-full" />'s Identity Analysis, CyberArk must <span class="Emphasis">connect </span>to the account.</p>
+                        <p>To secure the environment using <MadCap:variable name="cc_product_vars.SCA-full" />, the environment doesn't necessarily need to be <span class="Emphasis">connected </span>in <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><span class="Emphasis">scan</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Both <MadCap:variable name="cc_product_vars.CV-full" /> and <MadCap:variable name="cc_product_vars.SCA-full" /> scan the cloud environment, but each for a different purpose.</p>
+                        <ul>
+                            <li>
+                                <p><MadCap:variable name="cc_product_vars.CV-full" /> scan: When you onboard a cloud environment to CyberArk, <MadCap:variable name="cc_product_vars.CV-full" /> scans the environment for the purpose of discovering the environments architecture and <span style="background-color: #ffff00;">xxxxx</span>.</p>
+                                <p>After the initial discovery, <MadCap:variable name="cc_product_vars.CV-full" /> automatically scans the environment once per day to discover updates to the structure of the environment.</p>
+                            </li>
+                            <li>
+                                <p><MadCap:variable name="cc_product_vars.SCA-full" /> scan: <MadCap:variable name="cc_product_vars.SCA-full" /> scans the discovered environment for roles/permission sets and resources. The initial <MadCap:variable name="cc_product_vars.SCA-full" /> scan is performed immediately upon initial discovery of the workspace. After that, <MadCap:variable name="cc_product_vars.SCA-full" /> performs its scan twice a day (every 12 hours) to detect any possible updates to roles and resources.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

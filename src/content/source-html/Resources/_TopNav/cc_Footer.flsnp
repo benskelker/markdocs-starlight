@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <div class="footer-wrapper">
+            <div class="footer-content">
+                <div class="col">
+                    <MadCap:snippetBlock src="cc_Explore.flsnp" MadCap:conditions="TopNav.English" />
+                    <MadCap:snippetBlock src="cc_Explore_ja.flsnp" MadCap:conditions="TopNav.Japanese" />
+                </div>
+                <div class="col">
+                    <MadCap:snippetBlock src="cc_Connect.flsnp" MadCap:conditions="TopNav.English" />
+                    <MadCap:snippetBlock src="cc_Connect_ja.flsnp" MadCap:conditions="TopNav.Japanese" />
+                </div>
+                <div class="col">
+                    <MadCap:snippetBlock src="cc_Learn.flsnp" MadCap:conditions="TopNav.English" />
+                    <MadCap:snippetBlock src="cc_Learn_ja.flsnp" MadCap:conditions="TopNav.Japanese" />
+                </div>
+                <div class="col">
+                    <MadCap:snippetBlock src="cc_Contact.flsnp" MadCap:conditions="TopNav.English" />
+                    <MadCap:snippetBlock src="cc_Contact_ja.flsnp" MadCap:conditions="TopNav.Japanese" />
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="col social">
+                    <MadCap:snippetBlock src="cc_FollowUs.flsnp" />
+                </div>
+                <MadCap:snippetBlock src="cc_Copyright.flsnp" MadCap:conditions="TopNav.English" />
+                <MadCap:snippetBlock src="cc_Copyright_ja.flsnp" MadCap:conditions="TopNav.Japanese" />
+                <p class="footer-build">Build <MadCap:variable name="TopNav.FLTVersion" /> [<MadCap:variable name="TopNav.BuildTimeStamp" />]</p>
+            </div>
+        </div>
+    </body>
+</html>

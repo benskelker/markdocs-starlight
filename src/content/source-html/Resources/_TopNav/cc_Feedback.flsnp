@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+    <script>
+    $(document).ready(function(){
+    $("#feedback-form span").click(function(){
+        // Hide all .feedback-q elements
+        $("#feedback-form .feedback-q").hide();
+        // Show the corresponding .feedback-a element
+        $(this).closest(".feedback-q").next(".feedback-a").show();
+    });
+    });
+    </script>
+        <div id="feedback-button" MadCap:conditions="TopNav.English"><a onclick="document.location.href='mailto:Documentation@CyberArk.com?subject=Topic Title: '+document.title+' &amp;body=We%20appreciate%20your%20feedback.%20Please%20type%20your%20comments%20here...%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A________________________________________________________________________________%0D%0ADocumentation%20team%20internal%20use%3A%0D%0AURL: '+encodeURIComponent(location.href);">[%=TopNav.FeedbackTitle%]</a>
+        </div>
+        <div id="feedback-button" MadCap:conditions="TopNav.Japanese"><a onclick="document.location.href='mailto:Documentation@CyberArk.com?subject=Topic Title: '+document.title+' &amp;body=We%20appreciate%20your%20feedback.%20Please%20type%20your%20comments%20here...%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A________________________________________________________________________________%0D%0ADocumentation%20team%20internal%20use%3A%0D%0AURL: '+encodeURIComponent(location.href);">フィードバックの送信</a>
+        </div>
+        <div id="feedback-form">
+        <div class="feedback-q">
+        <p>Was this topic helpful?</p>
+        <span id="thumb-yes"></span>
+        <span id="thumb-no"></span>
+        </div>
+        <div class="feedback-a">
+        <p>Thank you! Your feedback helps</p>
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <map id="map2">
+            <area shape="rectangle" coords="35,75,469,299" dragDirection="0" href="#Discover-new-org" />
+            <area shape="rectangle" coords="1239,79,1665,305" dragDirection="0" href="#new-sa-account" />
+        </map>
+        <h1>Add AWS</h1>
+        <p>This topic describes how to onboard AWS to <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+        <h2>Before you begin</h2>
+        <p>Make sure you have the following:</p>
+        <ul>
+            <li>
+                <p>An AWS account or organization</p>
+            </li>
+            <li>
+                <p>An administrative user in AWS that has the roles and permissions described in <MadCap:xref href="cv-AWS-permissions.htm#Admin">Admin required permissions</MadCap:xref></p>
+            </li>
+        </ul>
+        <p>Additionally, do the following </p>
+        <ul>
+            <li MadCap:conditions="cc_product_conds.CEM">
+                <p>Read about how <MadCap:variable name="cc_product_vars.CV-full" /> discovers your organization in <MadCap:xref href="cv-AWS-bts.htm">Behind the scenes for AWS</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>If you want to learn more about the specifics of the <MadCap:variable name="cc_product_vars.CV-full" /> connection with your AWS environment, download a sample CloudFormation template:</p>
+                <ul>
+                    <li>
+                        <p><a href="/Downloads/CV/add_organization_account_aws.zip">Add an AWS organization</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p><a href="/Downloads/CV/cem_add_account_aws.zip">Add an AWS account</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p MadCap:conditions="cc_product_conds.CEM"><a href="/Downloads/CV/cps_aws_api_onboarding_cf_example.json">Add an AWS account via API</a>
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div>
+            <h2>Discover a workspace in AWS </h2>
+            <p>Click an option to learn more:</p>
+            <p>
+                <img src="Images/onboard-aws.png" usemap="#map2" />
+            </p>
+        </div>
+        <h2><a name="Discover"></a><a name="Discover-new-org"></a>Discover a new AWS organization</h2>
+        <p>Discover resource hierarchies for a new AWS organization, with or without AWS IAM Identity Center. </p>
+        <p>After the discovery is complete, <MadCap:conditionalText MadCap:conditions="cc_product_conds.CEM">you can connect your AWS&#160;accounts from the <MadCap:variable name="cc_product_vars.CV-full" /> account list</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="cc_product_conds.SCA">you can create access policies in <MadCap:variable name="cc_product_vars.SCA-full" /> for your AWS cloud environment</MadCap:conditionalText>.</p>
+        <h3 class="step" MadCap:autonum="Step 1: ">Log in to AWS and into your CyberArk tenant</h3>
+        <ol>
+            <li>
+                <p>In the <span class="Emphasis">same browser</span>, in separate tabs:</p>
+                <ol>
+                    <li>
+                        <p>Log in to your CyberArk tenant.</p>
+                    </li>
+                    <li>
+                        <p>Log in to your AWS Admin console  - keep this open and stay logged in throughout the onboarding process.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>In your CyberArk tenant, use the service <MadCap:variable name="cc_product_vars.Navigator" /> to go to <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+            </li>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.CV-full" />, go to <span class="Emphasis">Settings &gt; Platform management</span> and click <span class="Emphasis">AWS</span>.</p>
+            </li>
+            <li>
+                <p>In the top right corner of the AWS workspace page, click <span class="Emphasis">Add workspace</span>.</p>
+            </li>
+            <li>
+                <p>Select <span class="Emphasis">Onboard new organization</span>, and click <span class="Emphasis">Add</span>.</p>
+            </li>
+        </ol>
+        <h3 class="step" MadCap:autonum="Step 2: ">Provide the AWS organization details</h3>
+        <ol>
+            <li>
+                <p>In the New AWS organization page, provide the information about your AWS&#160;organization as described in the following table.</p>
+                <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <caption>AWS organization details</caption>
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Detail</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Description</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Management account ID</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>The&#160;account&#160;ID&#160;is a unique 12-digit identifier assigned to each AWS&#160;account. </p>
+                                <div class="note">
+                                    <ul>
+                                        <li>
+                                            <p>The management account was previously called the master account.</p>
+                                        </li>
+                                        <li>
+                                            <p>Make sure you use a management account. If you try to use a member account, onboarding will fail.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Root ID</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>The unique identifier (ID) of the root. The  root ID&#160;description that starts with "r-".</p>
+                                <p>The root ID is in the AWS&#160;console under <span class="Emphasis">Management console &gt; AWS organization</span>.</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Organization name (optional)</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>An organization is a collection of accounts that are centrally managed.</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Organization description (optional)</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Meaningful description of the organization.</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1" MadCap:conditions="">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Deployment region</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>The region where the CloudFormation template should be deployed. Make sure your workspace has permissions to the region that you select.</p>
+                                <div class="note">
+                                    <ul>
+                                        <li>
+                                            <p>When onboarding, the CloudFormation template is deployed to this region.</p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <p><MadCap:variable name="cc_product_vars.CV-full" /> collects information from this region for identity analysis.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>If you are onboarding an organization that includes IAM&#160;Identity Center, select <span class="Emphasis">This organization uses IAM Identity Center (formerly AWS&#160;SSO)</span>, and select the region where the IAM Identity Center management account is located.</p>
+            </li>
+        </ol>
+        <h3 class="step" MadCap:autonum="Step 3: ">Deploy the <MadCap:variable name="cc_product_vars.CV-full" /> CloudFormation stack in AWS</h3>
+        <ol>
+            <li>
+                <p>Click the CloudFormation link to open the AWS CloudFormation Quick Create Stack page.</p>
+                <div class="tip">
+                    <ul>
+                        <li>
+                            <p> If it doesn't open the first time, click it again.</p>
+                        </li>
+                        <li>
+                            <p>If the link still doesn't work, make sure you are signed in to both the AWS&#160;console and <MadCap:variable name="cc_product_vars.CV-full" />. Alternatively, you can download the template from <MadCap:variable name="cc_product_vars.CV-full" /> or at the top of this page, check the details, and upload it to AWS&#160;manually.</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <p>Confirm that the template details were correctly inserted.</p>
+            </li>
+            <li>
+                <p>Scroll to bottom of the page, acknowledge the statements, and click <span class="Emphasis">Create stack</span>. The <MadCap:variable name="cc_product_vars.CV-full" /> CloudFormation stack does the following:</p>
+                <ul>
+                    <li>
+                        <p>Creates a role for <MadCap:variable name="cc_product_vars.CV-full" /> to read your AWS organization’s structure and discover all workspaces</p>
+                    </li>
+                    <li>
+                        <p>Creates a cloud watch rule to notify <MadCap:variable name="cc_product_vars.CV-full" /> of any changes in the AWS&#160;organization’s structure</p>
+                    </li>
+                    <li>
+                        <p>Creates a stack instance for each member account in your AWS organization, including a role with a policy that grants <MadCap:variable name="cc_product_vars.CV-full" /> scanning permissions</p>
+                    </li>
+                    <li>
+                        <p>Creates a bucket to contain <MadCap:variable name="cc_product_vars.CV-full" />’s scan results on your management account<MadCap:conditionalText MadCap:conditions="cc_product_conds.SCA"> (not relevant for SCA functionality)</MadCap:conditionalText></p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Verify that the stack was created successfully and that there were no errors. </p>
+                <p>If there are errors that you are unable to resolve, <MadCap:snippetText src="../Resources/Snippets/cc_ContactSupport.flsnp" />.</p>
+            </li>
+        </ol>
+        <h3 class="step" MadCap:autonum="Step 4: ">Start discovery</h3>
+        <p>In <MadCap:variable name="cc_product_vars.CV-full" />, at the bottom of the Add new organization page, click <span class="Emphasis">Start discovery</span>. <MadCap:variable name="cc_product_vars.CV-full" /> scans your AWS organization to discover the cloud workspaces. </p>
+        <p>When the discovery is complete, a tree of the AWS&#160;organization is displayed in the Platform management &gt; AWS page. If you don't see the organization in the AWS page, refresh the page.</p>
+        <div class="note" MadCap:conditions="cc_product_conds.CEM">
+            <p>Discovery may take some time. <MadCap:variable name="cc_product_vars.CV-full" /> notifies you when it finishes the process.</p>
+            <p>
+You can continue to work in <MadCap:variable name="cc_product_vars.CV-full" /> . If you sign out, check the notification center when you sign into your next session.</p>
+        </div>
+        <div MadCap:conditions="cc_product_conds.CEM">
+            <h3 class="step" MadCap:autonum="Step 5: "><a name="Connect3"></a>Connect AWS accounts</h3>
+            <p>In <MadCap:variable name="cc_product_vars.CV-full" />, select the AWS accounts you want to connect.</p>
+            <p>For details, see <MadCap:xref href="cv-connect-workspaces.htm#View">View and manage workspace connections</MadCap:xref>.</p>
+        </div>
+        <div MadCap:conditions="cc_product_conds.CEM">
+            <h2><a name="Connect"></a>Add a new AWS&#160;account to an existing organization</h2>
+            <p>From <MadCap:variable name="cc_product_vars.CV-full" /> Platform management, you can add new or existing accounts to a discovered organization at any time.</p>
+            <ol>
+                <li>
+                    <p>In <MadCap:variable name="cc_product_vars.CV-full" />, go to <span class="Emphasis">Settings &gt; Platform management &gt; AWS</span>.</p>
+                </li>
+                <li>
+                    <p>Select the accounts to connect. </p>
+                    <p>For details, see <MadCap:xref href="cv-connect-workspaces.htm#View">View and manage workspace connections</MadCap:xref>.</p>
+                </li>
+            </ol>
+        </div>
+        <h2><a name="Connect2"></a><a name="new-sa-account"></a>Add an AWS standalone account</h2>
+        <p>You can add a standalone AWS&#160;account without onboarding a parent organization.</p>
+        <h3 class="stepReset" MadCap:autonum="Step 1: ">Log in to AWS and into your CyberArk tenant</h3>
+        <ol>
+            <li>
+                <p>In the <span class="Emphasis">same browser</span>, in separate tabs:</p>
+                <ol>
+                    <li>
+                        <p>Log in to your CyberArk tenant.</p>
+                    </li>
+                    <li>
+                        <p>Log in to your AWS Admin console  - keep this open and stay logged in throughout the onboarding process.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>In your CyberArk tenant, use the service <MadCap:variable name="cc_product_vars.Navigator" /> to go to <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+            </li>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.CV-full" />, go to <span class="Emphasis">Settings &gt; Platform management</span> and click <span class="Emphasis">AWS</span>.</p>
+            </li>
+            <li>
+                <p>In the top right corner of the AWS workspace page, click <span class="Emphasis">Add workspace</span>.</p>
+            </li>
+            <li>
+                <p>Select <span class="Emphasis">Onboard new account</span>, and click <span class="Emphasis">Add</span>.</p>
+            </li>
+        </ol>
+        <div MadCap:conditions="cc_product_conds.SCA">
+            <MadCap:snippetBlock src="CloudAdminSnippets/AWS-standalone.flsnp" />
+        </div>
+        <div class="tabs" MadCap:conditions="cc_product_conds.CEM">
+            <ul class="tabs-nav">
+                <li class="tab-active" MadCap:conditions="cc_product_conds.CEM"><a data-cc-tab=".tab-1">Add accounts using the API</a>
+                </li>
+                <li><a data-cc-tab=".tab-2">Add accounts in the web interface</a>
+                </li>
+            </ul>
+            <div class="tabs-stage">
+                <div class="tab-1">
+                    <p>To onboard an AWS account or organization to <MadCap:variable name="cc_product_vars.CV-full" /> using the API, you need to specify specific AWS resources and then call the <MadCap:variable name="cc_product_vars.CV-full" /> API. See <MadCap:xref href="../API/cv-create-aws-account.htm">Onboard AWS accounts</MadCap:xref> to see a sample implementation. </p>
+                    <p><span class="Emphasis">Step 1: Specify AWS resources</span>
+                    </p>
+                    <p>Before you can call the API, specify the resources described in the following table.</p>
+                    <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                        <caption>AWS resources</caption>
+                        <col class="TableStyle-Standard-Column-Column1" />
+                        <col class="TableStyle-Standard-Column-Column1" />
+                        <thead>
+                            <tr class="TableStyle-Standard-Head-Header1">
+                                <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                    <p>Resource</p>
+                                </th>
+                                <th class="TableStyle-Standard-HeadD-Column1-Header1">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="TableStyle-Standard-Body-Body1">
+                                <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                    <p>Role(s)</p>
+                                </td>
+                                <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                    <p>A role or roles to enable <MadCap:variable name="cc_product_vars.CV-full" /> to scan your account.</p>
+                                    <p>Create one role to access IAM.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><span class="Emphasis">Step 2: Configure permissions</span>
+                    </p>
+                    <ol>
+                        <li>
+                            <p>Grant the permissions described in the following table to the role(s) you created to access IAM.</p>
+                            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                                <caption>Permissions to be granted</caption>
+                                <col class="TableStyle-Standard-Column-Column1" />
+                                <col class="TableStyle-Standard-Column-Column1" />
+                                <col class="TableStyle-Standard-Column-Column1" />
+                                <thead>
+                                    <tr class="TableStyle-Standard-Head-Header1">
+                                        <th class="TableStyle-Standard-HeadE-Column1-Header1">Permission</th>
+                                        <th class="TableStyle-Standard-HeadE-Column1-Header1">Description</th>
+                                        <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                            <p>API</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>	GenerateCredentialReport	</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>Generates a credential report for the AWS account</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">IAM</td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>GetAccountAuthorizationDetails</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>Retrieves the user’s name and password-creation date for the specified IAM user</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                            <p>IAM</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>GetCredentialReport</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>Retrieves a credential report for the AWS account</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">IAM</td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>GetPolicy</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>Retrieves information about the specified managed policy</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                            <p>IAM</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>GetPolicyVersion</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>Retrieves information about the specified version of the specified managed policy</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                            <p>IAM</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>GetRole</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>Retrieves information about the specified IAM role</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">IAM</td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>GetRolePolicy</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>Retrieves the specified inline policy document that is embedded within the specified IAM role</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">IAM</td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>ListAttachedRolePolicies</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>Lists all managed policies that are associated with the specified IAM role</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">IAM</td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>ListMFADevices</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">Lists the MFA devices for an IAM user</td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">IAM</td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>ListRolePolicies</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>
+Lists the names of the inline policies that are embedded within the specified IAM role</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">IAM</td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>ListRoles</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>Lists the IAM roles that have the specified path prefix</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">IAM</td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                            <p>ListVirtualMFADevices
+</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                            <p>Lists the virtual MFA devices defined in the AWS account by assignment status</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyA-Column1-Body1">IAM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="example">
+                                <p><a href="/Downloads/CV/CEM-POLICY.json">CEM-POLICY.json</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Use the parameters described in the following table to set up the IAM role with a trust policy for the <MadCap:variable name="cc_product_vars.CV-full" /> AWS account.</p>
+                            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                                <caption>Policy parameters</caption>
+                                <col style="width: 50%;" class="TableStyle-Standard-Column-Column1" />
+                                <col style="width: 50%;" class="TableStyle-Standard-Column-Column1" />
+                                <thead>
+                                    <tr class="TableStyle-Standard-Head-Header1">
+                                        <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                            <p>Policy parameter</p>
+                                        </th>
+                                        <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                            <p>Value</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                            <p>AWS account</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                            <p> 023673983569</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="TableStyle-Standard-Body-Body1">
+                                        <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                            <p>External ID</p>
+                                        </td>
+                                        <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                            <p>{organization}-{customer account ID}</p>
+                                            <div class="note">
+                                                <p>The ID of your platform tenant.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ol>
+                    <div class="example">
+                        <p>Example</p>
+                        <p><pre>{
+"Version": "2008-10-17",
+"Statement": [
+{
+"Effect": "Allow",
+"Principal": {
+"AWS": "arn:aws:iam::023673983569:root"
+},
+"Action": "sts:AssumeRole",
+"Condition": {
+"StringEquals": {
+"sts:ExternalId": "[tenantname]-622382967619"
+}
+}
+}
+]
+}</pre>
+                        </p>
+                    </div>
+                </div>
+                <div class="tab-2">
+                    <MadCap:snippetBlock src="CloudAdminSnippets/AWS-standalone.flsnp" />
+                </div>
+            </div>
+        </div>
+        <div class="SeeAlso" MadCap:conditions="cc_product_conds.CEM">
+            <ul>
+                <li>
+                    <p>
+                        <MadCap:xref href="cv-connect-workspaces.htm">Connect and manage workspaces</MadCap:xref>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <MadCap:xref href="../HomeTilesLPs/LP-Tile3.htm">[%=cc_product_vars.CV-full%] scanning process</MadCap:xref>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <h2>Delete (offboard) an AWS account</h2>
+        <p>This section describes how to offboard a standalone AWS&#160;account from CyberArk if the need arises.</p>
+        <div class="note">
+            <p>This section applies to an AWS account that was onboarded as a standalone account.</p>
+            <p> To delete an account that is part of an onboarded organization, you must delete the organization. You can disconnect the account.</p>
+        </div>
+        <div class="ProcedureHeading">
+            <p>To delete an AWS account from <MadCap:variable name="cc_product_vars.CV-full" />:</p>
+        </div>
+        <ol>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.CV-full" />, go to <span class="Emphasis">Settings </span>&gt; <span class="Emphasis">Platform management</span> &gt; <span class="Emphasis">AWS</span>. </p>
+            </li>
+            <li>
+                <p>Hover over the row of the AWS&#160;account you want to delete and click the <span class="Emphasis">More options</span> button on the right side of the row, then click <span class="Emphasis">Delete</span>.</p>
+                <div class="note">
+                    <p>The remaining steps in this procedure are the recommended best practice. However, if, after deleting the account in <MadCap:variable name="cc_product_vars.CV-full" />, you do nothing for 72 hours, you no longer need to perform the remaining steps in the procedure.</p>
+                </div>
+            </li>
+            <li>
+                <p>Connect to AWS and go to <span class="Emphasis">Open the AWS CloudFormation console</span> &gt; <span class="Emphasis">Stacks</span>.</p>
+            </li>
+            <li>
+                <p>Under <span class="Emphasis">AWS accounts</span>, select the appropriate account. </p>
+            </li>
+            <li>
+                <p>Delete the stacks in the account.</p>
+            </li>
+        </ol>
+        <div MadCap:conditions="cc_product_conds.SCA">
+            <h2>Manually onboard an AWS account for <MadCap:variable name="cc_product_vars.SCA-short" /></h2>
+            <p>This section describes how to onboard an AWS&#160;account  to <MadCap:variable name="cc_product_vars.SCA-short" /> if the parent organization was onboarded to the CyberArk platform before <MadCap:variable name="cc_product_vars.SCA-short" /> was added to the customer tenant. </p>
+            <div>
+                <h3 class="stepReset" MadCap:autonum="Step 1: ">Download the <MadCap:variable name="cc_product_vars.SCA-short" /> CloudFormation template</h3>
+                <p>Click to <a href="/Downloads/SCA/sca_add_account_aws.json.zip">download</a> the <MadCap:variable name="cc_product_vars.SCA-short" /> CloudFormation template.</p>
+                <h3 class="step" MadCap:autonum="Step 2: ">Create a new AWS stack for <MadCap:variable name="cc_product_vars.SCA-short" /></h3>
+                <p>Next, use the CloudFormation template you downloaded to deploy an updated stack that includes the resources for the account.</p>
+                <p>The stack creates a role for <MadCap:variable name="cc_product_vars.SCA-short" /> to manage AWS&#160;role policies.</p>
+                <div class="NextStep">
+                    <p><a href="/sca/latest/en/content/dpaforcloud/sca_define-web-app-in-identity.htm" alt="create a web app for your AWS console">Create a web app for your AWS console</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

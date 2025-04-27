@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>View the <MadCap:variable name="cc_product_vars.CV-full" /> inspection results</h1>
+        <p>The <MadCap:variable name="cc_product_vars.CV-full" /> inspection results are displayed on the Identities analysis page. This page displays identities, according to the filters you select, and associated information about these identities, all in a table format. </p>
+        <div class="note">
+            <MadCap:snippetBlock src="../Resources/Snippets/Entitlements/explanation.flsnp" />
+        </div>
+        <p>The Identities analysis page displays a list of identities with the following information:</p>
+        <ul>
+            <li>
+                <p><span class="Emphasis">Name</span>: the identity name.</p>
+            </li>
+            <li>
+                <p><span class="Emphasis">Identity type</span>: the cloud identity type. For example, <span class="Emphasis">AWS IAM user</span> and <span class="Emphasis">Microsoft Azure managed identity</span>.</p>
+            </li>
+            <li>
+                <p><span class="Emphasis">Workspaces</span>: the number of workspaces the identity directly connects to via entitlements.</p>
+            </li>
+            <li>
+                <p><span class="Emphasis">Admin</span>: an icon indicating if the identity has direct admin permissions. For more information, see <MadCap:xref href="cv-exceptional-factors.htm">Vulnerable permissions</MadCap:xref>.</p>
+            </li>
+        </ul>
+        <div class="tip">
+            <p>To narrow the identities that display, or to find a particular identity: </p>
+            <ol>
+                <li>
+                    <p>In the search box at the top of the page, start to type the name of the identity you are looking for. As you type, matching search results are displayed.</p>
+                </li>
+                <li>
+                    <p>To filter the search, click the filter icon, then select the filters you want to use.</p>
+                </li>
+            </ol>
+        </div>
+        <h2>View identity and entitlements details</h2>
+        <p>To view detailed information, click the identity whose details you want to see. </p>
+        <h3>Azure user, application, managed identity, or group</h3>
+        <p>The following details are displayed:</p>
+        <ul>
+            <li>
+                <p>The top of the page shows the identity type and creation date.</p>
+            </li>
+            <li>
+                <p>Underneath the identity type, the page shows the name of the management group and the tenant ID.</p>
+            </li>
+            <li>
+                <p>The lower part of the page displays direct roles  as clickable tiles. Click the tile to display the role details.</p>
+            </li>
+        </ul>
+        <h3>Google Cloud user, service account, or group</h3>
+        <p>The following details are displayed:</p>
+        <ul>
+            <li>
+                <p>The top of the page shows the identity type and creation date.</p>
+            </li>
+            <li>
+                <p>The left side of the page shows the name of the organization and relevant accounts. </p>
+            </li>
+            <li>
+                <p>The right side of the page displays direct roles for the selected organization or account, as clickable tiles. Click the tile to display the role details.</p>
+            </li>
+        </ul>
+        <h3>AWS IAM user, role, group, or AWS Identity Center user or group</h3>
+        <p>The following details are displayed:</p>
+        <ul>
+            <li>
+                <p>The top of the page shows the identity type and creation date.</p>
+            </li>
+            <li>
+                <p>The lower part of the page displays permissions set and policies as clickable tiles. Click the tile to display the policy details.</p>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <div style="display:none;">
+            <p id="theme-logo">
+                <img src="Images/Skin/lg-conjur.svg" alt="" MadCap:conditions="TopNav.ThemeConjur" />
+                <img src="Images/Skin/lg-cyberark.svg" alt="" MadCap:conditions="TopNav.ThemeDefault" />
+                <img src="Images/Skin/lg-secretless.svg" alt="" MadCap:conditions="TopNav.ThemeSecretless" />
+            </p><span id="fs-on" MadCap:conditions="TopNav.FlareSearch"> </span><span id="breadcrumb-home"><MadCap:variable name="TopNav.BreadcrumbHome" /></span><span class="whats-new-exists" MadCap:conditions="TopNav.WhatsNewNotification">What's new<MadCap:variable id="whats-new-toggle" name="TopNav.WhatsNewDate" /></span> <span id="product-menu-link"><MadCap:variable name="TopNav.PortalPrefixPath" />/product-menu.html</span>
+            <span id="portal-link"><MadCap:variable name="TopNav.PortalPrefixPath" />/portal/latest/en/docs.htm</span>
+            </div>     
+    </body>
+</html>

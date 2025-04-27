@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <div MadCap:conditions="cc_product_conds.SCA">
+            <ul class="navigation">
+                <li><a href="../../HomeTilesLPs/LP-Tile1.htm"><div class="accent"></div><span>Introduction</span><div class="teaser"><p>Learn about <MadCap:variable name="cc_product_vars.SCA-short" /> and the latest available features </p></div></a>
+                </li>
+                <li><a href="../../HomeTilesLPs/LP-Tile2.htm"><div class="accent"></div><span>Set up <MadCap:variable name="cc_product_vars.SCA-short" /></span><div class="teaser"><p>Onboard your cloud environment, create policies, and configure feature settings</p></div></a>
+                </li>
+                <li><a href="../../HomeTilesLPs/LP-Tile3.htm"><div class="accent"></div><span>Automate <MadCap:variable name="cc_product_vars.SCA-short" /> operations</span><div class="teaser"><p>Manage <MadCap:variable name="cc_product_vars.SCA-short" /> cloud onboarding and policies using various automation options</p></div></a>
+                </li>
+                <li><a href="../../HomeTilesLPs/LP-Tile4.htm"><div class="accent"></div><span>Audit</span><div class="teaser"><p>Monitor system activities and user sessions</p></div></a>
+                </li>
+                <li><a href="../../HomeTilesLPs/LP-Tile5.htm"><div class="accent"></div><span>Troubleshoot</span><div class="teaser"><p>Investigate and resolve issues with cloud connections and <MadCap:variable name="cc_product_vars.SCA-short" /> policies</p></div></a>
+                </li>
+                <li MadCap:conditions="SCA-conditions.not-free-trial"><a href="../../HomeTilesLPs/LP-Tile6.htm"><div class="accent"></div><span>Connect to your cloud console</span><div class="teaser"><p>Sign in securely with <MadCap:variable name="cc_product_vars.SCA-short" /></p></div></a>
+                </li>
+                <li MadCap:conditions="SCA-conditions.free-trial"><a href="/secure-access-space/latest/en/content/cloud-consoles/sas-cloudconsoles-lp.htm"><div class="accent"></div><span>Connect to your cloud console</span><div class="teaser"><p>Sign in securely with <MadCap:variable name="cc_product_vars.SCA-short" /></p></div></a>
+                </li>
+            </ul>
+        </div>
+        <div MadCap:conditions="cc_product_conds.CV">
+            <ul class="navigation">
+                <li><a href="../../HomeTilesLPs/LP-Tile1.htm"><div class="accent"></div><span>Get started</span><div class="teaser"><p>Learn more about <MadCap:variable name="cc_product_vars.CV-full" /></p></div></a>
+                </li>
+                <li><a href="../../HomeTilesLPs/LP-Tile2.htm"><div class="accent"></div><span>Settings</span><div class="teaser"><p>Set up your <MadCap:variable name="cc_product_vars.CV-full" /> environment</p></div></a>
+                </li>
+                <li><a href="../../HomeTilesLPs/LP-Tile3.htm"><div class="accent"></div><span>Scan and analyze</span><div class="teaser"><p>Reduce your attack surface</p></div></a>
+                </li>
+                <li><a href="../../HomeTilesLPs/LP-Tile4.htm"><div class="accent"></div><span>Integrations</span><div class="teaser"><p>Connect third-party applications to <MadCap:variable name="cc_product_vars.CV-full" /></p></div></a>
+                </li>
+                <li><a href="../../Audit/cv-audit.htm"><div class="accent"></div><span>Activities</span><div class="teaser"><p>Monitor activities in your <MadCap:variable name="cc_product_vars.CV-full" /> environment</p></div></a>
+                </li>
+                <li><a href="../../HomeTilesLPs/LP-Tile6.htm"><div class="accent"></div><span>APIs</span><div class="teaser"><p>Programmatically access a <MadCap:variable name="cc_product_vars.CV-full" /> service from other applications or services</p></div></a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

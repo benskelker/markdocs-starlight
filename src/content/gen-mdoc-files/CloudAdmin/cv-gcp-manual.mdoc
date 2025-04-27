@@ -1,0 +1,423 @@
+<map id="map1">
+<area shape="rectangle" coords="36,400,448,610" dragdirection="0">
+</area>
+<area shape="rectangle" coords="1154,396,1580,612" dragdirection="0">
+</area>
+<area shape="rectangle" coords="28,712,460,926" dragdirection="0">
+</area>
+</map>
+
+# Manually onboard Google Cloud
+
+For use cases where you don\'t want to onboard your Google Cloud
+workspaces from the
+{% $cc_product_vars.CV-full %}
+interface, this topic describes how to manually onboard a Google Cloud
+organization.
+
+## []{#Before}Before you begin
+
+Make sure you have the following:
+
+- A Google Cloud organization with at least one project.
+
+- Google Cloud admin user that has been assigned the following
+  permissions: 
+
+  - [roles/resourcemanager.organizationAdmin]{.Emphasis}
+
+  - [roles/owner]{.Emphasis}
+
+- The [Compute Engine API]{.Emphasis} enabled in
+  {% $sca-project-variables.GoogleCloud %}.
+
+- We assume you are familiar with navigating your organization and
+  projects in the Google Cloud console.
+
+## Log in to {% $cc_C_CyberArk.CompanyName %} and {% sca-project-variables.GoogleCloud %} {#log-in-to-and .step madcap:autonum="Step 1: "}
+
+In the [same browser]{.Emphasis}, in separate tabs:
+
+1.  Log in to your
+    {% $cc_product_vars.ISP-full %}
+    tenant.
+
+2.  Log in to your GCP organization in the Google Cloud console.
+
+    ::: important
+    Keep both your tenant and the
+    {% $sca-project-variables.GoogleCloud %}
+    console open and stay logged in throughout the onboarding process.
+    :::
+
+## Enable the Cloud Identity APIs {#enable-the-cloud-identity-apis .step madcap:autonum="Step 2: "}
+
+In this step you enable the Cloud Identity APIs in the
+{% $sca-project-variables.GoogleCloud %}
+console.
+
+1.  In the
+    {% $sca-project-variables.GoogleCloud %}
+    console, navigate to [API & Services]{.Emphasis} \>
+    [Library]{.Emphasis}.
+
+2.  In the [Search for APIs & Services]{.Emphasis} text box, search for
+    **Cloud Identity**.
+
+3.  From the list of APIs that appears, click the entry that matches
+    **Cloud Identity**, and click [ENABLE]{.Emphasis}.
+
+4.  When the API is enabled, the page reloads and shows
+    [Status]{.Emphasis} as [Enabled]{.Emphasis}.
+
+## Add additional roles to the Google APIs Service Agent (Service account) {#add-additional-roles-to-the-google-apis-service-agent-service-account .step madcap:autonum="Step 3: "}
+
+In this step, you add more roles to the Google APIs Service Agent.
+
+1.  In the
+    {% $sca-project-variables.GoogleCloud %}
+    console, select the project where you want to deploy
+    {% $cc_C_CyberArk.CompanyName %}
+    resources, and navigate to [IAM & Admin]{.Emphasis} \>
+    [IAM]{.Emphasis}.
+
+2.  On the right side, select [Include Google-provided role
+    grants]{.Emphasis}.
+
+    This displays your Google-managed service accounts.
+
+3.  In the [Filter]{.Emphasis} search bar (where it says [Enter property
+    name or value]{.Emphasis}), search for and select the service
+    account that ends with **\@cloudservices.gserviceaccount.com**.
+
+4.  Click the [Edit Principal]{.Emphasis} button (pencil icon) and in
+    the page that opens:
+
+    1.  Click [+ ADD ANOTHER ROLE]{.Emphasis}.
+
+    2.  In the [Select a role]{.Emphasis} drop-down, search for and
+        select the following roles:
+
+        - **Security Admin**
+
+        - **Role Administrator**
+
+    3.  Save your changes.
+
+## Create a custom roles in Google Cloud {#create-a-custom-roles-in-google-cloud .step madcap:autonum="Step 4: "}
+
+In this step, you create roles for
+{% $cc_C_CyberArk.CompanyName %}
+the
+{% $sca-project-variables.GoogleCloud %}
+console. This is done at the organization level.
+
+### Create a custom role for {% $cc_product_vars.CV-full %} {#create-a-custom-role-for .stepReset madcap:autonum="Step 1: "}
+
+1.  In the
+    {% $sca-project-variables.GoogleCloud %}
+    console, select the organization and navigate to [IAM &
+    Admin]{.Emphasis} \> [Roles]{.Emphasis}.
+
+2.  Near the top of the page, click [+ SELECT ROLE]{.Emphasis}.
+
+3.  Enter the following information: 
+
+      Field                      Value
+      -------------------------- ---------------------------------------------------------------
+      [Title]{.Emphasis}         CustomCEMRole
+      [Description]{.Emphasis}   Custom role that includes permissions to all hierarchy levels
+      [ID]{.Emphasis}            CustomCEMRole
+
+4.  Set the role permissions:
+
+    1.  Click [+ ADD PERMISSIONS]{.Emphasis}.
+
+    2.  In the [Filter]{.Emphasis} search bar (where it says [Enter
+        property name or value]{.Emphasis}), find and select each of the
+        following permissions:
+
+        `<snippetblock src="CloudAdminSnippets/gcp-organization-permissions-list.flsnp" madcap:conditiontagexpression="include[snip-conditions.CV-only], exclude[snip-conditions.SCA-only]">`{=html}`</snippetblock>`{=html}
+
+    3.  Click [ADD]{.Emphasis}.
+
+5.  After you have added all required permissions, click
+    [CREATE]{.Emphasis} at the bottom of the page.
+
+    Your custom role is created at the organizational level.
+
+### Create a custom role for {% $cc_product_vars.SCA-full %} {#create-a-custom-role-for-1 .step madcap:autonum="Step 2: "}
+
+1.  In the
+    {% $sca-project-variables.GoogleCloud %}
+    console, select the organization and navigate to [IAM &
+    Admin]{.Emphasis} \> [Roles]{.Emphasis}.
+
+2.  Near the top of the page, click [+ SELECT ROLE]{.Emphasis}.
+
+3.  Enter the following information: 
+
+      Field                            Value
+      -------------------------------- ---------------------------------------------------------------
+      [Title]{.Emphasis}               CustomSCARole
+      [Description]{.Emphasis}         Custom role that includes permissions to all hierarchy levels
+      [ID]{.Emphasis}                  CustomSCARole
+      [Role launch stage]{.Emphasis}   General Availability
+
+4.  Set the role permissions:
+
+    1.  Click [+ ADD PERMISSIONS]{.Emphasis}.
+
+    2.  In the [Filter]{.Emphasis} search bar (where it says [Enter
+        property name or value]{.Emphasis}), find and select each of the
+        following permissions:
+
+        `<snippetblock src="CloudAdminSnippets/gcp-organization-permissions-list.flsnp" madcap:conditiontagexpression="include[snip-conditions.SCA-only], exclude[snip-conditions.CV-only]">`{=html}`</snippetblock>`{=html}
+
+    3.  Click [ADD]{.Emphasis}.
+
+5.  After you have added all required permissions, click
+    [CREATE]{.Emphasis} at the bottom of the page.
+
+    Your custom role is created at the organizational level.
+
+## []{#Create}Create the service accounts {#create-the-service-accounts .step madcap:autonum="Step 5: "}
+
+In this step, you create service accounts for
+{% $cc_product_vars.CV-full %}
+and
+{% $cc_product_vars.SCA-full %}
+in
+{% $sca-project-variables.GoogleCloud %}.
+
+1.  In the
+    {% $sca-project-variables.GoogleCloud %}
+    console, select the project where you are creating all the
+    {% $cc_C_CyberArk.CompanyName %}
+    resources and navigate to [IAM & Admin]{.Emphasis} \> [Service
+    Accounts]{.Emphasis}.
+
+2.  One at a time, create a service account for
+    {% $cc_product_vars.CV-full %}
+    and
+    {% $cc_product_vars.SCA-full %}:
+
+    Click [+ CREATE SERVICE ACCOUNTS]{.Emphasis}, and provide the
+    following details:
+
+      Service                                                                   Service account name   Service account ID
+      ------------------------------------------------------------------------- ---------------------- --------------------
+      {% $cc_product_vars.CV-full %}    cem-service-account    cyb-cem
+      {% $cc_product_vars.SCA-full %}   sca-service-account    cyb-sca
+
+3.  Click [DONE]{.Emphasis}.
+
+4.  From the list of service accounts, locate each of the service
+    accounts you just created.
+
+5.  Create a key for each service account as follows:
+
+    1.  Select the service account.
+
+    2.  In the [KEYS]{.Emphasis} tab, click [ADD KEY]{.Emphasis}, then
+        [Create new key]{.Emphasis}.
+
+    3.  For the file type, select [JSON]{.Emphasis}, and click
+        [CREATE]{.Emphasis}.
+
+        The generated key is automatically downloaded to your local file
+        system. If it doesn\'t download, manually download and save the
+        key to your local file system---[you\'ll need this key later in
+        this procedure]{.Emphasis}.
+
+6.  Navigate back to the [Service Accounts]{.Emphasis} page, and note
+    the email address associated with each of the service
+    accounts---[you\'ll need these email addresses in the next
+    step]{.Emphasis}.
+
+## Bind the roles to their respective service accounts {#bind-the-roles-to-their-respective-service-accounts .step madcap:autonum="Step 6: "}
+
+In this step, you bind the roles that you created earlier to their
+respective service accounts by creating a new principal per service
+account, and assigning the relevant role to the respective principal.
+
+1.  In the
+    {% $sca-project-variables.GoogleCloud %}
+    console navigate to [IAM & Admin]{.Emphasis} \> [IAM]{.Emphasis}.
+
+2.  Click [Select organization]{.Emphasis}, and select the organization
+    (top level) - don\'t select a project.
+
+3.  One at a time, for each service account, click
+    [+GRANT ACCESS]{.Emphasis} at the top and enter the following
+    information:
+
+    +-----------------------------+---------------------------------------+
+    | Field                       | Value                                 |
+    +=============================+=======================================+
+    | [New principals]{.Emphasis} | The email address of the service      |
+    |                             | account (as noted in the previous     |
+    |                             | step)                                 |
+    +-----------------------------+---------------------------------------+
+    | [Select a role]{.Emphasis}  | - For                                 |
+    |                             |   cem-servic                          |
+    |                             | e-account: [CustomCEMRole]{.Emphasis} |
+    |                             |                                       |
+    |                             | - For                                 |
+    |                             |   sca-servic                          |
+    |                             | e-account: [CustomSCARole]{.Emphasis} |
+    +-----------------------------+---------------------------------------+
+
+4.  Save your changes. The new principal is listed with the new role in
+    the organization\'s [IAM]{.Emphasis} page.
+
+## []{#Generate}Generate a finalValue value for each service account {#generate-a-finalvalue-value-for-each-service-account .step madcap:autonum="Step 7: "}
+
+In this step you encode the each service account\'s key to generate a
+[finalValue]{.Emphasis}, which you\'ll need later in this procedure.
+
+1.  From the
+    {% $sca-project-variables.GoogleCloud %}
+    console, open the Google Cloud Shell.
+
+    ::: important
+    - If you are prompted to authorize the Cloud Shell, authorize it.
+
+    - Wait until the shell is fully initialized.
+    :::
+
+2.  One at a time, for each service account:
+
+    1.  In the
+        {% $sca-project-variables.GoogleCloud %}
+        Shell, upload the JSON file that you created when you created
+        the service account in `<xref href="#Create">`{=html}Create the
+        service accounts`</xref>`{=html}. (For details on uploading
+        files to the cloud shell, see the [Google Cloud
+        docs](https://cloud.google.com/shell/docs/editor-overview#upload_and_download_files).)
+
+    2.  Run the following command which generates a Base64-encoded value
+        of the key from the uploaded JSON file and saves it in a .txt
+        file:\
+
+        ::: code
+            base64 -w 0 <filename> > <base64-encoded destination file>
+        :::
+
+        For example:
+
+        - To encode the
+          {% $cc_product_vars.CV-full %}
+          service account key, run:
+
+          ::: example
+              base64 -w 0 downloaded-cv-sa-key.json > base64encoded-cv.txt
+          :::
+
+        - To encode the
+          {% $cc_product_vars.SCA-full %}
+          service account key, run:
+
+          ::: example
+              base64 -w 0 downloaded-sca-sa-key.json > base64encoded-sca.txt
+          :::
+
+    3.  Download the saved .txt files to your local file system.
+        [You\'ll need them in the next step.]{.Emphasis}
+
+## Onboard the Google Cloud organization in Cloud Visibility {#onboard-the-google-cloud-organization-in-cloud-visibility .step madcap:autonum="Step 8: "}
+
+Now that the service accounts and roles for
+{% $cc_product_vars.CV-full %}
+and
+{% $cc_product_vars.SCA-full %}
+are configured in the
+{% $sca-project-variables.GoogleCloud %}
+console, you are ready to onboard the
+{% $sca-project-variables.GoogleCloud %}
+organization to
+{% $cc_product_vars.CV-full %}.
+
+1.  In
+    {% $cc_product_vars.ISP-full %},
+    navigate to
+    {% $cc_product_vars.CV-full %}.
+
+2.  Go to [Settings]{.Emphasis} \> [Platform Management]{.Emphasis},
+    select the [GCP]{.Emphasis} tile, and click [Add
+    workspace]{.Emphasis}.
+
+3.  Select [Onboard new organization]{.Emphasis} and click
+    [Add]{.Emphasis}. The [New GCP organization]{.Emphasis} page opens.
+
+4.  Under [Organization details]{.Emphasis}, provide your
+    {% $sca-project-variables.GoogleCloud %}
+    organization\'s ID and the ID of the project where you created all
+    the
+    {% $cc_C_CyberArk.CompanyName %}
+    resources in the previous steps. Get these details from the Google
+    Cloud console as follows:
+
+    1.  In the Google Cloud console, select the organization, copy
+        the ID from the [ID]{.Emphasis} column, and paste it into the
+        [Organization ID]{.Emphasis} field in the [New GCP
+        organization]{.Emphasis} page in
+        {% $cc_product_vars.CV-full %}.
+
+    2.  In the Google Cloud console, select the project, copy the ID
+        from the [ID]{.Emphasis} column, and paste it into the [Project
+        ID]{.Emphasis} field in the [New GCP organization]{.Emphasis}
+        page in
+        {% $cc_product_vars.CV-full %}.
+
+5.  Under **Configuration**:
+
+    1.  Skip the first two steps.
+
+    2.  In the third step, provide the
+        {% $cc_product_vars.CV-full %}
+        and
+        {% $cc_product_vars.SCA-full %}
+        \'[finalValue]{.Emphasis} values. To obtain these values, open
+        each of the base64encoded-\<xx\> .txt files that you downloaded
+        in `<xref href="#Generate">`{=html}Generate a finalValue value
+        for each service account`</xref>`{=html} above. Populate each
+        [finalValue]{.Emphasis} field with the Base64-encoded key from
+        the respective .txt file.\
+
+## Discover the workspace {#discover-the-workspace .step madcap:autonum="Step 9: "}
+
+At the bottom of the New GCP organization page, click [Start
+Discovery]{.Emphasis}.
+
+{% $cc_product_vars.CV-full %}
+starts to discover the organization. Depending on the size of your
+organization, this might take some time.
+
+Refresh the [Settings \> Platform management \> GCP]{.Emphasis} page to
+check that organization onboarded as expected.
+
+## Clean up sensitive files {#clean-up-sensitive-files .step madcap:autonum="Step 10: "}
+
+::: important
+This is ensures that all sensitive data used in this procedure is
+deleted from your machine. We strongly recommend that you complete this
+step.
+:::
+
+In this step, you delete the raw and encoded key files that you
+downloaded for the onboarding procedure.
+
+In
+{% $sca-project-variables.GoogleCloud %}
+shell, run the following command for each sensitive file:
+
+::: code
+    rm <filename>
+:::
+
+where \<filename\> matches the key file, for example:
+
+::: example
+    rm base64encoded-cv.txt
+:::

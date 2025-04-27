@@ -1,0 +1,41 @@
+:::: {madcap:conditions="cc_C_CyberArk.InternalOnly" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"}
+#### Instructions for TWs
+
+As of FLT 8.3.0, your product\'s home page workflow image and
+corresponding image map reside in this snippet
+(Resources\\Snippets\\\_TopNav_Custom\\cc_C_HomePageWorkflow.flsnp),
+which is called by the home page (cc_home.htm).
+
+- This snippet should contain the following elements:
+
+  - The home page workflow image for your project
+
+  - A corresponding image map
+
+- You are responsible for your own image map
+
+- Due to a Flare limitation, you can\'t update the image map directly
+  inside this snippet. So you need to set up / update the source for the
+  workflow image and corresponding image map in an .htm file located
+  parallel to this snippet, e.g.
+  (Resources\\Snippets\\\_TopNav_Custom\\myproduct-workflow-source.htm,
+  then copy the code over to this snippet.
+
+::: ProcedureHeading
+To set up / update this snippet:
+:::
+
+1.  If this is the first time you are setting up the workflow for your
+    project, open [cc_T_workflow_source.htm]{.Emphasis}, located
+    parallel to this file. If you already have a workflow source file,
+    open that source file.
+
+2.  Set up the workflow and image map as described in the source file,
+    then come back to this snippet file.
+
+3.  Switch to the Text Editor, and just above this file\'s closing
+    `</body>` tag, paste the `map` and workflow container `div` elements
+    that you copied from your source file.
+
+4.  Save the snippet.
+::::

@@ -1,0 +1,41 @@
+# Create policies for access
+
+This topic describes how to create and manage policies that provide
+users with just-in-time access to assets.
+
+## Create a policy {#create-a-policy .stepReset madcap:autonum="Step 1: "}
+
+Go to the [Access policies]{.Emphasis} page, click [Create new
+policy]{.Emphasis} and select [Google Cloud]{.Emphasis}.
+
+## Specify the general details {#specify-the-general-details .step madcap:autonum="Step 2: "}
+
+## Select the cloud roles {#select-the-cloud-roles .step madcap:autonum="Step 3: "}
+
+In this step, you choose the cloud roles you want to include in the
+policy . You can filter by package to help limit the number of cloud
+roles you see in the table.
+
+1.  From the list on the left, select a Google Cloud resource:
+    organization, folder, or project.
+
+2.  In the list of roles, select the roles you want to include in the
+    policy:
+
+    - To inspect the permissions in a role, select [More
+      actions]{.Emphasis} (![](../images/icon_ellipsis-v.png){.icon}) \>
+      [Role details]{.Emphasis}.
+
+    - Mark the check boxes for the cloud roles you want to include in
+      this policy and click [Select]{.Emphasis}.
+
+      ::: note
+      To enforce least privilege and reduce your risk exposure, you
+      should use only predefined or custom roles in your production
+      environment.
+      :::
+
+## Define the access rules {#define-the-access-rules .step madcap:autonum="Step 4: "}
+
+In this step, you select members for the policy, and specify the access
+rules to be applied to the policy.

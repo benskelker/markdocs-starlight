@@ -1,0 +1,1517 @@
+---
+title: Flare Templates - Change Log
+---
+
+# Flare Templates (FLT) - Version & Changelog
+
+## Version 8.3.7 {#version-8.3.7 .new-item}
+
+Released: Dec 12, 2024
+
+See [FLT
+Updates](https://cyberark365.sharepoint.com/sites/TechnicalWriters/_layouts/15/Doc.aspx?sourcedoc=%7B50b6e2f8-37c9-4f62-ba8a-302479fefbcf%7D&action=edit&wd=target%28Flare%20Templates.one%7Cfb3c1105-59af-4ecb-a5bd-e2938baa2182%2FFLT%20upgrade%20%E2%80%93%20change%20log%20and%20post%20upgrade%20tasks%7C842eca10-0a79-42cc-a73f-4ee63fbe36c3%2F%29&wdorigin=703).
+
+## Version 8.3.6
+
+Released: Dec 02, 2024
+
+See [FLT
+Updates](https://cyberark365.sharepoint.com/sites/TechnicalWriters/_layouts/15/Doc.aspx?sourcedoc=%7B50b6e2f8-37c9-4f62-ba8a-302479fefbcf%7D&action=edit&wd=target%28Flare%20Templates.one%7Cfb3c1105-59af-4ecb-a5bd-e2938baa2182%2FFLT%20upgrade%20%E2%80%93%20change%20log%20and%20post%20upgrade%20tasks%7C842eca10-0a79-42cc-a73f-4ee63fbe36c3%2F%29&wdorigin=703).
+
+## June 10, 2024
+
+- Updated FLT version in TopNav variables file to 8.1.0
+
+- Updated call to CORA
+
+## \[May 24, 2024\] - Version 8.0.0
+
+Tested on MadCap Flare 2023 r2 and 2024
+
+- Updated FLT version in TopNav variables file to 8.0.0
+
+- \"HelpBot\" condition to enable/disable helpbot ( DOC-10457)
+
+- Lists in admonitions - improvements:
+
+  - Fixed large space between bullets in admons (DOC-10274)
+
+  <!-- -->
+
+  - When there in an admon in a numbered list, and the admon contains a
+    numbered list, the numbered list restart numbering since (DOC-10772)
+
+- Improved microcontent look and feel (DOC-9830)
+
+- Docs Portal updates:
+
+  - Updated look and feel of listed ISPSS services (icons are colored)
+    (DOC-10325)
+
+  - Updated DPA\'s blurb (en and ja) (DOC-10548)
+
+- Added links to Community and Docs portal from the Flare search results
+  page (DOC-10005)
+
+- Fixed issue with ITT (right-hand navigation) not appearing in builds
+  with 2024. (DOC-10928)
+
+- Restricted access topic: Added The People\'s Republic of China
+  (DOC-10881)
+
+- Fixed Enlarge icon on img.Enlarge and img.EnlargeNarrowImage
+  (DOC-10945 and DOC-11039)
+
+- Updated home page flow (DOC-9980)
+
+- New product onboarding: \"Access to targets\" and \"Administration\" -
+  for development only (hidden from production) (DOC-10787 and
+  DOC-10785)
+
+## \[April 2, 2024\] - Version 7.6
+
+Tested on MadCap Flare 2023 r2 only
+
+- Updated FLT version in TopNav variables file to 7.6
+
+- New help bot, \'Noa\', introduced (DOC-9988 and DOC-10385)
+
+- Added \"Responsible AI policy\" topic to Resources\\FrontMatter
+  (DOC-10062)
+
+- Added new cc_ContactSupport snippet \"contact CyberArk Support\"
+  (DOC-9843)
+
+- Added support for headings under tabs (DOC-9958)
+
+  Note the following limitations:
+
+  - The first heading in all tabs must be an h2 (subsequent headings can
+    be different in each tab)
+
+  - If you add a header in a tab, you can\'t add headers that are not in
+    nested tabs to the file
+
+- Added span.preview tag for \"Preview\"(alpha/beta/ER)-type content
+  (DOC-9962)
+
+- For versioned products, fixed issue with version switching taking you
+  to Home page (DOC-9606)
+
+- \"Contact the docs team\" widget updates:
+
+  - Improved design (DOC-9138)
+
+  - Adobe analytics tracking (DOC-10324)
+
+- Docs portal: Updated product folder names to new folder names (en and
+  ja) (also done in Our products - en and ja) - (DOC-9747)
+
+- Onboarded new product: Secure Browser (DOC-10264)
+
+- SearchUnify - updated Docs portal master page with upgraded Search
+  Unify URLs (DOC-9966)
+
+- Target build performance improvements (DOC-9486)
+
+- Swagger template - Fixed misinformation (typo) (DOC-9416)
+
+- Swagger master page - Fixed ITT for swagger pages (DOC-9990)
+
+- When pressing Enter after FooterHeading and FooterBody, a new
+  FooterBody tag now follows (DOC-9744)
+
+## \[January 25, 2024\] - Version 7.5/7.5.1
+
+Tested on MadCap Flare 2023 r2 only
+
+- Updated FLT version in TopNav variables file to 7.5.1
+
+- Docs Portal:
+
+  - Fixed Cloud Privilege Security description in ja portal (DOC-8793)
+
+  - Changed the structure of the ISPSS section going down the right side
+    (en and ja) (DOC-8753)
+
+  - Added ISPSS Deployment and ISPSS Access (en and ja) (DOC-8659,
+    DOC-8660) + (DOC-9299(FLT 7.5.1))
+
+  - Credential Providers help set folder changed from
+    [AAM-CP/Latest]{.Emphasis} to
+    [credential-providers/latest]{.Emphasis} - links updated (en and ja)
+    (DOC-9013)
+
+- Our Products menu:
+
+  - Added ISPSS Deployment and ISPSS Access (en and ja) (DOC-8823) +
+    (DOC-9299(FLT 7.5.1)
+
+  - Credential Providers help set folder changed from
+    [AAM-CP/Latest]{.Emphasis} to
+    [credential-providers/latest]{.Emphasis} - links updated (en and ja)
+    (DOC-9013)
+
+  - Removed Our Product menu source files from tdocs/flare-assets repo;
+    moved to tdocs/infracstructure repo
+
+- ISPSS Deployment and ISPSS Access conditions added to cc_product_conds
+  (DOC-8921)
+
+- Versioned products: Fixed issue where switching the version from a
+  topic took you to the Home page in another version instead of to the
+  same topic (DOC-8863)
+
+- Fixed issue causing multitudes of 404s in backgroud (DOC-9016)
+
+- Fixed issue with h3s under h2 in right navigation (DOC-9250)
+
+## \[December 19, 2023\] - Version 7.4
+
+Tested on MadCap Flare 2023 r2 only
+
+- Updated FLT version in TopNav variables file to 7.4
+
+- Home page workflow fixes:
+
+  - Identity Admin (DOC-8661)
+
+  - Conjur Enterprise and OSS (DOC-8543)
+
+- Fixed missing images in cc_C footer snippet instructions (no ticket)
+
+- For help sets with versions: Fixed issue where case sensitivity in
+  product name in URL affected Version dropdown (DOC-8728)
+
+- Created standalone 404 page; moved old page into Abandoned folder
+  (DOC-7827)
+
+- Removed anchors on Doc portal page h2s (by UI/UX insistance)
+  (DOC-8745)
+
+## \[November 30, 2023\] - Version 7.3
+
+Tested on MadCap Flare 2023 r2 only
+
+- Updated FLT version in TopNav variables file to 7.3
+
+- New code example snippet available (DOC-8069)
+
+- New topic template for the Documentation Changelog ([Resources \>
+  Topic-templates \> cc_T_doc-changelog]{.Emphasis}) (DOC-7572)
+
+- New Variables and Conditions:
+
+  - Variable: Tenant management console (DOC-8045)
+
+  - Conditions:
+
+    - New conditions in [TheShell]{.Emphasis} for importing DPA, Remote
+      Access, and PCloud function-specific content (DOC-8157)
+
+    - [TopNav\>ProdTheme-wpm]{.Emphasis}) (DOC-8154)
+
+- Inline instructions added to:
+
+  - [cc_C_HomeTiles]{.Emphasis} snippet - Added note about blurb being
+    limited to 2 lines (approx 85 characters) - Available in new Flare
+    projects only (DOC-8281)
+
+  - [cc_T_swagger-topic]{.Emphasis} template - Added note to notify
+    translation coordinator to include the file in \"Do not translate\"
+    list (DOC-8116)
+
+- Homepage workflow updates:
+
+  - Secrets Hub (DOC-8000)
+
+  - EPM (DOC-7802)
+
+  - WPM - NEW! (DOC-7886)
+
+  - Identity (DOC-8338)
+
+- Fixed work in SCA blurb in Docs Portal (English only) (DOC-8209)
+
+- URLs updated in \"Our Product\" menus (en and ja) and Docs portal (en
+  and ja): (DOC-8159)
+
+  - Conjur Enterprise (conjur-enterprise/latest)
+
+  - Conjur Cloud (conjur-cloud/latest)
+
+- Home page highlights - improved visibility (DOC-8044)
+
+- Suppressed home page workflow image in Safari (DOC-7507)
+
+- Created new variable, [TopNav \> ReviewLabel]{.Emphasis}, for labeling
+  your review output (DOC-8021)
+
+  ![](../Images/flt-internal/flt-reviewlabel.png){.medium}
+
+- Beta for Privilege Cloud: New component selector for landing page
+  (DOC-8049)
+
+- Updates for SU sanity testing: (DOC-8327)
+
+  - Variables:
+
+    - Replaced [TopNav\>SearchUnifyURL]{.Emphasis} variable with
+      [TopNav\>SUStylesheet]{.Emphasis} variable which calls the
+      relevant stylesheet for production vs SU sandbox environments
+
+    - Added new [TopNav\>PortalPrefixPath]{.Emphasis} variable value
+      ([/su-sanity]{.Emphasis}) for SU sanity testing (DOC-8239)
+
+  - Conditions: Added new conditions for SU production vs SU sandbox
+    ([TopNav\>SU-production/SU-staging]{.Emphasis}) - for Prod targets
+    vs SU sanity targets. When SearchUnify=Incuded, one of these must be
+    included and the other excluded.
+
+## \[October 25, 2023\] - Version 7.2.1
+
+Tested on MadCap Flare v2022 r3; 2023 r2
+
+- Updated FLT version in TopNav variables file to 7.2.1
+
+- Portal: Cloud Security - Switched position of SCA and CEM - SCA now
+  first (DOC-7576)
+
+- Our Products menu: Cloud Security - Switched position of SCA and CEM -
+  SCA now first (DOC-7576)
+
+- More style sheet adjusments (bullets and backgroud images) to support
+  Flare 2023 r2 (DOC-7847)
+
+## \[October 19, 2023\] - Version 7.2
+
+Tested on MadCap Flare v2022 r3; 2023 r2
+
+- Updated FLT version in TopNav variables file to 7.2
+
+- New [div]{.Emphasis} class for content that should not be translated:
+  [div.not-for-translation]{.Emphasis}(for POC at this point) (DOC-7373)
+
+- New [p]{.Emphasis} classes for numbering rows in tables: (DOC-7298)
+
+  - [p.RowNumberReset]{.Emphasis} for the first number
+
+  - [p.RowNumber]{.Emphasis} for the subsequent numbers
+
+- Onboarding of WPM standalone:(DOC-7528)
+
+  - New conditions for WPM ([WPM]{.Emphasis} and [not-WPM]{.Emphasis})
+    in cc_product_conds
+
+  - Updated links in Portal and Our products
+
+- Updated the URL for the Tech Community in our footer (DOC-7452)
+
+- Updated home page workflows for:
+
+  - SCA (DOC-7455)
+
+  - Identity Compliance (DOC-7694)
+
+- Updated the [cc_PanZoomImage]{.Emphasis} snippet with instructions for
+  use (DOC-7419)
+
+- Portal: Category headings now have a copy anchor (DOC-7314)
+
+- Fix to remove example admonition that shows in swagger API (DOC-7577)
+
+- Style sheet adjusments (bullets and backgroud images) to support Flare
+  2023 r2
+
+## \[Sep 4, 2023\] - Version 7.1.2
+
+- Updated FLT version in TopNav variables file to 7.1.2
+
+- Conditioned Conjur Cloud homepage workflow image map (DOC-7433)
+
+## \[Sep 3, 2023\] - Version 7.1.1
+
+- Updated FLT version in TopNav variables file to 7.1.1
+
+- Updated Audit homepage workflow (DOC-6413)
+
+- Conditioned Secrets Hub-(PAM-SH) homepage workflow image maps
+  (DOC-7433)
+
+## \[Aug 29, 2023\] - Version 7.1
+
+- Updated FLT version in TopNav variables file to 7.1
+
+- Fixed case of identity.svg file - (DOC-6909)
+
+- Home page workflows
+
+  - New: Conjur Cloud (DOC-6968)
+
+  - Updated: Conjur Enterprise - (DOC-6969)
+
+  - Updated Audit - (DOC-6413)
+
+- Removed Product-Doc/OnlneHelp from all paths and variable; and from
+  Products menus (en and ja) (DOC-6909; DOC-7228)
+
+- Updated ISPSS variables in [cc_product_vars]{.Emphasis}: (DOC-6804)
+
+    cc_product_vars variable   Old definition               New definition
+    -------------------------- ---------------------------- -----------------------------------------------------
+    [ISP-full]{.Emphasis}      Identity Security Platform   CyberArk Identity Security Platform Shared Services
+    [ISP-short]{.Emphasis}     ISP                          ISPSS
+
+- Updated ISPSS text on portal page; work included updates to
+  cc_FLT_products variable (DOC-6855)
+
+- New \"TheShell\" condition for Audit imports (DOC-6744)
+
+- Updated link to CEM ja docs to point to CEM-SharedServices ja.
+  (DOC-6899)
+
+- Restructured Our Products menu into three columns (DOC-7217; DOC-7266)
+
+## \[July 5, 2023\] - Version 7.0.1
+
+- Updated FLT version in TopNav variables file to 7.0.1
+
+- Updated Swagger scripts to support OpenAPI 3.1.0
+
+## \[July 4, 2023\] - Version 7.0
+
+- Updated FLT version in TopNav variables file to 7.0
+
+- Fixes to home page (left alignment of workflow texts) - (DOC-6325)
+
+- Changes to template for Our Products menu functionality (English:
+  DOC-6039; JA: DOC)
+
+- Fixed issue with icon in Important admon - (case sentitivity)
+  (DOC-6522)
+
+- Product LP workflows fixes and updates: SCA (DOC-6507); Secrets Hub
+  (DOC-6424), DPA (DOC-6257; DOC-6219); CP (DOC-5961)
+
+- Swagger template files - housekeeping: renamed to match FLT naming
+  conventions (DOC-6521)
+
+- New: Japanese docs for SCA, ISI (DOC-6632) and DPA (DOC-6612) -
+  Updated links from JA Product menu and JA portal page to the new JA
+  docs
+
+- \"Send feedback\" link infrastructure - changed text into variable
+  with value to \"Contact the docs team\" (no DOC ticket)
+
+## \[June 8, 2023\] - Version 6.5.1
+
+- Updated FLT version in TopNav variables file to 6.5.1
+
+- Added (SCA) home page workflow
+
+- Added home page workflow
+
+## \[June 4, 2023\] - Version 6.5
+
+- Updated FLT version in TopNav variables file to 6.5
+
+- Added Secrets Hub back into Portal and Our Products for GA - (en and
+  ja) (no ticket)
+
+- Updated SCA and Cloud Security blurbs on Portal (en and ja) (DOC-6172)
+
+- \"Restricted access\" topic update (DOC-6274)
+
+- Fixed conditioning of Privilege Cloud home page workflows (DOC-6283)
+
+- Added metatag for Adobe Analytics (DOC-5417)
+
+## \[May 9, 2023\] - Version 6.4.1
+
+- Updated FLT version in TopNav variables file to 6.4.1
+
+- Secrets Hub GA postponed. Revereted changes made for DOC-5677
+  (DOC-6067)
+
+## \[May 7, 2023\] - Version 6.4.0
+
+- Updated FLT version in TopNav variables file to 6.4.0
+
+- New features and enhancements:
+
+  - New template snippets:
+
+    - (DOC-5804) [cc_StandardTable]{.Emphasis}, for easly inserting a
+      Standard style table
+
+    - (no ticket) [cc_PanZoomImage]{.Emphasis}, for creating a
+      zoomin/zoomout image with the same behaviour as the workflow of
+      each product\'s doc landing page
+
+    To use, insert the snippet and convert to text.
+
+  - (no ticket) Appended cc\_ to template snippets so that they are
+    easily recognisable as template snippets:
+
+    - cc_NextStep
+
+    - cc_SeeAlso
+
+    - cc_Tabs
+
+    - cc\_ WistiaVideoGallery
+
+    - cc_WistiaVideoThumbnail
+
+    - cc_Admon\*
+
+    To use, insert the snippet and convert to text.
+
+  - (DOC-4209) - FLT files - internal spring cleaning (\"2022\" Part 1)
+
+  - (DOC-5878) Product Home page: For mobile or if there\'s no workflow
+    the workflow image is not displayed. In these cases the \"Learn more
+    about \<prod\>\" heading before the Home page tiles is hidden in the
+    output
+
+- Bug fixes:
+
+  - Doc landing page issues:
+
+    - (DOC-5595) Fixed bug where the arrow in home page tiles overlaid
+      the wrapped description
+
+    - (DOC-5594) Conjur OSS home page fixes
+
+    - (DOC-5597) Workflow image too big - fixed
+
+    - (DOC-5683) Toggles design fixed
+
+- Product-related issues
+
+  - Products released to GA added to Docs portal (en&ja) and to Our
+    Products menu:
+
+    - SCA (DOC-5985)
+
+    - Conjur Cloud (DOC-5879)
+
+    - Secrets Hub (DOC-5677)
+
+  - (DOC-5940) \"Cloud Privilege Security\" changed to \"Conjur
+    Security\"
+
+  <!-- -->
+
+  - (DOC-5942) PCloud JA now link redirected to PCloud SS (Docs portal +
+    products menu)
+
+  - (DOC-5957) Identity Admin now also JA. Updated links from JA Docs
+    portal and products menu to point to ja URL
+
+  - (DOC-5952) Changed short denfition for Identity Flows from \"Flows\"
+    to \"Identity Flows\"
+
+## \[Apr 2, 2023\] - Version 6.3.1
+
+- Updated FLT version in TopNav variables file to 6.3.1
+
+- Includes tweak on 6.3 for PCloud flavors of homepage workflows.
+
+## \[Mar 30, 2023\] - Version 6.3
+
+- Updated FLT version in TopNav variables file to 6.3
+
+- Enhancements:
+
+  - New product landing page design to include high-level workflows!!
+    (lots of tickets)
+
+  - All external links now automatically open in new tab (no ticket)
+
+  - Admons: New look&feel; New \"Important\" admon (DOC-4688)
+
+  - Template topics for \"What is \<product\>?\", Release notes (on-prem
+    vs saas), What\'s new (on-prem vs saas), regular topics AKA \"inner
+    topics\" (DOC-5156)
+
+    See the [Style
+    guide](/styleguide/latest/content/twprocesses/template-topics.htm)
+    for more information about setting each of these up.
+
+  - Front matter topics:
+
+    - [Restricted access]{.Emphasis} topic added to
+      [Content\\Resources\\FrontMatter]{.Emphasis} (DOC-5156)
+
+    - [Data Protection FAQs ]{.Emphasis}- Link to site now opens in new
+      tab(DOC-4885)
+
+    See the [Style
+    guide](/styleguide/latest/content/twprocesses/template-topics.htm)
+    for more information about setting each of these up.
+
+- Product conditions ([cc_product-cond]{.Emphasis}): Added
+  [not-ISP-Services]{.Emphasis} (DOC-5459)
+
+- Bug fixes:
+
+  - Left navigation: Fixed issue where long heading was wrapping
+    strangely (DOC-5142)
+
+  - Right navigation: Removed separator line above \"In this topic\" and
+    aligned ITT heading with \"Show/Hide navigation\" button (DOC-5144)
+
+  - Right navigation: Fixed issue where right navi bar was not hiding
+    because of the \"was this helpful\" (DOC-5143)
+
+  - Right navigation: Fixed issue where Send feedback widget was sitting
+    on top of SU widget (DOC-5501) - used part of new Send feedback
+    design (DOC-5415) as a temporary fix for this
+
+  - EOL policy link in footer updated to point to End-of-LifePolicy.htm
+    (DOC-5542)
+
+  - \"Build\" line in JA output - changed to English (no ticket)
+
+- [Our Products menu:]{.Emphasis}
+
+  - [EPM]{.Emphasis} in \"Our Products\" menu moved into separate
+    \"pillar\" under CPS (DOC-5232)
+
+  - [JA]{.Emphasis}: Links to CP and CEM fixed to point to \"ja\"
+    (DOC-5647)
+
+- [Docs portal updates:]{.Emphasis}
+
+    ---- -------------------------------------------------------------------------------------------------------
+    EN   Moved EPM out of Privilege Access and under its own pillar \"Endpoint Privilege Security\" (DOC-5232)
+    JA   Moved EPM out of Privilege Access and under its own pillar \"Endpoint Privilege Security\" (DOC-5232)
+    ---- -------------------------------------------------------------------------------------------------------
+
+- [Miscellaneous:]{.Emphasis}
+
+  - cc_menudata files - removed - These now live in the Legal project
+    (no ticket)
+
+## \[Feb 6, 2023\] - Version 6.2
+
+- Updated FLT version in TopNav variables file to 6.2
+
+- Build log improvements (DOC-4842)
+
+- Created style for table captions (DOC-4871)
+
+- [Template conditions:]{.Emphasis}
+  - New [TheShell]{.Emphasis} condition set for import-related
+    conditions(DOC-4911)
+  - New [ISP-Services]{.Emphasis} condition in
+    [cc_product_conds]{.Emphasis} condition set for content related to
+    all ISP-Services but not for Identity. (DOC-4958)
+
+- [Data Protection FAQs ]{.Emphasis}- Link to site now opens in new
+  tab(DOC-4885)
+
+- [Our Products menu:]{.Emphasis}
+
+  - [CEM ]{.Emphasis}in \"Our Products\" menu now points to CEM Shared
+    Services (DOC-4749)
+
+  - [Connector Management]{.Emphasis} - new entry under Shared Services
+    (DOC-4896)
+
+- [Docs portal updates:]{.Emphasis}
+
+  +----+----------------------------------------------------------------+
+  | EN | Added tiles for:                                               |
+  |    |                                                                |
+  |    | - [Connector Management]{.Emphasis} (under Shared              |
+  |    |   Services) (DOC-4896)                                         |
+  |    |                                                                |
+  |    | - [Workforce Password Management]{.Emphasis} (under Access and |
+  |    |   Identity Mngmnt) (DOC-4893)                                  |
+  +----+----------------------------------------------------------------+
+  | JA | - Translated HERO (DOC-4912)                                   |
+  |    |                                                                |
+  |    | - Added tiles for:                                             |
+  |    |                                                                |
+  |    |   - [Connector Management]{.Emphasis} (under Shared Services)  |
+  |    |     (DOC-4896)                                                 |
+  |    |                                                                |
+  |    |   - [Workforce Password Management]{.Emphasis} (under Access   |
+  |    |     and Identity Mngmnt) (DOC-4893)                            |
+  +----+----------------------------------------------------------------+
+
+- [Housekeeping:]{.Emphasis} Archived post-buildevent scripts:
+  [genSitemap.js]{.Emphasis} and [postBuildFixSec]{.Emphasis} (DOC-4835)
+
+## \[January 15, 2022\] - Version 6.1
+
+- Updated FLT version in TopNav variables file to 6.1
+
+- Bug fix: Added word wrap for div admons styles for long strings
+  (DOC-4585)
+
+- Enhancements:
+
+  - Added screen scroll for mobile and tablet and added Show/Hide ITT
+    functionality to allow for more reading space on smaller screens
+    (DOC-4277)
+
+  - Added h2.step styles (DOC-3813)
+
+  - Reduced padding around code text and after \"external\" hyperlink.
+    (DOC-4617)
+
+- Data protection FAQs: (DOC-4553)
+
+  - Added template file with instructions
+
+  - Added to TopNav TOC template (cc_T_TopNav_TOC )
+
+- Docs portal updates: 
+
+  (DOC-4447/4436/4462)
+
+  +----+----------------------------------------------------------------+
+  | EN | - Updated Share Services blurb with \"(ISPSS)\"                |
+  |    |                                                                |
+  |    | - Added section above Shared Services for \"Get started with   |
+  |    |   ISPSS\"                                                      |
+  |    |                                                                |
+  |    | - Updated link to CEM docs to point to CEM- Shared Services    |
+  |    |   (change made in EN portal only) (DOC-4680)                   |
+  +----+----------------------------------------------------------------+
+  | JA | - Changed SWS link to point to SWS ja docs                     |
+  |    |                                                                |
+  |    | - Updated Share Services blurb with \"(ISPSS)\"                |
+  |    |                                                                |
+  |    | - Added section above Shared Services \"Get started with       |
+  |    |   ISPSS\"                                                      |
+  +----+----------------------------------------------------------------+
+
+## \[December 11, 2022\] - Version 6.0
+
+- Updated FLT version in TopNav variables file to 6.0
+
+- [New]{.Emphasis} \"interim\" design for docs (DOC-4173) - Covers Docs
+  Portal and Phase 1 of Docs landing pages and inner pages (header
+  + footers) look and feel (+ fixed bugs that came up during
+  implementation - DOC-4174; DOC-4173, DC-4262, DOC-4177. DOC-4211,
+  DOC-4270)
+
+- [Onboarded products:]{.Emphasis}
+
+  - Connector management - vars, conditions, theme, Docs portal
+    (hidden-en ad ja - blurb [not]{.Emphasis} provided), Our Products
+    menu (hidden) (DOC-3678)
+
+  - SWS - vars, conditions, theme, Docs portal (en and ja), Our Products
+    menu (DOC-3685)
+
+- JA Portal page: JA translation for SWS and Flows
+
+- Image styles changed to pixels rather than percentage (DOC-3927)
+
+- Left navigation Hide/Show button text updated to Hide/Show navigation
+  (DOC-4181)
+
+- img.icon fixed to resize width proportionately to 20px height (no
+  ticket)
+
+- Fixed bullet alignment regression (DOC-4032)
+
+- Fixed PAM-full and PAM-short variable definitions (DOC-4280)
+
+## \[November 20, 2022\] - Version 5.3.4
+
+- Updated FLT version in TopNav variables file to 5.3.4
+
+- Added new image size classes (XS/S/M/L/XL) (DOC-3927)
+
+- Wistia snippets: (DOC-3798, DOC-3799)
+
+  - Deprecated [WistiaVideoIcon]{.Emphasis} snippet as we do not have a
+    use case for this style
+
+  - Changed name of [WistiaVideo]{.Emphasis} snippet to
+    [WistiaVideoGallery]{.Emphasis} to indicate that this style should
+    be used for a Video Gallery page
+
+- Created a new product variable set for template usage only (DOC-3800)
+
+- Fixed bullet alignments (DOC-3924)
+
+- Fixed issue with alignment of CyberArk logo in Docs Portal (DOC-3378)
+
+- Removed [For PAS]{.Emphasis} condition from cc_C_CyberArk condition
+  set (DOC-3682)
+
+- Created redirect topic for gated staging Docs portal (DOC-3440)
+
+- Released Identity Flows on Docs Portal and Our Products (DOC-4024/5)
+
+## \[September 28, 2022\] - Version 5.3.3 (Patch)
+
+- Updated FLT version in TopNav variables file to 5.3.3
+
+- Fixed issue where What\'s new megaphone in masthead was appearing
+  selected (DOC-3716)
+
+## \[September 20, 2022\] - Version 5.3.2
+
+- Updated FLT version in TopNav variables file to 5.3.2
+
+- [Our Products]{.Emphasis} menu: Changed from 4 columns to 5 columns
+  (DOC-3620); white background (DOC-3644)
+
+- CyberArk logo - now links to Docs portal (DOC-3631)
+
+- Onboarded products:
+
+  - Secure Cloud Access (SCA) - vars, conditions, theme, Docs portal
+    (hidden-en ad ja - blurb not included), Our Products menu (hidden)
+    (DOC-3523)
+
+  - Identity Compliance - vars, conditions, theme, Docs portal (en&ja),
+    Our Products menu (DOC-3521)
+
+  - Identity Flows - vars, conditions, theme, Docs portal (hidden), Our
+    Products menu (hidden) (DOC-3532)
+
+  - Secrets Hub - Docs portal (hidden), Our Products menu (hidden)
+    (DOC-3596)
+
+  - Conjur Cloud - Docs portal (hidden), Our Products menu (hidden)
+    (DOC-3595)
+
+- Fixed incorrect behavior of Go to Docs Portal in mobile (DOC-3601)
+
+- Added [ISP-short]{.Emphasis} variable in cc_product_vars (DOC-3667)
+
+## \[September 4, 2022\] - Version 5.3.1 (patch)
+
+- Updated FLT version in TopNav variables file to 5.3.1
+
+- Fixes:
+
+  - Fixed issue where version menu was coming out horizontally
+
+  - Fixed issue in Our Products where there was a blue background behind
+    the Secrets Manager products
+
+## \[August 18, 2022\] - Version 5.3.0
+
+- Updated FLT version in TopNav variables file to 5.3.0
+
+- [What\'s new:]{.Emphasis}
+
+  - Our Products menu - Landscape design
+
+  - Our Products menu - Added SWS under Access (en and ja)
+
+  - Improved \'instruction\' in Tabs snippet
+
+  - New div class for wide tables ([div.table-scroll]{.Emphasis}) - adds
+    scroll to bottom of table. This fixes the following issues:
+
+    - Table not fully visible on mobile
+
+    - Table overflowing into \"in this topic\" area
+
+  - What\'s new megaphone can now stand alone, without the Our Products
+    menu
+
+- [Bug fixes]{.Emphasis}
+
+  - Fixed link to Remote Access JA from JA portal
+
+  - Fixed JA Portal URL in variable
+
+  - Fixed issue where left navigation was cut off at the top in Safari
+
+## \[July 25, 2022\] - Version 5.2.9
+
+- Updated FLT version in TopNav variables file to 5.2.9
+
+- Onboarded Conjur Cloud (Variable and theme only - not added to Our
+  Products or Portal yet)
+
+- New product conditions set (cc_product_conds)
+
+- Fixed JA Portal URL in variable
+
+## \[June 27, 2022\] - Version 5.2.8
+
+- Updated FLT version in TopNav variables file to 5.2.8
+
+- PAM name change to PAM Self-Hosted
+
+## \[June 15, 2022\] - Version 5.2.7
+
+- Updated FLT version in TopNav variables file to 5.2.7
+
+- Secrets hub onboarding (Variable and theme only - not added to Our
+  Products or Portal yet)
+
+- Reversed PAM variable name change
+
+## \[June 6, 2022\] - Version 5.2.6
+
+- Updated FLT version in TopNav variables file to 5.2.6
+
+- Home Toggle: Enabled mechanism for all product themes
+
+- Updated EOL and third-party notices links in footer
+
+- Localization issues:
+
+  - Updated Portal blurb for Identity Administration in both Portal and
+    Portal-ja
+
+  - Change Portal URLs (en and ja) to point to Docs.html
+
+  - JA portal page: Updated URL from Identity to point to ja instead of
+    en
+
+- New product onboarding:
+
+  - Audit (theme, portal page updates (en and ja), variables, icon)
+
+  - Secrets Hub - variable only
+
+  - PAM name change to PAM Self-Hosted
+
+- Bug fixes:
+
+  - Fixed language dropdown: lingering blue border
+
+  - Product page landing page: Fixed the issue with the global becoming
+    invisibly tiny, as well as the megaphone overlapping the Our product
+    menu - all due to lack of space in the masthead. We have spread out
+    elements in masthead to allow for more space, like in the inner
+    pages
+
+  - Fixed Mobile issues with Our Products - heading with subheading -
+    top level heading names were not showing
+
+  - Fixed Mobile issue where product lp toggles were not available in
+    mobile view
+
+## \[April 7, 2022\] - Version 5.2.5
+
+- Updated FLT version in TopNav variables file to 5.2.5
+
+- New:
+
+  - Onboarded new product - Identity Administation
+
+  - Our Products \> Shared Services submenu - includes
+
+    - ISI
+
+    - Identity Administration
+
+- Behavior changes:
+
+  - Home toggle - requires adding manual selection in snippet
+
+  - Code samples - grey backgroud in XML editor to make working with it
+    easier
+
+## \[Mar 23, 2022\] - Version 5.2.4.1
+
+- Updated FLT version in TopNav variables file to 5.2.4.1
+
+- Fixes:
+
+  - Updated links from ja Our Products with ja links where relevant
+    (PAS, PCloud, EPM)
+
+  - Fixed location of ISI on Portal pages (en and ja)
+
+  - Replaced ISI blurb on Portal-ja with ja translation (was English)
+
+  - Updated links in Portal-ja page to ja links where relevant (PAS,
+    PCloud, EPM) (they were pointing to en)
+
+  - Fixed \"invisible Home\" bug (from Adam 22/3/22)
+
+  - Fixed Footer issue (from Adam 22/3/22)
+
+  - Made link from Portal page in footer relative so that it works per
+    environment (Adam 22/3/22)
+
+## \[Mar 21, 2022\] - Version 5.2.4
+
+- Updated FLT version in TopNav variables file to 5.2.4
+
+- [Enhancements:]{.Emphasis}
+
+  - Swagger integration (flare-assets -#353)
+
+  - Breadcrumb \"Home\" is now customizable (flare-assets -#441)
+
+  - Japanese portal page (flare-assets -#443)
+
+  - ISI: Added variables, theme, added to portal, added to products menu
+
+  - Important notices now includes blurb about the localized docs.
+
+- [Fixes:]{.Emphasis}
+
+  - Added PAM-\* variables back into cc_product-vars
+
+  - Fixed search bar issues in Mobile (flare-assets -#437)
+
+  - Added level 7 for navigation menu (flare-assets -#444)
+
+  - When you pressed enter after a p.ProcedureHeading, you got old
+    p.bullet tags. This style has been changed to div.procedureheading
+    which is always followed by a regular p tag. (flare-assets -#445)
+
+  - Fixed CP issue in Our Products menu (flare-assets -#449)
+
+## \[Jan 21 2022\] - Version 5.2.3
+
+- Updated FLT version in TopNav variables file to 5.2.3
+
+- Reverted CyberArk logos to original
+
+- Fixed invisible Copy to Clipboard icon in div.example
+
+- Created menudatalangs js to avoid Version menu regression in older
+  documentation set versions
+
+- New icon Identity - Bye Bye Cami (our mascot camelion). We\'ll miss
+  you.
+
+- Updated PAS -\> PAM (removed PAM-\* variables)
+
+## \[Jan 2022\] - Version 5.2.2
+
+- Updated FLT version in TopNav variables file to 5.2.2
+
+- Japanese differentiators
+
+## \[Jan 2022\] - Version 5.2.1
+
+- Updated FLT version in TopNav variables file to 5.2.1
+
+- CEM colors for product tabs
+
+- Language resources
+
+- Added product variables for Secure Cloud Access
+
+## \[Dec 23, 2021\] - Version 5.2.0
+
+- Updated FLT version in TopNav variables file to 5.2.0
+
+- DPA onboarded - added theme, condition, product menu item, home page
+  tile
+
+- Fix to line-height issue in XML editor
+
+- Added product variables for Secure Cloud Access
+
+## \[Nov 30, 2021\] - Version 5.1.1
+
+- Updated FLT version in TopNav variables file to 5.1.1
+
+- Fixed print problem - labels in headings and code samples
+
+## \[Nov 25, 2021\] - Version 5.1.0
+
+- Updated FLT version in TopNav variables file to 5.1.0
+
+- Enhancements:
+
+  - New \'div\'s for admonitions
+
+  - Home toggle for PrivCloud theme
+
+  - New product variable for Conjur Cloud
+
+  - H2 appears in ITT even when there is only 1 in the topic
+
+- Bug fixes:
+
+  - Fixed White admon tip svg image that was causing hanging
+
+  - Fixed updated styles in ThemeConjur
+
+  - Fixed white \"bar\" above footer
+
+  - Fixed Search filter (\"All\") that got \"misaligned\" with move to
+    sidenav
+
+  - Updated gensitemap.js with correct product names
+
+  - Fixed print issue
+
+## \[Oct 20, 2021\] - Version 5.0.0 -SideNav
+
+- Updated FLT version in TopNav variables file to 5.0.0
+
+- Enhancements:
+
+  - Performance:
+
+    - Reimplemented sidenav from scratch
+
+    - Content pane now loads first (previously other objects loaded
+      first creating a frustrating experience for the user)
+
+  - TOC\'s [Collapse/Expand]{.Emphasis} button now sticks - remains
+    visible when you scroll
+
+  - Styles:
+
+    - Reintroduced span.wrap for long strings
+
+    - Images:
+
+      - New [img.EnlargeNarrowImage]{.Emphasis} image class for large
+        \"landscape\" images
+
+      - [img.Enlarge]{.Emphasis}: Image display size (before click)
+        limited to keep all images similar size
+
+- Bug fixes:
+
+  - Fixed issue where subsectionso f the TOC were not
+    appearing/scrolling or were stuck
+
+  - Fixed gensitemap script to include html files as well
+
+## \[Aug 29, 2021\] - Version 4.5.1 updated by Shuli
+
+- Updated FLT version in TopNav variables file to 4.5.1
+
+- Supports Flare 2021 r2
+
+- Added DPA and ISP product variables to cc_product_vars
+
+## \[Aug 26, 2021\] - Version 4.5.0 updated by Shuli
+
+- Updated FLT version in TopNav variables file to 4.5.0
+
+- Supports Flare 2021 r2
+
+- Fix for issue with our toolbar when rendered with Flare 2021 r2
+
+## \[Aug 15, 2021\] - Version 4.4.9 updated by Shuli
+
+- Updated FLT (SFFS) version in TopNav variables file to 4.4.9
+
+- Change SFFSVersion variable to FLTVersion
+
+- Added SWS variables to cc_product_vars
+
+## \[Aug 02, 2021\] - Version 4.4.8.1 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.4.8.1
+
+- Fixed PAS variable in Our Products menu - changed to Privileged Access
+  Security
+
+## \[June 24, 2021\] - Version 4.4.8 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.4.8
+
+- NEW! Link in EXPLORE to Support and Technical Resources
+
+- Doc portal: Conjur Enterprise name change
+
+- Enhancement! Date for what\'s new content
+
+- Enhancement! Wistia video thumbnail UX
+
+- Name change for AAM and DAP. Now Secrets Manager and Conjur Enterprise
+  respectively:
+
+  Affects:
+
+  - Product variables (cc_product_vars)
+  - Our Products menu
+
+- Fixed PAS variable in Our Products menu - now uses different variable
+  for PAS
+
+## \[June 16, 2021\] - Version 4.4.7.1 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.4.7.1
+- Patch for SearchUnify upgrade
+
+## \[May 5, 2021\] - Version 4.4.7 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.4.7 (skipped 4.4.6
+  because 4.4.6 looks too much like 4.4.5 when it\'s tiny in the
+  output!)
+- NEW! What\'s new design
+- NEW! Our Products dropdown - includes new names and \'Docs portal\'
+  link
+- NEW! Variables for CyberArk Mobile (was Alero Mobile)
+- Updated: \"Docs portal\" page now uses product name variables
+- Fixed: Image maps in tabs
+- Fixed: Alignment under dropdowns
+
+## \[March 14, 2021\] - Version 4.4.5 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.4.5
+- NEW! Wistia video design
+- NEW!: Tab toggles
+- NEW! Look and feel for admons in tables
+- NEW! Note icon includes pencil
+- NEW! PAM variables in Product variables set
+- Fixed bug where there was a pipe between Title and Subtitle in Tablet
+  size screen
+- CyberArk logo (Default theme) now links to Cyberark.com
+- Improved content look and feel: Larger fonts, increased line height,
+  breathing space on sides.
+- Improved dropdown design: fixed dd heading size, element spacing;
+  added hover effect.
+
+## \[Jan 25, 2021\] - Version 4.4.4 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.4.4
+
+- Fixed Product and Version menus getting stuck by toolbar (Rivka)
+
+- Fixed reponsive issues introduced by toolbar (Rivka)
+
+- More space before h1 (rivka)
+
+- Removed suppression of breadcrumbs for inner landing page (LP-Tile1
+  pages) (Rivka)
+
+- Changed \"Docs\" in breadcrumbs to \"Home\" (per UX) (Shuli)
+
+- Template HTML target: Updated Responsive settings: Table 1024, Mobile
+  768 (Shuli)
+
+## \[Jan 17, 2021\] - Version 4.4.3 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.4.3
+
+- Look and Feel bug fixes
+
+  - Fixed black arrows in Idaptive highlights
+
+  - Fixed EPM toggle colors
+
+  - Fixed issue where version label wasn\'t appearing in standalone
+    output.
+
+  - Fixed alignment of dropdowns under dropdowns - now indented.
+
+  - Fixed product home tiles to be left aligned.
+
+  - Fixed issue with Coveo in gensitemap script
+
+- Enhancements:
+
+  - Toolbar on inner page displays clear labels
+
+  - TOC (left navigation) entries wrap
+
+  - Text in feedback email improved
+
+  - New variable set for product names -
+    [cc_product_vars.flvar]{.Emphasis}
+
+## \[Dec 08, 2020\] - Version 4.4.2 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.4.2
+- Refinements to Docs portal header
+- Updated the cross product links to point to cc_Home.htm instead of
+  default/onlinehelp
+- New look and feel includes \"Send feedback\" widget
+- Enlarge/Shrink image icons for img.Enlarge style
+- New icons for highlights and workflows
+- Snippet for Wistia Videos
+- New icons for highlights and workflows
+- Enhanced dropdown style - larger arrow and underline
+- Updated templates: HomeTilesLPs folder; HTML template target;
+  project_variable and project_conditions sets
+- Corrected color blue in \"In this topic\" menu
+- Fixed - Toggler down-arrow in short screen
+
+## \[November 5, 2020\] - Version 4.4.1 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.4.1
+- New: h3.itt and h4.itt styles for ref pages - \"In this topic\"
+  includes these in the in-page navigation
+- New: CEM added to \"Products\" dropdown
+- Bug fix: Dropdown heading - increased font
+- Bug fix: Docs.html (current) and Search.html
+  - favicon fixes
+  - Cyberark logo now links to the primary CyberArk website.
+
+## \[Sept 29, 2020\] - Version 4.4.0 updated by Shuli
+
+- SearchUnify
+  - Updated SFFS version in TopNav variables file to 4.4.0
+  - SeaurchUnify - added Search bar and scripts to masterpages
+  - Created Conditions for Search Unify vs Flare Search
+  - Remove Copy Bookmark from H1s
+- Other fixes
+  - Fixed code text in li simple items
+  - Fixed line heights li simple items
+  - Renamed main-menu snippet - not customizable. Moved to
+    Resources\\\_TopvNav
+  - Fixed \"footer sticking\" issue
+  - Fixed invisible Follow Us icons
+  - Added \"mesh\" texture to footer (to match Cyberark.com)
+
+## \[Sep 22, 2020\] - Version 4.3.3 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.3.3
+- Link to \"Acknowledgments\" in footer changed to \"Third-Party
+  Notices\"
+- Updated Acknowledgements in \"Imporant Notices\" file.
+- Fixes for Follow Us icons in footer
+- Added footer background texture
+
+## \[Sep 15, 2020\] - Version 4.3.2 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.3.2
+- Added Idaptive to the Products dropdown
+- Fixed double Products dropdown
+- Added Docs portal files - includes Idaptive
+
+## \[Aug 12, 2020\] - Version 4.3.1 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.3.1
+- New enumerating H3 style -aesthetic improvements
+- Hid ununsed tags from Style window
+
+## \[Aug 5, 2020\] - Version 4.3.0 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.3.0
+- Toggler behaviour fixed (GH#81)
+- New enumerating H3 style (.step class for h3 tag) (GH#103)
+
+## \[July 23, 2020\] - Version 4.2.9.1 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.2.9.1
+- Fixed missing cyberark logo issue (GH#106)
+
+## \[July 19, 2020\] - Version 4.2.9 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.2.9
+- Fixes by Rivka:
+  - Fixed home page bug in Flare 2020
+  - Heading link now shows permanently
+  - Fixed\" accessibility\" border on copy link
+  - Fixed accessibiliy border on Search box (on inner pages)
+
+## \[June 07, 2020\] - Version 4.2.8 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.2.8
+- Styles.css - Updated style names for release notes
+- Updated style names in import file for Release Notes
+
+## \[May 21, 2020\] - Version 4.2.7 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.2.7
+- New import file for Release Notes from Word
+- Styles.css: New text span tags for text styles coming in with RN Word
+  file.
+
+## \[February 20, 2020\] - Version 4.2.6 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.2.6
+- image styles, enlarge class
+- Fixed anchor
+- Fixed problem with external link icon wrap
+
+## \[February 18, 2020\] - Version 4.2.5 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.2.5
+- Pulled Rivka\'s fixes for 1. FontAwesome - svg images
+- New Resources link under Learn in footer
+- Toggler look and feel enhancements
+- Deprecated image styles + redefined default image style
+
+## \[February 4, 2020\] - Version 4.2.4 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.2.4
+- Pulled Rivka\'s fixes for 1. FontAwesome security issue; 2. Empty \"in
+  this topic\" when no h2s
+
+## \[January 6, 2020\] - Version 4.2.3 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.2.3
+- Pulled Rivka\'s fixes for Toggle, Video styles, a.downloadFile style,
+  NextStep snippet
+
+## \[December 4, 2019\] - Version 4.2.2 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.2.2
+- Fixed: spacing of p tags in tables and lists (Rivka and Shuli)
+- Added Google Analystics tag for home pages (Rivka)
+
+## \[25 November, 2019\] - Version 4.2.1 updated by Shuli
+
+- Updated SFFS version in TopNav variables file to 4.2.1
+- Fixed: \"Technical Community\" now opens in new tab
+- Fixed: \"Send feedback\" link now inserts the correct email address
+
+## \[21 November, 2019\] - Version 4.2.0 updated by Shuli
+
+- Pull Drop 4.0.2 from TTRivka (ZH#31)
+- Updated static footer snippets (ZH#32)
+- Updated customizable footer snippets - include instructions for adding
+  links (ZH#32)
+- Removed Acknowledgment and EOL policy because these have moved to the
+  Legal project (ZH#33)
+- Topnav_preview target - Updated condition settings
+- Updated SFFS version in TopNav variables file
+
+## \[3 November, 2019\] - Version 4.1.2 updated by Shuli
+
+- Created SFFS version variable for TN footer
+- js updated to take SFFS version variable rather than TN drop value
+
+## \[30 October, 2019\] - Version 4.1.1 updated by Shuli
+
+- Replaced Copyright snippet with the one that has the links to Legal
+- Updated TN Proeview target to use cc_Styles.css
+
+## \[29 October, 2019\] - Version 4.1 updated by Shuli
+
+- Applied Drop 4.0.1 from TTRivka
+
+## \[26 September, 2019\] - Version 4.0 updated by Shuli
+
+- Applied Drop 4.0.0 from TTRivka
+- Added HelpOnZure and HelpInProduct top conditions to cc_C_Cyberark
+  condition set - not for application yet
+- Updated cc_C_MainMenu.flsnp - not for application yet
+- Updated links to Acknowledgments and EOL policy in TN cc_Copyright
+  snippet
+
+## \[24 September, 2019\] - Version 3.43.3 updated by Shuli
+
+- Fixes to cc_C_MainMenu.flsnpcustomizable snippet - will affect new
+  project hereonforth.
+
+## \[19 September, 2019\] - Version 3.43.2 updated by Shuli
+
+- Added EOL policy to Footer
+
+## \[11 September, 2019\] - Version 3.43.1 updated by Danielle
+
+- Added EOL policy
+
+## \[3 September, 2019\] - Version 3.43.0 updated by shuli
+
+- Applied TN Drop 3.0.43 from Techtav (rivka)
+
+## \[4 August, 2019\] - Version 3.42.0 updated by shuli
+
+- Applied TN Drop 3.0.42 from Techtav (rivka)
+- Added NoBorders and NoHeading stylesheets back in
+- Added ic_beta-badge.svg file that was missing.
+- Acknowledgement updates
+- PDF TOC wrapper template -
+  - renamed the file to PDF_TOC_wrapper
+  - set page layout properties for the Cover pages
+
+## \[24 July 2019\] - Version 3.41.0 updated by shuli
+
+- Applied TN Drop 3.0.41 from Techtav (rivka)
+
+## \[11 July 2019\] - Version 3.40.0 updated by shuli
+
+- Applied TN Drop 3.0.40 from Techtav (rivka)
+
+## \[9 July 2019\] - Version 3.39.0 updated by shuli
+
+- Applied TN Drop 3.0.39 from Techtav (rivka)
+
+## \[2 July 2019\] - Version 3.38.2- updated by shuli
+
+- Updated cc_C_Contact.flsnp snippet - replaced link to Support
+
+## \[13 June 2019\] - Version 3.38.1- updated by shuli
+
+- Applied TN Drop 3.0.38.1 from Techtav (rivka)
+
+## \[10 June 2019\] - Version 3.37.1- updated by shuli
+
+- Applied TN Drop 3.0.37.1 from Techtav
+
+## \[6 June 2019\] - updated by shuli
+
+- Important Notices page: Made PDF Version Print_only
+- Acknowledgements page- changed Application Identity Manager to
+  Application Access Manager
+- Drop
+
+## \[19 March 2019\] Version 3.27 - updated by Shuli
+
+- Applied TN Drop 3.0.27 from Shlomo
+- Fixed variable on Cover with Copyright page. (DOC-340)
+- Updated all the tables - removed p classes defined in the table csses
+  (DOC-108)
+
+## \[??? March 2019\] Version 3.26.2 - updated by Shuli
+
+- Applied TN Drop 3.0.26.1 from Shlomo
+
+## \[3March 2019\] Version 3.26.1 - updated by Danielle
+
+- Updated Acknowledgements page to include 3rd party acknowledgements
+  for Vault, AIM, EPM, PSM, Confur, EPV, Unix Apps (PSM for SSH), DNA,
+  Extensions
+
+## \[27 Feb 2019\] Version 3.26 - updated by Shuli
+
+- Applied TN Drop 3.0.26 from Shlomo
+
+## \[26 Feb 2019\] Version 3.25.3 - updated by Danielle
+
+- Updated Acknowledgements page
+
+## \[25 Feb 2019\] Version 3.25.2
+
+- Updated copyright with copyright - removed \"copyright before the
+  copyright variable
+- Updated Copyright variable definition - Added \"copyright\" into the
+  definition
+- Important notices - removed acknowledgements section
+
+## \[21 Feb 2019\] Version 3.25.1
+
+- Fix for skin toolbar wrapping (prev/Next)
+
+## \[21 Feb 2019\] Version 3.25
+
+- Applied TN Drop 3.0.25 from Shlomo
+
+## \[25 Feb 2019\] Version 3.24.1
+
+- Fix for wrapping Prev/Next
+
+## \[19 Feb 2019\] Version 3.24
+
+- Applied TN Drop 3.0.24 from Shlomo
+
+## \[18 Feb 2019\] Version 3.23.2
+
+- Fixed cc_topnav.css file (from shlomo) - fixes \"homepage in IE\"
+  issue
+
+## \[7 Feb 2019\] Version 3.23.1
+
+- fixed cc_topnav.css file from shlomo - fixes arrow files issue
+
+## \[6 Feb 2019\] Version 3.23
+
+- Applied TN Drop 3.0.23 from Shlomo
+- Renamed Resources\\Front Matter folder Resources\\FrontMatter (removed
+  space)
+  - Updated all calls to files in this folder

@@ -1,0 +1,147 @@
+# Integrate Remote Access for AWS environments
+
+This topic describes how to integrate
+{% $cc_product_vars.RemoteAccess-short %}
+and
+{% $cc_product_vars.SCA-short %},
+so that
+{% $cc_product_vars.SCA-short %}
+policies can be applied to vendors that need to access AWS cloud
+environments.
+
+## Overview
+
+Organizations that use
+{% $cc_product_vars.RemoteAccess-short %}
+to give vendors access to web apps in the
+`<conditionaltext madcap:conditions="SCA-conditions.not-free-trial">`{=html}{% $cc_C_CyberArk.CompanyName %}
+user
+portal`</conditionaltext>`{=html}`<conditionaltext madcap:conditions="SCA-conditions.free-trial">`{=html}{% $cc_product_vars.SecureAccessSpace %}
+space`</conditionaltext>`{=html} can integrate
+{% $cc_product_vars.RemoteAccess-short %}
+and
+{% $cc_product_vars.SCA-short %},
+and then create applicable policies to enforce zero standing access for
+these vendors.
+
+When
+{% $cc_product_vars.SCA-short %}
+policies are created for vendors, they can authenticate to
+{% $cc_product_vars.RemoteAccess-short %}
+as usual, and select the required AWS web app from the
+`<conditionaltext madcap:conditions="SCA-conditions.not-free-trial">`{=html}{% $cc_C_CyberArk.CompanyName %}
+user
+portal`</conditionaltext>`{=html}`<conditionaltext madcap:conditions="SCA-conditions.free-trial">`{=html}{% $cc_product_vars.SecureAccessSpace %}
+space`</conditionaltext>`{=html}.
+
+To integrate the services, complete the following steps:
+
+1.  `<xref href="#Configur">`{=html}Configure the Identity SSO settings
+    in \[%=cc_product_vars.RemoteAccess-short%\]`</xref>`{=html}
+
+2.  `<xref href="#Set">`{=html}Create a dedicated role in the
+    \[%=cc_product_vars.SCA-short%\] tenant`</xref>`{=html}
+
+3.  `<xref href="#Invite">`{=html}Invite the vendors in
+    \[%=cc_product_vars.RemoteAccess-short%\]`</xref>`{=html}
+
+4.  `<xref href="#Configur2">`{=html}Configure the
+    \[%=cc_product_vars.SCA-short%\] policy`</xref>`{=html}
+
+## Before you begin
+
+The AWS web app in the
+`<conditionaltext madcap:conditions="SCA-conditions.not-free-trial">`{=html}{% $cc_C_CyberArk.CompanyName %}
+user
+portal`</conditionaltext>`{=html}`<conditionaltext madcap:conditions="SCA-conditions.free-trial">`{=html}{% $cc_product_vars.SecureAccessSpace %}
+space`</conditionaltext>`{=html} (in the
+{% $cc_product_vars.SCA-short %}
+tenant) must be configured to use provisioning.
+
+## []{#Configur}Configure the Identity SSO settings in {% $cc_product_vars.RemoteAccess-short %} {#configure-the-identity-sso-settings-in .step madcap:autonum="Step 1: "}
+
+You must configure
+{% $cc_product_vars.RemoteAccess-short %}
+to communicate with
+{% $cc_product_vars.SCA-short %}
+when a vendor accesses a web app from the
+`<conditionaltext madcap:conditions="SCA-conditions.not-free-trial">`{=html}{% $cc_C_CyberArk.CompanyName %}
+user
+portal`</conditionaltext>`{=html}`<conditionaltext madcap:conditions="SCA-conditions.free-trial">`{=html}{% $cc_product_vars.SecureAccessSpace %}
+space`</conditionaltext>`{=html}. This configuration is done in the
+{% $cc_product_vars.IdentityAdmin-full %}
+SSO functionality.
+
+For information about how to configure the
+{% $cc_product_vars.IdentityAdmin-full %}
+SSO settings, see the
+[{% $cc_product_vars.RemoteAccess-short %}
+docs](/remote-access-standard/latest/en/content/admin/settings-idaptive.htm){alt="Link to [%=cc_product_vars.RemoteAccess-short%] topic about configuring [%=cc_product_vars.IdentityAdmin-full% SSO settings]"}.
+
+## []{#Set}Create a dedicated role in the {% $cc_product_vars.SCA-short %} tenant {#create-a-dedicated-role-in-the-tenant .step madcap:autonum="Step 2: "}
+
+You must create a dedicated role in the
+{% $cc_product_vars.IdentityAdmin-full %}
+instance of the
+{% $cc_product_vars.SCA-short %}
+tenant that
+{% $cc_product_vars.SCA-short %}
+can use to identify your vendors and apply the relevant policies.
+
+After this role is created, use it when inviting any vendor that should
+be included in an
+{% $cc_product_vars.SCA-short %}
+policy.
+
+For information about how to create a role, see the
+[{% $cc_product_vars.IdentityAdmin-full %}
+docs](/identity-administration/latest/en/content/coreservices/getstarted/userrolesassign.htm?tocpath=Add%20system%20users%20and%20roles%7CAssign%20users%20to%20roles%20and%20manage%20roles%7C_____0#Createanewrole){target="_blank"
+alt="Link to heading on how to create a new role in [%=cc_product_vars.IdentityAdmin-full%] docs"}.
+
+## []{#Invite}Invite the vendors in {% $cc_product_vars.RemoteAccess-short %} {#invite-the-vendors-in .step madcap:autonum="Step 3: "}
+
+When you invite vendors in
+{% $cc_product_vars.RemoteAccess-short %},
+you have to configure several parameters to enable
+{% $cc_product_vars.SCA-short %}
+to identify the vendor and apply the relevant policy.
+
+1.  In the [Allowed applications ]{.Emphasis}area, select the [Allow
+    access to Identity web applications ]{.Emphasis}option.
+
+2.  in the [User provisioning ]{.Emphasis}area, do the following:
+
+    1.  Select the
+        [{% $cc_product_vars.RemoteAccess-short %}
+        will create and manage the user]{.Emphasis} option.
+
+    2.  In the [Role ]{.Emphasis}field, specify the dedicated role that
+        you created for this purpose.
+
+For more information about inviting vendors, see the
+[\[%=cc_product_vars.RemoteAccess-short%\]
+docs](/remote-access-standard/latest/en/content/admin/invitevendors.htm "Link to topic in [%=cc_product_vars.RemoteAccess-short%] on how to invite vendors"){target="_blank"
+alt="Link to topic in [%=cc_product_vars.RemoteAccess-short%] on how to invite vendors"}.
+
+## []{#Configur2}Configure the {% $cc_product_vars.SCA-short %} policy {#configure-the-policy .step madcap:autonum="Step 4: "}
+
+When you configure an
+{% $cc_product_vars.SCA-short %}
+policy to include
+{% $cc_product_vars.RemoteAccess-short %}
+vendors, ensure that you select the dedicated role that you created in
+{% $cc_product_vars.IdentityAdmin-full %}
+when you add identities to the policy.
+{% $cc_product_vars.SCA-short %}
+uses this role to identify the vendor so it can apply the policy.
+
+For more information about creating
+{% $cc_product_vars.SCA-short %}
+policies, see
+`<xref href="../DPAforCloud/sca_create-policies-AWS.htm">`{=html}Create
+an AWS policy`</xref>`{=html}.
+
+::: note
+You can only create policies for vendors that have been invited to
+{% $cc_product_vars.RemoteAccess-short %}.
+:::

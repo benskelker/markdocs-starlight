@@ -1,0 +1,55 @@
+div#suPageRateApp {
+  margin: 0px 0px 16px 10px;
+}
+
+.su_page_rating_box{
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.su_page_rating_box p{
+  margin: 0;
+  font-family: 'Open Sans Semibold', sans-serif;
+}
+
+/* .su_page_rating_box .su-featured-text {
+  font-size: 14px;
+  padding: 10px 10px 5px 10px;
+  float: right;
+} */
+
+.su_page_rating_box .su_helpful, .su_page_rating_box .su_unhelpful{
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding: 2px 23px 2px 26px;
+  color: black;
+  background-position: -4px 0;
+}
+
+.su_page_rating_box .su_helpful {
+  background-image: url('Images/Menus/ic-like.svg');
+}
+
+.su_page_rating_box .su_helpful:hover{
+  cursor: pointer;
+  background-image: url('Images/Menus/ic-like-hover.svg');
+}
+
+.su_page_rating_box .su_unhelpful{
+  background-image: url('Images/Menus/ic-unlike.svg');
+}
+
+.su_page_rating_box .su_unhelpful:hover{
+  background-image: url('Images/Menus/ic-unlike-hover.svg');
+  cursor: pointer;
+}
+
+.su_page_rating_box .su_feedback_success{
+  font-size: 14px;
+  width:100%;
+}
+
+.su_feedback_form{
+  font-size: 14px;
+  width:100%;
+}

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1><a name="Custom"></a><MadCap:variable name="cc_product_vars.ISP-short" /> authentication prerequisites</h1>
+        <p>This topic describes the required setup in <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /> that enables <MadCap:variable name="cc_product_vars.SCA-short" /> operation APIs to authenticate to <MadCap:variable name="cc_product_vars.ISP-short" />.</p>
+        <h2>Overview</h2>
+        <p>To enable the <MadCap:variable name="cc_product_vars.SCA-short" /> APIs to communicate with the <MadCap:variable name="cc_product_vars.shared-services-full" /> platform, you have to create a custom OAuth2 server, and then create a service user to assign to the <MadCap:variable name="cc_product_vars.Identity-full" /> <MadCap:variable name="cc_product_vars.SCA-short" /> API roles. After this is configured, you can use the <MadCap:variable name="cc_product_vars.SCA-short" /> authentication API&#160;to create a token for use in the <MadCap:variable name="cc_product_vars.SCA-short" /> operation APIs, as described in <MadCap:xref href="sca-API-authentication.htm">[%=cc_product_vars.SCA-short%] authentication API</MadCap:xref>.</p>
+        <div class="note">
+            <p>The custom OAuth2 Server is used with the <MadCap:variable name="cc_product_vars.SCA-short" /> APIs to set custom claims in the resulting access token. For details about OAuth2 with <MadCap:variable name="cc_C_CyberArk.CompanyName" /> services, see <a href="https://developer.idaptive.com/docs/oauth">https://developer.idaptive.com/docs/oauth</a>.</p>
+        </div>
+        <h2>Set up authentication</h2>
+        <p>There are three steps to setting up the authentication for the <MadCap:variable name="cc_product_vars.SCA-short" /> APIs. After these steps are complete, you can use the <MadCap:variable name="cc_product_vars.SCA-short" /> authentication API to generate an authentication token to use with the SCA&#160;operation APIs.</p>
+        <h3 class="step" MadCap:autonum="Step 1: ">Create a custom OAuth2 server</h3>
+        <MadCap:snippetBlock src="../DPAforCloud/SCA-snippets/sca-oauth2-server-app.flsnp" MadCap:conditionTagExpression="include[snippet-conditions-sca.oauth2-for-api]exclude[snippet-conditions-sca.oauth2-for-appr-chnl]" />
+        <h3 class="step" MadCap:autonum="Step 2: "><a name="Create"></a>Create a service user</h3>
+        <MadCap:snippetBlock src="../DPAforCloud/SCA-snippets/sca-oauth2-server-app-user.flsnp" />
+        <h3 class="step" MadCap:autonum="Step 3: "><a name="Associat"></a>Associate the service user with <MadCap:variable name="cc_product_vars.SCA-short" /></h3>
+        <MadCap:snippetBlock src="../DPAforCloud/SCA-snippets/sca-oauth2-server-app-permissions.flsnp" MadCap:conditionTagExpression="include[snippet-conditions-sca.oauth2-for-api], exclude[snippet-conditions-sca.oauth2-for-appr-chnl]" />
+        <div class="NextStep">
+            <p>
+                <MadCap:xref href="sca-API-authentication.htm">[%=cc_product_vars.SCA-short%] authentication API</MadCap:xref>
+            </p>
+        </div>
+    </body>
+</html>

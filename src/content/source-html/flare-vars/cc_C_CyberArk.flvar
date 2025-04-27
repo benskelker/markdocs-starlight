@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet>
+    <Variable Comment="" Name="CompanyName">CyberArk</Variable>
+    <Variable Comment="" Name="PhoneNumber">
+    </Variable>
+    <Variable Name="BookType" Comment="Name of book that appears in the left page header">Privileged Account Security End-user Guide</Variable>
+    <Variable Name="BookType" Comment="">Privileged Account Security System Requirements</Variable>
+    <Variable Name="HTML5-Title" Comment="PLACEHOLDER_SUITE" EvaluatedDefinition="Privileged Account Security Help Center">Privileged Account Security Help Center</Variable>
+    <Variable Name="HTML5-PageHeaderLeft">
+    </Variable>
+    <Variable Name="HTML5-PageHeaderRight" Comment="PLACEHOLDER_SUITE [%=cc_C_CyberArk.BookType%], PLACEHOLDER_VERSION" EvaluatedDefinition="">
+    </Variable>
+    <Variable Name="HTML5-PageFooterLeft" Comment="Updated: [%=cc_C_CyberArk.HTML5-Updated%]" EvaluatedDefinition="&lt;a href=&quot;http://www.cyberark.com&quot; target=&quot;_blank&quot;&gt;WWW.CYBERARK.COM&lt;/a&gt;">&lt;a href="http://www.cyberark.com" target="_blank"&gt;WWW.CYBERARK.COM&lt;/a&gt;</Variable>
+    <Variable Name="HTML5-PageFooterRight" EvaluatedDefinition="&lt;a href=&quot;../Resources/FrontMatter/Important Notice.htm&quot; class=&quot;MCXref xref&quot;&gt;Copyright © 2018 CyberArk Software Ltd. All rights reserved.&lt;/a&gt;" Comment="Copyright © [%=cc_C_CyberArk.HTML5-CopyrightYear%] [%=cc_C_CyberArk.HTML5-CopyrightCompany%]. All rights reserved.">&lt;a href="../Resources/FrontMatter/Important Notice.htm" class="MCXref xref"&gt;Copyright © [%=cc_C_CyberArk.HTML5-CopyrightYear%] [%=cc_C_CyberArk.HTML5-CopyrightCompany%]. All rights reserved.&lt;/a&gt;</Variable>
+    <Variable Name="HTML5-Updated" Comment="M/d/yyyy" Type="DateTime" LastUpdated="2015-10-15T10:47:34.4563695+03:00">M/d/yyyy</Variable>
+    <Variable Name="HTML5-CopyrightYear" Comment="yyyy" Type="DateTime" LastUpdated="2015-10-15T11:28:53.5513989+03:00">yyyy</Variable>
+    <Variable Name="HTML5-CopyrightCompany" Comment="CyberArk Software Ltd">CyberArk Software Ltd</Variable>
+    <Variable Name="BookType" Comment="">Privileged Account Security Web Services SDK Implementation Guide</Variable>
+    <Variable Name="BookType" Comment="">Sensitive Information Management SafeShare for Windows</Variable>
+    <Variable Name="BookType" Comment="">Sensitive Information Management Web Services SDK Implementation Guide</Variable>
+    <Variable Name="BookCode" Comment="For example, PASRG, PASINS" EvaluatedDefinition="">
+    </Variable>
+    <Variable Name="BookType" Comment="">CyberArk Hardening</Variable>
+    <Variable Name="BookType" Comment="">CyberArk Secure Platform</Variable>
+    <Variable Name="BookType" Comment="">Hardening the CyberArk CPM&#160;and PVWA Servers</Variable>
+    <Variable Name="BookType" Comment="">Hardening the CyberArk PSM&#160;Server</Variable>
+    <Variable Name="ProductName" Comment="" EvaluatedDefinition="">
+    </Variable>
+    <Variable Name="BookType" Comment="">CyberArk Viewfinity Server Migration Guide</Variable>
+    <Variable Name="BookType" Comment="">CyberArk Viewfinity Server User Guide</Variable>
+    <Variable Name="BookType" Comment="">CyberArk Viewfinity Server Quick Start Guide</Variable>
+    <Variable Name="BookType" Comment="">CyberArk Viewfinity Server Installation Guide</Variable>
+    <Variable Name="BookType" Comment="">Hardening CyberArk Components: PS&#160;Guide</Variable>
+    <Variable Name="ProductAcronym" Comment="" EvaluatedDefinition="" />
+    <Variable Name="BookType" Comment="" EvaluatedDefinition="CyberArk DNA™ User Guide">CyberArk DNA™ User Guide</Variable>
+    <Variable Name="Copyright" Comment="" EvaluatedDefinition="Copyright © 2021 CyberArk Software Ltd. All rights reserved.">Copyright © [%=cc_C_CyberArk.HTML5-CopyrightYear%] [%=cc_C_CyberArk.HTML5-CopyrightCompany%]. All rights reserved.</Variable>
+    <Variable Name="Version" Comment="&lt;version number&gt;" EvaluatedDefinition="">
+    </Variable>
+    <Variable Name="BookName" Comment="PDF only: Document title" EvaluatedDefinition="" />
+    <Variable Name="Platform" Comment="" EvaluatedDefinition="Credential Provider Standard">Credential Provider Standard</Variable>
+    <Variable Name="Platform" Comment="" EvaluatedDefinition="iSeries">iSeries</Variable>
+    <Variable Name="Platform" Comment="" EvaluatedDefinition="z/OS">z/OS</Variable>
+    <Variable Name="Platform" Comment="" EvaluatedDefinition="Mac">Mac</Variable>
+    <Variable Name="Platform" Comment="" EvaluatedDefinition="Central Credential Provider">Central Credential Provider</Variable>
+    <Variable Name="PDF_version" Comment="" EvaluatedDefinition="DNA- 12/2/2018">[%=cc_C_CyberArk.BookCode%] [%=cc_C_CyberArk.HTML5-Updated%]</Variable>
+</CatapultVariableSet>

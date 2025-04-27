@@ -1,0 +1,148 @@
+# Integrate  with {% $cc_product_vars.PCloud-full %}
+
+This topic describes how to integrate
+{% $cc_product_vars.CV-full %}
+with
+{% $cc_product_vars.PCloud-short %},
+onboarding unsecured cloud identities to
+{% $cc_product_vars.PCloud-short %},
+so they can be protected by
+{% $cc_product_vars.PAM-short %}.
+
+## Overview
+
+{% $cc_product_vars.PCloud-short %}
+is a solution that allows the protection of privileged accounts by
+credential provisioning, rotation, and enforcement according to the
+organization's policies. Managing an identity's password with
+{% $cc_product_vars.PCloud-short %}
+adds an important layer of security. For more information, see
+[Privilege
+Cloud](/privilege-cloud-shared-services/latest/en/content/resources/_topnav/cc_home.htm){target="_blank"}.
+
+{% $cc_product_vars.CV-full %}
+discovers different types of identity types, but only the following are
+applicable to be managed by
+{% $cc_product_vars.PCloud-short %}:
+
+• AWS users -- which have access to the AWS console
+
+• Azure users -- which are not synced from another directory
+
+This integration allows a
+{% $cc_product_vars.CV-full %}
+customer to easily detect and manage the relevant cloud identities.
+
+Since both
+{% $cc_product_vars.CV-full %}
+and
+{% $cc_product_vars.PCloud-short %}
+are services provided on top of
+{% $cc_C_CyberArk.CompanyName %}\'s
+{% $cc_product_vars.shared-services-full %}
+platform, the trust between both services is automatically generated,
+allowing
+{% $cc_product_vars.CV-full %}
+to communicate without a dedicated setup process.
+
+## Before you begin
+
+To benefit from this integration, your organization should already have
+deployed
+{% $cc_C_CyberArk.CompanyName %}\'s
+{% $cc_product_vars.PCloud-full %}
+solution.
+
+::: note
+On-premises
+{% $cc_product_vars.PAM-short %}
+solutions do not currently support this integration.
+:::
+
+## Set up the integration
+
+<div>
+
+### Specify the name of the {% $cc_product_vars.PCloud-short %} instance {#specify-the-name-of-the-instance .step madcap:autonum="Step 1: "}
+
+For trackability, provide the name of the
+{% $cc_product_vars.PCloud-short %}
+instance that you want to integrate with
+{% $cc_product_vars.CV-full %}.
+
+### Define how {% $cc_product_vars.CV-full %} should handle unsecured cloud identities {#define-how-should-handle-unsecured-cloud-identities .step madcap:autonum="Step 2: "}
+
+Select one of the options described in the following table.
+
+  Option                                                  Description
+  ------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  [Automatically upload to pending accounts]{.Emphasis}   Detected identities with the potential to be managed are automatically uploaded to Pending Accounts in your {% $cc_product_vars.PCloud-full %} instance.
+  [Manually upload to pending accounts]{.Emphasis}        {% $cc_product_vars.CV-full %} enables the option to upload identities to pending accounts manually, one at a time.
+  [Don\'t upload to pending accounts]{.Emphasis}          {% $cc_product_vars.CV-full %} does not enable the option to upload identities to pending accounts.
+
+  : Options for handling unsecured identities
+
+## Managing identities with {% $cc_product_vars.PCloud-short %}
+
+This section includes information about:
+
+- `<xref href="#Data">`{=html}Data acquisition`</xref>`{=html}
+
+- `<xref href="#User">`{=html}User actions`</xref>`{=html}
+
+### []{#Data}Data acquisition
+
+Once the integration is set up,
+{% $cc_product_vars.CV-full %}
+starts to collect the
+[{% $cc_product_vars.PAM-short %}
+status]{.Emphasis} of the relevant identities. This data acquisition
+activity is part of the
+{% $cc_product_vars.CV-full %}
+scanning process, which happens on a recurring basis, meaning that the
+status is not updated in real-time.
+
+[{% $cc_product_vars.PAM-short %}
+status]{.Emphasis} is
+{% $cc_product_vars.CV-full %}
+terminology that shows for each identity if it is:
+
+1.  [Already managed by
+    {% $cc_product_vars.PAM-short %}]{.Emphasis}
+    -- in such cases no action is required.
+
+2.  [Pending accounts]{.Emphasis} -- the identity was uploaded to
+    pending accounts , but the
+    {% $cc_product_vars.PAM-short %}admin
+    did not yet take any action.
+
+3.  [Not managed]{.Emphasis} -- in such cases there is an action
+    required: either upload to pending accounts or, if this identity is
+    critical, ask your
+    {% $cc_product_vars.PAM-short %}
+    admin to upload directly to the vault .
+
+### []{#User}User actions
+
+The following user actions are available:
+
+• [Uploading to
+{% $cc_product_vars.PAM-short %}
+from the identity page]{.Emphasis} -- if enabled on integration setup,
+{% $cc_product_vars.CV-full %}
+exposes a button which users can click to upload the identity to
+{% $cc_product_vars.PAM-short %},
+provided it is a relevant identity and its status is [Not
+managed]{.Emphasis}.
+
+• [Handling the corresponding findings]{.Emphasis} -- one of the
+out-of-the-box
+{% $cc_product_vars.CV-full %}
+findings is provided for admin & shadow admin identities that are not
+managed in
+{% $cc_product_vars.PAM-short %}.
+The user can react to these findings by uploading the identities to
+pending accounts, though the finding remains until the identity is
+managed.
+
+</div>

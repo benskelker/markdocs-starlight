@@ -1,7 +1,7 @@
 [
     {
       "id": "SCA",
-      "path": "src/content/docs",
+      "path": "src/content",
       "schema": {
         "path": "compiledSchema/markdoc.schema.mjs",
         "type": "esm",

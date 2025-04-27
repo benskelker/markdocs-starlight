@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Create policies for <MadCap:variable name="sca-project-variables.GoogleCloud" /> access</h1>
+        <p>This topic describes how to create and manage policies that provide users with just-in-time access to <MadCap:variable name="sca-project-variables.GoogleCloud" /> assets.</p>
+        <h2 class="stepReset" MadCap:autonum="Step 1: ">Create a policy</h2>
+        <p>Go to the <span class="Emphasis">Access policies</span> page, click <span class="Emphasis">Create new policy</span> and select <span class="Emphasis">Google Cloud</span>. </p>
+        <h2 class="step" MadCap:autonum="Step 2: ">Specify the general details</h2>
+        <MadCap:snippetBlock src="SCA-snippets/Add-policy-step1.flsnp">
+        </MadCap:snippetBlock>
+        <h2 class="step" MadCap:autonum="Step 3: ">Select the cloud roles</h2>
+        <p>In this step, you choose the cloud roles you want to include in the policy . You can filter by package to help limit the number of cloud roles you see in the table.</p>
+        <MadCap:snippetBlock src="SCA-snippets/On-demand-scan-tip.flsnp" MadCap:conditionTagExpression="include[snip-conditions.Google], exclude[snip-conditions.AWS-IAM or snip-conditions.AWS-IAM-IDC or snip-conditions.AWS-IAM-ORG or snip-conditions.Azure]" />
+        <ol>
+            <li>
+                <p>From the list on the left, select a Google Cloud resource: organization, folder, or project.</p>
+            </li>
+            <li>
+                <p>In the list of roles, select the roles you want to include in the policy:</p>
+                <ul>
+                    <li>
+                        <p>To inspect the permissions in a role, select <span class="Emphasis">More actions</span> (<img src="../images/icon_ellipsis-v.png" class="icon" />) &gt; <span class="Emphasis">Role details</span>.</p>
+                    </li>
+                    <li>
+                        <p>Mark the check boxes for the cloud roles you want to include in this policy and click <span class="Emphasis">Select</span>.</p>
+                    </li>
+                    <div class="note">
+                        <p>To enforce least privilege and reduce your risk exposure, you should use only predefined or custom roles in your production environment.</p>
+                    </div>
+                </ul>
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 4: ">Define the access rules</h2>
+        <p>In this step, you select members for the policy, and specify the access rules to be applied to the policy.</p>
+    </body>
+</html>

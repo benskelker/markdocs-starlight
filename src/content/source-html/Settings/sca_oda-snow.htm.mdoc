@@ -1,0 +1,435 @@
+# []{#Configur2}Configure approval channel - ServiceNow
+
+This topic describes how to integrate ServiceNow with so that ServiceNow
+can serve as your approval channel for on‑demand access requests to your
+cloud workspace.
+
+## ServiceNow support
+
+This integration supports ServiceNow Washington D.C. and later releases.
+
+## Before you begin
+
+Before you set up the integration between and ServiceNow, complete the
+steps described in Set up on-demand access, the last of which brings you
+back to this topic to complete the approval channel configuration.
+
+To support communication with ServiceNow, must be enabled in your
+tenant. A [Flows Executor]{.Emphasis} role is sufficient for granting
+on-demand access.
+
+## []{#ServiceN2}[]{#snow-setup}ServiceNow configuration - Workflow
+
+This section gives you an outline of the steps needed to set up
+ServiceNow as your approval channel.
+
+This is a multi-admin effort. Some tasks require admin roles for , , and
+, and some require the ServiceNow admin role in ServiceNow.
+
+::: important
+The interconnecting lines indicate dependencies, meaning that a step
+with an arrow pointing into it is dependent on the completion of the
+step before it.
+:::
+
+![](images/sca-snow-workflow.png){.Enlarge usemap="#map1"}
+
+1.  []{#Download} admin: Download the pre-defined flows
+
+    In this step you download flows that you will need later in this set
+    up.
+
+    For more information about each of these flows and what they do, see
+    \[%=cc_C_CyberArk.CompanyName%\] admin: Set up the On-demand access
+    flows later on in this procedure.
+
+    []{#From}[In :]{.Emphasis}
+
+    1.  Go to [Settings \> On-demand access \> Approval
+        channel]{.Emphasis} , and select [ServiceNow]{.Emphasis}.
+
+    2.  Click the link to download the
+        [-Ondemand-ServiceNow-Flows]{.Emphasis} archive file containing
+        pre-defined flows (JSON files) for the - ServiceNow integration.
+
+        ::: {.note madcap:conditions="cc_C_CyberArk.Future"}
+        This archive file is also available from the CyberArk
+        Marketplace\'s [SCA Ondemand via ServiceNow
+        integration](https://community.cyberark.com/marketplace/s/#a35Ht000001phb7IAA-a39Ht000004Dfl3IAC "Link to the CyberArk Marketplace"){target="_blank"
+        alt="Link to the CyberArk Marketplace"} page.
+        :::
+
+    3.  Unzip the file into a local directory. The flows, which you will
+        need later, are contained in this archive file:
+
+        ::: important
+        Don\'t change the names of the JSON files when you unzip them.
+        If you change a file name, this will break the flow and the
+        feature won\'t work as expected.
+        :::
+
+2.  []{#Configur} admin: Configure authentication for in
+
+    ::: note
+    If you have already set up the API authentication described in
+    Configure on-demand access in
+    \[%=cc_product_vars.IdentityAdmin-full%\], you can skip this step.
+    :::
+
+    In , enable in the integration settings and make sure that you have
+    a custom OAuth2 server so that can authenticate to the ServiceNow.
+
+    1.  [Enable in ]{.Emphasis}
+
+        In , go to [Settings ]{.Emphasis}\> [Integration]{.Emphasis} \>
+        [Secure Cloud Access]{.Emphasis}, and select [Users can request
+        permission to add SCA-enabled applications]{.Emphasis}.
+
+    2.  [Create a custom OAuth2 server]{.Emphasis}
+
+    3.  [Create a service user]{.Emphasis}
+
+        If you don\'t already have a service user set up for , set one
+        up now. You need this user to configure authorization later in .
+
+    4.  [Associate the service user with
+        \[%=cc_product_vars.SCA-short%\]]{.Emphasis}
+
+3.  ServiceNow admin: Install the app in ServiceNow[]{#Set}
+
+    You must be a ServiceNow admin to configure the app in ServiceNow.
+
+    To enable communication between and ServiceNow, install the
+    [CyberArk On-Demand Workflow]{.Emphasis} app in your ServiceNow
+    tenant. This app is available in the [ServiceNow
+    Store](https://store.servicenow.com/sn_appstore_store.do#!/store/application/2cfe5bae87927510dea3da083cbb359f "Link to the ServiceNow Store"){alt="Link to the ServiceNow Store"
+    target="_blank"}.
+
+    For details on installing the app in ServiceNow, see the [ServiceNow
+    docs](https://docs.servicenow.com/bundle/vancouver-application-development/page/build/applications/task/t_InstallApplications.html){alt="Link to topic in the ServiceNow docs that describes how to install an app from the ServiceNow store"}.
+
+4.  []{#ServiceN}ServiceNow admin: Configure authentication for in
+    ServiceNow
+
+    In this step you add an OAuth2 client application to the ServiceNow
+    Application Registry.
+
+    1.  In ServiceNow, create an [OAuth application user]{.Emphasis} and
+        give it the
+        [x_cya_cyberark_sca.cyberark_sca_requests_staging_user]{.Emphasis}
+        role. This role came with the app that you installed in
+        ServiceNow in the previous step.
+
+    2.  In ServiceNow, create the OAuth2 client application. Include the
+        [OAuth Application User]{.Emphasis} reference field, and use the
+        OAuth application user you just created as the value for this
+        field.
+
+        ::: tip
+        For helpful information about creating OAuth client
+        applications, read this [knowledge base
+        article](https://www.servicenow.com/community/developer-blog/up-your-oauth2-0-game-inbound-client-credentials-with-washington/ba-p/2816891)
+        in the ServiceNow Community.
+        :::
+
+5.  []{#admin:} admin: Test the and ServiceNow authentications
+
+    In this step, you authorize each of the authentications you set up
+    for [](sca_on-demand-access-settings.htm#Create-CA-oauth2serverapp)
+    and [ServiceNow](#ServiceN).
+
+    1.  [Open ]{.Emphasis}
+
+        1.  From the service picker, open .
+
+        2.  Under [Settings]{.Emphasis}, select
+            [Authorizations]{.Emphasis}.
+
+    2.  [Authorize the authentication for ServiceNow]{.Emphasis}
+
+        1.  In the [Manage Authorizations]{.Emphasis} windows, click
+            [New authorizations]{.Emphasis} and provide the
+            authorization details that you defined in the service
+            account in ServiceNow:
+
+              Item                         Description
+              ---------------------------- ----------------------------------------------------------------------------------------------------------------------
+              [Name]{.Emphasis}            The OAuth2 server name
+              [Type]{.Emphasis}            [OAuth2]{.Emphasis}
+              [Flow]{.Emphasis}            [Client credentials]{.Emphasis}
+              [Content Type]{.Emphasis}    [application/x-www-form-urlencoded]{.Emphasis}
+              [Client ID]{.Emphasis}       The client ID from [ServiceNow OAuth ]{.Emphasis}\> [Application Registry]{.Emphasis}
+              [Client Secret]{.Emphasis}   The client secret from [ServiceNow OAuth ]{.Emphasis}\> [Application Registry]{.Emphasis}
+              [UserID]{.Emphasis}          The user ID for the service account defined in ServiceNow that the integration will use to invoke the REST API calls
+              [Password]{.Emphasis}        The password for the service account
+              [Token URL]{.Emphasis}       [https://\<instance\>.service-now.com/oauth_token.do]{.Emphasis}
+              [Scopes]{.Emphasis}          (Optional) Select [Scopes]{.Emphasis}, and add scopes to limit the authentication.
+
+              : ServiceNow authorization details
+
+        2.  Click [Authorize]{.Emphasis}.
+
+        3.  If the authentication is successful, save the settings.
+
+            If not, check that all the settings that you\'ve provided
+            are correct.
+
+            ::: tip
+            For further troubleshooting, this
+            [blog](https://sapphirenow.dev/post/wdc-oauth-part-2/) might
+            be helpful.
+            :::
+
+    3.  [Authorize the OAuth2 authentication for the API]{.Emphasis}
+
+        1.  In the [Manage Authorizations]{.Emphasis} window, click [New
+            authorizations]{.Emphasis} and provide the details:
+
+            +----------------------------+----------------------------------------+
+            | Item                       | Description                            |
+            +============================+========================================+
+            | [Name]{.Emphasis}          | The OAuth2 server name                 |
+            +----------------------------+----------------------------------------+
+            | [Type]{.Emphasis}          | [OAuth2]{.Emphasis}                    |
+            +----------------------------+----------------------------------------+
+            | [Flow]{.Emphasis}          | [Client Credentials]{.Emphasis}        |
+            +----------------------------+----------------------------------------+
+            | [Content Type]{.Emphasis}  | [applica                               |
+            |                            | tion/x-www-form-urlencoded]{.Emphasis} |
+            +----------------------------+----------------------------------------+
+            | [Client ID]{.Emphasis}     | The username of your service user      |
+            +----------------------------+----------------------------------------+
+            | [Client Secret]{.Emphasis} | The password of your  service user     |
+            +----------------------------+----------------------------------------+
+            | [Token URL]{.Emphasis}     | [https://[\< Identity tenant           |
+            |                            | ID\>]{.                                |
+            |                            | Italics}/oauth2/token/[\<authorization |
+            |                            | application                            |
+            |                            | id\>]{.Italics}]{.Emphasis}            |
+            |                            |                                        |
+            |                            | For example, if your Identity tenant   |
+            |                            | ID is                                  |
+            |                            | [                                      |
+            |                            | example.id.cyberark.cloud]{.Emphasis}, |
+            |                            | and your OAuth2 Server web app ID is   |
+            |                            | [myOAuthApp]{.Emphasis}, then the      |
+            |                            | resulting Token URL would be           |
+            |                            |                                        |
+            |                            | [https://example.id.cyberark.clo       |
+            |                            | ud/oauth2/token/myOAuthApp]{.Emphasis} |
+            +----------------------------+----------------------------------------+
+            | [Scopes]{.Emphasis}        | Select [Scopes]{.Emphasis}, and add    |
+            |                            | [sca]{.Emphasis}                       |
+            +----------------------------+----------------------------------------+
+
+            : SCA API authorization details
+
+        2.  Click [Authorize]{.Emphasis}.
+
+        3.  If the authentication is successful, save the settings.
+
+            If not, check that all the settings that you\'ve provided
+            are correct, and try to authorize again.
+
+6.  []{#snow-flows} admin: Set up the On-demand access flows
+
+    In this step, you import and configure the automated flows for
+    requesting and granting on-demand access between and ServiceNow.
+
+    1.  [Import the downloaded flows]{.Emphasis}
+
+        In , click [+ Import]{.Emphasis} and import each of the flows
+        that you downloaded at the beginning of this procedure:
+
+        - [ Ondemand - ServiceNow Request.json]{.Emphasis}
+
+        - [ Ondemand ServiceNow.json]{.Emphasis}
+
+        These flows work together as follows:
+
+        ![](images/sca-snow-flows.png){.Enlarge}
+
+        When a user requests access to their cloud console from their
+        user portal space, this triggers the [ Ondemand - ServiceNow
+        Request]{.Emphasis} flow to submit a request ticket in
+        ServiceNow.
+
+        When ServiceNow sends an approval for the request, the second
+        flow, [ Ondemand ServiceNow]{.Emphasis}, triggers to create the
+        relevant access policy based on the requested access.
+
+        ::: note
+        uses the following APIs as part of on-demand access flows:
+
+        - [Notification API]{.Emphasis} - sends request and approval
+          messages by email during on-demand access flows.
+
+        - [SCA Policy API - Create Policy V2]{.Emphasis} - creates
+          policies in as needed.
+
+        - [SCA Infrastructure API - Get Job Status]{.Emphasis} - gets
+          the status of a job created by an asynchronous API call.
+        :::
+
+    2.  [Configure the on-demand request flow]{.Emphasis}
+
+        1.  Open the [ Ondemand - ServiceNow Request]{.Emphasis} flow.
+
+        2.  Click the [Create ServiceNow Request]{.Emphasis} node in the
+            flow (the node with the ServiceNow logo):
+
+            1.  In the [Settings]{.Emphasis} tab on the right, under
+                [Authorizations]{.Emphasis}, select the ServiceNow
+                authorization that you created in the previous step.
+
+            2.  In the [Map]{.Emphasis} tab, configure the ServiceNow
+                tenant: 
+
+                Click any field to open the pane on the left.
+
+                Under [Others \> Custom Values]{.Emphasis}, click the
+                edit button next to [servicenow-tenant]{.Emphasis}, and
+                enter your ServiceNow tenant\'s ID.
+
+        3.  Click the [CyberArk]{.Emphasis} node in the flow, go to the
+            [Settings]{.Emphasis} tab on the right and, under
+            [Authorizations]{.Emphasis}, select the OAuth2 authorization
+            that you created earlier.
+
+        4.  Save the flow.
+
+    3.  [Configure flow that triggers the creation of the SCA
+        policy]{.Emphasis}
+
+        1.  Open the [ Ondemand ServiceNow]{.Emphasis} flow. When this
+            flow receives an approval from ServiceNow, it triggers to
+            create an access policy.
+
+        2.  Click the [CyberArk]{.Emphasis} node in the flow, go to the
+            [Settings]{.Emphasis} tab on the right and, under
+            [Authorizations]{.Emphasis}, select the OAuth2 authorization
+            that you created earlier.
+
+            Repeat this for all of the other nodes in this
+            flow---altogether, there are five nodes in this flow.
+
+        3.  Save the flow.
+
+7.  ServiceNow admin: Configure the app in ServiceNow[]{#Set}
+
+    In this step, you configure the app that you installed earlier in
+    ServiceNow.
+
+    ::: note
+    You must be a ServiceNow administrator to configure the app in the
+    ServiceNow tenant.
+    :::
+
+    1.  In the ServiceNow Catalog Overview page, go to [All
+        ]{.Emphasis}\> []{.Emphasis} \> [Settings]{.Emphasis}.
+
+    2.  Click [New]{.Emphasis} and fill in the following fields:
+
+        +----------------------------+----------------------------------------+
+        | Item                       | Description                            |
+        +============================+========================================+
+        | [ tenant]{.Emphasis}       | The name of the tenant:                |
+        |                            |                                        |
+        |                            | [\<ten                                 |
+        |                            | ant\>.flows.cyberark.cloud]{.Emphasis} |
+        |                            |                                        |
+        |                            | ::: tip                                |
+        |                            | This information is available in , in  |
+        |                            | the [ Ondemand - ServiceNow            |
+        |                            | Request]{.Emphasis} flow\'s runtime    |
+        |                            | settings, or from the URL in the       |
+        |                            | address bar.                           |
+        |                            | :::                                    |
+        +----------------------------+----------------------------------------+
+        | [ flow name]{.Emphasis}    | The name of the flow for ServiceNow in |
+        |                            | : [SCA Ondemand ServiceNow]{.Emphasis} |
+        +----------------------------+----------------------------------------+
+        | [ flow API key]{.Emphasis} | The API key for the flow for           |
+        |                            | ServiceNow in .                        |
+        |                            |                                        |
+        |                            | ::: tip                                |
+        |                            | The API key is available in , in the [ |
+        |                            | Ondemand - ServiceNow]{.Emphasis}      |
+        |                            | flow\'s runtime settings.              |
+        |                            |                                        |
+        |                            | 1.  Click the top node in the[         |
+        |                            |     Ondemand - ServiceNow]{.Emphasis}  |
+        |                            |     flow.                              |
+        |                            |                                        |
+        |                            | 2.  On the right, under                |
+        |                            |     [Settings]{.Emphasis}, select      |
+        |                            |     [API access]{.Emphasis}, then      |
+        |                            |     select [Key]{.Emphasis}.           |
+        |                            | :::                                    |
+        +----------------------------+----------------------------------------+
+
+        : ServiceNow settings for SCA
+
+    3.  Submit your changes.
+
+8.  []{#Assign}ServiceNow admin: Assign roles to ServiceNow users
+
+    <div>
+
+    The app for ServiceNow provides the following roles that you can
+    assign to your ServiceNow users.
+
+      User                         Role                                                         Description
+      ---------------------------- ------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      [Administrator]{.Emphasis}   [x_cya_cyberark_sca.sca_admin]{.Emphasis}                    Grants administrator access to the integration and specifically the [All Requests ]{.Emphasis}option, so the ServiceNow administrator can see all the requests received by the app.
+                                   [x_cya_cyberark_sca.cyberark_sca_settings_user]{.Emphasis}   Grants access to the Settings page of the app, so the ServiceNow administrator can configure the integration between ServiceNow and .
+      [Basic]{.Emphasis}           [x_cya_cyberark_sca.cyberark_sca_request_user]{.Emphasis}    Grants access to the [Incoming Requests]{.Emphasis} and [My Requests]{.Emphasis} options. The view is filtered based on the current user, and shows requests submitted by the current user or incoming requests that must be approved by the current user.
+
+      : ServiceNow user roles
+
+    </div>
+
+9.  []{#Delegate} admin: Delegate approvers for on-demand access
+    requests
+
+    In this step you specify which ServiceNow users should receive and
+    approve requests for on-demand access to a specific workspace.
+
+    ::: tip
+    This step is optional, but recommended, so that you can get the full
+    value of the integration. By default, all CS Admins receive these
+    requests.
+    :::
+
+    In :
+
+    1.  Go to [Settings \> Workspace delegation]{.Emphasis}.
+
+    2.  Select the workspace and delegate users to be the approvers of
+        requests for that workspace.
+
+10. []{#snow-verify}CyberArk and ServiceNow admins: Verify the
+    configuration
+
+    CyberArk and ServiceNow admins: In this step, you verify the -
+    ServiceNow integration that you set up in the previous steps.
+
+    1.  From the user portal, send an on-demand access request. For
+        details, see Request temporary access.
+
+        From the space, send an on-demand access request. For details,
+        see [Request temporary
+        access](/secure-access-space/latest/en/content/cloud-consoles/sca_request-temporary-access.htm).
+
+    2.  In ServiceNow:
+
+        1.  Check the [All requests]{.Emphasis} list to verify that
+            ServiceNow received the request.
+
+        2.  In the [Request state]{.Emphasis} area, accept or reject the
+            request.
+
+    3.  Verify that the requester receives an approval/rejection email.
+
+11. []{#snow-verify}CyberArk and ServiceNow admins: Select Manual or
+    Automatic approval

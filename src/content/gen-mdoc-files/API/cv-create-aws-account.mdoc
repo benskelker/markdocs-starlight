@@ -1,0 +1,32 @@
+# Onboard AWS accounts
+
+This section describes the API for validating account configuration and
+if successful, onboards your accounts to
+{% $cc_product_vars.CV-full %}.
+
+:::: swagger-container
+[Edit this hyperlink to point it to the desired swagger yaml
+file.](../YAML/createAWSAccount20241015.yaml)
+
+::: {#swagger-ui}
+Do not edit this text or remove the below script. Only use this snippet
+ONCE in a topic. Remember to apply the Swagger master page to the topic.
+:::
+
+<script>
+                window.onload = function() {
+                if (!window.jQuery) { return }
+                var swaggerLink = $('.swagger-link a');
+                var swaggerLink = swaggerLink.attr('href');
+                const ui = SwaggerUIBundle({
+                url: swaggerLink,
+                dom_id: '#swagger-ui',
+                presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+                ]
+                })
+                window.ui = ui
+                }
+            </script>
+::::

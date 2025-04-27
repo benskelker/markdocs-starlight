@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <map id="map1">
+            <area shape="rectangle" coords="36,400,448,610" dragDirection="0" />
+            <area shape="rectangle" coords="1154,396,1580,612" dragDirection="0" />
+            <area shape="rectangle" coords="28,712,460,926" dragDirection="0" />
+        </map>
+        <h1>Manually onboard Google Cloud</h1>
+        <p>For use cases where you don't want to onboard your Google Cloud workspaces from the <MadCap:variable name="cc_product_vars.CV-full" /> interface, this topic describes how to manually onboard a Google Cloud organization.</p>
+        <h2><a name="Before"></a>Before you begin</h2>
+        <p>Make sure you have the following:</p>
+        <ul>
+            <li>
+                <p>A Google Cloud organization with at least one project. </p>
+            </li>
+            <li>
+                <p>Google Cloud admin user that has been assigned the following permissions:&#160;</p>
+                <ul>
+                    <li>
+                        <p><span class="Emphasis">roles/resourcemanager.organizationAdmin</span>
+                        </p>
+                    </li>
+                    <li><span class="Emphasis">roles/owner</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>The <span class="Emphasis">Compute Engine API</span> enabled in <MadCap:variable name="sca-project-variables.GoogleCloud" />.</p>
+            </li>
+            <li>
+                <p>We assume you are familiar with navigating your organization and projects in the Google Cloud console.</p>
+            </li>
+        </ul>
+        <h2 class="step" MadCap:autonum="Step 1: ">Log in to <MadCap:variable name="cc_C_CyberArk.CompanyName" /> and <MadCap:variable name="sca-project-variables.GoogleCloud" /></h2>
+        <p>In the <span class="Emphasis">same browser</span>, in separate tabs:</p>
+        <ol>
+            <li>
+                <p>Log in to your <MadCap:variable name="cc_product_vars.ISP-full" /> tenant.</p>
+            </li>
+            <li>
+                <p>Log in to your GCP&#160;organization in the Google Cloud console.</p>
+                <div class="important">
+                    <p>Keep both your tenant and the <MadCap:variable name="sca-project-variables.GoogleCloud" /> console open and stay logged in throughout the onboarding process.</p>
+                </div>
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 2: ">Enable the Cloud Identity APIs</h2>
+        <p>In this step you enable the Cloud Identity APIs in the <MadCap:variable name="sca-project-variables.GoogleCloud"></MadCap:variable> console.</p>
+        <ol>
+            <li>
+                <p>In the <MadCap:variable name="sca-project-variables.GoogleCloud"></MadCap:variable> console, navigate to <span class="Emphasis">API &amp; Services</span> &gt; <span class="Emphasis">Library</span>.</p>
+            </li>
+            <li>
+                <p>In the <span class="Emphasis">Search for APIs &amp; Services</span> text box, search for <b>Cloud Identity</b>.</p>
+            </li>
+            <li>
+                <p>From the list of APIs that appears, click the entry that matches <b>Cloud Identity</b>, and click <span class="Emphasis">ENABLE</span>.</p>
+            </li>
+            <li>
+                <p>When the API is enabled, the page reloads and shows <span class="Emphasis">Status</span> as <span class="Emphasis">Enabled</span>.</p>
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 3: ">Add additional roles to the Google APIs Service Agent (Service account)</h2>
+        <p>In this step, you add more roles to the Google APIs Service Agent.</p>
+        <ol>
+            <li>
+                <p>In the <MadCap:variable name="sca-project-variables.GoogleCloud" /> console, select the project where you want to deploy <MadCap:variable name="cc_C_CyberArk.CompanyName" /> resources, and navigate to <span class="Emphasis">IAM &amp; Admin</span> &gt; <span class="Emphasis">IAM</span>.</p>
+            </li>
+            <li>
+                <p>On the right side, select <span class="Emphasis">Include Google-provided role grants</span>.</p>
+                <p>This displays your Google-managed service accounts.</p>
+            </li>
+            <li>
+                <p>In the <span class="Emphasis">Filter</span> search bar (where it says <span class="Emphasis">Enter property name or value</span>), search for and select the service account that ends with <b>@cloudservices.gserviceaccount.com</b>.</p>
+            </li>
+            <li>
+                <p>Click the <span class="Emphasis">Edit Principal</span> button (pencil icon) and in the page that opens:</p>
+                <ol>
+                    <li>
+                        <p>Click <span class="Emphasis">+&#160;ADD ANOTHER ROLE</span>.</p>
+                    </li>
+                    <li>
+                        <p>In the <span class="Emphasis">Select a role</span> drop-down, search for and select the following roles:</p>
+                        <ul>
+                            <li>
+                                <p><b>Security Admin</b>
+                                </p>
+                            </li>
+                            <li>
+                                <p><b>Role Administrator</b>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Save your changes.</p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 4: ">Create a custom roles in Google Cloud</h2>
+        <p>In this step, you create roles for <MadCap:variable name="cc_C_CyberArk.CompanyName" /> the <MadCap:variable name="sca-project-variables.GoogleCloud" /> console. This is done at the organization level.</p>
+        <h3 class="stepReset" MadCap:autonum="Step 1: ">Create a custom role for <MadCap:variable name="cc_product_vars.CV-full" /></h3>
+        <ol>
+            <li>
+                <p>In the <MadCap:variable name="sca-project-variables.GoogleCloud" /> console, select the organization and navigate to <span class="Emphasis">IAM &amp; Admin</span> &gt; <span class="Emphasis">Roles</span>.</p>
+            </li>
+            <li>
+                <p>Near the top of the page, click <span class="Emphasis">+ SELECT ROLE</span>.</p>
+            </li>
+            <li>
+                <p>Enter the following information:&#160;</p>
+                <table style="width: 100%; caption-side: top; mc-table-style: url('../Resources/TableStyles/Standard.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard" cellspacing="0">
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Field</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Value</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Title</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>CustomCEMRole</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Description</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Custom role that includes permissions to all hierarchy levels</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">ID</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>CustomCEMRole</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>Set the role permissions:</p>
+                <ol>
+                    <li>
+                        <p>Click <span class="Emphasis">+ ADD PERMISSIONS</span>.</p>
+                    </li>
+                    <li>
+                        <p>In the <span class="Emphasis">Filter</span> search bar (where it says <span class="Emphasis">Enter property name or value</span>), find and select each of the following permissions:</p>
+                        <MadCap:snippetBlock src="CloudAdminSnippets/gcp-organization-permissions-list.flsnp" MadCap:conditionTagExpression="include[snip-conditions.CV-only], exclude[snip-conditions.SCA-only]" />
+                    </li>
+                    <li>
+                        <p>Click <span class="Emphasis">ADD</span>.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>After you have added all required permissions, click <span class="Emphasis">CREATE</span> at the bottom of the page.</p>
+                <p>Your custom role is created at the organizational level.</p>
+            </li>
+        </ol>
+        <h3 class="step" MadCap:autonum="Step 2: ">Create a custom role for <MadCap:variable name="cc_product_vars.SCA-full" /></h3>
+        <ol>
+            <li>
+                <p>In the <MadCap:variable name="sca-project-variables.GoogleCloud" /> console,  select the organization and navigate to <span class="Emphasis">IAM &amp; Admin</span> &gt; <span class="Emphasis">Roles</span>.</p>
+            </li>
+            <li>
+                <p>Near the top of the page, click <span class="Emphasis">+ SELECT ROLE</span>.</p>
+            </li>
+            <li>
+                <p>Enter the following information:&#160;</p>
+                <table style="width: 100%; caption-side: top; mc-table-style: url('../Resources/TableStyles/Standard.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard" cellspacing="0">
+                    <col class="TableStyle-Standard-Column-Column1">
+                    </col>
+                    <col class="TableStyle-Standard-Column-Column1">
+                    </col>
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Field</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Value</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Title</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>CustomSCARole</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Description</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Custom role that includes permissions to all hierarchy levels</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">ID</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>CustomSCARole</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Role launch stage</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>General Availability</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>Set the role permissions:</p>
+                <ol>
+                    <li>
+                        <p>Click <span class="Emphasis">+ ADD PERMISSIONS</span>.</p>
+                    </li>
+                    <li>
+                        <p>In the <span class="Emphasis">Filter</span> search bar (where it says <span class="Emphasis">Enter property name or value</span>), find and select each of the following permissions:</p>
+                        <MadCap:snippetBlock src="CloudAdminSnippets/gcp-organization-permissions-list.flsnp" MadCap:conditionTagExpression="include[snip-conditions.SCA-only], exclude[snip-conditions.CV-only]" />
+                    </li>
+                    <li>
+                        <p>Click <span class="Emphasis">ADD</span>.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>After you have added all required permissions, click <span class="Emphasis">CREATE</span> at the bottom of the page.</p>
+                <p>Your custom role is created at the organizational level.</p>
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 5: "><a name="Create"></a>Create the service accounts</h2>
+        <p>In this step, you create service accounts for <MadCap:variable name="cc_product_vars.CV-full" /> and <MadCap:variable name="cc_product_vars.SCA-full" /> in <MadCap:variable name="sca-project-variables.GoogleCloud" />. </p>
+        <ol>
+            <li>
+                <p>In the <MadCap:variable name="sca-project-variables.GoogleCloud" /> console, select the project where you are creating all the <MadCap:variable name="cc_C_CyberArk.CompanyName" /> resources and navigate to <span class="Emphasis">IAM &amp; Admin</span> &gt; <span class="Emphasis">Service Accounts</span>.</p>
+            </li>
+            <li>
+                <p>One at a time, create a service account for <MadCap:variable name="cc_product_vars.CV-full" /> and <MadCap:variable name="cc_product_vars.SCA-full" />:</p>
+                <p>Click <span class="Emphasis">+ CREATE SERVICE ACCOUNTS</span>, and provide the following details:</p>
+                <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard" cellspacing="0">
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Service</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Service account name</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Service account ID</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><MadCap:variable name="cc_product_vars.CV-full" />
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p>cem-service-account</p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>cyb-cem</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><MadCap:variable name="cc_product_vars.SCA-full" />
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p>sca-service-account</p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>cyb-sca</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>Click <span class="Emphasis">DONE</span>.</p>
+            </li>
+            <li>
+                <p>From the list of service accounts, locate each of the service accounts you just created.</p>
+            </li>
+            <li>
+                <p>Create a key for each service account as follows: </p>
+                <ol>
+                    <li>
+                        <p>Select the service account.</p>
+                    </li>
+                    <li>
+                        <p>In the <span class="Emphasis">KEYS</span> tab, click <span class="Emphasis">ADD KEY</span>, then <span class="Emphasis">Create new key</span>.</p>
+                    </li>
+                    <li>
+                        <p>For the file type, select <span class="Emphasis">JSON</span>, and click <span class="Emphasis">CREATE</span>.</p>
+                        <p>The generated key is automatically downloaded to your local file system. If it doesn't download, manually download and save the key to your local file system—<span class="Emphasis">you'll need this key later in this procedure</span>.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Navigate back to the <span class="Emphasis">Service Accounts</span> page, and note the email address associated with each of the service accounts—<span class="Emphasis">you'll need these email addresses in the next step</span>.</p>
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 6: ">Bind the roles to their respective service accounts</h2>
+        <p>In this step, you bind the roles that you created earlier to their respective service accounts by creating a new principal per service account, and assigning the relevant role to the respective principal.</p>
+        <ol>
+            <li>
+                <p>In the <MadCap:variable name="sca-project-variables.GoogleCloud" /> console navigate to <span class="Emphasis">IAM &amp; Admin</span> &gt; <span class="Emphasis">IAM</span>.</p>
+            </li>
+            <li>
+                <p>Click <span class="Emphasis">Select organization</span>, and select the organization (top level) - don't select a project.</p>
+            </li>
+            <li>
+                <p>One at a time, for each service account, click <span class="Emphasis">+GRANT&#160;ACCESS</span> at the top and enter the following information:</p>
+                <table style="width: 100%; caption-side: top; mc-table-style: url('../Resources/TableStyles/Standard.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard" cellspacing="0">
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Field</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Value</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">New principals</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>The email address of the service account (as noted in the previous step)</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Select a role</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <ul>
+                                    <li>
+                                        <p>For cem-service-account:&#160;<span class="Emphasis">CustomCEMRole</span></p>
+                                    </li>
+                                    <li>
+                                        <p>For sca-service-account:&#160;<span class="Emphasis">CustomSCARole</span></p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>Save your changes. The new principal is listed with the new role in the organization's <span class="Emphasis">IAM</span> page.</p>
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 7: "><a name="Generate"></a>Generate a finalValue value for each service account</h2>
+        <p>In this step you encode the each service account's key to generate a <span class="Emphasis">finalValue</span>, which you'll need later in this procedure.</p>
+        <ol>
+            <li>
+                <p>From the <MadCap:variable name="sca-project-variables.GoogleCloud" /> console, open the Google Cloud Shell.</p>
+                <div class="important">
+                    <ul>
+                        <li>
+                            <p> If you are prompted to authorize the Cloud Shell, authorize it.</p>
+                        </li>
+                        <li>
+                            <p>Wait until the shell is fully initialized. </p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <p>One at a time, for each service account: </p>
+                <ol>
+                    <li>
+                        <p>In the <MadCap:variable name="sca-project-variables.GoogleCloud" /> Shell, upload the JSON file that you created when you created the service account in <MadCap:xref href="#Create">Create the service accounts</MadCap:xref>. (For details on uploading files to the cloud shell, see the <a href="https://cloud.google.com/shell/docs/editor-overview#upload_and_download_files">Google Cloud docs</a>.)</p>
+                    </li>
+                    <li>
+                        <p>Run the following command which generates a Base64-encoded value of the key from the uploaded JSON file and saves it in a .txt file:<br /></p>
+                        <div class="code"><pre><code>base64 -w 0 &lt;filename&gt; &gt; &lt;base64-encoded destination file&gt;</code></pre>
+                        </div>
+                        <p>For example:</p>
+                        <ul>
+                            <li>
+                                <p>To encode the <MadCap:variable name="cc_product_vars.CV-full" /> service account key, run:</p>
+                                <div class="example"><pre><code>base64 -w 0 <span class="Emphasis">downloaded-cv-sa-key.json</span> &gt; <span class="Emphasis">base64encoded-cv.txt</span></code></pre>
+                                </div>
+                            </li>
+                            <li>
+                                <p>To encode the <MadCap:variable name="cc_product_vars.SCA-full" /> service account key, run:</p>
+                                <div class="example"><pre><code>base64 -w 0 <span class="Emphasis">downloaded-sca-sa-key.json</span> &gt; <span class="Emphasis">base64encoded-sca.txt</span></code></pre>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Download the saved .txt files to your local file system. <span class="Emphasis">You'll need them in the next step.</span></p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 8: ">Onboard the Google Cloud organization in Cloud Visibility</h2>
+        <p>Now that the service accounts and roles for <MadCap:variable name="cc_product_vars.CV-full" /> and <MadCap:variable name="cc_product_vars.SCA-full" /> are configured in the <MadCap:variable name="sca-project-variables.GoogleCloud" /> console, you are ready to onboard the <MadCap:variable name="sca-project-variables.GoogleCloud" /> organization to <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+        <ol>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.ISP-full" />, navigate to <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+            </li>
+            <li>
+                <p>Go to <span class="Emphasis">Settings</span> &gt; <span class="Emphasis">Platform Management</span>, select the <span class="Emphasis">GCP</span> tile, and click <span class="Emphasis">Add workspace</span>.</p>
+            </li>
+            <li>
+                <p>Select <span class="Emphasis">Onboard new organization</span> and click <span class="Emphasis">Add</span>. The <span class="Emphasis">New GCP organization</span> page opens.</p>
+            </li>
+            <li>
+                <p>Under <span class="Emphasis">Organization details</span>, provide your <MadCap:variable name="sca-project-variables.GoogleCloud" /> organization's ID and the ID of the project where you created all the <MadCap:variable name="cc_C_CyberArk.CompanyName" /> resources in the previous steps. Get these details from the Google Cloud console as follows:</p>
+                <ol>
+                    <li>
+                        <p>In the Google Cloud console, select the organization, copy the&#160;ID from the <span class="Emphasis">ID</span> column, and paste it into the <span class="Emphasis">Organization ID</span> field in the <span class="Emphasis">New GCP organization</span> page in <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+                    </li>
+                    <li>
+                        <p>In the Google Cloud console, select the project, copy the&#160;ID from the <span class="Emphasis">ID</span>&#160;column, and paste it into the <span class="Emphasis">Project ID</span> field in the <span class="Emphasis">New GCP organization</span> page in <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Under <b>Configuration</b>:</p>
+                <ol>
+                    <li>
+                        <p>Skip the first two steps.</p>
+                    </li>
+                    <li>
+                        <p>In the third step, provide the <MadCap:variable name="cc_product_vars.CV-full" /> and <MadCap:variable name="cc_product_vars.SCA-full" /> '<span class="Emphasis">finalValue</span> values. To obtain these values, open each of the base64encoded-&lt;xx&gt; .txt files that you downloaded in <MadCap:xref href="#Generate">Generate a finalValue value for each service account</MadCap:xref> above. Populate each <span class="Emphasis">finalValue</span> field with the Base64-encoded key from the respective .txt file.<br /></p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 9: ">Discover the workspace</h2>
+        <p>At the bottom of the New GCP organization page, click <span class="Emphasis">Start Discovery</span>.</p>
+        <p><MadCap:variable name="cc_product_vars.CV-full" /> starts to discover the organization. Depending on the size of your organization, this might take some time. </p>
+        <p>Refresh the <span class="Emphasis">Settings &gt;&#160;Platform management &gt; GCP</span> page to check that organization onboarded as expected.</p>
+        <h2 class="step" MadCap:autonum="Step 10: ">Clean up sensitive files</h2>
+        <div class="important">
+            <p>This is ensures that all sensitive data used in this procedure is deleted from your machine. We strongly recommend that you complete this step.</p>
+        </div>
+        <p>In this step, you delete the raw and encoded key files that you downloaded for the onboarding procedure.</p>
+        <p>In <MadCap:variable name="sca-project-variables.GoogleCloud" /> shell, run the following command for each sensitive file:</p>
+        <div class="code"><pre><code>rm &lt;filename&gt;</code></pre>
+        </div>
+        <p>where  &lt;filename&gt; matches the key file, for example:</p>
+        <div class="example"><pre><code>rm base64encoded-cv.txt</code></pre>
+        </div>
+    </body>
+</html>

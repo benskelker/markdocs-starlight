@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p>When you connect to your console, a session is opened. The connection can be monitored in the <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> <MadCap:variable name="cc_product_vars.Audit-full"></MadCap:variable> service. When connecting with multiple roles, a separate session is opened for each role, and each session is monitored separately in the <MadCap:variable name="cc_product_vars.Audit-short"></MadCap:variable> service.</p>
+        <p>You can monitor your connections if you have access to the <MadCap:variable name="cc_product_vars.Audit-short"></MadCap:variable> service. To get access, contact your <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> tenant administrator. </p>
+        <p>For more information about the Audit service, see the Audit service docs:</p>
+        <ul>
+            <li>
+                <p><a href="/audit/latest/en/content/audit/isp_session-activities.htm">Monitor user session</a>
+                </p>
+            </li>
+            <li>
+                <p><a href="/audit/latest/en/content/audit/product-audits/isp-sca-audit.htm">SCA audit events</a>
+                </p>
+            </li>
+        </ul>
+    </body>
+</html>

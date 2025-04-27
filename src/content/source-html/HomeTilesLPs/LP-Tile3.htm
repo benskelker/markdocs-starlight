@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <div MadCap:conditions="project_conditions.SCA-only">
+            <h1>Automate <MadCap:variable name="cc_product_vars.SCA-short"></MadCap:variable> operations</h1>
+            <p>This section describes <MadCap:variable name="cc_product_vars.SCA-short" /> operations that can be automated or performed programmatically.</p>
+            <p>&#160;</p>
+            <MadCap:snippetBlock src="../Resources/Snippets/_TopNav_Custom/InThisSection_Proxy.flsnp" />
+        </div>
+        <div MadCap:conditions="project_conditions.CEM">
+            <h1><MadCap:variable name="cc_product_vars.CV-full" /> scanning process</h1>
+            <p>This section describes scanning and  what <MadCap:variable name="cc_product_vars.CV-full" /> does during the process.</p>
+            <p>To keep the content <MadCap:variable name="cc_product_vars.CV-full" /> provides up-to-date and relevant, <MadCap:variable name="cc_product_vars.CV-full" /> conducts a recurring process to fetch the current data of each cloud environment. This process, which we refer to as <span class="Emphasis">scanning</span>, happens behind the scenes, automatically, on a recurring basis. The frequency of the scan and time it takes to complete can vary between customers depending on the amount of data.</p>
+            <p>In addition to system generated scans, you can trigger a scan on demand using the appropriate API. For more information about scan on demand, see <MadCap:xref href="../API/cv-on-demand-scan.htm">On-demand scan</MadCap:xref>.</p>
+            <h2>How soon after onboarding workspaces to <MadCap:variable name="cc_product_vars.CV-full" /> can I see them in <MadCap:variable name="cc_product_vars.CV-full" /> and <MadCap:variable name="cc_product_vars.SCA-short" /> ?</h2>
+            <p>This depends on whether you are onboarding new workspaces to <MadCap:variable name="cc_product_vars.CV-full" />, or whether the workspaces are part of a previously onboarded cloud organization/directory; for example, if you add new accounts to a previously onboarded AWS organization.</p>
+            <table style="width: 100%;caption-side: top;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                <col class="TableStyle-Standard-Column-Column1" />
+                <col class="TableStyle-Standard-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-Standard-Head-Header1">
+                        <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                            <p>Workspace</p>
+                        </th>
+                        <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                            <p>Workspace discovery and resource scan</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p><span class="Emphasis">New</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>When you onboard new workspaces, whether a standalone workspace or a full cloud organization or directory,  we immediately run a full discovery of the workspaces that you're onboarding.</p>
+                            <p>Depending on the size and structure of the workspaces, it can typically take a few minutes to a couple of hours before you can start working with them in <MadCap:variable name="cc_product_vars.SCA-short" />.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                            <p><span class="Emphasis">Previously onboarded</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                            <p>If structural changes are made in the cloud, for example accounts are added to an AWS organization that has been onboarded, these are picked up in <MadCap:variable name="cc_product_vars.SCA-short" /> after our scheduled discovery and scan as follows:</p>
+                            <ul>
+                                <li>
+                                    <p><span class="Emphasis">Discovery</span> - Once a day (every 24 hours) we run a discovery of all the onboarded workspaces in <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+                                    <p>This process detects structural updates in the corresponding cloud environments and updates <MadCap:variable name="cc_product_vars.CV-full" /> and <MadCap:variable name="cc_product_vars.SCA-short" /> accordingly. </p>
+                                    <p>For example, if structural changes (add/delete/rename/move accounts) are made to an onboarded AWS&#160;organization, these changes are reflected in <MadCap:variable name="cc_product_vars.SCA-short" /> after the scheduled daily discovery.</p>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <p><span class="Emphasis">Scan</span> - In parallel,  for all onboarded workspaces, <MadCap:variable name="cc_product_vars.SCA-short" /> directly scans the cloud environment twice a day (every 12 hours) for roles and permissions, and in the case of Microsoft EntraID, it also scans for resources (resource groups and resources). </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">If you don't want to wait for the scheduled discovery and scans, you can manually trigger an <MadCap:variable name="cc_product_vars.SCA-short" /> discovery, which combines both the discovery and scan, using <MadCap:variable name="cc_product_vars.SCA-short" />'s Discovery  API (<code>/policies/discovery</code>) . For more information, see <MadCap:xref href="#Is">Is there a way to manually scan onboarded workspaces?</MadCap:xref></p>
+            <MadCap:dropDown MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Is there a way to manually discover and scan onboarded workspaces?<a name="Is"></a></MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>Yes. You can manually trigger an <MadCap:variable name="cc_product_vars.SCA-short" /> discovery using <a href="../Automation/sca_terraform-integration.htm">Terraform</a> or <MadCap:variable name="cc_product_vars.SCA-short" />'s Discovery  API (<code>/policies/discovery</code>). </p>
+                    <p>By default, this API:</p>
+                    <ul>
+                        <li>
+                            <p>Discovers of all the workspaces that are already onboarded to <MadCap:variable name="cc_product_vars.CV-full" /></p>
+                        </li>
+                        <li>
+                            <p> Scans for roles and permissions, and in the case of <MadCap:variable name="cv-shared-variables.entra-id-long" />, it also scans for resources (resource groups and resources).</p>
+                        </li>
+                    </ul>
+                    <p>  For details, see <MadCap:xref href="../Automation/sca-API-policies.htm">SCA policy APIs</MadCap:xref>.</p>
+                    <p>Alternatively, if you only want to scan for roles and resources, and you are not concerned with structural changes in your cloud environment, you can run a scan either from the <MadCap:variable name="cc_product_vars.SCA-short" /> UI, or using the SCA API:</p>
+                    <ul>
+                        <li>
+                            <p><MadCap:variable name="cc_product_vars.SCA-short" /> UI:&#160;When creating a policy in the Create policy wizard, in the Select roles dialog box, click <span class="Emphasis">Scan again</span></p>
+                        </li>
+                        <li>
+                            <p><MadCap:variable name="cc_product_vars.SCA-short" /> API:&#160;Send a <code>/cloud/rescan</code> API request - see <MadCap:xref href="../Automation/sca-API-cloud.htm">SCA general cloud activity APIs</MadCap:xref></p>
+                        </li>
+                    </ul>
+                    <div class="note">
+                        <p><span class="Emphasis">Scan again</span> and <code>/cloud/rescan</code> scan the cloud environment directly.</p>
+                    </div>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <p>For more information about the scanning process, see:</p>
+            <ul>
+                <li>
+                    <p>
+                        <MadCap:xref href="../CloudAdmin/cv-data-collection.htm">Data collection</MadCap:xref>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <MadCap:xref href="../CloudAdmin/cv-calculations.htm">Calculations</MadCap:xref>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

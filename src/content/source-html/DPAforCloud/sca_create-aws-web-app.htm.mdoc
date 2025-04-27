@@ -1,0 +1,597 @@
+# Create a web app for AWS
+
+This topic describes how to add web apps for single accounts,
+organizations, and organizations to enable access from .
+
+::: important
+This topic assumes that your AWS workspace has been onboarded to . For
+details, see Add AWS.
+:::
+
+## Special considerations for
+
+If you are creating one or more web apps for , take the following issues
+into consideration when planning which IdP to use with the web apps.
+
+- [Active Directory]{.Emphasis}: If you intend to switch your IdP to or
+  from Active Directory, this will affect any users and groups you
+  configured in AWS. For more information, see the [AWS
+  docs](https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-considerations.html#changing-between-microsoft-ad-and-azure-active-directory){target="_blank"
+  alt="link to AWS documentation about considerations for changing IdP to or from AD "}.
+
+<!-- -->
+
+- [Permission set behavior:]{.Emphasis} enforces zero standing
+  permissions, which involves dynamically assigning and revoking
+  permissions to the AWS cloud console. This might directly affect AWS
+  reserved roles (AWSReserved roles), which are dynamically managed by
+  AWS behind the scenes. For more information, see the
+  [AWS docs](https://docs.aws.amazon.com/singlesignon/latest/userguide/referencingpermissionsets.html).
+
+  If your organization explicitly uses AWS reserved roles for other
+  purposes, we recommend contacting CyberArk support to prevent
+  potential deletion of these roles.
+
+## []{#Configur}Create a web app for an AWS workspace
+
+Create web apps for AWS accounts, , and AWS organization (without
+IAM Identity Center).
+
+### []{#Before}Before you begin
+
+- This topic assumes that your AWS workspace has been onboarded to . For
+  details, see Add AWS.
+
+- To access your cloud workspace through your web app, trust must be
+  established between and AWS.
+
+  - For , this trust needs to be configured manually after you create
+    the web app.
+
+  - For AWS standalone accounts and organizations, trust can be
+    configured one of the following ways:
+
+    - can automatically configure trust for you when it creates the web
+      app
+
+    - Configure trust manually in
+
+    When you onboard accounts in , the
+    [CyberArkRoleSCA\_{UUID}]{.Emphasis} role that is added to your
+    accounts includes the [iam:CreateSAMLProvider]{.Emphasis} permission
+    which enables this feature.
+
+    ::: important
+    - The [iam:CreateSAMLProvider]{.Emphasis} permission is included
+      with accounts that were onboarded to from August 6, 2024.
+
+    - [If you are not sure when your account was onboarded to
+      ]{.Emphasis}, go to the AWS account\'s
+      [CyberArkRoleSCA\_{UUID}]{.Emphasis} role, and check that the
+      [CyberArkPolicyAccountForSCA\<ACCOUNT_ID\>]{.Emphasis} policy
+      includes the .[iam:CreateSAMLProvider]{.Emphasis} permission.
+
+      If this permission doesn\'t appear, you need to add the permission
+      manually as described in Auto-trust between
+      \[%=cc_product_vars.SCA-short%\] and AWS.
+
+    - For AWS organizations, the [CyberArkRoleSCA\_{UUID}]{.Emphasis}
+      role for each account in the organization must include this
+      [iam:CreateSAMLProvider]{.Emphasis} permission.
+    :::
+
+You can create web apps for an AWS workspace in one of the following
+ways:
+
++------------------+--------------------------------------------------+
+| Option           | Description                                      |
++==================+==================================================+
+| SCA (simplified) | In , you provide a few details about the AWS     |
+|                  | workspace, and automatically creates and         |
+|                  | configures the web app for you.                  |
+|                  |                                                  |
+|                  | ::: note                                         |
+|                  | Depending on your selections during this         |
+|                  | process, you may need to configure a few more    |
+|                  | things.                                          |
+|                  | :::                                              |
++------------------+--------------------------------------------------+
+|                  | In , you create and configure the web app from   |
+|                  | scratch.                                         |
++------------------+--------------------------------------------------+
+
+:::::::::::::::::: tabs
+- [SCA (simplified)]{cc-tab=".tab-1"}
+- []{cc-tab=".tab-2"}
+
+::::::::::::::::: tabs-stage
+:::::::: tab-1
+Tab 1 Content - SCA
+
+This section describes how to use to create a web app in for your AWS
+workspace.
+
+::::::: tabs
+- [AWS standalone account]{cc-tab=".tab-1"}
+- []{cc-tab=".tab-2"}
+- [AWS organization]{cc-tab=".tab-3"}
+
+:::::: tabs-stage
+::: tab-1
+Tab 1 Content - single
+
+1.  [Create the web app]{.Emphasis}
+
+    ::::: {madcap:conditions="SCA-conditions.not-free-trial"}
+    :::: wistia_wrapper
+    rv05ez3c5i
+
+    ::: wistia_embed
+    :::
+    ::::
+    :::::
+
+    1.  Make sure you have the AWS account ID available. This is the
+        12-digit AWS account ID that was used when the account was
+        onboarded in .
+
+    2.  In , go to the Introduction page.
+
+        In the Admin portal, select [Cloud connectivity \> Configure
+        cloud provider apps]{.Emphasis}.
+
+    3.  In the second tile, click [+ Create a web app]{.Emphasis}.
+
+    4.  In the dialog box that opens click [AWS standalone
+        account]{.Emphasis}, and click [Next]{.Emphasis}.
+
+    5.  Enter the following details:
+
+        +----------------+----------------------------------------------------+
+        | Field          | Description                                        |
+        +================+====================================================+
+        | Web app name   | Give the web app a name (up to 50 characters) that |
+        |                | will help you identify it in .                     |
+        |                |                                                    |
+        |                | [Default:]{.Emphasis} Amazon Web Services (AWS)    |
+        |                | Console                                            |
+        +----------------+----------------------------------------------------+
+        | AWS account ID | The 12-digit AWS account ID that was used when the |
+        |                | account was onboarded in .                         |
+        |                |                                                    |
+        |                | ::: important                                      |
+        |                | Make sure that the number you provide here is      |
+        |                | correct. If not, the web app won\'t be created.    |
+        |                | :::                                                |
+        +----------------+----------------------------------------------------+
+
+    6.  Under [Trust]{.Emphasis}, select how you want to set up trust
+        between (the identity provider) and AWS:
+
+        - [Configure trust automatically]{.Emphasis} - When the web app
+          is created, automatically configures the trust settings.
+
+          ::: important
+          - This option requires that the account\'s
+            [CyberArkRoleSCA\_{UUID}]{.Emphasis} role includes the
+            [iam:CreateSAMLProvider]{.Emphasis} permission. See Before
+            you begin.
+          :::
+
+        - [I want to configure trust manually in CyberArk
+          Identity]{.Emphasis} - After the web app is created, you can
+          manually configure the trust settings.
+
+    7.  Click [Create]{.Emphasis}.
+
+        ::: note
+        - Before creating the web app, validates the account ID. This
+          may take some time.
+
+        - Once the web app is created, it\'s listed in the Cloud
+          provider applications pageWeb Apps page in , and you can
+          create policies in .
+
+          [Note: ]{.Emphasis}If you chose to configure trust manually,
+          an asynchronous discovery of your onboarded workspaces is
+          triggered to identify changes in your cloud structure. This
+          may take some time. In this case, we recommend that you wait
+          for the discovery process to complete before creating policies
+          in .
+
+        - [Trust:]{.Emphasis}
+
+          - If you selected the [Configure trust
+            automatically]{.Emphasis} option above, check the [Service
+            data]{.Emphasis} events in the service to make sure that
+            trust was established successfully. For more details, see
+            the [Audit
+            docs](/audit/latest/en/content/audit/product-audits/isp-sca-audit.htm "Link to the Audit documentation in the docs portal"){alt="Link to the Audit documentation in the docs portal"}.
+
+            If trust wasn\'t established, users with access won\'t be
+            able to connect to the accounts from their user portal
+            space. Follow the instructions in the audit event to resolve
+            the issue.
+
+          - If you selected [I want to configure trust manually in
+            ]{.Emphasis}, continue with Configure trust between
+            \[%=cc_product_vars.Identity-full%\] and
+            \[%=sca-project-variables.AWS-IAM%\] manually.
+
+            This triggers an asynchronous discovery of your onboarded
+            workspaces to identify changes in your cloud structure. This
+            may take some time. We recommend that you wait for this
+            process to complete before creating policies in .
+
+        - 
+        :::
+
+2.  [[]{#sca-configure-trust-manually}Configure trust between and AWS
+    manually]{.Emphasis}
+
+    ::: note
+    Do this step if either of the following is true:
+
+    - You selected [I want to configure trust manually in ]{.Emphasis}
+      in the previous step
+
+    - You selected [Configure trust automatically]{.Emphasis} in the
+      previous step, but the Service data audit event shows that trust
+      was not established and instructs you to configure trust manually
+    :::
+
+3.  [Enable (Optional)]{.Emphasis}
+:::
+
+::: tab-2
+Tab 2 Content -
+
+1.  [Create the web app]{.Emphasis}
+
+    ::::: {madcap:conditions="SCA-conditions.not-free-trial"}
+    :::: wistia_wrapper
+    a1w5sr7dqp
+
+    ::: wistia_embed
+    :::
+    ::::
+    :::::
+
+    1.  In , go to the Introduction page.
+
+        In the Admin portal, select [Cloud connectivity \> Configure
+        cloud provider apps]{.Emphasis}.
+
+    2.  In the second tile, click [+ Create a web app]{.Emphasis}.
+
+    3.  In the dialog box that opens click [AWS organization (with
+        IAM Identity Center]{.Emphasis}), and click [Next]{.Emphasis}.
+
+    4.  Provide the following details:
+
+        +-----------------------------------+-----------------------------------+
+        | Field                             | Description                       |
+        +===================================+===================================+
+        | Web app name                      | Give the web app a name (up to 50 |
+        |                                   | characters) that will help you    |
+        |                                   | identify it in .                  |
+        |                                   |                                   |
+        |                                   | [Default:]{.Emphasis}             |
+        +-----------------------------------+-----------------------------------+
+        | Organization                      | Select the organization from the  |
+        |                                   | dropdown list.                    |
+        |                                   |                                   |
+        |                                   | ::: note                          |
+        |                                   | - It may take some time for the   |
+        |                                   |   organizations to display.       |
+        |                                   |                                   |
+        |                                   | - If your organization doesn\'t   |
+        |                                   |   appear, this means that it      |
+        |                                   |   hasn\'t been onboarded to . For |
+        |                                   |   details about onboarding the    |
+        |                                   |   organization, see Discover a    |
+        |                                   |   new AWS organization.           |
+        |                                   | :::                               |
+        +-----------------------------------+-----------------------------------+
+
+    5.  [Use as an external IdP]{.Emphasis}: Select this option if you
+        want to use as an external IdP for your users.
+
+        ::: important
+        Make sure also to define as the identity provider in ,.
+        :::
+
+    6.  Click [Create]{.Emphasis}. The web app for the organization is
+        created in .
+
+        Along with a web app, a custom role is created in the following
+        format: [AWS_SCA\_\<management account ID\>]{.Emphasis}.
+        Provisioned users get access to this web app by means of this
+        role.
+
+        ::: note
+        :::
+
+2.  [Create a custom role for provisioned users]{.Emphasis}
+
+    Create a custom role for provisioned users to assume so that they
+    can access the workspace.
+
+    To create this custom role, under [Core Services ]{.Emphasis}\>
+    [Roles]{.Emphasis}, create a custom role in the format
+    [AWS_SCA\_\<management account ID\>]{.Emphasis}. For example,
+    [AWS_SCA_1111111]{.Emphasis}.
+
+    ::: important
+    Users must either be created directly in , or provisioned from or
+    another IdP. For information on how to provision users in AWS, see
+    the
+    [AWS docs](https://docs.aws.amazon.com/singlesignon/latest/userguide/scim-profile-saml.html){target="_blank"
+    alt="link to AWS documentation on automatic and manual user provisioning"}.
+    :::
+
+    ::: note
+    - Each web app must have its own custom role
+
+    - For more information about creating custom roles, see the
+      [docs](/identity/latest/en/content/coreservices/getstarted/create-roles.htm){target="_blank"
+      alt="[%=cc_product_vars.Identity-full%] topic on how to create custom roles"}.
+    :::
+
+3.  [Configure the IdP - required only if you are using as your external
+    IdP]{.Emphasis}
+
+    If your organization is using as its external IdP, you need to set
+    up trust between and .
+
+    [In :]{.Emphasis}
+
+4.  [Enable (Optional)]{.Emphasis}
+:::
+
+::: tab-3
+Tab 3 Content - aws organization
+
+1.  [Create web apps for all the accounts in the
+    organization]{.Emphasis}
+
+    ::::: {madcap:conditions="SCA-conditions.not-free-trial"}
+    :::: wistia_wrapper
+    zn85nwmono
+
+    ::: wistia_embed
+    :::
+    ::::
+    :::::
+
+    1.  In , go to the Introduction page.
+
+        In the Admin portal, select [Cloud connectivity \> Configure
+        cloud provider apps]{.Emphasis}.
+
+    2.  In the second tile, click [+ Create a web app]{.Emphasis}.
+
+    3.  In the dialog box that opens click [AWS organization (without
+        IAM Identity Center]{.Emphasis}), and click [Next]{.Emphasis}.
+
+    4.  Select the AWS organization from the dropdown list.
+
+        ::: note
+        - It may take some time for the organizations to display.
+
+        - If your organization doesn\'t appear, this means that it
+          hasn\'t been onboarded to . For details about onboarding the
+          organization, see Discover a new AWS organization.
+
+        - A web app is created for each account in the organization.
+        :::
+
+        Click [Continue]{.Emphasis}.
+
+    5.  Provide a meaningful prefix for the web apps that will be
+        created for each account; for example [AWS-myorg1]{.Emphasis}.
+        Each web app is named using this prefix and its 12-digit account
+        number, separated by an underscore.
+
+        [Example:]{.Emphasis}[AWS-myorg1_XXXXXXXXXXXX]{.Emphasis}.
+
+        [Default prefix:]{.Emphasis} Amazon Web Services (AWS) Console
+
+    6.  Under [Trust]{.Emphasis}, select how you want to establish trust
+        between and AWS:
+
+        - [Configure trust automatically]{.Emphasis} - When the web app
+          for each account in the organization is created, establishes
+          the trust for you.
+
+          ::: important
+          This option requires the [iam:CreateSAMLProvider]{.Emphasis}
+          in the [CyberArkRoleSCA\_{UUID}]{.Emphasis} role in each of
+          your AWS IAM accounts. See Before you begin.
+          :::
+
+        - [I want to configure trust manually in CyberArk
+          Identity]{.Emphasis} - After the web apps are created, you
+          manually configure trust for each web app in .
+
+    7.  Click [Create]{.Emphasis}. A batch job is created and starts
+        building web apps for each account in the organization.
+
+    ::: note
+    - validates each account before creating a web app for it. This may
+      take some time.
+
+    - Once the web apps are created, they are listed in the Web Apps
+      page in , and you can create policies.
+
+    - As the batch job runs, you can monitor the status of web app
+      creation from the service. Filter the events for the specific
+      organization. The final event shows how many web apps were
+      successfully created and how many failed, with their respective
+      account IDs.
+
+    - [Trust:]{.Emphasis}
+
+      - If you selected the [Configure trust automatically]{.Emphasis}
+        option above, check the [Service data]{.Emphasis} events in the
+        service to make sure that trust was established successfully for
+        each account. For more details, see the [Audit
+        docs](/audit/latest/en/content/audit/product-audits/isp-sca-audit.htm).
+
+        If trust wasn\'t established, users with access won\'t be able
+        to connect to the accounts from their user portal space. Follow
+        the instructions in the audit event to resolve the issue.
+
+      - If you selected [I want to configure trust manually in
+        ]{.Emphasis}, continue with Configure trust between
+        \[%=cc_product_vars.Identity-full%\] and
+        \[%=sca-project-variables.AWS-IAM%\] manually.
+
+    - 
+    :::
+
+2.  [Configure trust between and AWS manually]{.Emphasis}
+
+    ::: note
+    Do this step only if you selected [I want to configure trust
+    manually in ]{.Emphasis} in the previous step. In this case, do this
+    step for each web app that was created.
+    :::
+
+3.  [Enable (Optional)]{.Emphasis}
+:::
+::::::
+:::::::
+::::::::
+
+:::::::::: tab-2
+Tab 2 Content -Identity Admin
+
+You can create web apps for and for from . Each workspace type has
+different configuration requirements.
+
+::: tip
+You can also create web apps in where you provide only the minimum
+details and provides all the rest of the details. See Create a web app
+for an \[%=sca-project-variables.AWS-IAM%\] workspace.
+:::
+
+::: note
+Web apps for organizations can be added from only. For details, see
+Create a web app for an \[%=sca-project-variables.AWS-IAM%\] workspace.
+:::
+
+::::::: tabs
+- [AWS IAM]{cc-tab=".tab-1"}
+- [AWS IAM Identity Center]{cc-tab=".tab-2"}
+
+:::::: tabs-stage
+:::: tab-1
+Tab 1 Content - \<AWS IAM\>
+
+::: note
+If you want to provide user access to multiple AWS IAM accounts (even
+when they belong to the same organization), you have to create a
+separate web app in the portal for each account.
+:::
+
+1.  ::: ProcedureHeading
+    Add the AWS console as a web app
+    :::
+
+2.  Specify the AWS application settings
+
+    In the [Application Settings]{.Emphasis} tab, enter your [ AWS
+    Account ID]{.Emphasis}, then click [Save]{.Emphasis}.
+
+    ::: note
+    - To find your AWS Account ID, sign in to the AWS console with an
+      admin user, then click [\<Username\>]{.Emphasis} \> [My
+      Account]{.Emphasis}. The Account ID is displayed under Account
+      Settings.
+
+    - 
+    :::
+
+3.  []{#aws-single-trust}Configure as the IdP
+::::
+
+::: tab-2
+Tab 2 Content - \<AWS IAM IDC\>
+
+1.  [Add the AWS console as a web app]{.Emphasis}
+
+2.  [Specify the AWS application settings]{.Emphasis}
+
+    When an policy is created to provide access to an AWS IAM Identity
+    Center workspace, users are provisioned via a custom role that is
+    created for each AWS web app. You must create this custom role in
+    for the users to assume.
+
+    ::: important
+    Users must either be created directly in AWS IAM Identity Center, or
+    provisioned from or another IdP. For information on how to provision
+    users in AWS, see the
+    [AWS docs](https://docs.aws.amazon.com/singlesignon/latest/userguide/scim-profile-saml.html){target="_blank"
+    alt="link to AWS documentation on automatic and manual user provisioning"}.
+    :::
+
+    Additionally, you should verify that the web app is configured
+    correctly for .
+
+    1.  In [Core Services ]{.Emphasis}\> [Roles]{.Emphasis}, create a
+        custom role in the format [AWS_SCA\_\<management account
+        ID\>]{.Emphasis}. For example, [AWS_SCA_1111111]{.Emphasis}.
+
+        ::: note
+        - Create a new custom role for each AWS IAM Identity Center web
+          app.
+
+        - For details on how to add a custom role, see the
+          [docs](/identity/latest/en/content/coreservices/getstarted/create-roles.htm){target="_blank"
+          alt="[%=cc_product_vars.Identity-full%] topic on how to create custom roles"}.
+        :::
+
+    2.  In the [Secure Cloud Access ]{.Emphasis}tab, select [Enable
+        Secure Cloud Access]{.Emphasis}
+
+    3.  If you want to use as the third-party IdP, select [ as the
+        IDP]{.Emphasis}.
+
+    4.  In the [Settings ]{.Emphasis}tab, enter the [AWS Account ID
+        ]{.Emphasis}for the management account.
+
+        ::: note
+        When adding an AWS IAM Identity Center organization, you must
+        use the management account ID for the web app.
+        :::
+
+    5.  Save the updated web app settings.
+
+        ::: note
+        :::
+
+3.  []{#aws-idc-trust}[Configure the IdP]{.Emphasis}
+
+    ::: note
+    This step is required only if you use as your IdP.
+
+    If you are using AWS IAM Identity Center and already have a
+    third-party IdP configured in AWS, by default supports user
+    authentication via your IdP and applying policies for these users to
+    provide zero standing permissions. There is no need for additional
+    configuration.
+    :::
+
+4.  Enable (optional)
+:::
+::::::
+:::::::
+::::::::::
+:::::::::::::::::
+::::::::::::::::::
+
+::: NextStep
+Create policies for \[%=sca-project-variables.AWS-IAM%\] and
+\[%=sca-project-variables.AWS-AD%\] access
+:::

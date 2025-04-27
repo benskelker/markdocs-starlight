@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('cc_Home.flmsp');">
+    <head><title>CyberArk Docs</title>
+    </head>
+    <body>
+        <!-- <p class="home-page-message"><MadCap:variable id="var-home-page-message" name="TopNav.HomePageMessage" />
+        </p> -->
+        <div class="home-page-product" MadCap:conditions="TopNav.ThemeDefault">
+            <MadCap:snippetText src="../Snippets/_TopNav_Custom/cc_C_HomePageIcon.flsnp" /><MadCap:variable name="TopNav.HomePageProduct" />
+            <div class="rg-toggle" MadCap:conditions="TopNav.HomeToggle">
+                <div class="rg-toggle-wrapper" MadCap:conditions="TopNav.HomeToggle">
+                    <MadCap:snippetBlock src="../Snippets/_TopNav_custom/cc_C_HomeToggle.flsnp" />
+                </div>
+            </div>
+            <div class="home-page-product-desc" MadCap:conditions="TopNav.ThemeDefault">
+                <p><MadCap:variable name="TopNav.HomePageProductDescription" />
+                </p>
+            </div>
+            <MadCap:snippetBlock src="../Snippets/_TopNav_Custom/cc_C_HomeComponentSelector.flsnp" MadCap:conditions="cc_C_CyberArk.Future" />
+        </div>
+        <div class="rg-search" MadCap:conditions="TopNav.FlareSearch">
+            <MadCap:searchBarProxy data-mc-skin="/Project/Skins/cc_TopNavHomeSearchBar.flskn" />
+        </div>
+        <div class="rg-highlights">
+            <MadCap:snippetBlock src="cc_Highlights.flsnp" />
+        </div>
+        <div class="rg-workflow" MadCap:conditions="TopNav.HomeWorkflow">
+            <div class="home-section-title">
+                <p>Explore the <MadCap:variable name="TopNav.HomePageProduct" /> end-to-end workflow</p>
+            </div>
+            <div class="workflow-header">
+                <p>Click a user or task to learn more</p>
+                <div class="workflow-buttons">
+                    <button id="zoom-in">Zoom In</button> | 
+                    <button id="zoom-out">Zoom Out</button></div>
+            </div>
+            <MadCap:snippetBlock src="../Snippets/_TopNav_Custom/cc_C_HomePageWorkflow.flsnp" />
+        </div>
+        <p style="display:none;">
+            <script>
+			const elem = document.getElementById('panzoom-element');
+			const zoomInButton = document.getElementById('zoom-in');
+			const zoomOutButton = document.getElementById('zoom-out');
+			const panzoom = Panzoom(elem, {panOnlyWhenZoomed:true, contain:"outside"});
+			zoomInButton.addEventListener('click', panzoom.zoomIn)
+			zoomOutButton.addEventListener('click', panzoom.zoomOut)
+		</script>
+        </p>
+        <div class="rg-tiles">
+            <div class="home-section-title" MadCap:conditions="TopNav.HomeWorkflow">
+                <p>Learn more about <MadCap:variable name="TopNav.HomePageProduct" /></p>
+            </div>
+            <MadCap:snippetBlock src="../Snippets/_TopNav_custom/cc_C_HomeTiles.flsnp" />
+        </div>
+    </body>
+</html>

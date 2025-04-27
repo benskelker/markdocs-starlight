@@ -1,0 +1,33 @@
+In this step, you download a file from
+{% $cc_product_vars.IdentityAdmin-full %}.
+This file is uploaded to the AWS console where some other settings are
+also configured:
+
+1.  [In
+    {% $cc_product_vars.IdentityAdmin-full %}]{.Emphasis}:
+
+    1.  Go to [Apps & Widgets \> Web Apps]{.Emphasis} and select the web
+        app you created above.
+
+    2.  In the web app settings, under [Trust]{.Emphasis}, select
+        [Metadata]{.Emphasis}, and click [Download Metadata
+        File]{.Emphasis}. You need this file in the next step.
+
+2.  [In the AWS console]{.Emphasis}:
+
+    1.  Go to [IAM Management]{.Emphasis} and select [Identity
+        providers]{.Emphasis}.
+
+    2.  Click [Add provider]{.Emphasis}.
+
+    3.  Provide the following information to configure
+        {% $cc_product_vars.Identity-full %}
+        as the IdP:
+
+          Element                          Value
+          -------------------------------- -----------------------------------------------------------------------------------------------------------------------------------------
+          [Provider type]{.Emphasis}       Select [SAML]{.Emphasis}
+          [Provider name]{.Emphasis}       Enter [Idaptive]{.Emphasis}
+          [Metadata document]{.Emphasis}   Upload the metadata document you just downloaded from {% $cc_product_vars.IdentityAdmin-full %}
+
+    4.  Click [Add provider]{.Emphasis}.

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="SCA-conditions.not-free-trial">
+    <head>
+    </head>
+    <body>
+        <h1>Connect to Microsoft Azure</h1>
+        <p>This topic describes how to connect to Azure securely via <MadCap:variable name="cc_product_vars.SCA-short" />. You have two options for connecting, based on whether you want to elevate your privileges for this work session or use your current permissions.</p>
+        <div class="important" MadCap:conditions="SCA-conditions.not-free-trial">
+            <MadCap:snippetBlock src="SCA-snippets/intro-secure-access-space.flsnp" />
+        </div>
+        <h2>Connect to your console</h2>
+        <p>You can connect to your console from the <MadCap:variable name="cc_product_vars.Identity-full" /> user portal or through the CLI.</p>
+        <div class="tabs">
+            <ul class="tabs-nav">
+                <li class="tab-active"><a data-cc-tab=".tab-1">Azure console</a>
+                </li>
+                <li><a data-cc-tab=".tab-2">Azure CLI</a>
+                </li>
+            </ul>
+            <div class="tabs-stage">
+                <div class="tab-1">
+                    <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 1 Content - &lt;console&gt;</p>
+                    <div class="note">
+                        <p>If you want to access the Azure console with your current permissions, click the link in the instructions to connect directly to the console instead of via the options available in the table.</p>
+                    </div>
+                    <div class="important">
+                        <MadCap:snippetBlock src="SCA-snippets/popup-blocker.flsnp" />
+                    </div>
+                    <p class="ProcedureHeading">To connect to the Azure console</p>
+                    <ol>
+                        <li>
+                            <p>Sign in to <MadCap:variable name="cc_product_vars.ISP-full"></MadCap:variable>.</p>
+                        </li>
+                        <li>
+                            <p>In the <span class="Emphasis">User portal</span> &gt; <span class="Emphasis">Applications</span> page, click the relevant Azure web app. </p>
+                        </li>
+                        <li>
+                            <p>In the Azure resources page, find the scope that you want to access (directory, management group, subscription, resource group, or resource) that you want to access. Click the button at the end of the row to connect to the console.</p>
+                        </li>
+                    </ol>
+                    <p MadCap:conditions="cc_C_CyberArk.Future">The Azure console opens with all the privileges you are entitled to, and access is available for the duration of the maximum session length of seach role. If you are connecting with multiple roles, privileges are determined by each role’s maximum session length, after which each role’s privileges are revoked independently  and the session for that role closes.</p>
+                    <div class="note">
+                        <p>If the subscriptions show <span class="Emphasis">Connect </span>instead of <span class="Emphasis">Select</span> in the table, when you connect to a subscription scope, you have the privileges of all the roles that are associated with the subscription and its child scopes.</p>
+                    </div>
+                </div>
+                <div class="tab-2">
+                    <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 2 Content - &lt;CLI&gt;</p>
+                    <p>When you sign in using the Azure CLI, you  sign in to Microsoft and then authenticate to <MadCap:variable name="cc_product_vars.IdentityAdmin-full"></MadCap:variable> via the web console. After the authorization process is complete, you can select your resource from the resource list and begin working.</p>
+                    <p>Before you begin, make sure you have the following installed on the machine you use to connect to the Azure console:</p>
+                    <ul>
+                        <li>
+                            <p>Python 3.10 or higher. For more information, see the <a href="https://www.python.org/downloads/" target="_blank">Python download docs</a>.</p>
+                        </li>
+                        <li>
+                            <p>Azure CLI. For more information, see the <a href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli" target="_blank">Microsoft Azure docs</a>.</p>
+                        </li>
+                        <li>
+                            <p><MadCap:variable name="cc_product_vars.SCA-short"></MadCap:variable> policy defined for your user.</p>
+                        </li>
+                    </ul>
+                    <div class="note">
+                        <p>You need reasonable working knowledge of Python and the Azure CLI&#160;to prepare your machine.</p>
+                    </div>
+                    <div class="ProcedureHeading">To sign in with the Azure CLI</div>
+                    <ol>
+                        <li>
+                            <p>Sign in to the <MadCap:variable name="cc_product_vars.shared-services-full"></MadCap:variable> platform.</p>
+                        </li>
+                        <li>
+                            <p>In <MadCap:variable name="cc_product_vars.SCA-short"></MadCap:variable>, select the Azure resource you need.</p>
+                        </li>
+                        <li>
+                            <p>Open a command prompt.</p>
+                        </li>
+                        <li>
+                            <p>Type the following command:</p>
+                            <div class="code"><pre><code>az login</code></pre>
+                            </div>
+                            <div class="note" MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                                <p>On macOS and Windows machines, authentication begins automatically in your web browser. If you're using a Linux machine, you may have to manually open a web browser and copy-paste the cloud key from the CLI to continue with the authorization process.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Select the account you're using to sign in, and sign in to the Azure portal.</p>
+                        </li>
+                    </ol>
+                    <div class="note">
+                        <ul>
+                            <li>
+                                <p>The resources that are available depend on the access permissions granted to your user by the <MadCap:variable name="cc_product_vars.SCA-short"></MadCap:variable> policy.</p>
+                            </li>
+                            <li>
+                                <p>If you want to work with your cloud resources via the CLI, you have to complete this procedure even if you initially authenticated in the web console.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

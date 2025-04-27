@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p>Make sure that you have:</p>
+        <ul>
+            <li MadCap:conditions="snip-conditions.OnboardCEM-AD">
+                <p>A Microsoft Entra ID&#160;directory</p>
+            </li>
+            <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                <p>A Microsoft Entra ID directory</p>
+            </li>
+            <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                <p>Access to a Microsoft Entra ID&#160;(Azure) tenant</p>
+            </li>
+            <li>
+                <p>The following permissions on the directory:</p>
+                <ul>
+                    <li>
+                        <p>You are the global administrator</p>
+                    </li>
+                    <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                        <p>You have access to Microsoft Entra (Azure) resources</p>
+                    </li>
+                    <li>
+                        <p>You are the owner of the root management group<MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardSCA-RBAC">, management group, or subscriptions</MadCap:conditionalText> in the directory that you are onboarding</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>

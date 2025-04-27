@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Configure custom approval channel</h1>
+        <p>This topic describes how to configure the <MadCap:variable name="cc_product_vars.SCA-short" /> approval mechanism so that end users can request temporary access to web apps.</p>
+        <h2>Before you begin</h2>
+        <p>Before you set up the integration between <MadCap:variable name="cc_product_vars.SCA-short" /> and your custom approval channel, complete the steps described in <MadCap:xref href="sca_on-demand-access-settings.htm">Set up on-demand access</MadCap:xref>, the last of which brings you back to this topic to complete the approval channel configuration.</p>
+        <h2 class="stepReset" MadCap:autonum="Step 1: ">Select a custom flow</h2>
+        <p>Select a custom flow that was created in <MadCap:variable name="cc_product_vars.Flows-full" />.</p>
+        <div class="note">
+            <p>For details about creating custom flows, see the <a href="/identity-flows/latest/en/content/resources/_topnav/cc_home.htm" target="_blank" alt="Link to the [%=cc_product_vars.Flows-full%] documentation"><MadCap:variable name="cc_product_vars.Flows-short" /> docs</a>.</p>
+        </div>
+        <h2 class="step" MadCap:autonum="Step 2: ">Configure the custom flow as your approval channel</h2>
+        <ol>
+            <li>
+                <p>In the Approval channel tab, click <span class="Emphasis">Custom flow</span>.</p>
+            </li>
+            <li>
+                <p>In the <span class="Emphasis">Select a custom flow </span>window, select the flow you want to use from the <span class="Emphasis">Flows </span>list. </p>
+                <div class="note">
+                    <p>The Flows list displays all the flows that have been saved in <MadCap:variable name="cc_product_vars.Flows-short" />. Review the list carefully to make sure you select the correct flow.</p>
+                </div>
+            </li>
+            <li>
+                <p>Click <span class="Emphasis">Save</span>. The flow you selected is displayed in the <span class="Emphasis">Approval channel </span>tab (under the tab name and in the page).</p>
+            </li>
+            <li>
+                <p>To change the custom flow, click <span class="Emphasis">Select a different flow </span>and repeat steps 2 - 3.</p>
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 3: "><a name="Verify"></a>Verify the configuration</h2>
+        <MadCap:snippetBlock src="../CloudAdmin/CloudAdminSnippets/VerifyConfiguration.flsnp" />
+    </body>
+</html>

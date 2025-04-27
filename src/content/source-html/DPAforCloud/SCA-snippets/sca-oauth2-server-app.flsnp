@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <ol>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />, select <span class="Emphasis">Apps &amp; Widgets &gt; Web Apps</span>, then click <span class="Emphasis">Add Web Apps</span>.</p>
+            </li>
+            <li>
+                <p>In the <span class="Emphasis">Custom</span> tab, find <span class="Emphasis">OAuth2 Server</span>, and click <span class="Emphasis">Add</span>.</p>
+                <p>
+                    <img src="../../Automation/Images/add-oauth2-webapp.png" />
+                </p>
+            </li>
+            <li>
+                <p>In the Add Web App screen, click <span class="Emphasis">Yes</span>, then click <span class="Emphasis">Close</span>. The Widgets page for the OAuth2 web app opens, displaying the <span class="Emphasis">Settings</span> tab.</p>
+            </li>
+            <li>
+                <p>Enter the following details:</p>
+                <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Field</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Description</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Application ID</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>A unique key used to build the OAuth2 endpoint URL</p>
+                                <p MadCap:conditions="snippet-conditions-sca.oauth2-for-appr-chnl"><span class="Emphasis">For ServiceNow integration</span> use <span class="Emphasis">SCASNOWAUTH</span>.</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Description &gt; Name</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>A name for the web app, which will appear in the Web Apps page</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>In the <span class="Emphasis">General Usage</span> tab, leave the default settings (<span class="Emphasis">Confidential</span> and <span class="Emphasis">Must be OAuth Client</span>).</p>
+                <div class="note">
+                    <p>You can leave the default value that appears in the <span class="Emphasis">Issuer</span> field.</p>
+                </div>
+            </li>
+            <li>
+                <p>In the <span class="Emphasis">Tokens</span> tab, configure the following:</p>
+                <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1"><a name="Field"></a>Field</th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Token Type</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>JwtRS256 (a JSON Web Token (JWT) composed of Base64-encoded user and claim information).</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Auth Methods</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <ul>
+                                    <li>
+                                        <p>Leave the first two options (<span class="Emphasis">Auth Code</span>, <span class="Emphasis">Implicit</span>) selected (default setting)</p>
+                                    </li>
+                                    <li>
+                                        <p>Select <span class="Emphasis">Client Creds</span></p>
+                                    </li>
+                                    <li>
+                                        <p> Leave the <span class="Emphasis">Resource Owner</span> check box cleared (default setting)</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Access token lifetime</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p> You can configure this value according to the security requirements of your organization.</p>
+                                <div class="tip">
+                                    <p>Set this value to more than 10 minutes. Setting it to 10 minutes or less may result in unexpected API behavior.</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Issue refresh tokens</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>Leave this check box cleared, or select according to your organization's policy.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>In the <span class="Emphasis">Scope</span> tab, click <span class="Emphasis">Add </span>and add <MadCap:conditionalText MadCap:conditions="snippet-conditions-sca.oauth2-for-api">one of the following scope definitions</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="snippet-conditions-sca.oauth2-for-appr-chnl">the following scope definition</MadCap:conditionalText> (this field is case sensitive):</p>
+                <table style="caption-side: top;mc-table-style: url('../../Resources/TableStyles/Standard.css');width: 100%;" class="TableStyle-Standard" cellspacing="0" summary="Table that describes the the scope authorization optios">
+                    <caption>Scope authorization</caption>
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Item</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Description</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1" MadCap:conditions="snippet-conditions-sca.oauth2-for-api">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">full</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p><span class="Emphasis">/*</span> (gives access to all APIs)</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">sca</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p><span class="Emphasis">/*</span> <MadCap:conditionalText MadCap:conditions="snippet-conditions-sca.oauth2-for-api">(gives access to SCA APIs only)</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="snippet-conditions-sca.oauth2-for-appr-chnl">- limits the authentication to <MadCap:variable name="cc_product_vars.SCA-short" /> only</MadCap:conditionalText></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>Give the application access to <MadCap:conditionalText MadCap:conditions="snippet-conditions-sca.oauth2-for-api">the <MadCap:variable name="cc_product_vars.SCA-short" /> API</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="snippet-conditions-sca.oauth2-for-appr-chnl"><MadCap:variable name="cc_product_vars.SCA-short" /></MadCap:conditionalText>:</p>
+                <ol>
+                    <li>
+                        <p>In the <span class="Emphasis">Permissions</span> tab, click <span class="Emphasis">Add</span>. </p>
+                    </li>
+                    <li MadCap:conditions="snippet-conditions-sca.oauth2-for-api">
+                        <p><a name="Find"></a>Find the relevant role to give to the application. The following roles are supported:</p>
+                        <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/Standard.css');" summary="Lists the built-in roles for SCA and explains their use" class="TableStyle-Standard" cellspacing="0">
+                            <caption><MadCap:variable name="cc_product_vars.SCA-short" /> built-in roles that support public <MadCap:variable name="cc_product_vars.SCA-short" /> APIs</caption>
+                            <col class="TableStyle-Standard-Column-Column1" />
+                            <col class="TableStyle-Standard-Column-Column1" />
+                            <thead>
+                                <tr class="TableStyle-Standard-Head-Header1">
+                                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                        <p><a name="Role"></a>Role </p>
+                                    </th>
+                                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                        <p>Description</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                        <p><span class="Emphasis">CS Admin</span>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                        <p>Static role. Users with this role have:</p>
+                                        <ul>
+                                            <li>
+                                                <p>  Full access permissions to the public <MadCap:variable name="cc_product_vars.SCA-short" /> APIs.
+</p>
+                                            </li>
+                                            <li>
+                                                <p>Full access permissions to the <MadCap:variable name="cc_product_vars.SCA-short" /> service to manage all functionality, policies, access request settings, and integrations. </p>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                        <p><span class="Emphasis">SCA Admin</span>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                        <p>Static role. Assigned automatically when a user is assigned as a delegate to a workspace.</p>
+                                        <p>Users with this role have:</p>
+                                        <ul>
+                                            <li>
+                                                <p> Access permissions to the public <MadCap:variable name="cc_product_vars.SCA-short" /> APIs for their delegated workspaces</p>
+                                            </li>
+                                            <li>
+                                                <p>Access permissions to the <MadCap:variable name="cc_product_vars.SCA-short" /> service to manage policies and integrations for their delegated workspaces.</p>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                        <p><span class="Emphasis">SCAApiFullAccess</span>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                        <p>Static role. Users with this role have:</p>
+                                        <p>  Full access permissions to the public <MadCap:variable name="cc_product_vars.SCA-short" /> APIs.
+</p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                        <p><span class="Emphasis">SCAApiReadOnly</span>
+                                        </p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                        <p>Static role. Users have read-only permissions to <MadCap:variable name="cc_product_vars.SCA-short" /> APIs.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="note">
+                            <p>If you are having technical issues assigning roles directly to the application, create a custom role that includes the roles you want to assign, then assign that custom role to the application instead.</p>
+                            <p>For example:</p>
+                            <ol>
+                                <li>
+                                    <p>In <MadCap:variable name="cc_product_vars.IdentityAdmin-full" />, go to <span class="Emphasis">Core Services &gt; Roles &gt; Add Role</span>, and create a custom role called <span class="Emphasis">SCAPublicApiWrapper</span>.</p>
+                                </li>
+                                <li>
+                                    <p>In the <span class="Emphasis">SCAPublicApiWrapper</span> role's <span class="Emphasis">Members</span> tab, assign the <span class="Emphasis">SCAApiFullAccess</span> role, as well any other relevant roles, as outlined in <MadCap:xref href="#Role">Role</MadCap:xref>.</p>
+                                </li>
+                                <li>
+                                    <p>In the OAuth2 web app's <span class="Emphasis">Permissions</span> tab, assign your custom <span class="Emphasis">SCAPublicApiWrapper</span> role.</p>
+                                </li>
+                            </ol>
+                            <p> For more details, see <a href="/identity-administration/latest/en/content/coreservices/getstarted/userrolesassign.htm">how to create a custom role</a>.</p>
+                        </div>
+                    </li>
+                    <li MadCap:conditions="snippet-conditions-sca.oauth2-for-appr-chnl">
+                        <p>Find the <span class="Emphasis">SCAApiFullAccess</span> role and add it to the application.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>In the <span class="Emphasis">Advanced </span>tab, copy and paste the following script, which returns the <code>tenant_id</code> and <code>user_roles</code> values in the <MadCap:variable name="cc_product_vars.Identity-full" /> token.</p>
+                <div class="code"><pre><code>// Create the claim for tenant_id and user_roles
+setClaim('tenant_id', TenantData.Get('CybrTenantID'));
+setClaimArray('user_roles', LoginUser.RoleNames);
+setClaim('user_uuid', LoginUser.Uuid);</code></pre>
+                </div>
+            </li>
+            <li>
+                <p>Click <span class="Emphasis">Save</span>.</p>
+            </li>
+        </ol>
+    </body>
+</html>

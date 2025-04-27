@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="project_conditions.CEM">
+  <Variable
+    Name="ProductName_full"
+    Comment=""
+    EvaluatedDefinition="Cloud Visibility">Cloud Visibility</Variable>
+  <Variable
+    Name="ProductName-short"
+    Comment=""
+    EvaluatedDefinition="CV">CV</Variable>
+  <Variable
+    Name="CompanyName"
+    Comment=""
+    EvaluatedDefinition="CyberArk">CyberArk</Variable>
+  <Variable
+    Name="IdentitySecurityPlatform_long"
+    Comment=""
+    EvaluatedDefinition="Identity Security Platform">Identity Security Platform</Variable>
+</CatapultVariableSet>

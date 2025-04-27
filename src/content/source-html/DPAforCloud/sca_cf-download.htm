@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <map id="map1">
+            <area shape="rectangle" coords="77,677,373,821" dragDirection="0" href="#Discover" />
+            <area shape="rectangle" coords="541,675,821,817" dragDirection="0" href="#Connect" />
+            <area shape="rectangle" coords="1015,679,1307,819" dragDirection="0" href="#Connect2" />
+        </map>
+        <map id="map2">
+            <area shape="rectangle" coords="79,677,369,813" dragDirection="0" href="#Discover" />
+            <area shape="rectangle" coords="533,667,831,823" dragDirection="0" href="#Connect" />
+            <area shape="rectangle" coords="1019,663,1313,815" dragDirection="0" href="#Connect2" />
+        </map>
+        <h1>AWS account to pre-existing tenant</h1>
+        <p>This topic describes how to connect an Amazon Web Service account  to <MadCap:variable name="cc_product_vars.SCA-short" /> if the parent organization was onboarded to the <MadCap:variable name="cc_product_vars.shared-services-full" />platform before <MadCap:variable name="cc_product_vars.SCA-short" /> was added to the customer tenant. </p>
+        <h2>Before you begin</h2>
+        <p>Make sure you have the following:</p>
+        <ul>
+            <li>
+                <p>An AWS account</p>
+            </li>
+            <li>
+                <p>Admin user that has the roles and permissions described in </p>
+            </li>
+            <li MadCap:conditions="cc_product_conds.not-CEM">
+                <p><MadCap:variable name="cc_product_vars.CEM-short" /> administrator role in <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /> </p>
+            </li>
+        </ul>
+        <h2><a name="Connect2"></a>Manually onboard an AWS  account</h2>
+        <div>
+            <h3 class="stepReset" MadCap:autonum="Step 1: ">Download the <MadCap:variable name="cc_product_vars.SCA-short" /> CloudFormation template</h3>
+            <p>Click to <a href="/Downloads/SCA/sca_add_account_aws.json.zip">download</a> the <MadCap:variable name="cc_product_vars.SCA-short" /> CloudFormation template.</p>
+            <h3 class="step" MadCap:autonum="Step 2: ">Create a new AWS stack for <MadCap:variable name="cc_product_vars.SCA-short" /></h3>
+            <p>Next, use the CloudFormation template you downloaded to deploy an updated stack that includes the resources for the account.</p>
+            <p>The stack does the following: </p>
+            <ul>
+                <li>
+                    <p>Creates a role for&#160;<MadCap:variable name="cc_product_vars.CEM-short" />&#160;to read your account's IAM data.</p>
+                </li>
+                <li>
+                    <p>Creates a role for <MadCap:variable name="cc_product_vars.SCA-short" /> to manage AWS&#160;role policies.</p>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

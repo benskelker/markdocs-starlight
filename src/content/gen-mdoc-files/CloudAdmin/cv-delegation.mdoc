@@ -1,0 +1,98 @@
+# Manage workspace delegation
+
+This topic explains workspace delegation, the privileges that are
+assigned to delegates for the workspaces that they manage, and how cloud
+security administrators can assign and remove delegates to/from
+workspaces in the cloud environment.
+
+## Workspace delegation
+
+The cloud security administrator can delegate management of single or
+multiple cloud workspaces to other administrators in the organization.
+
+[Workspace delegates]{.Emphasis} can create, edit, and delete
+`<variable name="cc_product_vars.SCA-short" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">`{=html}`</variable>`{=html}
+policies for identities associated with their workspaces from the UI or
+using the public
+`<variable name="cc_product_vars.SCA-short" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">`{=html}`</variable>`{=html}
+APIs.
+
+In addition, workspace delegates can manage on-demand access requests
+from identities that want to access the workspace, and can manually
+approve or reject these requests.
+
+The[ Workspace delegation]{.Emphasis} page displays the following
+information:
+
+  Item                          Description
+  ----------------------------- --------------------------------------------------------------------------------------------------------------------
+  [Workspace]{.Emphasis}        The name of the workspace as it appears in the cloud provider
+  [Workspace type]{.Emphasis}   The cloud provider and type of workspace, for example a Google Cloud project or an Azure directory or subscription
+  [Delegates]{.Emphasis}        The identities that have been assigned to manage the workspace
+
+  : Workspace delegation view
+
+## []{#Add}Add delegates to a workspace
+
+You can delegate users, roles, and groups in your organization to a
+workspace. The
+[`<variable name="cc_product_vars.SCA-short" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">`{=html}`</variable>`{=html}
+Admin]{.Emphasis} role is automatically assigned to the delegate.
+
+::: important
+The delegate must be a single identity or identity role.
+:::
+
+::: ProcedureHeading
+To delegate an identity to a workspace
+:::
+
+1.  In
+    `<variable name="cc_product_vars.CV-full" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">`{=html}`</variable>`{=html},
+    go to [Settings \> Workspace delegation]{.Emphasis}.
+
+2.  Click [Add delegates ]{.Emphasis}and select a cloud provider.
+
+3.  In the [Delegate workspaces ]{.Emphasis}page:
+
+    1.  Under [Select the workspaces]{.Emphasis}, click [+Add
+        workspaces]{.Emphasis} and select the relevant workspace that
+        you want to assign a delegate to. Click [Add]{.Emphasis} at the
+        bottom of the page.
+
+    2.  Under [Assign delegates]{.Emphasis}, click [+Add
+        delegates]{.Emphasis}, and select the identities or assets to
+        delegate to the workspaces.
+
+        ::: note
+        - Use the [Type ]{.Emphasis}and [Source ]{.Emphasis}filters to
+          help narrow the results in the table.
+
+        - Click the [X]{.Emphasis} on the right side of the table row to
+          remove a workspace or a delegate.
+        :::
+
+        Click [Select]{.Emphasis} at the bottom of the page.
+
+4.  When you\'ve finished assigning delegates to the workspaces, click
+    [Add delegates]{.Emphasis}.
+
+## Update workspace delegates
+
+1.  In
+    `<variable name="cc_product_vars.CV-full" xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">`{=html}`</variable>`{=html},
+    go to [Settings \> Workspace delegation]{.Emphasis}.
+
+2.  Select the workspace you want to update and, at the end of the row,
+    click [More options]{.Emphasis}
+    (![](../images/icon-ellipsis-h.png){.icon}) \> [Edit]{.Emphasis}.
+
+3.  Add or remove delegates as needed.
+
+    ::: note
+    If you remove all the delegates from a workspace, this effectively
+    removes delegation of this workspace, so it will no longer appear in
+    the Workspace delegation page.
+    :::
+
+4.  Save your changes.

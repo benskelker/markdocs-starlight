@@ -1,0 +1,108 @@
+# support and known limitations
+
+This topic describes language support, supported cloud environments, and
+regional availability.
+
+## Support
+
+This section describes supported platforms and other SCA support.
+
+### Supported cloud providers
+
++----------------+----------------------------------------------------+
+| Cloud provider | Description                                        |
++================+====================================================+
+| AWS            | ;                                                  |
+|                |                                                    |
+|                | [Limitations]{.Emphasis}: See [Quotas and limits   |
+|                | in IAM Identity                                    |
+|                | Center](https://docs.aws.ama                       |
+|                | zon.com/singlesignon/latest/userguide/limits.html) |
+|                | and the                                            |
+|                | [CreateAccountAssign                               |
+|                | ment](https://docs.aws.amazon.com/singlesignon/lat |
+|                | est/APIReference/API_CreateAccountAssignment.html) |
+|                | action in the AWS docs                             |
++----------------+----------------------------------------------------+
+| Azure          | Microsoft Entra ID (with at least one              |
+|                | subscription); Azure resources                     |
+|                |                                                    |
+|                | [Limitations]{.Emphasis}: See the [Azure           |
+|                | docs](https://                                     |
+|                | learn.microsoft.com/en-us/azure/azure-resource-man |
+|                | ager/management/azure-subscription-service-limits) |
++----------------+----------------------------------------------------+
+|                | [Limitations]{.Emphasis}: See [Quotas and          |
+|                | limits](https://cloud.google.com/iam/quotas) and   |
+|                | [Access change                                     |
+|                | propagation](https://cl                            |
+|                | oud.google.com/iam/docs/access-change-propagation) |
++----------------+----------------------------------------------------+
+
+### Supported browsers
+
+has been tested on the following browsers:
+
+  Browser          Version
+  ---------------- ---------------------------------------------
+  Chrome           Any version released in the last six months
+  Microsoft Edge   Any version released in the last six months
+  Firefox          Any version released in the last six months
+
+The supports additional browsers. For details, see [ISPSS supported
+browsers and
+languages](/ispss-deployment/latest/en/content/getstarted/isp-supported-browsers.htm).
+
+### AWS region support
+
+For AWS region availability, see [CyberArk AWS region
+support](/ispss-deployment/latest/en/content/getstarted/issp-data-centers.htm).
+
+::: note
+currently doesn\'t support GovCloud regions.
+:::
+
+### Supported languages
+
+supports English only.
+
+## []{#Known}Known limitations
+
+This section describes known limitations with .
+
+### Search
+
+When performing a search in , consider the following limitations:
+
+- If your search includes a hyphen (-), the search will return all
+  results that include any of the following:
+
+  - The term before the hyphen
+
+  - The term after the hyphen
+
+  - The hyphen itself
+
+  ::: example
+  Searching for \"Test-Policy\" returns any results that include:
+
+  - Test
+
+  - Policy
+
+  - \-
+  :::
+
+- The policy table search capability is limited to these fields:
+
+  - Policy name
+
+  - Policy description
+
+  - Related organization ID
+
+  - Related account - workspace ID
+
+  - Related account name
+
+  - Related user name / user display name

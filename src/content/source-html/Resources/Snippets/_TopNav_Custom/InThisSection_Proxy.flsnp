@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <div class="mt-wrapper">
+            <p class="mt-heading"><MadCap:variable name="TopNav.TopicOverviewHeading" />
+            </p>
+            <MadCap:miniTocProxy MadCap:conditions="cc_C_CyberArk.PrintOnly" style="mc-toc-depth: 2;" />
+            <MadCap:miniTocProxy style="mc-toc-depth: 1;" MadCap:conditions="cc_C_CyberArk.ScreenOnly" />
+        </div>
+    </body>
+</html>

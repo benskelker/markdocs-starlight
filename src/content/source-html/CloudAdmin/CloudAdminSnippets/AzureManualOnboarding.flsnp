@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h3 class="stepReset" MadCap:autonum="Step 1: ">Create a new app registration for <MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-AD" /><MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-AD" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-RBAC" /></h3>
+        <p MadCap:conditions="snip-conditions.OnboardCEM-AD">When you onboard a Microsoft Entra ID directory, the first step is to create an app registration in the Microsoft Azure portal that <MadCap:variable name="cc_product_vars.CV-full" /> can use for connecting and monitoring subscriptions.</p>
+        <p MadCap:conditions="snip-conditions.OnboardCEM-RBAC">When you onboard a management group or subscription, the first step is to create an app registration in the Microsoft Azure portal that <MadCap:variable name="cc_product_vars.CV-full" /> can use for connecting and monitoring subscriptions.</p>
+        <p MadCap:conditions="snip-conditions.OnboardSCA-RBACforAD">After you onboard the Microsoft Entra ID directory to <MadCap:variable name="cc_product_vars.CV-full" />, you have to create an app registration in the Microsoft Azure portal that <MadCap:variable name="cc_product_vars.SCA-short" /> can use for managing access to Microsoft Entra ID&#160;roles.</p>
+        <p MadCap:conditions="snip-conditions.OnboardSCA-RBAConly">After you onboard the management group or directory to <MadCap:variable name="cc_product_vars.CV-full" />, you have to create an app registration in the Microsoft Azure portal that <MadCap:variable name="cc_product_vars.SCA-short" /> can use for managing access to resources.</p>
+        <p class="ProcedureHeading">To create a new app registration for <MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardCEM-AD"><MadCap:variable name="cc_product_vars.CV-full" /></MadCap:conditionalText><MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-AD" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-RBAC" /></p>
+        <ol>
+            <li>
+                <p>Sign in to the Microsoft Azure portal.</p>
+            </li>
+            <li>
+                <p>Go to <span class="Emphasis">Microsoft Entra ID</span> &gt; <span class="Emphasis">App Registrations</span> and select <span class="Emphasis">New Registration</span> from the page menu.</p>
+            </li>
+            <li>
+                <p>Provide the following information:</p>
+                <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <col class="TableStyle-Standard-Column-Column1">
+                    </col>
+                    <col class="TableStyle-Standard-Column-Column1">
+                    </col>
+                    <col class="TableStyle-Standard-Column-Column1">
+                    </col>
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Parameter</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Description</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Value </p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Name </span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p>The name of the app registration  you're creating for <MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardCEM-AD"><MadCap:variable name="cc_product_vars.CV-full" /></MadCap:conditionalText><MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-AD" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-RBAC" />.</p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p MadCap:conditions="snip-conditions.OnboardCEM-AD"><span class="Emphasis">cyb-cem-app</span> (recommended)</p>
+                                <p MadCap:conditions="snip-conditions.OnboardCEM-RBAC"><span class="Emphasis">cyb-cem-app</span> (recommended)</p>
+                                <p MadCap:conditions="snip-conditions.OnboardSCA-AD"><span class="Emphasis">cyb-sca-aad-app</span> (recommended)</p>
+                                <p MadCap:conditions="snip-conditions.OnboardSCA-RBAC"><span class="Emphasis">cyb-sca-resource-app</span> (recommended)</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Supported account types </span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p>Select an option to define who can use the app registration.</p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p><span class="Emphasis">Accounts in this organizational directory only (… Single tenant)</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1" MadCap:conditions="">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Redirect URI</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p>The address for redirecting after granting admin consent for the <MadCap:variable name="cc_product_vars.SCA-short" /> app registration.</p>
+                                <p>&#160;</p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>Select a platform: <span class="Emphasis">Web</span></p>
+                                <p>Address:&#160;<span class="Emphasis">https://cem-fe-modules.cps.cyberark.com/azure-admin-consent</span></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>At the bottom of the page, click <span class="Emphasis">Register</span>.</p>
+            </li>
+        </ol>
+        <h3 class="step" MadCap:autonum="Step 2: ">Generate a client secret for <MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardCEM-AD"><MadCap:variable name="cc_product_vars.CV-full" /></MadCap:conditionalText><MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-AD" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-RBAC" /></h3>
+        <p>After you create the Azure app, <MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardCEM-AD"><MadCap:variable name="cc_product_vars.CV-full" /></MadCap:conditionalText><MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-AD" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-RBAC" /> needs a secret so it can authenticate to the Microsoft Entra ID directory when it connects.</p>
+        <p class="ProcedureHeading">To generate a secret for <MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardCEM-AD"><MadCap:variable name="cc_product_vars.CV-full" /></MadCap:conditionalText><MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-AD" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-RBAC" /></p>
+        <ol>
+            <li MadCap:conditions="snip-conditions.OnboardCEM-AD">
+                <p>Go to <span class="Emphasis">App registrations &gt; Overview</span>, copy the <span class="Emphasis">Application (client) ID</span> and <span class="Emphasis">Directory (tenant) ID</span>, and save them for use in step 5. </p>
+            </li>
+            <li MadCap:conditions="snip-conditions.OnboardCEM-RBAC">
+                <p>Go to <span class="Emphasis">App registrations &gt; Overview</span>, copy the <span class="Emphasis">Application (client) ID</span> and <span class="Emphasis">Directory (tenant) ID</span>, and save them for use in step 5. </p>
+            </li>
+            <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                <p>Go to <span class="Emphasis">App registrations &gt; Overview</span>, copy the following values, and save them for later use<MadCap:conditionalText MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH"> in step 5</MadCap:conditionalText>:</p>
+                <ul>
+                    <li>
+                        <p><span class="Emphasis">Application (client) ID</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span class="Emphasis">Directory (tenant) ID</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span class="Emphasis">Object ID</span>
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                <p>Go to <span class="Emphasis">App registrations &gt; Overview</span>, copy the following values, and save them for use in step 5:</p>
+                <ul>
+                    <li>
+                        <p><span class="Emphasis">Application (client) ID</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span class="Emphasis">Directory (tenant) ID</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span class="Emphasis">Object ID</span>
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Go to <span class="Emphasis">Certificates &amp; secrets </span>and do the following:</p>
+                <ol>
+                    <li>
+                        <p>In the <span class="Emphasis">Client Secrets</span> tab, select <span class="Emphasis">New client secret</span>.</p>
+                    </li>
+                    <li>
+                        <p>In the <span class="Emphasis">Description</span> field type a meaningful description, for example <span class="Emphasis" MadCap:conditions="snip-conditions.OnboardCEM-AD"><MadCap:variable name="cc_product_vars.CV-full" /> secret</span><span class="Emphasis" MadCap:conditions="snip-conditions.OnboardCEM-RBAC"><MadCap:variable name="cc_product_vars.CV-full" /> secret</span><span class="Emphasis" MadCap:conditions="snip-conditions.OnboardSCA-AD"><MadCap:variable name="cc_product_vars.SCA-short" /> secret</span><span class="Emphasis" MadCap:conditions="snip-conditions.OnboardSCA-RBAC"><MadCap:variable name="cc_product_vars.SCA-short" /> secret</span>.</p>
+                    </li>
+                    <li MadCap:conditions="snip-conditions.OnboardCEM-AD">
+                        <p>From the <span class="Emphasis">Expires</span> list, select the length of time that the secret remains valid (<MadCap:variable name="cc_C_CyberArk.CompanyName" /> recommends <span class="Emphasis">24 months</span>).</p>
+                    </li>
+                    <li MadCap:conditions="snip-conditions.OnboardCEM-RBAC">
+                        <p>From the <span class="Emphasis">Expires</span> list, select the length of time that the secret remains valid (<MadCap:variable name="cc_C_CyberArk.CompanyName" /> recommends <span class="Emphasis">24 months</span>).</p>
+                    </li>
+                    <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                        <p>From the <span class="Emphasis">Expires</span> list, select the length of time that the secret remains valid. <MadCap:variable name="cc_product_vars.SCA-short" /> rotates the secret every 30 days.</p>
+                        <div class="note">
+                            <p><MadCap:variable name="cc_C_CyberArk.CompanyName" /> recommends defining that the initial secret be valid for 60 days.</p>
+                        </div>
+                    </li>
+                    <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                        <p>From the <span class="Emphasis">Expires</span> list, select the length of time that the secret remains valid. <MadCap:variable name="cc_product_vars.SCA-short" /> rotates the secret every 30 days.</p>
+                        <div class="note">
+                            <p><MadCap:variable name="cc_C_CyberArk.CompanyName" /> recommends defining that the initial secret be valid for 60 days.</p>
+                        </div>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>At the bottom of the page, click <span class="Emphasis">Add</span>.</p>
+            </li>
+            <li MadCap:conditions="snip-conditions.OnboardCEM-AD">
+                <p>Copy the secret from the <span class="Emphasis">Value</span> field  and save it for use in step 5.</p>
+            </li>
+            <li MadCap:conditions="snip-conditions.OnboardCEM-RBAC">
+                <p>Copy the secret from the <span class="Emphasis">Value</span> field  and save it for use in step 5.</p>
+            </li>
+            <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                <p>Copy the secret from the <span class="Emphasis">Value</span> field and the <span class="Emphasis">Key ID</span> (which you can take from the secret ID), and save them for later use<MadCap:conditionalText MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH"> in step 5</MadCap:conditionalText>.</p>
+            </li>
+            <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                <p>Copy the secret from the <span class="Emphasis">Value</span> field and the <span class="Emphasis">Key ID</span> (which you can take from the secret ID), and save them for use in step 5.</p>
+            </li>
+        </ol>
+        <h3 class="step" MadCap:autonum="Step 3: ">Set the required permissions</h3>
+        <p MadCap:conditions="snip-conditions.OnboardCEM-AD">In this step, you define the permissions that <MadCap:variable name="cc_product_vars.CV-full" /> needs in order to monitor the subscriptions in the directory.</p>
+        <p MadCap:conditions="snip-conditions.OnboardCEM-RBAC,cc_C_CyberArk.NOT_TO_PUBLISH">In this step, you define the permissions that <MadCap:variable name="cc_product_vars.CV-full" /> needs in order to monitor the subscriptions in the directory.</p>
+        <p MadCap:conditions="snip-conditions.OnboardSCA-AD">In this step, you define the permissions that <MadCap:variable name="cc_product_vars.SCA-short" /> needs in order to manage the subscriptions in the directory.</p>
+        <p MadCap:conditions="snip-conditions.OnboardSCA-RBAC">In this step, you define the permissions that <MadCap:variable name="cc_product_vars.SCA-short" /> needs in order to manage the root management group you're onboarding.</p>
+        <p class="ProcedureHeading">To set the <MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardCEM-AD"><MadCap:variable name="cc_product_vars.CV-full" /></MadCap:conditionalText><MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-AD" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-RBAC" /> permissions to Microsoft Azure</p>
+        <ol>
+            <li>
+                <p>Go to <span class="Emphasis">API permissions</span>, and select <span class="Emphasis">Add a permission</span>.</p>
+            </li>
+            <li>
+                <p>In the <span class="Emphasis">Select an API</span> area, select <span class="Emphasis">Microsoft APIs</span> &gt; <span class="Emphasis">Microsoft Graph</span>.</p>
+            </li>
+            <li>
+                <p>Select <span class="Emphasis">Application permissions</span>, then set the required permissions:</p>
+                <ol>
+                    <li>
+                        <p>In the <span class="Emphasis">Select permissions</span> field, search for each permission listed in the table below.</p>
+                    </li>
+                    <li MadCap:conditions="snip-conditions.OnboardCEM-AD">
+                        <p>From the <span class="Emphasis">Permission</span> list, expand each permission in the following list and select it.</p>
+                        <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0" summary="Lists the permissions you need for CEM">
+                            <caption>Required permissions for <MadCap:variable name="cc_product_vars.CV-full" /></caption>
+                            <col class="TableStyle-Standard-Column-Column1" />
+                            <col class="TableStyle-Standard-Column-Column1" />
+                            <thead>
+                                <tr class="TableStyle-Standard-Head-Header1">
+                                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                        <p>Permission</p>
+                                    </th>
+                                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                        <p>Enables the <MadCap:variable name="cc_product_vars.CV-full" /> app registration to...</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                        <p>Directory.Read.All</p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                        <p>Read data in the directory, such as users, groups, and apps.</p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                        <p>RoleManagement.Read.Directory</p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                        <p>Read the Role-Based Access Control (RBAC) settings for the directory. This includes directory role templates, directory roles, and memberships.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li MadCap:conditions="snip-conditions.OnboardCEM-RBAC">
+                        <p>From the <span class="Emphasis">Permission</span> list, expand each permission in the following list and select it.</p>
+                        <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0" summary="Lists the permissions you need for CEM">
+                            <caption>Required permissions for <MadCap:variable name="cc_product_vars.CV-full" /></caption>
+                            <col class="TableStyle-Standard-Column-Column1" />
+                            <col class="TableStyle-Standard-Column-Column1" />
+                            <thead>
+                                <tr class="TableStyle-Standard-Head-Header1">
+                                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                        <p>Permission</p>
+                                    </th>
+                                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                        <p>Enables the <MadCap:variable name="cc_product_vars.CV-full" /> app registration to...</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                        <p>Directory.Read.All</p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                        <p>Read data in the directory, such as users, groups, and apps.</p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Standard-Body-Body1">
+                                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                        <p>RoleManagement.Read.Directory</p>
+                                    </td>
+                                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                        <p>Read the Role-Based Access Control (RBAC) settings for the directory. This includes directory role templates, directory roles, and memberships.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                        <p>From the <span class="Emphasis">Permission</span> list, expand each permission in the following list and select it.</p>
+                        <MadCap:snippetBlock src="AzureAppPermissionsSCA.flsnp" MadCap:conditionTagExpression="exclude[snip-conditions.OnboardSCA-RBAC]" />
+                    </li>
+                    <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                        <p>From the <span class="Emphasis">Permission</span> list, expand each permission in the following list and select it.</p>
+                        <MadCap:snippetBlock src="AzureAppPermissionsSCA.flsnp" MadCap:conditionTagExpression="exclude[snip-conditions.OnboardSCA-AD]" />
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>After you select all the required permissions, click <span class="Emphasis">Add permissions</span>. You should now see the added permissions in the <span class="Emphasis">API permissions</span> area.</p>
+            </li>
+        </ol>
+        <div MadCap:conditions="snip-conditions.NotSCA-AD">
+            <h3 class="step" MadCap:conditions="snip-conditions.OnboardCEM-AD" MadCap:autonum="Step 4: ">Enable <MadCap:variable name="cc_product_vars.CV-full" /> to monitor the full directory </h3>
+            <h3 class="step" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" MadCap:autonum="Step 5: ">Enable <MadCap:variable name="cc_product_vars.CV-full" /> to monitor a specific scope</h3>
+            <h3 class="step" MadCap:conditions="snip-conditions.OnboardSCA-AD" MadCap:autonum="Step 6: ">Enable <MadCap:variable name="cc_product_vars.SCA-short" /> to manage access to the full directory</h3>
+            <h3 class="step" MadCap:conditions="snip-conditions.OnboardSCA-RBACforAD" MadCap:autonum="Step 7: ">Enable <MadCap:variable name="cc_product_vars.SCA-short" /> to manage access to the root management group</h3>
+            <h3 class="step" MadCap:conditions="snip-conditions.OnboardSCA-RBAConly" MadCap:autonum="Step 8: ">Enable <MadCap:variable name="cc_product_vars.SCA-short" /> to manage access to the management group or subscription</h3>
+            <p MadCap:conditions="snip-conditions.OnboardCEMonly">You only need to perform this step if you want <MadCap:variable name="cc_product_vars.CV-full" /> to monitor all the subscriptions in the directory.</p>
+            <p class="ProcedureHeading" MadCap:conditions="snip-conditions.OnboardCEM-AD">To monitor the whole directory</p>
+            <p class="ProcedureHeading" MadCap:conditions="snip-conditions.OnboardCEM-RBAC">To monitor a scope</p>
+            <p class="ProcedureHeading" MadCap:conditions="snip-conditions.OnboardSCA-AD">To manage access to the entire directory</p>
+            <p class="ProcedureHeading" MadCap:conditions="snip-conditions.OnboardSCA-RBACforAD">To manage access to the root management group</p>
+            <p class="ProcedureHeading" MadCap:conditions="snip-conditions.OnboardSCA-RBAC,snip-conditions.OnboardSCA-RBAConly">To manage access to the management group or subscription</p>
+            <ol>
+                <li>
+                    <p>Go to <span class="Emphasis">Management groups</span>.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardCEM-AD">
+                    <p>In the subscriptions table, select <span class="Emphasis">Tenant Root Group</span>.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardCEM-RBAC">
+                    <p>In the subscriptions table, select the required scope.</p>
+                </li>
+                <li MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                    <p MadCap:conditions="snip-conditions.OnboardSCA-AD">In the subscriptions table, select <span class="Emphasis">Root Management Group</span>.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBACforAD">
+                    <p>In the subscriptions table, select <span class="Emphasis">Root Management Group</span>.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC,snip-conditions.OnboardSCA-RBAConly">
+                    <p>In the subscriptions table, select the required scope.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                    <p>From the Overview tab, copy the tenant root group ID and save it locally for use in the next steps.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBACforAD">
+                    <p>From the Overview tab, copy the root management group ID and save it locally for use in the next steps.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBAConly">
+                    <p>From the Overview tab, copy the management group or subscription ID and save it locally for use in the next steps.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                    <p>Copy the following script to your local machine (save as a JSON file):</p>
+                    <div class="code"><pre><code>{
+  "Name": "sca-aad-role",
+  "IsCustom": true,
+  "Description": "SCA Custom role for Azure AAD",
+  "Actions": [],
+  "NotActions": [],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "/providers/Microsoft.Management/managementGroups/#PUT YOUR TENANT GROUP ID HERE"]
+}</code></pre>
+                    </div>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                    <p>Copy the following script to your local machine (save as a JSON file):</p>
+                    <div class="code"><pre><code>{
+  "Name": "sca-resource-role",
+  "IsCustom": true,
+  "Description": "SCA Custom role for Azure Resources",
+  "Actions": [
+    "Microsoft.Authorization/roleAssignments/read",
+    "Microsoft.Authorization/roleAssignments/write",
+    "Microsoft.Authorization/roleAssignments/delete",
+    "Microsoft.Authorization/roleDefinitions/read",
+    "Microsoft.Authorization/roleManagementPolicies/read",
+    "Microsoft.Authorization/permissions/read",
+    "Microsoft.ResourceGraph/operations/read",
+    "Microsoft.ResourceGraph/resources/read",
+    "Microsoft.Resources/subscriptions/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+    "Microsoft.Resources/subscriptions/providers/read",
+    "Microsoft.Resources/subscriptions/resources/read",
+    "Microsoft.Resources/subscriptions/operationresults/read",
+    "Microsoft.Resources/resources/read",
+    "Microsoft.Management/managementGroups/read",
+    "Microsoft.Management/managementGroups/subscriptions/read"  
+  ],
+  "NotActions": [],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "#PUT YOUR MANAGEMENT GROUPS AND SUBSCRIPTION IDs HERE /providers/Microsoft.Management/managementGroups/{management group id} or /subscriptions/{subscription id} "
+  ]
+}</code></pre>
+                    </div>
+                    <div MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                        <p>You can onboard multiple management groups or subscriptions at the same time. The following JSON file is an example of onboarding an array of multiple subscriptions.</p>
+                        <div class="example"><pre><code>{
+  "Name": "sca-resource-role",
+  "IsCustom": true,
+  "Description": "SCA Custom role for Azure Resources",
+  "Actions": [
+    "Microsoft.Authorization/roleAssignments/read",
+    "Microsoft.Authorization/roleAssignments/write",
+    "Microsoft.Authorization/roleAssignments/delete",
+    "Microsoft.Authorization/roleDefinitions/read",
+    "Microsoft.Authorization/roleManagementPolicies/read",
+    "Microsoft.Authorization/permissions/read",
+    "Microsoft.ResourceGraph/operations/read",
+    "Microsoft.ResourceGraph/resources/read",
+    "Microsoft.Resources/subscriptions/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+    "Microsoft.Resources/subscriptions/providers/read",
+    "Microsoft.Resources/subscriptions/resources/read",
+    "Microsoft.Resources/subscriptions/operationresults/read",
+    "Microsoft.Resources/resources/read",
+    "Microsoft.Management/managementGroups/read",
+    "Microsoft.Management/managementGroups/subscriptions/read"  
+  ],
+  "NotActions": [],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": [
+  
+ 
+     "/subscriptions/{subscription id}","/subscriptions/{subscription id}","/subscriptions/{subscription id}"
+  ]
+}</code></pre>
+                        </div>
+                    </div>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                    <p>Apply the tenant root group ID&#160;where indicated in the script.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBAConly">
+                    <p>Apply the management group or subscription ID&#160;where indicated in the script.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBACforAD">
+                    <p>Apply the root management group ID&#160;where indicated in the script.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                    <p>Open the Azure CLI, switch to PowerShell, and do the following:</p>
+                    <ol>
+                        <li>
+                            <p>In the menu bar, click <span class="Emphasis">Manage files</span> &gt; <span class="Emphasis">Upload</span>.</p>
+                        </li>
+                        <li>
+                            <p>Navigate to the JSON&#160;file that you saved locally, and upload it to the Azure environment.</p>
+                        </li>
+                    </ol>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                    <p>Run the following PowerShell command with the path to the JSON&#160;file that contains the tenant root group ID:</p>
+                    <div class="code"><pre><code>az role definition create --role-definition {path to JSON file on your local machine}</code></pre>
+                    </div>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                    <p>Open the Azure CLI, switch to PowerShell, and do the following:</p>
+                    <ol>
+                        <li>
+                            <p>In the menu bar, click <span class="Emphasis">Manage files </span>&gt; <span class="Emphasis">Upload</span>.</p>
+                        </li>
+                        <li>
+                            <p>Navigate to the JSON&#160;file that you saved locally, and upload it to the Azure environment.</p>
+                        </li>
+                    </ol>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBACforAD">
+                    <p>Run the following PowerShell command with the path to the JSON&#160;file that contains the root management group ID:</p>
+                    <div class="code"><pre><code>az role definition create --role-definition {path to JSON file on your local machine}</code></pre>
+                    </div>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBAConly">
+                    <p>Run the following PowerShell command with the path to the JSON&#160;file that contains the management group or subscription ID:</p>
+                    <div class="code"><pre><code>az role definition create --role-definition {path to JSON file on your local machine}</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <p> From the navigation pane<MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardSCA-AD"> in the Tenant Root Group</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardSCA-RBAC"> in the management group or subscription</MadCap:conditionalText>, select <span class="Emphasis"> Access control (IAM)</span>.</p>
+                </li>
+                <li>
+                    <p>Click <span class="Emphasis">Add </span>&gt; <span class="Emphasis">Add role assignment</span> to show the role assignment wizard.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardCEM-AD">
+                    <p>In the Role page, search for the <span class="Emphasis">Reader</span> role and select it in the role table, then click <span class="Emphasis">Next</span>.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardCEM-RBAC">
+                    <p>In the Role page, search for the <span class="Emphasis">Reader</span> role and select it in the role table, then click <span class="Emphasis">Next</span>.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                    <p>In the Role page, search for the custom role, for example <span class="Emphasis">sca-aad-role</span>, select it in the role table, then click <span class="Emphasis">Next</span>.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                    <p>In the Role page, select <span class="Emphasis">Privileged administrator roles</span>, search for the custom role, for example <span class="Emphasis">sca-resource-role</span>, select it in the role table, then click <span class="Emphasis">Next</span>.</p>
+                </li>
+                <li>
+                    <p>In the Members page, assign the <MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardCEM-AD"><MadCap:variable name="cc_product_vars.CV-full" /></MadCap:conditionalText><MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-AD" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-RBAC" /> app registration to the role as follows:</p>
+                    <ol>
+                        <li>
+                            <p><span class="Emphasis">Assign access to</span> - select <span class="Emphasis">User, group or service principal</span>.</p>
+                        </li>
+                        <li>
+                            <p><span class="Emphasis">Members</span> - click <span class="Emphasis">Select members</span>, and in the <span class="Emphasis">Select</span> search box on the right side of the console, start typing the name of the app registration you created (for example, <span class="Emphasis" MadCap:conditions="snip-conditions.OnboardCEM-AD">cyb-cem-app</span><span class="Emphasis" MadCap:conditions="snip-conditions.OnboardCEM-RBAC">cyb-cem-app</span><span class="Emphasis" MadCap:conditions="snip-conditions.OnboardSCA-AD">cyb-sca-aad-app</span><span class="Emphasis" MadCap:conditions="snip-conditions.OnboardSCA-RBAC">cyb-sca-resource-app</span>) until it appears and you can select it.</p>
+                        </li>
+                        <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                            <p><span class="Emphasis">Conditions</span> - Select <span class="Emphasis">Allow user to assign all roles</span>.</p>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <p>Click <span class="Emphasis">Select</span> at the bottom of the page, and then click <span class="Emphasis">Review + Assign</span>.</p>
+                </li>
+                <li>
+                    <p>In the Review +&#160;Assign page, click <span class="Emphasis">Review + assign</span>.</p>
+                </li>
+                <li MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                    <p>Repeat the procedure for each scope you want <MadCap:variable name="cc_product_vars.CV-full" /> to monitor.</p>
+                </li>
+            </ol>
+            <p MadCap:conditions="snip-conditions.OnboardCEM-AD">The upper right-hand corner of the Access control (IAM) page shows the status of the role assignment.</p>
+            <p MadCap:conditions="snip-conditions.OnboardCEM-RBAC">The upper right-hand corner of the Access control (IAM) page shows the status of the role assignment.</p>
+        </div>
+        <div MadCap:conditions="snip-conditions.NotSCA-AD">
+            <div>
+                <h3 class="step" MadCap:autonum="Step 9: ">Onboard the directory to <MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardCEM-AD"><MadCap:variable name="cc_product_vars.CV-full" /></MadCap:conditionalText><MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-RBAC" /></h3>
+                <p>Do this step in the <MadCap:variable name="cc_product_vars.CV-full" /> onboarding (New Azure directory) page after you finish configuring the new <MadCap:conditionalText MadCap:conditions="snip-conditions.OnboardCEM-AD"><MadCap:variable name="cc_product_vars.CV-full" /></MadCap:conditionalText><MadCap:variable name="cc_product_vars.CV-full" MadCap:conditions="snip-conditions.OnboardCEM-RBAC" /><MadCap:variable name="cc_product_vars.SCA-short" MadCap:conditions="snip-conditions.OnboardSCA-RBAC" /> app registration in the Microsoft Azure console.</p>
+            </div>
+            <div class="important" MadCap:conditions="snip-conditions.OnboardCEM-ADforSCA">
+                <p>Keep the <MadCap:variable name="cc_product_vars.CV-full" /> onboarding page open until you complete the entire work flow and start the discovery process.</p>
+            </div>
+            <ol MadCap:conditions="snip-conditions.OnboardCEM-AD">
+                <li>
+                    <p>In <MadCap:variable name="cc_product_vars.CV-full" />, go to <span class="Emphasis">Settings </span>&gt; <span class="Emphasis">Platform management </span>and click the Azure tile.</p>
+                </li>
+                <li>
+                    <p>In the Azure page, click <span class="Emphasis">Add workspace</span>.</p>
+                </li>
+                <li>
+                    <p>Select <span class="Emphasis">Add new directory </span>and click <span class="Emphasis">Add</span>.</p>
+                </li>
+                <li>
+                    <p>In the New Azure directory page, provide the directory ID.</p>
+                </li>
+                <li>
+                    <p>In the <span class="Emphasis">Specify the scope of the connection</span> area, select <span class="Emphasis">Connect the entire directory</span>.</p>
+                </li>
+                <li>
+                    <p> Copy and paste the following JSON into an editor, and add the directory ID, application ID, and application secret that you saved in step 2 above.</p>
+                    <div class="code"><pre><code><p>{</p><p>"directory_id": "&lt;PASTE-DIRECTORY-ID-HERE&gt;",</p><p>"application_id": "&lt;PASTE-APPLICATION-ID-HERE&gt;",</p><p>"secret": "&lt;PASTE-APPLICATION-SECRET-HERE&gt;"</p><p>}</p></code></pre>
+                    </div>
+                </li>
+            </ol>
+            <ol MadCap:conditions="snip-conditions.OnboardCEM-RBAC">
+                <li>
+                    <p>In <MadCap:variable name="cc_product_vars.CV-full" />, go to <span class="Emphasis">Settings </span>&gt; <span class="Emphasis">Platform management </span>and click the Azure tile.</p>
+                </li>
+                <li>
+                    <p>In the Azure page, click <span class="Emphasis">Add workspace</span>.</p>
+                </li>
+                <li>
+                    <p>Select <span class="Emphasis">Add new directory </span>and click <span class="Emphasis">Add</span>.</p>
+                </li>
+                <li>
+                    <p>In the New Azure directory page, provide the directory ID.</p>
+                </li>
+                <li>
+                    <p>In the <span class="Emphasis">Specify the scope of the connection</span> area, select <span class="Emphasis">Connection specific management groups </span>or <span class="Emphasis">Connect specific subscriptions </span>and provide the relevant ID.</p>
+                </li>
+                <li>
+                    <p> Copy and paste the following JSON into an editor, and add the directory ID, application ID, and application secret that you saved in step 2 above.</p>
+                    <div class="code"><pre><code><p>{</p><p>"directory_id": "&lt;PASTE-DIRECTORY-ID-HERE&gt;",</p><p>"application_id": "&lt;PASTE-APPLICATION-ID-HERE&gt;",</p><p>"secret": "&lt;PASTE-APPLICATION-SECRET-HERE&gt;"</p><p>}</p></code></pre>
+                    </div>
+                </li>
+            </ol>
+            <div class="note" MadCap:conditions="snip-conditions.OnboardCEM-ADforSCA">
+                <p>If you close the <MadCap:variable name="cc_product_vars.CV-full" /> onboarding page in the interim, when you re-open it you'll have to input the <MadCap:variable name="cc_product_vars.CV-full" /> <span class="Emphasis">finalValue </span>again.</p>
+            </div>
+            <ol MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                <li MadCap:conditions="snip-conditions.OnboardSCA-AD">
+                    <p>Copy and paste the following JSON into an editor, and add the following information that you saved in step 2 above:</p>
+                    <ul>
+                        <li>
+                            <p><span class="Emphasis">azure_resources </span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>Directory ID, application ID, and application secret that you onboarded with the root management group in <a href="/sca/latest/en/content/cloudadmin/cv-azure-manual.htm#OnboardanAzuremanagementgrouporsubscriptiontoSCA" target="_self"><p>Onboard a management group or subscription to [%=cc_product_vars.SCA-short]</p></a></p>
+                                </li>
+                                <li>
+                                    <p>Key ID</p>
+                                </li>
+                                <li>
+                                    <p>Object ID</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><span class="Emphasis">azure_aad </span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <p>Directory ID, application ID, and application secret </p>
+                                </li>
+                                <li>
+                                    <p>Key ID</p>
+                                </li>
+                                <li>
+                                    <p>  Object ID</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="code"><pre><code><p>{
+  "azure_resources": {
+    "directory_id": "{directory_id}",
+    "application_id": "{cyb-sca-resource-app} id",
+    "secret": "{cyb-sca-resource-app} secret",
+    "key_id": "{cyb-sca-resource-app} key id",
+    "object_id": "{cyb-sca-resource-app} object_id"
+  },
+  "azure_aad": {
+    "directory_id": "{directory_id}",
+    "application_id": "{cyb-sca-aad-app} id",
+    "secret": "{cyb-sca-aad-app} secret",
+    "key_id": "{cyb-sca-aad-app} key id",
+    "object_id": "{cyb-sca-aad-app} object id"
+  }</p><p>}</p></code></pre>
+                    </div>
+                </li>
+            </ol>
+            <ol MadCap:conditions="snip-conditions.OnboardSCA-RBAConly">
+                <li>
+                    <p>In the <MadCap:variable name="cc_product_vars.CV-full" /> onboarding page, provide the directory ID.</p>
+                </li>
+                <li MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                    <p MadCap:conditions="snip-conditions.OnboardSCA-RBAC">In the <span class="Emphasis">Specify the scope of the connection area</span>, select <span class="Emphasis">Connection specific management groups </span>or <span class="Emphasis">Connect specific subscriptions </span>and provide the relevant ID.</p>
+                </li>
+                <li>
+                    <p> Copy and paste the following JSON file into an editor and add the following parameters that you saved in step 2 above:</p>
+                    <ul>
+                        <li>
+                            <p>Directory ID, application ID, and application secret </p>
+                        </li>
+                        <li>
+                            <p>Key ID</p>
+                        </li>
+                        <li>
+                            <p>Object ID</p>
+                        </li>
+                    </ul>
+                    <div class="code"><pre><code><p>{
+  "azure_resources": {
+    "directory_id": "{directory_id}",
+    "application_id": "{cyb-sca-resource-app} id",
+    "secret": "{cyb-sca-resource-app} secret",
+    "key_id": "{cyb-sca-resource-app} key id",
+    "object_id": "{cyb-sca-resource-app} object_id"
+  }</p><p>}</p></code></pre>
+                    </div>
+                </li>
+            </ol>
+            <ol MadCap:conditions="snip-conditions.OnboardSCA-RBACforAD">
+                <li>
+                    <p>In the <MadCap:variable name="cc_product_vars.CV-full" /> onboarding page, provide the directory ID.</p>
+                </li>
+                <li MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                    <p MadCap:conditions="snip-conditions.OnboardSCA-AD">In the <span class="Emphasis">Specify the scope of the connection area</span>, select <span class="Emphasis">Connect the entire directory</span>.</p>
+                </li>
+                <li>
+                    <p> Copy and paste the following JSON file into an editor and add the following parameters that you saved  for each app registration (for the resource root management group, and for the <MadCap:variable name="cc_product_vars.SCA-short" /> Entra ID directory):</p>
+                    <ul>
+                        <li>
+                            <p>Directory ID, application ID, and application secret </p>
+                        </li>
+                        <li>
+                            <p>Key ID</p>
+                        </li>
+                        <li>
+                            <p>    Object ID</p>
+                        </li>
+                    </ul>
+                    <div class="code"><pre><code><p>{
+  "azure_resources": {
+    "directory_id": "{directory_id}",
+    "application_id": "{cyb-sca-resource-app} id",
+    "secret": "{cyb-sca-resource-app} secret",
+    "key_id": "{cyb-sca-resource-app} key id",
+    "object_id": "{cyb-sca-resource-app} object_id"
+  },
+  "azure_aad": {
+    "directory_id": "{directory_id}",
+    "application_id": "{cyb-sca-aad-app} id",
+    "secret": "{cyb-sca-aad-app} secret",
+    "key_id": "{cyb-sca-aad-app} key id",
+    "object_id": "{cyb-sca-aad-app} object id"
+  }</p><p>}</p></code></pre>
+                    </div>
+                </li>
+            </ol>
+            <ol MadCap:continue="true">
+                <li MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                    <p MadCap:conditions="snip-conditions.OnboardSCA-AD">Encode in Base64.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                    <p>Encode the updated JSON&#160;file in Base64 and paste it into  the <MadCap:variable name="cc_product_vars.SCA-short" /> <span class="Emphasis"> finalValue </span>area.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardCEM-AD">
+                    <p>In the <MadCap:variable name="cc_product_vars.CV-full" /> <span class="Emphasis"> FinalValue</span> area, paste the updated JSON.</p>
+                    <div class="note" MadCap:conditions="snip-conditions.OnboardCEM-ADforSCA">
+                        <p>The <MadCap:variable name="cc_product_vars.SCA-short" /> finalValue will be applied at a later step of the onboarding process.</p>
+                    </div>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardCEM-RBAC">
+                    <p>In the <MadCap:variable name="cc_product_vars.CV-full" /> <span class="Emphasis">FinalValue</span> area, paste the updated JSON.</p>
+                    <div class="note" MadCap:conditions="snip-conditions.OnboardCEM-RBACforSCA">
+                        <p>The <MadCap:variable name="cc_product_vars.SCA-short" /> finalValue will be applied at a later step of the onboarding process.</p>
+                    </div>
+                </li>
+                <li MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                    <p MadCap:conditions="snip-conditions.OnboardSCA-AD">In the <MadCap:variable name="cc_product_vars.SCA-short" /> <span class="Emphasis"> finalValue </span>area, paste the updated JSON.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardCEM-AD">
+                    <p>In the  <span class="Emphasis">Grant admin permissions to <MadCap:variable name="cc_product_vars.CV-full" /> - Azure resources app</span> area, click the <span class="Emphasis">Microsoft's request</span> link. When the Azure portal opens, follow the instructions to complete this step in Azure.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardCEM-RBAC">
+                    <p>In the  <span class="Emphasis">Grant admin permissions to <MadCap:variable name="cc_product_vars.CV-full" /> - Azure resources app</span> area, click the <span class="Emphasis">Microsoft's request</span> link. When the Azure portal opens, follow the instructions to complete this step in Azure.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBACforAD">
+                    <p>In the<span class="Emphasis"> Grant admin permissions to SCA&#160;- Azure Active Directory app</span> area, click the Microsoft's request link. When the Azure portal opens, follow the instructions to complete this                    step in Azure.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBACforAD">
+                    <p>In the<span class="Emphasis"> Grant admin permissions to SCA - Azure resources app</span> area, click the Microsoft's request link. When the Azure portal opens, follow the instructions to complete this                    step in Azure.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC,snip-conditions.OnboardSCA-RBAConly">
+                    <p>In the<span class="Emphasis"> Grant admin permissions to SCA - Azure resources app</span> area, click the Microsoft's request link. When the Azure portal opens, follow the instructions to complete this                    step in Azure.</p>
+                </li>
+            </ol>
+            <div class="note" MadCap:conditions="snip-conditions.OnboardCEM-ADforSCA">
+                <p>Leave the <MadCap:variable name="cc_product_vars.CV-full" /> onboarding page open until you complete all the procedures in your manual onboarding process.</p>
+            </div>
+            <ol MadCap:continue="true">
+                <li MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                    <p>Close the <MadCap:variable name="cc_product_vars.CV-full" /> confirmation page. </p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardCEMonly">
+                    <p>In the <MadCap:variable name="cc_product_vars.CV-full" /> onboarding page, click <span class="Emphasis">Start discovery</span>.</p>
+                </li>
+                <li MadCap:conditions="snip-conditions.OnboardSCA-RBAC">
+                    <p>In the <MadCap:variable name="cc_product_vars.CV-full" /> onboarding page, click <span class="Emphasis">Start discovery</span>.</p>
+                </li>
+            </ol>
+            <div class="important" MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">
+                <p MadCap:conditions="snip-conditions.OnboardSCA-AD">If you're onboarding a Microsoft Entra ID directory, skip the <span class="Emphasis">Start discovery</span> step for now. You should only start discovery at the end of the complete onboarding process.</p>
+            </div>
+        </div>
+    </body>
+</html>

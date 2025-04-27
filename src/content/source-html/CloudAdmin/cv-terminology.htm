@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="cc_product_vars.SCA-full" /> and <MadCap:variable name="cc_product_vars.CV-full" /> terminology</h1>
+        <p>This topic describes cloud platform terms used in <MadCap:conditionalText MadCap:conditions="cc_product_conds.SCA"><MadCap:variable name="cc_product_vars.SCA-full" /> and </MadCap:conditionalText><MadCap:variable name="cc_product_vars.CV-full" />.</p>
+        <h2>CyberArk cloud platform terminology</h2>
+        <p>This topics explains CyberArk cloud platform terminology related to connecting to your cloud environments:</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Term</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Platform</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Any cloud provider. CyberArk cloud security supports the following cloud providers:</p>
+                        <ul>
+                            <li>
+                                <p>AWS</p>
+                            </li>
+                            <li>
+                                <p>Microsoft Azure</p>
+                            </li>
+                            <li>
+                                <p>Google Cloud</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Workspace</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>A workspace is a generic term to represent a subdivision of a cloud platform. A workspace is where cloud entities operate on cloud resources using granted permissions. </p>
+                        <p><MadCap:variable name="cc_product_vars.CV-full" /> supports the following workspaces:</p>
+                        <p><span class="Emphasis">AWS</span>: </p>
+                        <ul>
+                            <li>
+                                <p>Standalone AWS account</p>
+                            </li>
+                            <li>
+                                <p>AWS organization (multiple AWS&#160;accounts without IAM&#160;Identity Center)</p>
+                            </li>
+                            <li>
+                                <p>AWS organization (multiple AWS&#160;accounts with IAM&#160;Identity Center)</p>
+                            </li>
+                        </ul>
+                        <p><span class="Emphasis">Microsoft Azure</span>: </p>
+                        <ul>
+                            <li>
+                                <p><MadCap:variable name="cv-shared-variables.entra-id-long" /> directory</p>
+                            </li>
+                            <li>
+                                <p>Management group</p>
+                            </li>
+                            <li>
+                                <p>Subscription</p>
+                            </li>
+                        </ul>
+                        <p><span class="Emphasis">Google Cloud</span>: </p>
+                        <ul>
+                            <li>
+                                <p>Google Cloud organization</p>
+                            </li>
+                            <li>
+                                <p>Google Cloud project</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">CyberArk tenant</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Your organization's isolated instance on CyberArk's Identity Security Platform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><a name="onboard-vs-connect"></a><span class="Emphasis">onboard vs connect</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>To secure your cloud environment, you need to first <span class="Emphasis">onboard</span> the cloud environment to CyberArk. During the onboarding, <MadCap:variable name="cc_product_vars.CV-full" /> searches across the workspace to <span class="Emphasis">discover the structure</span> of the workspace. See <MadCap:xref href="#discover-vs-scan">discover vs scan</MadCap:xref> below.</p>
+                        <p><MadCap:variable name="cc_product_vars.CV-full" /> also offers identity and entitlement analysis capabilities. To use these capabilities, <MadCap:variable name="cc_product_vars.CV-full" /> must be <span class="Emphasis">connected</span> to the onboarded workspace. <MadCap:variable name="cc_product_vars.CV-full" /> can then scan the discovered workspace for the purpose of this analysis.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><a name="discover-vs-scan"></a><span class="Emphasis">discover vs scan</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p><span class="Emphasis">Discovery</span> - When <MadCap:variable name="cc_product_vars.CV-full" /> onboards a workspace, it <span class="Emphasis">performs a discovery</span>, meaning that it scans across the workspace <span class="Emphasis">to discover the structure of the workspace</span>.</p>
+                        <p>After the initial discovery,<span class="Emphasis"> <MadCap:variable name="cc_product_vars.CV-full" /> performs a scheduled discovery across the workspace every 24 hours</span> to detect any changes to its structure.</p>
+                        <p>  For example, say you onboard a full <MadCap:variable name="cv-shared-variables.entra-id-long" /> directory. During the onboarding, <MadCap:variable name="cc_product_vars.CV-full" /> performs an initial discovery of the whole directory structure. It will also discover the management groups, and subscriptions within the directory. The entire directory is reflected in <MadCap:variable name="cc_product_vars.CV-full" /> on the <span class="Emphasis">Settings &gt;&#160;Platform management &gt;&#160;Azure</span> page. </p>
+                        <p>The scheduled 24-hourly discovery picks up changes to the directory structure such as new subscriptions, removed management groups, and so on, after which these updates are reflected in the directory structure in <MadCap:variable name="cc_product_vars.CV-full" />.</p>
+                        <div MadCap:conditions="cc_product_conds.CV">
+                            <MadCap:snippetBlock src="CloudAdminSnippets/cv-scan-terms.flsnp" />
+                        </div>
+                        <div MadCap:conditions="cc_product_conds.SCA">
+                            <p><span class="Emphasis">Scan</span> - Both <MadCap:variable name="cc_product_vars.CV-full" /> and <MadCap:variable name="cc_product_vars.SCA-full" /> <span class="Emphasis">scan </span>discovered workspaces, but each for a different purpose.</p>
+                            <ul>
+                                <li>
+                                    <MadCap:snippetBlock src="CloudAdminSnippets/cv-scan-terms.flsnp" />
+                                </li>
+                                <li>
+                                    <p><span class="Emphasis"><MadCap:variable name="cc_product_vars.SCA-full" /> (<MadCap:variable name="cc_product_vars.SCA-short" />)&#160;scan:</span> <MadCap:variable name="cc_product_vars.SCA-short" /> scans discovered workspace for roles, permission sets, and resources. The initial <span class="Emphasis"><MadCap:variable name="cc_product_vars.SCA-short" /> scan</span> is performed automatically immediately upon initial discovery of the workspace. After that, <MadCap:variable name="cc_product_vars.SCA-short" /> performs scheduled scans twice a day (every 12 hours) to detect any updates to roles and resources. </p>
+                                    <p>In addition, when creating an access policy, you can trigger a scan manually from the <MadCap:variable name="cc_product_vars.SCA-short" /> policy creation wizard or by running the Scan API.</p>
+                                    <div class="note">
+                                        <p> For <MadCap:variable name="cc_product_vars.SCA-short" /> to  scan the workspace,  the workspace must be <span class="Emphasis">onboarded and discovered</span>, but <MadCap:variable name="cc_product_vars.CV-full" /> doesn't have to be connected to the workspace. This is true for all <MadCap:variable name="cc_product_vars.SCA-short" /> functionality.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

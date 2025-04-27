@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Create policies for <MadCap:variable name="sca-project-variables.AWS-IAM" /> and <MadCap:variable name="sca-project-variables.AWS-AD" /> access</h1>
+        <p>This topic describes how to create and manage policies that provide users with just-in-time access to <MadCap:variable name="sca-project-variables.AWS-IAM" /> and <MadCap:variable name="sca-project-variables.AWS-AD" /> cloud assets.</p>
+        <h2>Before you start</h2>
+        <p>When you create a policies, you give users access to accounts using selected IAM roles that they can assume. Before you start creating policies, make sure that at least one IAM assumable role exists your AWS IAM.</p>
+        <h2 class="stepReset" MadCap:autonum="Step 1: ">Configure a policy</h2>
+        <p>Go to the <span class="Emphasis">Access policies</span> page, click <span class="Emphasis">Create new policy</span> and select a policy type.</p>
+        <p><MadCap:variable name="cc_product_vars.SCA-short" /> supports both AWS accounts, and <MadCap:variable name="sca-project-variables.AWS-AD" />, so you can create a policy for either type of cloud workspace.</p>
+        <h2 class="step" MadCap:autonum="Step 2: ">Define the general details</h2>
+        <div class="note">
+            <p>When you create an <MadCap:variable name="cc_product_vars.SCA-short" /> policy for an <MadCap:variable name="sca-project-variables.AWS-AD" /> account, it will only work if you create an IAM policy with the same name and path in each AWS account affected by the policy (where <MadCap:variable name="sca-project-variables.AWS-AD" /> assigns the permission set created by the policy).</p>
+        </div>
+        <ol>
+            <li>
+                <MadCap:snippetBlock src="SCA-snippets/Add-policy-step1.flsnp" />
+            </li>
+        </ol>
+        <h2 class="step" MadCap:autonum="Step 3: ">Select the cloud roles/permissions</h2>
+        <div class="tabs">
+            <ul class="tabs-nav">
+                <li class="tab-active"><a data-cc-tab=".tab-1">AWS&#160;account</a>
+                </li>
+                <li><a data-cc-tab=".tab-2">AWS IAM&#160;Identity Center</a>
+                </li>
+            </ul>
+            <div class="tabs-stage">
+                <div class="tab-1">
+                    <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 1 Content - &lt;AWS accounts&gt;</p>
+                    <p>In this step, you choose the cloud roles you want to include in the policy. You can add tags you created in AWS to further define the scope of the policy.</p>
+                    <MadCap:snippetBlock src="SCA-snippets/On-demand-scan-tip.flsnp" MadCap:conditionTagExpression="include[snip-conditions.AWS-IAM], exclude[snip-conditions.AWS-IAM-IDC or snip-conditions.AWS-IAM-ORG or snip-conditions.Azure or snip-conditions.Google]" />
+                    <ol>
+                        <li>
+                            <p>From the list on the left, select an AWS account.</p>
+                        </li>
+                        <li>
+                            <p>In the list of roles, do the following:</p>
+                            <div class="note">
+                                <p>The table only shows standard AWS&#160;predefined cloud roles and your organization's custom roles. This does not include AWSReservedSSO* roles. For more information, see <MadCap:xref href="../Introduction/sca_FAQs-SCA.htm#awsreservedsso">Why doesn't [%=cc_product_vars.SCA-short%] show AWSReservedSSO* roles?</MadCap:xref></p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p>To inspect the permissions for the cloud roles, from <span class="Emphasis">More actions</span> (<img src="../images/icon_ellipsis-v.png" class="icon" />), select <span class="Emphasis">Role details</span>. You can review the access map and permissions for this cloud role in the window that is displayed, and return to the main window when you are done.</p>
+                                </li>
+                                <li>
+                                    <p>Mark the check boxes for the cloud roles you want to include in this policy and click <span class="Emphasis">Select</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="tab-2">
+                    <p MadCap:conditions="cc_C_CyberArk.InternalOnly">Tab 2 Content - &lt;AWS IDC&gt;</p>
+                    <p>In this step, you choose the permission sets you want to include in the policy. You can add tags you created in AWS to further define the scope of the policy.</p>
+                    <MadCap:snippetBlock src="SCA-snippets/On-demand-scan-tip.flsnp" MadCap:conditionTagExpression="include[snip-conditions.AWS-IAM-IDC], exclude[snip-conditions.AWS-IAM or snip-conditions.AWS-IAM-ORG or snip-conditions.Azure or snip-conditions.Google]" />
+                    <ol>
+                        <li>
+                            <p>From the list on the left, select an AWS account.</p>
+                        </li>
+                        <li>
+                            <p>In the list of permission sets, do the following:</p>
+                            <ul>
+                                <li>
+                                    <p>To  inspect a permission set, from <span class="Emphasis">More actions</span> (<img src="../images/icon_ellipsis-v.png" class="icon" />), select <span class="Emphasis">View permissions</span>. You can review the permission set details in the window that is displayed, and return to the main window when you are done.</p>
+                                </li>
+                                <li>
+                                    <p>Mark the check boxes for the permission sets you want to include in this policy and click <span class="Emphasis">Select</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <h2 class="step" MadCap:autonum="Step 4: ">Define the access rules</h2>
+        <p>Select members for the policy, and specify the access rules to be applied to the policy.</p>
+        <p>When you define the <span class="Emphasis">maximum session duration</span> keep the following in mind:</p>
+        <ul>
+            <li>
+                <p>Each IAM role has its own session duration. If the policy's session duration is longer than the role's session duration, the resulting session will be limited by the role's session duration. Coordinate with your AWS administrator to ensure alignment.</p>
+            </li>
+            <li>
+                <p>If multiple SCA policies apply to the same role, the session duration is determined by the longer of the two—yet the IAM role’s session duration always determines the limit.</p>
+            </li>
+        </ul>
+        <h2 class="step" MadCap:autonum="Step 5: ">Activate the policy</h2>
+        <p>At the bottom of the page, click <span class="Emphasis">Activate Policy</span>. The policy is listed in the Access policies page with a <span class="Emphasis">Validating </span> (<img src="images/policy-status-validating.png" class="icon" />) status. When the validation completes successfully, the status changes to <span class="Emphasis">Active </span>(<img src="images/policy-status-active.png" class="icon" />).</p>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+# Admin permissions
+
+Admin permissions refers to the admin level of permissions assigned to
+an identity. This topic describes how determines if an identity has
+admin permissions.
+
+## What is an admin?
+
+In general, describes an identity as an admin if that identity is
+[directly]{.Emphasis} granted all permissions over all resources in the
+workspace. Each cloud provider defines admins differently.
+
+An identity is an admin if it has [all permissions (\*.\*) granted
+directly at the workspace level]{.Emphasis} for all resources of:
+
+- An [account ]{.Emphasis}in AWS.
+
+- A [subscription ]{.Emphasis}or [management group scope]{.Emphasis} in
+  Azure.
+
+- A [project ]{.Emphasis}or [folder ]{.Emphasis}or [organization
+  scope]{.Emphasis} in Google Cloud.
+
+In addition, there must only be one source for the granting of the
+permissions.
+
+::: example
+For example would not classify the following as having admin
+permissions:
+
+- An identity with indirect permissions for all resources of an account
+  in AWS.
+
+- An identity granted all permissions by two policies.
+:::

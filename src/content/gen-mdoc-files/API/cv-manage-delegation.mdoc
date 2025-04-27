@@ -1,0 +1,164 @@
+# Workspace delegation operations
+
+This section describes the API for conducting various operations
+relating to workspace delegation in
+{% $cc_product_vars.CV-full %}.
+
+:::: swagger-container
+[Edit this hyperlink to point it to the desired swagger yaml
+file.](../YAML/workspace-delegation.json)
+
+::: {#swagger-ui}
+Do not edit this text or remove the below script. Only use this snippet
+ONCE in a topic. Remember to apply the Swagger master page to the topic.
+:::
+
+<script>
+                window.onload = function() {
+                if (!window.jQuery) { return }
+                var swaggerLink = $('.swagger-link a');
+                var swaggerLink = swaggerLink.attr('href');
+                const ui = SwaggerUIBundle({
+                url: swaggerLink,
+                dom_id: '#swagger-ui',
+                presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+                ]
+                })
+                window.ui = ui
+                }
+            </script>
+::::
+
+## API examples
+
+Here are some examples of the API in use.
+
+### /api/delegations/{cloudPlatform} - add delegation
+
+Request body
+
+::: code
+                    {
+        "workspaces": [
+            {
+                "workspace_type": "account",
+                "workspace_id": "<workspace-iD>",
+                "workspace_name": "Oded's account",
+                "organization": "424213224699"
+            }
+        ],
+        "identities": [
+            {
+                "identity_type": "User",
+                "identity_id": "<identity-ID>",
+                "identity_name": "Naveen",
+                "directoryId": "<directory-ID>",
+                "directoryName": "Company Cloud Directory",
+                "identityEmail": "naveen@company.cloud.12345X",
+                "serviceType": "CDS",
+                "userPrincipal": "naveen@company.cloud.12345X"
+            },
+            {
+                "identity_type": "Role",
+                "identity_id": "<identity-ID>",
+                "identity_name": "CEMUser",
+                "userPrincipal": "CEMUser"
+            }
+        ]
+    }
+                
+:::
+
+### /api/delegations/owner/{Id} - update delegation rule
+
+Request body
+
+::: code
+                    {
+        "identities": [
+            {
+                "identity_type": "User",
+                "entity_id": "<identity-ID>",
+                "identity_name": "John Smith",
+                "directoryId": "<directory-ID>",
+                "directoryName": "Company Cloud Directory",
+                "identityEmail": "john.smith@company.com",
+                "serviceType": "CDS",
+                "userPrincipal": "john@company.cloud.12345X”
+            },
+            {
+                “identity_type”: “Role”,
+                “identity_id”: “<identity-ID>”,
+                “entity_name”: “CEMUser”,
+                “userPrincipal”: “CEMUser”
+            },
+            {
+                “identity_type”: “User”,
+                “identity_id”: “<identity-ID>”,
+                “identity_name”: “Naveen”,
+                “directoryId”: “<directory-ID>”,
+                “directoryName”: “Company Cloud Directory”,
+                “identityEmail”: “Naveen@company.cloud.12345X",
+                "serviceType": "CDS",
+                "userPrincipal": "naveen@company.cloud.12345X"
+            }
+        ]
+    }
+                
+:::
+
+### /api/delegations/workspace/details - get delegation details
+
+Request body
+
+::: code
+                    {
+        "id": 11,
+        "cloudPlatform": "AWS",
+        "workspaceType": "account",
+        "workspaceId": "<workspace-ID>",
+        "workspaceName": " Oded's account",
+        "identities": [
+            {
+                "identityType": "User",
+                "identityId": "<identity-ID>",
+                "identityName": "John Smith",
+                "directoryId": "<directory-ID>",
+                "directoryName": "Company Cloud Directory",
+                "identityEmail": "john.smith@company.com",
+                "serviceType": "CDS",
+                "userPrincipal": "john@company.cloud.12345X"
+            }
+        ]
+    }
+                
+:::
+
+### /api/delegations/workspace/export - export delegations
+
+Request body
+
+::: code
+                    {
+        "filters": {
+            "cloudPlatforms": [
+                "AWS"
+            ],
+            "workspaceTypes": [
+                "account"
+            ]
+        },
+        "limit": 100
+    }
+                
+:::
+
+Alternative request body
+
+::: code
+                    {
+    }
+                
+:::

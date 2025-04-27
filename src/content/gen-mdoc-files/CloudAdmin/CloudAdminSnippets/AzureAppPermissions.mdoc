@@ -1,0 +1,100 @@
++-----------------------+-----------------------+--------------------+
+| Permission            | Description           | Scope              |
++=======================+=======================+====================+
+| Appl                  | Allows the app to     | Directory/Resource |
+| ication.ReadWrite.All | create, and manage    |                    |
+|                       | (read, update, update |                    |
+|                       | application secrets   |                    |
+|                       | and delete)           |                    |
+|                       | applications and      |                    |
+|                       | service principals    |                    |
+|                       | without a signed-in   |                    |
+|                       | user. Does not allow  |                    |
+|                       | management of consent |                    |
+|                       | grants or application |                    |
+|                       | assignments to users  |                    |
+|                       | or groups.            |                    |
+|                       |                       |                    |
+|                       | ::: note              |                    |
+|                       | If you apply the      |                    |
+|                       | `--sca-l              |                    |
+|                       | east-privileged-mode` |                    |
+|                       | command when you run  |                    |
+|                       | the                   |                    |
+|                       | `<varia               |                    |
+|                       | ble name="cc_product_ |                    |
+|                       | vars.CV-full">`{=html |                    |
+|                       | }`</variable>`{=html} |                    |
+|                       | onboarding script,    |                    |
+|                       | this permission       |                    |
+|                       | isn\'t granted at the |                    |
+|                       | resource level.       |                    |
+|                       | :::                   |                    |
++-----------------------+-----------------------+--------------------+
+| Di                    | Allows the app to     | Directory          |
+| rectory.ReadWrite.All | read and write data   |                    |
+|                       | in your               |                    |
+|                       | organization's        |                    |
+|                       | directory, such as    |                    |
+|                       | users, and groups,    |                    |
+|                       | without a signed-in   |                    |
+|                       | user. Doesn\'t allow  |                    |
+|                       | the app to delete     |                    |
+|                       | users or groups, or   |                    |
+|                       | to reset user         |                    |
+|                       | passwords.            |                    |
++-----------------------+-----------------------+--------------------+
+| Group.Create          | Allows the app to     | Resource           |
+|                       | create groups without |                    |
+|                       | a signed-in user.     |                    |
++-----------------------+-----------------------+--------------------+
+| Group.ReadWrite.All   | Allows the app to     | Resource           |
+|                       | create groups, read   |                    |
+|                       | all group properties  |                    |
+|                       | and memberships,      |                    |
+|                       | update group          |                    |
+|                       | properties, and read  |                    |
+|                       | and write group       |                    |
+|                       | calendars and         |                    |
+|                       | conversations without |                    |
+|                       | a signed-in user.     |                    |
++-----------------------+-----------------------+--------------------+
+| Grou                  | Allows the app to     | Resource           |
+| pMember.ReadWrite.All | list groups, read     |                    |
+|                       | basic properties, and |                    |
+|                       | read and update the   |                    |
+|                       | membership of the     |                    |
+|                       | groups the app has    |                    |
+|                       | access to without a   |                    |
+|                       | signed-in user. Group |                    |
+|                       | properties and owners |                    |
+|                       | can\'t be updated,    |                    |
+|                       | and groups can\'t be  |                    |
+|                       | deleted.              |                    |
++-----------------------+-----------------------+--------------------+
+| RoleManagemen         | Allows the app to     | Directory          |
+| t.ReadWrite.Directory | read and manage the   |                    |
+|                       | role-based access     |                    |
+|                       | control (RBAC)        |                    |
+|                       | settings for your     |                    |
+|                       | company\'s directory, |                    |
+|                       | without a signed-in   |                    |
+|                       | user. This includes   |                    |
+|                       | instantiating         |                    |
+|                       | directory roles and   |                    |
+|                       | managing directory    |                    |
+|                       | role membership, and  |                    |
+|                       | reading directory     |                    |
+|                       | role templates,       |                    |
+|                       | directory roles and   |                    |
+|                       | memberships.          |                    |
++-----------------------+-----------------------+--------------------+
+| User.Read.All         | Allows the app to     | Resource           |
+|                       | read a basic set of   |                    |
+|                       | profile properties of |                    |
+|                       | other users in your   |                    |
+|                       | organization without  |                    |
+|                       | a signed-in user.     |                    |
++-----------------------+-----------------------+--------------------+
+
+: Azure app permissions

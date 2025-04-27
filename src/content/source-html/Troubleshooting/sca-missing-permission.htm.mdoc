@@ -1,0 +1,83 @@
+# AWS IAM permission updates
+
+This topic describes permissions that need to be manually updated in AWS
+for newly introduced functionality.
+
+## []{#Auto-tru}Auto-trust between and AWS
+
+[Released: ]{.Emphasis}August 6, 2024
+
+[Affects accounts/organizations onboarded prior to:]{.Emphasis} August
+6, 2024
+
+\'s [Create a web app]{.Emphasis} feature provides the option to have
+establish trust between and AWS automatically, rather than manually
+configuring trust in .
+
+- Accounts onboarded to from August 6, 2024, can immediately benefit
+  from this feature.
+
+- Accounts onboarded [prior ]{.Emphasis}to August 6, 2024, require an
+  the account\'s [CyberArkRoleSCA\_{UUID}]{.Emphasis} role requires an
+  additional permission to benefit from this feature.
+
+  ::: note
+  If you are configuring/configured trust manually (in ), you don\'t
+  need to add this permission.
+  :::
+
+::: ProcedureHeading
+To enable auto-trust between and AWS for a specific account:
+:::
+
+1.  Sign in to the AWS IAM account.
+
+2.  Go to [Roles]{.Emphasis}, and find the role called
+    [CyberArkRoleSCA\_{UUID}]{.Emphasis}.
+
+3.  Find the policy called
+    [CyberArkPolicyAccountForSCA\<XXXXXXXXXXXX\>]{.Emphasis} and add the
+    [iam:CreateSAMLProvider]{.Emphasis} permission.
+
+::: note
+For organizations, you need to do this change for every account in the
+organization.
+:::
+
+## Scanning roles in AWS IAM accounts
+
+[Released:]{.Emphasis} May 31, 2024
+
+[Affects accounts onboarded prior to:]{.Emphasis} August 18th, 2023
+
+released a performance enhancement for scanning roles in AWS IAM
+accounts on May 31, 2024. This enhancement provides the following
+benefits:
+
+- AWS IAM roles can be synced faster during onboarding
+
+- Users can initiate on-demand syncing of cloud roles with when they
+  make role changes in AWS IAM
+
+Customers who onboarded their AWS IAM workspaces to production tenants
+prior to August 18th, 2023 need to add the [iam:ListRoles
+]{.Emphasis}permission to all AWS accounts that were onboarded to .
+
+Customers who don\'t update their AWS IAM accounts as described below
+will experience a degradation in SCA functionality after May 31, 2024.
+When users try to create or edit policies for AWS IAM in the policy
+wizard, accounts and permissions won\'t be visible.
+
+::: ProcedureHeading
+To add the [iam:ListRoles ]{.Italics}permission
+:::
+
+1.  Sign in to your AWS IAM account.
+
+2.  Go to [Roles]{.Emphasis}, and find the role called
+    [CyberArkRoleSCA\_{UUID}]{.Emphasis}.
+
+3.  Find the policy called [CyberArkPolicyAccountForSCA\<XXXXXXXXXXXX\>
+    ]{.Emphasis}and add the [iam:ListRoles ]{.Emphasis}permission.
+
+4.  Repeat this for each account that your users access via .

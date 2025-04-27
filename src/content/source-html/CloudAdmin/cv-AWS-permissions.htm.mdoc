@@ -1,0 +1,371 @@
+# AWS required permissions
+
+This topic describes the roles and permissions needed for the admin user
+that onboards and maintains an AWS organization or account.
+
+In order to deploy a stack, the user that onboards the cloud environment
+must have the permissions that enable deploying and maintaining stacks
+in the AWS organization. Two sets of required roles and permissions are
+described below, one for onboarding and using the relevant
+CloudFormation template, and another for rolling back or deleting a
+stack.
+
+This topic includes the following:
+
+- Admin required permissions
+
+- Permissions required to onboard a standalone account
+
+- Permissions required to onboard an organization
+
+- AWS IAM Identity Center
+
+- Policy permissions
+
+- \[%=cc_product_vars.SCA-short%\] permissions
+
+  - AWS organizations and accounts
+
+  - AWS IAM Identity Center
+
+- Maintenance
+
+## []{#Admin}Admin required permissions
+
+The admin who onboards the AWS organizations and accounts must have the
+following permissions.
+
+  Permission                                 Description
+  ------------------------------------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  cloudformation:CreateStack                 Create a stack as specified in the template.
+  cloudformation:CreateStackInstances        Create stack instances for the specified accounts, within the specified AWS Regions. A stack instance refers to a stack in a specific account and Region.
+  cloudformation:DescribeStackEvents         View all stack-related events for a specified stack.
+  cloudformation:DescribeStacks              View the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.
+  cloudformation:DescribeStackSetOperation   View the description of the specified stack set operation.
+  cloudformation:GetTemplateSummary          View information about a new or existing template.
+  cloudformation:ListStacks                  View the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).
+  cloudformation:TagResource                 You can use the Resource Tags property to apply tags to resources, which can help you identify and categorize those resources. You can tag only resources for which AWS CloudFormation supports tagging.
+  events:DescribeRule                        Describe the specified rule.
+  events:PutRule                             Create or update the specified rule. Rules are enabled by default, or based on value of the state.
+  events:PutTargets                          Add the specified targets to the specified rule, or update the targets if they are already associated with the rule.
+  iam:AttachRolePolicy                       Attach the specified managed policy to the specified IAM role. When you attach a managed policy to a role, the managed policy becomes part of the role\'s permission (access) policy.
+  iam:CreateRole                             Create a new role for your AWS account.
+  iam:GetRole                                View information about the specified role, including the role\'s path, GUID, ARN, and the role\'s trust policy that grants permission to assume the role.
+  iam:GetRolePolicy                          View the specified inline policy document that is embedded with the specified IAM role.
+  iam:PassRole                               To pass a role (and its permissions) to an AWS service, a user must have permissions to pass the role to the service. This helps administrators ensure that only approved users can configure a service with a role that grants permissions. To allow a user to pass a role to an AWS service, you must grant the PassRole permission to the user\'s IAM user, role, or group.
+  iam:PutRolePolicy                          Add or update an inline policy document that is embedded in the specified IAM role.
+  s3:BypassGovernanceRetention               Perform operations on object versions that are locked in governance mode as if they were unprotected.
+  s3:CreateBucket                            Create a new S3 bucket.
+  s3:DeleteObjectTagging                     Remove the entire tag set from the specified object.
+  s3:DeleteObjectVersion                     Delete a specific version of an object from a bucket.
+  s3:DeleteObjectVersionTagging              Delete tags of a specific object version.
+  s3:GetBucketPolicy                         View the policy of a specified bucket.
+  s3:GetObject                               Access objects from Amazon S3.
+  s3:GetObjectLegalHold                      Get an object\'s current legal hold status.
+  s3:GetObjectVersion                        Needed when retrieving objects from Amazon S3. Permission for this action is granted on all objects to allow Amazon S3 to get a specific object version associated with the objects.
+  s3:GetObjectVersionAcl                     Permission for this action is granted on all objects to allow Amazon S3 to get a specific object version and access control list (ACL) associated with the object.
+  s3:GetObjectVersionForReplication          Permission for this action is granted on all objects to allow Amazon S3 to get a specific object version associated with the object.
+  s3:GetObjectVersionTagging                 Permissions for this action on objects in the source bucket allow Amazon S3 to read object tags for replication.
+  s3:GetObjectVersionTorrent                 Get torrent files from a bucket. BitTorrent can save you bandwidth when you\'re distributing large files.
+  s3:ListBuckets                             View a list of all buckets owned by the user.
+  s3:ListBucketVersions                      List metadata about all of the versions of objects in a bucket. This permission is required for the s3:ListObjectVersions permission.
+  s3:ListMultipartUploadParts                List the parts that have been uploaded for a specific multipart upload.
+  s3:ObjectOwnerOverrideToBucketOwner        Disable ACLs (with the bucket owner enforced setting for Object Ownership) to change replica ownership to the AWS account that owns the destination bucket.
+  s3:PutBucketPolicy                         Apply an Amazon S3 bucket policy to an Amazon S3 bucket.
+  s3:PutBucketPublicAccessBlock              Create or modify the PublicAccessBlock configuration for an Amazon S3 bucket.
+  s3:PutEncryptionConfiguration              Configure default encryption and Amazon S3 Bucket Key for an existing bucket.
+  s3:PutLifecycleConfiguration               Create a new lifecycle configuration for the bucket or replace an existing lifecycle configuration.
+  s3:PutObjectLegalHold                      Apply a legal hold configuration to the specified object.
+  s3:PutObjectRetention                      Place an Object Retention configuration on an object.
+  s3:PutObjectVersionAcl                     Set the access control list (ACL) permissions for an object that already exists in a bucket.
+  s3:PutObjectVersionTagging                 Set the supplied tag-set of a specific version to an object that already exists in a bucket.
+  s3:ReplicateDelete                         Permission for this action on all objects in the destination bucket allow Amazon S3 to replicate objects or delete markers to the destination bucket.
+  s3:ReplicateObject                         Permission for this action on all objects in the destination bucket allow Amazon S3 to replicate objects or delete markers to the destination bucket.
+  s3:ReplicateTags                           If the source bucket owner grants permission for the s3:ReplicateTags action to replicate object tags (through the IAM role), Amazon S3 replicates the tags along with the objects.
+  sns:Publish                                Send a message to an Amazon SNS topic, a text message (SMS message) directly to a phone number, or a message to a mobile platform endpoint (when you specify the TargetArn).
+
+  : Onboarding - admin required AWS permissions
+
+## []{#Permissi}Permissions required to onboard a standalone account
+
+The following roles and permissions are needed to onboard a standalone
+account to .
+
+  Permission                           Description
+  ------------------------------------ ------------------------------------------------------------------------------------------------
+  iam:GenerateCredentialReport         Generates a credential report for the AWS account.
+  iam:GetAccountAuthorizationDetails   Retrieves the user's name and password-creation date for the specified IAM user.
+  iam:GetCredentialReport              Retrieves a credential report for the AWS account.
+  iam:GetPolicy                        Retrieves information about the specified managed policy.
+  iam:GetPolicyVersion                 Retrieves information about the specified version of the specified managed policy.
+  iam:GetRole                          Retrieves information about the specified IAM role.
+  iam:GetRolePolicy                    Retrieves the specified inline policy document that is embedded within the specified IAM role.
+  iam:ListAttachedRolePolicies         Lists all managed policies that are associated with the specified IAM role.
+  iam:ListMFADevices                   Lists the MFA devices for an IAM user.
+  iam:ListRolePolicies                 Lists the names of the inline policies that are embedded within the specified IAM role.
+  iam:ListRoles                        Lists the IAM roles that have the specified path prefix.
+  iam:ListVirtualMFADevices            Lists the virtual MFA devices defined in the AWS account by assignment status.
+
+  : Onboard standalone account - required AWS permissions
+
+## []{#Required2}Permissions required to onboard an organization
+
+In addition to the roles and permissions described in Permissions
+required to onboard a standalone account, the following roles and
+permissions are needed to onboard an AWS organization to .
+
+  Permission                             Description
+  -------------------------------------- ----------------------------------------------------------------------------------------------------
+  cloudformation:ListStackInstances      Returns summary information about stack instances that are associated with the specified StackSet.
+  cloudformation:DetectStackSetDrift     Detects drift on a StackSet.
+  cloudformation:DescribeStackSet        Returns the description of the specified StackSet.
+  cloudformation:DescribeStackInstance   Returns the stack instance that\'s associated with the specified StackSet.
+
+  : Onboard an organization - required AWS permissions
+
+## []{#AWS3}AWS IAM Identity Center
+
+The following permissions are granted to for AWS IAM Identity Center
+workspaces that are onboarded.
+
+  Permission                                               Description
+  -------------------------------------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
+  sso:ListInstances                                        Lists the details of the organization and account instances of IAM Identity Center that were created in or visible to the account calling this API.
+  sso:ListPermissionSets                                   Lists the PermissionSets in an IAM Identity Center instance.
+  sso:DescribePermissionSet                                Gets the details of the permission set.
+  sso: ListAccountsForProvisionedPermissionSet             Lists all the AWS accounts where the specified permission set is provisioned.
+  sso:ListManagedPoliciesInPermissionSet                   Lists the AWS managed policy that is attached to a specified permission set.
+  sso:GetInlinePolicyForPermissionSet                      Obtains the inline policy assigned to the permission set.
+  sso:ListCustomerManagedPolicyReferencesInPermissionSet   Lists all customer managed policies attached to a specified PermissionSet.
+  sso:ListAccountAssignments                               Lists the assignee of the specified AWS account with the specified permission set.
+  sso:ListUsers                                            Lists all users in the identity store.
+  sso:ListGroups                                           Lists all groups in the identity store.
+  sso:ListGroupMemberships                                 For the specified group in the specified identity store, returns the list of all GroupMembership objects.
+
+  : AWS IAM Identity Center permissions
+
+## []{#Policy}Policy permissions
+
+To onboard organizations and standalone accounts, has access to and may
+use the permissions in the AWS managed policy
+[AWSOrganizationsReadOnlyAccess]{.Emphasis}.
+
+<div>
+
+## []{#permiss} permissions
+
+::: {.note madcap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH"}
+The following sections are only relevant for the users.
+:::
+
+### []{#AWS}AWS organizations and accounts
+
+The following permissions are granted to for AWS organizations and
+accounts that are onboarded.
+
++----------------------------------+----------------------------------+
+| Permission                       | Description                      |
++==================================+==================================+
+| iam:CreateSAMLProvider           | Create an IAM resource that      |
+|                                  | describes an identity provider   |
+|                                  | (IdP) that supports SAML 2.0.    |
+|                                  |                                  |
+|                                  | requires this permission so that |
+|                                  | it can set up trust between and  |
+|                                  | AWS automatically.               |
++----------------------------------+----------------------------------+
+| iam:GetPolicy                    | View information about the       |
+|                                  | specified managed policy,        |
+|                                  | including the policy\'s default  |
+|                                  | version and the total number of  |
+|                                  | IAM users, groups, and roles to  |
+|                                  | which the policy is attached.    |
++----------------------------------+----------------------------------+
+| iam:GetPolicyVersion             | View information about the       |
+|                                  | specified version of the         |
+|                                  | specified managed policy,        |
+|                                  | including the policy document.   |
++----------------------------------+----------------------------------+
+| iam:GetSAMLProvider              | View the SAML provider           |
+|                                  | metadocument that was uploaded   |
+|                                  | when the IAM SAML provider       |
+|                                  | resource object was created or   |
+|                                  | updated.                         |
++----------------------------------+----------------------------------+
+| iam:ListAttachedRolePolicies     | List all managed policies that   |
+|                                  | are attached to the specified    |
+|                                  | IAM role.                        |
++----------------------------------+----------------------------------+
+| iam:ListRolePolicies             | List the names of the inline     |
+|                                  | policies that are embedded in    |
+|                                  | the specified IAM role.          |
++----------------------------------+----------------------------------+
+| iam:ListRoles                    | List the IAM roles that have the |
+|                                  | specified path prefix.           |
++----------------------------------+----------------------------------+
+| iam:ListRoleTags                 | List the tags that are attached  |
+|                                  | to the specified IAM role.       |
++----------------------------------+----------------------------------+
+| iam:ListSAMLProviders            | List the SAML provider resource  |
+|                                  | objects defined in IAM in the    |
+|                                  | account. IAM resource-listing    |
+|                                  | operations return a subset of    |
+|                                  | the available attributes for the |
+|                                  | resource.                        |
++----------------------------------+----------------------------------+
+| iam:UpdateAssumeRolePolicy       | Update the policy that grants an |
+|                                  | IAM entity permission to assume  |
+|                                  | a role. This is typically        |
+|                                  | referred to as the \"role trust  |
+|                                  | policy\".                        |
++----------------------------------+----------------------------------+
+| o                                | (Management accounts) List tags  |
+| rganizations:ListTagsForResource | that are attached to the         |
+|                                  | specified resource.              |
++----------------------------------+----------------------------------+
+
+: Permissions granted to for AWS
+
+</div>
+
+### []{#AWS2}AWS IAM Identity Center
+
+The following permissions are granted to for AWS IAM Identity Center
+workspaces that are onboarded.
+
++----------------------------------+----------------------------------+
+| Permission                       | Description                      |
++==================================+==================================+
+| iam:AttachRolePolicy             | Attach the specified managed     |
+|                                  | policy to the specified IAM      |
+|                                  | role. When you attach a managed  |
+|                                  | policy to a role, the managed    |
+|                                  | policy becomes part of the       |
+|                                  | role\'s permission (access)      |
+|                                  | policy.                          |
++----------------------------------+----------------------------------+
+| iam:CreateRole                   | Create a new role for your AWS   |
+|                                  | account.                         |
++----------------------------------+----------------------------------+
+| iam:CreateSAMLProvider           | Create an IAM resource that      |
+|                                  | describes an identity provider   |
+|                                  | (IdP) that supports SAML 2.0.    |
+|                                  |                                  |
+|                                  | requires this permission so that |
+|                                  | it can set up trust between and  |
+|                                  | AWS automatically.               |
++----------------------------------+----------------------------------+
+| iam:GetRole                      | View information about the       |
+|                                  | specified role, including the    |
+|                                  | role\'s path, GUID, ARN, and the |
+|                                  | role\'s trust policy that grants |
+|                                  | permission to assume the role.   |
++----------------------------------+----------------------------------+
+| iam:GetSAMLProvider              | View the SAML provider           |
+|                                  | metadocument that was uploaded   |
+|                                  | when the IAM SAML provider       |
+|                                  | resource object was created or   |
+|                                  | updated.                         |
++----------------------------------+----------------------------------+
+| iam:ListAttachedRolePolicies     | Lists all managed policies that  |
+|                                  | are associated with the          |
+|                                  | specified IAM role.              |
++----------------------------------+----------------------------------+
+| iam:ListRolePolicies             | Lists the names of the inline    |
+|                                  | policies that are embedded       |
+|                                  | within the specified IAM role.   |
++----------------------------------+----------------------------------+
+| iam:ListRoleTags                 | List the tags that are attached  |
+|                                  | to the specified IAM role.       |
++----------------------------------+----------------------------------+
+| iam:PutRolePolicy                | Add or update an inline policy   |
+|                                  | document that is embedded in the |
+|                                  | specified IAM role.              |
++----------------------------------+----------------------------------+
+| iam:UpdateSAMLProvider           | Update the metadocument for an   |
+|                                  | existing SAML provider resource  |
+|                                  | object.                          |
++----------------------------------+----------------------------------+
+| identitystore:CreateGroup        | Create a group in the identity   |
+|                                  | store.                           |
++----------------------------------+----------------------------------+
+| identitystore:ListGroups         | List all groups in the identity  |
+|                                  | store.                           |
++----------------------------------+----------------------------------+
+| identitystore:ListUsers          | List all users in the identity   |
+|                                  | store.                           |
++----------------------------------+----------------------------------+
+| organizations:ListParents        | Lists the root or organizational |
+|                                  | units that serve as the          |
+|                                  | immediate parent of the          |
+|                                  | specified child organizational   |
+|                                  | unit or account.                 |
++----------------------------------+----------------------------------+
+| o                                | (Management accounts) List tags  |
+| rganizations:ListTagsForResource | that are attached to the         |
+|                                  | specified resource.              |
++----------------------------------+----------------------------------+
+| sso:CreateAccountAssignment      | Assign access to a principal for |
+|                                  | a specified AWS account using a  |
+|                                  | specified permission set.        |
++----------------------------------+----------------------------------+
+| sso:DeleteAccountAssignment      | Delete a principal\'s access     |
+|                                  | from a specified AWS account     |
+|                                  | using a specified permission     |
+|                                  | set.                             |
++----------------------------------+----------------------------------+
+| sso:Describ                      | Describe the status of the       |
+| eAccountAssignmentCreationStatus | assignment creation request.     |
++----------------------------------+----------------------------------+
+| sso:DescribePermissionSet        | View the details of the          |
+|                                  | permission set.                  |
++----------------------------------+----------------------------------+
+| sso                              | View the inline policy assigned  |
+| :GetInlinePolicyForPermissionSet | to the permission set.           |
++----------------------------------+----------------------------------+
+| sso:ListAccountAssignments       | List all account assignments.    |
++----------------------------------+----------------------------------+
+| sso:ListCustomerManage           | List all customer-managed        |
+| dPolicyReferencesInPermissionSet | policies attached to a specified |
+|                                  | PermissionSet.                   |
++----------------------------------+----------------------------------+
+| sso:ListInstances                | Lists the details of the         |
+|                                  | organization and account         |
+|                                  | instances of IAM Identity Center |
+|                                  | that were created in or visible  |
+|                                  | to the account calling this API. |
++----------------------------------+----------------------------------+
+| sso:Li                           | Lists the AWS managed policy     |
+| stManagedPoliciesInPermissionSet | that is attached to a specified  |
+|                                  | permission set.                  |
++----------------------------------+----------------------------------+
+| sso:ListPermissionSets           | Lists the PermissionSets in an   |
+|                                  | IAM Identity Center instance.    |
++----------------------------------+----------------------------------+
+| sso:ListTagsForResource          | Lists the tags that are attached |
+|                                  | to a specified resource.         |
++----------------------------------+----------------------------------+
+
+: Permissions granted to for AWS IAM Identity Center workspaces
+
+## []{#Maintena}Maintenance
+
+The admin user needs the roles and permissions described below in order
+to roll back or delete a stack instance after it has been installed.
+
+  Permission                            Description
+  ------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------
+  cloudformation:DeleteStack            Delete a specified stack.
+  cloudformation:DeleteStackInstances   Delete stack instances for the specified accounts, in the specified AWS Regions.
+  cloudformation:DeleteStackSet         Delete a stack set (before you can delete a stack set, all its member stack instances must be deleted).
+  cloudformation:DescribeStackSet       View the description of the specified stack set.
+  events:RemoveTargets                  Remove the specified targets from the specified rule. When the rule is triggered, those targets will no longer be invoked.
+  iam:DeleteRole                        Delete the specified role. The role must not have any policies attached.
+  iam:DeleteRolePolicy                  Delete the specified inline policy that is embedded in the specified IAM role.
+  iam:DetachRolePolicy                  Remove the specified managed policy from the specified role.
+  s3:DeleteBucket                       Delete the S3 bucket. All objects (including all object versions and delete markers) in the bucket must be deleted before the bucket itself can be deleted.
+  s3:DeleteBucketPolicy                 Delete the policy of a specified bucket.
+  s3:DeleteObject                       Remove the null version (if there is one) of an object and insert a delete marker, which becomes the latest version of the object.
+  s3:ListAllMyBuckets                   View buckets and the contents of any of those buckets.
+
+  : Maintenance permissions

@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Connect and manage workspaces</h1>
+        <p>This topic describes how to <a href="cv-terminology.htm#onboard-vs-connect">connect</a> workspaces to <MadCap:variable name="cc_product_vars.CV-full" />, and how to troubleshoot workspace connections.</p>
+        <h2><a name="Connect"></a>Workspace hierarchy</h2>
+        <p>After the root of the platform is discovered, you can connect workspaces at any level of the hierarchy.</p>
+        <p>Click a drop-down to see the platform hierarchy:</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>AWS</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <caption>AWS hierarchy</caption>
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Level</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>AWS term</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Root</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Organization</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Node</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Organizational unit</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Workspace</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>Account</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>Azure</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <caption>Azure hierarchy</caption>
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Level</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Azure term</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Root</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Directory</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Node</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Management group</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Workspace</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>Subscription</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>Google Cloud</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <caption>Google Cloud hierarchy</caption>
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Level</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>GCP term</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Root</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Organization</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Node</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Folder</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Workspace</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>Project</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <h2><a name="View"></a>View and manage workspace connections</h2>
+        <p>This section describes how to view details about onboarded workspaces, and how to manage connections to the onboarded workspaces.</p>
+        <ol>
+            <li>
+                <p>In <MadCap:variable name="cc_product_vars.CV-full" />, go to <span class="Emphasis">Setup &gt; Platform management</span></p>
+            </li>
+            <li>
+                <p>Click the relevant platform tile.</p>
+            </li>
+            <li>
+                <p>On the platform page, look for the workspace and click to view the <a href="#workspace-connection-details">details</a>.</p>
+            </li>
+            <li>
+                <p>To <span class="Emphasis">connect </span>to the workspace click <span class="Emphasis">Connect</span> at the far right of the workspace row. </p>
+            </li>
+        </ol>
+        <h3 class="itt"><a name="workspace-connection-details"></a>Connection details</h3>
+        <p>The page displays the details about each entry in the list described in the following tables.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <caption>Status elements</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Element</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Discovery in progress</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>The initial discovery, where a root is currently being scanned for its workspaces. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Onboarding failed</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>The initial connection failed and <MadCap:variable name="cc_product_vars.CV-full" /> has no permissions on this workspace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Waiting for stack deployment</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.CV-full" /> is waiting for permissions to be granted by the user via the AWS stack deployment process.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Ready for connection </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p><MadCap:variable name="cc_product_vars.CV-full" /> has permissions over this workspace, but the workspace is currently not being monitored. The user can set <MadCap:variable name="cc_product_vars.CV-full" /> to start monitoring it if there is an available license.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p>Connected </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>This workspace is monitored by <MadCap:variable name="cc_product_vars.CV-full" /> and regularly scanned. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p>Scanning error</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>Something failed while this workspace was being scanned. For example, <MadCap:variable name="cc_product_vars.CV-full" />'s permissions were removed, or <MadCap:variable name="cc_product_vars.CV-full" /> activity was blocked by the user's environment. If a fix is available, the user can see it by mousing over the workspace status.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <caption>Other elements</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Element</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Name</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>The name of the root, folder, or workspace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Type</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>The hierarchy type can be one of the following:</p>
+                        <ul>
+                            <li>
+                                <p>Root</p>
+                            </li>
+                            <li>
+                                <p>Folder</p>
+                            </li>
+                            <li>
+                                <p>Workspace </p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><span class="Emphasis">Connected on</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>The date and time of the connection.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="itt">Workspace actions</h3>
+        <p>The actions described in the following table are available for each entry in the list.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+            <caption>Workspace actions</caption>
+            <col class="TableStyle-Standard-Column-Column1" />
+            <col class="TableStyle-Standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p> Action</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Connect  </span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Connect to have the workspace monitored by <MadCap:variable name="cc_product_vars.CV-full" /> and therefore regularly scanned. A connected workspace counts towards the number included in  your <MadCap:variable name="cc_product_vars.CV-full" /> subscription.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Disconnect</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>When a workspace is disconnected it is no longer scanned and isn't counted towards the number included in your <MadCap:variable name="cc_product_vars.CV-full" /> subscription.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><span class="Emphasis">Delete </span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>If a root, node, or workspace  is deleted, the history is maintained. However, the root isn't monitored or visible.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="itt">Filter connections</h3>
+        <p>You can filter connections by:</p>
+        <ul>
+            <li>
+                <p><span class="Emphasis">Status</span>: select a status from the drop-down list.</p>
+            </li>
+            <li>
+                <p><span class="Emphasis">Root level</span>:
+select an organization from the drop-down list.<![CDATA[                ]]></p>
+            </li>
+            <li>
+                <p><span class="Emphasis">Free-text search</span>:
+enter a keyword or phrase.<![CDATA[                ]]></p>
+            </li>
+        </ul>
+        <h2>Manage connection errors</h2>
+        <p>If <MadCap:variable name="cc_product_vars.CV-full" /> is unable to scan a workspace, the app displays a connection error either at the platform or workspace level. When available, <MadCap:variable name="cc_product_vars.CV-full" /> provides a short description of the error and a link to fix it.</p>
+        <p>Click a drop-down to see more information about fixing connection errors.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>AWS</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>To fix your AWS connection error, on the <span class="Emphasis">Edit workspace </span>page, edit one or more of the following fields.</p>
+                <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                    <caption>Fields available to edit</caption>
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <col class="TableStyle-Standard-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard-Head-Header1">
+                            <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                                <p>Item</p>
+                            </th>
+                            <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                                <p>Description</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                                <p><span class="Emphasis">Role for organizational discovery</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                                <p>Used to discover and map the organizational hierarchy and check the deployment status of  the organization member account.</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Standard-Body-Body1">
+                            <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                                <p><span class="Emphasis">Role for IAM</span>
+                                </p>
+                            </td>
+                            <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                                <p>Used to query the IAM information on the scanned account.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>Azure</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>To fix your Azure connection error, try generating a new secret.</p>
+                <p>To generate a new secret:</p>
+                <ol>
+                    <li>
+                        <p>  Sign in to the Azure portal.</p>
+                    </li>
+                    <li>
+                        <p>Go to<span class="Emphasis"> App Registration</span>  &gt; <span class="Emphasis">All applications</span>.</p>
+                    </li>
+                    <li>
+                        <p>Search for and select the <MadCap:variable name="cc_product_vars.CV-full" /> app.  By default, the app is named <span class="Emphasis">cyb-cem-app</span>.</p>
+                    </li>
+                    <li>
+                        <p> Go to <span class="Emphasis">Certificate &amp; secret</span> &gt;<span class="Emphasis"> New client secret</span> and select <span class="Emphasis">Add new secret</span>  in the <span class="Emphasis">Client secrets table</span>.</p>
+                    </li>
+                    <li>
+                        <p>Copy the <span class="Emphasis">Value</span> of your new secret and paste it into the pop-up.</p>
+                    </li>
+                </ol>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+    </body>
+</html>

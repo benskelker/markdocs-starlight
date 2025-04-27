@@ -1,0 +1,838 @@
+/* MadCap Table Style: */
+
+/*<meta Version="9" />*/
+
+mcTableStyle
+{
+	name: AdmonNote;
+	border-collapse: collapse;
+	max-id: 4;
+	margin-top: 10pt;
+	margin-bottom: 10pt;
+	cell-padding-left: 16px;
+	cell-padding-right: 16px;
+	cell-padding-top: 16px;
+	cell-padding-bottom: 16px;
+	border-left-style: solid;
+	border-left-width: 12px;
+	border-left-color: #5abdfb;
+}
+
+mcTableColumnStyle
+{
+	span: 1;
+	name: Icon;
+	id: 0;
+	size: 54px;
+	cell-padding-left: 0px;
+	cell-padding-right: 0px;
+	cell-padding-top: 0px;
+	cell-padding-bottom: 0px;
+	background-color: #eff9ff;
+	cell-content-style-tag: p;
+	type: Header;
+}
+
+mcTableColumnStyle
+{
+	span: 1;
+	id: 4;
+	name: Text;
+	background-color: #eff9ff;
+	cell-content-style-tag: p;
+	cell-content-style-class: TableText;
+}
+
+mcTableBodyStyle
+{
+	span: 1;
+	name: Body1;
+	id: 1;
+}
+
+
+/* Cell Styles: */
+ 
+.TableStyle-AdmonNote
+{
+	border-collapse: collapse;
+	border-left-style: solid;
+	border-left-color: #5abdfb;
+	border-left-width: 12px;
+	margin-top: 10pt;
+	margin-bottom: 10pt;
+	border-spacing: 0px 0px;
+}
+
+.TableStyle-AdmonNote-Column-Icon
+{
+	width: 54px;
+}
+
+.TableStyle-AdmonNote-Column-Text
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadI-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-HeadI-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadE-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-HeadE-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadF-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-HeadF-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadH-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-HeadH-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadD-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-HeadD-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadC-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-HeadC-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadB-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-HeadB-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadA-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-HeadA-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadG-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-HeadG-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadI-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-HeadI-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadE-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-HeadE-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadF-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-HeadF-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadH-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-HeadH-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadD-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-HeadD-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadC-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-HeadC-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadB-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-HeadB-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadA-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-HeadA-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-HeadG-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-HeadG-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootI-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-FootI-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootE-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-FootE-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootF-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-FootF-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootH-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-FootH-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootD-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-FootD-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootC-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-FootC-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootB-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-FootB-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootA-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-FootA-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootG-Icon-
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-FootG-Icon- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootI-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-FootI-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootE-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-FootE-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootF-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-FootF-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootH-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-FootH-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootD-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-FootD-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootC-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-FootC-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootB-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-FootB-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootA-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-FootA-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-FootG-Text-
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-FootG-Text- p
+{
+	
+}
+
+.TableStyle-AdmonNote-Body-Body1
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyI-Icon-Body1
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-BodyI-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyE-Icon-Body1
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-BodyE-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyF-Icon-Body1
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-BodyF-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyH-Icon-Body1
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-BodyH-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyD-Icon-Body1
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-BodyD-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyC-Icon-Body1
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-BodyC-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyB-Icon-Body1
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-BodyB-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyA-Icon-Body1
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-BodyA-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyG-Icon-Body1
+{
+	background-color: #eff9ff;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.TableStyle-AdmonNote-BodyG-Icon-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyI-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-BodyI-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyE-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-BodyE-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyF-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-BodyF-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyH-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-BodyH-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyD-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-BodyD-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyC-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-BodyC-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyB-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-BodyB-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyA-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-BodyA-Text-Body1 p
+{
+	
+}
+
+.TableStyle-AdmonNote-BodyG-Text-Body1
+{
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: #eff9ff;
+}
+
+.TableStyle-AdmonNote-BodyG-Text-Body1 p
+{
+	
+}
+
+

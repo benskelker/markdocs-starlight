@@ -1,0 +1,70 @@
+/*<meta />*/
+
+/* Version 4.0.2 */
+
+.tabs-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+.tabs-nav .tab-active a {
+    color: #3165bd;
+    cursor: default;
+}
+.tabs-nav li {
+    border-right: solid 1px rgba(15, 34, 51, 0.3);
+}
+.tabs-nav li:last-child {
+    border-right: solid 0px transparent;
+}
+.tabs-nav li:first-child a {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+.tabs-nav a {
+    cursor: pointer;
+    display: block;
+    width: auto;
+    margin-left: 14px;
+    margin-right: 14px;
+    padding-right: 0px;
+    color: #0f2233;
+    font-family: 'RopaSansPTT-Light', sans-serif;
+    font-size: 20px;
+    border: 10px;
+    text-decoration: none;
+}
+.tabs-nav .tab-active a {
+    text-decoration: none;
+    border-bottom: solid 3px #3165bd;
+    color: #3165bd;
+    font-family: 'RopaSansPTT-Medium', sans-serif;
+}
+.tabs-nav a:hover {
+    text-decoration: none;
+    border-bottom: solid 3px #3165bd;
+    color: #3165bd;
+}
+.tabs-nav li {
+    float: left;
+    background: none;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+/* .tabs-stage {
+    border-top: 0;
+    clear: both;
+    margin-bottom: 20px;
+    position: relative; 
+    padding-top: 10px;
+} */
+.tabs-stage > div {
+    display: none;
+}
+.tabs-stage > div.tab-1 {
+    display: block;
+}
+.tabs-stage .tabs:not(h2 ~ *) {
+    margin-left: 20px;
+}

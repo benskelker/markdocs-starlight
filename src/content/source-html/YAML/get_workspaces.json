@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: CEM get workspaces API
+  version: 1.0.0
+  description: >-
+    Get workspaces via public REST APIs
+  contact:
+    name: CEM
+servers:
+  - url: https://api.cem.cyberark.cloud/api
+    description: >-
+      cem_base_url
+  - url: https://{identity_tenant}.my.identity.qa
+    description: >-
+      identity_base_url
+components:
+  securitySchemes:
+    bearerOAuth:
+      type: http
+      scheme: bearer
+      description: ''
+  schemas:
+    WorkspacesResponse:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workspaces'
+    Workspaces:
+      properties:
+        platform:
+          type: string
+          enum: [aws,azure,gcp]
+        workspaces:
+          type: array
+          $ref: '#/components/schemas/WorkspaceDataArray'
+    WorkspaceDataArray:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkspaceData'
+    WorkspaceData:
+      type: object
+      properties:
+        workspace_id:
+          type: string
+          description: ID of the workspace on which the operation is executed
+        workspace_status:
+          type: string
+          enum: [CONNECTED, CONNECTING, NOT_CONNECTED, DISCOVERING,READY_FOR_CONNECTION,DELETED,SUSPENDED,NOT_EXISTS,SCANNING]
+          description: Status of the workspace
+        workspace_name:
+          type: string
+          description: Name of the workspace
+
+paths:
+  /customer/platforms/workspaces/:
+    get:
+      tags:
+        - Operations
+      summary: >-
+         Get all workspaces from all platforms of this user
+      security:
+        - bearerOAuth: []
+      responses:
+        '200':
+          description: Get all workspaces
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/WorkspacesResponse'
+        '500':
+          description: Internal Server Error
+      operationId: getWorkspaces
+      description: "\t\nGet workspaces"

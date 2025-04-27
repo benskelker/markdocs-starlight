@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Google Cloud permissions </h1>
+        <p>This topic describes the Google Cloud permissions that are needed to connect to Google Cloud resources. These permissions are granted by the onboarding scripts.</p>
+        <h2 MadCap:conditions="cc_product_conds.CV">Google Cloud organization</h2>
+        <p>The scripts for onboarding a <MadCap:variable name="sca-project-variables.GoogleCloud" /> organization to <MadCap:variable name="cc_product_vars.CV-full" /> create a role for the <MadCap:variable name="cc_product_vars.CV-full" /> service account and another role for the <MadCap:variable name="cc_product_vars.SCA-short" /> service account. The relevant role is then bound to the respective service account.</p>
+        <h2 MadCap:conditions="cc_product_conds.SCA"><MadCap:variable name="cc_product_vars.CV-full" /> role</h2>
+        <h4 MadCap:conditions="cc_product_conds.CV"><MadCap:variable name="cc_product_vars.CV-full" /> role</h4>
+        <p>The <MadCap:variable name="cc_product_vars.CV-full" /> role includes the following permissions:</p>
+        <MadCap:snippetBlock src="CloudAdminSnippets/gcp-organization-permissions-list.flsnp" MadCap:conditionTagExpression="include[snip-conditions.CV-only], exclude[snip-conditions.SCA-only]" />
+        <h2 MadCap:conditions="cc_product_conds.SCA"><MadCap:variable name="cc_product_vars.SCA-short" /> role</h2>
+        <h4 MadCap:conditions="cc_product_conds.CV"><MadCap:variable name="cc_product_vars.SCA-short" /> role</h4>
+        <p>The <MadCap:variable name="cc_product_vars.SCA-short" /> role includes the following permissions:</p>
+        <MadCap:snippetBlock src="CloudAdminSnippets/gcp-organization-permissions-list.flsnp" MadCap:conditionTagExpression="include[snip-conditions.SCA-only], exclude[snip-conditions.CV-only]" />
+        <div MadCap:conditions="cc_product_conds.CV">
+            <h2>Standalone Google Cloud project</h2>
+            <p MadCap:conditions="cc_C_CyberArk.InternalOnly">NOTE&#160;FOR&#160;TW:&#160;This section is for CV&#160;only</p>
+            <p>The following permissions are granted to the  service user via a custom role for a Google Cloud project when it is onboarded.</p>
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0">
+                <col class="TableStyle-Standard-Column-Column1" />
+                <col class="TableStyle-Standard-Column-Column1" />
+                <thead>
+                    <tr class="TableStyle-Standard-Head-Header1">
+                        <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                            <p>Permission</p>
+                        </th>
+                        <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                            <p>Description</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>cloudasset.assets.searchAllIamPolicies</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>Search all IAM policies within the specified scope, such as a project, folder, or organization.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam.roles.get</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>Retrieve the role definitions.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam.roles.list</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>List the predefined and custom roles for an organization or project.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam.serviceAccounts.getIamPolicy</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>Retrieve  the IAM policy for a service account.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam.serviceAccounts.list</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>List all of a project's service accounts.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>iam.serviceAccountKeys.list</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>List the service account keys for a service account.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>managedidentities.domains.getIamPolicy</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>Retrieve  the access control policy for a managed identity.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>policyanalyzer.serviceAccountKeyLastAuthenticationActivities.query</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>Needed to query policy activities on Google Cloud resources.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                            <p>policyanalyzer.serviceAccountLastAuthenticationActivities.query</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                            <p>Needed to query policy activities on Google Cloud resources.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Standard-Body-Body1">
+                        <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                            <p>resourcemanager.projects.getIamPolicy</p>
+                        </td>
+                        <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                            <p>Retrieve the IAM access control policy for the specified project.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+# Google Cloud permissions used by {% $cc_product_vars.SCA-short %} service account
+
+This document describes the Google Cloud permissions needed by
+{% $cc_C_CyberArk.CompanyName %}\'s
+{% $cc_product_vars.SCA-full %}
+to implement zero standing privileges for identities in your
+organization.
+
+## Permissions
+
+The following table lists the permissions needed for the
+{% $cc_product_vars.SCA-short %}
+service account, which is deployed in a project in the Google Cloud
+organization based on the configuration that was defined during
+onboarding.
+
+  Permission                                       Operation                                                                                                                                                            Used to\...
+  ------------------------------------------------ -------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------
+  iam.roles.get                                    Get role definitions                                                                                                                                                 Get role details
+  iam.roles.list                                   Get the list of roles (predefined and custom)                                                                                                                        Get predefined and custom roles
+  resourcemanager.projects.getIamPolicy            Give the {% $cc_product_vars.SCA-short %} service account access to read IAM policies for Google Cloud projects              Retrieve IAM policy before bind a group or user (project level)
+  resourcemanager.projects.setIamPolicy            Gives the {% $cc_product_vars.SCA-short %} service account access to modify IAM policies for Google Cloud projects           Updates the IAM policy with the group bind or user bind (project level)
+  resourcemanager.projects.list                    Get the list of projects                                                                                                                                             Bind the permission to the child projects of the folder/project that are selected in the policy
+  resourcemanager.folders.getIamPolicy             Gives the {% $cc_product_vars.SCA-short %} service account access to read IAM policies for Google Cloud folders              Retrieve an IAM policy before binding a group or user (at the folder level)
+  resourcemanager.folders.setIamPolicy             Gives the {% $cc_product_vars.SCA-short %} service account access to modify IAM policies for Google Cloud folders            Update the IAM policy with the group or user binding (at the folder level)
+  resourcemanager.folders.get                      Get folder details                                                                                                                                                   Get folder details
+  resourcemanager.folders.list                     Get a list of folders                                                                                                                                                Bind the permission to the child folders of the folder/project that are selected in the policy
+  resourcemanager.hierarchyNodes.listTagBindings   Get the metadata for tag bindings                                                                                                                                    Compare the access request tag conditions
+  resourcemanager.projects.get                     Get project details                                                                                                                                                  Get project details
+  resourcemanager.tagKeys.get                      Get a tag key                                                                                                                                                        Compare access request tag conditions
+  resourcemanager.tagKeys.list                     Get a list of tag keys                                                                                                                                               Compare access request tag conditions
+  resourcemanager.tagValues.list                   Get tag values                                                                                                                                                       Compare access request tag conditions
+  resourcemanager.organizations.getIamPolicy       Gives the {% $cc_product_vars.SCA-short %} service account access to read IAM policies for the Google Cloud organization     Retrieve the IAM policy before binding a group or user (at the organization level)
+  resourcemanager.organizations.setIamPolicy       Gives the {% $cc_product_vars.SCA-short %} service account access to modify IAM policies for the Google Cloud organization   Updates the IAM policy with the group user binding (at the organization level)
+  resourcemanager.organizations.get                Get organization details                                                                                                                                             Get organization details
+
+  : Google Cloud permissions

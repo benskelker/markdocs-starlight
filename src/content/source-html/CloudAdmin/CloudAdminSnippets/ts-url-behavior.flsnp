@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <p MadCap:conditions="cc_C_CyberArk.NOT_TO_PUBLISH">DOC-13079/13880</p>
+        <p><span class="Emphasis">Issue:</span> When I click a link in the <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> platform, I experience unexpected behaviour such as:</p>
+        <ul>
+            <li>
+                <p>Nothing happens</p>
+            </li>
+            <li>
+                <p>The page goes blank</p>
+            </li>
+            <li>
+                <p>I am taken to an unexpected link</p>
+            </li>
+        </ul>
+        <p><span class="Emphasis">Possible cause:</span>&#160;If you are experiencing unexpected results when clicking links in the <MadCap:variable name="cc_C_CyberArk.CompanyName"></MadCap:variable> platform, this may be caused by your URL&#160;protection software and/or pop-up blocker.</p>
+        <p><span class="Emphasis">Resolution:</span> In your URL protection or pop-up blocker software, add these links as allowed or trusted sites.</p>
+    </body>
+</html>

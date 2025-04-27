@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async="">
+        </script>
+        <div class="wistia_wrapper">
+            <p style="visibility: hidden;" class="wistia_id">5yko2ms9ml</p>
+            <div class="wistia_embed"> </div>
+            <script>
+				$('.wistia_wrapper').each(function(){
+				var wistVid= $(this).children('.wistia_id').text();
+				var wistEmbed = $(this).children('.wistia_embed');
+				$(wistEmbed).addClass('wistia_async_' + wistVid).css('height','349px').css('width','620px').css('max-width','100%');
+				});
+			</script>
+        </div>
+    </body>
+</html>

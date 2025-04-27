@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p>If you already configured the web app for <MadCap:variable name="cc_product_vars.SCA-short" />, skip this step.</p>
+        <ol>
+            <li>
+                <p>In the <MadCap:variable name="cc_product_vars.IdentityAdmin-full" /> admin portal, go to <span class="Emphasis">Apps &amp; Widgets </span>&gt; <span class="Emphasis">Web Apps </span>and click the web app you want to modify.</p>
+            </li>
+            <li>
+                <p>Click the<span class="Emphasis"> <MadCap:variable name="cc_product_vars.SCA-full" /></span> tab, select <span class="Emphasis"> Enable <MadCap:variable name="cc_product_vars.SCA-full" /></span>, and save your changes.</p>
+            </li>
+        </ol>
+        <div class="note">
+            <p>The web app status changes to <span class="Emphasis">Deployed </span>as soon at least one policy has been created for the cloud workspace.</p>
+        </div>
+    </body>
+</html>

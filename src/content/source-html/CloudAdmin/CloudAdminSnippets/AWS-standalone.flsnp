@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../../Resources/TableStyles/Standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <p><span class="Emphasis">Step 1: Provide the AWS account details</span>
+        </p>
+        <p>In <MadCap:variable name="cc_product_vars.CV-full"></MadCap:variable>, provide the following information about your AWS&#160;account:</p>
+        <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/Standard.css');" class="TableStyle-Standard" cellspacing="0" summary="Copy these details from AWS to CEM">
+            <caption>AWS account details</caption>
+            <col class="TableStyle-Standard-Column-Column1">
+            </col>
+            <col class="TableStyle-Standard-Column-Column1">
+            </col>
+            <thead>
+                <tr class="TableStyle-Standard-Head-Header1">
+                    <th class="TableStyle-Standard-HeadE-Column1-Header1">
+                        <p>Detail</p>
+                    </th>
+                    <th class="TableStyle-Standard-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Account ID</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>The assigned account ID.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1">
+                    <td class="TableStyle-Standard-BodyE-Column1-Body1">
+                        <p><span class="Emphasis">Account name</span> (optional)</p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyD-Column1-Body1">
+                        <p>Optional name that describes the account.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-Standard-BodyB-Column1-Body1">
+                        <p><span class="Emphasis">Deployment region</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard-BodyA-Column1-Body1">
+                        <p>The region where the CloudFormation template should be deployed. Make sure your workspace has permissions to the region that you select.</p>
+                        <div class="note">
+                            <ul>
+                                <li>
+                                    <p>When onboarding, the CloudFormation template is deployed to this region.</p>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <p><MadCap:variable name="cc_product_vars.CV-full" /> collects information from this region for identity analysis.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p><span class="Emphasis">Step 2: Create <MadCap:variable name="cc_product_vars.CV-full"></MadCap:variable> resources in AWS</span>
+        </p>
+        <ol>
+            <li>
+                <p>Click the CloudFormation link to open the AWS CloudFormation Quick Create Stack page.</p>
+                <div class="tip">
+                    <ul>
+                        <li>
+                            <p> If it doesn't open the first time, click it again.</p>
+                        </li>
+                        <li>
+                            <p>If the link still doesn't work, make sure you are signed in to both the AWS&#160;console and <MadCap:variable name="cc_product_vars.CV-full"></MadCap:variable>. Alternatively, you can download the template from <MadCap:variable name="cc_product_vars.CV-full"></MadCap:variable> or at the top of this page, check the details, and upload it to AWS&#160;manually.</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <p>Confirm that the template details were correctly inserted.</p>
+            </li>
+            <li>
+                <p>Scroll to the bottom of the page, acknowledgments the statements, and click <span class="Emphasis">Create stack</span>.</p>
+                <p>The stack creates a role for&#160;<MadCap:variable name="cc_product_vars.CV-full" />&#160;to read your account's IAM data</p>
+            </li>
+            <li>
+                <p>Verify that the stack was created successfully and that there were no errors.</p>
+                <p>If there are errors that you are unable to resolve, <MadCap:snippetText src="../../Resources/Snippets/cc_ContactSupport.flsnp" />.</p>
+            </li>
+        </ol>
+        <p><span class="Emphasis">Step 3: Start discovery</span>
+        </p>
+        <p>In <MadCap:variable name="cc_product_vars.CV-full" />:</p>
+        <ol>
+            <li>
+                <p>At the bottom of the Add AWS account page, click <span class="Emphasis">Connect account</span> to onboard the account.</p>
+            </li>
+            <li>
+                <p>Refresh the <span class="Emphasis">Settings &gt; Platform management &gt;&#160;AWS</span> page to see the onboarded account.</p>
+            </li>
+        </ol>
+    </body>
+</html>

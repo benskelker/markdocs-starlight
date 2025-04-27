@@ -1,0 +1,1615 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CEM workspace delegation API",
+    "description": "Conduct workspace delegation operations via public REST APIs",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/delegations/{cloudPlatform}": {
+      "post": {
+        "summary": "Add delegation",
+        "description": "Add delegates for a given set of workspaces",
+        "operationId": "Add_delegation_api_delegations__cloudPlatform__post",
+        "parameters": [
+          {
+            "description": "cloudPlatform",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Cloudplatform",
+              "description": "Name of cloud service provider"
+            },
+            "name": "cloudPlatform",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateWorkspaceOwnerInput"
+                  }
+                ],
+                "title": "Request Object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Delegation added successfully",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiBasicError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiBasicError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/delegations/workspace/export": {
+      "post": {
+        "summary": "Export delegations",
+        "description": "Export configured delegations",
+        "operationId": "Export_delegations_api_delegations_workspace_export_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/ExportWorkspacesInput"
+                  }
+                ],
+                "title": "Request Object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Delegations successfully exported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "title": "Response Export Delegations Api Delegations Workspace Export Post"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiBasicError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiBasicError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/delegations/owner/{Id}": {
+      "put": {
+        "summary": "Update delegation",
+        "description": "Update identities associated with a workspace",
+        "operationId": "Update_delegation_rule_api_delegations_owner__Id__put",
+        "parameters": [
+          {
+            "description": "ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id",
+              "description": "ID"
+            },
+            "name": "Id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateWorkspaceOwnerInput"
+                  }
+                ],
+                "title": "Request Object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Delegation successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiBasicError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiBasicError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/delegations/workspace/details": {
+      "post": {
+        "summary": "Get delegation details",
+        "description": "Get the list of owners associated with the given workspace",
+        "operationId": "Get_delegation_details_api_delegations_workspace_details_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/GetWorkspaceDetailsInput"
+                  }
+                ],
+                "title": "Request Object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Details of the delegation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetWorkspaceDetailsOutput"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiBasicError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiBasicError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "APIGatewayEventAuthorizer": {
+        "properties": {
+          "claims": {
+            "type": "object",
+            "title": "Claims"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Scopes"
+          }
+        },
+        "type": "object",
+        "title": "APIGatewayEventAuthorizer"
+      },
+      "APIGatewayEventIdentity": {
+        "properties": {
+          "accessKey": {
+            "type": "string",
+            "title": "Accesskey"
+          },
+          "accountId": {
+            "type": "string",
+            "title": "Accountid"
+          },
+          "apiKey": {
+            "type": "string",
+            "title": "Apikey"
+          },
+          "apiKeyId": {
+            "type": "string",
+            "title": "Apikeyid"
+          },
+          "caller": {
+            "type": "string",
+            "title": "Caller"
+          },
+          "cognitoAuthenticationProvider": {
+            "type": "string",
+            "title": "Cognitoauthenticationprovider"
+          },
+          "cognitoAuthenticationType": {
+            "type": "string",
+            "title": "Cognitoauthenticationtype"
+          },
+          "cognitoIdentityId": {
+            "type": "string",
+            "title": "Cognitoidentityid"
+          },
+          "cognitoIdentityPoolId": {
+            "type": "string",
+            "title": "Cognitoidentitypoolid"
+          },
+          "principalOrgId": {
+            "type": "string",
+            "title": "Principalorgid"
+          },
+          "sourceIp": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "ipvanynetwork"
+              },
+              {
+                "type": "string",
+                "enum": [
+                  "test-invoke-source-ip"
+                ]
+              }
+            ],
+            "title": "Sourceip"
+          },
+          "user": {
+            "type": "string",
+            "title": "User"
+          },
+          "userAgent": {
+            "type": "string",
+            "title": "Useragent"
+          },
+          "userArn": {
+            "type": "string",
+            "title": "Userarn"
+          },
+          "clientCert": {
+            "$ref": "#/components/schemas/ApiGatewayUserCert"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sourceIp"
+        ],
+        "title": "APIGatewayEventIdentity"
+      },
+      "APIGatewayEventRequestContext": {
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "title": "Accountid"
+          },
+          "apiId": {
+            "type": "string",
+            "title": "Apiid"
+          },
+          "authorizer": {
+            "$ref": "#/components/schemas/APIGatewayEventAuthorizer"
+          },
+          "stage": {
+            "type": "string",
+            "title": "Stage"
+          },
+          "protocol": {
+            "type": "string",
+            "title": "Protocol"
+          },
+          "identity": {
+            "$ref": "#/components/schemas/APIGatewayEventIdentity"
+          },
+          "requestId": {
+            "type": "string",
+            "title": "Requestid"
+          },
+          "requestTime": {
+            "type": "string",
+            "title": "Requesttime"
+          },
+          "requestTimeEpoch": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Requesttimeepoch"
+          },
+          "resourceId": {
+            "type": "string",
+            "title": "Resourceid"
+          },
+          "resourcePath": {
+            "type": "string",
+            "title": "Resourcepath"
+          },
+          "domainName": {
+            "type": "string",
+            "title": "Domainname"
+          },
+          "domainPrefix": {
+            "type": "string",
+            "title": "Domainprefix"
+          },
+          "extendedRequestId": {
+            "type": "string",
+            "title": "Extendedrequestid"
+          },
+          "httpMethod": {
+            "type": "string",
+            "enum": [
+              "DELETE",
+              "GET",
+              "HEAD",
+              "OPTIONS",
+              "PATCH",
+              "POST",
+              "PUT"
+            ],
+            "title": "Httpmethod"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "connectedAt": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Connectedat"
+          },
+          "connectionId": {
+            "type": "string",
+            "title": "Connectionid"
+          },
+          "eventType": {
+            "type": "string",
+            "enum": [
+              "CONNECT",
+              "MESSAGE",
+              "DISCONNECT"
+            ],
+            "title": "Eventtype"
+          },
+          "messageDirection": {
+            "type": "string",
+            "title": "Messagedirection"
+          },
+          "messageId": {
+            "type": "string",
+            "title": "Messageid"
+          },
+          "routeKey": {
+            "type": "string",
+            "title": "Routekey"
+          },
+          "operationName": {
+            "type": "string",
+            "title": "Operationname"
+          }
+        },
+        "type": "object",
+        "required": [
+          "accountId",
+          "apiId",
+          "stage",
+          "protocol",
+          "identity",
+          "requestId",
+          "requestTime",
+          "requestTimeEpoch",
+          "resourcePath",
+          "httpMethod",
+          "path"
+        ],
+        "title": "APIGatewayEventRequestContext"
+      },
+      "ApiBasicError": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Code",
+            "description": "An application-specific error code."
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Message",
+            "description": "A human-readable explanation specific to this occurrence of the problem."
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "description": "Optional additional details of the specific error.",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ApiBasicError"
+      },
+      "ApiGatewayUserCert": {
+        "properties": {
+          "clientCertPem": {
+            "type": "string",
+            "title": "Clientcertpem"
+          },
+          "subjectDN": {
+            "type": "string",
+            "title": "Subjectdn"
+          },
+          "issuerDN": {
+            "type": "string",
+            "title": "Issuerdn"
+          },
+          "serialNumber": {
+            "type": "string",
+            "title": "Serialnumber"
+          },
+          "validity": {
+            "$ref": "#/components/schemas/ApiGatewayUserCertValidity"
+          }
+        },
+        "type": "object",
+        "required": [
+          "clientCertPem",
+          "subjectDN",
+          "issuerDN",
+          "serialNumber",
+          "validity"
+        ],
+        "title": "ApiGatewayUserCert"
+      },
+      "ApiGatewayUserCertValidity": {
+        "properties": {
+          "notBefore": {
+            "type": "string",
+            "title": "Notbefore"
+          },
+          "notAfter": {
+            "type": "string",
+            "title": "Notafter"
+          }
+        },
+        "type": "object",
+        "required": [
+          "notBefore",
+          "notAfter"
+        ],
+        "title": "ApiGatewayUserCertValidity"
+      },
+      "CloudPlatform": {
+        "type": "string",
+        "enum": [
+          "AWS",
+          "GCP",
+          "AZURE"
+        ],
+        "title": "CloudPlatform",
+        "description": "Name of Cloud Service Provider"
+      },
+      "CreateWorkspaceOwnerInput": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "resource": {
+            "type": "string",
+            "title": "Resource"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "httpMethod": {
+            "type": "string",
+            "enum": [
+              "POST",
+              "GET",
+              "HEAD",
+              "OPTIONS",
+              "PATCH",
+              "DELETE",
+              "PUT"
+            ],
+            "title": "Httpmethod"
+          },
+          "headers": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Headers"
+          },
+          "multiValueHeaders": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Multivalueheaders"
+          },
+          "queryStringParameters": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Querystringparameters"
+          },
+          "multiValueQueryStringParameters": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Multivaluequerystringparameters"
+          },
+          "requestContext": {
+            "$ref": "#/components/schemas/APIGatewayEventRequestContext"
+          },
+          "pathParameters": {
+            "$ref": "#/components/schemas/CreateWorkspacePathParameters"
+          },
+          "stageVariables": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Stagevariables"
+          },
+          "isBase64Encoded": {
+            "type": "boolean",
+            "title": "Isbase64Encoded"
+          },
+          "body": {
+            "$ref": "#/components/schemas/CreateWorkspaceOwnerRequestBody"
+          }
+        },
+        "type": "object",
+        "required": [
+          "resource",
+          "path",
+          "httpMethod",
+          "headers",
+          "multiValueHeaders",
+          "requestContext",
+          "pathParameters",
+          "isBase64Encoded",
+          "body"
+        ],
+        "title": "CreateWorkspaceOwnerInput"
+      },
+      "CreateWorkspaceOwnerRequestBody": {
+        "properties": {
+          "workspaces": {
+            "items": {
+              "$ref": "#/components/schemas/Workspace"
+            },
+            "type": "array",
+            "title": "Workspaces"
+          },
+          "entities": {
+            "items": {
+              "$ref": "#/components/schemas/Entity"
+            },
+            "type": "array",
+            "title": "Entities"
+          }
+        },
+        "type": "object",
+        "required": [
+          "workspaces",
+          "entities"
+        ],
+        "title": "CreateWorkspaceOwnerRequestBody"
+      },
+      "CreateWorkspacePathParameters": {
+        "properties": {
+          "cloudPlatform": {
+            "$ref": "#/components/schemas/CloudPlatform"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cloudPlatform"
+        ],
+        "title": "CreateWorkspacePathParameters"
+      },
+      "DirectoryServicesDetails": {
+        "properties": {
+          "DisplayName": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Displayname"
+          },
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "Type": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "DisplayName",
+          "Id",
+          "Type"
+        ],
+        "title": "DirectoryServicesDetails"
+      },
+      "EntitiesType": {
+        "type": "string",
+        "enum": [
+          "Groups",
+          "Users",
+          "Roles"
+        ],
+        "title": "EntitiesType",
+        "description": "Type of entity"
+      },
+      "Entity": {
+        "properties": {
+          "delegationId": {
+            "type": "integer",
+            "title": "Delegationid",
+            "default": 0
+          },
+          "entityType": {
+            "$ref": "#/components/schemas/EntityType"
+          },
+          "entityId": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Entityid"
+          },
+          "entityName": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Entityname"
+          },
+          "directoryId": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Directoryid"
+          },
+          "directoryName": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Directoryname"
+          },
+          "entityEmail": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Entityemail"
+          },
+          "serviceType": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Servicetype"
+          },
+          "userPrincipal": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Userprincipal"
+          }
+        },
+        "type": "object",
+        "required": [
+          "entityType",
+          "entityName",
+          "userPrincipal"
+        ],
+        "title": "Entity"
+      },
+      "EntityDetails": {
+        "properties": {
+          "entity_type": {
+            "$ref": "#/components/schemas/EntityType"
+          },
+          "entity_id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Entity Id"
+          },
+          "entity_name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Entity Name"
+          },
+          "directory_id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Directory Id"
+          },
+          "directory_name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Directory Name"
+          },
+          "entity_email": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Entity Email"
+          },
+          "service_type": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Service Type"
+          },
+          "user_principal": {
+            "type": "string",
+            "minLength": 1,
+            "title": "User Principal"
+          }
+        },
+        "type": "object",
+        "required": [
+          "entity_type",
+          "entity_id",
+          "entity_name"
+        ],
+        "title": "EntityDetails"
+      },
+      "EntityType": {
+        "type": "string",
+        "enum": [
+          "Group",
+          "User",
+          "Role"
+        ],
+        "title": "EntityType",
+        "description": "Type of entity"
+      },
+      "EntityUsersOutput": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/UserDetails"
+            },
+            "type": "array",
+            "title": "Items",
+            "default": []
+          }
+        },
+        "type": "object",
+        "title": "EntityUsersOutput"
+      },
+      "ExportWorkspacesInput": {
+        "properties": {
+          "filters": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FilterOptions"
+              }
+            ],
+            "title": "Filters",
+            "default": {}
+          },
+          "searchString": {
+            "type": "string",
+            "minLength": 3,
+            "title": "Searchstring"
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Offset",
+            "default": 0
+          },
+          "limit": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "title": "Limit",
+            "default": 1000
+          }
+        },
+        "type": "object",
+        "title": "ExportWorkspacesInput"
+      },
+      "FilterOptions": {
+        "properties": {
+          "cloudPlatforms": {
+            "items": {
+              "$ref": "#/components/schemas/CloudPlatform"
+            },
+            "type": "array",
+            "minItems": 1
+          },
+          "workspaceNames": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Workspacenames"
+          },
+          "workspaceTypes": {
+            "items": {
+              "$ref": "#/components/schemas/WorkspaceType"
+            },
+            "type": "array",
+            "minItems": 1
+          },
+          "owners": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Owners"
+          }
+        },
+        "type": "object",
+        "title": "FilterOptions"
+      },
+      "FilterOwnerInput": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 3,
+            "title": "Name"
+          },
+          "limit": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "title": "Limit",
+            "default": 10
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "FilterOwnerInput"
+      },
+      "FilterOwnerOutput": {
+        "properties": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "title": "FilterOwnerOutput"
+      },
+      "FilterWorkspaceInput": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "resource": {
+            "type": "string",
+            "title": "Resource"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "httpMethod": {
+            "type": "string",
+            "enum": [
+              "DELETE",
+              "GET",
+              "HEAD",
+              "OPTIONS",
+              "PATCH",
+              "POST",
+              "PUT"
+            ],
+            "title": "Httpmethod"
+          },
+          "headers": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Headers"
+          },
+          "multiValueHeaders": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Multivalueheaders"
+          },
+          "queryStringParameters": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Querystringparameters"
+          },
+          "multiValueQueryStringParameters": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Multivaluequerystringparameters"
+          },
+          "requestContext": {
+            "$ref": "#/components/schemas/APIGatewayEventRequestContext"
+          },
+          "pathParameters": {
+            "$ref": "#/components/schemas/FilterWorkspacePathParameters"
+          },
+          "stageVariables": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Stagevariables"
+          },
+          "isBase64Encoded": {
+            "type": "boolean",
+            "title": "Isbase64Encoded"
+          },
+          "body": {
+            "$ref": "#/components/schemas/FilterWorkspaceRequestBody"
+          }
+        },
+        "type": "object",
+        "required": [
+          "resource",
+          "path",
+          "httpMethod",
+          "headers",
+          "multiValueHeaders",
+          "requestContext",
+          "pathParameters",
+          "isBase64Encoded",
+          "body"
+        ],
+        "title": "FilterWorkspaceInput"
+      },
+      "FilterWorkspaceOutput": {
+        "properties": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "title": "FilterWorkspaceOutput"
+      },
+      "FilterWorkspacePathParameters": {
+        "properties": {
+          "cloudPlatform": {
+            "$ref": "#/components/schemas/CloudPlatform"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cloudPlatform"
+        ],
+        "title": "FilterWorkspacePathParameters"
+      },
+      "FilterWorkspaceRequestBody": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 3,
+            "title": "Name"
+          },
+          "limit": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "title": "Limit",
+            "default": 10
+          },
+          "workspaceTypes": {
+            "items": {
+              "$ref": "#/components/schemas/WorkspaceType"
+            },
+            "type": "array",
+            "minItems": 1
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "FilterWorkspaceRequestBody"
+      },
+      "GetDirectoryServicesOutput": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/DirectoryServicesDetails"
+            },
+            "type": "array",
+            "title": "Items",
+            "default": []
+          }
+        },
+        "type": "object",
+        "title": "GetDirectoryServicesOutput"
+      },
+      "GetWorkspaceDetailsInput": {
+        "properties": {
+          "cloudPlatform": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Cloudplatform"
+          },
+          "workspaceId": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Workspaceid"
+          },
+          "workspaceType": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Workspacetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cloudPlatform",
+          "workspaceId",
+          "workspaceType"
+        ],
+        "title": "GetWorkspaceDetailsInput"
+      },
+      "GetWorkspaceDetailsOutput": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Id"
+          },
+          "cloud_platform": {
+            "$ref": "#/components/schemas/CloudPlatform"
+          },
+          "workspace_type": {
+            "$ref": "#/components/schemas/WorkspaceType"
+          },
+          "workspace_id": {
+            "type": "string",
+            "title": "Workspace Id"
+          },
+          "workspace_name": {
+            "type": "string",
+            "title": "Workspace Name"
+          },
+          "entities": {
+            "items": {
+              "$ref": "#/components/schemas/EntityDetails"
+            },
+            "type": "array",
+            "title": "Entities"
+          }
+        },
+        "type": "object",
+        "title": "GetWorkspaceDetailsOutput"
+      },
+      "GetWorkspacesOutput": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/WorkspacesDetails"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "GetWorkspacesOutput"
+      },
+      "SearchUsersInput": {
+        "properties": {
+          "filters": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UserFilterOptions"
+              }
+            ],
+            "title": "Filters",
+            "default": {}
+          }
+        },
+        "type": "object",
+        "title": "SearchUsersInput"
+      },
+      "SearchWorkspace": {
+        "properties": {
+          "cloud_platform": {
+            "$ref": "#/components/schemas/CloudPlatform"
+          },
+          "workspace_type": {
+            "$ref": "#/components/schemas/WorkspaceType"
+          },
+          "workspace_id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Workspace Id"
+          },
+          "workspace_name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Workspace Name"
+          },
+          "owners": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Owners"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cloud_platform",
+          "workspace_type",
+          "workspace_id",
+          "workspace_name",
+          "owners"
+        ],
+        "title": "SearchWorkspace"
+      },
+      "SearchWorkspacesInput": {
+        "properties": {
+          "filters": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FilterOptions"
+              }
+            ],
+            "title": "Filters",
+            "default": {}
+          },
+          "searchString": {
+            "type": "string",
+            "minLength": 3,
+            "title": "Searchstring"
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Offset",
+            "default": 0
+          },
+          "limit": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "title": "Limit",
+            "default": 50
+          }
+        },
+        "type": "object",
+        "title": "SearchWorkspacesInput"
+      },
+      "SearchWorkspacesOutput": {
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Count",
+            "default": 0
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SearchWorkspace"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "SearchWorkspacesOutput"
+      },
+      "UpdateWorkspaceOwnerInput": {
+        "properties": {
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "resource": {
+            "type": "string",
+            "title": "Resource"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "httpMethod": {
+            "type": "string",
+            "enum": [
+              "PUT",
+              "GET",
+              "HEAD",
+              "OPTIONS",
+              "PATCH",
+              "POST",
+              "DELETE"
+            ],
+            "title": "Httpmethod"
+          },
+          "headers": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Headers"
+          },
+          "multiValueHeaders": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Multivalueheaders"
+          },
+          "queryStringParameters": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Querystringparameters"
+          },
+          "multiValueQueryStringParameters": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Multivaluequerystringparameters"
+          },
+          "requestContext": {
+            "$ref": "#/components/schemas/APIGatewayEventRequestContext"
+          },
+          "pathParameters": {
+            "$ref": "#/components/schemas/UpdateWorkspaceOwnerPathParameters"
+          },
+          "stageVariables": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Stagevariables"
+          },
+          "isBase64Encoded": {
+            "type": "boolean",
+            "title": "Isbase64Encoded"
+          },
+          "body": {
+            "$ref": "#/components/schemas/UpdateWorkspaceOwnerRequestBody"
+          }
+        },
+        "type": "object",
+        "required": [
+          "resource",
+          "path",
+          "httpMethod",
+          "headers",
+          "multiValueHeaders",
+          "requestContext",
+          "pathParameters",
+          "isBase64Encoded",
+          "body"
+        ],
+        "title": "UpdateWorkspaceOwnerInput"
+      },
+      "UpdateWorkspaceOwnerPathParameters": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "title": "Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "title": "UpdateWorkspaceOwnerPathParameters"
+      },
+      "UpdateWorkspaceOwnerRequestBody": {
+        "properties": {
+          "entities": {
+            "items": {
+              "$ref": "#/components/schemas/Entity"
+            },
+            "type": "array",
+            "title": "Entities"
+          }
+        },
+        "type": "object",
+        "required": [
+          "entities"
+        ],
+        "title": "UpdateWorkspaceOwnerRequestBody"
+      },
+      "UserDetails": {
+        "properties": {
+          "DirectoryServiceUuid": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Directoryserviceuuid"
+          },
+          "Name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "DisplayName": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Displayname"
+          },
+          "Type": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Type"
+          },
+          "ServiceType": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Servicetype"
+          },
+          "Email": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Email"
+          },
+          "Source": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Source"
+          },
+          "Id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "Name",
+          "DisplayName",
+          "Type",
+          "Id"
+        ],
+        "title": "UserDetails"
+      },
+      "UserFilterOptions": {
+        "properties": {
+          "userTypes": {
+            "items": {
+              "$ref": "#/components/schemas/EntitiesType"
+            },
+            "type": "array",
+            "minItems": 1
+          },
+          "searchString": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Searchstring"
+          },
+          "sources": {
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Sources"
+          }
+        },
+        "type": "object",
+        "title": "UserFilterOptions"
+      },
+      "UserPrincipal": {
+        "properties": {
+          "userPrincipal": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Userprincipal"
+          },
+          "roles": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Roles"
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Offset",
+            "default": 0
+          },
+          "limit": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "title": "Limit",
+            "default": 50
+          }
+        },
+        "type": "object",
+        "title": "UserPrincipal"
+      },
+      "Workspace": {
+        "properties": {
+          "organization": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Organization"
+          },
+          "workspaceType": {
+            "$ref": "#/components/schemas/WorkspaceType"
+          },
+          "workspaceId": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Workspaceid"
+          },
+          "workspaceName": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Workspacename"
+          }
+        },
+        "type": "object",
+        "required": [
+          "organization",
+          "workspaceType",
+          "workspaceId",
+          "workspaceName"
+        ],
+        "title": "Workspace"
+      },
+      "WorkspaceType": {
+        "type": "string",
+        "enum": [
+          "account",
+          "root",
+          "ou",
+          "directory",
+          "management_group",
+          "subscription",
+          "gcp_organization",
+          "folder",
+          "project"
+        ],
+        "title": "WorkspaceType",
+        "description": "Type of supported workspace"
+      },
+      "WorkspacesDetails": {
+        "properties": {
+          "cloud_platform": {
+            "$ref": "#/components/schemas/CloudPlatform"
+          },
+          "organization": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Organization"
+          },
+          "workspace_type": {
+            "$ref": "#/components/schemas/WorkspaceType"
+          },
+          "workspace_id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Workspace Id"
+          },
+          "workspace_name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Workspace Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cloud_platform",
+          "organization",
+          "workspace_type",
+          "workspace_id",
+          "workspace_name"
+        ],
+        "title": "WorkspacesDetails"
+      }
+    }
+  }
+}
