@@ -1,13 +1,27 @@
 export const toc = [
-    {
-        label: 'Guides',
+  {
+    label: 'Get started',
+    items: [
+      {
+        label: 'SCA get started',
         items: [
-            // Each item here is one entry in the navigation menu.
-            { label: 'Example Guide', slug: 'guides/example' },
+          'sca/sca_overview-sca',
+          'sca/sca-support',
+          'sca/sca-terminology'
         ],
-    },
-    {
-        label: 'Reference',
-        autogenerate: { directory: 'reference' },
-    },
+      },
+    ],
+  },
+  {
+    label: 'CV',
+    items: [
+      {
+        label: 'CV',
+        items: [
+          'cv/intro',
+          'cv/cv-terminology'
+        ]
+      }
+    ]
+  }
 ]

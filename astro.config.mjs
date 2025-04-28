@@ -2,21 +2,40 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import markdoc from '@astrojs/markdoc';
-import starlightNextjsTheme from 'starlight-nextjs-theme'
-import { toc } from './data/toc.mjs'
+import starlightNextjsTheme from 'starlight-nextjs-theme';
+import starlightUtils from "@lorenzo_lewis/starlight-utils";
+import { toc } from './data/toc.mjs';
+import path from 'node:path';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-      markdoc(),
-      starlight({
-          plugins: [starlightNextjsTheme()],
-          title: 'CyberArk',
-
-          social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-          sidebar: toc,
-      }),
+    markdoc(),
+    starlight({
+        plugins: [starlightNextjsTheme(), starlightUtils({
+          multiSidebar: {
+            switcherStyle: "hidden",
+          },
+        })],
+        title: 'CyberArk',
+        sidebar: toc
+    }),
+    {
+      name: 'file-watcher-reloader',
+      hooks: {
+        'astro:config:setup': ({ addWatchFile }) => {
+          addWatchFile(new URL('./data/toc.mjs', import.meta.url));
+        },
+      },
+    },
 	],
+  vite: {
+    resolve: {
+      alias: {
+        '@': '/src',  
+      },
+    },
+  },
   site: 'https://benskelker.github.io',
   base: '/markdocs-starlight',
   output: 'static',
