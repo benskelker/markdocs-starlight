@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
-    <body>
-        <p>For detailed information about each operation in the deploy script that's used to create the <MadCap:variable name="cc_product_vars.CV-full" /> service account, see <MadCap:xref href="#Enable">Enable APIs</MadCap:xref> below.</p>
-    </body>
-</html>

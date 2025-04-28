@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
-    <body><MadCap:variable name="cc_product_vars.CV-full" /> now supports manually updating the Google Cloud service account keys in <MadCap:variable name="cc_product_vars.CV-full" />, thereby enhancing security, reducing credential exposure, and improving access control monitoring.<p>For details, see <MadCap:xref href="../cv-gcp-update-keys.htm">Update [%=sca-project-variables.GoogleCloud%] service account keys</MadCap:xref>.</p></body>
-</html>

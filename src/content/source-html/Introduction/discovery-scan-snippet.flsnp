@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
-    <body>
-        <p>If you see additional workspaces in <MadCap:variable name="cc_product_vars.CV-full" /> that are not reflected in <MadCap:variable name="cc_product_vars.SCA-full" />, you can trigger an <MadCap:variable name="cc_product_vars.SCA-short" /> scan from the user interface or from the API to reflect the additional workspaces and their resources/roles in <MadCap:variable name="cc_product_vars.SCA-short" />.</p>
-    </body>
-</html>

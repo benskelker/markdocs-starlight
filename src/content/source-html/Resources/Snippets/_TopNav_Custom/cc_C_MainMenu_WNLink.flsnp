@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
-    <body>
-        <li class="whats-new-parent" MadCap:conditions="cc_product_conds.CV"><a class="whats-new" href="../../../GetStarted/cv-whats-new.htm">What's New</a>
-        </li>
-        <li class="whats-new-parent" MadCap:conditions="cc_product_conds.SCA"><a class="whats-new" href="../../../Introduction/sca_what's_new.htm">What's New</a>
-        </li>
-    </body>
-</html>

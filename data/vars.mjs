@@ -1,4 +1,9 @@
 export const productVars = {
+    "sidebarGroup":  '',
+    "sidebarGroups": [],
+    "frontmatter": {
+      "title": ""
+    },
     "company": "CyberArk",
     "football-team": "Liverpool",
     "product": {

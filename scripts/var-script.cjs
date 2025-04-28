@@ -37,7 +37,6 @@ async function main() {
   const objName = path.basename(filePath, path.extname(filePath));
   const schema = { [objName]: fields };
 
-  // Output as JS module
   console.log('module.exports = ' + JSON.stringify(schema, null, 2) + ';');
 }
 

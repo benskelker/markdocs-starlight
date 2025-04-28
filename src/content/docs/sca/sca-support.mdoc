@@ -1,0 +1,102 @@
+---
+title: SCA support and known limitations
+---
+
+This topic describes
+{% $cc_product_vars.SCA-short %}
+language support, supported cloud environments, and regional
+availability.
+
+## Support
+
+This section describes supported platforms and other SCA support.
+
+### Supported cloud providers
+
+{% table %}
+* Cloud provider
+* Description
+---
+* AWS
+* {% $sca-project-variables.AWS-IAM %}, {% $sca-project-variables.AWS-AD %}  
+  **Limitations**: See [Quotas and limits in IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/limits.html) and the [CreateAccountAssignment](https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateAccountAssignment.html) action in the AWS docs
+---
+* Azure
+* Microsoft Entra ID (with at least one subscription); Azure resources  
+  **Limitations**: See the [Azure docs](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits)
+---
+* {% $sca-project-variables.GoogleCloud %}
+* **Limitations**: See [Quotas and limits](https://cloud.google.com/iam/quotas) and [Access change propagation](https://cloud.google.com/iam/docs/access-change-propagation)
+{% /table %}
+
+### Supported browsers
+
+{% $cc_product_vars.SCA-short %} has been tested on the following browsers:
+
+| Browser        |Version
+|--------------- |---------------------------------------------
+|Chrome          |Any version released in the last six months
+|Microsoft Edge  |Any version released in the last six months
+|Firefox         |Any version released in the last six months
+
+The
+{% $cc_C_CyberArk.CompanyName %}
+{% $project_variables.IdentitySecurityPlatform_long %}
+supports additional browsers. For details, see [ISPSS supported browsers
+and
+languages](/ispss-deployment/latest/en/content/getstarted/isp-supported-browsers.htm).
+
+### AWS region support
+
+For AWS region availability, see [CyberArk AWS region
+support](/ispss-deployment/latest/en/content/getstarted/issp-data-centers.htm).
+
+{% aside %}
+{% $cc_product_vars.SCA-short %}
+currently doesn't support GovCloud regions.
+{% /aside %}
+
+### Supported languages
+
+{% $cc_product_vars.SCA-short %}
+supports English only.
+
+## Known limitations
+
+This section describes known limitations with
+{% $cc_product_vars.SCA-short %}.
+
+### Search
+
+When performing a search in
+{% $cc_product_vars.SCA-short %},
+consider the following limitations:
+
+- If your search includes a hyphen (-), the search will return all
+  results that include any of the following:
+
+  - The term before the hyphen
+  - The term after the hyphen
+  - The hyphen itself
+  {% aside %}
+    Searching for \"Test-Policy\" returns any results that include:
+    - Test
+    - Policy
+  {% /aside %}
+
+
+- The
+  {% $cc_product_vars.SCA-short %}
+  policy table search capability is limited to these fields:
+
+  - Policy name
+
+  - Policy description
+
+  - Related organization ID
+
+  - Related account - workspace ID
+
+  - Related account name
+
+  - Related user name / user display name
