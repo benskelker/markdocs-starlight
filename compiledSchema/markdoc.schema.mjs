@@ -33,7 +33,7 @@ export default {
       "OPM-short": "OPM",
       "PVWA-full": "Password Vault Web Access",
       "PVWA-short": "PVWA",
-      "PCloud-full": "Privilege Cloud",
+      "PCloud_full": "Privilege Cloud",
       "PCloud-short": "Privilege Cloud",
       "DV-full": "Digital Vault",
       "DV-short": "Vault",
@@ -45,7 +45,7 @@ export default {
       "PSMSSH-short": "PSM for SSH",
       "PTA-full": "Privileged Threat Analytics",
       "PTA-short": "PTA",
-      "Identity-full": "CyberArk Identity",
+      "Identity_full": "CyberArk Identity",
       "CEM-full": "Cloud Entitlements Manager",
       "CCP-full": "Central Credential Provider",
       "CCP-short": "CCP",
@@ -58,17 +58,17 @@ export default {
       "SWS-full": "Secure Web Sessions",
       "SWS-short": "SWS",
       "ISP-full": "CyberArk Identity Security Platform Shared Services",
-      "ISP-short": "ISPSS",
+      "ISP_short": "ISPSS",
       "DPA-full": "Dynamic Privileged Access",
       "DPA-short": "DPA",
       "ConjCloud": "Conjur Cloud",
-      "SCA-full": "Secure Cloud Access",
-      "SCA-short": "SCA",
+      "SCA_full": "Secure Cloud Access",
+      "SCA_short": "SCA",
       "PAM-short": "PAM",
       "PAM-full": "Privileged Access Management",
       "ISI-full": "Identity Security Intelligence",
       "ISI-short": "ISI",
-      "shared-services-full": "Shared Services",
+      "shared_services_full": "Shared Services",
       "IdentityAdmin-full": "Identity Administration",
       "Audit-short": "Audit",
       "Audit-full": "Audit",
@@ -92,7 +92,7 @@ export default {
       "DigBp-full": "CyberArk Blueprint",
       "DigBp-short": "Blueprint",
       "Navigator": "navigator",
-      "CV-full": "Cloud Visibility",
+      "CV_full": "Cloud Visibility",
       "CV-short": "CV",
       "SIA-full": "Secure Infrastructure Access",
       "SIA-short": "SIA",
@@ -108,9 +108,9 @@ export default {
       "NewVariable": "",
       "AI-short": "CORA AI"
     },
-    "cv-shared-variables": {
+    "cv_shared_variables": {
       "entra-id-short": "Entra ID",
-      "entra-id-long": "Microsoft Entra ID"
+      "entra_id_long": "Microsoft Entra ID"
     },
     "project_variables": {
       "ProductName_full": "Cloud Visibility",
@@ -118,17 +118,17 @@ export default {
       "CompanyName": "CyberArk",
       "IdentitySecurityPlatform_long": "Identity Security Platform"
     },
-    "sca-project-variables": {
+    "sca_project_variables": {
       "Azure": "Azure",
-      "AWS-AD": "AWS IAM Identity Center",
+      "AWS_AD": "AWS IAM Identity Center",
       "GoogleCloud": "Google Cloud",
       "GCP": "Google Cloud Platform",
-      "AWS-IAM": "AWS IAM",
+      "AWS_IAM": "AWS IAM",
       "AWS-console": "AWS Management Console"
     }
   },
   "partials": {
-    "_sca-cv-overview.mdoc": {
+    "_sca_cv_overview.mdoc": {
       "$$mdtype": "Node",
       "errors": [],
       "lines": [],
@@ -218,7 +218,7 @@ export default {
                           "$$mdtype": "Variable",
                           "path": [
                             "cc_product_vars",
-                            "SCA-full"
+                            "SCA_full"
                           ]
                         }
                       },
@@ -272,7 +272,7 @@ export default {
                           "$$mdtype": "Variable",
                           "path": [
                             "cc_product_vars",
-                            "CV-full"
+                            "CV_full"
                           ]
                         }
                       },
@@ -454,7 +454,7 @@ export default {
                           "$$mdtype": "Variable",
                           "path": [
                             "cc_product_vars",
-                            "CV-full"
+                            "CV_full"
                           ]
                         }
                       },
@@ -1583,7 +1583,7 @@ export default {
                                           "$$mdtype": "Variable",
                                           "path": [
                                             "cc_product_vars",
-                                            "CV-full"
+                                            "CV_full"
                                           ]
                                         }
                                       },
@@ -2145,8 +2145,8 @@ export default {
                                             "content": {
                                               "$$mdtype": "Variable",
                                               "path": [
-                                                "cv-shared-variables",
-                                                "entra-id-long"
+                                                "cv_shared_variables",
+                                                "entra_id_long"
                                               ]
                                             }
                                           },
@@ -3100,7 +3100,7 @@ export default {
                                       "$$mdtype": "Variable",
                                       "path": [
                                         "cc_product_vars",
-                                        "CV-full"
+                                        "CV_full"
                                       ]
                                     }
                                   },
@@ -3223,7 +3223,7 @@ export default {
                                   ],
                                   "inline": true,
                                   "attributes": {
-                                    "href": "#discover-vs-scan"
+                                    "href": "#discover_vs_scan"
                                   },
                                   "children": [
                                     {
@@ -3322,7 +3322,7 @@ export default {
                                       "$$mdtype": "Variable",
                                       "path": [
                                         "cc_product_vars",
-                                        "CV-full"
+                                        "CV_full"
                                       ]
                                     }
                                   },
@@ -3376,7 +3376,7 @@ export default {
                                       "$$mdtype": "Variable",
                                       "path": [
                                         "cc_product_vars",
-                                        "CV-full"
+                                        "CV_full"
                                       ]
                                     }
                                   },
@@ -3503,7 +3503,7 @@ export default {
                                       "$$mdtype": "Variable",
                                       "path": [
                                         "cc_product_vars",
-                                        "CV-full"
+                                        "CV_full"
                                       ]
                                     }
                                   },
@@ -3612,7 +3612,7 @@ export default {
                               ],
                               "inline": false,
                               "attributes": {
-                                "id": "discover-vs-scan"
+                                "id": "discover_vs_scan"
                               },
                               "children": [
                                 {
@@ -3717,7 +3717,7 @@ export default {
                                 {
                                   "type": "attribute",
                                   "name": "id",
-                                  "value": "discover-vs-scan"
+                                  "value": "discover_vs_scan"
                                 }
                               ],
                               "slots": {},
@@ -3859,7 +3859,7 @@ export default {
                                           "$$mdtype": "Variable",
                                           "path": [
                                             "cc_product_vars",
-                                            "CV-full"
+                                            "CV_full"
                                           ]
                                         }
                                       },
@@ -4117,7 +4117,7 @@ export default {
                                               "$$mdtype": "Variable",
                                               "path": [
                                                 "cc_product_vars",
-                                                "CV-full"
+                                                "CV_full"
                                               ]
                                             }
                                           },
@@ -4253,8 +4253,8 @@ export default {
                                         "content": {
                                           "$$mdtype": "Variable",
                                           "path": [
-                                            "cv-shared-variables",
-                                            "entra-id-long"
+                                            "cv_shared_variables",
+                                            "entra_id_long"
                                           ]
                                         }
                                       },
@@ -4308,7 +4308,7 @@ export default {
                                           "$$mdtype": "Variable",
                                           "path": [
                                             "cc_product_vars",
-                                            "CV-full"
+                                            "CV_full"
                                           ]
                                         }
                                       },
@@ -4362,7 +4362,7 @@ export default {
                                           "$$mdtype": "Variable",
                                           "path": [
                                             "cc_product_vars",
-                                            "CV-full"
+                                            "CV_full"
                                           ]
                                         }
                                       },
@@ -4535,7 +4535,7 @@ export default {
                                           "$$mdtype": "Variable",
                                           "path": [
                                             "cc_product_vars",
-                                            "CV-full"
+                                            "CV_full"
                                           ]
                                         }
                                       },
@@ -4673,7 +4673,7 @@ export default {
                                                   "$$mdtype": "Variable",
                                                   "path": [
                                                     "cc_product_vars",
-                                                    "CV-full"
+                                                    "CV_full"
                                                   ]
                                                 }
                                               },
@@ -4776,7 +4776,7 @@ export default {
                                                   "$$mdtype": "Variable",
                                                   "path": [
                                                     "cc_product_vars",
-                                                    "CV-full"
+                                                    "CV_full"
                                                   ]
                                                 }
                                               },
@@ -4839,7 +4839,7 @@ export default {
                                           ],
                                           "inline": true,
                                           "attributes": {
-                                            "content": " scans the workspace to <"
+                                            "content": " scans the workspace to "
                                           },
                                           "children": [],
                                           "type": "text",
@@ -4952,7 +4952,7 @@ export default {
                                                   "$$mdtype": "Variable",
                                                   "path": [
                                                     "cc_product_vars",
-                                                    "CV-full"
+                                                    "CV_full"
                                                   ]
                                                 }
                                               },
@@ -5174,7 +5174,7 @@ export default {
                                                   "$$mdtype": "Variable",
                                                   "path": [
                                                     "cc_product_vars",
-                                                    "CV-full"
+                                                    "CV_full"
                                                   ]
                                                 }
                                               },
@@ -5265,7 +5265,7 @@ export default {
                                               "$$mdtype": "Variable",
                                               "path": [
                                                 "cc_product_vars",
-                                                "CV-full"
+                                                "CV_full"
                                               ]
                                             }
                                           },
@@ -5482,7 +5482,7 @@ export default {
                                                       "$$mdtype": "Variable",
                                                       "path": [
                                                         "cc_product_vars",
-                                                        "CV-full"
+                                                        "CV_full"
                                                       ]
                                                     }
                                                   },
@@ -5646,7 +5646,7 @@ export default {
                                                   "$$mdtype": "Variable",
                                                   "path": [
                                                     "cc_product_vars",
-                                                    "CV-full"
+                                                    "CV_full"
                                                   ]
                                                 }
                                               },
@@ -5769,7 +5769,7 @@ export default {
                                               ],
                                               "inline": true,
                                               "attributes": {
-                                                "href": "#discover-vs-scan"
+                                                "href": "#discover_vs_scan"
                                               },
                                               "children": [
                                                 {
@@ -6059,7 +6059,7 @@ export default {
                                               "$$mdtype": "Variable",
                                               "path": [
                                                 "cc_product_vars",
-                                                "CV-full"
+                                                "CV_full"
                                               ]
                                             }
                                           },
@@ -6113,7 +6113,7 @@ export default {
                                               "$$mdtype": "Variable",
                                               "path": [
                                                 "cc_product_vars",
-                                                "SCA-full"
+                                                "SCA_full"
                                               ]
                                             }
                                           },
@@ -6321,7 +6321,7 @@ export default {
                                                           "$$mdtype": "Variable",
                                                           "path": [
                                                             "cc_product_vars",
-                                                            "CV-full"
+                                                            "CV_full"
                                                           ]
                                                         }
                                                       },
@@ -6424,7 +6424,7 @@ export default {
                                                           "$$mdtype": "Variable",
                                                           "path": [
                                                             "cc_product_vars",
-                                                            "CV-full"
+                                                            "CV_full"
                                                           ]
                                                         }
                                                       },
@@ -6487,7 +6487,7 @@ export default {
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
-                                                    "content": " scans the workspace to <"
+                                                    "content": " scans the workspace to "
                                                   },
                                                   "children": [],
                                                   "type": "text",
@@ -6600,7 +6600,7 @@ export default {
                                                           "$$mdtype": "Variable",
                                                           "path": [
                                                             "cc_product_vars",
-                                                            "CV-full"
+                                                            "CV_full"
                                                           ]
                                                         }
                                                       },
@@ -6822,7 +6822,7 @@ export default {
                                                           "$$mdtype": "Variable",
                                                           "path": [
                                                             "cc_product_vars",
-                                                            "CV-full"
+                                                            "CV_full"
                                                           ]
                                                         }
                                                       },
@@ -6913,7 +6913,7 @@ export default {
                                                       "$$mdtype": "Variable",
                                                       "path": [
                                                         "cc_product_vars",
-                                                        "CV-full"
+                                                        "CV_full"
                                                       ]
                                                     }
                                                   },
@@ -7040,7 +7040,7 @@ export default {
                                                       "$$mdtype": "Variable",
                                                       "path": [
                                                         "cc_product_vars",
-                                                        "CV-full"
+                                                        "CV_full"
                                                       ]
                                                     }
                                                   },
@@ -7188,7 +7188,7 @@ export default {
                                                               "$$mdtype": "Variable",
                                                               "path": [
                                                                 "cc_product_vars",
-                                                                "CV-full"
+                                                                "CV_full"
                                                               ]
                                                             }
                                                           },
@@ -7352,7 +7352,7 @@ export default {
                                                           "$$mdtype": "Variable",
                                                           "path": [
                                                             "cc_product_vars",
-                                                            "CV-full"
+                                                            "CV_full"
                                                           ]
                                                         }
                                                       },
@@ -7475,7 +7475,7 @@ export default {
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
-                                                        "href": "#discover-vs-scan"
+                                                        "href": "#discover_vs_scan"
                                                       },
                                                       "children": [
                                                         {
@@ -7647,7 +7647,7 @@ export default {
                                                           "$$mdtype": "Variable",
                                                           "path": [
                                                             "cc_product_vars",
-                                                            "SCA-short"
+                                                            "SCA_short"
                                                           ]
                                                         }
                                                       },
@@ -7738,7 +7738,7 @@ export default {
                                                       "$$mdtype": "Variable",
                                                       "path": [
                                                         "cc_product_vars",
-                                                        "SCA-short"
+                                                        "SCA_short"
                                                       ]
                                                     }
                                                   },
@@ -7792,7 +7792,7 @@ export default {
                                                       "$$mdtype": "Variable",
                                                       "path": [
                                                         "cc_product_vars",
-                                                        "SCA-short"
+                                                        "SCA_short"
                                                       ]
                                                     }
                                                   },
@@ -7919,7 +7919,7 @@ export default {
                                                       "$$mdtype": "Variable",
                                                       "path": [
                                                         "cc_product_vars",
-                                                        "SCA-short"
+                                                        "SCA_short"
                                                       ]
                                                     }
                                                   },
@@ -8019,7 +8019,7 @@ export default {
                                                       "$$mdtype": "Variable",
                                                       "path": [
                                                         "cc_product_vars",
-                                                        "SCA-short"
+                                                        "SCA_short"
                                                       ]
                                                     }
                                                   },
@@ -8155,7 +8155,7 @@ export default {
                                                           "$$mdtype": "Variable",
                                                           "path": [
                                                             "cc_product_vars",
-                                                            "SCA-short"
+                                                            "SCA_short"
                                                           ]
                                                         }
                                                       },
@@ -8282,7 +8282,7 @@ export default {
                                                           "$$mdtype": "Variable",
                                                           "path": [
                                                             "cc_product_vars",
-                                                            "CV-full"
+                                                            "CV_full"
                                                           ]
                                                         }
                                                       },
@@ -8336,7 +8336,7 @@ export default {
                                                           "$$mdtype": "Variable",
                                                           "path": [
                                                             "cc_product_vars",
-                                                            "SCA-short"
+                                                            "SCA_short"
                                                           ]
                                                         }
                                                       },
@@ -8566,6 +8566,15 @@ export default {
             "caution",
             "tip"
           ]
+        }
+      }
+    },
+    "id": {
+      "render": "html",
+      "selfClosing": true,
+      "attributes": {
+        "id": {
+          "required": true
         }
       }
     },

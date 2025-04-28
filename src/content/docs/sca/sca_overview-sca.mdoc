@@ -3,17 +3,17 @@ title: Overview
 ---
 
 This topic describes how 
-{% $cc_product_vars.SCA-full %}
+{% $cc_product_vars.SCA_full %}
 enables end users, such as those in DevOps and Cloud Engineering, to
 natively and securely access the cloud management layer.
 
-## The {% $cc_product_vars.SCA-full %} solution
+## The {% $cc_product_vars.SCA_full %} solution
 
-{% $cc_product_vars.SCA-full %}
+{% $cc_product_vars.SCA_full %}
 provisions just-in-time privileged access for administrative operations
 in multi-cloud environments, using the principle of least-privilege
 access.
-{% $cc_product_vars.SCA-short %}
+{% $cc_product_vars.SCA_short %}
 enables operational efficiencies for IAM and Security teams implementing
 Zero Trust. This improves security posture by removing unnecessary
 standing access.
@@ -27,11 +27,11 @@ for audit and compliance.
     their cloud environments via web console or CLI.
 
 2.  The end users natively authenticate using either
-    {% $cc_product_vars.Identity-full %}
+    {% $cc_product_vars.Identity_full %}
     or another third-party IdP.
 
 3.  In the background,
-    {% $cc_product_vars.SCA-short %}
+    {% $cc_product_vars.SCA_short %}
     validates approved entitlements for an end user's session. The end
     users then select the scope of their current task, ensuring least
     privilege access.
@@ -45,33 +45,33 @@ for audit and compliance.
     browser hijacking.
 
 6.  Cloud security and
-    {% $cc_product_vars.SCA-short %}
+    {% $cc_product_vars.SCA_short %}
     administrators can trigger an on-demand sync from within
-    {% $cc_product_vars.SCA-short %}.
+    {% $cc_product_vars.SCA_short %}.
     This supports the dynamic nature of the cloud environment and
     ensures the most up-to-date information about roles and workspaces
     is available when managing access policies for end users.
 
-## {% $cc_product_vars.SCA-short %} architecture
+## {% $cc_product_vars.SCA_short %} architecture
 
 The
-{% $cc_product_vars.SCA-short %}
+{% $cc_product_vars.SCA_short %}
 solution utilizes several business and shared services in the
-{% $cc_product_vars.ISP-short %}.
+{% $cc_product_vars.ISP_short %}.
 The
-{% $cc_product_vars.shared-services-full %}
+{% $cc_product_vars.shared_services_full %}
 provide basic functions like user management, SSO and MFA, and system
 auditing. Other business services work together with
-{% $cc_product_vars.SCA-short %}
+{% $cc_product_vars.SCA_short %}
 to provide a complete solution for managing access to your
 organizational cloud services with zero standing permissions.
 
 ![SCA architecture](../../../assets/images/sca-architecture.png "Architecture") 
 
-## {% $cc_product_vars.SCA-short %} workflow
+## {% $cc_product_vars.SCA_short %} workflow
 
 The following diagram provides a high-level workflow for the various
 users of
-{% $cc_product_vars.SCA-short %}.
+{% $cc_product_vars.SCA_short %}.
 
-![Workflow for various personas that use the {% cc_product_vars.SCA-short %} service](../../../assets/images/sca-workflow.png)
+![Workflow for various personas that use the {% cc_product_vars.SCA_short %} service](../../../assets/images/sca-workflow.png)

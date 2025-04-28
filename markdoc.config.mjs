@@ -5,7 +5,7 @@ import { defineMarkdocConfig, component } from '@astrojs/markdoc/config';
 import starlightMarkdoc from '@astrojs/starlight-markdoc';
 import { productVars } from './data/vars.mjs';
 
-const PARTIAL_FILENAME = '_sca-cv-overview.mdoc';
+const PARTIAL_FILENAME = '_sca_cv_overview.mdoc';
 const PARTIAL_PATH = path.resolve('./src/content/docs/partials', PARTIAL_FILENAME);
 
 // Read and parse the partial into a Markdoc AST
@@ -26,6 +26,17 @@ export default defineMarkdocConfig({
         href:  { type: String, required: true },
         title: { type: String, required: true },
         icon:  { type: String }, 
+      },
+    },
+    aside: {
+      render: 'html',
+      selfClosing: false,
+    },
+    id: {
+      render: 'html',
+      selfClosing: true,
+      attributes: {
+        id: { type: String, required: true },
       },
     },
   },

@@ -3,7 +3,7 @@ title: SCA support and known limitations
 ---
 
 This topic describes
-{% $cc_product_vars.SCA-short %}
+{% $cc_product_vars.SCA_short %}
 language support, supported cloud environments, and regional
 availability.
 
@@ -18,20 +18,20 @@ This section describes supported platforms and other SCA support.
 * Description
 ---
 * AWS
-* {% $sca-project-variables.AWS-IAM %}, {% $sca-project-variables.AWS-AD %}  
+* {% $sca_project_variables.AWS_IAM %}, {% $sca_project_variables.AWS_AD %}  
   **Limitations**: See [Quotas and limits in IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/limits.html) and the [CreateAccountAssignment](https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateAccountAssignment.html) action in the AWS docs
 ---
 * Azure
 * Microsoft Entra ID (with at least one subscription); Azure resources  
   **Limitations**: See the [Azure docs](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits)
 ---
-* {% $sca-project-variables.GoogleCloud %}
+* {% $sca_project_variables.GoogleCloud %}
 * **Limitations**: See [Quotas and limits](https://cloud.google.com/iam/quotas) and [Access change propagation](https://cloud.google.com/iam/docs/access-change-propagation)
 {% /table %}
 
 ### Supported browsers
 
-{% $cc_product_vars.SCA-short %} has been tested on the following browsers:
+{% $cc_product_vars.SCA_short %} has been tested on the following browsers:
 
 | Browser        |Version
 |--------------- |---------------------------------------------
@@ -52,24 +52,24 @@ For AWS region availability, see [CyberArk AWS region
 support](/ispss-deployment/latest/en/content/getstarted/issp-data-centers.htm).
 
 {% aside %}
-{% $cc_product_vars.SCA-short %}
+{% $cc_product_vars.SCA_short %}
 currently doesn't support GovCloud regions.
 {% /aside %}
 
 ### Supported languages
 
-{% $cc_product_vars.SCA-short %}
+{% $cc_product_vars.SCA_short %}
 supports English only.
 
 ## Known limitations
 
 This section describes known limitations with
-{% $cc_product_vars.SCA-short %}.
+{% $cc_product_vars.SCA_short %}.
 
 ### Search
 
 When performing a search in
-{% $cc_product_vars.SCA-short %},
+{% $cc_product_vars.SCA_short %},
 consider the following limitations:
 
 - If your search includes a hyphen (-), the search will return all
@@ -79,14 +79,14 @@ consider the following limitations:
   - The term after the hyphen
   - The hyphen itself
   {% aside %}
-    Searching for \"Test-Policy\" returns any results that include:
+    Searching for "Test-Policy" returns any results that include:
     - Test
     - Policy
   {% /aside %}
 
 
 - The
-  {% $cc_product_vars.SCA-short %}
+  {% $cc_product_vars.SCA_short %}
   policy table search capability is limited to these fields:
 
   - Policy name
