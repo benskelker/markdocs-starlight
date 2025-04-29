@@ -28,17 +28,6 @@ export default defineMarkdocConfig({
         icon:  { type: String }, 
       },
     },
-    aside: {
-      render: 'html',
-      selfClosing: false,
-    },
-    id: {
-      render: 'html',
-      selfClosing: true,
-      attributes: {
-        id: { type: String, required: true },
-      },
-    },
   },
 });
 

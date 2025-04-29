@@ -747,8 +747,8 @@ export default {
           "lines": [
             13,
             14,
-            75,
-            76
+            69,
+            70
           ],
           "inline": false,
           "attributes": {},
@@ -3588,7 +3588,7 @@ export default {
                       "errors": [],
                       "lines": [
                         47,
-                        75
+                        69
                       ],
                       "inline": false,
                       "attributes": {},
@@ -3748,7 +3748,7 @@ export default {
                           "errors": [],
                           "lines": [
                             48,
-                            75
+                            69
                           ],
                           "inline": false,
                           "attributes": {},
@@ -4608,8 +4608,8 @@ export default {
                               "lines": [
                                 53,
                                 54,
-                                59,
-                                60
+                                57,
+                                58
                               ],
                               "inline": false,
                               "attributes": {
@@ -4633,7 +4633,7 @@ export default {
                                   "errors": [],
                                   "lines": [
                                     54,
-                                    59
+                                    57
                                   ],
                                   "inline": false,
                                   "attributes": {},
@@ -4643,7 +4643,7 @@ export default {
                                       "errors": [],
                                       "lines": [
                                         54,
-                                        59
+                                        57
                                       ],
                                       "inline": false,
                                       "attributes": {},
@@ -4653,7 +4653,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -4665,7 +4665,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -4686,7 +4686,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             },
@@ -4695,7 +4695,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -4710,7 +4710,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             }
@@ -4723,7 +4723,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -4732,7 +4732,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -4747,7 +4747,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -4756,7 +4756,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -4768,7 +4768,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -4789,7 +4789,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             },
@@ -4798,7 +4798,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -4813,7 +4813,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             }
@@ -4826,7 +4826,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -4835,7 +4835,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -4850,7 +4850,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -4859,7 +4859,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -4871,7 +4871,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -4886,7 +4886,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             }
@@ -4899,7 +4899,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -4908,7 +4908,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -4923,7 +4923,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -4932,7 +4932,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -4944,7 +4944,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -4965,7 +4965,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             },
@@ -4974,7 +4974,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -4989,7 +4989,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             }
@@ -5002,7 +5002,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5011,7 +5011,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5026,7 +5026,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5035,7 +5035,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5047,7 +5047,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -5062,7 +5062,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             }
@@ -5075,7 +5075,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5084,7 +5084,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5099,7 +5099,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5108,7 +5108,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {},
@@ -5121,7 +5121,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5130,7 +5130,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5145,7 +5145,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5154,7 +5154,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5166,7 +5166,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -5187,7 +5187,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             },
@@ -5196,7 +5196,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -5211,7 +5211,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             }
@@ -5224,7 +5224,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5233,7 +5233,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5248,7 +5248,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5257,7 +5257,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5278,7 +5278,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5287,7 +5287,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5302,7 +5302,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5311,7 +5311,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5323,7 +5323,7 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -5338,7 +5338,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             }
@@ -5351,7 +5351,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5360,7 +5360,7 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5375,7 +5375,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5384,12 +5384,12 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
                                           "attributes": {},
                                           "children": [],
-                                          "type": "softbreak",
+                                          "type": "hardbreak",
                                           "annotations": [],
                                           "slots": {},
                                           "location": {
@@ -5397,7 +5397,7 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
                                             }
                                           }
                                         },
@@ -5406,43 +5406,23 @@ export default {
                                           "errors": [],
                                           "lines": [
                                             54,
-                                            59
+                                            57
                                           ],
                                           "inline": true,
-                                          "attributes": {},
+                                          "attributes": {
+                                            "marker": "**"
+                                          },
                                           "children": [
                                             {
                                               "$$mdtype": "Node",
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
-                                              ],
-                                              "inline": true,
-                                              "attributes": {},
-                                              "children": [],
-                                              "type": "softbreak",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 54
-                                                },
-                                                "end": {
-                                                  "line": 59
-                                                }
-                                              }
-                                            },
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
-                                                "content": "To perform a "
+                                                "content": "Note"
                                               },
                                               "children": [],
                                               "type": "text",
@@ -5453,192 +5433,65 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
+                                            }
+                                          ],
+                                          "type": "strong",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
                                             },
+                                            "end": {
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "content": ": To perform a "
+                                          },
+                                          "children": [],
+                                          "type": "text",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
+                                            },
+                                            "end": {
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "marker": "**"
+                                          },
+                                          "children": [
                                             {
                                               "$$mdtype": "Node",
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
-                                              ],
-                                              "inline": true,
-                                              "attributes": {
-                                                "marker": "**"
-                                              },
-                                              "children": [
-                                                {
-                                                  "$$mdtype": "Node",
-                                                  "errors": [],
-                                                  "lines": [
-                                                    54,
-                                                    59
-                                                  ],
-                                                  "inline": true,
-                                                  "attributes": {
-                                                    "content": {
-                                                      "$$mdtype": "Variable",
-                                                      "path": [
-                                                        "cc_product_vars",
-                                                        "CV_full"
-                                                      ]
-                                                    }
-                                                  },
-                                                  "children": [],
-                                                  "type": "text",
-                                                  "annotations": [],
-                                                  "slots": {},
-                                                  "location": {
-                                                    "start": {
-                                                      "line": 54
-                                                    },
-                                                    "end": {
-                                                      "line": 59
-                                                    }
-                                                  }
-                                                },
-                                                {
-                                                  "$$mdtype": "Node",
-                                                  "errors": [],
-                                                  "lines": [
-                                                    54,
-                                                    59
-                                                  ],
-                                                  "inline": true,
-                                                  "attributes": {
-                                                    "content": " scan"
-                                                  },
-                                                  "children": [],
-                                                  "type": "text",
-                                                  "annotations": [],
-                                                  "slots": {},
-                                                  "location": {
-                                                    "start": {
-                                                      "line": 54
-                                                    },
-                                                    "end": {
-                                                      "line": 59
-                                                    }
-                                                  }
-                                                }
-                                              ],
-                                              "type": "strong",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 54
-                                                },
-                                                "end": {
-                                                  "line": 59
-                                                }
-                                              }
-                                            },
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                54,
-                                                59
-                                              ],
-                                              "inline": true,
-                                              "attributes": {
-                                                "content": ", the workspace must be "
-                                              },
-                                              "children": [],
-                                              "type": "text",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 54
-                                                },
-                                                "end": {
-                                                  "line": 59
-                                                }
-                                              }
-                                            },
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                54,
-                                                59
-                                              ],
-                                              "inline": true,
-                                              "attributes": {
-                                                "marker": "**"
-                                              },
-                                              "children": [
-                                                {
-                                                  "$$mdtype": "Node",
-                                                  "errors": [],
-                                                  "lines": [
-                                                    54,
-                                                    59
-                                                  ],
-                                                  "inline": true,
-                                                  "attributes": {
-                                                    "content": "onboarded"
-                                                  },
-                                                  "children": [],
-                                                  "type": "text",
-                                                  "annotations": [],
-                                                  "slots": {},
-                                                  "location": {
-                                                    "start": {
-                                                      "line": 54
-                                                    },
-                                                    "end": {
-                                                      "line": 59
-                                                    }
-                                                  }
-                                                }
-                                              ],
-                                              "type": "strong",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 54
-                                                },
-                                                "end": {
-                                                  "line": 59
-                                                }
-                                              }
-                                            },
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                54,
-                                                59
-                                              ],
-                                              "inline": true,
-                                              "attributes": {
-                                                "content": " and "
-                                              },
-                                              "children": [],
-                                              "type": "text",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 54
-                                                },
-                                                "end": {
-                                                  "line": 59
-                                                }
-                                              }
-                                            },
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -5659,7 +5512,7 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             },
@@ -5668,11 +5521,11 @@ export default {
                                               "errors": [],
                                               "lines": [
                                                 54,
-                                                59
+                                                57
                                               ],
                                               "inline": true,
                                               "attributes": {
-                                                "content": " must be "
+                                                "content": " scan"
                                               },
                                               "children": [],
                                               "type": "text",
@@ -5683,181 +5536,12 @@ export default {
                                                   "line": 54
                                                 },
                                                 "end": {
-                                                  "line": 59
-                                                }
-                                              }
-                                            },
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                54,
-                                                59
-                                              ],
-                                              "inline": true,
-                                              "attributes": {
-                                                "marker": "**"
-                                              },
-                                              "children": [
-                                                {
-                                                  "$$mdtype": "Node",
-                                                  "errors": [],
-                                                  "lines": [
-                                                    54,
-                                                    59
-                                                  ],
-                                                  "inline": true,
-                                                  "attributes": {
-                                                    "content": "connected"
-                                                  },
-                                                  "children": [],
-                                                  "type": "text",
-                                                  "annotations": [],
-                                                  "slots": {},
-                                                  "location": {
-                                                    "start": {
-                                                      "line": 54
-                                                    },
-                                                    "end": {
-                                                      "line": 59
-                                                    }
-                                                  }
-                                                }
-                                              ],
-                                              "type": "strong",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 54
-                                                },
-                                                "end": {
-                                                  "line": 59
-                                                }
-                                              }
-                                            },
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                54,
-                                                59
-                                              ],
-                                              "inline": true,
-                                              "attributes": {
-                                                "content": " to the workspace. See "
-                                              },
-                                              "children": [],
-                                              "type": "text",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 54
-                                                },
-                                                "end": {
-                                                  "line": 59
-                                                }
-                                              }
-                                            },
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                54,
-                                                59
-                                              ],
-                                              "inline": true,
-                                              "attributes": {
-                                                "href": "#discover_vs_scan"
-                                              },
-                                              "children": [
-                                                {
-                                                  "$$mdtype": "Node",
-                                                  "errors": [],
-                                                  "lines": [
-                                                    54,
-                                                    59
-                                                  ],
-                                                  "inline": true,
-                                                  "attributes": {
-                                                    "content": "onboard vs connect"
-                                                  },
-                                                  "children": [],
-                                                  "type": "text",
-                                                  "annotations": [],
-                                                  "slots": {},
-                                                  "location": {
-                                                    "start": {
-                                                      "line": 54
-                                                    },
-                                                    "end": {
-                                                      "line": 59
-                                                    }
-                                                  }
-                                                }
-                                              ],
-                                              "type": "link",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 54
-                                                },
-                                                "end": {
-                                                  "line": 59
-                                                }
-                                              }
-                                            },
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                54,
-                                                59
-                                              ],
-                                              "inline": true,
-                                              "attributes": {
-                                                "content": " above."
-                                              },
-                                              "children": [],
-                                              "type": "text",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 54
-                                                },
-                                                "end": {
-                                                  "line": 59
-                                                }
-                                              }
-                                            },
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                54,
-                                                59
-                                              ],
-                                              "inline": true,
-                                              "attributes": {},
-                                              "children": [],
-                                              "type": "softbreak",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 54
-                                                },
-                                                "end": {
-                                                  "line": 59
+                                                  "line": 57
                                                 }
                                               }
                                             }
                                           ],
-                                          "type": "tag",
-                                          "tag": "aside",
+                                          "type": "strong",
                                           "annotations": [],
                                           "slots": {},
                                           "location": {
@@ -5865,7 +5549,304 @@ export default {
                                               "line": 54
                                             },
                                             "end": {
-                                              "line": 59
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "content": ", the workspace must be "
+                                          },
+                                          "children": [],
+                                          "type": "text",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
+                                            },
+                                            "end": {
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "marker": "**"
+                                          },
+                                          "children": [
+                                            {
+                                              "$$mdtype": "Node",
+                                              "errors": [],
+                                              "lines": [
+                                                54,
+                                                57
+                                              ],
+                                              "inline": true,
+                                              "attributes": {
+                                                "content": "onboarded"
+                                              },
+                                              "children": [],
+                                              "type": "text",
+                                              "annotations": [],
+                                              "slots": {},
+                                              "location": {
+                                                "start": {
+                                                  "line": 54
+                                                },
+                                                "end": {
+                                                  "line": 57
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "type": "strong",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
+                                            },
+                                            "end": {
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "content": " and "
+                                          },
+                                          "children": [],
+                                          "type": "text",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
+                                            },
+                                            "end": {
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "content": {
+                                              "$$mdtype": "Variable",
+                                              "path": [
+                                                "cc_product_vars",
+                                                "CV_full"
+                                              ]
+                                            }
+                                          },
+                                          "children": [],
+                                          "type": "text",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
+                                            },
+                                            "end": {
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "content": " must be "
+                                          },
+                                          "children": [],
+                                          "type": "text",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
+                                            },
+                                            "end": {
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "marker": "**"
+                                          },
+                                          "children": [
+                                            {
+                                              "$$mdtype": "Node",
+                                              "errors": [],
+                                              "lines": [
+                                                54,
+                                                57
+                                              ],
+                                              "inline": true,
+                                              "attributes": {
+                                                "content": "connected"
+                                              },
+                                              "children": [],
+                                              "type": "text",
+                                              "annotations": [],
+                                              "slots": {},
+                                              "location": {
+                                                "start": {
+                                                  "line": 54
+                                                },
+                                                "end": {
+                                                  "line": 57
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "type": "strong",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
+                                            },
+                                            "end": {
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "content": " to the workspace. See "
+                                          },
+                                          "children": [],
+                                          "type": "text",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
+                                            },
+                                            "end": {
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "href": "#discover_vs_scan"
+                                          },
+                                          "children": [
+                                            {
+                                              "$$mdtype": "Node",
+                                              "errors": [],
+                                              "lines": [
+                                                54,
+                                                57
+                                              ],
+                                              "inline": true,
+                                              "attributes": {
+                                                "content": "onboard vs connect"
+                                              },
+                                              "children": [],
+                                              "type": "text",
+                                              "annotations": [],
+                                              "slots": {},
+                                              "location": {
+                                                "start": {
+                                                  "line": 54
+                                                },
+                                                "end": {
+                                                  "line": 57
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "type": "link",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
+                                            },
+                                            "end": {
+                                              "line": 57
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            54,
+                                            57
+                                          ],
+                                          "inline": true,
+                                          "attributes": {
+                                            "content": " above."
+                                          },
+                                          "children": [],
+                                          "type": "text",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 54
+                                            },
+                                            "end": {
+                                              "line": 57
                                             }
                                           }
                                         }
@@ -5878,7 +5859,7 @@ export default {
                                           "line": 54
                                         },
                                         "end": {
-                                          "line": 59
+                                          "line": 57
                                         }
                                       }
                                     }
@@ -5891,7 +5872,7 @@ export default {
                                       "line": 54
                                     },
                                     "end": {
-                                      "line": 59
+                                      "line": 57
                                     }
                                   }
                                 }
@@ -5931,10 +5912,10 @@ export default {
                               "$$mdtype": "Node",
                               "errors": [],
                               "lines": [
-                                61,
-                                62,
-                                74,
-                                75
+                                59,
+                                60,
+                                68,
+                                69
                               ],
                               "inline": false,
                               "attributes": {
@@ -5957,8 +5938,8 @@ export default {
                                   "$$mdtype": "Node",
                                   "errors": [],
                                   "lines": [
-                                    62,
-                                    63
+                                    60,
+                                    61
                                   ],
                                   "inline": false,
                                   "attributes": {},
@@ -5967,8 +5948,8 @@ export default {
                                       "$$mdtype": "Node",
                                       "errors": [],
                                       "lines": [
-                                        62,
-                                        63
+                                        60,
+                                        61
                                       ],
                                       "inline": false,
                                       "attributes": {},
@@ -5977,8 +5958,8 @@ export default {
                                           "$$mdtype": "Node",
                                           "errors": [],
                                           "lines": [
-                                            62,
-                                            63
+                                            60,
+                                            61
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -5989,8 +5970,8 @@ export default {
                                               "$$mdtype": "Node",
                                               "errors": [],
                                               "lines": [
-                                                62,
-                                                63
+                                                60,
+                                                61
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -6002,10 +5983,10 @@ export default {
                                               "slots": {},
                                               "location": {
                                                 "start": {
-                                                  "line": 62
+                                                  "line": 60
                                                 },
                                                 "end": {
-                                                  "line": 63
+                                                  "line": 61
                                                 }
                                               }
                                             }
@@ -6015,10 +5996,10 @@ export default {
                                           "slots": {},
                                           "location": {
                                             "start": {
-                                              "line": 62
+                                              "line": 60
                                             },
                                             "end": {
-                                              "line": 63
+                                              "line": 61
                                             }
                                           }
                                         },
@@ -6026,8 +6007,8 @@ export default {
                                           "$$mdtype": "Node",
                                           "errors": [],
                                           "lines": [
-                                            62,
-                                            63
+                                            60,
+                                            61
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -6039,10 +6020,10 @@ export default {
                                           "slots": {},
                                           "location": {
                                             "start": {
-                                              "line": 62
+                                              "line": 60
                                             },
                                             "end": {
-                                              "line": 63
+                                              "line": 61
                                             }
                                           }
                                         },
@@ -6050,8 +6031,8 @@ export default {
                                           "$$mdtype": "Node",
                                           "errors": [],
                                           "lines": [
-                                            62,
-                                            63
+                                            60,
+                                            61
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -6069,10 +6050,10 @@ export default {
                                           "slots": {},
                                           "location": {
                                             "start": {
-                                              "line": 62
+                                              "line": 60
                                             },
                                             "end": {
-                                              "line": 63
+                                              "line": 61
                                             }
                                           }
                                         },
@@ -6080,8 +6061,8 @@ export default {
                                           "$$mdtype": "Node",
                                           "errors": [],
                                           "lines": [
-                                            62,
-                                            63
+                                            60,
+                                            61
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -6093,10 +6074,10 @@ export default {
                                           "slots": {},
                                           "location": {
                                             "start": {
-                                              "line": 62
+                                              "line": 60
                                             },
                                             "end": {
-                                              "line": 63
+                                              "line": 61
                                             }
                                           }
                                         },
@@ -6104,8 +6085,8 @@ export default {
                                           "$$mdtype": "Node",
                                           "errors": [],
                                           "lines": [
-                                            62,
-                                            63
+                                            60,
+                                            61
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -6123,10 +6104,10 @@ export default {
                                           "slots": {},
                                           "location": {
                                             "start": {
-                                              "line": 62
+                                              "line": 60
                                             },
                                             "end": {
-                                              "line": 63
+                                              "line": 61
                                             }
                                           }
                                         },
@@ -6134,8 +6115,8 @@ export default {
                                           "$$mdtype": "Node",
                                           "errors": [],
                                           "lines": [
-                                            62,
-                                            63
+                                            60,
+                                            61
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -6147,10 +6128,10 @@ export default {
                                           "slots": {},
                                           "location": {
                                             "start": {
-                                              "line": 62
+                                              "line": 60
                                             },
                                             "end": {
-                                              "line": 63
+                                              "line": 61
                                             }
                                           }
                                         },
@@ -6158,8 +6139,8 @@ export default {
                                           "$$mdtype": "Node",
                                           "errors": [],
                                           "lines": [
-                                            62,
-                                            63
+                                            60,
+                                            61
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -6170,8 +6151,8 @@ export default {
                                               "$$mdtype": "Node",
                                               "errors": [],
                                               "lines": [
-                                                62,
-                                                63
+                                                60,
+                                                61
                                               ],
                                               "inline": true,
                                               "attributes": {
@@ -6183,10 +6164,10 @@ export default {
                                               "slots": {},
                                               "location": {
                                                 "start": {
-                                                  "line": 62
+                                                  "line": 60
                                                 },
                                                 "end": {
-                                                  "line": 63
+                                                  "line": 61
                                                 }
                                               }
                                             }
@@ -6196,10 +6177,10 @@ export default {
                                           "slots": {},
                                           "location": {
                                             "start": {
-                                              "line": 62
+                                              "line": 60
                                             },
                                             "end": {
-                                              "line": 63
+                                              "line": 61
                                             }
                                           }
                                         },
@@ -6207,8 +6188,8 @@ export default {
                                           "$$mdtype": "Node",
                                           "errors": [],
                                           "lines": [
-                                            62,
-                                            63
+                                            60,
+                                            61
                                           ],
                                           "inline": true,
                                           "attributes": {
@@ -6220,10 +6201,10 @@ export default {
                                           "slots": {},
                                           "location": {
                                             "start": {
-                                              "line": 62
+                                              "line": 60
                                             },
                                             "end": {
-                                              "line": 63
+                                              "line": 61
                                             }
                                           }
                                         }
@@ -6233,10 +6214,10 @@ export default {
                                       "slots": {},
                                       "location": {
                                         "start": {
-                                          "line": 62
+                                          "line": 60
                                         },
                                         "end": {
-                                          "line": 63
+                                          "line": 61
                                         }
                                       }
                                     }
@@ -6246,10 +6227,10 @@ export default {
                                   "slots": {},
                                   "location": {
                                     "start": {
-                                      "line": 62
+                                      "line": 60
                                     },
                                     "end": {
-                                      "line": 63
+                                      "line": 61
                                     }
                                   }
                                 },
@@ -6257,8 +6238,8 @@ export default {
                                   "$$mdtype": "Node",
                                   "errors": [],
                                   "lines": [
-                                    63,
-                                    74
+                                    61,
+                                    68
                                   ],
                                   "inline": false,
                                   "attributes": {
@@ -6270,8 +6251,8 @@ export default {
                                       "$$mdtype": "Node",
                                       "errors": [],
                                       "lines": [
-                                        63,
-                                        69
+                                        61,
+                                        65
                                       ],
                                       "inline": false,
                                       "attributes": {},
@@ -6280,8 +6261,8 @@ export default {
                                           "$$mdtype": "Node",
                                           "errors": [],
                                           "lines": [
-                                            63,
-                                            65
+                                            61,
+                                            64
                                           ],
                                           "inline": false,
                                           "attributes": {},
@@ -6290,8 +6271,8 @@ export default {
                                               "$$mdtype": "Node",
                                               "errors": [],
                                               "lines": [
-                                                63,
-                                                65
+                                                61,
+                                                64
                                               ],
                                               "inline": false,
                                               "attributes": {},
@@ -6300,8 +6281,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6312,8 +6293,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6331,10 +6312,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     },
@@ -6342,8 +6323,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6355,10 +6336,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     }
@@ -6368,10 +6349,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6379,8 +6360,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6392,10 +6373,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6403,8 +6384,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6415,8 +6396,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6434,10 +6415,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     },
@@ -6445,8 +6426,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6458,10 +6439,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     }
@@ -6471,10 +6452,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6482,8 +6463,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6495,10 +6476,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6506,8 +6487,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6518,8 +6499,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6531,10 +6512,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     }
@@ -6544,10 +6525,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6555,8 +6536,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6568,10 +6549,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6579,8 +6560,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6591,8 +6572,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6610,10 +6591,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     },
@@ -6621,8 +6602,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6634,10 +6615,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     }
@@ -6647,10 +6628,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6658,8 +6639,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6671,10 +6652,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6682,8 +6663,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6694,8 +6675,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6707,10 +6688,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     }
@@ -6720,10 +6701,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6731,8 +6712,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6744,10 +6725,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6755,8 +6736,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {},
@@ -6766,10 +6747,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6777,8 +6758,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6790,10 +6771,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6801,8 +6782,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6813,8 +6794,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6832,10 +6813,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     },
@@ -6843,8 +6824,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6856,10 +6837,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     }
@@ -6869,10 +6850,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6880,8 +6861,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6893,10 +6874,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6904,8 +6885,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6923,10 +6904,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6934,8 +6915,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6947,10 +6928,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -6958,8 +6939,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -6970,8 +6951,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        63,
-                                                        65
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -6983,10 +6964,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 63
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 65
+                                                          "line": 64
                                                         }
                                                       }
                                                     }
@@ -6996,10 +6977,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -7007,8 +6988,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7020,10 +7001,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -7031,8 +7012,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7050,10 +7031,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -7061,8 +7042,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    63,
-                                                    65
+                                                    61,
+                                                    64
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7074,81 +7055,57 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 63
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 65
+                                                      "line": 64
                                                     }
                                                   }
-                                                }
-                                              ],
-                                              "type": "inline",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 63
                                                 },
-                                                "end": {
-                                                  "line": 65
-                                                }
-                                              }
-                                            }
-                                          ],
-                                          "type": "paragraph",
-                                          "annotations": [],
-                                          "slots": {},
-                                          "location": {
-                                            "start": {
-                                              "line": 63
-                                            },
-                                            "end": {
-                                              "line": 65
-                                            }
-                                          }
-                                        },
-                                        {
-                                          "$$mdtype": "Node",
-                                          "errors": [],
-                                          "lines": [
-                                            65,
-                                            66,
-                                            67,
-                                            68
-                                          ],
-                                          "inline": false,
-                                          "attributes": {},
-                                          "children": [
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                66,
-                                                67
-                                              ],
-                                              "inline": false,
-                                              "attributes": {},
-                                              "children": [
                                                 {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    66,
-                                                    67
+                                                    61,
+                                                    64
                                                   ],
-                                                  "inline": false,
+                                                  "inline": true,
                                                   "attributes": {},
+                                                  "children": [],
+                                                  "type": "hardbreak",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "marker": "**"
+                                                  },
                                                   "children": [
                                                     {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        66,
-                                                        67
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
-                                                        "content": "To perform a "
+                                                        "content": "Note"
                                                       },
                                                       "children": [],
                                                       "type": "text",
@@ -7156,195 +7113,68 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 66
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 67
+                                                          "line": 64
                                                         }
                                                       }
+                                                    }
+                                                  ],
+                                                  "type": "strong",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
                                                     },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": ": To perform a "
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "marker": "**"
+                                                  },
+                                                  "children": [
                                                     {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        66,
-                                                        67
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "marker": "**"
-                                                      },
-                                                      "children": [
-                                                        {
-                                                          "$$mdtype": "Node",
-                                                          "errors": [],
-                                                          "lines": [
-                                                            66,
-                                                            67
-                                                          ],
-                                                          "inline": true,
-                                                          "attributes": {
-                                                            "content": {
-                                                              "$$mdtype": "Variable",
-                                                              "path": [
-                                                                "cc_product_vars",
-                                                                "CV_full"
-                                                              ]
-                                                            }
-                                                          },
-                                                          "children": [],
-                                                          "type": "text",
-                                                          "annotations": [],
-                                                          "slots": {},
-                                                          "location": {
-                                                            "start": {
-                                                              "line": 66
-                                                            },
-                                                            "end": {
-                                                              "line": 67
-                                                            }
-                                                          }
-                                                        },
-                                                        {
-                                                          "$$mdtype": "Node",
-                                                          "errors": [],
-                                                          "lines": [
-                                                            66,
-                                                            67
-                                                          ],
-                                                          "inline": true,
-                                                          "attributes": {
-                                                            "content": " scan"
-                                                          },
-                                                          "children": [],
-                                                          "type": "text",
-                                                          "annotations": [],
-                                                          "slots": {},
-                                                          "location": {
-                                                            "start": {
-                                                              "line": 66
-                                                            },
-                                                            "end": {
-                                                              "line": 67
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "type": "strong",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 66
-                                                        },
-                                                        "end": {
-                                                          "line": 67
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        66,
-                                                        67
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": ", the workspace must be "
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 66
-                                                        },
-                                                        "end": {
-                                                          "line": 67
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        66,
-                                                        67
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "marker": "**"
-                                                      },
-                                                      "children": [
-                                                        {
-                                                          "$$mdtype": "Node",
-                                                          "errors": [],
-                                                          "lines": [
-                                                            66,
-                                                            67
-                                                          ],
-                                                          "inline": true,
-                                                          "attributes": {
-                                                            "content": "onboarded"
-                                                          },
-                                                          "children": [],
-                                                          "type": "text",
-                                                          "annotations": [],
-                                                          "slots": {},
-                                                          "location": {
-                                                            "start": {
-                                                              "line": 66
-                                                            },
-                                                            "end": {
-                                                              "line": 67
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "type": "strong",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 66
-                                                        },
-                                                        "end": {
-                                                          "line": 67
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        66,
-                                                        67
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": " and "
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 66
-                                                        },
-                                                        "end": {
-                                                          "line": 67
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        66,
-                                                        67
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -7362,10 +7192,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 66
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 67
+                                                          "line": 64
                                                         }
                                                       }
                                                     },
@@ -7373,303 +7203,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        66,
-                                                        67
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": " must be "
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 66
-                                                        },
-                                                        "end": {
-                                                          "line": 67
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        66,
-                                                        67
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "marker": "**"
-                                                      },
-                                                      "children": [
-                                                        {
-                                                          "$$mdtype": "Node",
-                                                          "errors": [],
-                                                          "lines": [
-                                                            66,
-                                                            67
-                                                          ],
-                                                          "inline": true,
-                                                          "attributes": {
-                                                            "content": "connected"
-                                                          },
-                                                          "children": [],
-                                                          "type": "text",
-                                                          "annotations": [],
-                                                          "slots": {},
-                                                          "location": {
-                                                            "start": {
-                                                              "line": 66
-                                                            },
-                                                            "end": {
-                                                              "line": 67
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "type": "strong",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 66
-                                                        },
-                                                        "end": {
-                                                          "line": 67
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        66,
-                                                        67
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": " to the workspace. See "
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 66
-                                                        },
-                                                        "end": {
-                                                          "line": 67
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        66,
-                                                        67
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "href": "#discover_vs_scan"
-                                                      },
-                                                      "children": [
-                                                        {
-                                                          "$$mdtype": "Node",
-                                                          "errors": [],
-                                                          "lines": [
-                                                            66,
-                                                            67
-                                                          ],
-                                                          "inline": true,
-                                                          "attributes": {
-                                                            "content": "onboard vs connect"
-                                                          },
-                                                          "children": [],
-                                                          "type": "text",
-                                                          "annotations": [],
-                                                          "slots": {},
-                                                          "location": {
-                                                            "start": {
-                                                              "line": 66
-                                                            },
-                                                            "end": {
-                                                              "line": 67
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "type": "link",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 66
-                                                        },
-                                                        "end": {
-                                                          "line": 67
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        66,
-                                                        67
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": " above."
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 66
-                                                        },
-                                                        "end": {
-                                                          "line": 67
-                                                        }
-                                                      }
-                                                    }
-                                                  ],
-                                                  "type": "inline",
-                                                  "annotations": [],
-                                                  "slots": {},
-                                                  "location": {
-                                                    "start": {
-                                                      "line": 66
-                                                    },
-                                                    "end": {
-                                                      "line": 67
-                                                    }
-                                                  }
-                                                }
-                                              ],
-                                              "type": "paragraph",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 66
-                                                },
-                                                "end": {
-                                                  "line": 67
-                                                }
-                                              }
-                                            }
-                                          ],
-                                          "type": "tag",
-                                          "tag": "aside",
-                                          "annotations": [],
-                                          "slots": {},
-                                          "location": {
-                                            "start": {
-                                              "line": 65
-                                            },
-                                            "end": {
-                                              "line": 66
-                                            }
-                                          }
-                                        }
-                                      ],
-                                      "type": "item",
-                                      "annotations": [],
-                                      "slots": {},
-                                      "location": {
-                                        "start": {
-                                          "line": 63
-                                        },
-                                        "end": {
-                                          "line": 69
-                                        }
-                                      }
-                                    },
-                                    {
-                                      "$$mdtype": "Node",
-                                      "errors": [],
-                                      "lines": [
-                                        69,
-                                        74
-                                      ],
-                                      "inline": false,
-                                      "attributes": {},
-                                      "children": [
-                                        {
-                                          "$$mdtype": "Node",
-                                          "errors": [],
-                                          "lines": [
-                                            69,
-                                            71
-                                          ],
-                                          "inline": false,
-                                          "attributes": {},
-                                          "children": [
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                69,
-                                                71
-                                              ],
-                                              "inline": false,
-                                              "attributes": {},
-                                              "children": [
-                                                {
-                                                  "$$mdtype": "Node",
-                                                  "errors": [],
-                                                  "lines": [
-                                                    69,
-                                                    71
-                                                  ],
-                                                  "inline": true,
-                                                  "attributes": {
-                                                    "marker": "**"
-                                                  },
-                                                  "children": [
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        69,
-                                                        71
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": {
-                                                          "$$mdtype": "Variable",
-                                                          "path": [
-                                                            "cc_product_vars",
-                                                            "SCA_short"
-                                                          ]
-                                                        }
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 69
-                                                        },
-                                                        "end": {
-                                                          "line": 71
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        69,
-                                                        71
+                                                        61,
+                                                        64
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -7681,10 +7216,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 69
+                                                          "line": 61
                                                         },
                                                         "end": {
-                                                          "line": 71
+                                                          "line": 64
                                                         }
                                                       }
                                                     }
@@ -7694,10 +7229,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 61
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 64
                                                     }
                                                   }
                                                 },
@@ -7705,8 +7240,453 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": ", the workspace must be "
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "marker": "**"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "$$mdtype": "Node",
+                                                      "errors": [],
+                                                      "lines": [
+                                                        61,
+                                                        64
+                                                      ],
+                                                      "inline": true,
+                                                      "attributes": {
+                                                        "content": "onboarded"
+                                                      },
+                                                      "children": [],
+                                                      "type": "text",
+                                                      "annotations": [],
+                                                      "slots": {},
+                                                      "location": {
+                                                        "start": {
+                                                          "line": 61
+                                                        },
+                                                        "end": {
+                                                          "line": 64
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "type": "strong",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": " and "
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": {
+                                                      "$$mdtype": "Variable",
+                                                      "path": [
+                                                        "cc_product_vars",
+                                                        "CV_full"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": " must be "
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "marker": "**"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "$$mdtype": "Node",
+                                                      "errors": [],
+                                                      "lines": [
+                                                        61,
+                                                        64
+                                                      ],
+                                                      "inline": true,
+                                                      "attributes": {
+                                                        "content": "connected"
+                                                      },
+                                                      "children": [],
+                                                      "type": "text",
+                                                      "annotations": [],
+                                                      "slots": {},
+                                                      "location": {
+                                                        "start": {
+                                                          "line": 61
+                                                        },
+                                                        "end": {
+                                                          "line": 64
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "type": "strong",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": " to the workspace. See "
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "href": "#discover_vs_scan"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "$$mdtype": "Node",
+                                                      "errors": [],
+                                                      "lines": [
+                                                        61,
+                                                        64
+                                                      ],
+                                                      "inline": true,
+                                                      "attributes": {
+                                                        "content": "onboard vs connect"
+                                                      },
+                                                      "children": [],
+                                                      "type": "text",
+                                                      "annotations": [],
+                                                      "slots": {},
+                                                      "location": {
+                                                        "start": {
+                                                          "line": 61
+                                                        },
+                                                        "end": {
+                                                          "line": 64
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "type": "link",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    61,
+                                                    64
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": " above."
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 61
+                                                    },
+                                                    "end": {
+                                                      "line": 64
+                                                    }
+                                                  }
+                                                }
+                                              ],
+                                              "type": "inline",
+                                              "annotations": [],
+                                              "slots": {},
+                                              "location": {
+                                                "start": {
+                                                  "line": 61
+                                                },
+                                                "end": {
+                                                  "line": 64
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "type": "paragraph",
+                                          "annotations": [],
+                                          "slots": {},
+                                          "location": {
+                                            "start": {
+                                              "line": 61
+                                            },
+                                            "end": {
+                                              "line": 64
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "type": "item",
+                                      "annotations": [],
+                                      "slots": {},
+                                      "location": {
+                                        "start": {
+                                          "line": 61
+                                        },
+                                        "end": {
+                                          "line": 65
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "$$mdtype": "Node",
+                                      "errors": [],
+                                      "lines": [
+                                        65,
+                                        68
+                                      ],
+                                      "inline": false,
+                                      "attributes": {},
+                                      "children": [
+                                        {
+                                          "$$mdtype": "Node",
+                                          "errors": [],
+                                          "lines": [
+                                            65,
+                                            68
+                                          ],
+                                          "inline": false,
+                                          "attributes": {},
+                                          "children": [
+                                            {
+                                              "$$mdtype": "Node",
+                                              "errors": [],
+                                              "lines": [
+                                                65,
+                                                68
+                                              ],
+                                              "inline": false,
+                                              "attributes": {},
+                                              "children": [
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "marker": "**"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "$$mdtype": "Node",
+                                                      "errors": [],
+                                                      "lines": [
+                                                        65,
+                                                        68
+                                                      ],
+                                                      "inline": true,
+                                                      "attributes": {
+                                                        "content": {
+                                                          "$$mdtype": "Variable",
+                                                          "path": [
+                                                            "cc_product_vars",
+                                                            "SCA_short"
+                                                          ]
+                                                        }
+                                                      },
+                                                      "children": [],
+                                                      "type": "text",
+                                                      "annotations": [],
+                                                      "slots": {},
+                                                      "location": {
+                                                        "start": {
+                                                          "line": 65
+                                                        },
+                                                        "end": {
+                                                          "line": 68
+                                                        }
+                                                      }
+                                                    },
+                                                    {
+                                                      "$$mdtype": "Node",
+                                                      "errors": [],
+                                                      "lines": [
+                                                        65,
+                                                        68
+                                                      ],
+                                                      "inline": true,
+                                                      "attributes": {
+                                                        "content": " scan"
+                                                      },
+                                                      "children": [],
+                                                      "type": "text",
+                                                      "annotations": [],
+                                                      "slots": {},
+                                                      "location": {
+                                                        "start": {
+                                                          "line": 65
+                                                        },
+                                                        "end": {
+                                                          "line": 68
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "type": "strong",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7718,10 +7698,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -7729,8 +7709,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7748,10 +7728,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -7759,8 +7739,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7772,10 +7752,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -7783,8 +7763,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7802,10 +7782,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -7813,8 +7793,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7826,10 +7806,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -7837,8 +7817,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7849,8 +7829,8 @@ export default {
                                                       "$$mdtype": "Node",
                                                       "errors": [],
                                                       "lines": [
-                                                        69,
-                                                        71
+                                                        65,
+                                                        68
                                                       ],
                                                       "inline": true,
                                                       "attributes": {
@@ -7862,10 +7842,10 @@ export default {
                                                       "slots": {},
                                                       "location": {
                                                         "start": {
-                                                          "line": 69
+                                                          "line": 65
                                                         },
                                                         "end": {
-                                                          "line": 71
+                                                          "line": 68
                                                         }
                                                       }
                                                     }
@@ -7875,10 +7855,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -7886,8 +7866,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7899,10 +7879,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -7910,8 +7890,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7929,10 +7909,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -7940,8 +7920,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7953,10 +7933,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -7964,8 +7944,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {},
@@ -7975,10 +7955,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -7986,8 +7966,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -7999,10 +7979,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -8010,8 +7990,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -8029,10 +8009,10 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
                                                     }
                                                   }
                                                 },
@@ -8040,8 +8020,8 @@ export default {
                                                   "$$mdtype": "Node",
                                                   "errors": [],
                                                   "lines": [
-                                                    69,
-                                                    71
+                                                    65,
+                                                    68
                                                   ],
                                                   "inline": true,
                                                   "attributes": {
@@ -8053,10 +8033,340 @@ export default {
                                                   "slots": {},
                                                   "location": {
                                                     "start": {
-                                                      "line": 69
+                                                      "line": 65
                                                     },
                                                     "end": {
-                                                      "line": 71
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {},
+                                                  "children": [],
+                                                  "type": "hardbreak",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "marker": "**"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "$$mdtype": "Node",
+                                                      "errors": [],
+                                                      "lines": [
+                                                        65,
+                                                        68
+                                                      ],
+                                                      "inline": true,
+                                                      "attributes": {
+                                                        "content": "Note"
+                                                      },
+                                                      "children": [],
+                                                      "type": "text",
+                                                      "annotations": [],
+                                                      "slots": {},
+                                                      "location": {
+                                                        "start": {
+                                                          "line": 65
+                                                        },
+                                                        "end": {
+                                                          "line": 68
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "type": "strong",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": ": For "
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": {
+                                                      "$$mdtype": "Variable",
+                                                      "path": [
+                                                        "cc_product_vars",
+                                                        "SCA_short"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": " to scan the workspace, the workspace must be "
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "marker": "**"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "$$mdtype": "Node",
+                                                      "errors": [],
+                                                      "lines": [
+                                                        65,
+                                                        68
+                                                      ],
+                                                      "inline": true,
+                                                      "attributes": {
+                                                        "content": "onboarded and discovered"
+                                                      },
+                                                      "children": [],
+                                                      "type": "text",
+                                                      "annotations": [],
+                                                      "slots": {},
+                                                      "location": {
+                                                        "start": {
+                                                          "line": 65
+                                                        },
+                                                        "end": {
+                                                          "line": 68
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "type": "strong",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": ", but "
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": {
+                                                      "$$mdtype": "Variable",
+                                                      "path": [
+                                                        "cc_product_vars",
+                                                        "CV_full"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": "  doesn't have to be connected to the workspace. This is true for all "
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": {
+                                                      "$$mdtype": "Variable",
+                                                      "path": [
+                                                        "cc_product_vars",
+                                                        "SCA_short"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "$$mdtype": "Node",
+                                                  "errors": [],
+                                                  "lines": [
+                                                    65,
+                                                    68
+                                                  ],
+                                                  "inline": true,
+                                                  "attributes": {
+                                                    "content": " functionality."
+                                                  },
+                                                  "children": [],
+                                                  "type": "text",
+                                                  "annotations": [],
+                                                  "slots": {},
+                                                  "location": {
+                                                    "start": {
+                                                      "line": 65
+                                                    },
+                                                    "end": {
+                                                      "line": 68
                                                     }
                                                   }
                                                 }
@@ -8066,10 +8376,10 @@ export default {
                                               "slots": {},
                                               "location": {
                                                 "start": {
-                                                  "line": 69
+                                                  "line": 65
                                                 },
                                                 "end": {
-                                                  "line": 71
+                                                  "line": 68
                                                 }
                                               }
                                             }
@@ -8079,341 +8389,10 @@ export default {
                                           "slots": {},
                                           "location": {
                                             "start": {
-                                              "line": 69
+                                              "line": 65
                                             },
                                             "end": {
-                                              "line": 71
-                                            }
-                                          }
-                                        },
-                                        {
-                                          "$$mdtype": "Node",
-                                          "errors": [],
-                                          "lines": [
-                                            71,
-                                            72,
-                                            73,
-                                            74
-                                          ],
-                                          "inline": false,
-                                          "attributes": {},
-                                          "children": [
-                                            {
-                                              "$$mdtype": "Node",
-                                              "errors": [],
-                                              "lines": [
-                                                72,
-                                                73
-                                              ],
-                                              "inline": false,
-                                              "attributes": {},
-                                              "children": [
-                                                {
-                                                  "$$mdtype": "Node",
-                                                  "errors": [],
-                                                  "lines": [
-                                                    72,
-                                                    73
-                                                  ],
-                                                  "inline": false,
-                                                  "attributes": {},
-                                                  "children": [
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        72,
-                                                        73
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": "For "
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 72
-                                                        },
-                                                        "end": {
-                                                          "line": 73
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        72,
-                                                        73
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": {
-                                                          "$$mdtype": "Variable",
-                                                          "path": [
-                                                            "cc_product_vars",
-                                                            "SCA_short"
-                                                          ]
-                                                        }
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 72
-                                                        },
-                                                        "end": {
-                                                          "line": 73
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        72,
-                                                        73
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": " to scan the workspace, the workspace must be "
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 72
-                                                        },
-                                                        "end": {
-                                                          "line": 73
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        72,
-                                                        73
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "marker": "**"
-                                                      },
-                                                      "children": [
-                                                        {
-                                                          "$$mdtype": "Node",
-                                                          "errors": [],
-                                                          "lines": [
-                                                            72,
-                                                            73
-                                                          ],
-                                                          "inline": true,
-                                                          "attributes": {
-                                                            "content": "onboarded and discovered"
-                                                          },
-                                                          "children": [],
-                                                          "type": "text",
-                                                          "annotations": [],
-                                                          "slots": {},
-                                                          "location": {
-                                                            "start": {
-                                                              "line": 72
-                                                            },
-                                                            "end": {
-                                                              "line": 73
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "type": "strong",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 72
-                                                        },
-                                                        "end": {
-                                                          "line": 73
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        72,
-                                                        73
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": ", but "
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 72
-                                                        },
-                                                        "end": {
-                                                          "line": 73
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        72,
-                                                        73
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": {
-                                                          "$$mdtype": "Variable",
-                                                          "path": [
-                                                            "cc_product_vars",
-                                                            "CV_full"
-                                                          ]
-                                                        }
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 72
-                                                        },
-                                                        "end": {
-                                                          "line": 73
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        72,
-                                                        73
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": "  doesn't have to be connected to the workspace. This is true for all "
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 72
-                                                        },
-                                                        "end": {
-                                                          "line": 73
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        72,
-                                                        73
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": {
-                                                          "$$mdtype": "Variable",
-                                                          "path": [
-                                                            "cc_product_vars",
-                                                            "SCA_short"
-                                                          ]
-                                                        }
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 72
-                                                        },
-                                                        "end": {
-                                                          "line": 73
-                                                        }
-                                                      }
-                                                    },
-                                                    {
-                                                      "$$mdtype": "Node",
-                                                      "errors": [],
-                                                      "lines": [
-                                                        72,
-                                                        73
-                                                      ],
-                                                      "inline": true,
-                                                      "attributes": {
-                                                        "content": " functionality."
-                                                      },
-                                                      "children": [],
-                                                      "type": "text",
-                                                      "annotations": [],
-                                                      "slots": {},
-                                                      "location": {
-                                                        "start": {
-                                                          "line": 72
-                                                        },
-                                                        "end": {
-                                                          "line": 73
-                                                        }
-                                                      }
-                                                    }
-                                                  ],
-                                                  "type": "inline",
-                                                  "annotations": [],
-                                                  "slots": {},
-                                                  "location": {
-                                                    "start": {
-                                                      "line": 72
-                                                    },
-                                                    "end": {
-                                                      "line": 73
-                                                    }
-                                                  }
-                                                }
-                                              ],
-                                              "type": "paragraph",
-                                              "annotations": [],
-                                              "slots": {},
-                                              "location": {
-                                                "start": {
-                                                  "line": 72
-                                                },
-                                                "end": {
-                                                  "line": 73
-                                                }
-                                              }
-                                            }
-                                          ],
-                                          "type": "tag",
-                                          "tag": "aside",
-                                          "annotations": [],
-                                          "slots": {},
-                                          "location": {
-                                            "start": {
-                                              "line": 71
-                                            },
-                                            "end": {
-                                              "line": 72
+                                              "line": 68
                                             }
                                           }
                                         }
@@ -8423,10 +8402,10 @@ export default {
                                       "slots": {},
                                       "location": {
                                         "start": {
-                                          "line": 69
+                                          "line": 65
                                         },
                                         "end": {
-                                          "line": 74
+                                          "line": 68
                                         }
                                       }
                                     }
@@ -8436,10 +8415,10 @@ export default {
                                   "slots": {},
                                   "location": {
                                     "start": {
-                                      "line": 63
+                                      "line": 61
                                     },
                                     "end": {
-                                      "line": 74
+                                      "line": 68
                                     }
                                   }
                                 }
@@ -8468,10 +8447,10 @@ export default {
                               "slots": {},
                               "location": {
                                 "start": {
-                                  "line": 61
+                                  "line": 59
                                 },
                                 "end": {
-                                  "line": 62
+                                  "line": 60
                                 }
                               }
                             }
@@ -8484,7 +8463,7 @@ export default {
                               "line": 48
                             },
                             "end": {
-                              "line": 75
+                              "line": 69
                             }
                           }
                         }
@@ -8497,7 +8476,7 @@ export default {
                           "line": 47
                         },
                         "end": {
-                          "line": 75
+                          "line": 69
                         }
                       }
                     }
@@ -8566,15 +8545,6 @@ export default {
             "caution",
             "tip"
           ]
-        }
-      }
-    },
-    "id": {
-      "render": "html",
-      "selfClosing": true,
-      "attributes": {
-        "id": {
-          "required": true
         }
       }
     },

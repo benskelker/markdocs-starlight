@@ -53,25 +53,19 @@ connecting to your cloud environments:
 
     {% if equals($context, "cv") %}
     **{% $cc_product_vars.CV_full %} scan**:  Whereas **{% $cc_product_vars.CV_full %} discovery** scans the workspace to **discover the structure** of the workspace, the **{% $cc_product_vars.CV_full %} scan** scans the workspace for **informational updates for the purpose of identity and entitlement analysis**.  
-    You have to trigger **{% $cc_product_vars.CV_full %} scans** manually from the relevant workspace page in {% $cc_product_vars.CV_full %} (**Settings > Platform management**). For more information, see Connect and manage workspaces.
-        {% aside %}
-        To perform a **{% $cc_product_vars.CV_full %} scan**, the workspace must be **onboarded** and {% $cc_product_vars.CV_full %} must be **connected** to the workspace. See [onboard vs connect](#discover_vs_scan) above.
-        {% /aside %}
+    You have to trigger **{% $cc_product_vars.CV_full %} scans** manually from the relevant workspace page in {% $cc_product_vars.CV_full %} (**Settings > Platform management**). For more information, see Connect and manage workspaces.  
+        **Note**: To perform a **{% $cc_product_vars.CV_full %} scan**, the workspace must be **onboarded** and {% $cc_product_vars.CV_full %} must be **connected** to the workspace. See [onboard vs connect](#discover_vs_scan) above.
     {% /if %}
 
     {% if equals($context, "sca") %}
      **Scan** - Both {% $cc_product_vars.CV_full %}  and {% $cc_product_vars.SCA_full %} **scan** discovered workspaces, but each for a different purpose.
     * **{% $cc_product_vars.CV_full %} scan**: Whereas **{% $cc_product_vars.CV_full %} discovery** scans the workspace to **discover the structure** of the workspace, the **{% $cc_product_vars.CV_full %} scan** scans the workspace for **informational updates for the purpose of identity and entitlement analysis**.  
-    You have to trigger **{% $cc_product_vars.CV_full %} scans** manually from the relevant workspace page in {% $cc_product_vars.CV_full %} (**Settings > Platform management**). For more information, see the {% $cc_product_vars.CV_full %} docs.
-        {% aside %}
-        To perform a **{% $cc_product_vars.CV_full %} scan**, the workspace must be **onboarded** and {% $cc_product_vars.CV_full %} must be **connected** to the workspace. See [onboard vs connect](#discover_vs_scan) above.
-        {% /aside %}
+    You have to trigger **{% $cc_product_vars.CV_full %} scans** manually from the relevant workspace page in {% $cc_product_vars.CV_full %} (**Settings > Platform management**). For more information, see the {% $cc_product_vars.CV_full %} docs.  
+        **Note**: To perform a **{% $cc_product_vars.CV_full %} scan**, the workspace must be **onboarded** and {% $cc_product_vars.CV_full %} must be **connected** to the workspace. See [onboard vs connect](#discover_vs_scan) above.
 
     * **{% $cc_product_vars.SCA_short %} scan**: {% $cc_product_vars.SCA_short %} scans discovered workspace for roles, permission sets, and resources. The initial {% $cc_product_vars.SCA_short %} **scan** is performed automatically immediately upon initial discovery of the workspace. After that, {% $cc_product_vars.SCA_short %} performs scheduled scans twice a day (every 12 hours) to detect any updates to roles and resources.  
-    In addition, when creating an access policy, you can trigger a scan manually from the {% $cc_product_vars.SCA_short %} policy creation wizard or by running the Scan API.
-        {% aside %}
-        For {% $cc_product_vars.SCA_short %} to scan the workspace, the workspace must be **onboarded and discovered**, but {% $cc_product_vars.CV_full %}  doesn't have to be connected to the workspace. This is true for all {% $cc_product_vars.SCA_short %} functionality.
-        {% /aside %}
+    In addition, when creating an access policy, you can trigger a scan manually from the {% $cc_product_vars.SCA_short %} policy creation wizard or by running the Scan API.  
+        **Note**: For {% $cc_product_vars.SCA_short %} to scan the workspace, the workspace must be **onboarded and discovered**, but {% $cc_product_vars.CV_full %}  doesn't have to be connected to the workspace. This is true for all {% $cc_product_vars.SCA_short %} functionality.
     {% /if %}
 {% /table %}
 
