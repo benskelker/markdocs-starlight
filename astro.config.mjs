@@ -13,13 +13,25 @@ export default defineConfig({
   integrations: [
     markdoc(),
     starlight({
-        plugins: [starlightNextjsTheme(), starlightUtils({
-          multiSidebar: {
-            switcherStyle: "hidden",
+      plugins: [
+        starlightOpenAPI([
+          {
+            base: 'apis/workspace-ops',
+            schema: './src/content/docs/apis/workspace-ops.yaml'
           },
-        })],
-        title: 'CyberArk',
-        sidebar: toc
+        ]),
+        starlightNextjsTheme(),
+        starlightUtils({
+          multiSidebar: {
+            switcherStyle: "hidden"
+          },
+        }),
+      ],
+      title: 'CyberArk',
+      sidebar: [
+        ...openAPISidebarGroups,
+        ...toc
+      ]
     }),
     {
       name: 'file-watcher-reloader',
@@ -29,17 +41,11 @@ export default defineConfig({
         },
       },
     },
-    starlightOpenAPI([
-      {
-        base: 'api',
-        schema: './src/content/docs/open_apis',
-      },
-    ]),
-	],
+  ],
   vite: {
     resolve: {
       alias: {
-        '@': '/src',  
+        '@': '/src',
       },
     },
   },

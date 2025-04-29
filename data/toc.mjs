@@ -23,5 +23,19 @@ export const toc = [
         ]
       }
     ]
-  }
+  },
+  {
+    label: 'APIs',
+    items: [
+      {
+        label: 'APIs',
+        items: [
+          {
+            label: 'Workspace Ops API',
+            link: 'apis/workspace-ops'
+          },
+        ],
+      }
+    ]
+  },
 ]
