@@ -1,8 +1,10 @@
-openapi: 3.0.1
+﻿openapi: 3.0.1
 info:
-  version: 22.7.201-a104ccbac3
+  version: "1.0"
   title: Authentication and Authorization
-  termsOfService: 'https://www.idaptive.com/eula/'
+  termsOfService: 'https://www.idaptive.com/eula/' 
+  description: |
+    Let's just `test` how this look.
 servers:
   - url: 'https://{tenant_url}/'
     variables:
