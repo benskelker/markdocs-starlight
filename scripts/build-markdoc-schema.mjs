@@ -1,22 +1,26 @@
-#!/usr/bin/env node
-/**
- * Build a *flat* Markdoc schema for the VS Code language-server.
- * ────────────────────────────────────────────────────────────
- * • Flattens all objects under `extends` into the root level.
- * • Removes the `extends` property.
- * • Emits `compiledSchema/markdoc.schema.mjs` as a pure ESM
- *   export that the language-server can load with `type: "esm"`.
- */
 
 import { mkdir, writeFile }   from 'node:fs/promises';
 import { dirname, resolve }   from 'node:path';
-import { fileURLToPath }      from 'node:url';
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+
 
 // Resolve paths --------------------------------------------------------------
 const __dirname   = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(__dirname, '..');
 const configPath  = resolve(projectRoot, 'markdoc.config.mjs');
 const outFile     = resolve(projectRoot, 'compiledSchema/markdoc.schema.mjs');
+
+// Use ASTRO_MODE to pick the right .env file
+const envFile = process.env.npm_config_mode
+  ? `.env.${process.env.npm_config_mode}`
+  : '.env.dev';
+
+dotenv.config({ path: path.resolve(__dirname, '..', envFile) });
+
+console.log('Loaded variant from PUBLIC_DOCS_VARIANT in build script:', process.env.PUBLIC_DOCS_VARIANT);
 
 // Load your full config (Starlight + everything) -----------------------------
 const { default: raw } = await import(/* webpackIgnore: true */ configPath);
@@ -54,5 +58,5 @@ const body   = `export default ${JSON.stringify(schema, null, 2)};\n`;
 
 await writeFile(outFile, banner + body);
 
-console.log(`✅  Flat Markdoc schema written to ${outFile}`);
+console.log(`Flat Markdoc schema written to ${outFile}`);
 

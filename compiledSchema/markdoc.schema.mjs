@@ -125,7 +125,8 @@ export default {
       "GCP": "Google Cloud Platform",
       "AWS_IAM": "AWS IAM",
       "AWS-console": "AWS Management Console"
-    }
+    },
+    "variant": "ent"
   },
   "partials": {
     "_sca_cv_overview.mdoc": {
