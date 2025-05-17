@@ -4,7 +4,8 @@ import starlight from '@astrojs/starlight';
 import markdoc from '@astrojs/markdoc';
 import starlightNextjsTheme from 'starlight-nextjs-theme';
 import starlightUtils from "@lorenzo_lewis/starlight-utils";
-import { generateToc } from './data/toc.mjs';
+import { tocEnt } from './data/toc-ent.mjs';
+import { tocOss } from './data/toc-oss.mjs';
 import starlightOpenAPI, { openAPISidebarGroups } from 'starlight-openapi'
 import path from 'node:path';
 import dotenv from 'dotenv';
@@ -44,7 +45,8 @@ export default defineConfig({
       title: 'CyberArk',
       sidebar: [
         ...openAPISidebarGroups,
-        ...generateToc(variant)
+        ...(variant === 'ent' ? tocEnt : []),
+        ...(variant === 'oss' ? tocOss : []),
       ]
     }),
     {

@@ -1,0 +1,89 @@
+---
+title: Terminology
+---
+
+{% if equals($variant, "ent") %}
+This topic describes cloud platform terms used in {% $cc_product_vars.SCA_full %} and {% $cc_product_vars.CV_full %}.
+{% /if %}
+
+{% if equals($variant, "oss") %}
+This topic describes cloud platform terms used in {% $cc_product_vars.CV_full %}.
+{% /if %}
+
+{% partial file="_sca_cv_overview.mdoc" /%}
+
+## CyberArk cloud platform terminology
+
+This topics explains CyberArk cloud platform terminology related to
+connecting to your cloud environments:
+
+{% table %}
+- Term {% width="16%" %}
+- Description
+---
+- **Platform**
+- Any cloud provider. CyberArk cloud security supports the following cloud providers:
+  * AWS
+  * Microsoft Azure
+  * Google Cloud
+---
+- **Workspace**
+- A workspace is a generic term to represent a subdivision of a cloud platform. A workspace is where cloud entities operate on cloud resources using granted       permissions.\
+  {% $cc_product_vars.CV_full %} supports the following workspaces:\
+  **AWS**:
+
+  * Standalone AWS account
+  * AWS organization (multiple AWS accounts without IAM Identity Center)
+  * AWS organization (multiple AWS accounts with IAM Identity Center)
+
+  **Microsoft Azure**:
+
+  * {% $cv_shared_variables.entra_id_long %} directory
+  * Management group
+  * Subscription
+
+  **Google Cloud**:
+
+  * Google Cloud organization
+  * Google Cloud project
+---
+- **CyberArk tenant**
+- Your organization's isolated instance on CyberArk's Identity Security Platform.
+---
+- **onboard vs connect** {% #onboard_vs_connect %}
+- To secure your cloud environment, you need to first **onboard** the cloud environment to CyberArk. During the onboarding, {% $cc_product_vars.CV_full %} searches across the workspace to **discover the structure** of the workspace. See [discover vs scan](#discover_vs_scan) below.\
+  {% $cc_product_vars.CV_full %} also offers identity and entitlement analysis capabilities. To use these capabilities, {% $cc_product_vars.CV_full %} must be **connected** to the onboarded workspace. {% $cc_product_vars.CV_full %}  can then scan the discovered workspace for the purpose of this analysis.
+---
+- **discover vs scan** {% #discover_vs_scan %}
+- **Discovery** - When {% $cc_product_vars.CV_full %} onboards a workspace, it **performs a discovery**, meaning that it scans across the workspace **to discover the structure of the workspace**.
+  After the initial discovery, **{% $cc_product_vars.CV_full %}  performs a scheduled discovery across the workspace every 24 hours** to detect any changes to its structure.\
+  For example, say you onboard a full {% $cv_shared_variables.entra_id_long %} directory. During the onboarding, {% $cc_product_vars.CV_full %}  performs an initial discovery of the whole directory structure. It will also discover the management groups, and subscriptions within the directory. The entire directory is reflected in {% $cc_product_vars.CV_full %}  on the **Settings > Platform management > Azure** page.\
+  The scheduled 24-hourly discovery picks up changes to the directory structure such as new subscriptions, removed management groups, and so on, after which these updates are reflected in the directory structure in {% $cc_product_vars.CV_full %}.
+
+  {% if equals($variant, "oss") %}
+  **{% $cc_product_vars.CV_full %} scan**:  Whereas **{% $cc_product_vars.CV_full %} discovery** scans the workspace to **discover the structure** of the workspace, the **{% $cc_product_vars.CV_full %} scan** scans the workspace for **informational updates for the purpose of identity and entitlement analysis**.\
+  You have to trigger **{% $cc_product_vars.CV_full %} scans** manually from the relevant workspace page in {% $cc_product_vars.CV_full %} (**Settings > Platform management**). For more information, see Connect and manage workspaces.
+
+  {% aside %}
+  To perform a **{% $cc_product_vars.CV_full %} scan**, the workspace must be **onboarded** and {% $cc_product_vars.CV_full %} must be **connected** to the workspace. See [onboard vs connect](#onboard_vs_connect) above.
+  {% /aside %}
+  {% /if %}
+
+  {% if equals($variant, "ent") %}
+  **Scan** - Both {% $cc_product_vars.CV_full %}  and {% $cc_product_vars.SCA_full %} **scan** discovered workspaces, but each for a different purpose.
+
+  * **{% $cc_product_vars.CV_full %} scan**: Whereas **{% $cc_product_vars.CV_full %} discovery** scans the workspace to **discover the structure** of the workspace, the **{% $cc_product_vars.CV_full %} scan** scans the workspace for **informational updates for the purpose of identity and entitlement analysis**.\
+    You have to trigger **{% $cc_product_vars.CV_full %} scans** manually from the relevant workspace page in {% $cc_product_vars.CV_full %} (**Settings > Platform management**). For more information, see the {% $cc_product_vars.CV_full %} docs.
+
+    {% aside %}
+    To perform a **{% $cc_product_vars.CV_full %} scan**, the workspace must be **onboarded** and {% $cc_product_vars.CV_full %} must be **connected** to the workspace. See [onboard vs connect](#onboard_vs_connect) above.
+    {% /aside %}
+
+  * **{% $cc_product_vars.SCA_short %} scan**: {% $cc_product_vars.SCA_short %} scans discovered workspace for roles, permission sets, and resources. The initial {% $cc_product_vars.SCA_short %} **scan** is performed automatically immediately upon initial discovery of the workspace. After that, {% $cc_product_vars.SCA_short %} performs scheduled scans twice a day (every 12 hours) to detect any updates to roles and resources.
+    In addition, when creating an access policy, you can trigger a scan manually from the {% $cc_product_vars.SCA_short %} policy creation wizard or by running the Scan API.
+
+    {% aside %}
+    For {% $cc_product_vars.SCA_short %} to scan the workspace, the workspace must be **onboarded and discovered**, but {% $cc_product_vars.CV_full %}  doesn't have to be connected to the workspace. This is true for all {% $cc_product_vars.SCA_short %} functionality.
+    {% /aside %}
+  {% /if %}
+{% /table %}
