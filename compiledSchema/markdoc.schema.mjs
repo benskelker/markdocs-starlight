@@ -4,7 +4,8 @@ export default {
     "sidebarGroup": "",
     "sidebarGroups": [],
     "frontmatter": {
-      "title": ""
+      "title": "",
+      "description": ""
     },
     "company": "CyberArk",
     "football-team": "Liverpool",
@@ -126,7 +127,7 @@ export default {
       "AWS_IAM": "AWS IAM",
       "AWS-console": "AWS Management Console"
     },
-    "variant": "oss"
+    "variant": "ent"
   },
   "partials": {
     "_sca_cv_overview.mdoc": {

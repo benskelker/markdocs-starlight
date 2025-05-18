@@ -1,5 +1,9 @@
 ---
 title: Terminology
+custom:
+  name1: ben
+  name2: jon
+  name3: nice
 ---
 
 {% if equals($variant, "ent") %}
@@ -11,6 +15,10 @@ This topic describes cloud platform terms used in {% $cc_product_vars.CV_full %}
 {% /if %}
 
 {% partial file="_sca_cv_overview.mdoc" /%}
+
+
+Desc: {% $frontmatter.custom.name3 %}  
+
 
 ## CyberArk cloud platform terminology
 
