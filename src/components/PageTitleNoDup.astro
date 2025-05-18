@@ -1,0 +1,6 @@
+---
+const { entry, headings } = Astro.locals.starlightRoute;
+const hasH1 = headings?.some((h) => h.depth === 1);
+if (hasH1) return;
+---
+<h1 id="_top">{entry.data.title}</h1>

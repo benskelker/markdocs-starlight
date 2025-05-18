@@ -28,6 +28,10 @@ export default defineConfig({
   integrations: [
     markdoc(),
     starlight({
+      components: {
+        PageTitle: './src/components/PageTitleNoDup.astro',
+      },
+      routeMiddleware: './src/routeData.ts',
       plugins: [
         starlightOpenAPI([
           {
