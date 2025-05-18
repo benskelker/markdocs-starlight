@@ -127,7 +127,7 @@ export default {
       "AWS_IAM": "AWS IAM",
       "AWS-console": "AWS Management Console"
     },
-    "variant": "ent"
+    "variant": "oss"
   },
   "partials": {
     "_sca_cv_overview.mdoc": {

@@ -26,7 +26,7 @@ console.log('astro.config.mjs – resolved variant:', variant);
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    markdoc(),
+    markdoc({ allowHTML: true }),
     starlight({
       components: {
         PageTitle: './src/components/PageTitleNoDup.astro',
