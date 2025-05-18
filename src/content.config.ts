@@ -5,7 +5,7 @@ import { docsSchema } from '@astrojs/starlight/schema';
 export const collections = {
 	docs: defineCollection({ loader: docsLoader(), schema: docsSchema({
 		extend : z.object({
-			custom: z.record(z.string()).optional(),
+			custom: z.union([z.record(z.string()), z.string()]).optional(),
 		})
 	}) }),
 };

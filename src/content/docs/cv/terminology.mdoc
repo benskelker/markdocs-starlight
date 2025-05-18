@@ -1,9 +1,8 @@
 ---
 title: Terminology
 custom:
-  name1: ben
-  name2: jon
-  name3: nice
+  name: Liverpool
+  position: first
 ---
 
 
@@ -20,8 +19,68 @@ This topic describes cloud platform terms used in {% $cc_product_vars.CV_full %}
 
 {% partial file="_sca_cv_overview.mdoc" /%}
 
+## Frontmatter fields
+You create frontmatter at the top of the file, before any of the file's text content. Its structure is a gated YAML object:
 
-Desc: {% $frontmatter.custom.name3 %}  
+```yml title="Frontmatter"
+<!-- Frontmatter -->
+---
+title: Terminology
+custom:
+  name: custom
+  desc: sustom object for creating local vars
+  type: string or object; when object all children must be strings
+---
+
+<!-- Your Markdown text goes here -->
+# Page title
+
+Some text...
+```
+
+Fields in the frontmatter can be used in the file as Markdoc variables, like this:  
+`{% $frontmatter.<variable-name> %}`.
+
+The frontmatter accepts these fields:
+* `title`: the page's title, used as for browser's tab name and metadata
+  {% aside type="tip" %}
+  If you do not specify a first-level header (`#`) in the file, the `title` field is used to populate its value.
+  {% /aside %}
+* `description`: a high-level page description, also used for metadata
+* `custom`: used to create custom Markdoc variables that can be used in the file:
+  * accepts a string or object
+  * the object's fields must be strings
+
+### Example custom field
+
+To create a a `custom` object, add this as your file's frontmatter:
+
+```yml
+---
+custom:
+  name: Liverpool
+  position: first
+---
+```
+
+You can then used the variable's values anywhere in the file. For example:  
+`{% $frontmatter.custom.name %} came {% $frontmatter.custom.position %} in the league.`
+
+Renders:
+
+{% $frontmatter.custom.name %} came {% $frontmatter.custom.position %} in the league.
+
+You can also use the variable to add conditional text to the file:
+
+```mardoc
+{% if equals($frontmatter.custom.position, "first") %}
+This team came first: {% $frontmatter.custom.name %}
+{% /if %}
+```
+Which renders:  
+{% if equals($frontmatter.custom.position, "first") %}
+This team came first: {% $frontmatter.custom.name %}
+{% /if %}
 
 
 ## CyberArk cloud platform terminology
