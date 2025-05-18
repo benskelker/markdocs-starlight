@@ -38,6 +38,10 @@ export default defineMarkdocConfig({
         title: { type: String, required: true },
         icon:  { type: String }, 
       },
+    },
+    sendfeedback: {
+      render: component('./src/components/SendFeedback.astro'),
+      selfClosing: true
     }
   },
 });

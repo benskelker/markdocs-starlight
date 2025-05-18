@@ -72,7 +72,7 @@ Renders:
 
 You can also use the variable to add conditional text to the file:
 
-```mardoc
+```
 {% if equals($frontmatter.custom.position, "first") %}
 This team came first: {% $frontmatter.custom.name %}
 {% /if %}
@@ -81,6 +81,8 @@ Which renders:
 {% if equals($frontmatter.custom.position, "first") %}
 This team came first: {% $frontmatter.custom.name %}
 {% /if %}
+
+{% sendfeedback /%}
 
 
 ## CyberArk cloud platform terminology

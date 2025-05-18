@@ -1,0 +1,31 @@
+---
+// src/components/SendFeedback.astro
+---
+
+<div class="send-feedback">
+  <a id="send-feedback-link" href="#" class="text-sm text-blue-600 hover:underline block mt-4">
+    Contact the docs team
+  </a>
+
+  <script is:inline>
+    const link = document.getElementById("send-feedback-link");
+
+    if (link) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const pageTitle = document.querySelector("h1")?.textContent || "Untitled Page";
+        const pageUrl = window.location.href;
+        const subject = "Feedback on Starlight Docs";
+        const body =
+          `Hi,\n\nI have feedback about the following page:\n\n` +
+          `Title: ${pageTitle}\n` +
+          `URL: ${pageUrl}\n\n` +
+          `[Your feedback here]`;
+
+        const mailto = `mailto:docs@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+      });
+    }
+  </script>
+</div>

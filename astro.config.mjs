@@ -30,6 +30,7 @@ export default defineConfig({
     starlight({
       components: {
         PageTitle: './src/components/PageTitleNoDup.astro',
+        PageSidebar: './src/components/CustomOnThisPage.astro',
       },
       routeMiddleware: './src/routeData.ts',
       plugins: [

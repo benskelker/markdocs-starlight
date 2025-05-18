@@ -127,7 +127,7 @@ export default {
       "AWS_IAM": "AWS IAM",
       "AWS-console": "AWS Management Console"
     },
-    "variant": "oss"
+    "variant": "ent"
   },
   "partials": {
     "_sca_cv_overview.mdoc": {
@@ -414,6 +414,13 @@ export default {
         },
         "icon": {}
       }
+    },
+    "sendfeedback": {
+      "render": {
+        "type": "local",
+        "path": "./src/components/SendFeedback.astro"
+      },
+      "selfClosing": true
     },
     "aside": {
       "render": {
