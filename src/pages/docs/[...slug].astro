@@ -2,15 +2,22 @@
 import { getCollection, getEntry, render } from "astro:content";
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
 
+
 export async function getStaticPaths() {
   const docs = await getCollection("docs");
-  return docs.map((doc) => ({
-    params: { slug: doc.id.split("/") },
-  }));
+
+  return docs.map((doc) => {
+    const slug = doc.id === "index" 
+      ? undefined
+      : doc.id;
+
+    return { params: { slug } };
+  });
 }
 
-const id = Astro.params.slug.join("/");
-const entry = await getEntry("docs", id);
+const slugParam = Astro.params.slug;
+const id        = slugParam ?? "index";
+const entry     = await getEntry("docs", id);
 if (!entry) throw new Error(`No docs entry found for ${id}`);
 
 const { Content, headings } = await render(entry);
