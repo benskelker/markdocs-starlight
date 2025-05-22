@@ -8,6 +8,88 @@ custom:
 
 # {% if equals($variant, "ent") %}Secure Cloud Access and {% /if %}Cloud Visibility terminology
 
+{% steps %}
+
+1. #### Import the component into your MDX file
+
+    The first thing you need to do is import your stuff:
+
+    1. Add the import:
+
+        {% tabs syncKey="imports" %}
+        {% tabitem label="JS" %}
+        ```js
+        import { Steps } from '@astrojs/starlight/components';
+        ```
+        {% /tabitem %}
+        {% tabitem label="Python" %}
+        ```python
+        import datetime, hashlib, hmac, json, urllib.parse as up
+        ```
+        {% /tabitem %}
+        {% /tabs %}
+
+
+    1. After that, continue with the next step.
+
+1. #### Wrap `<Steps>` around your ordered list items.
+
+    This how you display instructions inside a step:
+
+    * Do first thing
+    * Do second thing
+
+    Then use the code:
+        {% tabs syncKey="imports" %}
+        {% tabitem label="JS" %}
+        ```js
+        import { defineRouteMiddleware } from '@astrojs/starlight/route-data';
+        
+        export const onRequest = defineRouteMiddleware(({ locals }) => {
+          const { entry, headings } = locals.starlightRoute; 
+          const firstH1 = headings?.find((h) => h.depth === 1)?.text;
+          if (firstH1) entry.data.title = firstH1; 
+        });
+        ```
+        {% /tabitem %}
+        {% tabitem label="Python" %}
+        ```python
+        def signing_key(secret: str, date: str, region: str, service: str) -> bytes:
+        key = ("AWS4" + secret).encode()
+        for msg in (date, region, service, "aws4_request"):
+            key = hmac_sha256(key, msg)
+        return key
+        ```
+        {% /tabitem %}
+        {% /tabs %}
+
+1. #### That's it
+
+    You're now ready to go.
+
+{% /steps %}
+
+{% partial file="_sca_cv_overview.mdoc" /%}
+
+Global var: {% $product.name %}
+
+Function:
+{% debug($frontmatter.custom) %}
+
+{% if default($product.name) %}
+Hey there!
+{% /if %}
+
+
+{% tabs %}
+{% tabitem label="Stars" %}
+Sirius, Vega, Betelgeuse
+{% /tabitem %}
+
+{% tabitem label="Moons" %}
+Io, Europa, Ganymede
+{% /tabitem %}
+{% /tabs %}
 
 {% if equals($variant, "ent") %}
 This topic describes cloud platform terms used in {% $cc_product_vars.SCA_full %} and {% $cc_product_vars.CV_full %}.
@@ -17,12 +99,17 @@ This topic describes cloud platform terms used in {% $cc_product_vars.SCA_full %
 This topic describes cloud platform terms used in {% $cc_product_vars.CV_full %}.
 {% /if %}
 
-{% partial file="_sca_cv_overview.mdoc" /%}
+<details>
+<summary>Where and when is the Andromeda constellation most visible?</summary>
+
+The [Andromeda constellation](<https://en.wikipedia.org/wiki/Andromeda_(constellation)>) is most visible in the night sky during the month of November at latitudes between `+90°` and `−40°`.
+
+</details>
 
 ## Frontmatter fields
 You create frontmatter at the top of the file, before any of the file's text content. Its structure is a gated YAML object:
 
-```yml title="Frontmatter"
+```yaml {% title="MDOC file" %}
 <!-- Frontmatter -->
 ---
 title: Terminology
